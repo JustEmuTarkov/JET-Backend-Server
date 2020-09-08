@@ -40,6 +40,7 @@ _Let me know if its missing something in the instalation/run_
 - rewrited watermark.js now its much cleaner to use it...  
 - added scripts for multiplayer (/server/profile/<userID> which respond with selected by userID profile)
 - now we dont need bilions files of items.json it got concated into Nodes whic his much cleaner and much readable then b4
+- database sync'ed for 0.12.5-R1 (client 0.12.4.6297)
 
 ## Other Informations
 
