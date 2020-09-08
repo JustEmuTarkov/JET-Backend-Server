@@ -1,0 +1,34 @@
+## JustEmuTarkov - Server
+package-lock.json
+ResourceHacker.ini
+output
+logs
+events
+mods
+[Pp]roject/[Uu]ser/[Cc]ache/
+[Pp]roject/[Uu]ser/[Pp]rofiles/
+
+## visual studio
+.vs
+.idea
+slnx.sqlite
+slnx-journal.sqlite
+
+## nodejs
+node_modules
+node.exe
+## if you dont want to push cache folders
+## user/cache
+db/assort
+db/customization
+db/hideout
+db/items
+db/locales
+db/locations
+db/ragfair
+db/templates
+db/weather
+DB_removable
+
+## windows
+desktop.ini
