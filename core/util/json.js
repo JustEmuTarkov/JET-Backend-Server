@@ -25,7 +25,8 @@ function read(file) {
 }
 
 function write(file, data) {
-    createDir(file);
+	if(file.indexOf('/') != -1)
+		createDir(file);
     fs.writeFileSync(file, stringify(data), 'utf8');
 }
 

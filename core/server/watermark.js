@@ -52,7 +52,7 @@ function show() {
     //logger.logRequest(`│ ${box_width_spa} │`);
 	for (let idx of textTable)
 	{
-		logger.logRequest(`│░${idx}${getBoxSpacing(0,idx)} │`);
+		logger.logRequest(`│ ${idx}${getBoxSpacing(0,idx)} │`);
 	}
     //logger.logRequest(`│ ${box_width_spa} │`);
     logger.logRequest(`└─${box_width_bot}─┘`);
