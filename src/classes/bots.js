@@ -1,11 +1,41 @@
 "use strict";
-
+/*
+can accept node as object{array[variable]} or object{object[array]variable} or object{variable}
+*/
 function getRandomValue(node) {
 	let keys = Object.keys(node);
-	return json.parse(json.read(node[keys[utility.getRandomInt(0, keys.length - 1)]]));
+	let randomizedObject;
+	if(typeof node == "string")
+	{
+		if(node.indexOf(".json") != -1){
+			randomizedObject = json.parse(json.read(node));
+		} else {
+			return node;
+		}
+		if(typeof randomizedObject == "object"){
+			keys = Object.keys(randomizedObject);
+			randomizedObject = randomizedObject[keys[utility.getRandomInt(0, keys.length - 1)]];
+			
+		}
+	} else if(typeof node == "object") {
+		randomizedObject = node[keys[utility.getRandomInt(0, keys.length - 1)]];
+	}
+	if(typeof randomizedObject == "string")
+		if(randomizedObject.indexOf(".json") != -1){
+			let pathToCheck = randomizedObject;
+			randomizedObject = json.parse(json.read(randomizedObject));
+			if(typeof randomizedObject.BodyParts == "object")
+				return randomizedObject;
+			if(pathToCheck.indexOf("inventory") != -1)
+				return randomizedObject;
+			keys = Object.keys(randomizedObject);
+			randomizedObject = randomizedObject[keys[utility.getRandomInt(0, keys.length - 1)]];
+		}
+	//it should be normal string or some other randomized shit here
+	return randomizedObject;
 }
 
-function getRandomExperience(bot) {
+function getRandomExperience() {
 	let exp = 0;
 
 	let expTable = globals.data.config.exp.level.exp_table;
@@ -50,15 +80,7 @@ function addDogtag(bot, sessionID) {
 }
 
 function generateHealth(selectedHealth){
-	let HealthBase = {"Hydration":{"Current":100,"Maximum":100},"Energy":{"Current":100,"Maximum":100},"BodyParts":{
-			"Head":{"Health":{"Current":35,"Maximum":35}},
-			"Chest":{"Health":{"Current":80,"Maximum":80}},
-			"Stomach":{"Health":{"Current":70,"Maximum":70}},
-			"LeftArm":{"Health":{"Current":60,"Maximum": 60}},
-			"RightArm":{"Health":{"Current":60,"Maximum": 60}},
-			"LeftLeg":{"Health":{"Current": 65,"Maximum": 65}},
-			"RightLeg":{"Health":{"Current": 65,"Maximum": 65}}
-		},"UpdateTime": 1598664622};
+	let HealthBase = {"Hydration":{"Current":100,"Maximum":100},"Energy":{"Current":100,"Maximum":100},"BodyParts":{"Head":{"Health":{"Current":35,"Maximum":35}},"Chest":{"Health":{"Current":80,"Maximum":80}},"Stomach":{"Health":{"Current":70,"Maximum":70}},"LeftArm":{"Health":{"Current":60,"Maximum": 60}},"RightArm":{"Health":{"Current":60,"Maximum": 60}},"LeftLeg":{"Health":{"Current": 65,"Maximum": 65}},"RightLeg":{"Health":{"Current": 65,"Maximum": 65}}},"UpdateTime": 1598664622};
 	let bodyparts = ["Head","Chest","Stomach","LeftArm","RightArm","LeftLeg","RightLeg"];
 	/* db/bots/<>/health/default.json
 	{
@@ -113,21 +135,20 @@ function generateBot(bot, role, sessionID) {
 	if (role === "playerScav") {
 		type = "assault";
 	}
-
 	// generate bot
 	node = db.bots[type.toLowerCase()];
-
+	let appearance = json.parse(json.read(node.appearance));
 	bot.Info.Settings.Role = role;
 	bot.Info.Nickname = getRandomValue(node.names);
 	bot.Info.experience = getRandomExperience();
 	bot.Info.Level = profile_f.calculateLevel(bot);
 	bot.Info.Settings.Experience = getRandomValue(node.experience);
-	bot.Info.Voice = getRandomValue(node.appearance.voice);
+	bot.Info.Voice = getRandomValue(appearance.voice);
 	bot.Health = generateHealth(getRandomValue(node.health));
-	bot.Customization.Head = getRandomValue(node.appearance.head);
-	bot.Customization.Body = getRandomValue(node.appearance.body);
-	bot.Customization.Feet = getRandomValue(node.appearance.feet);
-	bot.Customization.Hands = getRandomValue(node.appearance.hands);
+	bot.Customization.Head = getRandomValue(appearance.head);
+	bot.Customization.Body = getRandomValue(appearance.body);
+	bot.Customization.Feet = getRandomValue(appearance.feet);
+	bot.Customization.Hands = getRandomValue(appearance.hands);
 	bot.Inventory = getRandomValue(node.inventory);
 
 	// add dogtag to PMC's	
@@ -175,7 +196,8 @@ function generateBot(bot, role, sessionID) {
 
 function generate(info, sessionID) {
 	let generatedBots = [];
-
+	if(typeof info.conditions == "undefined")
+		info['conditions'] = [{Limit: 1, Difficulty: "normal", Role: "assault"}];
 	for (let condition of info.conditions) {
 		for (let i = 0; i < condition.Limit; i++) {
 			let bot = json.parse(json.read(db.bots.base));
