@@ -22,7 +22,7 @@ class DialogueServer {
 			data.push(this.getDialogueInfo(dialogueId, sessionID));
 		}
 
-		return '{"err":0,"errmsg":null,"data":' + json.stringify(data) + '}';
+		return `{"err":0,"errmsg":null,"data": ${json.stringify(data)}}`;
 	}
 
 	/* Get the content of a dialogue. */
@@ -56,8 +56,7 @@ class DialogueServer {
 		}
 		dialogue.attachmentsNew = attachmentsNew;
 
-		return '{"err":0,"errmsg":null, "data":' + json.stringify(
-			{'messages': this.dialogues[sessionID][dialogueId].messages}) + '}';
+		return json.stringify({"err":0,"errmsg":null, "data": {'messages': this.dialogues[sessionID][dialogueId].messages}});
 	}
 
 	/*
@@ -239,7 +238,7 @@ function getMessageTypeValue(messageType) {
 * output: list of item._id
 * List is backward first item is the furthest child and last item is main item
 * returns all child items ids in array, includes itself and children
-* Same as the function in helpFunctions, just adapted for message ittems.
+* Same as the function in helpFunctions, just adapted for message items.
 * */
 function findAndReturnChildren(messageItems, itemid) {
     let list = [];

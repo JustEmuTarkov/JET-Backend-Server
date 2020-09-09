@@ -76,8 +76,8 @@ class ProfileServer {
     createProfile(info, sessionID) {
         let account = account_f.accountServer.find(sessionID);
         let folder = account_f.getPath(account.id);
-        let pmcData = json.parse(json.read(db.profile[account.edition]["character_" + info.side.toLowerCase()]));
-        let storage = json.parse(json.read(db.profile[account.edition]["storage_" + info.side.toLowerCase()]));
+        let pmcData = json.parse(json.read(db.profile[account.edition][`character_${info.side.toLowerCase()}`]));
+        let storage = json.parse(json.read(db.profile[account.edition][`storage_${info.side.toLowerCase()}`]));
 
         // delete existing profile
         if (this.profiles[account.id]) {
@@ -99,10 +99,10 @@ class ProfileServer {
         storage.data._id = "pmc" + account.id;
 
         // create profile
-        json.write(folder + "character.json", pmcData);
-        json.write(folder + "storage.json", storage);
-        json.write(folder + "userbuilds.json", {});
-        json.write(folder + "dialogue.json", {});
+        json.write(`${folder}character.json`, pmcData);
+        json.write(`${folder}storage.json`, storage);
+        json.write(`${folder}userbuilds.json`, {});
+        json.write(`${folder}dialogue.json`, {});
 
         // load to memory
         let profile = this.getProfile(account.id, 'pmc');
@@ -187,7 +187,7 @@ function getStashType(sessionID) {
         }
     }
 
-    logger.logError("No stash found");
+    logger.logError(`No stash found where stash ID is: ${pmcData.Inventory.stash}`);
     return "";
 }
 

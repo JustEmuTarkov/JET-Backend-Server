@@ -7,7 +7,7 @@ function cache() {
 
     /* assort */
     for (let trader in db.assort) {
-        logger.logInfo("Caching: assort_" + trader + ".json");
+        logger.logInfo(`Caching: assort_${trader}.json`);
 
         let base = {"err": 0, "errmsg": null, "data": {"items": [], "barter_scheme": {}, "loyal_level_items": {}}};
         let inputNode = db.assort[trader];
@@ -43,7 +43,7 @@ function cache() {
     /* customization */
     for (let trader in db.assort) {
         if ("customization" in db.assort[trader]) {
-            logger.logInfo("Caching: customization_" + trader + ".json");
+            logger.logInfo(`Caching: customization_${trader}.json`);
 
             let base = [];
 

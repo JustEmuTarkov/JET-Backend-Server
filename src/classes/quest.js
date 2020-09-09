@@ -234,7 +234,7 @@ function handoverQuest(pmcData, body, sessionID) {
     }
 
     if (handoverMode && value === 0) {
-        logger.logError("Quest handover error: condition not found or incorrect value. qid=" + body.qid + ", condition=" + body.conditionId);
+        logger.logError(`Quest handover error: condition not found or incorrect value. qid=${body.qid}, condition=${body.conditionId}`);
         return output;
     }
 

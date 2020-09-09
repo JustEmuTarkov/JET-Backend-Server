@@ -372,45 +372,18 @@ function applyPlayerUpgradesBonuses(pmcData, bonus) {
             break;
 
         case "EnergyRegeneration":
-            break;
-
         case "HydrationRegeneration":
-            break;
-
         case "HealthRegeneration":
-            break;
-
         case "DebuffEndDelay":
-            break;
-
-            // Implemented.
-        case "ScavCooldownTimer":
-            break;
-
+        case "ScavCooldownTimer":// Implemented.
         case "QuestMoneyReward":
-            break;
-
         case "InsuranceReturnTime":
-            break;
-
         case "ExperienceRate":
-            break;
-
         case "SkillGroupLevelingBoost":
-            break;
-
         case "RagfairCommission":
-            break;
-
         case "AdditionalSlots":
-            break;
-
         case "UnlockWeaponModification":
-            break;
-
         case "TextBonus":
-            break;
-
         case "FuelConsumption":
             break;
     }

@@ -55,7 +55,7 @@ function childrenCategories(x) {
 * input: PlayerData
 * output: table[y][x]
 * */
-function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stach taken place
+function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stash taken place
     let PlayerStash = getPlayerStash(sessionID);
     let Stash2D = Array(PlayerStash[1]).fill(0).map(x => Array(PlayerStash[0]).fill(0));
 
@@ -82,7 +82,7 @@ function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stach ta
             try {
                 Stash2D[item.location.y + y].fill(1, item.location.x, fillTo);
             } catch (e) {
-                logger.logError("[OOB] for item " + item._id + " [" + item._id + "] with error message: " + e);
+                logger.log("[STASH]", `Out of bounds for item ${item._id} [${item._id}] with error message: ${e}`);
             }
         }
     }
@@ -426,6 +426,7 @@ function getSize(itemtpl, itemID, InventoryItem) { // -> Prepares item Width and
 }
 
 // note from 2027: there IS a thing i didn't explore and that is Merges With Children
+// note from Maoci: you can merge and split items from parent-childrens
 // -> Prepares item Width and height returns [sizeX, sizeY]
 function getSizeByInventoryItemHash(itemtpl, itemID, inventoryItemHash) {
     let toDo = [itemID];

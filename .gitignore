@@ -30,6 +30,9 @@ db/templates
 db/weather
 DB_removable
 Server.7z
+build.js
+Release
+dev
 
 ## windows
 desktop.ini

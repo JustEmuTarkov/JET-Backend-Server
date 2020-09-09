@@ -18,35 +18,33 @@ function changeVoice(url, info, sessionID) {
     return response_f.nullResponse();
 }
 
-/// --- TODO: USE LOCALIZED STRINGS --- ///
 function changeNickname(url, info, sessionID) {
     let output = profile_f.profileServer.changeNickname(info, sessionID);
     
     if (output == "taken") {
-        return response_f.getBody(null, 255, "The nickname is already in use")
+        return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse)
     }
 
     if (output == "tooshort") {
-        return response_f.getBody(null, 1, "The nickname is too short")
+        return response_f.getBody(null, 256, serverConfig.translations.tooShort)
     }
     
     return response_f.getBody({"status": 0, "nicknamechangedate": Math.floor(new Date() / 1000)});
 }
-/// --- TODO: USE LOCALIZED STRINGS --- ///
+
 function validateNickname(url, info, sessionID) {
     let output = profile_f.profileServer.validateNickname(info, sessionID);
     
     if (output == "taken") {
-        return response_f.getBody(null, 255, "The nickname is already in use")
+        return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse)
     }
 
     if (output == "tooshort") {
-        return response_f.getBody(null, 256, "The nickname is too short")
+        return response_f.getBody(null, 256, serverConfig.translations.tooShort)
     }
     
     return response_f.getBody({"status": "ok"});
 }
-/// --- TODO: USE LOCALIZED STRINGS --- ///
 
 function getReservedNickname(url, info, sessionID) {
     return response_f.getBody(account_f.accountServer.getReservedNickname(sessionID));
@@ -56,7 +54,6 @@ function getServerProfile(url, info, sessionID) {
 	let myID = url.replace("/server/profile/pmc", "").replace("/server/profile/scav","");
 	return response_f.getBody(profile_f.profileServer.getProfileById(myID));
 }
-
 
 router.addDynamicRoute("/server/profile", getServerProfile);
 router.addStaticRoute("/client/game/profile/create", createProfile);

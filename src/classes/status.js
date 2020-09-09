@@ -107,7 +107,7 @@ function examineItem(pmcData, body, sessionID) {
 
     // item not found
     if (itemID === "") {
-        logger.logError("Cannot find item to examine");
+        logger.logError(`Cannot find item to examine for ${body.item}`);
         return "";
     }
 
@@ -116,7 +116,7 @@ function examineItem(pmcData, body, sessionID) {
     pmcData.Info.Experience += item._props.ExamineExperience;
     pmcData.Encyclopedia[itemID] = true;
 
-    logger.logSuccess("EXAMINED: " + itemID);
+    logger.logSuccess(`EXAMINED: ${itemID}`);
     return item_f.itemServer.getOutput();
 }
 

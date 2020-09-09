@@ -139,8 +139,8 @@ class LocationServer {
         }
 
         // done generating
-        logger.logSuccess("A total of " + count + " items spawned");
-        logger.logSuccess("Generated location " + name);
+        logger.logSuccess(`A total of ${count} items spawned`);
+        logger.logSuccess(`Generated location ${name}`);
         return output;
     }
 

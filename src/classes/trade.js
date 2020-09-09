@@ -10,7 +10,7 @@ function buyItem(pmcData, body, sessionID) {
         return "";
     }
 
-    logger.logSuccess("Bought item: " + body.item_id);
+    logger.logSuccess(`Bought item: ${body.item_id}`);
     return move_f.addItem(pmcData, body, item_f.itemServer.getOutput(), sessionID);
 }
 
@@ -32,7 +32,7 @@ function sellItem(pmcData, body, sessionID) {
 
             // item found
             if (item._id === checkID) {
-                logger.logInfo("Selling: " + checkID);
+                logger.logInfo(`Selling: ${checkID}`);
 
                 // remove item
                 insurance_f.insuranceServer.remove(pmcData, checkID, sessionID);

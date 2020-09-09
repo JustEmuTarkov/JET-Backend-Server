@@ -23,10 +23,14 @@ class LocaleServer {
     }
     
     getMenu(lang = "en") {
+		if(typeof this.menu[lang] == "undefined")
+			return this.menu["en"];
         return this.menu[lang];
     }
     
     getGlobal(lang = "en") {
+		if(typeof this.global[lang] == "undefined")
+			return this.global["en"];
         return this.global[lang];
     }
 }

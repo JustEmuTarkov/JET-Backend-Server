@@ -174,7 +174,7 @@ function removeItem(profileData, body, output, sessionID) {
 
     //Find the item and all of it's relates
     if (toDo[0] === undefined || toDo[0] === null || toDo[0] === "undefined") {
-        logger.logError("item id is not valid");
+		logger.logError(`item id is ${toDo[0]} with body ${body}`);
         return "";
     }
 
@@ -482,7 +482,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                                 continue;
                             }
 
-                            logger.logInfo("Item placed at position [" + x + "," + y + "]", "", "", true);
+                            logger.logInfo(`Item placed at position [${x},${y}]`, "", "", true);
                             let newItem = utility.generateNewItemId();
                             let toDo = [[item._id, newItem]];
                             let upd = {"StackObjectsCount": StacksValue[stacks]};

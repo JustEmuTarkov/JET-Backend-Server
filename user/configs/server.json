@@ -3,5 +3,9 @@
 	"port": 443,
 	"eventPollIntervalSec": 60,
 	"rebuildCache": false,
-	"name": "JustEmuTarkov"
+	"name": "JustEmuTarkov",
+	"translations": {
+		"alreadyInUse": "The nickname is already in use",
+		"tooShort": "The nickname is too short"
+	}
 }

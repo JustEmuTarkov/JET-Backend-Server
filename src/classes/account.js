@@ -76,7 +76,7 @@ class AccountServer {
 
         if (accountID !== "") {
             delete this.accounts[accountID];
-            utility.removeDir("user/profiles/" + accountID + "/");
+            utility.removeDir(`user/profiles/${accountID}/`);
             this.saveToDisk();
         }
 
@@ -133,7 +133,7 @@ class AccountServer {
 }
 
 function getPath(sessionID) {
-    return "user/profiles/" + sessionID + "/";
+	return `user/profiles/${sessionID}/`;
 }
 
 module.exports.accountServer = new AccountServer();

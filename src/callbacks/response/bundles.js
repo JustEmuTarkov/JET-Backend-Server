@@ -3,7 +3,7 @@
 function sendImage(sessionID, req, resp, body) {
     let bundleKey = req.url.split('/bundle/')[1];
 
-    logger.logInfo("[BUNDLE]:" + req.url);
+	logger.logInfo(`[BUNDLE]: ${req.url}`);
     
     let bundle = bundles_f.bundlesServer.getBundleByKey(bundleKey, true);
     let path = bundle.path;
