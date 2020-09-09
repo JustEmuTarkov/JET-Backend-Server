@@ -2,16 +2,18 @@
   
 ## Preparing to use
   
-- open cmd in server folder and run `npm install`  
-- extract dara from `db_RemovableData.7z` to `db` folder  
-- make sure to run `removeCache.cmd`  
-- open cmd in server folder and run `node core/main`  
-- after caching is done you can start playing or...  
-- [optional] run `removeUselessDB_folders.cmd` to lower down size of server and remove unused fodlers from DB (disclaimer if you gonna install mods or editing db files make sure to not run this .cmd file)  
+- Get node from [Node x64](https://nodejs.org/dist/v14.10.0/node-v14.10.0-x64.msi) or [Node x32](https://nodejs.org/dist/v14.10.0/node-v14.10.0-x86.msi)  
+  - If its not working as intended uninstall it and get one of LTS version's [Node x64](https://nodejs.org/dist/v12.18.3/node-v12.18.3-x64.msi) or [Node x32](https://nodejs.org/dist/v12.18.3/node-v12.18.3-x86.msi)  
+- After you have installed `node` run this file `_installDependencies.cmd`
+- (if folder `user/cache` is empty) Extract data from `db_RemovableData.7z` to `db` folder  
+- Make sure to run `removeCache.cmd`  
+- to start server use `_startServer.cmd`  
+- server should have premade cache  
+- [optional] Run `removeUselessDB_folders.cmd` to lower down size of server and remove unused folders from DB (disclaimer if you gonna install mods or editing db files make sure to not run this .cmd file)  
   
-_Let me know if its missing something in the instalation/run_
-
-
+_Let me know if its missing something in the instalation/run_  
+  
+  
 ## Database folders
   
 **This folders are not required after "cache" is done**
@@ -40,7 +42,7 @@ _Let me know if its missing something in the instalation/run_
 - rewrited watermark.js now its much cleaner to use it...  
 - added scripts for multiplayer (/server/profile/<userID> which respond with selected by userID profile)
 - now we dont need bilions files of items.json it got concated into Nodes whic his much cleaner and much readable then b4
-- database sync'ed for 0.12.5-R1 (client 0.12.4.6297)
+- database sync'ed for 0.12.5-R1 (Game Client 0.12.4.6297)
 
 ## Other Informations
 
