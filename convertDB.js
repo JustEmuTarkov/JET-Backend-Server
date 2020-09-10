@@ -1,5 +1,10 @@
 "use strict";
-const fs = require('fs');
+const fs = require('fs-extra');
+const path = require('path');
+
+var dbFolder = "./db";
+var new_dbFolder = "./dbConverted";
+
 function _checkDir(file) {    
     let filePath = file.substr(0, file.lastIndexOf('/'));
 
@@ -21,19 +26,49 @@ function _write(file, data) {
 		_checkDir(file); // if exist then there is a path to check
     fs.writeFileSync(file, _stringify(data), 'utf8');
 }
+function _simpleCopyEverything(folderName){
+	_copyFolderRecursiveSync(
+		`${dbFolder}/${folderName}/`, 
+		`${new_dbFolder}/${folderName}/`
+	);
+}
+function _copyFileSync( source, target ) {
+	_checkDir(target);
+    var targetFile = target;
+    //if target is a directory a new file with the same name will be created
+    if ( fs.existsSync( target ) )
+        if ( fs.lstatSync( target ).isDirectory() )
+            targetFile = path.join( target, path.basename( source ) );
+    fs.writeFileSync(targetFile, fs.readFileSync(source));
+}
+function _copyFolderRecursiveSync( source, target ) {
+    fs.copy(source, target, function (err) {
+	  if (err) {
+		console.error(err);
+	  }
+	});
+}
 
-var dbFolder = "./db";
-var new_dbFolder = "./dbConverted";
 
-var dbFolders = ['bots','dialogues','match','profile','traders', 'customization','hideout','items','locales','locations','ragfair','templates','weather'];
+var dbFolders = ['bots','dialogues','match','profile', 'customization','hideout','items','locales','locations','ragfair','templates','weather','assort', 'traders'];
 
 //makesure new dir is created
 if (!fs.existsSync(new_dbFolder)) {
-        fs.mkdirSync(new_dbFolder, { recursive: true });
+    fs.mkdirSync(new_dbFolder, { recursive: true });
 }
 
-function main(){
+async function main(){
+		if(!fs.existsSync(`${dbFolder}/globals.json`)){
+			_copyFileSync(`${dbFolder}/globals.json`,`${new_dbFolder}/globals.json`);
+			console.log("Copied Globals.json");
+		}
 	for (let folderName of dbFolders){
+		if(folderName != "traders")
+			if(!fs.existsSync(`${dbFolder}/${folderName}`)){
+				console.log(`Folder: ${folderName} not exist skipping`)
+				continue;
+			}
+
 		
 		switch(folderName){
 			case "customization":
@@ -45,74 +80,199 @@ function main(){
 			case "dialogues":
 			case "match":
 			case "profile":
-				simpleCopyEverything(folderName);
+				_simpleCopyEverything(folderName);
+				console.log(`Copied Folder: ${folderName}`);
 				break;
 			case "bots": 
-				let toCopy = ['base.json','core.json'];
+				let toCopy_bots = ['base.json','core.json'];
 				let foldersInsideBotToCopy = ['difficulties','inventory'];
+				let botsFolders = fs.readdirSync(`${dbFolder}/bots`);
+				for(let folder of botsFolders){
+					if(folder.indexOf(".json")) continue;
+					for(let file of toCopy_bots){
+						_copyFileSync( `${dbFolder}/bots/${folder}/${file}`, `${new_dbFolder}/bots/${folder}/${file}` );
+					}
+
+					// APPERANCE SECTION
+					let appearancePath = `${dbFolder}/bots/${folder}/appearance`;
+					let appearance_files = fs.readdirSync(appearancePath);
+					let appearance_base = {"body":[],"feet":[],"hands":[],"head":[],"voice":[]};
+					for(let appearance of appearance_files){
+						// we looping through folders now
+						let sub_items = fs.readdirSync(`${appearancePath}/${appearance}`);
+						for(let item of sub_items){
+							appearance_base[appearance].push(item); // cause we need only ID's
+						}
+					}
+					_write(`${new_dbFolder}/bots/${folder}/appearance`, appearance_base);
+					
+					// EXPERIENCE SECTION
+					let experiencePath = `${dbFolder}/bots/${folder}/experience`;
+					let experience_files = fs.readdirSync(experiencePath);
+					let experiance_base = [];
+					for(let experience of experience_files){
+						experiance_base.push(_parse(_read(`${experiencePath}/${experience}`)));
+					}
+					_write(`${new_dbFolder}/bots/${folder}/experience`, experiance_base);
+					
+					// NAMES SECTION
+					let namesPath = `${dbFolder}/bots/${folder}/names`;
+					let names_files = fs.readdirSync(namesPath);
+					let names_base = [];
+					for(let names of names_files){
+						names_base.push(_parse(_read(`${namesPath}/${names}`)));
+					}
+					_write(`${new_dbFolder}/bots/${folder}/names`, names_base);
+					
+					// DIFFICULTIES SECTION
+					if(fs.existsSync(`${dbFolder}/bots/${folder}/difficulties`))
+					{
+						// not for ${folder} == "bear" or "usec"
+						_copyFolderRecursiveSync(
+							`${dbFolder}/bots/${folder}/difficulties`, 
+							`${new_dbFolder}/bots/${folder}/difficulties`
+							);
+					}
+					
+					// INVENTORY SECTION
+					_copyFolderRecursiveSync(
+						`${dbFolder}/bots/${folder}/inventory`, 
+						`${new_dbFolder}/bots/${folder}/inventory`
+						);
+					
+					// HEALTH SECTION
+					let health_data = _parse(_read(`${dbFolder}/bots/${folder}/health/default.json`));
+					let newHealthBase = {"Hydration":0,"Energy":0,"BodyParts":{"Head":0,"Chest":0,"Stomach":0,"LeftArm":0,"RightArm":0,"LeftLeg":0,"RightLeg":0}};
+					newHealthBase.Hydration = health_data.Hydration.Current;
+					newHealthBase.Energy = health_data.Energy.Current;
+					for(let bodyPart in health_data.BodyParts){
+						newHealthBase.BodyParts[bodyPart] = health_data.BodyParts[bodyPart].Health.Current;
+					}
+					_write(`${new_dbFolder}/bots/${folder}/health/default.json`, newHealthBase);
+					
+				}
+				console.log(`Copied Folder: ${folderName}`);
 				// health need to be reworked liek load default.json and override it with the new default.json
 				// appearance/experience/names need to be concated
 			break;
 			case "traders":
 				// this is made from copying base and category from assorts...
 				//loop through assort folders and copy 
-				let toCopy = ['base.json', 'categories.json']
+				let toCopy_traders = ['base.json', 'categories.json'];
+				
+				let path_traders = `${dbFolder}/assort`;
+				let new_path_traders = `${new_dbFolder}/traders`;
+				let assortFolders = fs.readdirSync(path_traders);
+				for(let folder of assortFolders){
+					let traderpath = `${path_traders}/${folder}/`;
+					let new_traderpath = `${new_path_traders}/${folder}/`;
+					for(let file of toCopy_traders){
+						_copyFileSync(`${traderpath}${file}`,`${new_traderpath}${file}`);
+					}
+				}
+				console.log(`Copied Folder: ${folderName}`);
 			break;
 			case "assort": 
 				// copy strict
-				let toCopy = ['quests', 'loyal_level_items', 'items', 'barter_scheme', 'questassort.json'];
+				let toCopy_assort = ['quests', 'loyal_level_items', 'items', 'barter_scheme', 'questassort.json'];
+				let path_assort = `${dbFolder}/assort/`;
+				let new_path_assort = `${new_dbFolder}/assort/`;
 				//if not exest jsut skip...
+				for(let folder of toCopy_assort){
+					let tPath = path_assort + folder;
+					console.log(folder + "  " + tPath);
+					if(folder == "questassort.json"){
+						if(fs.existsSync(tPath)){
+							_copyFileSync(`${path_assort}questassort.json`,`${new_path_assort}questassort.json`);
+							continue;
+						}
+					}
+					if(fs.existsSync(tPath)){
+						_copyFolderRecursiveSync(
+							`${path_assort}${folder}`, 
+							`${new_path_assort}${folder}`
+						);
+						console.log(`Folder: ${folder};`);
+					}
+				}
 				
+				console.log(`Copied Folder: ${folderName}`);
 			break;
 			case "items": 
+				let items_list = {};
+				let Nodes = [];
+				let path_items = `${dbFolder}/items`;
+				let new_path_items = `${new_dbFolder}/items`;
+				let folderFiles = fs.readdirSync(path_items);
+				let CachedItemsToSave = [];
+				for(let file of folderFiles)
+				{
+					let readData = _parse(_read(`${path_items}/${file}`));
+					items_list[readData._id] = readData;
+				}
+				for (let item in items_list){
+					if(items_list[item]['_type'] == "Node")
+						Nodes.push(items_list[item]);
+				}
+				
+				let counter = 1;
+				for (var node of Nodes)
+				{
+					CachedItemsToSave = [];
+					if(node["_parent"] == "" && node["_name"] == "Item")
+						CachedItemsToSave.push(items_list["54009119af1c881c07000029"]);
+					for(let item in items_list)
+					{
+						if(items_list[item]["_parent"] == node["_id"])
+							CachedItemsToSave.push(items_list[item]);
+					}
+					
+					let countNumber = ( (counter < 10)?`00${counter}`:( (counter < 100)?`0${counter}`:counter ) );
+					
+					//console.log(`${node["_name"]}_${countNumber}.json >> Size: ${CachedItemsToSave.length}`);
+					
+					_write(`${new_path_items}/Node_${countNumber}_${node["_name"]}.json`, CachedItemsToSave);
+					
+					counter++;
+				}
+				console.log(`Item Nodes Creation Finished. With count: ${counter}`);
 				//add all items from retarded server to array
 				//create nodes out of it and save them
 			break;
 			case "locales": 
-				let filesToCopy = ['menu', 'interface', 'error']; // also language folder name.json
-				let path = `${dbFolder}/locale`;
-				DONT_FUCKING_RUN_IT_ITS_STILL_IN_PROGRESS
-				let folders // INPROGRESS
-				fs.writeFileSync(targetFile, fs.readFileSync(source));
+				let path_locales = `${dbFolder}/locales`;
+				let new_path_locales = `${new_dbFolder}/locales`;
+				
+				let files = fs.readdirSync(path_locales);
+						for(let language of files){ // language folders aka en fr de ru etc.
+							if(language.length > 5) continue;
+							var path0 = `${path_locales}/${language}`;
+							var path1 = `${new_path_locales}/${language}`;
+							let files0 = fs.readdirSync(path0);
+							for(let file of files0){ // insides of en, de, fr folders
+								if(file.indexOf(".json") != -1)
+								{ // language_file/menu/interface/error json
+									_copyFileSync(`${path0}/${file}`,`${path1}/${file}`);
+									continue;
+								}
+								//console.log(" -" + file);
+								var dir = `${path0}/${file}`;
+								let folderFiles = fs.readdirSync(dir);
+								let data = {}
+								let count = 0;
+								for(let file0 of folderFiles){ // actual content for sub folders like locations/templates/trading etc.
+									if(file0.indexOf(".json") != -1){
+										data[file0.replace('.json','')] = _parse(_read(`${dir}/${file0}`));
+									}
+								}
+								_write(`${path1}/_${file}.json`, data);
+							}
+						}
+				console.log(`Copied Folder: ${folderName}`);
 				//and folders need to be converted to _folderName.json
 			break;
 		}
 	}
+	console.log("Finalizing Actions... Please Wait till program finishes.")
 }
-
-function simpleCopyEverything(folderName){
-	copyFolderRecursiveSync(
-		`${dbFolder}/${folderName}`, 
-		`${new_dbFolder}/${folderName}`
-	);
-	console.log(`[COPY]: finished for ${folderName}`)
-}
-
-function copyFileSync( source, target ) {
-    var targetFile = target;
-    //if target is a directory a new file with the same name will be created
-    if ( fs.existsSync( target ) )
-        if ( fs.lstatSync( target ).isDirectory() )
-            targetFile = path.join( target, path.basename( source ) );
-    fs.writeFileSync(targetFile, fs.readFileSync(source));
-}
-function copyFolderRecursiveSync( source, target ) {
-    var files = [];
-
-    //check if folder needs to be created or integrated
-    var targetFolder = path.join( target, path.basename( source ) );
-    if ( !fs.existsSync( targetFolder ) )
-        fs.mkdirSync( targetFolder );
-    //copy
-    if ( fs.lstatSync( source ).isDirectory() ) {
-        files = fs.readdirSync( source );
-        files.forEach( function ( file ) {
-            var curSource = path.join( source, file );
-            if ( fs.lstatSync( curSource ).isDirectory() ) {
-                copyFolderRecursiveSync( curSource, targetFolder );
-            } else {
-                copyFileSync( curSource, targetFolder );
-            }
-        } );
-    }
-}
+main();
