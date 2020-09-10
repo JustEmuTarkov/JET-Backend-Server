@@ -152,7 +152,22 @@ class LocationServer {
 
     /* get all locations without loot data */
     generateAll() {
-        let base = json.parse(json.read(db.locations.base));
+		// lets try to read from cache
+		if(typeof db.user.cache.locations != "undefined")
+		{
+			if(json.exist(db.user.cache.locations))
+			{
+				let base = json.parse(json.read(db.cacheBase.locations))
+				let data = json.parse(json.read(db.user.cache.locations));
+				base.data.locations = data;
+				return base;
+			}
+			logger.logError(`What the fuck did you put into db.user.cache.locations: ${db.user.cache.locations}`);
+		}
+		throw "USE A FUCKING CACHE SYSTEM U MORON!!";
+		
+		// no cache found so lets do it a hard way
+        let base = json.parse(json.read(db.cacheBase.locations));
         let data = {};
 
         // use right id's and strip loot

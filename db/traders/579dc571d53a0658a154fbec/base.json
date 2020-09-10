@@ -11,7 +11,7 @@
 	"balance_dol": 0,
 	"balance_eur": 0,
 	"display": true,
-	"discount": 30,
+	"discount": 0,
 	"discount_end": 0,
 	"buyer_up": true,
 	"currency": "RUB",

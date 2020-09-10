@@ -29,7 +29,11 @@ function write(file, data) {
 		createDir(file);
     fs.writeFileSync(file, stringify(data), 'utf8');
 }
+function exist(file){
+	return fs.existsSync(file);	
+}
 
+module.exports.exist = exist;
 module.exports.stringify = stringify;
 module.exports.parse = parse;
 module.exports.read = read;

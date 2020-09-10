@@ -112,7 +112,15 @@ class TraderServer {
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
             let level = this.traders[traderID].loyalty.currentLevel;
-            let questassort = json.parse(json.read(db.assort[traderID].questassort));
+			let questassort = {};
+			if(typeof db.assort[traderID].questassort == "undefined")
+			{
+				questassort = {"started": {},"success": {},"fail": {}};
+			} else if(json.exist(db.assort[traderID].questassort)){
+				questassort = json.parse(json.read(db.assort[traderID].questassort));
+			} else {
+				questassort = {"started": {},"success": {},"fail": {}};
+			}
 
             for (let key in baseAssorts.loyal_level_items) {
                     let requiredLevel = baseAssorts.loyal_level_items[key];
