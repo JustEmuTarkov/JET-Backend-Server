@@ -49,7 +49,6 @@ function _copyFolderRecursiveSync( source, target ) {
 	});
 }
 
-
 var dbFolders = ['bots','dialogues','match','profile', 'customization','hideout','items','locales','locations','ragfair','templates','weather','assort', 'traders'];
 
 //makesure new dir is created
@@ -57,6 +56,7 @@ if (!fs.existsSync(new_dbFolder)) {
     fs.mkdirSync(new_dbFolder, { recursive: true });
 }
 
+// yes its writen horribly but it must works and doesnt require alot of work to be done so, if you willing to rewrite this shit, have my blessing!!
 async function main(){
 		if(!fs.existsSync(`${dbFolder}/globals.json`)){
 			_copyFileSync(`${dbFolder}/globals.json`,`${new_dbFolder}/globals.json`);
@@ -69,7 +69,6 @@ async function main(){
 				continue;
 			}
 
-		
 		switch(folderName){
 			case "customization":
 			case "hideout":
@@ -81,18 +80,17 @@ async function main(){
 			case "match":
 			case "profile":
 				_simpleCopyEverything(folderName);
-				console.log(`Copied Folder: ${folderName}`);
+				console.log(`Generated ${folderName}`);
 				break;
 			case "bots": 
 				let toCopy_bots = ['base.json','core.json'];
 				let foldersInsideBotToCopy = ['difficulties','inventory'];
 				let botsFolders = fs.readdirSync(`${dbFolder}/bots`);
+				for(let file of toCopy_bots){
+					_copyFileSync( `${dbFolder}/bots/${file}`, `${new_dbFolder}/bots/${file}` );
+				}
 				for(let folder of botsFolders){
-					if(folder.indexOf(".json")) continue;
-					for(let file of toCopy_bots){
-						_copyFileSync( `${dbFolder}/bots/${folder}/${file}`, `${new_dbFolder}/bots/${folder}/${file}` );
-					}
-
+					if(folder.indexOf(".json") != -1) continue;
 					// APPERANCE SECTION
 					let appearancePath = `${dbFolder}/bots/${folder}/appearance`;
 					let appearance_files = fs.readdirSync(appearancePath);
@@ -104,25 +102,25 @@ async function main(){
 							appearance_base[appearance].push(item); // cause we need only ID's
 						}
 					}
-					_write(`${new_dbFolder}/bots/${folder}/appearance`, appearance_base);
+					_write(`${new_dbFolder}/bots/${folder}/appearance.json`, appearance_base);
 					
 					// EXPERIENCE SECTION
 					let experiencePath = `${dbFolder}/bots/${folder}/experience`;
 					let experience_files = fs.readdirSync(experiencePath);
 					let experiance_base = [];
 					for(let experience of experience_files){
-						experiance_base.push(_parse(_read(`${experiencePath}/${experience}`)));
+						experiance_base.push(_read(`${experiencePath}/${experience}`));
 					}
-					_write(`${new_dbFolder}/bots/${folder}/experience`, experiance_base);
+					_write(`${new_dbFolder}/bots/${folder}/experience.json`, experiance_base);
 					
 					// NAMES SECTION
 					let namesPath = `${dbFolder}/bots/${folder}/names`;
 					let names_files = fs.readdirSync(namesPath);
 					let names_base = [];
 					for(let names of names_files){
-						names_base.push(_parse(_read(`${namesPath}/${names}`)));
+						names_base.push(_read(`${namesPath}/${names}`).replace('"','').replace('"',''));
 					}
-					_write(`${new_dbFolder}/bots/${folder}/names`, names_base);
+					_write(`${new_dbFolder}/bots/${folder}/names.json`, names_base);
 					
 					// DIFFICULTIES SECTION
 					if(fs.existsSync(`${dbFolder}/bots/${folder}/difficulties`))
@@ -149,9 +147,9 @@ async function main(){
 						newHealthBase.BodyParts[bodyPart] = health_data.BodyParts[bodyPart].Health.Current;
 					}
 					_write(`${new_dbFolder}/bots/${folder}/health/default.json`, newHealthBase);
-					
+					console.log(`Generated bot - ${folder}`);
 				}
-				console.log(`Copied Folder: ${folderName}`);
+				console.log(`Generated ${folderName}`);
 				// health need to be reworked liek load default.json and override it with the new default.json
 				// appearance/experience/names need to be concated
 			break;
@@ -170,7 +168,7 @@ async function main(){
 						_copyFileSync(`${traderpath}${file}`,`${new_traderpath}${file}`);
 					}
 				}
-				console.log(`Copied Folder: ${folderName}`);
+				console.log(`Generated ${folderName}`);
 			break;
 			case "assort": 
 				// copy strict
@@ -179,24 +177,23 @@ async function main(){
 				let new_path_assort = `${new_dbFolder}/assort/`;
 				//if not exest jsut skip...
 				for(let folder of toCopy_assort){
-					let tPath = path_assort + folder;
-					console.log(folder + "  " + tPath);
-					if(folder == "questassort.json"){
-						if(fs.existsSync(tPath)){
-							_copyFileSync(`${path_assort}questassort.json`,`${new_path_assort}questassort.json`);
-							continue;
+					let tradersList = fs.readdirSync(path_assort);
+					for(let trader of tradersList){
+						if(folder == "questassort.json"){
+							if(fs.existsSync(`${path_assort}${trader}/questassort.json`)){
+								_copyFileSync(`${path_assort}${trader}/questassort.json`,`${new_path_assort}${trader}/questassort.json`);
+								continue;
+							}
+						}
+						if(fs.existsSync(`${path_assort}${trader}/${folder}/`)){
+							_copyFolderRecursiveSync(
+								`${path_assort}${trader}/${folder}/`, 
+								`${new_path_assort}${trader}/${folder}/`
+							);
 						}
 					}
-					if(fs.existsSync(tPath)){
-						_copyFolderRecursiveSync(
-							`${path_assort}${folder}`, 
-							`${new_path_assort}${folder}`
-						);
-						console.log(`Folder: ${folder};`);
-					}
 				}
-				
-				console.log(`Copied Folder: ${folderName}`);
+				console.log(`Generated ${folderName}`);
 			break;
 			case "items": 
 				let items_list = {};
@@ -235,7 +232,7 @@ async function main(){
 					
 					counter++;
 				}
-				console.log(`Item Nodes Creation Finished. With count: ${counter}`);
+				console.log(`Generated Item Nodes : ${counter-1}`);
 				//add all items from retarded server to array
 				//create nodes out of it and save them
 			break;
@@ -268,11 +265,12 @@ async function main(){
 								_write(`${path1}/_${file}.json`, data);
 							}
 						}
-				console.log(`Copied Folder: ${folderName}`);
+				console.log(`Generated ${folderName}`);
 				//and folders need to be converted to _folderName.json
 			break;
 		}
 	}
-	console.log("Finalizing Actions... Please Wait till program finishes.")
+	console.log("Finalizing CopyFile Actions... Please Wait till program finishes.")
 }
+
 main();

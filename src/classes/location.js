@@ -159,8 +159,12 @@ class LocationServer {
 			{
 				let base = json.parse(json.read(db.cacheBase.locations))
 				let data = json.parse(json.read(db.user.cache.locations));
-				base.data.locations = data;
-				return base;
+				let newData = {};
+				for(let location in data){
+					newData[data[location]._Id] = data[location];
+				}
+				base.data.locations = newData;
+				return base.data;
 			}
 			logger.logError(`What the fuck did you put into db.user.cache.locations: ${db.user.cache.locations}`);
 		}
