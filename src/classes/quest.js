@@ -51,13 +51,13 @@ function processReward(reward) {
 
     // add mods to the base items, fix ids
     for (let target of targets) {
-        let items = [target];
+        let questItems = [target];
 
         for (let mod of mods) {
-            items.push(itm_hf.clone(mod));
+            questItems.push(itm_hf.clone(mod));
         }
 
-        rewardItems = rewardItems.concat(itm_hf.replaceIDs(null, items));
+        rewardItems = rewardItems.concat(itm_hf.replaceIDs(null, questItems));
     }
 
     return rewardItems;

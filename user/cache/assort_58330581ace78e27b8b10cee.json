@@ -4,15 +4,6 @@
 	"data": {
 		"items": [
 			{
-				"_id": "5d34df2788a4504526796d27",
-				"_tpl": "5bffdd7e0db834001b734a1a",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
-			},
-			{
 				"_id": "5de7c5f737ceb3257d3aa1c1",
 				"_tpl": "58dd3ad986f77403051cba8f",
 				"parentId": "hideout",
@@ -2321,47 +2312,9 @@
 					"UnlimitedCount": true,
 					"StackObjectsCount": 500000
 				}
-			},
-			{
-				"_id": "I3294255851325564297BvlP",
-				"_tpl": "570fd6c2d2720bc6458b457f",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
-			},
-			{
-				"_id": "I329425587620962244Q9NQh",
-				"_tpl": "56ea70acd2720b844b8b4594",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
 			}
 		],
 		"barter_scheme": {
-			"5d34df2788a4504526796d27": [
-				[
-					{
-						"count": 2,
-						"_tpl": "5c052f6886f7746b1e3db148"
-					},
-					{
-						"count": 1,
-						"_tpl": "5913915886f774123603c392"
-					},
-					{
-						"count": 2,
-						"_tpl": "5c1267ee86f77416ec610f72"
-					},
-					{
-						"count": 2,
-						"_tpl": "5d03775b86f774203e7e0c4b"
-					}
-				]
-			],
 			"5de7c5f737ceb3257d3aa1c1": [
 				[
 					{
@@ -3735,30 +3688,9 @@
 						"_tpl": "5449016a4bdc2d6f028b456f"
 					}
 				]
-			],
-			"I3294255851325564297BvlP": [
-				[
-					{
-						"count": 5,
-						"level": 2,
-						"side": "Usec",
-						"_tpl": "59f32c3b86f77472a31742f0"
-					}
-				]
-			],
-			"I329425587620962244Q9NQh": [
-				[
-					{
-						"count": 5,
-						"level": 20,
-						"side": "Usec",
-						"_tpl": "59f32c3b86f77472a31742f0"
-					}
-				]
 			]
 		},
 		"loyal_level_items": {
-			"5d34df2788a4504526796d27": 4,
 			"5de7c5f737ceb3257d3aa1c1": 3,
 			"5e3c0b7b7dfe975b6f2b0515": 3,
 			"5e3c0b7b7dfe975b6f2b0519": 3,
@@ -3932,9 +3864,7 @@
 			"5e3c0b7c7dfe975b6f2b06d2": 3,
 			"5e3c0b7c7dfe975b6f2b06d4": 3,
 			"5e3c0b7c7dfe975b6f2b06d6": 3,
-			"5e3c0b7c7dfe975b6f2b06d8": 3,
-			"I3294255851325564297BvlP": 3,
-			"I329425587620962244Q9NQh": 3
+			"5e3c0b7c7dfe975b6f2b06d8": 3
 		}
 	}
 }

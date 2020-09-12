@@ -244,9 +244,9 @@ function getOffersFromTraders(sessionID, request)
                 // check if offer is really available, removes any quest locked items not in current assort of a trader
                 let tmpOffer = jsonToReturn.offers[offer];
                 let traderId = tmpOffer.user.id;
-                let items = trader_f.traderServer.getAssort(sessionID, traderId).items;
+                let traderAssort = trader_f.traderServer.getAssort(sessionID, traderId).items;
                 let keepItem = false; // for testing
-                for (let item of items) {
+                for (let item of traderAssort) {
                     if (item._id === tmpOffer.root) {
                         offersToKeep.push( jsonToReturn.offers[offer] )
                         keepItem = true;

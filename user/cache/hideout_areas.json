@@ -361,31 +361,31 @@
 						},
 						{
 							"templateId": "5d1b2fa286f77425227d1674",
-							"count": 4,
+							"count": 2,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "5c06779c86f77426e00dd782",
-							"count": 14,
+							"count": 8,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "590a3b0486f7743954552bdb",
-							"count": 5,
+							"count": 3,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "5733279d245977289b77ec24",
-							"count": 4,
+							"count": 3,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"skillName": "Strength",
-							"skillLevel": 2,
+							"skillLevel": 3,
 							"type": "Skill"
 						},
 						{
@@ -1084,7 +1084,7 @@
 						},
 						{
 							"templateId": "5b4335ba86f7744d2837a264",
-							"count": 2,
+							"count": 1,
 							"isFunctional": false,
 							"type": "Item"
 						},
@@ -1143,7 +1143,7 @@
 						},
 						{
 							"templateId": "59e3606886f77417674759a5",
-							"count": 4,
+							"count": 5,
 							"isFunctional": false,
 							"type": "Item"
 						},
@@ -1162,12 +1162,6 @@
 							"skillName": "Vitality",
 							"skillLevel": 3,
 							"type": "Skill"
-						},
-						{
-							"templateId": "5af0534a86f7743b6f354284",
-							"count": 1,
-							"isFunctional": false,
-							"type": "Item"
 						}
 					],
 					"bonuses": [
@@ -2003,25 +1997,25 @@
 						},
 						{
 							"templateId": "59e3639286f7741777737013",
-							"count": 4,
+							"count": 2,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "5d235a5986f77443f6329bc6",
-							"count": 6,
+							"count": 2,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "5734758f24597738025ee253",
-							"count": 8,
+							"count": 6,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "59faf7ca86f7740dbe19f6c2",
-							"count": 4,
+							"count": 3,
 							"isFunctional": false,
 							"type": "Item"
 						}
@@ -2038,7 +2032,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 144000,
+					"constructionTime": 129600,
 					"description": ""
 				}
 			}
@@ -2469,7 +2463,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 108000,
+					"constructionTime": 86400,
 					"description": ""
 				},
 				"2": {
@@ -2523,7 +2517,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 151200,
+					"constructionTime": 129600,
 					"description": ""
 				},
 				"3": {
@@ -2557,13 +2551,13 @@
 						},
 						{
 							"templateId": "5d1b2fa286f77425227d1674",
-							"count": 2,
+							"count": 1,
 							"isFunctional": false,
 							"type": "Item"
 						},
 						{
 							"templateId": "5d1b327086f7742525194449",
-							"count": 4,
+							"count": 2,
 							"isFunctional": false,
 							"type": "Item"
 						}
@@ -2582,7 +2576,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 345600,
+					"constructionTime": 259200,
 					"description": ""
 				}
 			}

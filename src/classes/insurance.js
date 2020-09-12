@@ -239,11 +239,11 @@ function cost(info, sessionID) {
     pmcData.Inventory.items.forEach(i => inventoryItemsHash[i._id] = i);
 
     for (let trader of info.traders) {
-        let items = {};
+        let traderItems = {};
 
         for (let key of info.items) {
             try {
-                items[inventoryItemsHash[key]._tpl] = Math.round(getPremium(pmcData, inventoryItemsHash[key], trader));
+                traderItems[inventoryItemsHash[key]._tpl] = Math.round(getPremium(pmcData, inventoryItemsHash[key], trader));
             } catch (e) {
                 logger.logError("Anomalies in the calculation of insurance prices");
                 logger.logError("InventoryItemId:" + key);
@@ -251,7 +251,7 @@ function cost(info, sessionID) {
             }
         }
 
-        output[trader] = items;
+        output[trader] = traderItems;
     }
 
     return output;

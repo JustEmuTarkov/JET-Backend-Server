@@ -10,7 +10,7 @@
 	"balance_rub": 80000000,
 	"balance_dol": 0,
 	"balance_eur": 0,
-	"display": false,
+	"display": true,
 	"discount": 0,
 	"discount_end": 0,
 	"buyer_up": false,

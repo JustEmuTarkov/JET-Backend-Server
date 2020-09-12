@@ -2507,42 +2507,6 @@
 					"UnlimitedCount": true,
 					"StackObjectsCount": 500000
 				}
-			},
-			{
-				"_id": "I329425582046059919ajo6k",
-				"_tpl": "5e2af55f86f7746d4159f07c",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
-			},
-			{
-				"_id": "I329425585297599598NAXjB",
-				"_tpl": "5d95d6fa86f77424484aa5e9",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
-			},
-			{
-				"_id": "I329425585387504219XTJlA",
-				"_tpl": "5a1eaa87fcdbcb001865f75e",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
-			},
-			{
-				"_id": "I3294255878791308228gSt4",
-				"_tpl": "5e4abfed86f77406a2713cf7",
-				"parentId": "hideout",
-				"slotId": "hideout",
-				"upd": {
-					"UnlimitedCount": true
-				}
 			}
 		],
 		"barter_scheme": {
@@ -4081,62 +4045,6 @@
 						"_tpl": "57347d7224597744596b4e72"
 					}
 				]
-			],
-			"I329425582046059919ajo6k": [
-				[
-					{
-						"count": 5,
-						"_tpl": "5e2af37686f774755a234b65"
-					},
-					{
-						"count": 15,
-						"_tpl": "5e2af2bc86f7746d3f3c33fc"
-					},
-					{
-						"count": 8,
-						"_tpl": "5e2aef7986f7746d3f3c33f5"
-					}
-				]
-			],
-			"I329425585297599598NAXjB": [
-				[
-					{
-						"count": 7,
-						"_tpl": "5e2aee0a86f774755a234b62"
-					},
-					{
-						"count": 10,
-						"_tpl": "5e2aedd986f7746d404f3aa4"
-					},
-					{
-						"count": 5,
-						"_tpl": "5d4042a986f7743185265463"
-					}
-				]
-			],
-			"I329425585387504219XTJlA": [
-				[
-					{
-						"count": 15,
-						"level": 30,
-						"side": "Usec",
-						"_tpl": "59f32c3b86f77472a31742f0"
-					},
-					{
-						"count": 1,
-						"level": 39,
-						"side": "Bear",
-						"_tpl": "59f32c3b86f77472a31742f0"
-					}
-				]
-			],
-			"I3294255878791308228gSt4": [
-				[
-					{
-						"count": 5,
-						"_tpl": "5e2af2bc86f7746d3f3c33fc"
-					}
-				]
 			]
 		},
 		"loyal_level_items": {
@@ -4321,11 +4229,7 @@
 			"5e064f5deb009468d90baed9": 2,
 			"5e064f5deb009468d90baedb": 4,
 			"5e0cac77ee58962bfd3ca3d6": 4,
-			"5e1c51b3bce94974c101c0f6": 2,
-			"I329425582046059919ajo6k": 3,
-			"I329425585297599598NAXjB": 4,
-			"I329425585387504219XTJlA": 4,
-			"I3294255878791308228gSt4": 2
+			"5e1c51b3bce94974c101c0f6": 2
 		}
 	}
 }

@@ -48,21 +48,21 @@ function getOwnerInventoryItems(body, sessionID) {
 function moveItem(pmcData, body, sessionID) {
     let output = item_f.itemServer.getOutput();
 
-    let items = getOwnerInventoryItems(body, sessionID);
-   /*  if (items.isMail) {
-        let idsToMove = dialogue_f.findAndReturnChildren(items.from, body.item);
+    let inventoryItems = getOwnerInventoryItems(body, sessionID);
+   /*  if (inventoryItems.isMail) {
+        let idsToMove = dialogue_f.findAndReturnChildren(inventoryItems.from, body.item);
         for (let itemId of idsToMove) {
-            for (let messageItem of items.from) {
+            for (let messageItem of inventoryItems.from) {
                 if (messageItem._id === itemId) {
-                    items.to.push(messageItem);
+                    inventoryItems.to.push(messageItem);
                 }
             }
         }
-        moveItemInternal(items.to, body);
-    } else */ if (items.sameInventory) {
-        moveItemInternal(items.from, body);
+        moveItemInternal(inventoryItems.to, body);
+    } else */ if (inventoryItems.sameInventory) {
+        moveItemInternal(inventoryItems.from, body);
     } else {
-        moveItemToProfile(items.from, items.to, body);
+        moveItemToProfile(inventoryItems.from, inventoryItems.to, body);
     }
 
     return output;
@@ -194,13 +194,13 @@ function splitItem(pmcData, body, sessionID) {
     let output = item_f.itemServer.getOutput();
     let location = body.container.location;
 
-    let items = getOwnerInventoryItems(body, sessionID);
+    let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
     if (!("location" in body.container) && body.container.container === "cartridges") {
         let tmp_counter = 0;
 
-        for (let item_ammo in items.to) {
-            if (items.to[item_ammo].parentId === body.container.id) {
+        for (let item_ammo in inventoryItems.to) {
+            if (inventoryItems.to[item_ammo].parentId === body.container.id) {
                 tmp_counter++;
             }
         }
@@ -246,36 +246,36 @@ function splitItem(pmcData, body, sessionID) {
 * */
 function mergeItem(pmcData, body, sessionID) {
     let output = item_f.itemServer.getOutput();
-    let items = getOwnerInventoryItems(body, sessionID);
+    let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
-    for (let key in items.to) {
-        if (items.to[key]._id === body.with) {
-            for (let key2 in items.from) {
-                if (items.from[key2]._id && items.from[key2]._id === body.item) {
+    for (let key in inventoryItems.to) {
+        if (inventoryItems.to[key]._id === body.with) {
+            for (let key2 in inventoryItems.from) {
+                if (inventoryItems.from[key2]._id && inventoryItems.from[key2]._id === body.item) {
                     let stackItem0 = 1;
                     let stackItem1 = 1;
                     
-                    if (!(items.to[key].upd && items.to[key].upd.StackObjectsCount)) {
-                        items.to[key].upd = {"StackObjectsCount" : 1};
-                    } else if (!(items.to[key2].upd && items.to[key2].upd.StackObjectsCount)) {
-                        items.from[key2].upd = {"StackObjectsCount" : 1};
+                    if (!(inventoryItems.to[key].upd && inventoryItems.to[key].upd.StackObjectsCount)) {
+                        inventoryItems.to[key].upd = {"StackObjectsCount" : 1};
+                    } else if (!(inventoryItems.to[key2].upd && inventoryItems.to[key2].upd.StackObjectsCount)) {
+                        inventoryItems.from[key2].upd = {"StackObjectsCount" : 1};
                     }
                     
-                    if ("upd" in items.to[key]) {
-                        stackItem0 = items.to[key].upd.StackObjectsCount;
+                    if ("upd" in inventoryItems.to[key]) {
+                        stackItem0 = inventoryItems.to[key].upd.StackObjectsCount;
                     }
 
-                    if ("upd" in items.from[key2]) {
-                        stackItem1 = items.from[key2].upd.StackObjectsCount;
+                    if ("upd" in inventoryItems.from[key2]) {
+                        stackItem1 = inventoryItems.from[key2].upd.StackObjectsCount;
                     }
 
                     if (stackItem0 === 1) {
-                        Object.assign(items.to[key], {"upd": {"StackObjectsCount": 1}});
+                        Object.assign(inventoryItems.to[key], {"upd": {"StackObjectsCount": 1}});
                     }
 
-                    items.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
-                    output.items.del.push({"_id": items.from[key2]._id});
-                    items.from.splice(key2, 1);
+                    inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
+                    output.items.del.push({"_id": inventoryItems.from[key2]._id});
+                    inventoryItems.from.splice(key2, 1);
                     return output;
                 }
             }
@@ -364,19 +364,19 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
     let PlayerStash = itm_hf.getPlayerStash(sessionID);
     let stashY = PlayerStash[1];
     let stashX = PlayerStash[0];
-    let items;
+    let inventoryItems;
 
     if (body.item_id in globals.data.ItemPresets) {
-        items = itm_hf.clone(globals.data.ItemPresets[body.item_id]._items);
-        body.item_id = items[0]._id;
+        inventoryItems = itm_hf.clone(globals.data.ItemPresets[body.item_id]._items);
+        body.item_id = inventoryItems[0]._id;
     } else if (body.tid === "579dc571d53a0658a154fbec") {
         let item = json.parse(json.read(db.assort["579dc571d53a0658a154fbec"].items[body.item_id]))
-        items = [{_id: body.item_id, _tpl: item._tpl}];
+        inventoryItems = [{_id: body.item_id, _tpl: item._tpl}];
     } else {
-        items = trader_f.traderServer.getAssort(sessionID, body.tid).items;
+        inventoryItems = trader_f.traderServer.getAssort(sessionID, body.tid).items;
     }
 
-    for (let item of items) {
+    for (let item of inventoryItems) {
         if (item._id === body.item_id) {
             let MaxStacks = 1;
             let StacksValue = [];
@@ -409,7 +409,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                 pmcData = profile_f.profileServer.getPmcProfile(sessionID);
 
                 let StashFS_2D = itm_hf.recheckInventoryFreeSpace(pmcData, sessionID);
-                let ItemSize = itm_hf.getSize(item._tpl, item._id, items);
+                let ItemSize = itm_hf.getSize(item._tpl, item._id, inventoryItems);
                 let tmpSizeX = ItemSize[0];
                 let tmpSizeY = ItemSize[1];
                 let rotation = false;
@@ -552,16 +552,16 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                                     break;
                                 }
 
-                                for (let tmpKey in items) {
-                                    if (items[tmpKey].parentId && items[tmpKey].parentId === toDo[0][0]) {
+                                for (let tmpKey in inventoryItems) {
+                                    if (inventoryItems[tmpKey].parentId && items[tmpKey].parentId === toDo[0][0]) {
                                         newItem = utility.generateNewItemId();
 
-                                        let SlotID = items[tmpKey].slotId;
+                                        let SlotID = inventoryItems[tmpKey].slotId;
 
                                         if (SlotID === "hideout") {
                                             output.items.new.push({
                                                 "_id": newItem,
-                                                "_tpl": items[tmpKey]._tpl,
+                                                "_tpl": inventoryItems[tmpKey]._tpl,
                                                 "parentId": toDo[0][1],
                                                 "slotId": SlotID,
                                                 "location": {"x": x, "y": y, "r": "Horizontal"},
@@ -570,16 +570,16 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 
                                             pmcData.Inventory.items.push({
                                                 "_id": newItem,
-                                                "_tpl": items[tmpKey]._tpl,
+                                                "_tpl": inventoryItems[tmpKey]._tpl,
                                                 "parentId": toDo[0][1],
-                                                "slotId": items[tmpKey].slotId,
+                                                "slotId": inventoryItems[tmpKey].slotId,
                                                 "location": {"x": x, "y": y, "r": "Horizontal"},
                                                 "upd": upd
                                             });
                                         } else {
                                             output.items.new.push({
                                                 "_id": newItem,
-                                                "_tpl": items[tmpKey]._tpl,
+                                                "_tpl": inventoryItems[tmpKey]._tpl,
                                                 "parentId": toDo[0][1],
                                                 "slotId": SlotID,
                                                 "upd": upd
@@ -587,14 +587,14 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 
                                             pmcData.Inventory.items.push({
                                                 "_id": newItem,
-                                                "_tpl": items[tmpKey]._tpl,
+                                                "_tpl": inventoryItems[tmpKey]._tpl,
                                                 "parentId": toDo[0][1],
-                                                "slotId": items[tmpKey].slotId,
+                                                "slotId": inventoryItems[tmpKey].slotId,
                                                 "upd": upd
                                             });
                                         }
 
-                                        toDo.push([items[tmpKey]._id, newItem]);
+                                        toDo.push([inventoryItems[tmpKey]._id, newItem]);
                                     }
                                 }
 

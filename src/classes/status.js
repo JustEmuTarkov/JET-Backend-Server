@@ -61,7 +61,7 @@ function bindItem(pmcData, body, sessionID) {
 
 function examineItem(pmcData, body, sessionID) {
     let itemID = "";
-    let items = pmcData.Inventory.items;
+    let pmcItems = pmcData.Inventory.items;
 
     // outside player profile
     if ("fromOwner" in body) {
@@ -74,7 +74,7 @@ function examineItem(pmcData, body, sessionID) {
 
         // get trader assort
         if (body.fromOwner.type === "Trader") {
-            items = trader_f.traderServer.getAssort(sessionID, body.fromOwner.id).items;
+            pmcItems = trader_f.traderServer.getAssort(sessionID, body.fromOwner.id).items;
         }
 
         // get hideout item
@@ -89,7 +89,7 @@ function examineItem(pmcData, body, sessionID) {
 
     if (itemID === "") {
         // player/trader inventory
-        for (let item of items) {
+        for (let item of pmcItems) {
             if (item._id === body.item) {
                 itemID = item._tpl;
                 break;
@@ -112,7 +112,10 @@ function examineItem(pmcData, body, sessionID) {
     }
 
     // item found
-    let item = json.parse(json.read(db.items[itemID]));
+	if(typeof items.data[itemID] == "undefined"){
+		logger.logError(`file not found with id: ${itemID}`);
+	}
+    let item = items.data[itemID];
     pmcData.Info.Experience += item._props.ExamineExperience;
     pmcData.Encyclopedia[itemID] = true;
 

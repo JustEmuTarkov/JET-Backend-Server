@@ -84,13 +84,13 @@ class DialogueServer {
 		dialogue.new += 1;
 
 		// Generate item stash if we have rewards.
-		let items = {};
+		let stashItems = {};
 
 		if (rewards.length > 0) {
 			const stashId = utility.generateNewItemId();
 
-			items.stash = stashId;
-			items.data = [];
+			stashItems.stash = stashId;
+			stashItems.data = [];
 
 			rewards = itm_hf.replaceIDs(null, rewards);
 
@@ -99,7 +99,7 @@ class DialogueServer {
 					reward.parentId = stashId;
 					reward.slotId = "main";
 				}
-				items.data.push(reward);
+				stashItems.data.push(reward);
 			}
 
 			dialogue.attachmentsNew += 1;

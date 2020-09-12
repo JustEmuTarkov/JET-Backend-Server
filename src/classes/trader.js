@@ -174,11 +174,11 @@ class TraderServer {
 
             //it's itemPreset
             let rub = 0;
-            let items = JSON.parse(JSON.stringify(globals.data.ItemPresets[traderID]._items));
+            let itemPresets = JSON.parse(JSON.stringify(globals.data.ItemPresets[traderID]._items));
             let ItemRootOldId = globals.data.ItemPresets[traderID]._parent;
 
-            for (let i = 0; i < items.length; i++) {
-                let mod = items[i];
+            for (let i = 0; i < itemPresets.length; i++) {
+                let mod = itemPresets[i];
 
                 //build root Item info
                 if (!("parentId" in mod)) {
@@ -194,10 +194,10 @@ class TraderServer {
                 }
             }
 
-            base.data.items.push.apply(base.data.items, items);
+            base.data.items.push.apply(base.data.items, itemPresets);
 
             //calculate preset price
-            for (let it of items) {
+            for (let it of itemPresets) {
                 rub += itm_hf.getTemplatePrice(it._tpl);
             }
 

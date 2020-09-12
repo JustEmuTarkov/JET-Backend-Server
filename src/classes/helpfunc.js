@@ -558,14 +558,14 @@ function isDogtag(itemId) {
 }
 
 function isNotSellable(itemid) {
-    let items = [
+    let moneyItems = [
         "544901bf4bdc2ddf018b456d", //wad of rubles
         "5449016a4bdc2d6f028b456f", // rubles
         "569668774bdc2da2298b4568", // euros
         "5696686a4bdc2da3298b456a" // dolars
     ];
 
-    for (let tpl of items) {
+    for (let tpl of moneyItems) {
         if (itemid === tpl) {
             return true;
         }

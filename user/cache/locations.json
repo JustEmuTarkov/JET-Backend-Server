@@ -116,7 +116,7 @@
 				"time_min": 0,
 				"time_max": 55,
 				"slots_min": 0,
-				"slots_max": 1,
+				"slots_max": 0,
 				"SpawnPoints": "ZoneTankSquare",
 				"BotSide": "Savage",
 				"BotPreset": "normal",
@@ -272,7 +272,7 @@
 				"time_min": 350,
 				"time_max": 380,
 				"slots_min": 0,
-				"slots_max": 1,
+				"slots_max": 0,
 				"SpawnPoints": "ZoneFactoryCenter",
 				"BotSide": "Savage",
 				"BotPreset": "normal",
@@ -284,7 +284,7 @@
 				"time_min": 400,
 				"time_max": 410,
 				"slots_min": 0,
-				"slots_max": 1,
+				"slots_max": 0,
 				"SpawnPoints": "ZoneFactorySide",
 				"BotSide": "Savage",
 				"BotPreset": "normal",
@@ -296,7 +296,7 @@
 				"time_min": 420,
 				"time_max": 600,
 				"slots_min": 0,
-				"slots_max": 1,
+				"slots_max": 3,
 				"SpawnPoints": "ZoneOldAZS",
 				"BotSide": "Savage",
 				"BotPreset": "normal",
@@ -504,28 +504,14 @@
 				"Id": "5449016a4bdc2d6f028b456f",
 				"Count": 7000,
 				"RequirementTip": "EXFIL_Item"
-			},
-			{
-				"Name": "EXFIL_ZB013",
-				"EntryPoints": "Customs,Boiler Tanks",
-				"Chance": 100,
-				"MinTime": 0,
-				"MaxTime": 0,
-				"PlayersCount": 0,
-				"ExfiltrationTime": 8,
-				"PassageRequirement": "WorldEvent",
-				"ExfiltrationType": "Individual",
-				"Id": "",
-				"Count": 0,
-				"RequirementTip": ""
 			}
 		],
 		"DisabledForScav": false,
 		"BossLocationSpawn": [
 			{
 				"BossName": "bossBully",
-				"BossChance": 38,
-				"BossZone": "ZoneDormitory,ZoneGasStation,ZoneScavBase",
+				"BossChance": 35,
+				"BossZone": "ZoneDormitory,ZoneGasStation",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
 				"BossEscortType": "followerBully",
@@ -542,7 +528,8 @@
 				"Id": "spawns_var1/Start1",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -566,13 +553,14 @@
 				"Id": "spawns_var1/Start1 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -133.3,
-					"y": -1.39999986,
-					"z": -219.52
+					"x": -133.304016,
+					"y": -1.404,
+					"z": -219.522
 				},
 				"Center": {
 					"x": 0,
@@ -587,16 +575,17 @@
 				"Orientation": 0
 			},
 			{
-				"Id": "spawns_var1/Start1 (17)",
+				"Id": "spawns_var1/Start1 (18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -167.92,
-					"y": 0.9,
-					"z": -33.1300049
+					"x": -167.19,
+					"y": 0.8299999,
+					"z": -42.83
 				},
 				"Center": {
 					"x": 0,
@@ -608,13 +597,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 254.75
+				"Orientation": 144.14
 			},
 			{
 				"Id": "spawns_var1/Start1 (19)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -638,7 +628,8 @@
 				"Id": "spawns_var1/Start1 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -662,13 +653,14 @@
 				"Id": "spawns_var1/Start1 (20)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -131.27,
-					"y": -2.09,
-					"z": 42.6900024
+					"x": -131.272,
+					"y": -2.09199977,
+					"z": 42.694
 				},
 				"Center": {
 					"x": 0,
@@ -680,19 +672,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.13
+				"Orientation": 180.129913
 			},
 			{
 				"Id": "spawns_var1/Start1 (21)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -132.9,
-					"y": -1.66999984,
-					"z": 39.8999939
+					"x": -132.902,
+					"y": -1.67200017,
+					"z": 39.90399
 				},
 				"Center": {
 					"x": 0,
@@ -704,19 +697,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.13
+				"Orientation": 180.129913
 			},
 			{
 				"Id": "spawns_var1/Start1 (22)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -130.65,
-					"y": -2.11,
-					"z": 38.9100037
+					"x": -130.652,
+					"y": -2.11199975,
+					"z": 38.914
 				},
 				"Center": {
 					"x": 0,
@@ -728,19 +722,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.13
+				"Orientation": 180.129913
 			},
 			{
 				"Id": "spawns_var1/Start1 (23)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -132.87,
-					"y": -1.81000018,
-					"z": 43.9799957
+					"x": -132.872,
+					"y": -1.812,
+					"z": 43.9839935
 				},
 				"Center": {
 					"x": 0,
@@ -752,19 +747,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.13
+				"Orientation": 180.129913
 			},
 			{
 				"Id": "spawns_var1/Start1 (24)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -134.19,
-					"y": -1.37000012,
-					"z": 38.11
+					"x": -134.191986,
+					"y": -1.372,
+					"z": 38.114
 				},
 				"Center": {
 					"x": 0,
@@ -776,13 +772,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.13
+				"Orientation": 180.129913
 			},
 			{
 				"Id": "spawns_var1/Start1 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -806,7 +803,8 @@
 				"Id": "spawns_var1/Start1 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -827,16 +825,17 @@
 				"Orientation": 317.019958
 			},
 			{
-				"Id": "spawns_var1/Start1 (18)",
+				"Id": "spawns_var1/Start1 (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -167.19,
-					"y": 0.8299999,
-					"z": -42.83
+					"x": -135.894012,
+					"y": -0.884000063,
+					"z": -219.522
 				},
 				"Center": {
 					"x": 0,
@@ -848,19 +847,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 144.14
+				"Orientation": 0
 			},
 			{
 				"Id": "spawns_var1/Start1 (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -214.71,
+					"x": -214.71199,
 					"y": 1.33,
-					"z": -208.97
+					"z": -208.966
 				},
 				"Center": {
 					"x": 0,
@@ -872,19 +872,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 183.77
+				"Orientation": 183.767075
 			},
 			{
 				"Id": "spawns_var1/Start1 (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -220.97,
-					"y": 1.32,
-					"z": -205.79
+					"x": -220.972,
+					"y": 1.31800008,
+					"z": -205.786
 				},
 				"Center": {
 					"x": 0,
@@ -902,13 +903,14 @@
 				"Id": "spawns_var1/Start1 (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -219.69,
-					"y": 1.27,
-					"z": -206.93
+					"x": -219.692,
+					"y": 1.266,
+					"z": -206.926
 				},
 				"Center": {
 					"x": 0,
@@ -920,19 +922,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 208.99
+				"Orientation": 208.985443
 			},
 			{
 				"Id": "spawns_var1/Start1 (8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -138.83,
-					"y": -0.0499999523,
-					"z": -217.45
+					"x": -138.832,
+					"y": -0.0520000458,
+					"z": -217.446
 				},
 				"Center": {
 					"x": 0,
@@ -950,13 +953,14 @@
 				"Id": "spawns_var1/Start1 (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -134.64,
-					"y": -1.35000014,
-					"z": -217
+					"x": -134.642,
+					"y": -1.35399985,
+					"z": -217.003
 				},
 				"Center": {
 					"x": 0,
@@ -974,13 +978,14 @@
 				"Id": "spawns_var1/Start2",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -275.07,
+					"x": -275.068,
 					"y": 0.89,
-					"z": -134.31
+					"z": -134.311
 				},
 				"Center": {
 					"x": 0,
@@ -998,7 +1003,8 @@
 				"Id": "spawns_var1/Start2 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1022,7 +1028,8 @@
 				"Id": "spawns_var1/Start2 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1046,7 +1053,8 @@
 				"Id": "spawns_var1/Start2 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1070,7 +1078,8 @@
 				"Id": "spawns_var1/Start2 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1091,16 +1100,17 @@
 				"Orientation": 137.37
 			},
 			{
-				"Id": "spawns_var1/Start1 (10)",
+				"Id": "spawns_var1/Start1 (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -135.89,
-					"y": -0.8799999,
-					"z": -219.52
+					"x": -132.202,
+					"y": -1.97199988,
+					"z": -216.776
 				},
 				"Center": {
 					"x": 0,
@@ -1118,7 +1128,8 @@
 				"Id": "spawns_var1/Start3",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1142,7 +1153,8 @@
 				"Id": "spawns_var1/Start3 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1166,7 +1178,8 @@
 				"Id": "spawns_var1/Start3 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1190,7 +1203,8 @@
 				"Id": "spawns_var1/Start3 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1214,7 +1228,8 @@
 				"Id": "spawns_var1/Start3 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1238,7 +1253,8 @@
 				"Id": "spawns_var1/Start4",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1262,7 +1278,8 @@
 				"Id": "spawns_var1/Start4 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1286,7 +1303,8 @@
 				"Id": "spawns_var1/Start4 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1310,7 +1328,8 @@
 				"Id": "spawns_var1/Start4 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1334,7 +1353,8 @@
 				"Id": "spawns_var1/Start4 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1355,16 +1375,17 @@
 				"Orientation": 28.48
 			},
 			{
-				"Id": "spawns_var1/Start1 (11)",
+				"Id": "spawns_var1/Start1 (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -132.2,
-					"y": -1.97,
-					"z": -216.78
+					"x": -150.99,
+					"y": 1.36,
+					"z": -129.79
 				},
 				"Center": {
 					"x": 0,
@@ -1376,13 +1397,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 0
+				"Orientation": 135.46
 			},
 			{
 				"Id": "spawns_var1/Start5",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1406,7 +1428,8 @@
 				"Id": "spawns_var1/Start5 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1430,7 +1453,8 @@
 				"Id": "spawns_var1/Start5 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1454,7 +1478,8 @@
 				"Id": "spawns_var1/Start5 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1478,7 +1503,8 @@
 				"Id": "spawns_var1/Start5 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1502,7 +1528,8 @@
 				"Id": "spawns_var1/Start6",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1526,7 +1553,8 @@
 				"Id": "spawns_var1/Start6 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1550,7 +1578,8 @@
 				"Id": "spawns_var1/Start6 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1574,7 +1603,8 @@
 				"Id": "spawns_var1/Start6 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1598,7 +1628,8 @@
 				"Id": "spawns_var1/Start6 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
@@ -1619,16 +1650,17 @@
 				"Orientation": 326.75
 			},
 			{
-				"Id": "spawns_var1/Start1 (12)",
+				"Id": "spawns_var1/Start1 (13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -150.99,
-					"y": 1.36,
-					"z": -129.79
+					"x": -150.88,
+					"y": 1.37,
+					"z": -127.06
 				},
 				"Center": {
 					"x": 0,
@@ -1640,19 +1672,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 135.46
+				"Orientation": 33.67
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 388.419983,
-					"y": 1.12,
-					"z": -114.33
+					"x": 388.424,
+					"y": 1.118,
+					"z": -114.334
 				},
 				"Center": {
 					"x": 0,
@@ -1664,19 +1697,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.09
+				"Orientation": 180.087662
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 378.99,
-					"y": 1.22,
-					"z": -116.8
+					"x": 378.987976,
+					"y": 1.223,
+					"z": -116.796005
 				},
 				"Center": {
 					"x": 0,
@@ -1688,13 +1722,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 196.37
+				"Orientation": 196.371582
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1718,7 +1753,8 @@
 				"Id": "spawns_var2/BoilerStart1 (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1742,7 +1778,8 @@
 				"Id": "spawns_var2/BoilerStart1 (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1766,7 +1803,8 @@
 				"Id": "spawns_var2/BoilerStart1 (13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1790,7 +1828,8 @@
 				"Id": "spawns_var2/BoilerStart1 (14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1814,7 +1853,8 @@
 				"Id": "spawns_var2/BoilerStart1 (15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1838,7 +1878,8 @@
 				"Id": "spawns_var2/BoilerStart1 (16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1862,7 +1903,8 @@
 				"Id": "spawns_var2/BoilerStart1 (17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1883,16 +1925,17 @@
 				"Orientation": 0
 			},
 			{
-				"Id": "spawns_var1/Start1 (13)",
+				"Id": "spawns_var1/Start1 (14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
 					"x": -150.88,
-					"y": 1.37,
-					"z": -127.06
+					"y": 1.3,
+					"z": -120.2
 				},
 				"Center": {
 					"x": 0,
@@ -1904,13 +1947,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 33.67
+				"Orientation": 21.67
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1934,7 +1978,8 @@
 				"Id": "spawns_var2/BoilerStart1 (19)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -1958,13 +2003,14 @@
 				"Id": "spawns_var2/BoilerStart1 (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 385.709961,
-					"y": 1.12,
-					"z": -116.17
+					"x": 385.708,
+					"y": 1.118,
+					"z": -116.166
 				},
 				"Center": {
 					"x": 0,
@@ -1976,13 +2022,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 188.39
+				"Orientation": 188.386124
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (20)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2006,7 +2053,8 @@
 				"Id": "spawns_var2/BoilerStart1 (21)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2030,7 +2078,8 @@
 				"Id": "spawns_var2/BoilerStart1 (22)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2054,7 +2103,8 @@
 				"Id": "spawns_var2/BoilerStart1 (23)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2078,7 +2128,8 @@
 				"Id": "spawns_var2/BoilerStart1 (24)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2102,13 +2153,14 @@
 				"Id": "spawns_var2/BoilerStart1 (25)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 647.48,
-					"y": 1.88,
-					"z": 48.3699951
+					"x": 647.477966,
+					"y": 1.878,
+					"z": 48.3739929
 				},
 				"Center": {
 					"x": 0,
@@ -2120,19 +2172,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 297.33
+				"Orientation": 297.329742
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (26)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 641.47,
-					"y": 1.27,
-					"z": 43.53
+					"x": 641.468,
+					"y": 1.268,
+					"z": 43.5339966
 				},
 				"Center": {
 					"x": 0,
@@ -2144,19 +2197,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 324.43
+				"Orientation": 324.432922
 			},
 			{
-				"Id": "spawns_var1/Start1 (14)",
+				"Id": "spawns_var1/Start1 (15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
 					"x": -150.88,
-					"y": 1.3,
-					"z": -120.2
+					"y": 1.28,
+					"z": -117.22
 				},
 				"Center": {
 					"x": 0,
@@ -2168,19 +2222,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 21.67
+				"Orientation": 0
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 648.75,
-					"y": 1.81,
-					"z": 50.1600037
+					"x": 648.748,
+					"y": 1.80800009,
+					"z": 50.164
 				},
 				"Center": {
 					"x": 0,
@@ -2192,19 +2247,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 319.88
+				"Orientation": 319.877075
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 645.31,
-					"y": 1.5,
-					"z": 46.22
+					"x": 645.308,
+					"y": 1.498,
+					"z": 46.224
 				},
 				"Center": {
 					"x": 0,
@@ -2216,19 +2272,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 293.47
+				"Orientation": 293.4674
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 642.1,
-					"y": 1.43,
-					"z": 45.54001
+					"x": 642.097961,
+					"y": 1.428,
+					"z": 45.54399
 				},
 				"Center": {
 					"x": 0,
@@ -2240,19 +2297,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 319.46
+				"Orientation": 319.4591
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
 					"x": 394.919983,
-					"y": 2.18,
-					"z": -120.68
+					"y": 2.185,
+					"z": -120.681
 				},
 				"Center": {
 					"x": 0,
@@ -2264,13 +2322,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 179.19
+				"Orientation": 179.191559
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2294,7 +2353,8 @@
 				"Id": "spawns_var2/BoilerStart1 (31)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2318,7 +2378,8 @@
 				"Id": "spawns_var2/BoilerStart1 (32)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2342,7 +2403,8 @@
 				"Id": "spawns_var2/BoilerStart1 (33)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2366,7 +2428,8 @@
 				"Id": "spawns_var2/BoilerStart1 (34)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2390,7 +2453,8 @@
 				"Id": "spawns_var2/BoilerStart1 (35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2411,16 +2475,17 @@
 				"Orientation": 0
 			},
 			{
-				"Id": "spawns_var1/Start1 (15)",
+				"Id": "spawns_var1/Start1 (16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -150.88,
-					"y": 1.28,
-					"z": -117.22
+					"x": -160.87,
+					"y": 0.89,
+					"z": -36.1199951
 				},
 				"Center": {
 					"x": 0,
@@ -2432,13 +2497,14 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 0
+				"Orientation": 149.69
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2462,7 +2528,8 @@
 				"Id": "spawns_var2/BoilerStart1 (37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2486,7 +2553,8 @@
 				"Id": "spawns_var2/BoilerStart1 (38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2510,7 +2578,8 @@
 				"Id": "spawns_var2/BoilerStart1 (39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
@@ -2534,13 +2603,14 @@
 				"Id": "spawns_var2/BoilerStart1 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 391.589966,
-					"y": 1.32,
-					"z": -117.73
+					"x": 391.588,
+					"y": 1.31800008,
+					"z": -117.726006
 				},
 				"Center": {
 					"x": 0,
@@ -2552,19 +2622,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 177.74
+				"Orientation": 177.737656
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 571.59,
-					"y": 11.37,
-					"z": 145.269989
+					"x": 571.588,
+					"y": 11.368,
+					"z": 145.273987
 				},
 				"Center": {
 					"x": 0,
@@ -2576,19 +2647,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 216.79
+				"Orientation": 216.786987
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 582.31,
-					"y": 9.79,
-					"z": 147.5
+					"x": 582.308,
+					"y": 9.788,
+					"z": 147.504
 				},
 				"Center": {
 					"x": 0,
@@ -2600,19 +2672,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 216.79
+				"Orientation": 216.786987
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 585.74,
-					"y": 9.53,
-					"z": 145.81
+					"x": 585.738,
+					"y": 9.528,
+					"z": 145.814
 				},
 				"Center": {
 					"x": 0,
@@ -2624,19 +2697,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 216.79
+				"Orientation": 216.786987
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 584.06,
-					"y": 9.66,
-					"z": 146.22
+					"x": 584.058,
+					"y": 9.658,
+					"z": 146.224
 				},
 				"Center": {
 					"x": 0,
@@ -2648,19 +2722,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 230.030014
+				"Orientation": 230.03067
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 587.85,
-					"y": 8.89,
-					"z": 141.949982
+					"x": 587.847961,
+					"y": 8.88800049,
+					"z": 141.95401
 				},
 				"Center": {
 					"x": 0,
@@ -2672,19 +2747,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 216.79
+				"Orientation": 216.786987
 			},
 			{
-				"Id": "spawns_var1/Start1 (16)",
+				"Id": "spawns_var1/Start1 (17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Customs",
 				"Position": {
-					"x": -160.87,
-					"y": 0.89,
-					"z": -36.1199951
+					"x": -167.92,
+					"y": 0.9,
+					"z": -33.1300049
 				},
 				"Center": {
 					"x": 0,
@@ -2696,19 +2772,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 149.69
+				"Orientation": 254.75
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 531.88,
-					"y": 9.52,
-					"z": 195.790009
+					"x": 531.878,
+					"y": 9.518,
+					"z": 195.794
 				},
 				"Center": {
 					"x": 0,
@@ -2720,19 +2797,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 225.49
+				"Orientation": 225.485962
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 518.3,
-					"y": 8.35,
-					"z": 187.459991
+					"x": 518.298,
+					"y": 8.348,
+					"z": 187.463989
 				},
 				"Center": {
 					"x": 0,
@@ -2744,19 +2822,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 225.49
+				"Orientation": 225.485962
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 522.43,
-					"y": 10.14,
-					"z": 179.68
+					"x": 522.428,
+					"y": 10.1380005,
+					"z": 179.68399
 				},
 				"Center": {
 					"x": 0,
@@ -2768,19 +2847,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 225.49
+				"Orientation": 225.485962
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 519.84,
-					"y": 7.7699995,
-					"z": 204.15
+					"x": 519.838,
+					"y": 7.76799965,
+					"z": 204.153992
 				},
 				"Center": {
 					"x": 0,
@@ -2792,19 +2872,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 225.49
+				"Orientation": 225.485962
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 525.62,
-					"y": 8.88,
-					"z": 199
+					"x": 525.618,
+					"y": 8.878,
+					"z": 199.004
 				},
 				"Center": {
 					"x": 0,
@@ -2816,19 +2897,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 225.49
+				"Orientation": 225.485962
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (55)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 413.56,
-					"y": 12.33,
-					"z": 205.81
+					"x": 413.557983,
+					"y": 12.328,
+					"z": 205.814
 				},
 				"Center": {
 					"x": 0,
@@ -2840,19 +2922,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 220.28
+				"Orientation": 220.28244
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (56)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 410.31,
-					"y": 12.63,
-					"z": 207.009979
+					"x": 410.307983,
+					"y": 12.628,
+					"z": 207.014
 				},
 				"Center": {
 					"x": 0,
@@ -2864,19 +2947,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 180.91
+				"Orientation": 180.912918
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (57)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 401.209961,
-					"y": 13.79,
-					"z": 201.59
+					"x": 401.208,
+					"y": 13.788,
+					"z": 201.594
 				},
 				"Center": {
 					"x": 0,
@@ -2888,19 +2972,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 171.7
+				"Orientation": 171.70134
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (58)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 402.32,
-					"y": 13.55,
-					"z": 205.06
+					"x": 402.318,
+					"y": 13.5479994,
+					"z": 205.064
 				},
 				"Center": {
 					"x": 0,
@@ -2912,19 +2997,20 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 177.79
+				"Orientation": 177.788055
 			},
 			{
 				"Id": "spawns_var2/BoilerStart1 (59)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Boiler Tanks",
 				"Position": {
-					"x": 406.8,
-					"y": 13.11,
-					"z": 207.269989
+					"x": 406.797974,
+					"y": 13.108,
+					"z": 207.273987
 				},
 				"Center": {
 					"x": 0,
@@ -2936,7 +3022,7 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 171.58
+				"Orientation": 171.576355
 			}
 		],
 		"Banners": [
@@ -3204,7 +3290,258 @@
 		"Id": "develop",
 		"_Id": "56db0b3bd2720bb0678b4567",
 		"Loot": [],
-		"SpawnAreas": [],
+		"SpawnAreas": [
+			{
+				"Id": "Loot points container/Bear house",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Houseb",
+				"Position": {
+					"x": 19.71525,
+					"y": 0.06,
+					"z": 5.147022
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 269.253418
+			},
+			{
+				"Id": "Loot points container/Bear house (1)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Houseb",
+				"Position": {
+					"x": 19.21,
+					"y": 0.06,
+					"z": 0.17
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 269.253418
+			},
+			{
+				"Id": "Loot points container/Bear house (2)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Houseb",
+				"Position": {
+					"x": 18.1246223,
+					"y": 0.06,
+					"z": -6.334662
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 269.253418
+			},
+			{
+				"Id": "Loot points container/Bear house (3)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Houseb",
+				"Position": {
+					"x": 12.4746475,
+					"y": 0.06,
+					"z": -4.83811426
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 269.253418
+			},
+			{
+				"Id": "Loot points container/Bear house (4)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Houseb",
+				"Position": {
+					"x": 12.99412,
+					"y": 0.06,
+					"z": 1.34917974
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 269.253418
+			},
+			{
+				"Id": "Loot points container/Bear house (5)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "House",
+				"Position": {
+					"x": -23.7852821,
+					"y": 0.1,
+					"z": -2.346259
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 87.10709
+			},
+			{
+				"Id": "Loot points container/Bear house (6)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "House",
+				"Position": {
+					"x": -23.4979134,
+					"y": 0.1,
+					"z": 3.85609531
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 87.10709
+			},
+			{
+				"Id": "Loot points container/Bear house (7)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "House",
+				"Position": {
+					"x": -29.2,
+					"y": 0.1,
+					"z": 5.14
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 87.10709
+			},
+			{
+				"Id": "Loot points container/Bear house (8)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "House",
+				"Position": {
+					"x": -30.0410347,
+					"y": 0.1,
+					"z": -1.40074444
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 87.10709
+			},
+			{
+				"Id": "Loot points container/Bear house (9)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "House",
+				"Position": {
+					"x": -30.35944,
+					"y": 0.1,
+					"z": -6.393199
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 87.10709
+			}
+		],
 		"Banners": [
 			{
 				"id": "5805f617245977100b2c1f41",
@@ -3245,7 +3582,7 @@
 		"RequiredPlayerLevel": 0,
 		"surv_gather_minutes": 1,
 		"MinPlayers": 4,
-		"MaxPlayers": 5,
+		"MaxPlayers": 6,
 		"sav_gather_minutes": 1,
 		"exit_count": 3,
 		"exit_access_time": 60,
@@ -3369,7 +3706,7 @@
 		"MaxBotPerZone": 4,
 		"OpenZones": "BotZone",
 		"OcculsionCullingEnabled": true,
-		"GlobalLootChanceModifier": 0.6,
+		"GlobalLootChanceModifier": 1,
 		"OldSpawn": true,
 		"NewSpawn": false,
 		"BotMax": 0,
@@ -4833,606 +5170,6 @@
 		"Loot": [],
 		"SpawnAreas": [
 			{
-				"Id": "SPAWNS/ScavPMCspawn (6)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -17.21,
-					"y": -2.62,
-					"z": 38.282
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 160.78
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (7)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -18.579,
-					"y": -2.62,
-					"z": 38.04
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 160.78
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (14)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -30.978,
-					"y": 0.21,
-					"z": 6.713
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 54.99
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (15)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -31.67,
-					"y": 0.21,
-					"z": 8.2
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 54.99
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (16)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 68.564,
-					"y": 0.245,
-					"z": -61.448
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 56.43
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (17)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 69.275,
-					"y": 0.245,
-					"z": -62.56
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 56.43
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (18)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 67.872,
-					"y": 0.245,
-					"z": -60.357
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 56.43
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (19)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 70.465,
-					"y": 0.211,
-					"z": -61.785
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 56.43
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (20)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 69.644,
-					"y": 0.211,
-					"z": -60.426
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 56.43
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (21)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 21.389,
-					"y": -2.61,
-					"z": -1.214
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (22)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 19.87,
-					"y": -2.61,
-					"z": -1.3
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (23)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 22.331,
-					"y": -2.61,
-					"z": 0.232
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (8)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -20.215,
-					"y": -2.62,
-					"z": 38.789
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 160.78
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (24)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 18.411,
-					"y": -2.61,
-					"z": -1.321
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (25)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 17.043,
-					"y": -2.61,
-					"z": -2.117
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 183.2318
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (26)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -24.534,
-					"y": 1.07,
-					"z": 66.641
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 263.74
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (27)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -23.044,
-					"y": 1.07,
-					"z": 65.688
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 263.74
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (28)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -20.958,
-					"y": 1.07,
-					"z": 65.523
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 93.9956055
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (29)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -19.789,
-					"y": 1.07,
-					"z": 66.592
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 93.9956055
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (3)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 60.445,
-					"y": 0.073,
-					"z": 19.302
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 53.4900055
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (30)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -25.718,
-					"y": 1.07,
-					"z": 65.627
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 263.74
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (31)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -52.617,
-					"y": 1.353,
-					"z": 55.629
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 118.999352
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (32)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -52.297,
-					"y": 1.353,
-					"z": 57.053
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 118.999352
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (9)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -21.614,
-					"y": -2.62,
-					"z": 37.611
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 160.78
-			},
-			{
 				"Id": "SPAWNS/ScavPMCspawn (33)",
 				"Sides": [
 					"Usec",
@@ -5481,231 +5218,6 @@
 					"z": 0
 				},
 				"Orientation": 118.999352
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (35)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": -49.516,
-					"y": 1.353,
-					"z": 55.556
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 118.999352
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (36)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 44.96,
-					"y": 0.16,
-					"z": -37.574
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (37)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 46.163,
-					"y": 0.16,
-					"z": -37.009
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (38)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 43.604,
-					"y": 0.16,
-					"z": -36.675
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (39)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 43.591,
-					"y": 0.16,
-					"z": -38.865
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (4)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 59.594,
-					"y": 0.103,
-					"z": 22.151
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 53.4900055
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (40)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 46.118,
-					"y": 0.16,
-					"z": -39.159
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 0
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn (41)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 69.838,
-					"y": 0.194,
-					"z": -6.105
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 5.864973
-			},
-			{
-				"Id": "SPAWNS/ScavPMCspawn(2)",
-				"Sides": [
-					"Usec",
-					"Bear",
-					"Savage"
-				],
-				"InfiltrationZone": "Factory",
-				"Position": {
-					"x": 58.6,
-					"y": 0.101,
-					"z": 19.7
-				},
-				"Center": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Size": {
-					"x": 0,
-					"y": 0,
-					"z": 0
-				},
-				"Orientation": 53.4900055
 			},
 			{
 				"Id": "SPAWNS/ScavPMCspawn (42)",
@@ -5833,6 +5345,156 @@
 				"Orientation": 53.4900055
 			},
 			{
+				"Id": "SPAWNS/ScavPMCspawn (6)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -17.21,
+					"y": -2.62,
+					"z": 38.282
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 160.78
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (7)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -18.579,
+					"y": -2.62,
+					"z": 38.04
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 160.78
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (8)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -20.215,
+					"y": -2.62,
+					"z": 38.789
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 160.78
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (9)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -21.614,
+					"y": -2.62,
+					"z": 37.611
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 160.78
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn(2)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 58.6,
+					"y": 0.101,
+					"z": 19.7
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 53.4900055
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (35)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -49.516,
+					"y": 1.353,
+					"z": 55.556
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 118.999352
+			},
+			{
 				"Id": "SPAWNS/ScavPMCspawn (1)",
 				"Sides": [
 					"Usec",
@@ -5956,6 +5618,681 @@
 					"z": 0
 				},
 				"Orientation": 54.99
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (14)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -30.978,
+					"y": 0.21,
+					"z": 6.713
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 54.99
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (15)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -31.67,
+					"y": 0.21,
+					"z": 8.2
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 54.99
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (16)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 68.564,
+					"y": 0.245,
+					"z": -61.448
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 56.43
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (17)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 69.275,
+					"y": 0.245,
+					"z": -62.56
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 56.43
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (18)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 67.872,
+					"y": 0.245,
+					"z": -60.357
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 56.43
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (36)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 44.96,
+					"y": 0.16,
+					"z": -37.574
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (19)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 70.465,
+					"y": 0.211,
+					"z": -61.785
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 56.43
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (20)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 69.644,
+					"y": 0.211,
+					"z": -60.426
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 56.43
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (21)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 21.389,
+					"y": -2.61,
+					"z": -1.214
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (22)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 19.87,
+					"y": -2.61,
+					"z": -1.3
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (23)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 22.331,
+					"y": -2.61,
+					"z": 0.232
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (24)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 18.411,
+					"y": -2.61,
+					"z": -1.321
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (25)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 17.043,
+					"y": -2.61,
+					"z": -2.117
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 183.2318
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (26)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -24.534,
+					"y": 1.07,
+					"z": 66.641
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 263.74
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (27)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -23.044,
+					"y": 1.07,
+					"z": 65.688
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 263.74
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (28)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -20.958,
+					"y": 1.07,
+					"z": 65.523
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 93.9956055
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (37)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 46.163,
+					"y": 0.16,
+					"z": -37.009
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (29)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -19.789,
+					"y": 1.07,
+					"z": 66.592
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 93.9956055
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (3)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 60.445,
+					"y": 0.073,
+					"z": 19.302
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 53.4900055
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (30)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -25.718,
+					"y": 1.07,
+					"z": 65.627
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 263.74
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (31)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -52.617,
+					"y": 1.353,
+					"z": 55.629
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 118.999352
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (32)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": -52.297,
+					"y": 1.353,
+					"z": 57.053
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 118.999352
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (38)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 43.604,
+					"y": 0.16,
+					"z": -36.675
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (39)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 43.591,
+					"y": 0.16,
+					"z": -38.865
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (4)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 59.594,
+					"y": 0.103,
+					"z": 22.151
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 53.4900055
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (40)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 46.118,
+					"y": 0.16,
+					"z": -39.159
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 0
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (41)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Factory",
+				"Position": {
+					"x": 69.838,
+					"y": 0.194,
+					"z": -6.105
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 5.864973
 			}
 		],
 		"Banners": [
@@ -6093,7 +6430,33 @@
 		"Id": "hideout",
 		"_Id": "599319c986f7740dca3070a6",
 		"Loot": [],
-		"SpawnAreas": [],
+		"SpawnAreas": [
+			{
+				"Id": "Loot points container/PlayerSpawnPoints",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "",
+				"Position": {
+					"x": -5.115,
+					"y": -0.575000048,
+					"z": -6.0510006
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 45.0000038
+			}
+		],
 		"Banners": [
 			{
 				"id": "5805f617245977100b2c1f41",
@@ -6455,7 +6818,7 @@
 		"MaxBotPerZone": 2,
 		"OpenZones": "ZoneIDEA,ZoneRoad,ZoneCenter,ZoneCenterBot,ZoneOLI,ZoneOLIPark,ZoneGoshan,ZonePowerStation,ZoneTrucks,ZoneIDEAPark",
 		"OcculsionCullingEnabled": true,
-		"GlobalLootChanceModifier": 0.5,
+		"GlobalLootChanceModifier": 0.6,
 		"OldSpawn": false,
 		"NewSpawn": true,
 		"BotMax": 10,
@@ -6598,7 +6961,8 @@
 				"Id": "NW_SPAWNS/2_1(1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -6622,7 +6986,8 @@
 				"Id": "NW_SPAWNS/2_1(2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -6646,7 +7011,8 @@
 				"Id": "NW_SPAWNS/2_11(51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -6670,7 +7036,8 @@
 				"Id": "SE_SPAWNS/1_3(11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6694,7 +7061,8 @@
 				"Id": "SE_SPAWNS/1_3(12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6718,7 +7086,8 @@
 				"Id": "SE_SPAWNS/1_3(13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6742,7 +7111,8 @@
 				"Id": "SE_SPAWNS/1_3(14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6766,7 +7136,8 @@
 				"Id": "SE_SPAWNS/1_3(15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6790,7 +7161,8 @@
 				"Id": "SE_SPAWNS/1_6(27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6814,7 +7186,8 @@
 				"Id": "SE_SPAWNS/1_6(28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6838,7 +7211,8 @@
 				"Id": "SE_SPAWNS/1_6(29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6862,7 +7236,8 @@
 				"Id": "SE_SPAWNS/1_6(30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6886,7 +7261,8 @@
 				"Id": "SE_SPAWNS/1_6(31)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6910,7 +7286,8 @@
 				"Id": "NW_SPAWNS/2_11(52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -6934,7 +7311,8 @@
 				"Id": "SE_SPAWNS/1_7(32)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6958,7 +7336,8 @@
 				"Id": "SE_SPAWNS/1_7(33)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -6982,7 +7361,8 @@
 				"Id": "SE_SPAWNS/1_7(34)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7006,7 +7386,8 @@
 				"Id": "SE_SPAWNS/1_7(35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7030,7 +7411,8 @@
 				"Id": "SE_SPAWNS/1_7(36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7054,7 +7436,8 @@
 				"Id": "SE_SPAWNS/1_8(37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7078,7 +7461,8 @@
 				"Id": "SE_SPAWNS/1_8(38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7102,7 +7486,8 @@
 				"Id": "SE_SPAWNS/1_8(39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7126,7 +7511,8 @@
 				"Id": "SE_SPAWNS/1_8(40)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7150,7 +7536,8 @@
 				"Id": "SE_SPAWNS/1_8(41)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7174,7 +7561,8 @@
 				"Id": "NW_SPAWNS/2_11(53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7198,7 +7586,8 @@
 				"Id": "SE_SPAWNS/1_9(42)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7222,7 +7611,8 @@
 				"Id": "SE_SPAWNS/1_9(43)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7246,7 +7636,8 @@
 				"Id": "SE_SPAWNS/1_9(44)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7270,7 +7661,8 @@
 				"Id": "SE_SPAWNS/1_9(45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7294,7 +7686,8 @@
 				"Id": "SE_SPAWNS/1_9(46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -7318,7 +7711,8 @@
 				"Id": "NW_SPAWNS/2_11(54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7342,7 +7736,8 @@
 				"Id": "NW_SPAWNS/2_11(55)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7366,7 +7761,8 @@
 				"Id": "NW_SPAWNS/2_13 (61)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7390,7 +7786,8 @@
 				"Id": "NW_SPAWNS/2_13 (62)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7414,7 +7811,8 @@
 				"Id": "NW_SPAWNS/2_13 (63)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7438,7 +7836,8 @@
 				"Id": "NW_SPAWNS/2_13 (64)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7462,7 +7861,8 @@
 				"Id": "NW_SPAWNS/2_13 (65)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7486,7 +7886,8 @@
 				"Id": "NW_SPAWNS/2_1(3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7510,7 +7911,8 @@
 				"Id": "NW_SPAWNS/2_14 (66)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7534,7 +7936,8 @@
 				"Id": "NW_SPAWNS/2_14 (67)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7558,7 +7961,8 @@
 				"Id": "NW_SPAWNS/2_14 (68)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7582,7 +7986,8 @@
 				"Id": "NW_SPAWNS/2_14 (69)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7606,7 +8011,8 @@
 				"Id": "NW_SPAWNS/2_14 (70)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7630,7 +8036,8 @@
 				"Id": "NW_SPAWNS/2_15 (71)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7654,7 +8061,8 @@
 				"Id": "NW_SPAWNS/2_15 (72)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7678,7 +8086,8 @@
 				"Id": "NW_SPAWNS/2_15 (73)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7702,7 +8111,8 @@
 				"Id": "NW_SPAWNS/2_15 (74)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7726,7 +8136,8 @@
 				"Id": "NW_SPAWNS/2_15 (75)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7750,7 +8161,8 @@
 				"Id": "NW_SPAWNS/2_1(4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7774,7 +8186,8 @@
 				"Id": "NW_SPAWNS/2_16 (76)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7798,7 +8211,8 @@
 				"Id": "NW_SPAWNS/2_16 (77)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7822,7 +8236,8 @@
 				"Id": "NW_SPAWNS/2_16 (78)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7846,7 +8261,8 @@
 				"Id": "NW_SPAWNS/2_16 (79)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7870,7 +8286,8 @@
 				"Id": "NW_SPAWNS/2_16 (80)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7894,7 +8311,8 @@
 				"Id": "NW_SPAWNS/2_2(10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7918,7 +8336,8 @@
 				"Id": "NW_SPAWNS/2_2(6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7942,7 +8361,8 @@
 				"Id": "NW_SPAWNS/2_2(7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7966,7 +8386,8 @@
 				"Id": "NW_SPAWNS/2_2(8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -7990,7 +8411,8 @@
 				"Id": "NW_SPAWNS/2_2(9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8014,7 +8436,8 @@
 				"Id": "NW_SPAWNS/2_1(5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8038,7 +8461,8 @@
 				"Id": "NW_SPAWNS/2_4(16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8062,7 +8486,8 @@
 				"Id": "NW_SPAWNS/2_4(17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8086,7 +8511,8 @@
 				"Id": "NW_SPAWNS/2_4(18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8110,7 +8536,8 @@
 				"Id": "NW_SPAWNS/2_4(19)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8134,7 +8561,8 @@
 				"Id": "NW_SPAWNS/2_4(20)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8158,7 +8586,8 @@
 				"Id": "NW_SPAWNS/2_6(26)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8182,7 +8611,8 @@
 				"Id": "NW_SPAWNS/2_6(27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8206,7 +8636,8 @@
 				"Id": "NW_SPAWNS/2_6(28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8230,7 +8661,8 @@
 				"Id": "NW_SPAWNS/2_6(29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8254,7 +8686,8 @@
 				"Id": "NW_SPAWNS/2_6(30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8278,7 +8711,8 @@
 				"Id": "NW_SPAWNS/2_10(46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8302,7 +8736,8 @@
 				"Id": "NW_SPAWNS/2_7(31)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8326,7 +8761,8 @@
 				"Id": "NW_SPAWNS/2_7(32)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8350,7 +8786,8 @@
 				"Id": "NW_SPAWNS/2_7(33)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8374,7 +8811,8 @@
 				"Id": "NW_SPAWNS/2_7(34)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8398,7 +8836,8 @@
 				"Id": "NW_SPAWNS/2_7(35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8422,7 +8861,8 @@
 				"Id": "NW_SPAWNS/2_8(36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8446,7 +8886,8 @@
 				"Id": "NW_SPAWNS/2_8(37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8470,7 +8911,8 @@
 				"Id": "NW_SPAWNS/2_8(38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8494,7 +8936,8 @@
 				"Id": "NW_SPAWNS/2_8(39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8518,7 +8961,8 @@
 				"Id": "NW_SPAWNS/2_8(40)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8542,7 +8986,8 @@
 				"Id": "NW_SPAWNS/2_10(47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8566,7 +9011,8 @@
 				"Id": "NW_SPAWNS/2_9(41)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8590,7 +9036,8 @@
 				"Id": "NW_SPAWNS/2_9(42)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8614,7 +9061,8 @@
 				"Id": "NW_SPAWNS/2_9(43)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8638,7 +9086,8 @@
 				"Id": "NW_SPAWNS/2_9(44)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8662,7 +9111,8 @@
 				"Id": "NW_SPAWNS/2_9(45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8686,7 +9136,8 @@
 				"Id": "SE_SPAWNS/1_1(1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8710,7 +9161,8 @@
 				"Id": "SE_SPAWNS/1_1(2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8734,7 +9186,8 @@
 				"Id": "SE_SPAWNS/1_1(3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8758,7 +9211,8 @@
 				"Id": "SE_SPAWNS/1_1(4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8782,7 +9236,8 @@
 				"Id": "SE_SPAWNS/1_1(5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8806,7 +9261,8 @@
 				"Id": "NW_SPAWNS/2_10(48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -8830,7 +9286,8 @@
 				"Id": "SE_SPAWNS/1_10(47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8854,7 +9311,8 @@
 				"Id": "SE_SPAWNS/1_10(48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8878,7 +9336,8 @@
 				"Id": "SE_SPAWNS/1_10(49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8902,7 +9361,8 @@
 				"Id": "SE_SPAWNS/1_10(50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8926,7 +9386,8 @@
 				"Id": "SE_SPAWNS/1_10(51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8950,7 +9411,8 @@
 				"Id": "SE_SPAWNS/1_11(52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8974,7 +9436,8 @@
 				"Id": "SE_SPAWNS/1_11(53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -8998,7 +9461,8 @@
 				"Id": "SE_SPAWNS/1_11(54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9022,7 +9486,8 @@
 				"Id": "SE_SPAWNS/1_11(55)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9046,7 +9511,8 @@
 				"Id": "SE_SPAWNS/1_11(56)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9070,7 +9536,8 @@
 				"Id": "NW_SPAWNS/2_10(49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -9094,7 +9561,8 @@
 				"Id": "SE_SPAWNS/1_12 (57)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9118,7 +9586,8 @@
 				"Id": "SE_SPAWNS/1_12 (58)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9142,7 +9611,8 @@
 				"Id": "SE_SPAWNS/1_12 (59)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9166,7 +9636,8 @@
 				"Id": "SE_SPAWNS/1_12 (60)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9190,7 +9661,8 @@
 				"Id": "SE_SPAWNS/1_12 (61)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9214,7 +9686,8 @@
 				"Id": "SE_SPAWNS/1_13 (62)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9238,7 +9711,8 @@
 				"Id": "SE_SPAWNS/1_13 (63)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9262,7 +9736,8 @@
 				"Id": "SE_SPAWNS/1_13 (64)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9286,7 +9761,8 @@
 				"Id": "SE_SPAWNS/1_13 (65)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9310,7 +9786,8 @@
 				"Id": "SE_SPAWNS/1_13 (66)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9334,7 +9811,8 @@
 				"Id": "NW_SPAWNS/2_10(50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallNW",
 				"Position": {
@@ -9358,7 +9836,8 @@
 				"Id": "SE_SPAWNS/1_14 (67)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9382,7 +9861,8 @@
 				"Id": "SE_SPAWNS/1_14 (68)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9406,7 +9886,8 @@
 				"Id": "SE_SPAWNS/1_14 (69)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9430,7 +9911,8 @@
 				"Id": "SE_SPAWNS/1_14 (70)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9454,7 +9936,8 @@
 				"Id": "SE_SPAWNS/1_14 (71)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9478,7 +9961,8 @@
 				"Id": "SE_SPAWNS/1_2(10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9502,7 +9986,8 @@
 				"Id": "SE_SPAWNS/1_2(6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9526,7 +10011,8 @@
 				"Id": "SE_SPAWNS/1_2(7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9550,7 +10036,8 @@
 				"Id": "SE_SPAWNS/1_2(8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9574,7 +10061,8 @@
 				"Id": "SE_SPAWNS/1_2(9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "MallSE",
 				"Position": {
@@ -9691,7 +10179,7 @@
 		"MaxBotPerZone": 0,
 		"OpenZones": "BotZoneMain",
 		"OcculsionCullingEnabled": true,
-		"GlobalLootChanceModifier": 0.9,
+		"GlobalLootChanceModifier": 1,
 		"OldSpawn": true,
 		"NewSpawn": false,
 		"BotMax": 0,
@@ -9836,7 +10324,7 @@
 		"BossLocationSpawn": [
 			{
 				"BossName": "pmcBot",
-				"BossChance": 50,
+				"BossChance": 80,
 				"BossZone": "BotZoneFloor1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9850,7 +10338,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 35,
+				"BossChance": 45,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9864,7 +10352,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 40,
+				"BossChance": 50,
 				"BossZone": "BotZoneFloor1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9878,7 +10366,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 40,
+				"BossChance": 50,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9892,7 +10380,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 40,
+				"BossChance": 60,
 				"BossZone": "BotZoneFloor1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9906,7 +10394,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 40,
+				"BossChance": 60,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9920,7 +10408,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 45,
+				"BossChance": 75,
 				"BossZone": "BotZoneGate2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9934,7 +10422,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 50,
+				"BossChance": 75,
 				"BossZone": "BotZoneGate1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9948,7 +10436,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 50,
+				"BossChance": 70,
 				"BossZone": "BotZoneBasement",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9962,7 +10450,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 50,
+				"BossChance": 70,
 				"BossZone": "BotZoneBasement",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9976,7 +10464,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 45,
+				"BossChance": 65,
 				"BossZone": "BotZoneBasement",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -9990,7 +10478,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 50,
+				"BossChance": 70,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -10004,7 +10492,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 40,
+				"BossChance": 60,
 				"BossZone": "BotZoneFloor1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -10018,7 +10506,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 35,
+				"BossChance": 50,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -10032,7 +10520,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 35,
+				"BossChance": 60,
 				"BossZone": "BotZoneFloor1",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -10046,7 +10534,7 @@
 			},
 			{
 				"BossName": "pmcBot",
-				"BossChance": 35,
+				"BossChance": 60,
 				"BossZone": "BotZoneFloor2",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -12424,7 +12912,7 @@
 		"MaxBotPerZone": 8,
 		"OpenZones": "ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBunkerStorage,ZoneSubStorage",
 		"OcculsionCullingEnabled": false,
-		"GlobalLootChanceModifier": 0.25,
+		"GlobalLootChanceModifier": 0.3,
 		"OldSpawn": true,
 		"NewSpawn": false,
 		"BotMax": 0,
@@ -12446,14 +12934,12 @@
 		"AccessKeys": [],
 		"MinMaxBots": [],
 		"BotLocationModifier": {
-			"AccuracySpeed": 0.6,
-			"Scattering": 0.6,
-			"GainSight": 1.3,
+			"AccuracySpeed": 1,
+			"Scattering": 1,
+			"GainSight": 1,
 			"MarksmanAccuratyCoef": 1,
-			"VisibleDistance": 1.3,
-			"DistToPersueAxemanCoef": 0.7,
-			"DistToSleep": 350,
-			"DistToActivate": 330
+			"VisibleDistance": 1,
+			"DistToPersueAxemanCoef": 0.7
 		},
 		"exits": [
 			{
@@ -12530,28 +13016,13 @@
 				"Id": "",
 				"RequirementTip": "EXFIL_tip_backpack",
 				"Count": 0
-			},
-			{
-				"Name": "EXFIL_Bunker_D2",
-				"EntryPoints": "Common",
-				"Chance": 100,
-				"MinTime": 0,
-				"MaxTime": 0,
-				"PlayersCount": 0,
-				"ExfiltrationTime": 8,
-				"PassageRequirement": "WorldEvent",
-				"ExfiltrationType": "Individual",
-				"RequiredSlot": "FirstPrimaryWeapon",
-				"Id": "",
-				"RequirementTip": "",
-				"Count": 0
 			}
 		],
 		"DisabledForScav": false,
 		"BossLocationSpawn": [
 			{
 				"BossName": "bossGluhar",
-				"BossChance": 43,
+				"BossChance": 41,
 				"BossZone": "ZoneRailStrorage,ZoneRailStrorage,ZoneRailStrorage,ZonePTOR1,ZonePTOR2,ZoneBarrack,ZoneBarrack,ZoneBarrack,ZoneSubStorage",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -12610,34 +13081,6 @@
 				"BossEscortAmount": "2,2,2,2,3,3,3",
 				"Time": -1,
 				"TriggerId": "autoId_00632_EXFIL",
-				"TriggerName": "interactObject",
-				"Supports": null
-			},
-			{
-				"BossName": "pmcBot",
-				"BossChance": 60,
-				"BossZone": "ZoneSubCommand",
-				"BossPlayer": false,
-				"BossDifficult": "normal",
-				"BossEscortType": "pmcBot",
-				"BossEscortDifficult": "normal",
-				"BossEscortAmount": "2,2,3,3,3",
-				"Time": -1,
-				"TriggerId": "autoId_00000_D2_LEVER",
-				"TriggerName": "interactObject",
-				"Supports": null
-			},
-			{
-				"BossName": "pmcBot",
-				"BossChance": 30,
-				"BossZone": "ZoneSubCommand",
-				"BossPlayer": false,
-				"BossDifficult": "normal",
-				"BossEscortType": "pmcBot",
-				"BossEscortDifficult": "normal",
-				"BossEscortAmount": "2,2,3,3,3",
-				"Time": 3,
-				"TriggerId": "raider_simple_patroling",
 				"TriggerName": "interactObject",
 				"Supports": null
 			}
@@ -13280,9 +13723,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -252.48999,
-					"y": -6.66,
-					"z": 69.98999
+					"x": -217.030029,
+					"y": -10.81,
+					"z": 47.8900146
 				},
 				"Center": {
 					"x": 0,
@@ -13305,9 +13748,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -255.410034,
-					"y": -6.15,
-					"z": 68.0999756
+					"x": -214.700012,
+					"y": -10.76,
+					"z": 48.7999878
 				},
 				"Center": {
 					"x": 0,
@@ -13330,9 +13773,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -249.589966,
-					"y": -6.56,
-					"z": 68.54999
+					"x": -218.669983,
+					"y": -10.77,
+					"z": 49.54004
 				},
 				"Center": {
 					"x": 0,
@@ -13405,9 +13848,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": 188.81,
+					"x": 171.830017,
 					"y": -6.81,
-					"z": -106.419983
+					"z": -104.039978
 				},
 				"Center": {
 					"x": 0,
@@ -13730,9 +14173,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": 189.450012,
-					"y": -6.8,
-					"z": -96.26001
+					"x": 171.75,
+					"y": -6.73,
+					"z": -96.1499939
 				},
 				"Center": {
 					"x": 0,
@@ -13755,9 +14198,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": 192.44,
+					"x": 171.159973,
 					"y": -6.8,
-					"z": -97.51999
+					"z": -99.44
 				},
 				"Center": {
 					"x": 0,
@@ -13830,9 +14273,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": 186.799988,
+					"x": 169.090027,
 					"y": -6.78,
-					"z": -105
+					"z": -94.47
 				},
 				"Center": {
 					"x": 0,
@@ -13855,9 +14298,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": 189.640015,
+					"x": 171.159973,
 					"y": -6.76,
-					"z": -101.459991
+					"z": -92.81
 				},
 				"Center": {
 					"x": 0,
@@ -13955,9 +14398,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -249.12,
-					"y": -6.04,
-					"z": 75.76001
+					"x": -219.72998,
+					"y": -10.77,
+					"z": 47.4000244
 				},
 				"Center": {
 					"x": 0,
@@ -13980,9 +14423,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -256.45,
-					"y": -6.15,
-					"z": 73.42999
+					"x": -213.409973,
+					"y": -10.85,
+					"z": 47.8800049
 				},
 				"Center": {
 					"x": 0,
@@ -14430,9 +14873,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -34.8699951,
-					"y": -6.93999958,
-					"z": -169.22
+					"x": 224.219971,
+					"y": -6.8,
+					"z": -152.57
 				},
 				"Center": {
 					"x": 0,
@@ -14444,7 +14887,207 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 3.63000059
+				"Orientation": 315.06
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (83)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": 215.48999,
+					"y": -6.98,
+					"z": -171.200012
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 315.06
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (84)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": 224.079956,
+					"y": -6.98,
+					"z": -158.289978
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 315.06
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (85)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": 216.19,
+					"y": -6.98,
+					"z": -159.65
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 315.06
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (86)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": 227.400024,
+					"y": -6.86,
+					"z": -147.48999
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 260.41
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (87)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -158.32,
+					"y": -6.31,
+					"z": 136
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 105.75
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (88)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -156.580017,
+					"y": -5.23,
+					"z": 138.57
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 105.75
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (2)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -25.9299927,
+					"y": 4.68,
+					"z": 144.169983
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 227.41
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (89)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -160.330017,
+					"y": -7.19,
+					"z": 132.149963
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 105.75
 			},
 			{
 				"Id": "SPAWNS/ScavPMCspawn (9)",
@@ -14472,7 +15115,7 @@
 				"Orientation": 2.98000026
 			},
 			{
-				"Id": "SPAWNS/ScavPMCspawn (2)",
+				"Id": "SPAWNS/ScavPMCspawn (90)",
 				"Sides": [
 					"Usec",
 					"Bear",
@@ -14480,9 +15123,9 @@
 				],
 				"InfiltrationZone": "Common",
 				"Position": {
-					"x": -25.9299927,
-					"y": 4.68,
-					"z": 144.169983
+					"x": -134.969971,
+					"y": -1.41,
+					"z": 146.94
 				},
 				"Center": {
 					"x": 0,
@@ -14494,7 +15137,157 @@
 					"y": 0,
 					"z": 0
 				},
-				"Orientation": 227.41
+				"Orientation": 105.75
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (91)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -134.98999,
+					"y": -0.89,
+					"z": 148.649963
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 105.75
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (92)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -38.4500122,
+					"y": 12.68,
+					"z": 179.890015
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 266.1
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (93)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -40.1699829,
+					"y": 12.68,
+					"z": 180.539978
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 266.1
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (94)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -41.76001,
+					"y": 12.68,
+					"z": 179.88
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 266.1
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (95)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -35.6300049,
+					"y": 12.68,
+					"z": 180.81
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 80.71999
+			},
+			{
+				"Id": "SPAWNS/ScavPMCspawn (96)",
+				"Sides": [
+					"Usec",
+					"Bear",
+					"Savage"
+				],
+				"InfiltrationZone": "Common",
+				"Position": {
+					"x": -33.28003,
+					"y": 12.68,
+					"z": 180.200012
+				},
+				"Center": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Size": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"Orientation": 80.71999
 			},
 			{
 				"Id": "SPAWNS/ScavPMCspawn (20)",
@@ -14777,7 +15570,7 @@
 				"time_max": 300,
 				"slots_min": 3,
 				"slots_max": 7,
-				"SpawnPoints": "ZoneSanatorium1",
+				"SpawnPoints": "ZoneSanatorium",
 				"BotSide": "Savage",
 				"BotPreset": "normal",
 				"isPlayers": true,
@@ -14789,7 +15582,7 @@
 				"time_max": 600,
 				"slots_min": 3,
 				"slots_max": 7,
-				"SpawnPoints": "ZoneSanatorium2",
+				"SpawnPoints": "ZoneSanatorium",
 				"BotSide": "Savage",
 				"BotPreset": "hard",
 				"isPlayers": true,
@@ -14801,22 +15594,10 @@
 				"time_max": 1000,
 				"slots_min": 2,
 				"slots_max": 7,
-				"SpawnPoints": "ZoneSanatorium1",
+				"SpawnPoints": "ZoneSanatorium",
 				"BotSide": "Savage",
-				"BotPreset": "hard",
-				"isPlayers": true,
-				"WildSpawnType": "assault"
-			},
-			{
-				"number": 28,
-				"time_min": 550,
-				"time_max": 1100,
-				"slots_min": 2,
-				"slots_max": 7,
-				"SpawnPoints": "ZoneSanatorium2",
-				"BotSide": "Bear",
 				"BotPreset": "normal",
-				"isPlayers": false,
+				"isPlayers": true,
 				"WildSpawnType": "assault"
 			},
 			{
@@ -14918,7 +15699,7 @@
 		"MaxBotPerZone": 5,
 		"OpenZones": "ZoneSanatorium,ZonePassFar,ZonePassClose,ZoneTunnel,ZoneStartVillage,ZoneBunker",
 		"OcculsionCullingEnabled": true,
-		"GlobalLootChanceModifier": 0.3,
+		"GlobalLootChanceModifier": 0.4,
 		"OldSpawn": true,
 		"NewSpawn": false,
 		"BotMax": 0,
@@ -14941,10 +15722,10 @@
 		"MinMaxBots": [],
 		"BotLocationModifier": {
 			"AccuracySpeed": 1,
-			"Scattering": 0.8,
-			"GainSight": 1.1,
+			"Scattering": 1,
+			"GainSight": 1,
 			"MarksmanAccuratyCoef": 1,
-			"VisibleDistance": 1.2,
+			"VisibleDistance": 1,
 			"DistToSleep": 300,
 			"DistToActivate": 260,
 			"MagnetPower": 40,
@@ -15008,19 +15789,6 @@
 			}
 		],
 		"DisabledForScav": false,
-		"BossLocationSpawn": [
-			{
-				"BossName": "bossSanitar",
-				"BossChance": 35,
-				"BossZone": "ZonePort,ZoneGreenHouses,ZoneSanatorium1,ZoneSanatorium2,ZoneGreenHouses,ZoneGreenHouses",
-				"BossPlayer": false,
-				"BossDifficult": "normal",
-				"BossEscortType": "followerSanitar",
-				"BossEscortDifficult": "normal",
-				"BossEscortAmount": "2",
-				"Time": 1
-			}
-		],
 		"Id": "Shoreline",
 		"_Id": "5704e554d2720bac5b8b456e",
 		"Loot": [],
@@ -15029,7 +15797,8 @@
 				"Id": "SPAWNS/PMC Spawn",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15053,7 +15822,8 @@
 				"Id": "SPAWNS/PMC Spawn (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15077,7 +15847,8 @@
 				"Id": "SPAWNS/PMC Spawn (18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15101,7 +15872,8 @@
 				"Id": "SPAWNS2/PMC Spawn (36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15125,7 +15897,8 @@
 				"Id": "SPAWNS2/PMC Spawn (37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15149,7 +15922,8 @@
 				"Id": "SPAWNS2/PMC Spawn (38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15173,7 +15947,8 @@
 				"Id": "SPAWNS2/PMC Spawn (39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15197,7 +15972,8 @@
 				"Id": "SPAWNS2/PMC Spawn (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15221,7 +15997,8 @@
 				"Id": "SPAWNS2/PMC Spawn (40)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15245,7 +16022,8 @@
 				"Id": "SPAWNS2/PMC Spawn (41)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15269,7 +16047,8 @@
 				"Id": "SPAWNS2/PMC Spawn (42)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15293,7 +16072,8 @@
 				"Id": "SPAWNS2/PMC Spawn (43)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15317,7 +16097,8 @@
 				"Id": "SPAWNS2/PMC Spawn (44)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15341,7 +16122,8 @@
 				"Id": "SPAWNS/PMC Spawn (19)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15365,7 +16147,8 @@
 				"Id": "SPAWNS2/PMC Spawn (45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15389,7 +16172,8 @@
 				"Id": "SPAWNS2/PMC Spawn (46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15413,7 +16197,8 @@
 				"Id": "SPAWNS2/PMC Spawn (47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15437,7 +16222,8 @@
 				"Id": "SPAWNS2/PMC Spawn (48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15461,7 +16247,8 @@
 				"Id": "SPAWNS2/PMC Spawn (49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15485,7 +16272,8 @@
 				"Id": "SPAWNS2/PMC Spawn (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15509,7 +16297,8 @@
 				"Id": "SPAWNS2/PMC Spawn (50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15533,7 +16322,8 @@
 				"Id": "SPAWNS2/PMC Spawn (51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15557,7 +16347,8 @@
 				"Id": "SPAWNS2/PMC Spawn (52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15581,7 +16372,8 @@
 				"Id": "SPAWNS2/PMC Spawn (53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15605,7 +16397,8 @@
 				"Id": "SPAWNS/PMC Spawn (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15629,7 +16422,8 @@
 				"Id": "SPAWNS2/PMC Spawn (54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15653,7 +16447,8 @@
 				"Id": "SPAWNS2/PMC Spawn (55)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15677,7 +16472,8 @@
 				"Id": "SPAWNS2/PMC Spawn (56)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15701,7 +16497,8 @@
 				"Id": "SPAWNS2/PMC Spawn (57)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15725,7 +16522,8 @@
 				"Id": "SPAWNS2/PMC Spawn (58)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15749,7 +16547,8 @@
 				"Id": "SPAWNS2/PMC Spawn (59)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15773,7 +16572,8 @@
 				"Id": "SPAWNS2/PMC Spawn (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15797,7 +16597,8 @@
 				"Id": "SPAWNS2/PMC Spawn (60)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15821,7 +16622,8 @@
 				"Id": "SPAWNS2/PMC Spawn (61)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15845,7 +16647,8 @@
 				"Id": "SPAWNS2/PMC Spawn (62)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15869,7 +16672,8 @@
 				"Id": "SPAWNS/PMC Spawn (20)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -15893,7 +16697,8 @@
 				"Id": "SPAWNS2/PMC Spawn (63)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15917,7 +16722,8 @@
 				"Id": "SPAWNS2/PMC Spawn (64)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15941,7 +16747,8 @@
 				"Id": "SPAWNS2/PMC Spawn (65)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15965,7 +16772,8 @@
 				"Id": "SPAWNS2/PMC Spawn (66)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -15989,7 +16797,8 @@
 				"Id": "SPAWNS2/PMC Spawn (67)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16013,7 +16822,8 @@
 				"Id": "SPAWNS2/PMC Spawn (68)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16037,7 +16847,8 @@
 				"Id": "SPAWNS2/PMC Spawn (69)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16061,7 +16872,8 @@
 				"Id": "SPAWNS2/PMC Spawn (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16085,7 +16897,8 @@
 				"Id": "SPAWNS2/PMC Spawn (8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16109,7 +16922,8 @@
 				"Id": "SPAWNS2/PMC Spawn (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -16133,7 +16947,8 @@
 				"Id": "SPAWNS/PMC Spawn (21)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16157,7 +16972,8 @@
 				"Id": "SPAWNS/PMC Spawn (22)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16181,7 +16997,8 @@
 				"Id": "SPAWNS/PMC Spawn (23)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16205,7 +17022,8 @@
 				"Id": "SPAWNS/PMC Spawn (24)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16229,7 +17047,8 @@
 				"Id": "SPAWNS/PMC Spawn (25)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16253,7 +17072,8 @@
 				"Id": "SPAWNS/PMC Spawn (26)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16277,7 +17097,8 @@
 				"Id": "SPAWNS/PMC Spawn (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16301,7 +17122,8 @@
 				"Id": "SPAWNS/PMC Spawn (27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16325,7 +17147,8 @@
 				"Id": "SPAWNS/PMC Spawn (28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16349,7 +17172,8 @@
 				"Id": "SPAWNS/PMC Spawn (29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16373,7 +17197,8 @@
 				"Id": "SPAWNS/PMC Spawn (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16397,7 +17222,8 @@
 				"Id": "SPAWNS/PMC Spawn (30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16421,7 +17247,8 @@
 				"Id": "SPAWNS/PMC Spawn (31)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16445,7 +17272,8 @@
 				"Id": "SPAWNS/PMC Spawn (32)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16469,7 +17297,8 @@
 				"Id": "SPAWNS/PMC Spawn (33)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16493,7 +17322,8 @@
 				"Id": "SPAWNS/PMC Spawn (34)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16517,7 +17347,8 @@
 				"Id": "SPAWNS/PMC Spawn (35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16541,7 +17372,8 @@
 				"Id": "SPAWNS/PMC Spawn (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16565,7 +17397,8 @@
 				"Id": "SPAWNS/PMC Spawn (36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16589,7 +17422,8 @@
 				"Id": "SPAWNS/PMC Spawn (37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16613,7 +17447,8 @@
 				"Id": "SPAWNS/PMC Spawn (38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16637,7 +17472,8 @@
 				"Id": "SPAWNS/PMC Spawn (39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16661,7 +17497,8 @@
 				"Id": "SPAWNS/PMC Spawn (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16685,7 +17522,8 @@
 				"Id": "SPAWNS/PMC Spawn (40)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16709,7 +17547,8 @@
 				"Id": "SPAWNS/PMC Spawn (41)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16733,7 +17572,8 @@
 				"Id": "SPAWNS/PMC Spawn (42)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16757,7 +17597,8 @@
 				"Id": "SPAWNS/PMC Spawn (43)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16781,7 +17622,8 @@
 				"Id": "SPAWNS/PMC Spawn (44)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16805,7 +17647,8 @@
 				"Id": "SPAWNS/PMC Spawn (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16829,7 +17672,8 @@
 				"Id": "SPAWNS/PMC Spawn (45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16853,7 +17697,8 @@
 				"Id": "SPAWNS/PMC Spawn (46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16877,7 +17722,8 @@
 				"Id": "SPAWNS/PMC Spawn (47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16901,7 +17747,8 @@
 				"Id": "SPAWNS/PMC Spawn (48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16925,7 +17772,8 @@
 				"Id": "SPAWNS/PMC Spawn (49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16949,7 +17797,8 @@
 				"Id": "SPAWNS/PMC Spawn (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16973,7 +17822,8 @@
 				"Id": "SPAWNS/PMC Spawn (50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -16997,7 +17847,8 @@
 				"Id": "SPAWNS/PMC Spawn (51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17021,7 +17872,8 @@
 				"Id": "SPAWNS/PMC Spawn (52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17045,7 +17897,8 @@
 				"Id": "SPAWNS/PMC Spawn (53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17069,7 +17922,8 @@
 				"Id": "SPAWNS/PMC Spawn (13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17093,7 +17947,8 @@
 				"Id": "SPAWNS/PMC Spawn (54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17117,7 +17972,8 @@
 				"Id": "SPAWNS/PMC Spawn (56)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17141,7 +17997,8 @@
 				"Id": "SPAWNS/PMC Spawn (57)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17165,7 +18022,8 @@
 				"Id": "SPAWNS/PMC Spawn (58)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17189,7 +18047,8 @@
 				"Id": "SPAWNS/PMC Spawn (59)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17213,7 +18072,8 @@
 				"Id": "SPAWNS/PMC Spawn (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17237,7 +18097,8 @@
 				"Id": "SPAWNS/PMC Spawn (60)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17261,7 +18122,8 @@
 				"Id": "SPAWNS/PMC Spawn (61)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17285,7 +18147,8 @@
 				"Id": "SPAWNS/PMC Spawn (62)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17309,7 +18172,8 @@
 				"Id": "SPAWNS/PMC Spawn (63)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17333,7 +18197,8 @@
 				"Id": "SPAWNS/PMC Spawn (14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17357,7 +18222,8 @@
 				"Id": "SPAWNS/PMC Spawn (64)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17381,7 +18247,8 @@
 				"Id": "SPAWNS/PMC Spawn (65)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17405,7 +18272,8 @@
 				"Id": "SPAWNS/PMC Spawn (67)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17429,7 +18297,8 @@
 				"Id": "SPAWNS/PMC Spawn (68)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17453,7 +18322,8 @@
 				"Id": "SPAWNS/PMC Spawn (69)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17477,7 +18347,8 @@
 				"Id": "SPAWNS/PMC Spawn (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17501,7 +18372,8 @@
 				"Id": "SPAWNS/PMC Spawn (70)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17525,7 +18397,8 @@
 				"Id": "SPAWNS/PMC Spawn (71)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17549,7 +18422,8 @@
 				"Id": "SPAWNS/PMC Spawn (8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17573,7 +18447,8 @@
 				"Id": "SPAWNS/PMC Spawn (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17597,7 +18472,8 @@
 				"Id": "SPAWNS/PMC Spawn (15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17621,7 +18497,8 @@
 				"Id": "SPAWNS2/PMC Spawn",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17645,7 +18522,8 @@
 				"Id": "SPAWNS2/PMC Spawn (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17669,7 +18547,8 @@
 				"Id": "SPAWNS2/PMC Spawn (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17693,7 +18572,8 @@
 				"Id": "SPAWNS2/PMC Spawn (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17717,7 +18597,8 @@
 				"Id": "SPAWNS2/PMC Spawn (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17741,7 +18622,8 @@
 				"Id": "SPAWNS2/PMC Spawn (13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17765,7 +18647,8 @@
 				"Id": "SPAWNS2/PMC Spawn (14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17789,7 +18672,8 @@
 				"Id": "SPAWNS2/PMC Spawn (15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17813,7 +18697,8 @@
 				"Id": "SPAWNS2/PMC Spawn (16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17837,7 +18722,8 @@
 				"Id": "SPAWNS2/PMC Spawn (17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17861,7 +18747,8 @@
 				"Id": "SPAWNS/PMC Spawn (16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -17885,7 +18772,8 @@
 				"Id": "SPAWNS2/PMC Spawn (18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17909,7 +18797,8 @@
 				"Id": "SPAWNS2/PMC Spawn (19)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17933,7 +18822,8 @@
 				"Id": "SPAWNS2/PMC Spawn (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17957,7 +18847,8 @@
 				"Id": "SPAWNS2/PMC Spawn (20)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -17981,7 +18872,8 @@
 				"Id": "SPAWNS2/PMC Spawn (21)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18005,7 +18897,8 @@
 				"Id": "SPAWNS2/PMC Spawn (22)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18029,7 +18922,8 @@
 				"Id": "SPAWNS2/PMC Spawn (23)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18053,7 +18947,8 @@
 				"Id": "SPAWNS2/PMC Spawn (24)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18077,7 +18972,8 @@
 				"Id": "SPAWNS2/PMC Spawn (25)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18101,7 +18997,8 @@
 				"Id": "SPAWNS2/PMC Spawn (26)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18125,7 +19022,8 @@
 				"Id": "SPAWNS/PMC Spawn (17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Village",
 				"Position": {
@@ -18149,7 +19047,8 @@
 				"Id": "SPAWNS2/PMC Spawn (27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18173,7 +19072,8 @@
 				"Id": "SPAWNS2/PMC Spawn (28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18197,7 +19097,8 @@
 				"Id": "SPAWNS2/PMC Spawn (29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18221,7 +19122,8 @@
 				"Id": "SPAWNS2/PMC Spawn (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18245,7 +19147,8 @@
 				"Id": "SPAWNS2/PMC Spawn (30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18269,7 +19172,8 @@
 				"Id": "SPAWNS2/PMC Spawn (31)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18293,7 +19197,8 @@
 				"Id": "SPAWNS2/PMC Spawn (32)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18317,7 +19222,8 @@
 				"Id": "SPAWNS2/PMC Spawn (33)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18341,7 +19247,8 @@
 				"Id": "SPAWNS2/PMC Spawn (34)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18365,7 +19272,8 @@
 				"Id": "SPAWNS2/PMC Spawn (35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Riverside",
 				"Position": {
@@ -18401,7 +19309,8 @@
 					"rcid": ""
 				}
 			}
-		]
+		],
+		"BossLocationSpawn": []
 	},
 	"suburbs": {
 		"Enabled": true,
@@ -19355,7 +20264,7 @@
 		"BossLocationSpawn": [
 			{
 				"BossName": "bossKojaniy",
-				"BossChance": 39,
+				"BossChance": 35,
 				"BossZone": "ZoneWoodCutter",
 				"BossPlayer": false,
 				"BossDifficult": "normal",
@@ -19396,7 +20305,8 @@
 				"Id": "spawns_var1/PMC Spawn",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19420,7 +20330,8 @@
 				"Id": "spawns_var1/PMC Spawn (17)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19444,7 +20355,8 @@
 				"Id": "spawns_var1/PMC Spawn (18)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19468,7 +20380,8 @@
 				"Id": "spawns_var1/PMC Spawn (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19492,7 +20405,8 @@
 				"Id": "spawns_var1/PMC Spawn (23)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19516,7 +20430,8 @@
 				"Id": "spawns_var1/PMC Spawn (24)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19540,7 +20455,8 @@
 				"Id": "spawns_var1/PMC Spawn (25)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19564,7 +20480,8 @@
 				"Id": "spawns_var1/PMC Spawn (26)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19588,7 +20505,8 @@
 				"Id": "spawns_var1/PMC Spawn (27)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19612,7 +20530,8 @@
 				"Id": "spawns_var1/PMC Spawn (28)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19636,7 +20555,8 @@
 				"Id": "spawns_var1/PMC Spawn (29)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19660,7 +20580,8 @@
 				"Id": "spawns_var1/PMC Spawn (1)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19684,7 +20605,8 @@
 				"Id": "spawns_var1/PMC Spawn (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19708,7 +20630,8 @@
 				"Id": "spawns_var1/PMC Spawn (30)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19732,7 +20655,8 @@
 				"Id": "spawns_var1/PMC Spawn (35)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19756,7 +20680,8 @@
 				"Id": "spawns_var1/PMC Spawn (36)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19780,7 +20705,8 @@
 				"Id": "spawns_var1/PMC Spawn (37)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19804,7 +20730,8 @@
 				"Id": "spawns_var1/PMC Spawn (38)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19828,7 +20755,8 @@
 				"Id": "spawns_var1/PMC Spawn (39)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19852,7 +20780,8 @@
 				"Id": "spawns_var1/PMC Spawn (40)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19876,7 +20805,8 @@
 				"Id": "spawns_var1/PMC Spawn (41)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19900,7 +20830,8 @@
 				"Id": "spawns_var1/PMC Spawn (42)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19924,7 +20855,8 @@
 				"Id": "spawns_var1/PMC Spawn (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19948,7 +20880,8 @@
 				"Id": "spawns_var1/PMC Spawn (43)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19972,7 +20905,8 @@
 				"Id": "spawns_var1/PMC Spawn (44)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -19996,7 +20930,8 @@
 				"Id": "spawns_var1/PMC Spawn (45)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20020,7 +20955,8 @@
 				"Id": "spawns_var1/PMC Spawn (46)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20044,7 +20980,8 @@
 				"Id": "spawns_var1/PMC Spawn (47)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20068,7 +21005,8 @@
 				"Id": "spawns_var1/PMC Spawn (48)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20092,7 +21030,8 @@
 				"Id": "spawns_var1/PMC Spawn (49)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20116,7 +21055,8 @@
 				"Id": "spawns_var1/PMC Spawn (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20140,7 +21080,8 @@
 				"Id": "spawns_var1/PMC Spawn (50)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20164,7 +21105,8 @@
 				"Id": "spawns_var1/PMC Spawn (51)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20188,7 +21130,8 @@
 				"Id": "spawns_var1/PMC Spawn (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20212,7 +21155,8 @@
 				"Id": "spawns_var1/PMC Spawn (52)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20236,7 +21180,8 @@
 				"Id": "spawns_var1/PMC Spawn (53)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20260,7 +21205,8 @@
 				"Id": "spawns_var1/PMC Spawn (54)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20284,7 +21230,8 @@
 				"Id": "spawns_var1/PMC Spawn (55)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20308,7 +21255,8 @@
 				"Id": "spawns_var1/PMC Spawn (56)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20332,7 +21280,8 @@
 				"Id": "spawns_var1/PMC Spawn (57)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20356,7 +21305,8 @@
 				"Id": "spawns_var1/PMC Spawn (58)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20380,7 +21330,8 @@
 				"Id": "spawns_var1/PMC Spawn (59)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20404,7 +21355,8 @@
 				"Id": "spawns_var1/PMC Spawn (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20428,7 +21380,8 @@
 				"Id": "spawns_var1/PMC Spawn (60)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20452,7 +21405,8 @@
 				"Id": "spawns_var1/PMC Spawn (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20476,7 +21430,8 @@
 				"Id": "spawns_var1/PMC Spawn (61)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20500,7 +21455,8 @@
 				"Id": "spawns_var1/PMC Spawn (62)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20524,7 +21480,8 @@
 				"Id": "spawns_var1/PMC Spawn (63)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20548,7 +21505,8 @@
 				"Id": "spawns_var1/PMC Spawn (64)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20572,7 +21530,8 @@
 				"Id": "spawns_var1/PMC Spawn (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20596,7 +21555,8 @@
 				"Id": "spawns_var1/PMC Spawn (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20620,7 +21580,8 @@
 				"Id": "spawns_var2/PMC House Spawn (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20644,7 +21605,8 @@
 				"Id": "spawns_var2/PMC House Spawn (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20668,7 +21630,8 @@
 				"Id": "spawns_var2/PMC House Spawn (2)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20692,7 +21655,8 @@
 				"Id": "spawns_var2/PMC House Spawn (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20716,7 +21680,8 @@
 				"Id": "spawns_var1/PMC Spawn (13)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -20740,7 +21705,8 @@
 				"Id": "spawns_var2/PMC House Spawn (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20764,7 +21730,8 @@
 				"Id": "spawns_var2/PMC House Spawn (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20788,7 +21755,8 @@
 				"Id": "spawns_var2/PMC House Spawn (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20812,7 +21780,8 @@
 				"Id": "spawns_var2/PMC House Spawn (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20836,7 +21805,8 @@
 				"Id": "spawns_var2/PMC House Spawn (8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20860,7 +21830,8 @@
 				"Id": "spawns_var2/PMC House Spawn (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20884,7 +21855,8 @@
 				"Id": "spawns_var2/PMC House Spawn 10",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20908,7 +21880,8 @@
 				"Id": "spawns_var2/PMC House Spawn 11",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20932,7 +21905,8 @@
 				"Id": "spawns_var2/PMC House Spawn 12",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20956,7 +21930,8 @@
 				"Id": "spawns_var2/PMC House Spawn 13",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -20980,7 +21955,8 @@
 				"Id": "spawns_var1/PMC Spawn (14)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -21004,7 +21980,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (10)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21028,7 +22005,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (11)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21052,7 +22030,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (12)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21076,7 +22055,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (3)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21100,7 +22080,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (4)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21124,7 +22105,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (5)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21148,7 +22130,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (6)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21172,7 +22155,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (7)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21196,7 +22180,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (8)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21220,7 +22205,8 @@
 				"Id": "spawns_var2/PMC House Spawn 18 (9)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21244,7 +22230,8 @@
 				"Id": "spawns_var1/PMC Spawn (15)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -21268,7 +22255,8 @@
 				"Id": "spawns_var2/PMC House Spawn 24",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21292,7 +22280,8 @@
 				"Id": "spawns_var2/PMC House Spawn 25",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21316,7 +22305,8 @@
 				"Id": "spawns_var2/PMC House Spawn 26",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21340,7 +22330,8 @@
 				"Id": "spawns_var2/PMC House Spawn 27",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21364,7 +22355,8 @@
 				"Id": "spawns_var2/PMC House Spawn 28",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21388,7 +22380,8 @@
 				"Id": "spawns_var2/PMC House Spawn 29",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21412,7 +22405,8 @@
 				"Id": "spawns_var2/PMC House Spawn 30",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21436,7 +22430,8 @@
 				"Id": "spawns_var2/PMC House Spawn 5",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21460,7 +22455,8 @@
 				"Id": "spawns_var2/PMC House Spawn 6",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21484,7 +22480,8 @@
 				"Id": "spawns_var2/PMC House Spawn 7",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
@@ -21508,7 +22505,8 @@
 				"Id": "spawns_var1/PMC Spawn (16)",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "Old Station",
 				"Position": {
@@ -21532,7 +22530,8 @@
 				"Id": "spawns_var2/PMC House Spawn 9",
 				"Sides": [
 					"Usec",
-					"Bear"
+					"Bear",
+					"Savage"
 				],
 				"InfiltrationZone": "House",
 				"Position": {
