@@ -200,7 +200,7 @@ function generate(info, sessionID) {
 		info['conditions'] = [{Limit: 1, Difficulty: "normal", Role: "assault"}];
 	for (let condition of info.conditions) {
 		for (let i = 0; i < condition.Limit; i++) {
-			let bot = json.parse(json.read(db.bots.base));
+			let bot = json.parse(json.read(db.cacheBase.botBase));
 
 			bot._id = "bot" + utility.getRandomIntEx(99999999);
 			bot.Info.Settings.BotDifficulty = condition.Difficulty;
@@ -217,13 +217,13 @@ function generatePlayerScav() {
 	let scavItems = scavData[0].Inventory.items;
 
 	// Remove secured container
-	for (let item of items) {
+	for (let item of scavItems) {
 		if (item.slotId === "SecuredContainer") {
-			let toRemove = itm_hf.findAndReturnChildrenByItems(items, item._id);
+			let toRemove = itm_hf.findAndReturnChildrenByItems(scavItems, item._id);
 			let n = scavItems.length;
 
 			while (n-- > 0) {
-				if (toRemove.includes(items[n]._id)) {
+				if (toRemove.includes(scavItems[n]._id)) {
 					scavItems.splice(n, 1);
 				}
 			}

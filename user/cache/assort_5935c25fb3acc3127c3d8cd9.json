@@ -4,6 +4,15 @@
 	"data": {
 		"items": [
 			{
+				"_id": "5d34df2788a4504526796bef",
+				"_tpl": "59c1383d86f774290a37e0ca",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
 				"_id": "5de8053f7590d15ef30917e6",
 				"_tpl": "5a6086ea4f39f99cd479502f",
 				"parentId": "hideout",
@@ -4881,9 +4890,143 @@
 					"UnlimitedCount": true,
 					"StackObjectsCount": 500000
 				}
+			},
+			{
+				"_id": "I329425583549288141cHN5R",
+				"_tpl": "5e00c1ad86f774747333222c",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I329425588355104731Du5nv",
+				"_tpl": "5c0558060db834001b735271",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I32952212784743804duLrof",
+				"_tpl": "5e81f423763d9f754677bf2e",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I32952214034745434Wl03AJ",
+				"_tpl": "5e81c4ca763d9f754677befa",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I32952216234580544MesaTv",
+				"_tpl": "5e81c3cbac2bb513793cdc75",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433592159969890DyON",
+				"_tpl": "5e81c6bf763d9f754677beff",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_pistol_grip",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433594414341689lr1k",
+				"_tpl": "5e81c4ca763d9f754677befa",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_magazine",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433595297980145La6f",
+				"_tpl": "5e81c539cb2b95385c177553",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_catch",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433595708482270VCuV",
+				"_tpl": "5e81edc13397a21db957f6a1",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_reciever",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433596241628510CMBW",
+				"_tpl": "5e81c6a2ac2bb513793cdc7f",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_trigger",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433597605862251CP8V",
+				"_tpl": "5e81c550763d9f754677befd",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_hammer",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201433599160159882dcTO",
+				"_tpl": "5e81c519cb2b95385c177551",
+				"parentId": "I32952216234580544MesaTv",
+				"slotId": "mod_barrel",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201452456556862957K3yb",
+				"_tpl": "5e81ee4dcb2b95385c177582",
+				"parentId": "I4201433595708482270VCuV",
+				"slotId": "mod_sight_rear",
+				"upd": {
+					"UnlimitedCount": true
+				}
+			},
+			{
+				"_id": "I4201452458589869878PrGf",
+				"_tpl": "5e81ee213397a21db957f6a6",
+				"parentId": "I4201433595708482270VCuV",
+				"slotId": "mod_sight_front",
+				"upd": {
+					"UnlimitedCount": true
+				}
 			}
 		],
 		"barter_scheme": {
+			"5d34df2788a4504526796bef": [
+				[
+					{
+						"count": 1,
+						"_tpl": "590c595c86f7747884343ad7"
+					}
+				]
+			],
 			"5de8053f7590d15ef30917e6": [
 				[
 					{
@@ -7455,9 +7598,54 @@
 						"_tpl": "5696686a4bdc2da3298b456a"
 					}
 				]
+			],
+			"I329425583549288141cHN5R": [
+				[
+					{
+						"count": 10,
+						"level": 30,
+						"side": "Bear",
+						"_tpl": "59f32c3b86f77472a31742f0"
+					}
+				]
+			],
+			"I329425588355104731Du5nv": [
+				[
+					{
+						"count": 9,
+						"level": 25,
+						"side": "Bear",
+						"_tpl": "59f32c3b86f77472a31742f0"
+					}
+				]
+			],
+			"I32952212784743804duLrof": [
+				[
+					{
+						"count": 1,
+						"_tpl": "5696686a4bdc2da3298b456a"
+					}
+				]
+			],
+			"I32952214034745434Wl03AJ": [
+				[
+					{
+						"count": 11,
+						"_tpl": "5696686a4bdc2da3298b456a"
+					}
+				]
+			],
+			"I32952216234580544MesaTv": [
+				[
+					{
+						"count": 131,
+						"_tpl": "5696686a4bdc2da3298b456a"
+					}
+				]
 			]
 		},
 		"loyal_level_items": {
+			"5d34df2788a4504526796bef": 3,
 			"5de8053f7590d15ef30917e6": 4,
 			"5e064f55eb009468d90ba755": 3,
 			"5e3c0b877dfe975b6f2b0c7d": 2,
@@ -7784,7 +7972,12 @@
 			"5e3c0b8a7dfe975b6f2b101a": 4,
 			"5e3c0b8a7dfe975b6f2b1021": 2,
 			"5e3c0b8a7dfe975b6f2b1023": 3,
-			"5e3c0b8a7dfe975b6f2b1025": 3
+			"5e3c0b8a7dfe975b6f2b1025": 3,
+			"I329425583549288141cHN5R": 3,
+			"I329425588355104731Du5nv": 3,
+			"I32952212784743804duLrof": 2,
+			"I32952214034745434Wl03AJ": 2,
+			"I32952216234580544MesaTv": 2
 		}
 	}
 }

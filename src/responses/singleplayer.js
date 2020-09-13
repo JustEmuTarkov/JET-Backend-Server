@@ -29,7 +29,7 @@ function getBotDifficulty(url, info, sessionID) {
     let difficulty = splittedUrl[splittedUrl.length - 1];
 
     if (type === "core") {
-        return json.read(db.bots.core);
+        return json.read(db.cacheBase.botCore);
     }
 
     if (type === "cursedassault")

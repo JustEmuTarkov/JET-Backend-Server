@@ -170,21 +170,6 @@ class LocationServer {
 			logger.logError(`What the fuck did you put into db.user.cache.locations: ${db.user.cache.locations}`);
 		}
 		throw "USE A FUCKING CACHE SYSTEM U MORON!!";
-		
-		// no cache found so lets do it a hard way
-        let base = json.parse(json.read(db.cacheBase.locations));
-        let data = {};
-
-        // use right id's and strip loot
-        for (let name in this.locations) {
-            let map = this.locations[name];
-
-            map.Loot = [];
-            data[this.locations[name]._Id] = map;
-        }
-
-        base.data.locations = data;
-        return base.data;
     }
 }
 

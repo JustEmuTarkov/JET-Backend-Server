@@ -88,7 +88,8 @@
 		"UpdateTime": 1598664622
 	},
 	"Inventory": {
-		"items": [{
+		"items": [
+			{
 				"_id": "5df7b9abef12bf7a252437a1",
 				"_tpl": "55d7217a4bdc2d86028b456d"
 			},
