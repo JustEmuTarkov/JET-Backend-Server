@@ -108,6 +108,10 @@ class Logger {
     logData(data) {
         this.log("", data);
     }
+	
+	throwErr(message, where, additional = ""){
+		throw message + "\r\n" + where + ((additional!="")?`\r\n${additional}`:"");
+	}
 }
 
 module.exports.logger = new Logger();

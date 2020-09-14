@@ -5,6 +5,8 @@ const { resolve } = require('path');
 const zlib = require('zlib');
 const https = require('https');
 const selfsigned = require('selfsigned');
+const psList = require('ps-list');
+const process = require('process');
 
 function getCookies(req) {
     let found = {};
@@ -258,6 +260,7 @@ class Server {
         for (let type in this.startCallback) {
             this.startCallback[type]();
         }
+		logger.logInfo("Starting server...");
 		let backend = this.backendUrl;
         /* create server */
         let httpsServer = https.createServer(this.generateCertificate(), (req, res) => {
@@ -270,10 +273,24 @@ class Server {
         /* server is already running or program using privileged port without root */
         httpsServer.on('error', function(e) {
             if (process.platform === "linux" && !(process.getuid && process.getuid() === 0) && e.port < 1024) {
-                logger.logError("» Non-root processes cannot bind to ports below 1024.");
+				logger.throwErr("» Non-root processes cannot bind to ports below 1024.", ">> core/server.server.js line 274");
+            } else if (e.code == "EADDRINUSE") {
+				psList().then(data => {
+					for(let proc of data){
+						let procName = proc.name.toLowerCase();
+						if((procName.indexOf("node") != -1 || 
+						procName.indexOf("server") != -1 ||
+						procName.indexOf("emu") != -1 ||
+						procName.indexOf("justemu") != -1) && proc.pid != process.pid){
+							logger.logWarning(`ProcessID: ${proc.pid} - Name: ${proc.name}`);
+						}
+					}
+					logger.logError("Please close this processes before starting this server.");
+				});
+                logger.throwErr(`» Port ${e.port} is already in use`, ">> core/server.server.js line 276");
             } else {
-                logger.logError(`» Port ${e.port} is already in use, check if the server isn't already running`);
-            };
+				throw e;
+			};
         });
     }
 }

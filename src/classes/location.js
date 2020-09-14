@@ -14,6 +14,18 @@ class LocationServer {
 
     /* generates a random location preset to use for local session */
     generate(name) {
+		//check if one file loot is existing
+		if(!utility.isUndefined(db.locations[name].loot_file))
+			if(json.exist(db.locations[name].loot_file))
+			{
+				let data = json.parse(json.read(db.locations[name].loot_file));
+				// maybe adding some random ID's for loot wil need to think about it
+				output.Loot = data.Loot;
+				logger.logSuccess(`Loaded 1 file Loot from loot_file.json`);
+				logger.logSuccess(`Generated location ${name}`);
+				return output;
+			}
+		// if no file found proceed with this
         let output = this.locations[name];
         let ids = {};
         let base = {};
@@ -153,7 +165,7 @@ class LocationServer {
     /* get all locations without loot data */
     generateAll() {
 		// lets try to read from cache
-		if(typeof db.user.cache.locations != "undefined")
+		if(!utility.isUndefined(db.user.cache.locations))
 		{
 			if(json.exist(db.user.cache.locations))
 			{

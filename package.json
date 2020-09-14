@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "nexe": "3.3.7",
-    "node-7z-forall": "^1.0.5",
+    "ps-list": "^7.2.0",
     "selfsigned": "1.10.7",
     "upx": "^1.0.6"
   }

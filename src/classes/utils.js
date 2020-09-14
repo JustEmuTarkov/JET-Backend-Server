@@ -1,25 +1,12 @@
 "use strict";
-var Zip = require('node-7z-forall');
 
 class BaseUtils {
-    constructor() {
-        
-    }
+    constructor() {}
+	
+	
 	
 	async unZip(file, path){
-		let archive = new Zip();
-		archive.extractFull(file, `./${path}`, {
-		  r: true // in subfolder too
-		})
-		.progress(function (files) {
-		})
-		.then(function () {
-			logger.logSuccess("Archive unziped!!");
-			return true;
-		}).catch((e) => {
-			logger.logError(e);
-			return false;
-		});
+		console.log("removed cause of uncompatibility of compresed application")
 	}
 
 }

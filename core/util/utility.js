@@ -120,6 +120,11 @@ function secondsToTime(timestamp)
     return hours + 'h' + minutes + ':' + seconds;
 }
 
+function isUndefined(dataToCheck){
+	return typeof dataToCheck == "undefined";
+}
+
+
 module.exports.clearString = clearString;
 module.exports.getRandomInt = getRandomInt;
 module.exports.getRandomIntEx = getRandomIntEx;
