@@ -162,7 +162,7 @@ function dump() {
     json.write("user/cache/res.json", res);
 }
 
-function scanRecursiveRoute(filepath) {
+function scanRecursiveRoute(filepath, deep = false) {
 	if(filepath == "db/")
 		if(!fs.existsSync("db/"))
 			return;
@@ -187,14 +187,17 @@ function scanRecursiveRoute(filepath) {
 
     // deep tree search
     for (let node of directories) {
-        baseNode[node] = scanRecursiveRoute(filepath + node + "/");
+		//if(node != "items" && node != "assort" && node != "customization" && node != "locales" && node != "locations" && node != "templates")
+			baseNode[node] = scanRecursiveRoute(filepath + node + "/");
     }
 
     return baseNode;
 }
 
 function routeAll() {
+	logger.logInfo("Rebuilding cache: route database");
 	db = scanRecursiveRoute("db/");
+	logger.logInfo("Rebuilding cache: route ressources");
     res = scanRecursiveRoute("res/");
     json.write("user/cache/loadorder.json", json.parse(json.read("src/loadorder.json")));
 
@@ -210,32 +213,39 @@ function routeAll() {
 }
 
 function all() {
-    /* create mods folder if missing */
+	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
+	
+    // create mods folder if missing
     if (!fs.existsSync("user/mods/")) {
         fs.mkdirSync("user/mods/");
     }
-
-    detectMissingMods();
+	if(fs.readdirSync("./user/cache").length < 34)
+	{ // health number of cache file count is 34 as for now ;)
+		logger.logError("Missing files! Rebuilding cache required!");
+		serverConfig.rebuildCache = true;
+	}
+	if(!serverConfig.rebuildCache)
+		detectMissingMods();
 
     /* check if loadorder is missing */
-    if (!fs.existsSync("user/cache/loadorder.json")) {
+    if (!fs.existsSync("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
         logger.logWarning("Loadorder missing. Rebuild Required.");
         serverConfig.rebuildCache = true;
     }
 
-    /* detect if existing mods changed */
-    if (detectChangedMods()) {
+    // detect if existing mods changed
+    if (detectChangedMods() && !serverConfig.rebuildCache) {
         logger.logWarning("Modlist changed. Rebuild Required.");
         serverConfig.rebuildCache = true;
     }
 
-    /* check if db need rebuid */
-    if (isRebuildRequired()) {
+    // check if db need rebuid
+    if (isRebuildRequired() && !serverConfig.rebuildCache) {
         logger.logWarning("Rebuild is required!");
         serverConfig.rebuildCache = true;
     }
 
-    /* rebuild db */
+    // rebuild db
     if (serverConfig.rebuildCache) {
         logger.logWarning("Rebuilding cache system");
         

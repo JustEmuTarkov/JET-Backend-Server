@@ -370,7 +370,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
         inventoryItems = itm_hf.clone(globals.data.ItemPresets[body.item_id]._items);
         body.item_id = inventoryItems[0]._id;
     } else if (body.tid === "579dc571d53a0658a154fbec") {
-        let item = json.parse(json.read(db.assort["579dc571d53a0658a154fbec"].items[body.item_id]))
+        let item = json.parse(json.read(db.user.cache.assort_579dc571d53a0658a154fbec)).data.items[body.item_id];
         inventoryItems = [{_id: body.item_id, _tpl: item._tpl}];
     } else {
         inventoryItems = trader_f.traderServer.getAssort(sessionID, body.tid).items;

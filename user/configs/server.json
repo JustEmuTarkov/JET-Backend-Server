@@ -4,6 +4,8 @@
 	"eventPollIntervalSec": 60,
 	"rebuildCache": false,
 	"name": "JustEmuTarkov",
+	"offline": true,
+	"debugTimer": false,
 	"translations": {
 		"alreadyInUse": "The nickname is already in use",
 		"tooShort": "The nickname is too short"

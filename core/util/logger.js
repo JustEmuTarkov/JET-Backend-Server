@@ -64,22 +64,22 @@ class Logger {
                 setColors += colorData[i][colors[i]];
             }
         }
-
+		let deltaTime = (serverConfig.debugTimer)?"["+((new Date().getTime() - global.startTimestamp)/1000).toFixed(2)+"s] ":" ";
         // print data
         if (colors[0] !== "" || colors[1] !== "") {
 			if(type != "")
-				console.log(setColors + type + "\x1b[0m " + data);
+				console.log(setColors+type+"\x1b[0m"+deltaTime+data);
 			else 
-				console.log(setColors + data + "\x1b[0m");
+				console.log(setColors+data+"\x1b[0m");
         } else {
 			if(type != "")
-				console.log(type + data);
+				console.log(type+deltaTime+data);
 			else
 				console.log(data);
         }
 
         // write the logged data to the file
-        this.fileStream.write(util.format(type + data) + '\n');
+		this.fileStream.write(util.format(deltaTime+type+"-"+data+"\n"));
     }
 
     logError(text) {

@@ -19,7 +19,11 @@ function getServer(url, info, sessionID) {
 function validateGameVersion(url, info, sessionID) {
     return response_f.getBody({"isvalid": true, "latestVersion": ""});
 }
+function modeOffline(url, info, sessionID) {
+    return response_f.noBody({"Offline": serverConfig.offline});
+}
 
+router.addStaticRoute("/mode/offline/", modeOffline);
 router.addStaticRoute("/client/game/profile/select", selectProfile);
 router.addStaticRoute("/client/profile/status", getProfileStatus);
 router.addStaticRoute("/client/server/list", getServer);
