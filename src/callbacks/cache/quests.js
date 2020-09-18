@@ -8,9 +8,9 @@ function cache() {
     logger.logInfo("Caching: quests");
 
     let base = {"err": 0, "errmsg": null, "data": []};
-
     /* assort */
-    for (let trader in db.assort) {
+	base.data = db.assort;
+    /*for (let trader in db.assort) {
         if (!("quests" in db.assort[trader])) {
             continue;
         }
@@ -23,7 +23,7 @@ function cache() {
 
             base.data.push(fileData);
         }
-    }
+    }*/
 
     json.write(db.user.cache.quests, base);
 }

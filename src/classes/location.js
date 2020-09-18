@@ -169,7 +169,7 @@ class LocationServer {
 		{
 			if(json.exist(db.user.cache.locations))
 			{
-				console.log(db.cacheBase.locations);
+				//console.log(db.cacheBase.locations);
 				let base = json.parse(json.read(db.cacheBase.locations))
 				let data = json.parse(json.read(db.user.cache.locations));
 				let newData = {};

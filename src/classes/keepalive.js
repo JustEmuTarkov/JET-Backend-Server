@@ -147,7 +147,7 @@ function updateFuel(generatorArea, solarPower) {
                         "Value": resourceValue
                     }
                 };
-                console.log("Generator : " + resourceValue + " fuel left on tank slot " + (i + 1))
+                logger.logInfo("Generator: " + resourceValue + " fuel left on tank slot " + (i + 1))
                 noFuelAtAll = false
                 break; //break here to avoid update all the fuel tanks and only update if fuel Ressource > 0
             } else //if fuel is empty, remove it
@@ -191,7 +191,7 @@ function updateAirFilters(airFilterArea) {
                         "Value": resourceValue
                     }
                 };
-                console.log("Air filter : " + resourceValue + " filter left on tank slot " + (i + 1));
+                logger.logInfo("Air filter: " + resourceValue + " filter time left on tank slot " + (i + 1));
             } else {
                 airFilterArea.slots[i].item[0] = null;
             }

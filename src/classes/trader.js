@@ -10,8 +10,8 @@ class TraderServer {
     /* Load all the traders into memory. */
     initialize() {
         for (let traderID in db.assort) {
-            this.traders[traderID] = json.parse(json.read(db.traders[traderID].base));
-            this.traders[traderID].sell_category = json.parse(json.read(db.traders[traderID].categories));
+            this.traders[traderID] = json.parse(json.read(db.cacheBase.traders[traderID].base));
+            this.traders[traderID].sell_category = json.parse(json.read(db.cacheBase.traders[traderID].categories));
         }
     }
 

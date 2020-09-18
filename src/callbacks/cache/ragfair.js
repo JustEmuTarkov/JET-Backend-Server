@@ -15,7 +15,6 @@ function offers() {
         if (trader === "ragfair" || trader === "579dc571d53a0658a154fbec") {
             continue;
         }
-         
         let allAssort = json.parse(json.read(db.user.cache["assort_" + trader]));
         allAssort = allAssort.data;
     
@@ -54,8 +53,8 @@ function offers() {
 
 function cache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
     let offers = [];
-    let offerBase = json.parse(json.read(db.ragfair.offer));
-    let traderObj = json.parse(json.read(db.traders[trader].base));
+    let offerBase = json.parse(json.read(db.cacheBase.fleaOffer));
+    let traderObj = json.parse(json.read(db.cacheBase.traders[trader].base));
 
     offerBase._id = itemsToSell[0]._id;
     offerBase.intId = counter;

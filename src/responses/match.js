@@ -19,8 +19,7 @@ function joinMatch(url, info, sessionID) {
 }
 
 function getMetrics(url, info, sessionID) {
-	console.log(db.match.metrics);
-	return response_f.getBody(json.parse(json.read(db.match.metrics)));
+	return response_f.getBody(json.parse(json.read(db.cacheBase.matchMetrics)));
 }
 
 function getGroupStatus(url, info, sessionID) {
