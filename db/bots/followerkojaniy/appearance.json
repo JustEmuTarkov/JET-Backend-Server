@@ -1,27 +1,27 @@
 {
 	"body": [
-		"5d5e7e7586f77427997cfb7f",
-		"5d5e7e8386f774393602d6fa"
+		"5d5e7e7586f77427997cfb7f.json",
+		"5d5e7e8386f774393602d6fa.json"
 	],
 	"feet": [
-		"5cc2e5d014c02e15d53d9c03",
-		"5cde9fb87d6c8b0474535da9",
-		"5d5e7f4986f7746956659f8a"
+		"5cc2e5d014c02e15d53d9c03.json",
+		"5cde9fb87d6c8b0474535da9.json",
+		"5d5e7f4986f7746956659f8a.json"
 	],
 	"hands": [
-		"5cc2e68f14c02e28b47de290"
+		"5cc2e68f14c02e28b47de290.json"
 	],
 	"head": [
-		"5cc2e4d014c02e000d0115f8",
-		"5cde9ff17d6c8b0474535daa",
-		"5d28afe786f774292668618d"
+		"5cc2e4d014c02e000d0115f8.json",
+		"5cde9ff17d6c8b0474535daa.json",
+		"5d28afe786f774292668618d.json"
 	],
 	"voice": [
-		"scav_1",
-		"scav_2",
-		"scav_3",
-		"scav_4",
-		"scav_5",
-		"scav_6"
+		"scav_1.json",
+		"scav_2.json",
+		"scav_3.json",
+		"scav_4.json",
+		"scav_5.json",
+		"scav_6.json"
 	]
 }

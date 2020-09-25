@@ -11,7 +11,7 @@
 	"balance_dol": 0,
 	"balance_eur": 0,
 	"display": true,
-	"discount": 0,
+	"discount": 40,
 	"discount_end": 0,
 	"buyer_up": false,
 	"currency": "RUB",
@@ -46,7 +46,7 @@
 			},
 			"1": {
 				"minLevel": 15,
-				"minSalesSum": 1000000,
+				"minSalesSum": 750000,
 				"minStanding": 0
 			},
 			"2": {

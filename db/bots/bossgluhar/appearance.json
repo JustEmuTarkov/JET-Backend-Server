@@ -1,22 +1,22 @@
 {
 	"body": [
-		"5d5e7dd786f7744a7a274322"
+		"5d5e7dd786f7744a7a274322.json"
 	],
 	"feet": [
-		"5d5e7f2a86f77427997cfb80"
+		"5d5e7f2a86f77427997cfb80.json"
 	],
 	"hands": [
-		"5cc2e68f14c02e28b47de290"
+		"5cc2e68f14c02e28b47de290.json"
 	],
 	"head": [
-		"5d5e805d86f77439eb4c2d0e"
+		"5d5e805d86f77439eb4c2d0e.json"
 	],
 	"voice": [
-		"scav_1",
-		"scav_2",
-		"scav_3",
-		"scav_4",
-		"scav_5",
-		"scav_6"
+		"scav_1.json",
+		"scav_2.json",
+		"scav_3.json",
+		"scav_4.json",
+		"scav_5.json",
+		"scav_6.json"
 	]
 }

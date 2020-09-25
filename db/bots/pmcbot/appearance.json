@@ -1,25 +1,25 @@
 {
 	"body": [
-		"5d28ae4986f7742926686187"
+		"5d28ae4986f7742926686187.json"
 	],
 	"feet": [
-		"5cc2e5d014c02e15d53d9c03",
-		"5cde9fb87d6c8b0474535da9",
-		"5d28af7886f77429275dba25"
+		"5cc2e5d014c02e15d53d9c03.json",
+		"5cde9fb87d6c8b0474535da9.json",
+		"5d28af7886f77429275dba25.json"
 	],
 	"hands": [
-		"5cc0876314c02e000c6bea6b"
+		"5cc0876314c02e000c6bea6b.json"
 	],
 	"head": [
-		"5cc084dd14c02e000b0550a3",
-		"5cc2e4d014c02e000d0115f8",
-		"5cde9ff17d6c8b0474535daa"
+		"5cc084dd14c02e000b0550a3.json",
+		"5cc2e4d014c02e000d0115f8.json",
+		"5cde9ff17d6c8b0474535daa.json"
 	],
 	"voice": [
-		"bear_1",
-		"bear_2",
-		"usec_1",
-		"usec_2",
-		"usec_3"
+		"bear_1.json",
+		"bear_2.json",
+		"usec_1.json",
+		"usec_2.json",
+		"usec_3.json"
 	]
 }

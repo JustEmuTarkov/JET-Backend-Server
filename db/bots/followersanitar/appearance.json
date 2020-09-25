@@ -1,0 +1,22 @@
+{
+	"body": [
+		"5df8a10486f77412672a1e3a.json"
+	],
+	"feet": [
+		"5cc2e5d014c02e15d53d9c03.json"
+	],
+	"hands": [
+		"5df8eac086f77412640e2ea7.json"
+	],
+	"head": [
+		"5cc2e4d014c02e000d0115f8.json"
+	],
+	"voice": [
+		"scav_1.json",
+		"scav_2.json",
+		"scav_3.json",
+		"scav_4.json",
+		"scav_5.json",
+		"scav_6.json"
+	]
+}

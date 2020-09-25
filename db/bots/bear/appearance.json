@@ -1,18 +1,18 @@
 {
 	"body": [
-		"5cc0858d14c02e000c6bea66"
+		"5cc0858d14c02e000c6bea66.json"
 	],
 	"feet": [
-		"5cc085bb14c02e000e67a5c5"
+		"5cc085bb14c02e000e67a5c5.json"
 	],
 	"hands": [
-		"5cc0876314c02e000c6bea6b"
+		"5cc0876314c02e000c6bea6b.json"
 	],
 	"head": [
-		"5cc084dd14c02e000b0550a3"
+		"5cc084dd14c02e000b0550a3.json"
 	],
 	"voice": [
-		"bear_1",
-		"bear_2"
+		"bear_1.json",
+		"bear_2.json"
 	]
 }

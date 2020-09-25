@@ -1,19 +1,19 @@
 {
 	"body": [
-		"5cde95d97d6c8b647a3769b0"
+		"5cde95d97d6c8b647a3769b0.json"
 	],
 	"feet": [
-		"5cde95ef7d6c8b04713c4f2d"
+		"5cde95ef7d6c8b04713c4f2d.json"
 	],
 	"hands": [
-		"5cde95fa7d6c8b04737c2d13"
+		"5cde95fa7d6c8b04737c2d13.json"
 	],
 	"head": [
-		"5cde96047d6c8b20b577f016"
+		"5cde96047d6c8b20b577f016.json"
 	],
 	"voice": [
-		"usec_1",
-		"usec_2",
-		"usec_3"
+		"usec_1.json",
+		"usec_2.json",
+		"usec_3.json"
 	]
 }
