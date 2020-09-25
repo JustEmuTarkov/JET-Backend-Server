@@ -8,7 +8,7 @@
 		"Side": "Bear",
 		"Voice": "Bear_1",
 		"Level": 1,
-		"Experience": 0,
+		"Experience": 235,
 		"RegistrationDate": 1600008561,
 		"GameVersion": "edge_of_darkness",
 		"AccountType": 2,
@@ -96,8 +96,8 @@
 			{
 				"_id": "5df7b9abef12bf7a25243797",
 				"_tpl": "57dc2fa62459775949412633",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "FirstPrimaryWeapon",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 100,
@@ -109,12 +109,6 @@
 					"FireMode": {
 						"FireMode": "single"
 					}
-				},
-				"location": {
-					"x": 4,
-					"y": 31,
-					"r": "Horizontal",
-					"isSearched": true
 				}
 			},
 			{
@@ -171,29 +165,23 @@
 			{
 				"_id": "5df7b9abef12bf7a25243798",
 				"_tpl": "57cd379a24597778e7682ecf",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "Scabbard",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 100,
 						"Durability": 100
 					}
-				},
-				"location": {
-					"x": 2,
-					"y": 0,
-					"r": "Horizontal",
-					"isSearched": true
 				}
 			},
 			{
 				"_id": "5df7b9abef12bf7a25243799",
 				"_tpl": "56dfef82d2720bbd668b4567",
-				"parentId": "I031719501500030262gycGe",
-				"slotId": "3",
+				"parentId": "5df7b9abef12bf7a2524385f",
+				"slotId": "hideout",
 				"location": {
-					"x": 0,
-					"y": 0,
+					"x": 3,
+					"y": 4,
 					"r": "Horizontal",
 					"isSearched": true
 				},
@@ -225,14 +213,8 @@
 			{
 				"_id": "5df7b9abef12bf7a2524379d",
 				"_tpl": "5857a8bc2459772bad15db29",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 0,
-					"y": 28,
-					"r": "Horizontal",
-					"isSearched": true
-				}
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "SecuredContainer"
 			},
 			{
 				"_id": "5df7b9abef12bf7a2524379f",
@@ -515,12 +497,12 @@
 			{
 				"_id": "5df7b9abef12bf7a252437b8",
 				"_tpl": "5448c12b4bdc2d02308b456f",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "5df7b9abef12bf7a252437a0",
+				"slotId": "pocket4",
 				"location": {
-					"x": 3,
-					"y": 4,
-					"r": 0,
+					"x": 0,
+					"y": 0,
+					"r": "Horizontal",
 					"isSearched": true
 				}
 			},
@@ -1345,14 +1327,8 @@
 			{
 				"_id": "5df7b9abef12bf7a25243801",
 				"_tpl": "545cdae64bdc2d39198b4568",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 4,
-					"y": 11,
-					"r": 1,
-					"isSearched": true
-				}
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "Backpack"
 			},
 			{
 				"_id": "5df7b9abef12bf7a25243802",
@@ -1682,14 +1658,8 @@
 			{
 				"_id": "5df7b9abef12bf7a2524383a",
 				"_tpl": "5448bd6b4bdc2dfc2f8b4569",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 0,
-					"y": 4,
-					"r": 0,
-					"isSearched": true
-				},
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "Holster",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 100,
@@ -2264,16 +2234,10 @@
 			{
 				"_id": "I031719501500030262gycGe",
 				"_tpl": "5c0e9f2c86f77432297fe0a3",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "TacticalVest",
 				"upd": {
 					"StackObjectsCount": 1
-				},
-				"location": {
-					"x": 0,
-					"y": 31,
-					"r": "Horizontal",
-					"isSearched": true
 				}
 			},
 			{
@@ -2756,7 +2720,39 @@
 		"58948c8e86f77409493f7266": true,
 		"595cf16b86f77427440c32e2": true,
 		"59bffc1f86f77435b128b872": true,
-		"5894a05586f774094708ef75": true
+		"5894a05586f774094708ef75": true,
+		"574d967124597745970e7c94": true,
+		"576fd4ec2459777f0b518431": true,
+		"59d650cf86f7741b846413a4": true,
+		"5947db3f86f77447880cf76f": true,
+		"591c4e1186f77410354b316e": true,
+		"5cf639aad7f00c065703d455": true,
+		"57d14e1724597714010c3f4b": true,
+		"57371f8d24597761006c6a81": true,
+		"5735fdcd2459776445391d61": true,
+		"57371f2b24597761224311f1": true,
+		"56dff4a2d2720bbd668b456a": true,
+		"5737201124597760fc4431f1": true,
+		"5656d7c34bdc2d9d198b4587": true,
+		"5735ff5c245977640e39ba7e": true,
+		"573719762459775a626ccbc1": true,
+		"58864a4f2459770fcc257101": true,
+		"57371eb62459776125652ac1": true,
+		"5887431f2459777e1612938f": true,
+		"57372ac324597767001bc261": true,
+		"57372c89245977685d4159b1": true,
+		"56dff3afd2720bba668b4567": true,
+		"57371e4124597760ff7b25f1": true,
+		"5649b0544bdc2d1b2b8b458a": true,
+		"5648b1504bdc2d9d488b4584": true,
+		"5cf638cbd7f00c06595bc936": true,
+		"5991b51486f77447b112d44f": true,
+		"5cbda392ae92155f3c17c39f": true,
+		"5c82342f2e221644f31c060e": true,
+		"5bfd4c980db834001b73449d": true,
+		"5ac72e475acfc400180ae6fe": true,
+		"57dc324a24597759501edc20": true,
+		"571a29dc2459771fb2755a6a": true
 	},
 	"ConditionCounters": {
 		"Counters": []

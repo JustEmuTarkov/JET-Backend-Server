@@ -205,7 +205,7 @@ class Server {
         const sessionID = getCookies(req)['PHPSESSID'];
 		let displaySessID = ((typeof sessionID != "undefined")?`[${sessionID}]`:"");
 		
-		if(req.url.substr(0,6) != "/files")
+		if(req.url.substr(0,6) != "/files" && req.url.substr(0,6) != "/notif" && req.url != "/client/game/keepalive")
 			logger.logRequest(req.url, `${displaySessID}[${IP}] `);
     
         // request without data

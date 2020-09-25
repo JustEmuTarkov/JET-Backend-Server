@@ -5,7 +5,7 @@
 	"rebuildCache": false,
 	"name": "JustEmuTarkov",
 	"offline": true,
-	"debugTimer": false,
+	"debugTimer": true,
 	"translations": {
 		"alreadyInUse": "The nickname is already in use",
 		"tooShort": "The nickname is too short"

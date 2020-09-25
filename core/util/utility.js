@@ -125,6 +125,7 @@ function isUndefined(dataToCheck){
 }
 
 
+module.exports.isUndefined = isUndefined;
 module.exports.clearString = clearString;
 module.exports.getRandomInt = getRandomInt;
 module.exports.getRandomIntEx = getRandomIntEx;
