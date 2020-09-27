@@ -9,22 +9,16 @@ function cache() {
 
     let base = {"err": 0, "errmsg": null, "data": []};
     /* assort */
-	base.data = db.assort;
-    /*for (let trader in db.assort) {
+	//base.data = db.assort;
+    for (let trader in db.assort) {
         if (!("quests" in db.assort[trader])) {
             continue;
         }
-
-        let inputFiles = db.assort[trader].quests;
-
-        for (let file in inputFiles) {
-            let filePath = inputFiles[file];
-            let fileData = json.parse(json.read(filePath));
-
-            base.data.push(fileData);
-        }
-    }*/
-
+        let data = json.parse(json.read(db.assort[trader].quests));
+		for(let quest in data){
+			base.data.push(data[quest]);
+		}
+    }
     json.write(db.user.cache.quests, base);
 }
 

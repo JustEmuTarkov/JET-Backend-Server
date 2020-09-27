@@ -119,7 +119,7 @@ function examineItem(pmcData, body, sessionID) {
     pmcData.Info.Experience += item._props.ExamineExperience;
     pmcData.Encyclopedia[itemID] = true;
 
-    logger.logSuccess(`EXAMINED: ${itemID}`);
+    //logger.logSuccess(`EXAMINED: ${itemID}`);
     return item_f.itemServer.getOutput();
 }
 

@@ -9,7 +9,7 @@ class TraderServer {
 
     /* Load all the traders into memory. */
     initialize() {
-        for (let traderID in db.assort) {
+        for (let traderID in db.cacheBase.traders) {
             this.traders[traderID] = json.parse(json.read(db.cacheBase.traders[traderID].base));
             this.traders[traderID].sell_category = json.parse(json.read(db.cacheBase.traders[traderID].categories));
         }
@@ -113,11 +113,11 @@ class TraderServer {
             // 1 is min level, 4 is max level
             let level = this.traders[traderID].loyalty.currentLevel;
 			let questassort = {};
-			if(typeof db.assort[traderID].questassort == "undefined")
+			if(typeof db.traders[traderID].questassort == "undefined")
 			{
 				questassort = {"started": {},"success": {},"fail": {}};
-			} else if(json.exist(db.assort[traderID].questassort)){
-				questassort = json.parse(json.read(db.assort[traderID].questassort));
+			} else if(json.exist(db.traders[traderID].questassort)){
+				questassort = json.parse(json.read(db.traders[traderID].questassort));
 			} else {
 				questassort = {"started": {},"success": {},"fail": {}};
 			}
@@ -166,9 +166,10 @@ class TraderServer {
 
             //it's the item
             if (!(traderID in globals.data.ItemPresets)) {
-                base.data.items.push(json.parse(json.read(db.assort[fenceId].items[traderID])));
-                base.data.barter_scheme[traderID] = json.parse(json.read(db.assort[fenceId].barter_scheme[traderID]));
-                base.data.loyal_level_items[traderID] = json.parse(json.read(db.assort[fenceId].loyal_level_items[traderID]));
+				let TraderData = json.parse(json.read(db.user.cache.assort_579dc571d53a0658a154fbec)).data;
+                base.data.items.push(TraderData.items[traderID]);
+                base.data.barter_scheme[traderID] = TraderData.barter_scheme[traderID];
+                base.data.loyal_level_items[traderID] = TraderData.loyal_level_items[traderID];
                 continue;
             }
 
