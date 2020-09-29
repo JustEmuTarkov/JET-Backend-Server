@@ -14,18 +14,12 @@ function cache() {
     ];
 
     for (let path in inputDir) {
-        let inputFiles = db.templates[inputDir[path]];
-
-        for (let file in inputFiles) {
-            let filePath = inputFiles[file];
-            let fileData = json.parse(json.read(filePath));
-
-            if (path == 0) {
-                base.data.Categories.push(fileData);
-            } else {
-                base.data.Items.push(fileData);
-            }
-        }
+        let _data = json.parse(json.read(db.templates[inputDir[path]]));
+		if (path == 0) {
+			base.data.Categories = _data;
+		} else {
+			base.data.Items = _data;
+		}
     }
 
     json.write(db.user.cache.templates, base);
