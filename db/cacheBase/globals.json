@@ -1,7 +1,7 @@
 {
-    "err": 0,
-    "errmsg": null,
-    "data": {
+	"err": 0,
+	"errmsg": null,
+	"data": {
 	"config": {
 		"content": {
 			"ip": "",

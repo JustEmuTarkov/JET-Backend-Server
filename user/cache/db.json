@@ -1018,23 +1018,6 @@
 				"inventory_99": "db/bots/bosskojaniy/inventory/inventory_99.json"
 			}
 		},
-		"bosssanitar": {
-			"appearance": "db/bots/bosssanitar/appearance.json",
-			"experience": "db/bots/bosssanitar/experience.json",
-			"names": "db/bots/bosssanitar/names.json",
-			"difficulties": {
-				"easy": "db/bots/bosssanitar/difficulties/easy.json",
-				"hard": "db/bots/bosssanitar/difficulties/hard.json",
-				"impossible": "db/bots/bosssanitar/difficulties/impossible.json",
-				"normal": "db/bots/bosssanitar/difficulties/normal.json"
-			},
-			"health": {
-				"default": "db/bots/bosssanitar/health/default.json"
-			},
-			"inventory": {
-				"inventory_0": "db/bots/bosssanitar/inventory/inventory_0.json"
-			}
-		},
 		"followerbully": {
 			"appearance": "db/bots/followerbully/appearance.json",
 			"experience": "db/bots/followerbully/experience.json",
@@ -1833,23 +1816,6 @@
 				"inventory_97": "db/bots/followerkojaniy/inventory/inventory_97.json",
 				"inventory_98": "db/bots/followerkojaniy/inventory/inventory_98.json",
 				"inventory_99": "db/bots/followerkojaniy/inventory/inventory_99.json"
-			}
-		},
-		"followersanitar": {
-			"appearance": "db/bots/followersanitar/appearance.json",
-			"experience": "db/bots/followersanitar/experience.json",
-			"names": "db/bots/followersanitar/names.json",
-			"difficulties": {
-				"easy": "db/bots/followersanitar/difficulties/easy.json",
-				"hard": "db/bots/followersanitar/difficulties/hard.json",
-				"impossible": "db/bots/followersanitar/difficulties/impossible.json",
-				"normal": "db/bots/followersanitar/difficulties/normal.json"
-			},
-			"health": {
-				"default": "db/bots/followersanitar/health/default.json"
-			},
-			"inventory": {
-				"inventory_0": "db/bots/followersanitar/inventory/inventory_0.json"
 			}
 		},
 		"marksman": {
