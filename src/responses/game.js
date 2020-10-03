@@ -23,12 +23,19 @@ function modeOffline(url, info, sessionID) {
     return response_f.noBody({"Offline": serverConfig.offline});
 }
 
+function checkGameStarted(url, info, sessionID) {
+	if(json.exist("user/profiles/" + sessionID + "/character.json"))
+		return response_f.getBody(null, 0, null);
+		
+	return response_f.getBody(null, 999, "Profile Not Found!!");
+}
+
 router.addStaticRoute("/mode/offline/", modeOffline);
 router.addStaticRoute("/client/game/profile/select", selectProfile);
 router.addStaticRoute("/client/profile/status", getProfileStatus);
 router.addStaticRoute("/client/server/list", getServer);
 router.addStaticRoute("/client/game/version/validate", response_f.nullResponse);
 router.addStaticRoute("/client/game/config", getGameConfig);
-router.addStaticRoute("/client/game/start", response_f.nullResponse);
+router.addStaticRoute("/client/game/start", checkGameStarted);
 router.addStaticRoute("/client/game/logout", response_f.nullResponse);
 router.addStaticRoute("/client/checkVersion", validateGameVersion)

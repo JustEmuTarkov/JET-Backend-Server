@@ -219,8 +219,8 @@ function all() {
     if (!fs.existsSync("user/mods/")) {
         fs.mkdirSync("user/mods/");
     }
-	if(fs.readdirSync("./user/cache").length < 34)
-	{ // health number of cache file count is 34 as for now ;)
+	if(fs.readdirSync("./user/cache").length < 32)
+	{ // health number of cache file count is 32 as for now ;)
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
 	}
