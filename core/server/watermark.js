@@ -4,7 +4,7 @@ const textTable = [
 	"JustEmuTarkov " + server.version,
 	"« discord.gg/T66tGKa »"
 ];
-	
+
 /* Calculate Box Sizes - START */
 var longestTextTableIndex = 0;
 function getBoxSpacing(isUpper = 0, text = ""){
