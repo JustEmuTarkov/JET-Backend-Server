@@ -3,18 +3,45 @@
 class Router {
     constructor() {
         this.staticRoutes = {};
-        this.dynamicRoutes = {};
+		let getStaticRoute = json.readDir("./src/response");
+		for(let file of getStaticRoute){
+			if(file.includes('_')) continue;
+			if(!file.includes(".js")) continue;
+
+			let route = "/" + file.replace(".js", "").replace(/\./g, "/");
+			let callback = require("../../src/response/" + file);
+			this.staticRoutes[route] = callback.execute;
+		}
+		
+		this.dynamicRoutes = {};
+		let getDynamicRoute = json.readDir("./src/response/dynamic");
+		for(let file of getDynamicRoute){
+			//if(file.includes('_')) continue; // fucks up the last_id dynamic response
+			if(!file.includes(".js")) continue;
+			
+			let route = file.replace(".js", "");
+			if(route == "jpg" || route == "png" || route == "bundle")
+				route = "." + route;
+			else if(route == "last_id")
+				route = "?" + route;
+			else
+				route = "/" + route.replace(/\./g, "/");
+			let callback = require("../../src/response/dynamic/" + file);
+			this.dynamicRoutes[route] = callback.execute;
+		}
+		
+		
     }
 
     /* sets static routes to check for */
-    addStaticRoute(route, callback) {
+    /*addStaticRoute(route, callback) {
         this.staticRoutes[route] = callback;
-    }
+    }*/
 
     /* sets dynamic routes to check for */
-    addDynamicRoute(route, callback) {
+    /*addDynamicRoute(route, callback) {
         this.dynamicRoutes[route] = callback;
-    }
+    }*/
 
     getResponse(req, body, sessionID) {
         let output = "";

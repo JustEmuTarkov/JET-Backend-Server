@@ -25,7 +25,7 @@ class InraidServer {
             if (item._tpl === mapKey && item.slotId !== "Hideout") {
                 let usages = -1
                 
-                if(!itm_hf.getItem(mapKey)[1]._props.MaximumNumberOfUsage){
+                if(!helper_f.getItem(mapKey)[1]._props.MaximumNumberOfUsage){
                     usages = 1
                 }else{
                     usages = ("upd" in item && "Key" in item.upd) ? item.upd.Key.NumberOfUsages : -1;
@@ -37,7 +37,7 @@ class InraidServer {
                     item.upd.Key.NumberOfUsages += 1;
                 }
     
-                if (item.upd.Key.NumberOfUsages >= itm_hf.getItem(mapKey)[1]._props.MaximumNumberOfUsage) {
+                if (item.upd.Key.NumberOfUsages >= helper_f.getItem(mapKey)[1]._props.MaximumNumberOfUsage) {
                     move_f.removeItemFromProfile(offraidData.profile, item._id);
                 }
     
@@ -288,7 +288,7 @@ function saveProgress(offraidData, sessionID) {
         offraidData.profile = RemoveFoundItems(offraidData.profile)
     }
 
-    offraidData.profile.Inventory.items = itm_hf.replaceIDs(offraidData.profile, offraidData.profile.Inventory.items, offraidData.profile.Inventory.fastPanel);
+    offraidData.profile.Inventory.items = helper_f.replaceIDs(offraidData.profile, offraidData.profile.Inventory.items, offraidData.profile.Inventory.fastPanel);
 
     // set profile equipment to the raid equipment
     if (isPlayerScav) {

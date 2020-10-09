@@ -92,7 +92,7 @@ class DialogueServer {
 			stashItems.stash = stashId;
 			stashItems.data = [];
 
-			rewards = itm_hf.replaceIDs(null, rewards);
+			rewards = helper_f.replaceIDs(null, rewards);
 
 			for (let reward of rewards) {
 				if (!reward.hasOwnProperty("slotId") || reward.slotId === "hideout") {

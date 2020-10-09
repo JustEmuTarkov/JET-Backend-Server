@@ -76,7 +76,7 @@ function moveItem(pmcData, body, sessionID) {
 function moveItemToProfile(fromItems, toItems, body) {
     handleCartridges(fromItems, body);
 
-    let idsToMove = itm_hf.findAndReturnChildrenByItems(fromItems, body.item);
+    let idsToMove = helper_f.findAndReturnChildrenByItems(fromItems, body.item);
 
     for (let itemId of idsToMove) {
         for (let itemIndex in fromItems) {
@@ -149,7 +149,7 @@ function handleCartridges(items, body) {
 /* Remove item of itemId and all of its descendants from profile. */
 function removeItemFromProfile(profileData, itemId, output = null) {
     // get items to remove
-    let ids_toremove = itm_hf.findAndReturnChildren(profileData, itemId);
+    let ids_toremove = helper_f.findAndReturnChildren(profileData, itemId);
 
      //remove one by one all related items and itself
     for (let i in ids_toremove) {
@@ -361,13 +361,13 @@ function swapItem(pmcData, body, sessionID) {
 * its used for "add" item like gifts etc.
 * */
 function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
-    let PlayerStash = itm_hf.getPlayerStash(sessionID);
+    let PlayerStash = helper_f.getPlayerStash(sessionID);
     let stashY = PlayerStash[1];
     let stashX = PlayerStash[0];
     let inventoryItems;
 
     if (body.item_id in globals.data.ItemPresets) {
-        inventoryItems = itm_hf.clone(globals.data.ItemPresets[body.item_id]._items);
+        inventoryItems = helper_f.clone(globals.data.ItemPresets[body.item_id]._items);
         body.item_id = inventoryItems[0]._id;
     } else if (body.tid === "579dc571d53a0658a154fbec") {
         let item = json.parse(json.read(db.user.cache.assort_579dc571d53a0658a154fbec)).data.items[body.item_id];
@@ -380,7 +380,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
         if (item._id === body.item_id) {
             let MaxStacks = 1;
             let StacksValue = [];
-            let tmpItem = itm_hf.getItem(item._tpl)[1];
+            let tmpItem = helper_f.getItem(item._tpl)[1];
 
             // split stacks if the size is higher than allowed by StackMaxSize
             if (body.count > tmpItem._props.StackMaxSize) {
@@ -408,8 +408,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                 //update profile on each stack so stash recalculate will have new items
                 pmcData = profile_f.profileServer.getPmcProfile(sessionID);
 
-                let StashFS_2D = itm_hf.recheckInventoryFreeSpace(pmcData, sessionID);
-                let ItemSize = itm_hf.getSize(item._tpl, item._id, inventoryItems);
+                let StashFS_2D = helper_f.recheckInventoryFreeSpace(pmcData, sessionID);
+                let ItemSize = helper_f.getSize(item._tpl, item._id, inventoryItems);
                 let tmpSizeX = ItemSize[0];
                 let tmpSizeY = ItemSize[1];
                 let rotation = false;
@@ -522,7 +522,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                                 // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
                                 let maxCount = ammoBoxInfo[0]._max_count;
                                 let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
-                                let ammoStackMaxSize = itm_hf.getItem(ammoTmplId)[1]._props.StackMaxSize;
+                                let ammoStackMaxSize = helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
                                 let ammos = [];
                                 let location = 0;
 

@@ -197,7 +197,7 @@ function routeAll() {
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route ressources");
     res = scanRecursiveRoute("res/");
-    json.write("user/cache/loadorder.json", json.readParsed("src/loadorder.json"));
+    json.write("user/cache/loadorder.json", json.read("src/loadorder.json"), true);
 
     /* add important server paths */
     db.user = {

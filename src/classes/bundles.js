@@ -44,7 +44,7 @@ class BundlesServer {
     }
 
     getBundles(local) {
-        let bundles = itm_hf.clone(this.bundles);
+        let bundles = helper_f.clone(this.bundles);
         for (const bundle of bundles) {
             if(local) {
                 bundle.path = bundle.filePath;
@@ -55,7 +55,7 @@ class BundlesServer {
     }
 
     getBundleByKey(key, local) {
-        let bundle = itm_hf.clone(this.bundleBykey[key]);
+        let bundle = helper_f.clone(this.bundleBykey[key]);
         if(local) {
             bundle.path = bundle.filePath;
         }

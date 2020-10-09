@@ -5,7 +5,7 @@ function buyItem(pmcData, body, sessionID) {
         body.tid = "ragfair";
     }
 
-    if (!itm_hf.payMoney(pmcData, body, sessionID)) {
+    if (!helper_f.payMoney(pmcData, body, sessionID)) {
         logger.logError("no money found");
         return "";
     }
@@ -50,7 +50,7 @@ function sellItem(pmcData, body, sessionID) {
     }
 
     // get money the item]
-    return itm_hf.getMoney(pmcData, money, body, output, sessionID);
+    return helper_f.getMoney(pmcData, money, body, output, sessionID);
 }
 
 // separate is that selling or buying
