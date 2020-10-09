@@ -1,6 +1,4 @@
-"use strict";
-
-function sendImage(sessionID, req, resp, body) {
+exports.execute = (sessionID, req, resp, body) => {
     let bundleKey = req.url.split('/bundle/')[1];
 
 	logger.logInfo(`[BUNDLE]: ${req.url}`);
@@ -11,5 +9,3 @@ function sendImage(sessionID, req, resp, body) {
     // send bundle
     server.sendFile(resp, path);
 }
-
-server.addRespondCallback("BUNDLE", sendImage);

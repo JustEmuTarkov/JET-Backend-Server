@@ -16,25 +16,37 @@ function stringify(data, oneLiner = false) {
     return JSON.stringify(data, null, "\t");
 }
 
-function parse(string) {
-    return JSON.parse(string);
-}
+exports.createReadStream = (file) => { return fs.createReadStream(file); }
 
-function read(file) {
-    return fs.readFileSync(file, 'utf8');
-}
+exports.readParsed = (file) => { JSON.parse(fs.readFileSync(file, 'utf8')); }
 
-function write(file, data) {
+exports.parse = (string) => { return JSON.parse(string); }
+
+exports.read = (file) => { return fs.readFileSync(file, 'utf8'); }
+
+exports.exist = (file) => { return fs.existsSync(file); }
+
+exports.readDir = (path) => { return fs.readdirSync(path); }
+
+exports.statSync = (path) => { return fs.statSync(path); }
+
+exports.lstatSync = (path) => { return fs.lstatSync(path); }
+
+exports.unlink = (path) => { return fs.unlinkSync(path); }
+
+exports.rmDir = (path) => { return fs.rmdirSync(path); }
+
+exports.mkDir = (path) => { return fs.mkdirSync(path); }
+
+exports.write = (file, data, raw = false) => {
 	if(file.indexOf('/') != -1)
 		createDir(file);
+	if(raw)
+	{
+		fs.writeFileSync(file, data);
+		return;
+	}
     fs.writeFileSync(file, stringify(data), 'utf8');
 }
-function exist(file){
-	return fs.existsSync(file);	
-}
 
-module.exports.exist = exist;
 module.exports.stringify = stringify;
-module.exports.parse = parse;
-module.exports.read = read;
-module.exports.write = write;

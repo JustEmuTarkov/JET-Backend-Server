@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -36,7 +34,5 @@ function cache() {
 
 		locations[name] = location;
 	}
-	json.write(`user/cache/locations.json`, locations);
+	json.write("user/cache/locations.json", locations);
 }
-
-server.addCacheCallback("cacheLocations", cache);

@@ -2,48 +2,71 @@
 
 const fs = require('fs');
 const { resolve } = require('path');
+const path = require('path');
 const zlib = require('zlib');
 const https = require('https');
 const selfsigned = require('selfsigned');
 const psList = require('ps-list');
 const process = require('process');
 
-function getCookies(req) {
-    let found = {};
-    let cookies = req.headers.cookie;
-
-    if (cookies) {
-        for (let cookie of cookies.split(';')) {
-            let parts = cookie.split('=');
-
-            found[parts.shift().trim()] = decodeURI(parts.join('='));
-        }
-    }
-
-    return found;
-}
-
 class Server {
     constructor() {
         this.buffers = {};
-        this.cacheCallback = {};
-        this.startCallback = {};
-        this.receiveCallback = {};
-        this.respondCallback = {};
         this.name = serverConfig.name;
         this.ip = serverConfig.ip;
         this.port = serverConfig.port;
         this.backendUrl = "https://" + this.ip + ":" + this.port;
         this.version = "1.0.0";
         this.mime = {
+            html: 'text/html',
             txt: 'text/plain',
             jpg: 'image/jpeg',
             png: 'image/png',
             json: 'application/json'
         };
-
-        this.addRespondCallback("DONE", this.killResponse.bind(this));
+		this.respondCallback["DONE"] = this.killResponse.bind(this);
+		this.createCacheCallback();
+		this.createStartCallback();
+		this.createReceiveCallback();
+		this.createRespondCallback();
     }
+	
+	createCacheCallback(){
+        this.cacheCallback = {};
+		let path = "./src/callbacks/cache";
+		let files = json.readDir(path);
+		for(let file of files){
+			let scriptName = "cache" + file.replace(".js","");
+			this.cacheCallback[scriptName] = require("../../src/callbacks/cache/" + file).cache;
+		}
+	}
+	createStartCallback(){
+        this.startCallback = {};
+		let path = "./src/callbacks/load";
+		let files = json.readDir(path);
+		for(let file of files){
+			let scriptName = "load" + file.replace(".js","");
+			this.startCallback[scriptName] = require("../../src/callbacks/load/" + file).load;
+		}
+	}
+	createReceiveCallback(){
+        this.receiveCallback = {};
+		let path = "./src/callbacks/receive";
+		let files = json.readDir(path);
+		for(let file of files){
+			let scriptName = file.replace(".js","");
+			this.receiveCallback[scriptName] = require("../../src/callbacks/receive/" + file).execute;
+		}
+	}
+	createRespondCallback(){
+        this.respondCallback = {};
+		let path = "./src/callbacks/respond";
+		let files = json.readDir(path);
+		for(let file of files){
+			let scriptName = file.replace(".js","");
+			this.respondCallback[scriptName] = require("../../src/callbacks/respond/" + file).execute;
+		}
+	}
 
     resetBuffer(sessionID) {
         this.buffers[sessionID] = undefined;
@@ -67,22 +90,6 @@ class Server {
     
     getFromBuffer(sessionID) {
         return this.buffers[sessionID].buffer;
-    }
-
-    addCacheCallback(type, worker) {
-        this.cacheCallback[type] = worker;
-    }
-
-    addStartCallback(type, worker) {
-        this.startCallback[type] = worker;
-    }
-
-    addReceiveCallback(type, worker) {
-        this.receiveCallback[type] = worker;
-    }
-
-    addRespondCallback(type, worker) {
-        this.respondCallback[type] = worker;
     }
 
     getName() {
@@ -116,13 +123,13 @@ class Server {
             key;
 
         try {
-            cert = fs.readFileSync(certFile);
-            key = fs.readFileSync(keyFile);
+            cert = json.read(certFile);
+            key = json.read(keyFile);
         } catch (e) {
             if (e.code === 'ENOENT') {
 
-                if (!fs.existsSync(certDir)) {
-                    fs.mkdirSync(certDir);
+                if (!json.exist(certDir)) {
+                    json.mkDir(certDir);
                 }
 
                 let fingerprint;
@@ -131,8 +138,8 @@ class Server {
 
                 logger.logInfo(`Generated self-signed x509 certificate ${fingerprint}, valid 365 days`);
 
-                fs.writeFileSync(certFile, cert);
-                fs.writeFileSync(keyFile, key);
+                json.write(certFile, cert, true);
+                json.write(keyFile, key, true);
             } else {
                 throw e;
             }
@@ -157,7 +164,7 @@ class Server {
     sendFile(resp, file) {
         let pathSlic = file.split("/");
         let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
-        let fileStream = fs.createReadStream(file);
+        let fileStream = json.createReadStream(file);
     
         fileStream.on('open', function () {
             resp.setHeader('Content-Type', type);
@@ -185,7 +192,6 @@ class Server {
             logger.logData(body);
             output = `{"err": 404, "errmsg": "UNHANDLED RESPONSE: ${req.url}", "data": null}`;
         }
-
         // execute data received callback
         for (let type in this.receiveCallback) {
             this.receiveCallback[type](sessionID, req, resp, body, output);
@@ -202,7 +208,7 @@ class Server {
     handleRequest(req, resp) {
         let IP = req.connection.remoteAddress.replace("::ffff:", "");
 		    IP = ((IP == "127.0.0.1")?"LOCAL":IP);
-        const sessionID = getCookies(req)['PHPSESSID'];
+        const sessionID = utility.getCookies(req)['PHPSESSID'];
 		let displaySessID = ((typeof sessionID != "undefined")?`[${sessionID}]`:"");
 		
 		if(req.url.substr(0,6) != "/files" && req.url.substr(0,6) != "/notif" && req.url != "/client/game/keepalive")
@@ -256,8 +262,10 @@ class Server {
 
         // execute start callback
         logger.logInfo("Executing start callbacks...");
-
+		this.startCallback["loadStaticdata"]();
+		
         for (let type in this.startCallback) {
+			if(type == "loadStaticdata") continue;
             this.startCallback[type]();
         }
 		logger.logInfo("Starting server...");
@@ -285,9 +293,9 @@ class Server {
 							logger.logWarning(`ProcessID: ${proc.pid} - Name: ${proc.name}`);
 						}
 					}
-					logger.logError("Please close this processes before starting this server.");
+					logger.logError("Please close this process'es before starting this server.");
 				});
-                logger.throwErr(`» Port ${e.port} is already in use`, ">> core/server.server.js line 276");
+                logger.throwErr(`» Port ${e.port} is already in use`, "");
             } else {
 				throw e;
 			};

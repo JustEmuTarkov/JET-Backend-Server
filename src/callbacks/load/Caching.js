@@ -1,8 +1,4 @@
-"use strict";
-
-function done() {
+exports.load = () => {
     serverConfig.rebuildCache = false;
     json.write("user/configs/server.json", serverConfig);
 }
-
-server.addStartCallback("doneCaching", done);

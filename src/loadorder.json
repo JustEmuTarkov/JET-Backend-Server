@@ -1,20 +1,4 @@
 {
-    "routemissing_c": "src/callbacks/cache/routes.js",
-    "cachemodlist_c": "src/callbacks/cache/modlist.js",
-    "cacheitems_c": "src/callbacks/cache/items.js",
-    "cachehideoutareas_c": "src/callbacks/cache/hideout_areas.js",
-    "cachehideoutproduction_c": "src/callbacks/cache/hideout_production.js",
-    "cachehideoutscavcase_c": "src/callbacks/cache/hideout_scavcase.js",
-    "cacheweather_c": "src/callbacks/cache/weather.js",
-    "cachecustomization_c": "src/callbacks/cache/customization.js",
-    "cachequests_c": "src/callbacks/cache/quests.js",
-    "cachelanguages_c": "src/callbacks/cache/languages.js",
-    "cachelocations_c": "src/callbacks/cache/locations.js",
-    "cachetemplates_c": "src/callbacks/cache/templates.js",
-    "cacheassort_c": "src/callbacks/cache/assort.js",
-    "cachelocale_c": "src/callbacks/cache/locale.js",
-    "cacheragfair_c": "src/callbacks/cache/ragfair.js",
-
     "saveHandler": "src/classes/savehandler.js",
     "response_f": "src/classes/response.js",
     "staticdata_f": "src/classes/staticdata.js",
@@ -80,25 +64,5 @@
     "wishlist_r": "src/responses/wishlist.js",
     "match_r": "src/responses/match.js",
     "utils_r": "src/responses/utils.js",
-    "bundles_r": "src/responses/bundles.js",
-
-    "cachedone_c": "src/callbacks/start/cache.js",
-    "loadstaticdata_c": "src/callbacks/start/staticdata.js",
-    "loadsavehandler_c": "src/callbacks/start/savehandler.js",
-    "loadaccounts_c": "src/callbacks/start/account.js",
-    "loadcustomization_c": "src/callbacks/start/customization.js",
-    "loadlocation_c": "src/callbacks/start/location.js",
-    "loadtrader_c": "src/callbacks/start/trader.js",
-    "loadlocale_c": "src/callbacks/start/locale.js",
-    "loadhideout_c": "src/callbacks/start/hideout.js",
-    "loadquest_c": "src/callbacks/start/quest.js",
-    "loadpresets_c": "src/callbacks/start/preset.js",
-    "loadweather_c": "src/callbacks/start/weather.js",
-    "bundles_c": "src/callbacks/start/bundles.js",
-
-    "notifier_c": "src/callbacks/response/notifier.js",
-    "savehandler_c": "src/callbacks/response/savehandler.js",
-    "image_c": "src/callbacks/response/image.js",
-    "insurance_c": "src/callbacks/receive/insurance.js",
-    "bundlesRsp_c": "src/callbacks/response/bundles.js"
+    "bundles_r": "src/responses/bundles.js"
 }

@@ -1,14 +1,12 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
 
-    logger.logInfo("Caching: hideout_scavcase.json");
+    logger.logInfo("Caching: hideout_production.json");
 
     let base = {"err": 0, "errmsg": null, "data": []};
-    let inputFiles = db.hideout.scavcase;
+    let inputFiles = db.hideout.production;
 
     for (let file in inputFiles) {
         let filePath = inputFiles[file];
@@ -17,7 +15,5 @@ function cache() {
         base.data.push(fileData);
     }
 
-    json.write(db.user.cache.hideout_scavcase, base);
+    json.write("user/cache/hideout_production.json", base);
 }
-
-server.addCacheCallback("cacheHideoutScavcase", cache);

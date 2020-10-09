@@ -1,8 +1,19 @@
 "use strict";
+// getCookies
+exports.getCookies = (req) => {
+    let found = {};
+    let cookies = req.headers.cookie;
+    if (cookies) {
+        for (let cookie of cookies.split(';')) {
+            let parts = cookie.split('=');
 
-const fs = require('fs');
-
-function clearString(s) {
+            found[parts.shift().trim()] = decodeURI(parts.join('='));
+        }
+    }
+    return found;
+}
+// clearString
+exports.clearString = (s) => {
 	return s.replace(/[\b]/g, '')
             .replace(/[\f]/g, '')
             .replace(/[\n]/g, '')
@@ -10,92 +21,92 @@ function clearString(s) {
             .replace(/[\t]/g, '')
             .replace(/[\\]/g, '');
 }
-
-function getRandomInt(min = 0, max = 100) {
+// getRandomInt
+exports.getRandomInt = (min = 0, max = 100) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return (max > min) ? Math.floor(Math.random() * (max - min + 1) + min) : min;
 }
-
-function getRandomIntEx(max) {
+// getRandomIntEx
+exports.getRandomIntEx = (max) => {
     return (max > 1) ? Math.floor(Math.random() * (max - 2) + 1) : 1;
 }
-
-function getDirList(path) {
-    return fs.readdirSync(path).filter(function(file) {
-        return fs.statSync(path + '/' + file).isDirectory();
+// getDirList
+exports.getDirList = (path) => {
+    return json.readDir(path).filter(function(file) {
+        return json.statSync(path + '/' + file).isDirectory();
     });
 }
-
-function removeDir(dir) {
-    for (file of fs.readdirSync(dir)) {
+// removeDir
+exports.removeDir = (dir) => {
+    for (file of json.readDir(dir)) {
         let curPath = path.join(dir, file);
 
-        if (fs.lstatSync(curPath).isDirectory()) {
+        if (json.lstatSync(curPath).isDirectory()) {
             removeDir(curPath);
         } else {
-            fs.unlinkSync(curPath);
+            json.unlink(curPath);
         }
     }
 
-    fs.rmdirSync(dir);
+    json.rmDir(dir);
 }
-
-function getServerUptimeInSeconds() {
+// getServerUptimeInSeconds
+exports.getServerUptimeInSeconds = () => {
     return Math.floor(process.uptime());
 }
-
-function getTimestamp() {
+// getTimestamp
+exports.getTimestamp = () => {
     let time = new Date();
     return Math.floor(time.getTime() / 1000);
 }
-
-function getTime() {
+// getTime
+exports.getTime = () => {
     return formatTime(new Date());
 }
-
-function formatTime(date) {
+// formatTime
+exports.formatTime = (date) => {
     let hours = ("0" + date.getHours()).substr(-2);
     let minutes = ("0" + date.getMinutes()).substr(-2);
     let seconds = ("0" + date.getSeconds()).substr(-2);
     return hours + "-" + minutes + "-" + seconds;
 }
-
-function getDate() {
+// getDate
+exports.getDate = () => {
     return formatDate(new Date());
 }
-
-function formatDate(date) {
+// formatDate
+exports.formatDate = (date) => {
     let day = ("0" + date.getDate()).substr(-2);
     let month = ("0" + (date.getMonth() + 1)).substr(-2);
     return date.getFullYear() + "-" + month + "-" + day;
 }
-
-function makeSign(length) {
+// makeSign
+exports.makeSign = (Length) => {
     let result = '';
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let charactersLength = characters.length;
     
-    for (let i = 0; i < length; i++ ) {
+    for (let i = 0; i < Length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     
     return result;
 }
-
-function generateNewAccountId() {
+// generateNewAccountId
+exports.generateNewAccountId = () => {
     return generateNewId("AID");
 }
-
-function generateNewItemId() {
+// generateNewItemId
+exports.generateNewItemId = () => {
     return generateNewId("I");
 }
-
-function generateNewDialogueId() {
+// generateNewDialogueId
+exports.generateNewDialogueId = () => {
     return generateNewId("D");
 }
-
-function generateNewId(prefix) {
+// generateNewId
+exports.generateNewId = (prefix) => {
     let getTime = new Date();
     let month = getTime.getMonth().toString();
     let date = getTime.getDate().toString();
@@ -107,9 +118,8 @@ function generateNewId(prefix) {
     let sign = makeSign(24 - retVal.length).toString();
     return retVal + sign;
 }
-
-function secondsToTime(timestamp)
-{
+// secondsToTime
+exports.secondsToTime = (timestamp) =>{
     timestamp = Math.round(timestamp);
     let hours = Math.floor(timestamp / 60 / 60);
     let minutes = Math.floor(timestamp / 60) - (hours * 60);
@@ -119,26 +129,7 @@ function secondsToTime(timestamp)
     if( seconds < 10 ){ seconds = "0" + seconds}
     return hours + 'h' + minutes + ':' + seconds;
 }
-
-function isUndefined(dataToCheck){
+// isUndefined
+exports.isUndefined = (dataToCheck) => {
 	return typeof dataToCheck == "undefined";
 }
-
-
-module.exports.isUndefined = isUndefined;
-module.exports.clearString = clearString;
-module.exports.getRandomInt = getRandomInt;
-module.exports.getRandomIntEx = getRandomIntEx;
-module.exports.getDirList = getDirList;
-module.exports.removeDir = removeDir;
-module.exports.getServerUptimeInSeconds = getServerUptimeInSeconds;
-module.exports.getTimestamp = getTimestamp;
-module.exports.getTime = getTime;
-module.exports.formatTime = formatTime;
-module.exports.getDate = getDate;
-module.exports.formatDate = formatDate;
-module.exports.makeSign = makeSign;
-module.exports.generateNewAccountId = generateNewAccountId;
-module.exports.generateNewItemId = generateNewItemId;
-module.exports.generateNewDialogueId = generateNewDialogueId;
-module.exports.secondsToTime = secondsToTime;

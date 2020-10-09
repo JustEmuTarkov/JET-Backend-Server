@@ -175,7 +175,7 @@ class TraderServer {
 
             //it's itemPreset
             let rub = 0;
-            let itemPresets = JSON.parse(JSON.stringify(globals.data.ItemPresets[traderID]._items));
+            let itemPresets = json.parse(json.stringify(globals.data.ItemPresets[traderID]._items, true));
             let ItemRootOldId = globals.data.ItemPresets[traderID]._parent;
 
             for (let i = 0; i < itemPresets.length; i++) {
