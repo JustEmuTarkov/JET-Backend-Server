@@ -18,7 +18,7 @@ function stringify(data, oneLiner = false) {
 
 exports.createReadStream = (file) => { return fs.createReadStream(file); }
 
-exports.readParsed = (file) => { JSON.parse(fs.readFileSync(file, 'utf8')); }
+exports.readParsed = (file) => { return JSON.parse(fs.readFileSync(file, 'utf8')); }
 
 exports.parse = (string) => { return JSON.parse(string); }
 

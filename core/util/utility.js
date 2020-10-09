@@ -43,7 +43,7 @@ exports.removeDir = (dir) => {
         let curPath = path.join(dir, file);
 
         if (json.lstatSync(curPath).isDirectory()) {
-            removeDir(curPath);
+            this.removeDir(curPath);
         } else {
             json.unlink(curPath);
         }
@@ -62,7 +62,7 @@ exports.getTimestamp = () => {
 }
 // getTime
 exports.getTime = () => {
-    return formatTime(new Date());
+    return this.formatTime(new Date());
 }
 // formatTime
 exports.formatTime = (date) => {
@@ -73,7 +73,7 @@ exports.formatTime = (date) => {
 }
 // getDate
 exports.getDate = () => {
-    return formatDate(new Date());
+    return this.formatDate(new Date());
 }
 // formatDate
 exports.formatDate = (date) => {
@@ -95,15 +95,15 @@ exports.makeSign = (Length) => {
 }
 // generateNewAccountId
 exports.generateNewAccountId = () => {
-    return generateNewId("AID");
+    return this.generateNewId("AID");
 }
 // generateNewItemId
 exports.generateNewItemId = () => {
-    return generateNewId("I");
+    return this.generateNewId("I");
 }
 // generateNewDialogueId
 exports.generateNewDialogueId = () => {
-    return generateNewId("D");
+    return this.generateNewId("D");
 }
 // generateNewId
 exports.generateNewId = (prefix) => {
@@ -113,9 +113,9 @@ exports.generateNewId = (prefix) => {
     let hour = getTime.getHours().toString();
     let minute = getTime.getMinutes().toString();
     let second = getTime.getSeconds().toString();
-    let random = getRandomInt(1000000000, 9999999999).toString();
+    let random = this.getRandomInt(1000000000, 9999999999).toString();
     let retVal = prefix + (month + date + hour + minute + second + random).toString();
-    let sign = makeSign(24 - retVal.length).toString();
+    let sign = this.makeSign(24 - retVal.length).toString();
     return retVal + sign;
 }
 // secondsToTime

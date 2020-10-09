@@ -24,11 +24,11 @@ class Server {
             png: 'image/png',
             json: 'application/json'
         };
-		this.respondCallback["DONE"] = this.killResponse.bind(this);
 		this.createCacheCallback();
 		this.createStartCallback();
 		this.createReceiveCallback();
 		this.createRespondCallback();
+		this.respondCallback["DONE"] = this.killResponse.bind(this);
     }
 	
 	createCacheCallback(){
