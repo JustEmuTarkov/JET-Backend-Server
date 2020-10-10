@@ -1,14 +1,5 @@
 ﻿"use strict";
 
-const fs = require('fs');
-const { resolve } = require('path');
-const path = require('path');
-const zlib = require('zlib');
-const https = require('https');
-const selfsigned = require('selfsigned');
-const psList = require('ps-list');
-const process = require('process');
-
 class Server {
     constructor() {
         this.buffers = {};
@@ -32,6 +23,7 @@ class Server {
     }
 	
 	createCacheCallback(){
+		logger.logInfo("Create: Cache Callback");
         this.cacheCallback = {};
 		let path = "./src/callbacks/cache";
 		let files = json.readDir(path);
@@ -41,6 +33,7 @@ class Server {
 		}
 	}
 	createStartCallback(){
+		logger.logInfo("Create: Start Callback");
         this.startCallback = {};
 		let path = "./src/callbacks/load";
 		let files = json.readDir(path);
@@ -50,6 +43,7 @@ class Server {
 		}
 	}
 	createReceiveCallback(){
+		logger.logInfo("Create: Receive Callback");
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
 		let files = json.readDir(path);
@@ -59,6 +53,7 @@ class Server {
 		}
 	}
 	createRespondCallback(){
+		logger.logInfo("Create: Respond Callback");
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
 		let files = json.readDir(path);
@@ -160,6 +155,11 @@ class Server {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json']});
         resp.end(output);
     }
+	
+	sendHtmlJson(resp, output) {
+        resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
+        resp.end(output);
+    }
     
     sendFile(resp, file) {
         let pathSlic = file.split("/");
@@ -254,20 +254,19 @@ class Server {
 
     start() {
         // execute cache callback
-        logger.logInfo("Executing cache callbacks...");
-
+        logger.logInfo("Executing: Cache callbacks...");
         for (let type in this.cacheCallback) {
             this.cacheCallback[type]();
         }
 
         // execute start callback
-        logger.logInfo("Executing start callbacks...");
-		this.startCallback["loadStaticdata"]();
-		
+        logger.logInfo("Executing: Start callbacks...");
+		this.startCallback["loadStaticdata"](); // this need to run first cause reasons
         for (let type in this.startCallback) {
 			if(type == "loadStaticdata") continue;
             this.startCallback[type]();
         }
+		
 		logger.logInfo("Starting server...");
 		let backend = this.backendUrl;
         /* create server */
@@ -275,7 +274,6 @@ class Server {
             this.handleRequest(req, res);
         }).listen(this.port, this.ip, function() {
             logger.logSuccess(`Server is working at: ${backend}`);
-            //logger.logData(" ");
         });
 
         /* server is already running or program using privileged port without root */

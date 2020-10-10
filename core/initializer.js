@@ -12,10 +12,20 @@ class Initializer {
     /* load core functionality */
     initializeCore() {
         /* setup utilites */
+		global.fs = require('fs');
+		global.path = require('path');
+		global.util = require('util');
+		global.resolve = require('path').resolve;
+		global.zlib = require('zlib');
+		global.https = require('https');
+		global.selfsigned = require('selfsigned');
+		global.psList = require('ps-list');
+		global.process = require('process');
+		
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);
         global.json = require('./util/json.js');
-
+		
         /* setup core files */
         global.serverConfig = json.parse(json.read("user/configs/server.json"));
         global.modsConfig = json.parse(json.read("user/configs/mods.json"));
@@ -46,8 +56,6 @@ class Initializer {
     initializeItemRoute() {
 		// Load Item Route's
 		// move this later to other file or something like that :)
-		console.log(global['note_f']);
-		console.log(note_f);
 		
         item_f.itemServer.addRoute("Eat", health_f.healthServer.offraidEat);
 		item_f.itemServer.addRoute("Heal", health_f.healthServer.offraidHeal);
@@ -116,11 +124,6 @@ class Initializer {
 			let name = file.replace(".js","") + "_f";
 			global[name] = require("../src/classes/" + file);
 		}
-
-		
-        /*for (let name in this.loadorder) {
-            global[name] = require("../" + this.loadorder[name]);
-        }*/
 
         logger.logSuccess("[Interpreter]: finished loading classes");
     }

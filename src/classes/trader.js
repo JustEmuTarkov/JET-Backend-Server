@@ -25,15 +25,21 @@ class TraderServer {
     }
 
     getAllTraders(sessionID) {
+		
+		if(typeof sessionID == "undefined")
+			console.log("sessionID: " + sessionID);
+		
         let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
-        let traders = [];
+        let Traders = [];
 
         for (let traderID in this.traders) {
+			
             if (traderID === "ragfair") {
                 continue;
             }
 
             if (!(traderID in pmcData.TraderStandings)) {
+				console.log("reseting trader: " + traderID);
                 this.resetTrader(sessionID, traderID);
             }
 
@@ -43,10 +49,9 @@ class TraderServer {
             trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
             trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding;
             trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
-            traders.push(trader);
+            Traders.push(trader);
         }
-
-        return traders;
+        return Traders;
     }
 
     lvlUp(traderID, sessionID) {
@@ -113,11 +118,11 @@ class TraderServer {
             // 1 is min level, 4 is max level
             let level = this.traders[traderID].loyalty.currentLevel;
 			let questassort = {};
-			if(typeof db.traders[traderID].questassort == "undefined")
+			if(typeof db.cacheBase.traders[traderID].questassort == "undefined")
 			{
 				questassort = {"started": {},"success": {},"fail": {}};
-			} else if(json.exist(db.traders[traderID].questassort)){
-				questassort = json.parse(json.read(db.traders[traderID].questassort));
+			} else if(json.exist(db.cacheBase.traders[traderID].questassort)){
+				questassort = json.parse(json.read(db.cacheBase.traders[traderID].questassort));
 			} else {
 				questassort = {"started": {},"success": {},"fail": {}};
 			}

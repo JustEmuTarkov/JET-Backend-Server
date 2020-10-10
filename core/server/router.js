@@ -5,7 +5,7 @@ class Router {
         this.staticRoutes = {};
 		let getStaticRoute = json.readDir("./src/response");
 		for(let file of getStaticRoute){
-			if(file.includes('_')) continue;
+			if(file.indexOf('_') == 0) continue;
 			if(!file.includes(".js")) continue;
 
 			let route = "/" + file.replace(".js", "").replace(/\./g, "/");

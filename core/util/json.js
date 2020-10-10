@@ -1,7 +1,5 @@
 "use strict";
 
-const fs = require('fs');
-
 function createDir(file) {    
     let filePath = file.substr(0, file.lastIndexOf('/'));
 

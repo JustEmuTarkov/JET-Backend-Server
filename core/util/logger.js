@@ -1,7 +1,5 @@
 "use strict";
-	// Made by TheMaoci ~2019
-const fs = require('fs');
-const util = require('util');
+// Made by TheMaoci ~2019
 
 // colorData[0] -> front, colorData[1] -> back
 const colorData = [

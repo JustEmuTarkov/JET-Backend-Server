@@ -244,6 +244,7 @@ function saveProgress(offraidData, sessionID) {
     if (!gameplayConfig.inraid.saveLootEnabled) {
         return;
     }
+	// TODO: Retarded code detected!!!
     let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base));
     let insuranceEnabled = map.Insurance;
     let pmcData = profile_f.profileServer.getPmcProfile(sessionID);

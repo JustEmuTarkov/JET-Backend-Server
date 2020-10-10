@@ -193,7 +193,6 @@ function discardItem(pmcData, body, sessionID) {
 function splitItem(pmcData, body, sessionID) {
     let output = item_f.itemServer.getOutput();
     let location = body.container.location;
-
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
     if (!("location" in body.container) && body.container.container === "cartridges") {
@@ -208,7 +207,7 @@ function splitItem(pmcData, body, sessionID) {
         location = tmp_counter;//wrong location for first cartrige
     }
 
-
+	let items = getOwnerInventoryItems(body, sessionID);
     // The item being merged is possible from three different sources: pmc, scav, or mail.
     for (let item of items.from) {
         if (item._id && item._id === body.item) {
