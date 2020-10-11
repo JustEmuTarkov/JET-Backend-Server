@@ -1,16 +1,19 @@
-"use strict";
-
 class Initializer {
     constructor() {
         this.initializeCore();
         this.initializeExceptions();
-        //this.initializeLoadOrder();
         this.initializeClasses();
 		this.initializeItemRoute();
+		
+		// start watermark and server
+		watermark.run();
+		server.start();
     }
 
     /* load core functionality */
     initializeCore() {
+		global.startTimestamp = new Date().getTime();
+		
         /* setup utilites */
 		global.fs = require('fs');
 		global.path = require('path');

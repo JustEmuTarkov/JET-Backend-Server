@@ -1,7 +1,4 @@
 "use strict";
 
-/* load server components */
-global.startTimestamp = new Date().getTime();
+/* load server */
 require('./initializer.js');
-watermark.show();
-server.start();

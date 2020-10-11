@@ -25,8 +25,7 @@ function getBoxSpacing(isUpper = 0, text = ""){
 }
 /* Calculate Box Sizes - END */
 
-function show() {
-	
+module.exports.run = () => {
     /* set window name */
 	process.stdout.setEncoding('utf8');
     process.title = textTable[0];
@@ -54,7 +53,4 @@ function show() {
 		logger.logRequest(`│ ${idx}${getBoxSpacing(0,idx)} │`);
 	}
     logger.logRequest(`└─${box_width_bot}─┘`);
-	
 }
-
-module.exports.show = show;

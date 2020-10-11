@@ -8,9 +8,13 @@
     "start": "node core/main.js"
   },
   "dependencies": {
-    "nexe": "^3.3.7",
     "ps-list": "^7.2.0",
-    "selfsigned": "1.10.7",
+    "selfsigned": "1.10.7"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "nexe": "^3.3.7",
+    "node-minify": "^3.6.0",
     "upx": "^1.0.6"
   }
 }
