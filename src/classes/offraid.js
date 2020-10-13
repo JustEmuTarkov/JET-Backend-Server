@@ -244,10 +244,31 @@ function saveProgress(offraidData, sessionID) {
     if (!gameplayConfig.inraid.saveLootEnabled) {
         return;
     }
-	console.log(offraid_f.inraidServer.players);
-	// TODO: Retarded code detected!!!
-    let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base));
-    let insuranceEnabled = map.Insurance;
+	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
+	let offlineWorksProperly = false;
+	if(typeof offraid_f.inraidServer.players[sessionID].Location != "undefined")
+		if(json.exist(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base))
+			offlineWorksProperly = true;
+    let insuranceEnabled = false;
+	if(!offlineWorksProperly){
+		logger.logError("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
+	} else {
+		let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base));
+		insuranceEnabled = map.Insurance;
+	}
+	if(typeof offraidData == "undefined")
+	{
+		logger.logError("offraidData" + offraidData);
+		return;
+	}
+	if(typeof offraidData.exit == "undefined" || typeof offraidData.isPlayerScav == "undefined" || typeof offraidData.profile == "undefined")
+	{
+		logger.logError("offraidData variables are empty... (exit, isPlayerScav, profile)");
+		logger.logError(offraidData.exit);
+		logger.logError(offraidData.isPlayerScav);
+		logger.logError(offraidData.profile);
+		return;
+	}
     let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
     let scavData = profile_f.profileServer.getScavProfile(sessionID);
     const isPlayerScav = offraidData.isPlayerScav;

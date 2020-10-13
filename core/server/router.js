@@ -2,6 +2,11 @@
 
 class Router {
     constructor() {
+		this.createStaticResponses();
+		this.createDynamicResponses();
+    }
+	
+	createStaticResponses(){
         this.staticRoutes = {};
 		let getStaticRoute = json.readDir("./src/response");
 		for(let file of getStaticRoute){
@@ -12,7 +17,9 @@ class Router {
 			let callback = require("../../src/response/" + file);
 			this.staticRoutes[route] = callback.execute;
 		}
-		
+		logger.logSuccess("Create: Static Response Callbacks");
+	}
+	createDynamicResponses(){
 		this.dynamicRoutes = {};
 		let getDynamicRoute = json.readDir("./src/response/dynamic");
 		for(let file of getDynamicRoute){
@@ -29,10 +36,8 @@ class Router {
 			let callback = require("../../src/response/dynamic/" + file);
 			this.dynamicRoutes[route] = callback.execute;
 		}
-		
-		
-    }
-
+		logger.logSuccess("Create: Dynamic Response Callbacks");
+	}
     /* sets static routes to check for */
     /*addStaticRoute(route, callback) {
         this.staticRoutes[route] = callback;
