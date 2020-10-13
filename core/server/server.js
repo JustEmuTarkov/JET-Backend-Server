@@ -23,7 +23,6 @@ class Server {
     }
 	
 	createCacheCallback(){
-		logger.logInfo("Create: Cache Callback");
         this.cacheCallback = {};
 		let path = "./src/callbacks/cache";
 		let files = json.readDir(path);
@@ -31,9 +30,9 @@ class Server {
 			let scriptName = "cache" + file.replace(".js","");
 			this.cacheCallback[scriptName] = require("../../src/callbacks/cache/" + file).cache;
 		}
+		logger.logSuccess("Create: Cache Callback");
 	}
 	createStartCallback(){
-		logger.logInfo("Create: Start Callback");
         this.startCallback = {};
 		let path = "./src/callbacks/load";
 		let files = json.readDir(path);
@@ -41,9 +40,9 @@ class Server {
 			let scriptName = "load" + file.replace(".js","");
 			this.startCallback[scriptName] = require("../../src/callbacks/load/" + file).load;
 		}
+		logger.logSuccess("Create: Start Callback");
 	}
 	createReceiveCallback(){
-		logger.logInfo("Create: Receive Callback");
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
 		let files = json.readDir(path);
@@ -51,9 +50,9 @@ class Server {
 			let scriptName = file.replace(".js","");
 			this.receiveCallback[scriptName] = require("../../src/callbacks/receive/" + file).execute;
 		}
+		logger.logSuccess("Create: Receive Callback");
 	}
 	createRespondCallback(){
-		logger.logInfo("Create: Respond Callback");
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
 		let files = json.readDir(path);
@@ -61,6 +60,7 @@ class Server {
 			let scriptName = file.replace(".js","");
 			this.respondCallback[scriptName] = require("../../src/callbacks/respond/" + file).execute;
 		}
+		logger.logSuccess("Create: Respond Callback");
 	}
 
     resetBuffer(sessionID) {
@@ -254,13 +254,13 @@ class Server {
 
     start() {
         // execute cache callback
-        logger.logInfo("Executing: Cache callbacks...");
+        logger.logInfo("[Warmup]: Cache callbacks...");
         for (let type in this.cacheCallback) {
             this.cacheCallback[type]();
         }
 
         // execute start callback
-        logger.logInfo("Executing: Start callbacks...");
+        logger.logInfo("[Warmup]: Start callbacks...");
 		this.startCallback["loadStaticdata"](); // this need to run first cause reasons
         for (let type in this.startCallback) {
 			if(type == "loadStaticdata") continue;
@@ -282,6 +282,7 @@ class Server {
 				logger.throwErr("» Non-root processes cannot bind to ports below 1024.", ">> core/server.server.js line 274");
             } else if (e.code == "EADDRINUSE") {
 				psList().then(data => {
+					let cntProc = 0;
 					for(let proc of data){
 						let procName = proc.name.toLowerCase();
 						if((procName.indexOf("node") != -1 || 
@@ -289,9 +290,11 @@ class Server {
 						procName.indexOf("emu") != -1 ||
 						procName.indexOf("justemu") != -1) && proc.pid != process.pid){
 							logger.logWarning(`ProcessID: ${proc.pid} - Name: ${proc.name}`);
+							cntProc++;
 						}
 					}
-					logger.logError("Please close this process'es before starting this server.");
+					if(cntProc > 0)
+						logger.logError("Please close this process'es before starting this server.");
 				});
                 logger.throwErr(`» Port ${e.port} is already in use`, "");
             } else {
