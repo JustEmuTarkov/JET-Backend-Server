@@ -85,7 +85,7 @@
 				}
 			}
 		},
-		"UpdateTime": 1598664759
+		"UpdateTime": 1602614378
 	},
 	"Inventory": {
 		"items": [
@@ -177,19 +177,13 @@
 			{
 				"_id": "5df7b9abef12bf7a25243798",
 				"_tpl": "57cd379a24597778e7682ecf",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "Scabbard",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 100,
 						"Durability": 100
 					}
-				},
-				"location": {
-					"x": 8,
-					"y": 3,
-					"r": "Horizontal",
-					"isSearched": true
 				}
 			},
 			{

@@ -8,7 +8,7 @@
 		"Side": "Bear",
 		"Voice": "Bear_1",
 		"Level": 1,
-		"Experience": 237,
+		"Experience": 437,
 		"RegistrationDate": 1,
 		"GameVersion": "edge_of_darkness",
 		"AccountType": 2,
@@ -85,7 +85,7 @@
 				}
 			}
 		},
-		"UpdateTime": 1602262956
+		"UpdateTime": 1602609943
 	},
 	"Inventory": {
 		"items": [
@@ -2399,312 +2399,905 @@
 		"Common": [
 			{
 				"Id": "BotReload",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
 			},
 			{
 				"Id": "Endurance",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 3.49358582,
+				"LastAccess": 1602609387
 			},
 			{
 				"Id": "Strength",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Vitality",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.0205490068,
+				"LastAccess": 1602609369
 			},
 			{
 				"Id": "Health",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 1.55974424,
+				"LastAccess": 1602609387
 			},
 			{
 				"Id": "StressResistance",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.026,
+				"LastAccess": 1602609397
 			},
 			{
 				"Id": "Metabolism",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Immunity",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Perception",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.03440071,
+				"LastAccess": 1602609397
 			},
 			{
 				"Id": "Intellect",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Attention",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Charisma",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.0103202136,
+				"LastAccess": 1602609397
 			},
 			{
 				"Id": "Memory",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.102723107,
+				"LastAccess": 1602609397
 			},
 			{
 				"Id": "Pistol",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Revolver",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "SMG",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Assault",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Shotgun",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Sniper",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "LMG",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "HMG",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Launcher",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "AttachedLauncher",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Throwing",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Melee",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "DMR",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "RecoilControl",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.266292,
+				"LastAccess": 1602609388
+			},
+			{
+				"Id": "AimDrills",
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
+				"LastAccess": -2147483648
+			},
+			{
+				"Id": "Surgery",
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
+				"LastAccess": -2147483648
 			},
 			{
 				"Id": "CovertMovement",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": 0
-			},
-			{
-				"Id": "FieldMedicine",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Search",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "MagDrills",
-				"Progress": 0,
-				"MaxAchieved": 0,
-				"LastAccess": -2147483648
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0.117,
+				"LastAccess": 1602609333
 			},
 			{
 				"Id": "Sniping",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "ProneMovement",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
+				"LastAccess": 0
+			},
+			{
+				"Id": "FieldMedicine",
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "FirstAid",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "LightVests",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "HeavyVests",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "WeaponModding",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "AdvancedModding",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "NightOps",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "SilentOps",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Lockpicking",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "WeaponTreatment",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Freetrading",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Auctions",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Cleanoperations",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Barter",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Shadowconnections",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			},
 			{
 				"Id": "Taskperformance",
-				"Progress": 0,
-				"MaxAchieved": 0,
+				"Progress": 5100,
+				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			}
 		],
-		"Mastering": [],
+		"Mastering": [
+			{
+				"Id": "AK74",
+				"Progress": 5100
+			}
+		],
+		"Bonuses": null,
 		"Points": 0
 	},
 	"Stats": {
-		"SessionCounters": null,
-		"OverallCounters": {
-			"Items": []
+		"SessionCounters": {
+			"Items": [
+				{
+					"Key": [
+						"BodyPartDamage",
+						"LeftLeg"
+					],
+					"Value": 215
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"RightLeg"
+					],
+					"Value": 310
+				},
+				{
+					"Key": [
+						"Exp",
+						"ExpLooting",
+						"ExpTrigger"
+					],
+					"Value": 200
+				},
+				{
+					"Key": [
+						"Exp",
+						"ExpExitStatus"
+					],
+					"Value": 200
+				},
+				{
+					"Key": [
+						"Pedometer"
+					],
+					"Value": 213
+				},
+				{
+					"Key": [
+						"ExpKill"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"ExpLooting"
+					],
+					"Value": 200
+				}
+			]
 		},
-		"SessionExperienceMult": 0,
-		"ExperienceBonusMult": 0,
+		"OverallCounters": {
+			"Items": [
+				{
+					"Key": [
+						"TriggerVisited",
+						"place_pacemaker_SCOUT_03"
+					],
+					"Value": 1
+				},
+				{
+					"Key": [
+						"Triggers"
+					],
+					"Value": 2
+				},
+				{
+					"Key": [
+						"TriggerVisited",
+						"exit3zone"
+					],
+					"Value": 1
+				},
+				{
+					"Key": [
+						"CurrentWinStreak",
+						"Pmc"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Sessions",
+						"Pmc"
+					],
+					"Value": 1
+				},
+				{
+					"Key": [
+						"ExitStatus",
+						"Runner",
+						"Pmc"
+					],
+					"Value": 1
+				},
+				{
+					"Key": [
+						"LifeTime",
+						"Pmc"
+					],
+					"Value": 46
+				},
+				{
+					"Key": [
+						"Exp",
+						"ExpHeal"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Exp",
+						"ExpExitStatus"
+					],
+					"Value": 200
+				},
+				{
+					"Key": [
+						"Kills"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Deaths"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel0010"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel1030"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel3050"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel5070"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel7099"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledLevel100"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledBear"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledUsec"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledSavage"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledPmc"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledBoss"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithKnife"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithPistol"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithSmg"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithShotgun"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithAssaultRifle"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithAssaultCarbine"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithGrenadeLauncher"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithMachineGun"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithMarksmanRifle"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithSniperRifle"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithSpecialWeapon"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"KilledWithThrowWeapon"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"Head"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"Chest"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"Stomach"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"LeftArm"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"RightArm"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"LeftLeg"
+					],
+					"Value": 215
+				},
+				{
+					"Key": [
+						"BodyPartDamage",
+						"RightLeg"
+					],
+					"Value": 310
+				},
+				{
+					"Key": [
+						"HeadShots"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BloodLoss"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BodyPartsDestroyed"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Heal"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Fractures"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Contusions"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Dehydrations"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Exhaustions"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Medicines"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"UsedFoods"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"UsedDrinks"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Pedometer"
+					],
+					"Value": 213
+				},
+				{
+					"Key": [
+						"BodiesLooted"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"SafeLooted"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"LockableContainers"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Weapons"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Ammunitions"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Mods"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"ThrowWeapons"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"SpecialItems"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"FoodDrinks"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Keys"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"BartItems"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"MobContainers"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Equipments"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"CauseBodyDamage"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"CauseArmorDamage"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"HitCount"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"LongShots"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"ExpKill"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"ExpLooting"
+					],
+					"Value": 200
+				},
+				{
+					"Key": [
+						"Money",
+						"RUB"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Money",
+						"EUR"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"Money",
+						"USD"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"AmmoUsed"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"AmmoReached"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"TriggerVisited"
+					],
+					"Value": 0
+				},
+				{
+					"Key": [
+						"CombatDamage"
+					],
+					"Value": 0
+				}
+			]
+		},
+		"SessionExperienceMult": 0.5,
+		"ExperienceBonusMult": 1,
 		"TotalSessionExperience": 0,
-		"LastSessionDate": 0,
+		"LastSessionDate": 1602609333,
 		"Aggressor": null,
 		"DroppedItems": [],
 		"FoundInRaidItems": [],
 		"Victims": [],
 		"CarriedQuestItems": [],
+		"DamageHistory": {
+			"LethalDamagePart": "Common",
+			"LethalDamage": null,
+			"BodyParts": {
+				"Head": [],
+				"Chest": [],
+				"Stomach": [],
+				"LeftArm": [],
+				"RightArm": [],
+				"LeftLeg": [
+					{
+						"Amount": 2.1606636,
+						"Type": "Barbed",
+						"SourceId": null,
+						"OverDamageFrom": null,
+						"Blunt": false,
+						"ImpactsCount": 2
+					}
+				],
+				"RightLeg": [
+					{
+						"Amount": 3.1083107,
+						"Type": "Barbed",
+						"SourceId": null,
+						"OverDamageFrom": null,
+						"Blunt": false,
+						"ImpactsCount": 3
+					}
+				]
+			}
+		},
 		"TotalInGameTime": 0,
-		"SurvivorClass": "Unknown"
+		"SurvivorClass": "Marauder"
 	},
 	"Encyclopedia": {
 		"5c0e9f2c86f77432297fe0a3": true,

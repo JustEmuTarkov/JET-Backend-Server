@@ -14,6 +14,10 @@ class InraidServer {
     }
 
     removeMapAccessKey(offraidData, sessionID) {
+		if(typeof offraid_f.inraidServer.players[sessionID] == "undefined"){
+			logger.logError("Disabling: Remove map key on entering, cause of offraid_f.inraidServer.players[sessionID] is undefined");
+			return;
+		}
         let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base))
         let mapKey = map.AccessKeys[0]
 
@@ -246,7 +250,7 @@ function saveProgress(offraidData, sessionID) {
     }
 	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
 	let offlineWorksProperly = false;
-	if(typeof offraid_f.inraidServer.players[sessionID].Location != "undefined")
+	if(typeof offraid_f.inraidServer.players[sessionID] != "undefined")
 		if(json.exist(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base))
 			offlineWorksProperly = true;
     let insuranceEnabled = false;

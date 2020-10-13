@@ -23,138 +23,19 @@ class LocationServer {
 				let data = json.parse(json.read(db.locations[name].loot_file));
 				// maybe adding some random ID's for loot wil need to think about it
 				output.Loot = data.Loot;
-				logger.logSuccess(`Loaded 1 file Loot from loot_file.json`);
-				logger.logSuccess(`Generated location ${name}`);
+				logger.logSuccess(`[Generate] For location: ${name}`);
+				let displayCount = "";
+				if(typeof output.Loot.Static != "undefined")
+					displayCount += `[static]${output.Loot.Static.length}`;
+				if(typeof output.Loot.Dynamic != "undefined")
+					displayCount += `[dynamic]${output.Loot.Dynamic.length}`;
+				if(typeof output.Loot.Forced != "undefined")
+					displayCount += `[forced]${output.Loot.Forced.length}`;
+				
+				logger.logSuccess(displayCount);
 				return output;
 			}
-		// if no file found proceed with this
-        let ids = {};
-        let base = {};
-
-        // don't generate loot on hideout
-        if (name === "hideout") {
-            return output;
-        }
-
-        // forced loot
-        base = db.locations[name].loot.forced;
-
-        for (let dir in base) {
-            for (let loot in base[dir]) {
-                let data = json.parse(json.read(base[dir][loot]));
-
-                if (data.Id in ids) {
-                    continue;
-                } else {
-                    ids[data.Id] = true;
-                }
-
-                output.Loot.push(data);
-            }
-        }
-
-        // static loot
-        base = db.locations[name].loot.static;
-
-        for (let dir in base) {
-            let node = base[dir];
-            let keys = Object.keys(node);
-            let data = json.parse(json.read(node[keys[utility.getRandomInt(0, keys.length - 1)]]));
-
-            if (data.Id in ids) {
-                continue;
-            } else {
-                ids[data.Id] = true;
-            }
-            output.Loot.push(data);
-        }
-
-        // dyanmic loot
-        let dirs = Object.keys(db.locations[name].loot.dynamic);
-        let max = gameplayConfig.locationloot[name];
-        let count = 0;
-
-        base = db.locations[name].loot.dynamic;
-
-        //Generate dynamic loot list
-        let lootFiles = {};
-        for (const dir of dirs) {
-            for (const lootFileName of Object.keys(base[dir])) {
-                lootFiles[dir + "_" + lootFileName] = base[dir][lootFileName];
-            }
-        }
-
-        //Loot position list for filtering the lootItem in the same position.
-        let lootPositions = [];
-        var maxCount = 0;
-        while (maxCount < max && Object.keys(lootFiles).length > 0) {
-            maxCount += 1;
-            let keys = Object.keys(lootFiles);
-            let key = keys[utility.getRandomInt(0, keys.length - 1)];
-            let data = json.parse(json.read(lootFiles[key]));
-            
-            //Check if LootItem is overlapping
-            let position = data.Position.x + "," + data.Position.y + "," + data.Position.z;
-            if(!gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position)) {
-                //Clearly selected loot
-                delete lootFiles[key];
-                continue;
-            }
-
-            //random loot Id
-            //TODO: To implement a new random function, use "generateNewItemId" instead for now.
-            data.Id = utility.generateNewItemId();
-
-            //create lootItem list 
-            let lootItemsHash = {};
-            let lootItemsByParentId = {};
-            
-           
-
-            for (const i in data.Items) {
-                
-                let loot = data.Items[i];
-                // Check for the item spawnchance
-                lootItemsHash[loot._id] = loot;            
-
-                if (!("parentId" in loot))
-                    continue;
-
-                if(lootItemsByParentId[loot.parentId] == undefined)
-                    lootItemsByParentId[loot.parentId] = [];
-                    lootItemsByParentId[loot.parentId].push(loot)
-            }
-            //reset itemId and childrenItemId
-            for (const itemId of Object.keys(lootItemsHash)) {
-                let newId = utility.generateNewItemId();
-                lootItemsHash[itemId]._id = newId;
-
-                if(itemId == data.Root)
-                    data.Root = newId;
-
-                if(lootItemsByParentId[itemId] == undefined) 
-                    continue;
-                
-                for (const childrenItem of lootItemsByParentId[itemId]) {
-                    childrenItem.parentId = newId;
-                }
-            }
-            const num = utility.getRandomInt(0,100);
-            const itemChance = (items.data[data.Items[0]._tpl]._props.SpawnChance * globals.data.config.GlobalLootChanceModifier * location_f.locationServer.locations[name].GlobalLootChanceModifier).toFixed(0);
-            if(itemChance >= num){
-                count += 1;
-                lootPositions.push(position);
-                output.Loot.push(data);
-            }else{
-                continue;
-            }
-            
-        }
-
-        // done generating
-        logger.logSuccess(`A total of ${count} items spawned`);
-        logger.logSuccess(`Generated location ${name}`);
-        return output;
+		
     }
 
     /* get a location with generated loot data */
