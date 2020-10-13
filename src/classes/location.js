@@ -15,6 +15,8 @@ class LocationServer {
     /* generates a random location preset to use for local session */
     generate(name) {
 		//check if one file loot is existing
+        let output = this.locations[name];
+		
 		if(!utility.isUndefined(db.locations[name].loot_file))
 			if(json.exist(db.locations[name].loot_file))
 			{
@@ -26,7 +28,6 @@ class LocationServer {
 				return output;
 			}
 		// if no file found proceed with this
-        let output = this.locations[name];
         let ids = {};
         let base = {};
 
@@ -157,9 +158,9 @@ class LocationServer {
     }
 
     /* get a location with generated loot data */
-    get(location) {
-        let name = location.toLowerCase().replace(" ", "");
-        return json.stringify(this.generate(name));
+    get(Location) {
+        let name = Location.toLowerCase().replace(" ", "");
+        return this.generate(name);
     }
 
     /* get all locations without loot data */

@@ -1,3 +1,12 @@
+var fs = require('fs');
+var path = require('path');
+var util = require('util');
+var resolve = require('path').resolve;
+var zlib = require('zlib');
+var https = require('https');
+var selfsigned = require('selfsigned');
+var psList = require('ps-list');
+var process = require('process');
 class Initializer {
     constructor() {
         this.initializeCore();
@@ -15,15 +24,15 @@ class Initializer {
 		global.startTimestamp = new Date().getTime();
 		
         /* setup utilites */
-		global.fs = require('fs');
-		global.path = require('path');
-		global.util = require('util');
-		global.resolve = require('path').resolve;
-		global.zlib = require('zlib');
-		global.https = require('https');
-		global.selfsigned = require('selfsigned');
-		global.psList = require('ps-list');
-		global.process = require('process');
+		global.fs = fs;
+		global.path = path;
+		global.util = util;
+		global.resolve = resolve;
+		global.zlib = zlib;
+		global.https = https;
+		global.selfsigned = selfsigned;
+		global.psList = psList;
+		global.process = process;
 		
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);

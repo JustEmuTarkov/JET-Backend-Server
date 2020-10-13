@@ -1,4 +1,4 @@
 "use strict";
 
 /* load server */
-require('./initializer.js');
+require('./initializer.js').initializer;

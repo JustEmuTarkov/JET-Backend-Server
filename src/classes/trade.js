@@ -57,12 +57,12 @@ exports.sellItem = (pmcData, body, sessionID) => {
 exports.confirmTrading = (pmcData, body, sessionID) => {
     // buying
     if (body.type === "buy_from_trader") {
-        return buyItem(pmcData, body, sessionID);
+        return this.buyItem(pmcData, body, sessionID);
     }
 
     // selling
     if (body.type === "sell_to_trader") {
-        return sellItem(pmcData, body, sessionID);
+        return this.sellItem(pmcData, body, sessionID);
     }
 
     return "";
