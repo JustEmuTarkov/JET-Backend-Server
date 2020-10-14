@@ -2935,6 +2935,7 @@
 		"bigmap": {
 			"base": "db/locations/bigmap/base.json",
 			"loot_file": "db/locations/bigmap/loot_file.json",
+			"loot_file2": "db/locations/bigmap/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/bigmap/bosses/boss_0.json"
 			},
@@ -3083,6 +3084,7 @@
 		"develop": {
 			"base": "db/locations/develop/base.json",
 			"loot_file": "db/locations/develop/loot_file.json",
+			"loot_file2": "db/locations/develop/loot_file2.json",
 			"exits": {
 				"exfill_0": "db/locations/develop/exits/exfill_0.json",
 				"exfill_1": "db/locations/develop/exits/exfill_1.json",
@@ -3100,6 +3102,7 @@
 		"factory4_day": {
 			"base": "db/locations/factory4_day/base.json",
 			"loot_file": "db/locations/factory4_day/loot_file.json",
+			"loot_file2": "db/locations/factory4_day/loot_file2.json",
 			"entries": {
 				"infill_0": "db/locations/factory4_day/entries/infill_0.json",
 				"infill_1": "db/locations/factory4_day/entries/infill_1.json",
@@ -3166,6 +3169,7 @@
 		"factory4_night": {
 			"base": "db/locations/factory4_night/base.json",
 			"loot_file": "db/locations/factory4_night/loot_file.json",
+			"loot_file2": "db/locations/factory4_night/loot_file2.json",
 			"entries": {
 				"infill_0": "db/locations/factory4_night/entries/infill_0.json",
 				"infill_1": "db/locations/factory4_night/entries/infill_1.json",
@@ -3235,6 +3239,7 @@
 		"interchange": {
 			"base": "db/locations/interchange/base.json",
 			"loot_file": "db/locations/interchange/loot_file.json",
+			"loot_file2": "db/locations/interchange/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/interchange/bosses/boss_0.json"
 			},
@@ -3404,6 +3409,7 @@
 		"laboratory": {
 			"base": "db/locations/laboratory/base.json",
 			"loot_file": "db/locations/laboratory/loot_file.json",
+			"loot_file2": "db/locations/laboratory/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/laboratory/bosses/boss_0.json",
 				"boss_1": "db/locations/laboratory/bosses/boss_1.json",
@@ -3531,6 +3537,7 @@
 		"rezervbase": {
 			"base": "db/locations/rezervbase/base.json",
 			"loot_file": "db/locations/rezervbase/loot_file.json",
+			"loot_file2": "db/locations/rezervbase/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/rezervbase/bosses/boss_0.json",
 				"boss_1": "db/locations/rezervbase/bosses/boss_1.json",
@@ -3644,6 +3651,7 @@
 		"shoreline": {
 			"base": "db/locations/shoreline/base.json",
 			"loot_file": "db/locations/shoreline/loot_file.json",
+			"loot_file2": "db/locations/shoreline/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/shoreline/bosses/boss_0.json"
 			},
@@ -3858,6 +3866,7 @@
 		"woods": {
 			"base": "db/locations/woods/base.json",
 			"loot_file": "db/locations/woods/loot_file.json",
+			"loot_file2": "db/locations/woods/loot_file2.json",
 			"bosses": {
 				"boss_0": "db/locations/woods/bosses/boss_0.json"
 			},

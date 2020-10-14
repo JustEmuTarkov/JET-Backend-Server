@@ -9,7 +9,7 @@ class LocationServer {
 
     /* Load all the locations into memory. */
     initialize() {
-		this.locations = json.parse(json.read(db.user.cache.locations));
+		this.locations = json.readParsed(db.user.cache.locations);
     }
 
     /* generates a random location preset to use for local session */
