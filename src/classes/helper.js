@@ -709,6 +709,100 @@ function arrayIntersect(a, b) {
     return a.filter(x => b.includes(x));
 }
 
+function getPreset (id){
+	if(typeof globals.ItemPresets[id] == "undefined"){
+		logger.throwErr("Couldnot find preset: " + id, "src/classe/helper.js 714");
+		return null;
+	}
+	return globals.ItemPresets[id];
+}
+// TODO: REWORK EVERYTHING ABOVE ~Maoci
+module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {
+	let itemWidth = rotate ? itemH : itemW;
+	let itemHeight = rotate ? itemW : itemH;
+
+	for (let tmpY = y; tmpY < y + itemHeight; tmpY++)
+	{
+		for (let tmpX = x; tmpX < x + itemWidth; tmpX++)
+		{
+			if (container2D[tmpY][tmpX] === 0)
+			{
+				container2D[tmpY][tmpX] = 1;
+			}
+			else
+			{
+				logger.throwErr(`Slot at (${x}, ${y}) is already filled`, "src/classes/helper.js 734");
+			}
+		}
+	}
+	return container2D;
+}
+module.exports.findSlotForItem = (container2D, itemWidth, itemHeight) => {
+	let rotation = false;
+	let minVolume = (itemWidth < itemHeight ? itemWidth : itemHeight) - 1;
+	let containerY = container2D.length;
+	let containerX = container2D[0].length;
+	let limitY = containerY - minVolume;
+	let limitX = containerX - minVolume;
+
+	let locateSlot = (x, y, itemW, itemH) =>
+	{
+		let foundSlot = true;
+		for (let itemY = 0; itemY < itemH; itemY++) {
+			if (foundSlot && y + itemH - 1 > containerY - 1)
+			{
+				foundSlot = false;
+				break;
+			}
+
+			for (let itemX = 0; itemX < itemW; itemX++) {
+				if (foundSlot && x + itemW - 1 > containerX - 1)
+				{
+					foundSlot = false;
+					break;
+				}
+
+				if (container2D[y + itemY][x + itemX] !== 0)
+				{
+					foundSlot = false;
+					break;
+				}
+			}
+
+			if (!foundSlot)
+				break;
+		}
+		return foundSlot;
+	};
+
+	for (let y = 0; y < limitY; y++) {
+		for (let x = 0; x < limitX; x++) {
+			
+			let foundSlot = locateSlot(x, y, itemWidth, itemHeight);
+
+			/**Try to rotate if there is enough room for the item
+			 * Only occupies one grid of items, no rotation required
+			 * */
+			if (!foundSlot && itemWidth * itemHeight > 1)
+			{
+				foundSlot = locateSlot(x, y, itemHeight, itemWidth);
+
+				if (foundSlot)
+					rotation = true;
+			}
+
+			if (!foundSlot)
+				continue;
+			
+			return { success: true, x, y, rotation };
+		}
+	}
+
+	return { success: false, x: null, y: null, rotation: false };
+}
+
+
+module.exports.getPreset = getPreset;
 module.exports.getTemplatePrice = getTemplatePrice;
 module.exports.templatesWithParent = templatesWithParent;
 module.exports.isCategory = isCategory;
