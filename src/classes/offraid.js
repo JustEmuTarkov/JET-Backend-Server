@@ -18,8 +18,8 @@ class InraidServer {
 			logger.logError("Disabling: Remove map key on entering, cause of offraid_f.inraidServer.players[sessionID] is undefined");
 			return;
 		}
-        let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base))
-        let mapKey = map.AccessKeys[0]
+        let map = json.readParsed(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]).base;
+        let mapKey = map.AccessKeys[0];
 
         if (!mapKey) {
             return;
@@ -251,13 +251,13 @@ function saveProgress(offraidData, sessionID) {
 	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
 	let offlineWorksProperly = false;
 	if(typeof offraid_f.inraidServer.players[sessionID] != "undefined")
-		if(json.exist(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base))
+		if(json.exist(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]))
 			offlineWorksProperly = true;
     let insuranceEnabled = false;
 	if(!offlineWorksProperly){
 		logger.logError("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
 	} else {
-		let map = json.parse(json.read(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()].base));
+		let map = json.readParsed(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]).base;
 		insuranceEnabled = map.Insurance;
 	}
 	if(typeof offraidData == "undefined")
