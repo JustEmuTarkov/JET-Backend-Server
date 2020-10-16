@@ -42,7 +42,7 @@ function processReward(reward) {
     // separate base item and mods, fix stacks
     for (let item of reward.items) {
         if (item._id === reward.target) {
-            targets = itm_hf.splitStack(item);
+            targets = helper_f.splitStack(item);
         }
         else {
             mods.push(item);
@@ -54,10 +54,10 @@ function processReward(reward) {
         let questItems = [target];
 
         for (let mod of mods) {
-            questItems.push(itm_hf.clone(mod));
+            questItems.push(helper_f.clone(mod));
         }
 
-        rewardItems = rewardItems.concat(itm_hf.replaceIDs(null, questItems));
+        rewardItems = rewardItems.concat(helper_f.replaceIDs(null, questItems));
     }
 
     return rewardItems;
@@ -251,7 +251,7 @@ function handoverQuest(pmcData, body, sessionID) {
         }
         else {
             // for weapon handover quests, remove the item and its children.
-            let toRemove = itm_hf.findAndReturnChildren(pmcData, itemHandover.id);
+            let toRemove = helper_f.findAndReturnChildren(pmcData, itemHandover.id);
             let index = pmcData.Inventory.items.length;
 
             // important: don't tell the client to remove the attachments, it will handle it
@@ -279,7 +279,7 @@ function handoverQuest(pmcData, body, sessionID) {
 function applyMoneyBoost(quest, moneyBoost) {
     for (let reward of quest.rewards.Success) {
         if (reward.type === "Item") {
-            if (itm_hf.isMoneyTpl(reward.items[0]._tpl)) {
+            if (helper_f.isMoneyTpl(reward.items[0]._tpl)) {
                 reward.items[0].upd.StackObjectsCount += Math.round(reward.items[0].upd.StackObjectsCount * moneyBoost / 100);
             }
         }

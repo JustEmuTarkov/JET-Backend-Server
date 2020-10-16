@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -30,9 +28,7 @@ function cache() {
 
         }
 		let menu = json.parse(json.read(inputNode.menu));
-        json.write(db.user.cache[`locale_${locale}`], base);
-        json.write(db.user.cache[`locale_menu_${locale}`], menu);
+        json.write(`user/cache/locale_${locale}.json`, base);
+        json.write(`user/cache/locale_menu_${locale}.json`, menu);
     }
 }
-
-server.addCacheCallback("cacheLocales", cache);

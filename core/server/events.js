@@ -1,7 +1,5 @@
 "use strict";
 
-const fs = require('fs');
-
 /*
 * An event is an object as follows:
 * event = {

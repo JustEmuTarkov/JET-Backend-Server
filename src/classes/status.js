@@ -99,7 +99,7 @@ function examineItem(pmcData, body, sessionID) {
 
     if (itemID === "") {
         // player/trader inventory
-        let result = itm_hf.getItem(body.item);
+        let result = helper_f.getItem(body.item);
         if (result[0]) {
             itemID = result[1]._id;
         }

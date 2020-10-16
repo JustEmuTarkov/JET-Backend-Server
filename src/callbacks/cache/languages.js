@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -16,7 +14,5 @@ function cache() {
         base.data.push(fileData);
     }
 
-    json.write(db.user.cache.languages, base);
+    json.write("user/cache/languages.json", base);
 }
-
-server.addCacheCallback("cacheLanguages", cache);

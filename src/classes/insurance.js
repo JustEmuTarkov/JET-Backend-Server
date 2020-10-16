@@ -30,7 +30,7 @@ class InsuranceServer {
             return;
         }
 
-        let ids_toremove = itm_hf.findAndReturnChildren(pmcData, toDo[0]); // get all ids related to this item, +including this item itself
+        let ids_toremove = helper_f.findAndReturnChildren(pmcData, toDo[0]); // get all ids related to this item, +including this item itself
 
         for (let i in ids_toremove) { // remove one by one all related items and itself
             for (let a in pmcData.Inventory.items) {	// find correct item by id and delete it
@@ -274,7 +274,7 @@ function insure(pmcData, body, sessionID) {
 
 
     // pay the item	to profile
-    if (!itm_hf.payMoney(pmcData, { "scheme_items": itemsToPay, "tid": body.tid }, sessionID)) {
+    if (!helper_f.payMoney(pmcData, { "scheme_items": itemsToPay, "tid": body.tid }, sessionID)) {
         logger.logError("no money found");
         return "";
     }

@@ -1,6 +1,6 @@
 "use strict";
 
-function main(pmcData, body, sessionID) {
+exports.main = (pmcData, body, sessionID) => {
     let output = item_f.itemServer.getOutput();
     let trader = trader_f.traderServer.getTrader(body.tid, sessionID);
     let repairRate = (trader.repair.price_rate === 0) ? 1 : (trader.repair.price_rate / 100 + 1);
@@ -23,7 +23,7 @@ function main(pmcData, body, sessionID) {
         // get repair price and pay the money
         let repairCost = Math.round((items.data[itemToRepair._tpl]._props.RepairCost * repairItem.count * repairRate) * gameplayConfig.trading.repairMultiplier);
 
-        if (!itm_hf.payMoney(pmcData, {"scheme_items": [{"id": repairItem._id, "count": Math.round(repairCost)}], "tid": body.tid}, sessionID)) {
+        if (!helper_f.payMoney(pmcData, {"scheme_items": [{"id": repairItem._id, "count": Math.round(repairCost)}], "tid": body.tid}, sessionID)) {
             logger.logError("no money found");
             return "";
         }
@@ -48,5 +48,3 @@ function main(pmcData, body, sessionID) {
 
     return output;
 }
-
-module.exports.main = main;

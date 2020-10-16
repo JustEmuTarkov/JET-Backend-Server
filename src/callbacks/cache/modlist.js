@@ -1,10 +1,6 @@
-"use strict"
-
-function cache() {
+exports.cache = () => {
     if (serverConfig.rebuildCache) {
         logger.logInfo("Caching: mods.json");    
-        json.write(db.user.cache.mods, modsConfig);
+        json.write("user/cache/mods.json", modsConfig);
     }
 }
-
-server.addCacheCallback("cacheModlist", cache);

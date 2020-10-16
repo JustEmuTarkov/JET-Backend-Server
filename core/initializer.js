@@ -1,23 +1,39 @@
-"use strict";
 
 class Initializer {
     constructor() {
         this.initializeCore();
         this.initializeExceptions();
-        this.initializeLoadOrder();
         this.initializeClasses();
+		this.initializeItemRoute();
+		
+		// start watermark and server
+		watermark.run();
+		server.start();
     }
 
     /* load core functionality */
     initializeCore() {
+		global.startTimestamp = new Date().getTime();
+		
         /* setup utilites */
+		global.executedDir = process.cwd();
+		global.fs = require('fs');
+		global.path = require('path');
+		global.util = require('util');
+		global.resolve = require('path').resolve;
+		global.zlib = require('zlib');
+		global.https = require('https');
+		global.selfsigned = require('selfsigned');
+		global.psList = require('ps-list');
+		global.process = require('process');
+		
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);
         global.json = require('./util/json.js');
-
+		
         /* setup core files */
-        global.serverConfig = json.parse(json.read("user/configs/server.json"));
-        global.modsConfig = json.parse(json.read("user/configs/mods.json"));
+        global.serverConfig = json.readParsed("user/configs/server.json");
+        global.modsConfig = json.readParsed("user/configs/mods.json");
         global.db = {};
         global.res = {};
 
@@ -42,19 +58,33 @@ class Initializer {
     }
 
     /* load loadorder from cache */
-    initializeLoadOrder() {
-        this.loadorder = json.parse(json.read("user/cache/loadorder.json"));
+    initializeItemRoute() {
+        logger.logSuccess("Create: Item Action Callbacks");
+		// Load Item Route's
+		// move this later to other file or something like that :)
+		item_f.itemServer.updateRouteStruct();
+		let itemHandlers = "";
+		for(let iRoute in item_f.itemServer.routeStructure){
+			itemHandlers += iRoute + ", ";
+			item_f.itemServer.addRoute(iRoute, item_f.itemServer.routeStructure[iRoute]);
+		}
+		logger.logInfo("[Actions] " + itemHandlers.slice(0, -2));
     }
 
     /* load classes */
     initializeClasses() {
-        logger.logWarning("[Interpreter]: start loading classes...");
-
-        for (let name in this.loadorder) {
-            global[name] = require("../" + this.loadorder[name]);
-        }
-
-        logger.logSuccess("[Interpreter]: finished loading classes");
+        logger.logSuccess("Create: Classes as global variables");
+		let path = executedDir + "/src/classes";
+		let files = json.readDir(path);
+		let loadedModules = "";
+		global["helper_f"] = require(executedDir + "/src/classes/helper.js");
+		for(let file of files){
+			loadedModules += file.replace(".js",", ");
+			if(file == "helper.js") continue;
+			let name = file.replace(".js","") + "_f";
+			global[name] = require(executedDir + "/src/classes/" + file);
+		}
+		logger.logInfo("[Modules] " + loadedModules.slice(0, -2))
     }
 }
 

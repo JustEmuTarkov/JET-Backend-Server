@@ -25,15 +25,21 @@ class TraderServer {
     }
 
     getAllTraders(sessionID) {
+		
+		if(typeof sessionID == "undefined")
+			console.log("sessionID: " + sessionID);
+		
         let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
-        let traders = [];
+        let Traders = [];
 
         for (let traderID in this.traders) {
+			
             if (traderID === "ragfair") {
                 continue;
             }
 
             if (!(traderID in pmcData.TraderStandings)) {
+				console.log("reseting trader: " + traderID);
                 this.resetTrader(sessionID, traderID);
             }
 
@@ -43,10 +49,9 @@ class TraderServer {
             trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
             trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding;
             trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
-            traders.push(trader);
+            Traders.push(trader);
         }
-
-        return traders;
+        return Traders;
     }
 
     lvlUp(traderID, sessionID) {
@@ -113,11 +118,11 @@ class TraderServer {
             // 1 is min level, 4 is max level
             let level = this.traders[traderID].loyalty.currentLevel;
 			let questassort = {};
-			if(typeof db.traders[traderID].questassort == "undefined")
+			if(typeof db.cacheBase.traders[traderID].questassort == "undefined")
 			{
 				questassort = {"started": {},"success": {},"fail": {}};
-			} else if(json.exist(db.traders[traderID].questassort)){
-				questassort = json.parse(json.read(db.traders[traderID].questassort));
+			} else if(json.exist(db.cacheBase.traders[traderID].questassort)){
+				questassort = json.parse(json.read(db.cacheBase.traders[traderID].questassort));
 			} else {
 				questassort = {"started": {},"success": {},"fail": {}};
 			}
@@ -175,7 +180,7 @@ class TraderServer {
 
             //it's itemPreset
             let rub = 0;
-            let itemPresets = JSON.parse(JSON.stringify(globals.data.ItemPresets[traderID]._items));
+            let itemPresets = json.parse(json.stringify(globals.data.ItemPresets[traderID]._items, true));
             let ItemRootOldId = globals.data.ItemPresets[traderID]._parent;
 
             for (let i = 0; i < itemPresets.length; i++) {
@@ -199,7 +204,7 @@ class TraderServer {
 
             //calculate preset price
             for (let it of itemPresets) {
-                rub += itm_hf.getTemplatePrice(it._tpl);
+                rub += helper_f.getTemplatePrice(it._tpl);
             }
 
             base.data.barter_scheme[traderID] = json.parse(json.read(db.assort[fenceId].barter_scheme[traderID]));
@@ -230,7 +235,7 @@ class TraderServer {
 
     // delete assort keys
     removeItemFromAssort(assort, itemID) {
-        let ids_toremove = itm_hf.findAndReturnChildrenByItems(assort.items, itemID);
+        let ids_toremove = helper_f.findAndReturnChildrenByItems(assort.items, itemID);
 
         delete assort.barter_scheme[itemID];
         delete assort.loyal_level_items[itemID];
@@ -282,7 +287,7 @@ class TraderServer {
     getPurchasesData(traderID, sessionID) {
         let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
         let trader = this.traders[traderID];
-        let currency = itm_hf.getCurrency(trader.currency);
+        let currency = helper_f.getCurrency(trader.currency);
         let output = {};
 
         // get sellable items
@@ -293,20 +298,20 @@ class TraderServer {
                 || item._id === pmcData.Inventory.stash
                 || item._id === pmcData.Inventory.questRaidItems
                 || item._id === pmcData.Inventory.questStashItems
-                || itm_hf.isNotSellable(item._tpl)
+                || helper_f.isNotSellable(item._tpl)
                 || traderFilter(trader.sell_category, item._tpl) === false) {
                 continue;
             }
 
             // find all child of the item (including itself) and sum the price 
-            for (let childItem of itm_hf.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
+            for (let childItem of helper_f.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
                 let tempPrice = (items.data[childItem._tpl]._props.CreditsPrice >= 1) ? items.data[childItem._tpl]._props.CreditsPrice : 1;
                 let count = ("upd" in childItem && "StackObjectsCount" in childItem.upd) ? childItem.upd.StackObjectsCount : 1;
                 price = price + (tempPrice * count);
             }
 
             // dogtag calculation
-            if ("upd" in item && "Dogtag" in item.upd && itm_hf.isDogtag(item._tpl)) {
+            if ("upd" in item && "Dogtag" in item.upd && helper_f.isDogtag(item._tpl)) {
                 price *= item.upd.Dogtag.Level;
             }
 
@@ -314,7 +319,7 @@ class TraderServer {
             let hpresource = ("upd" in item && "MedKit" in item.upd) ? item.upd.MedKit.HpResource : 0;
 
             if (hpresource > 0) {
-                let maxHp = itm_hf.getItem(item._tpl)[1]._props.MaxHpResource;
+                let maxHp = helper_f.getItem(item._tpl)[1]._props.MaxHpResource;
                 price *= (hpresource / maxHp);
             }
 
@@ -327,7 +332,7 @@ class TraderServer {
 
             // get real price
             if (trader.discount > 0) { price -= (trader.discount / 100) * price }
-            price = itm_hf.fromRUB(price, currency);
+            price = helper_f.fromRUB(price, currency);
             price = (price > 0 && price !== "NaN") ? price : 1;
 
             output[item._id] = [[{ "_tpl": currency, "count": price.toFixed(0) }]];
@@ -345,14 +350,14 @@ output : boolean
 function traderFilter(traderFilters, tplToCheck) {
 
     for (let filter of traderFilters) {
-        for (let iaaaaa of itm_hf.templatesWithParent(filter)) {
+        for (let iaaaaa of helper_f.templatesWithParent(filter)) {
             if (iaaaaa == tplToCheck) {
                 return true;
             }
         }
 
-        for (let subcateg of itm_hf.childrenCategories(filter)) {
-            for (let itemFromSubcateg of itm_hf.templatesWithParent(subcateg)) {
+        for (let subcateg of helper_f.childrenCategories(filter)) {
+            for (let itemFromSubcateg of helper_f.templatesWithParent(subcateg)) {
                 if (itemFromSubcateg === tplToCheck) {
                     return true;
                 }

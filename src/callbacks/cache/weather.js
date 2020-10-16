@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -17,7 +15,5 @@ function cache() {
         base.data.push(fileData);
     }
 
-    json.write(db.user.cache.weather, base);
+    json.write(`./user/cache/weather.json`, base);
 }
-
-server.addCacheCallback("cacheWeather", cache);

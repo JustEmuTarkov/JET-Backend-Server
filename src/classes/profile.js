@@ -15,6 +15,8 @@ class ProfileServer {
     }
 
     loadProfilesFromDisk(sessionID) {
+		if(typeof sessionID == "undefined")
+			logger.throwErr("Session ID is undefined", "~/src/classes/profile.js | 19")
         this.profiles[sessionID]['pmc'] = json.parse(json.read(getPmcPath(sessionID)));
         this.generateScav(sessionID);
     }

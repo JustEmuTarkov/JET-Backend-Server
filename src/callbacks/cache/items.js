@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -18,7 +16,5 @@ function cache() {
 		}
     }
 
-    json.write(db.user.cache.items, base);
+    json.write("user/cache/items.json", base);
 }
-
-server.addCacheCallback("cacheItems", cache);

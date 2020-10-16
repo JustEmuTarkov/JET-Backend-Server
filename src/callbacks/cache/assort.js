@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -18,7 +16,7 @@ function cache() {
 			}
 		}
 		
-        json.write(db.user.cache[`assort_${trader}`], base);
+        json.write(`./user/cache/assort_${trader}.json`, base);
     }
 
     /* customization */
@@ -32,9 +30,7 @@ function cache() {
                 base.push(json.parse(json.read(db.assort[trader].customization[file])));
             }
 
-            json.write(db.user.cache[`customization_${trader}`], base);
+            json.write(`./user/cache/customization_${trader}.json`, base);
         }
     }
 }
-
-server.addCacheCallback("cacheAssort", cache);

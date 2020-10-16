@@ -33,6 +33,7 @@ db3
 db4
 db5
 db6
+coreMinified
 DB_removable
 Server.7z
 build.js
@@ -42,4 +43,5 @@ dev
 ## windows
 desktop.ini
 JET-Backend-Server.7z
-user/profiles/AID8131647517931710690RF/character.json
+user/profiles
+src/____responses

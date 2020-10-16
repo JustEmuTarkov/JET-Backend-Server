@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -17,7 +15,5 @@ function cache() {
         base.data[file] = fileData;
     }
 
-    json.write(db.user.cache.customization, base);
+    json.write("user/cache/customization.json", base);
 }
-
-server.addCacheCallback("cacheCustomization", cache);

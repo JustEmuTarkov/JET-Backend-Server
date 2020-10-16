@@ -1,28 +1,21 @@
 "use strict"
-
-function noBody(data)
-{
+// noBody
+module.exports.noBody = (data) => {
     return utility.clearString(json.stringify(data));
 }
-
-function getBody(data, err = 0, errmsg = null) {
+// getBody
+module.exports.getBody = (data, err = 0, errmsg = null) => {
     return json.stringify({"err": err, "errmsg": errmsg, "data": data}, true);
 }
-
-function getUnclearedBody(data, err = 0, errmsg = null) {
+// getUnclearedBody
+module.exports.getUnclearedBody = (data, err = 0, errmsg = null) => {
     return json.stringify({"err": err, "errmsg": errmsg, "data": data});
 }
-
-function nullResponse() {
-    return getBody(null);
+// nullResponse
+module.exports.nullResponse = () => {
+    return this.getBody(null);
 }
-
-function emptyArrayResponse() {
-    return getBody([]);
+// emptyArrayResponse
+module.exports.emptyArrayResponse = () => {
+    return this.getBody([]);
 }
-
-module.exports.noBody = noBody;
-module.exports.getBody = getBody;
-module.exports.getUnclearedBody = getUnclearedBody;
-module.exports.nullResponse = nullResponse;
-module.exports.emptyArrayResponse = emptyArrayResponse;
