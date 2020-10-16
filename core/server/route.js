@@ -25,7 +25,7 @@ function scanRecursiveMod(filepath, baseNode, modNode) {
 function loadMod(mod, filepath) {
     logger.logInfo("[Loading] Mod " + mod.author + "-" + mod.name + "-" + mod.version);
 
-    let src = json.readParsed("user/cache/loadorder.json");
+    //let src = json.readParsed("user/cache/loadorder.json");
 	
 	if(json.exist("db/"))
 		if ("db" in mod) {
@@ -36,10 +36,10 @@ function loadMod(mod, filepath) {
         res = scanRecursiveMod(filepath, res, mod.res);
     }
 
-    if ("src" in mod) {
+    /*if ("src" in mod) {
         src = scanRecursiveMod(filepath, src, mod.src);
         json.write("user/cache/loadorder.json", src);
-    }
+    }*/
 }
 // detectChangedMods
 function detectChangedMods() {
@@ -112,8 +112,7 @@ function detectMissingMods() {
 function isRebuildRequired() {
     if (!json.exist("user/cache/mods.json")
     || !json.exist("user/cache/db.json")
-    || !json.exist("user/cache/res.json")
-    || !json.exist("user/cache/loadorder.json")) {
+    || !json.exist("user/cache/res.json")) {
         return true;
     }
 
@@ -197,7 +196,7 @@ function routeAll() {
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route ressources");
     res = scanRecursiveRoute("res/");
-    json.write("user/cache/loadorder.json", json.read("src/loadorder.json"), true);
+    //json.write("user/cache/loadorder.json", json.read("src/loadorder.json"), true);
 
     /* add important server paths */
     db.user = {
@@ -217,8 +216,8 @@ exports.all = () => {
     if (!json.exist("user/mods/")) {
         json.mkDir("user/mods/");
     }
-	if(json.readDir("./user/cache").length < 32)
-	{ // health number of cache file count is 32 as for now ;)
+	if(json.readDir("./user/cache").length < 31)
+	{ // health number of cache file count is 31 as for now ;)
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
 	}
@@ -226,10 +225,10 @@ exports.all = () => {
 		detectMissingMods();
 
     /* check if loadorder is missing */
-    if (!json.exist("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
+    /*if (!json.exist("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
         logger.logWarning("Loadorder missing. Rebuild Required.")
         serverConfig.rebuildCache = true;
-    }
+    }*/
 
     // detect if existing mods changed
     if (detectChangedMods() && !serverConfig.rebuildCache) {
