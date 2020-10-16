@@ -1,11 +1,11 @@
 "use strict";
 
-function buyItem(pmcData, body, sessionID) {
+exports.buyItem = (pmcData, body, sessionID) => {
     if (body.tid === "579dc571d53a0658a154fbec") {
         body.tid = "ragfair";
     }
 
-    if (!itm_hf.payMoney(pmcData, body, sessionID)) {
+    if (!helper_f.payMoney(pmcData, body, sessionID)) {
         logger.logError("no money found");
         return "";
     }
@@ -15,7 +15,7 @@ function buyItem(pmcData, body, sessionID) {
 }
 
 // Selling item to trader
-function sellItem(pmcData, body, sessionID) {
+exports.sellItem = (pmcData, body, sessionID) => {
     let money = 0;
     let prices = trader_f.traderServer.getPurchasesData(body.tid, sessionID);
     let output = item_f.itemServer.getOutput();
@@ -50,26 +50,26 @@ function sellItem(pmcData, body, sessionID) {
     }
 
     // get money the item]
-    return itm_hf.getMoney(pmcData, money, body, output, sessionID);
+    return helper_f.getMoney(pmcData, money, body, output, sessionID);
 }
 
 // separate is that selling or buying
-function confirmTrading(pmcData, body, sessionID) {
+exports.confirmTrading = (pmcData, body, sessionID) => {
     // buying
     if (body.type === "buy_from_trader") {
-        return buyItem(pmcData, body, sessionID);
+        return this.buyItem(pmcData, body, sessionID);
     }
 
     // selling
     if (body.type === "sell_to_trader") {
-        return sellItem(pmcData, body, sessionID);
+        return this.sellItem(pmcData, body, sessionID);
     }
 
     return "";
 }
 
 // Ragfair trading
-function confirmRagfairTrading(pmcData, body, sessionID) {
+exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
     let ragfair_offers_traders = json.parse(json.read(db.user.cache.ragfair_offers));
     let offers = body.offers;
     let output = item_f.itemServer.getOutput()
@@ -101,8 +101,3 @@ function confirmRagfairTrading(pmcData, body, sessionID) {
     
     return output;
 }
-
-module.exports.buyItem = buyItem;
-module.exports.sellItem = sellItem;
-module.exports.confirmTrading = confirmTrading;
-module.exports.confirmRagfairTrading = confirmRagfairTrading;

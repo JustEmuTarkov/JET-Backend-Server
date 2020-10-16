@@ -1,8 +1,4 @@
-"use strict";
-
-const fs = require('fs');
-
-function route() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -47,5 +43,3 @@ function route() {
 
     json.write("user/cache/db.json", db);
 }
-
-server.addCacheCallback("routeMissing", route);

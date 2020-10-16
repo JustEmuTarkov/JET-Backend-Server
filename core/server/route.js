@@ -1,11 +1,9 @@
 "use strict";
-
-const fs = require('fs');
-
+// getModFilepath
 function getModFilepath(mod) {
     return "user/mods/" + mod.author + "-" + mod.name + "-" + mod.version + "/";
 }
-
+// scanRecursiveMod
 function scanRecursiveMod(filepath, baseNode, modNode) {
     if (typeof modNode === "string") {
         baseNode = filepath + modNode;
@@ -23,13 +21,13 @@ function scanRecursiveMod(filepath, baseNode, modNode) {
 
     return baseNode;
 }
-
+// loadMod
 function loadMod(mod, filepath) {
     logger.logInfo("[Loading] Mod " + mod.author + "-" + mod.name + "-" + mod.version);
 
-    let src = json.parse(json.read("user/cache/loadorder.json"));
+    let src = json.readParsed("user/cache/loadorder.json");
 	
-	if(fs.existsSync("db/"))
+	if(json.exist("db/"))
 		if ("db" in mod) {
 			db = scanRecursiveMod(filepath, db, mod.db);
 		}
@@ -43,17 +41,17 @@ function loadMod(mod, filepath) {
         json.write("user/cache/loadorder.json", src);
     }
 }
-
+// detectChangedMods
 function detectChangedMods() {
     let changed = false;
 
     for (let mod of modsConfig) {
-        if (!fs.existsSync(getModFilepath(mod) + "mod.config.json")) {
+        if (!json.exist(getModFilepath(mod) + "mod.config.json")) {
             changed = true;
             break;
         }
 
-        let config = json.parse(json.read(getModFilepath(mod) + "mod.config.json"));
+        let config = json.readParsed(getModFilepath(mod) + "mod.config.json");
 
         if (mod.name !== config.name || mod.author !== config.author || mod.version !== config.version) {
             changed = true;
@@ -67,9 +65,9 @@ function detectChangedMods() {
 
     return changed;
 }
-
+// detectMissingMods
 function detectMissingMods() {
-    if (!fs.existsSync("user/mods/")) {
+    if (!json.exist("user/mods/")) {
         return;
     }
 
@@ -78,13 +76,13 @@ function detectMissingMods() {
 
     for (let mod of mods) {
         /* check if config exists */
-        if (!fs.existsSync(dir + mod + "/mod.config.json")) {
+        if (!json.exist(dir + mod + "/mod.config.json")) {
             logger.logError(`Mod ${mod} is missing mod.config.json`);
             continue;
 			// continue starting server only with displaying error that mod wasnt loaded properly
         }
 
-        let config = json.parse(json.read(dir + mod + "/mod.config.json"));
+        let config = json.readParsed(dir + mod + "/mod.config.json");
         let found = false;
 
         /* check if mod is already in the list */
@@ -110,16 +108,16 @@ function detectMissingMods() {
         }
     }
 }
-
+// isRebuildRequired
 function isRebuildRequired() {
-    if (!fs.existsSync("user/cache/mods.json")
-    || !fs.existsSync("user/cache/db.json")
-    || !fs.existsSync("user/cache/res.json")
-    || !fs.existsSync("user/cache/loadorder.json")) {
+    if (!json.exist("user/cache/mods.json")
+    || !json.exist("user/cache/db.json")
+    || !json.exist("user/cache/res.json")
+    || !json.exist("user/cache/loadorder.json")) {
         return true;
     }
 
-    let cachedlist = json.parse(json.read("user/cache/mods.json"));
+    let cachedlist = json.readParsed("user/cache/mods.json");
 
     if (modsConfig.length !== cachedlist.length) {
         return true;
@@ -137,7 +135,7 @@ function isRebuildRequired() {
 
     return false;
 }
-
+// loadAllMods
 function loadAllMods() {
     for (let element of modsConfig) {
         if (!element.enabled) {
@@ -146,29 +144,29 @@ function loadAllMods() {
         }
 
         let filepath = getModFilepath(element);
-        let mod = json.parse(json.read(filepath + "mod.config.json"));
+        let mod = json.readParsed(filepath + "mod.config.json");
         loadMod(mod, filepath);
     }
 }
-
+// flush
 function flush() {
     db = {};
     res = {};
 }
-
+// dump
 function dump() {
-	if(fs.existsSync("db/"))
+	if(json.exist("db/"))
 		json.write("user/cache/db.json", db);
     json.write("user/cache/res.json", res);
 }
-
+// scanRecursiveRoute
 function scanRecursiveRoute(filepath, deep = false) {
 	if(filepath == "db/")
-		if(!fs.existsSync("db/"))
+		if(!json.exist("db/"))
 			return;
     let baseNode = {};
     let directories = utility.getDirList(filepath);
-    let files = fs.readdirSync(filepath);
+    let files = json.readDir(filepath);
 
     // remove all directories from files
     for (let directory of directories) {
@@ -193,13 +191,13 @@ function scanRecursiveRoute(filepath, deep = false) {
 
     return baseNode;
 }
-
+// routeAll
 function routeAll() {
 	logger.logInfo("Rebuilding cache: route database");
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route ressources");
     res = scanRecursiveRoute("res/");
-    json.write("user/cache/loadorder.json", json.parse(json.read("src/loadorder.json")));
+    json.write("user/cache/loadorder.json", json.read("src/loadorder.json"), true);
 
     /* add important server paths */
     db.user = {
@@ -211,15 +209,15 @@ function routeAll() {
         }   
     }
 }
-
-function all() {
+// all
+exports.all = () => {
 	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
 	
     // create mods folder if missing
-    if (!fs.existsSync("user/mods/")) {
-        fs.mkdirSync("user/mods/");
+    if (!json.exist("user/mods/")) {
+        json.mkDir("user/mods/");
     }
-	if(fs.readdirSync("./user/cache").length < 32)
+	if(json.readDir("./user/cache").length < 32)
 	{ // health number of cache file count is 32 as for now ;)
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
@@ -228,8 +226,8 @@ function all() {
 		detectMissingMods();
 
     /* check if loadorder is missing */
-    if (!fs.existsSync("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
-        logger.logWarning("Loadorder missing. Rebuild Required.");
+    if (!json.exist("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
+        logger.logWarning("Loadorder missing. Rebuild Required.")
         serverConfig.rebuildCache = true;
     }
 
@@ -258,8 +256,6 @@ function all() {
         return;
     }
 
-    db = json.parse(json.read("user/cache/db.json"));
-    res = json.parse(json.read("user/cache/res.json"));
+    db = json.readParsed("user/cache/db.json");
+    res = json.readParsed("user/cache/res.json");
 }
-
-module.exports.all = all;

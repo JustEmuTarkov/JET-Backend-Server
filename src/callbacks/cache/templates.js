@@ -1,6 +1,4 @@
-"use strict";
-
-function cache() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -22,7 +20,5 @@ function cache() {
 		}
     }
 
-    json.write(db.user.cache.templates, base);
+    json.write(`./user/cache/templates.json`, base);
 }
-
-server.addCacheCallback("cacheTemplates", cache);

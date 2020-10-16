@@ -1,6 +1,6 @@
-"use strict";
+// TODO: this will require some rewrite
 
-function offers() {
+exports.cache = () => {
     if (!serverConfig.rebuildCache) {
         return;
     }
@@ -15,7 +15,7 @@ function offers() {
         if (trader === "ragfair" || trader === "579dc571d53a0658a154fbec") {
             continue;
         }
-        let allAssort = json.parse(json.read(db.user.cache["assort_" + trader]));
+        let allAssort = json.parse(json.read("./user/cache/assort_" + trader + ".json"));
         allAssort = allAssort.data;
     
         for (let itemAssort of allAssort.items) {
@@ -41,17 +41,17 @@ function offers() {
                     }
                 }
 
-                offers = offers.concat(cache(itemsToSell, barter_scheme, loyal_level, trader, counter)); 
+                offers = offers.concat(loadCache(itemsToSell, barter_scheme, loyal_level, trader, counter)); 
                 counter += 1;
             }
         } 
     }
 
     response.offers = offers;
-    json.write(db.user.cache.ragfair_offers, response);
+    json.write("user/cache/ragfair_offers.json", response);
 }
 
-function cache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
+function loadCache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
     let offers = [];
     let offerBase = json.parse(json.read(db.cacheBase.fleaOffer));
     let traderObj = json.parse(json.read(db.cacheBase.traders[trader].base));
@@ -77,16 +77,14 @@ function cache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
 
 //find childs of the item in a given assort (weapons pars for example, need recursive loop function)
 function findChildren(itemIdToFind, assort) {
-    let array = [];
+    let Array = [];
     
     for (let itemFromAssort of assort) {
         if (itemFromAssort.parentId == itemIdToFind) {   
-            array.push(itemFromAssort)
-            array = array.concat(findChildren(itemFromAssort._id, assort));
+            Array.push(itemFromAssort)
+            Array = Array.concat(findChildren(itemFromAssort._id, assort));
         }
     }
 
-    return array;
+    return Array;
 }
-
-server.addCacheCallback("cacheRagfair", offers);

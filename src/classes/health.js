@@ -50,7 +50,7 @@ class HealthServer {
                 if ("MedKit" in item.upd) {
                     item.upd.MedKit.HpResource -= body.count;
                 } else {
-                    let maxhp = itm_hf.getItem(item._tpl)[1]._props.MaxHpResource;
+                    let maxhp = helper_f.getItem(item._tpl)[1]._props.MaxHpResource;
                     item.upd.MedKit = {"HpResource": maxhp - body.count};
                 }
     
@@ -70,7 +70,7 @@ class HealthServer {
     
         for (let item of pmcData.Inventory.items) {
             if (item._id === body.item) {
-                let itemProps = itm_hf.getItem(item._tpl)[1]._props;
+                let itemProps = helper_f.getItem(item._tpl)[1]._props;
                 maxResource = itemProps.MaxResource;
 
                 if (maxResource > 1) {   
@@ -156,7 +156,7 @@ class HealthServer {
             "tid": "54cb57776803fa99248b456e",
             "scheme_items": info.items
         };
-        itm_hf.payMoney(pmcData, body, sessionID)
+        helper_f.payMoney(pmcData, body, sessionID)
 
         let BodyParts = info.difference.BodyParts;
         let BodyPartKeys = Object.keys(BodyParts);

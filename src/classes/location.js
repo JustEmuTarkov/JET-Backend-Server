@@ -1,5 +1,4 @@
 "use strict";
-const fs = require('fs');
 
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
@@ -9,157 +8,317 @@ class LocationServer {
 
     /* Load all the locations into memory. */
     initialize() {
-		this.locations = json.parse(json.read(db.user.cache.locations));
+		this.locations = json.readParsed(db.user.cache.locations);
     }
 
     /* generates a random location preset to use for local session */
     generate(name) {
 		//check if one file loot is existing
-		if(!utility.isUndefined(db.locations[name].loot_file))
-			if(json.exist(db.locations[name].loot_file))
-			{
-				let data = json.parse(json.read(db.locations[name].loot_file));
-				// maybe adding some random ID's for loot wil need to think about it
-				output.Loot = data.Loot;
-				logger.logSuccess(`Loaded 1 file Loot from loot_file.json`);
-				logger.logSuccess(`Generated location ${name}`);
-				return output;
-			}
-		// if no file found proceed with this
-        let output = this.locations[name];
+        //let output = this.locations[name];
+		
+		// dont read next time ??
+		let location = json.readParsed(db.locations[name]);
+		
+		// this need to be in config file
+        const locationLootChanceModifier = 80;
+        let output = location.base;
         let ids = {};
-        let base = {};
 
         // don't generate loot on hideout
-        if (name === "hideout") {
+        if (name === "hideout")
+        {
             return output;
         }
 
-        // forced loot
-        base = db.locations[name].loot.forced;
+        let forced = location.loot.forced;
+        let mounted = location.loot.mounted;
+        let statics = location.loot.static;
+        let dynamic = location.loot.dynamic;
+        output.Loot = [];
 
-        for (let dir in base) {
-            for (let loot in base[dir]) {
-                let data = json.parse(json.read(base[dir][loot]));
+        // mounted weapons
+        for (let i in mounted)
+        {
+            let data = mounted[i];
 
-                if (data.Id in ids) {
-                    continue;
-                } else {
-                    ids[data.Id] = true;
-                }
-
-                output.Loot.push(data);
-            }
-        }
-
-        // static loot
-        base = db.locations[name].loot.static;
-
-        for (let dir in base) {
-            let node = base[dir];
-            let keys = Object.keys(node);
-            let data = json.parse(json.read(node[keys[utility.getRandomInt(0, keys.length - 1)]]));
-
-            if (data.Id in ids) {
+            if (data.Id in ids)
                 continue;
-            } else {
-                ids[data.Id] = true;
-            }
+
+            ids[data.Id] = true;
             output.Loot.push(data);
         }
 
-        // dyanmic loot
-        let dirs = Object.keys(db.locations[name].loot.dynamic);
-        let max = gameplayConfig.locationloot[name];
-        let count = 0;
+        // forced loot
+        for (let i in forced)
+        {
+            let data = forced[i].data[0];
 
-        base = db.locations[name].loot.dynamic;
+            if (data.Id in ids)
+                continue;
 
-        //Generate dynamic loot list
-        let lootFiles = {};
-        for (const dir of dirs) {
-            for (const lootFileName of Object.keys(base[dir])) {
-                lootFiles[dir + "_" + lootFileName] = base[dir][lootFileName];
-            }
+            ids[data.Id] = true;
+            output.Loot.push(data);
         }
 
-        //Loot position list for filtering the lootItem in the same position.
+        let count = 0;
+        // static loot
+        for (let i in statics)
+        {
+            let data = statics[i];
+
+            if (data.Id in ids)
+                continue;
+
+            ids[data.Id] = true;
+
+            if (data.Items.length > 1)
+                data.Items.splice(1);
+
+            this.generateContainerLoot(data.Items);
+            output.Loot.push(data);
+            count++;
+        }
+        logger.logSuccess("A total of " + count + " containers generated");
+
+        // dyanmic loot
+        let max = 100;//location_f.config.limits[name];
+        count = 0;
+
+        // Loot position list for filtering the lootItem in the same position.
         let lootPositions = [];
-        var maxCount = 0;
-        while (maxCount < max && Object.keys(lootFiles).length > 0) {
+        let maxCount = 0;
+
+        while (maxCount < max && dynamic.length > 0)
+        {
             maxCount += 1;
-            let keys = Object.keys(lootFiles);
-            let key = keys[utility.getRandomInt(0, keys.length - 1)];
-            let data = json.parse(json.read(lootFiles[key]));
-            
+            let rndLootIndex = utility.getRandomInt(0, dynamic.length - 1);
+            let rndLoot = dynamic[rndLootIndex];
+
+            if (!rndLoot.data)
+            {
+                maxCount -= 1;
+                continue;
+            }
+
+            let rndLootTypeIndex = utility.getRandomInt(0, rndLoot.data.length - 1);
+            let data = rndLoot.data[rndLootTypeIndex];
+
             //Check if LootItem is overlapping
             let position = data.Position.x + "," + data.Position.y + "," + data.Position.z;
-            if(!gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position)) {
-                //Clearly selected loot
-                delete lootFiles[key];
+            if (!gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position))
+            {
+                //Clear selected loot
+                dynamic[rndLootIndex].data.splice(rndLootTypeIndex, 1);
+
+                if (dynamic[rndLootIndex].data.length === 0)
+                {
+                    delete dynamic.splice(rndLootIndex, 1);
+                }
+
                 continue;
             }
 
             //random loot Id
-            //TODO: To implement a new random function, use "generateNewItemId" instead for now.
+            //TODO: To implement a new random function, use "generateID" instead for now.
             data.Id = utility.generateNewItemId();
 
-            //create lootItem list 
+            //create lootItem list
             let lootItemsHash = {};
             let lootItemsByParentId = {};
-            
-           
 
-            for (const i in data.Items) {
-                
+            for (const i in data.Items)
+            {
+
                 let loot = data.Items[i];
                 // Check for the item spawnchance
-                lootItemsHash[loot._id] = loot;            
+                lootItemsHash[loot._id] = loot;
 
                 if (!("parentId" in loot))
                     continue;
 
-                if(lootItemsByParentId[loot.parentId] == undefined)
+                if (lootItemsByParentId[loot.parentId] === undefined)
                     lootItemsByParentId[loot.parentId] = [];
-                    lootItemsByParentId[loot.parentId].push(loot)
+                lootItemsByParentId[loot.parentId].push(loot);
             }
+
             //reset itemId and childrenItemId
-            for (const itemId of Object.keys(lootItemsHash)) {
+            for (const itemId of Object.keys(lootItemsHash))
+            {
                 let newId = utility.generateNewItemId();
                 lootItemsHash[itemId]._id = newId;
 
-                if(itemId == data.Root)
+                if (itemId === data.Root)
                     data.Root = newId;
 
-                if(lootItemsByParentId[itemId] == undefined) 
+                if (lootItemsByParentId[itemId] === undefined)
                     continue;
-                
-                for (const childrenItem of lootItemsByParentId[itemId]) {
+
+                for (const childrenItem of lootItemsByParentId[itemId])
+                {
                     childrenItem.parentId = newId;
                 }
             }
-            const num = utility.getRandomInt(0,100);
-            const itemChance = (items.data[data.Items[0]._tpl]._props.SpawnChance * globals.data.config.GlobalLootChanceModifier * location_f.locationServer.locations[name].GlobalLootChanceModifier).toFixed(0);
-            if(itemChance >= num){
+
+            const num = utility.getRandomInt(0, 100);
+            const spawnChance = helper_f.getItem(data.Items[0]._tpl)[1]['_props']['SpawnChance'];
+            const itemChance = (spawnChance * this.globalLootChanceModifier * locationLootChanceModifier).toFixed(0);
+            if (itemChance >= num)
+            {
                 count += 1;
                 lootPositions.push(position);
                 output.Loot.push(data);
-            }else{
+            }
+            else
+            {
                 continue;
             }
-            
         }
 
         // done generating
-        logger.logSuccess(`A total of ${count} items spawned`);
-        logger.logSuccess(`Generated location ${name}`);
+        logger.logSuccess("A total of " + count + " items spawned");
+        logger.logSuccess("Generated location " + name);
         return output;
+    }
+	// TODO: rework required - weard functions to replace later on ;)
+	generateContainerLoot(_items)
+    {
+        let container = helper_f.getItem(_items[0]._tpl);
+        let parentId = _items[0]._id;
+        let idPrefix = parentId.substring(0, parentId.length - 4);
+        let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
+        let container2D = Array(container.height).fill().map(() => Array(container.width).fill(0));
+        let maxProbability = container.maxProbability;
+        let minCount = container.minCount;
+
+        for (let i = minCount; i < container.maxCount; i++)
+        {
+            let roll = utility.getRandomInt(0, 100);
+
+            if (roll < container.chance)
+            {
+                minCount++;
+            }
+        }
+
+        for (let i = 0; i < minCount; i++)
+        {
+            let item = {};
+            let containerItem = {};
+            let result = { success: false };
+            let maxAttempts = 20;
+
+            while (!result.success && maxAttempts)
+            {
+                let roll = utility.getRandomInt(0, maxProbability);
+                let rolled = container.items.find(itm => itm.cumulativeChance >= roll);
+
+                item = helper_f.getItem(rolled.id);
+
+                if (rolled.preset)
+                {
+                    // Guns will need to load a preset of items
+                    item._props.presetId = rolled.preset.id;
+                    item._props.Width = rolled.preset.w;
+                    item._props.Height = rolled.preset.h;
+                }
+
+                result = helper_f.findSlotForItem(container2D, item._props.Width, item._props.Height);
+                maxAttempts--;
+            }
+
+            // if we weren't able to find an item to fit after 20 tries then container is probably full
+            if (!result.success)
+                break;
+
+            container2D = helper_f.fillContainerMapWithItem(
+                container2D, result.x, result.y, item._props.Width, item._props.Height, result.rotation);
+            let rot = result.rotation ? 1 : 0;
+
+            if (item._props.presetId)
+            {
+                // Process gun preset into container items
+                let preset = helper_f.getPreset(item._id);
+                preset._items[0].parentId = parentId;
+                preset._items[0].slotId = "main";
+                preset._items[0].location = { "x": result.x, "y": result.y, "r": rot};
+
+                for (var p in preset._items)
+                {
+                    _items.push(preset._items[p]);
+
+                    if (preset._items[p].slotId === "mod_magazine")
+                    {
+                        let mag = helper_f.getItem(preset._items[p]._tpl)[1];
+                        let cartridges = {
+                            "_id": idPrefix + idSuffix.toString(16),
+                            "_tpl": item._props.defAmmo,
+                            "parentId": preset._items[p]._id,
+                            "slotId": "cartridges",
+                            "upd": { "StackObjectsCount": mag._props.Cartridges[0]._max_count }
+                        };
+
+                        _items.push(cartridges);
+                        idSuffix++;
+                    }
+                }
+
+                continue;
+            }
+
+            containerItem = {
+                "_id": idPrefix + idSuffix.toString(16),
+                "_tpl": item._id,
+                "parentId": parentId,
+                "slotId": "main",
+                "location": { "x": result.x, "y": result.y, "r": rot}
+            };
+
+            let cartridges;
+            if (item._parent === "543be5dd4bdc2deb348b4569" || item._parent === "5485a8684bdc2da71d8b4567")
+            {
+                // Money or Ammo stack
+                let stackCount = utility.getRandomInt(item._props.StackMinRandom, item._props.StackMaxRandom);
+                containerItem.upd = { "StackObjectsCount": stackCount };
+            }
+            else if (item._parent === "543be5cb4bdc2deb348b4568")
+            {
+                // Ammo container
+                idSuffix++;
+
+                cartridges = {
+                    "_id": idPrefix + idSuffix.toString(16),
+                    "_tpl": item._props.StackSlots[0]._props.filters[0].Filter[0],
+                    "parentId": containerItem._id,
+                    "slotId": "cartridges",
+                    "upd": { "StackObjectsCount": item._props.StackMaxRandom }
+                };
+            }
+            else if (item._parent === "5448bc234bdc2d3c308b4569")
+            {
+                // Magazine
+                idSuffix++;
+                cartridges = {
+                    "_id": idPrefix + idSuffix.toString(16),
+                    "_tpl": item._props.Cartridges[0]._props.filters[0].Filter[0],
+                    "parentId": parentId,
+                    "slotId": "cartridges",
+                    "upd": { "StackObjectsCount": item._props.Cartridges[0]._max_count }
+                };
+            }
+
+            items.push(containerItem);
+			
+            if (cartridges)
+                items.push(cartridges);
+			
+            idSuffix++;
+        }
     }
 
     /* get a location with generated loot data */
-    get(location) {
-        let name = location.toLowerCase().replace(" ", "");
-        return json.stringify(this.generate(name));
+    get(Location) {
+        let name = Location.toLowerCase().replace(" ", "");
+        return this.generate(name);
     }
 
     /* get all locations without loot data */
@@ -170,8 +329,8 @@ class LocationServer {
 			if(json.exist(db.user.cache.locations))
 			{
 				//console.log(db.cacheBase.locations);
-				let base = json.parse(json.read(db.cacheBase.locations))
-				let data = json.parse(json.read(db.user.cache.locations));
+				let base = json.readParsed(db.cacheBase.locations);
+				let data = json.readParsed(db.user.cache.locations);
 				let newData = {};
 				for(let location in data){
 					newData[data[location]._Id] = data[location];

@@ -219,7 +219,7 @@ function generatePlayerScav() {
 	// Remove secured container
 	for (let item of scavItems) {
 		if (item.slotId === "SecuredContainer") {
-			let toRemove = itm_hf.findAndReturnChildrenByItems(scavItems, item._id);
+			let toRemove = helper_f.findAndReturnChildrenByItems(scavItems, item._id);
 			let n = scavItems.length;
 
 			while (n-- > 0) {
