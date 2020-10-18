@@ -3,11 +3,11 @@
 function initialize() {
 	if (gameplayConfig.autosave.saveOnExit) {
 		process.on('exit', (code) => {
-			saveHandler_f.saveOpenSessions();
+			savehandler_f.saveOpenSessions();
 		});
 
 		process.on('SIGINT', (code) => {
-			saveHandler_f.saveOpenSessions();
+			savehandler_f.saveOpenSessions();
 			logger.logInfo("Ctrl-C, exiting ...");
 			process.exit(1);
 		});
@@ -15,7 +15,7 @@ function initialize() {
 	
 	if (gameplayConfig.autosave.saveIntervalSec > 0) {
         setInterval(function() {
-            saveHandler_f.saveOpenSessions();
+            savehandler_f.saveOpenSessions();
             logger.logSuccess("Player progress autosaved!");
         }, gameplayConfig.autosave.saveIntervalSec * 1000);
     }

@@ -156,7 +156,7 @@ class Server {
         resp.end(output);
     }
 	
-	sendHtmlJson(resp, output) {
+	sendHtml(resp, output) {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
         resp.end(output);
     }
@@ -179,6 +179,31 @@ class Server {
     sendResponse(sessionID, req, resp, body) {
         let output = "";
     
+		if(req.url == "/")
+		{
+			output = "<body><style>h2{font-size:20px;padding:3px 5px;} h3{font-size:18px;padding:3px 15px;} p{font-size:14px;padding:3px 25px} body{color:#fff;background:#000}</style>";
+			let data = json.readParsed(db.user.configs.gameplay);
+			for(let category in data){
+				output += "<h2>" + category + "</h2>";
+				for (let sub in data[category])
+				{
+					if(typeof data[category][sub] == "object"){
+						output += "<h3>" + sub + "</h3>";
+						for(let subSub in data[category][sub])
+						{
+							output += "<p>- " + subSub + ": " + data[category][sub][subSub] + "</p>";
+						}
+					} else {
+						output += "<p>- " + sub + ": " + data[category][sub] + "</p>";
+					}
+				}
+			}
+			
+			output += "</body>";
+			this.sendHtml(resp, output, "");
+			return;
+		}
+	
         // get response
         if (req.method === "POST" || req.method === "PUT") {
             output = router.getResponse(req, body, sessionID);

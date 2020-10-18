@@ -34,11 +34,11 @@
 	},
 	"Health": {
 		"Hydration": {
-			"Current": 99.56,
+			"Current": 100,
 			"Maximum": 100
 		},
 		"Energy": {
-			"Current": 99.52,
+			"Current": 100,
 			"Maximum": 100
 		},
 		"BodyParts": {
@@ -85,7 +85,7 @@
 				}
 			}
 		},
-		"UpdateTime": 1602793651
+		"UpdateTime": 1602981118
 	},
 	"Inventory": {
 		"items": [
@@ -1115,12 +1115,12 @@
 			{
 				"_id": "5df7b9abef12bf7a252437f8",
 				"_tpl": "564ca99c4bdc2d16268b4589",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
+				"parentId": "I9152227306295310432AjhW",
+				"slotId": "3",
 				"location": {
-					"x": 7,
-					"y": 3,
-					"r": 0,
+					"x": 0,
+					"y": 0,
+					"r": "Horizontal",
 					"isSearched": true
 				}
 			},
@@ -1209,14 +1209,8 @@
 			{
 				"_id": "5df7b9abef12bf7a25243803",
 				"_tpl": "5645bc214bdc2d363b8b4571",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 0,
-					"y": 18,
-					"r": 0,
-					"isSearched": true
-				},
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "Headwear",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 35,
@@ -1227,14 +1221,8 @@
 			{
 				"_id": "5df7b9abef12bf7a25243804",
 				"_tpl": "545cdb794bdc2d3a198b456a",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 0,
-					"y": 20,
-					"r": 0,
-					"isSearched": true
-				},
+				"parentId": "5df7b9abef12bf7a252437a1",
+				"slotId": "ArmorVest",
 				"upd": {
 					"Repairable": {
 						"MaxDurability": 75,
@@ -2314,7 +2302,7 @@
 				},
 				"upd": {
 					"MedKit": {
-						"HpResource": 1800
+						"HpResource": 1448
 					}
 				}
 			},
