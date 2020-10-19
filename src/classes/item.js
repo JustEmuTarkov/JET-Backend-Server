@@ -52,8 +52,8 @@ class ItemServer {
 			"ReadEncyclopedia": status_f.readEncyclopedia,
 			"TradingConfirm": trade_f.confirmTrading,
 			"RagFairBuyOffer": trade_f.confirmRagfairTrading,
-			"SaveBuild": weaponBuilds_f.saveBuild,
-			"RemoveBuild": weaponBuilds_f.removeBuild,
+			"SaveBuild": weaponbuilds_f.saveBuild,
+			"RemoveBuild": weaponbuilds_f.removeBuild,
 			"AddToWishList": wishList_f.addToWishList,
 			"RemoveFromWishList": wishList_f.removeFromWishList
 		}

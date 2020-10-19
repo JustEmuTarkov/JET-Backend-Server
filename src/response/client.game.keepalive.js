@@ -1,5 +1,7 @@
 function execute(url, info, sessionID){
-	keepAlive_f.main(sessionID);
+	if(typeof sessionID == "undefined")
+		return response_f.getBody({"msg": "No Session"});
+	keepalive_f.main(sessionID);
     return response_f.getBody({"msg": "OK"});
 }
 exports.execute = execute;

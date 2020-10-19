@@ -545,14 +545,14 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                                
                                 [output.items.new, pmcData.Inventory.items].forEach(x => x.push.apply(x, ammos));
                             }
-
+							//console.log(items.data);
                             while (true) {
                                 if (toDo.length === 0) {
                                     break;
                                 }
-
+								
                                 for (let tmpKey in inventoryItems) {
-                                    if (inventoryItems[tmpKey].parentId && items[tmpKey].parentId === toDo[0][0]) {
+                                    if (inventoryItems[tmpKey].parentId && items.data[inventoryItems[tmpKey]._tpl].parentId === toDo[0][0]) {
                                         newItem = utility.generateNewItemId();
 
                                         let SlotID = inventoryItems[tmpKey].slotId;
