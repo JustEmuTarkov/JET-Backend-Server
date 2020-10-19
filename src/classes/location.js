@@ -19,8 +19,7 @@ class LocationServer {
 		// dont read next time ??
 		let location = json.readParsed(db.locations[name]);
 		
-		// this need to be in config file
-        const locationLootChanceModifier = 80;
+        const locationLootChanceModifier = location.base.GlobalLootChanceModifier;
         let output = location.base;
         let ids = {};
 
@@ -36,6 +35,7 @@ class LocationServer {
         let dynamic = location.loot.dynamic;
         output.Loot = [];
 
+        let count = 0;
         // mounted weapons
         for (let i in mounted)
         {
@@ -47,8 +47,9 @@ class LocationServer {
             ids[data.Id] = true;
             output.Loot.push(data);
         }
-
-        // forced loot
+        logger.logSuccess("A total of " + count + " weapons generated");
+		count = 0;
+		// forced loot
         for (let i in forced)
         {
             let data = forced[i].data[0];
@@ -59,8 +60,8 @@ class LocationServer {
             ids[data.Id] = true;
             output.Loot.push(data);
         }
-
-        let count = 0;
+        logger.logSuccess("A total of " + count + " forcedLoot generated");
+        count = 0;
         // static loot
         for (let i in statics)
         {
@@ -81,7 +82,7 @@ class LocationServer {
         logger.logSuccess("A total of " + count + " containers generated");
 
         // dyanmic loot
-        let max = 100;//location_f.config.limits[name];
+        let max = 2000;//location_f.config.limits[name];
         count = 0;
 
         // Loot position list for filtering the lootItem in the same position.
