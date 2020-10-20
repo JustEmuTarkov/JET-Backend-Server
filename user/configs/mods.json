@@ -1,1 +1,8 @@
-[]
+[
+	{
+		"name": "AllItemsExamined",
+		"author": "TheMaoci",
+		"version": "1.0.0",
+		"enabled": true
+	}
+]
