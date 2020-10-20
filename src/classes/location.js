@@ -4,11 +4,14 @@
 class LocationServer {
     constructor() {
         this.locations = {};
+		this.location = {};
+		this.loot = {};
     }
 
     /* Load all the locations into memory. */
     initialize() {
 		this.locations = json.readParsed(db.user.cache.locations);
+		this.loot = json.readParsed(db.cacheBase.location_statics);
     }
 
     /* generates a random location preset to use for local session */
@@ -17,10 +20,10 @@ class LocationServer {
         //let output = this.locations[name];
 		
 		// dont read next time ??
-		let location = json.readParsed(db.locations[name]);
+		this.location = json.readParsed(db.locations[name]);
 		
-        const locationLootChanceModifier = location.base.GlobalLootChanceModifier;
-        let output = location.base;
+        const locationLootChanceModifier = this.location.base.GlobalLootChanceModifier;
+        let output = this.location.base;
         let ids = {};
 
         // don't generate loot on hideout
@@ -29,13 +32,14 @@ class LocationServer {
             return output;
         }
 
-        let forced = location.loot.forced;
-        let mounted = location.loot.mounted;
-        let statics = location.loot.static;
-        let dynamic = location.loot.dynamic;
+        let forced = this.location.loot.forced;
+        let mounted = this.location.loot.mounted;
+        let statics = this.location.loot.static;
+        let dynamic = this.location.loot.dynamic;
         output.Loot = [];
 
         let count = 0;
+		let counters = [];
         // mounted weapons
         for (let i in mounted)
         {
@@ -46,8 +50,10 @@ class LocationServer {
 
             ids[data.Id] = true;
             output.Loot.push(data);
+			count++;
         }
-        logger.logSuccess("A total of " + count + " weapons generated");
+		counters.push(count);
+        //logger.logSuccess("A total of " + count + " weapons generated");
 		count = 0;
 		// forced loot
         for (let i in forced)
@@ -59,8 +65,10 @@ class LocationServer {
 
             ids[data.Id] = true;
             output.Loot.push(data);
+			count++;
         }
-        logger.logSuccess("A total of " + count + " forcedLoot generated");
+		counters.push(count);
+        //logger.logSuccess("A total of " + count + " forcedLoot generated");
         count = 0;
         // static loot
         for (let i in statics)
@@ -79,7 +87,8 @@ class LocationServer {
             output.Loot.push(data);
             count++;
         }
-        logger.logSuccess("A total of " + count + " containers generated");
+		counters.push(count);
+        //logger.logSuccess("A total of " + count + " containers generated");
 
         // dyanmic loot
         let max = 2000;//location_f.config.limits[name];
@@ -162,7 +171,7 @@ class LocationServer {
 
             const num = utility.getRandomInt(0, 100);
             const spawnChance = helper_f.getItem(data.Items[0]._tpl)[1]['_props']['SpawnChance'];
-            const itemChance = (spawnChance * this.globalLootChanceModifier * locationLootChanceModifier).toFixed(0);
+            const itemChance = (spawnChance * locationLootChanceModifier).toFixed(0);
             if (itemChance >= num)
             {
                 count += 1;
@@ -176,18 +185,25 @@ class LocationServer {
         }
 
         // done generating
-        logger.logSuccess("A total of " + count + " items spawned");
-        logger.logSuccess("Generated location " + name);
+        logger.logSuccess(`Generated location ${name} with ${count} items spawned [$[Weapon: ${counters[0]} | FreeLayItem: ${counters[1]} | Container: ${counters[2]}]]`);
+		counters = null;
         return output;
     }
+	getStaticLoot(_tpl){
+		for(let obj of this.location.loot.static){
+			if(obj.Items[0]._tpl == _tpl)
+				return obj;
+		}
+	}
 	// TODO: rework required - weard functions to replace later on ;)
-	generateContainerLoot(_items)
-    {
-        let container = helper_f.getItem(_items[0]._tpl);
+	generateContainerLoot(_items) {
+		// REWRITE IT TO TAKE ADVANTAGE OF items.json over some retarded bilion additional files
+        let container = this.loot[_items[0]._tpl];
         let parentId = _items[0]._id;
         let idPrefix = parentId.substring(0, parentId.length - 4);
         let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
         let container2D = Array(container.height).fill().map(() => Array(container.width).fill(0));
+		
         let maxProbability = container.maxProbability;
         let minCount = container.minCount;
 
@@ -213,7 +229,7 @@ class LocationServer {
                 let roll = utility.getRandomInt(0, maxProbability);
                 let rolled = container.items.find(itm => itm.cumulativeChance >= roll);
 
-                item = helper_f.getItem(rolled.id);
+                item = helper_f.getItem(rolled.id)[1];
 
                 if (rolled.preset)
                 {
@@ -239,6 +255,7 @@ class LocationServer {
             {
                 // Process gun preset into container items
                 let preset = helper_f.getPreset(item._id);
+				if(preset == null) continue;
                 preset._items[0].parentId = parentId;
                 preset._items[0].slotId = "main";
                 preset._items[0].location = { "x": result.x, "y": result.y, "r": rot};
@@ -307,10 +324,10 @@ class LocationServer {
                 };
             }
 
-            items.push(containerItem);
+            _items.push(containerItem);
 			
             if (cartridges)
-                items.push(cartridges);
+                _items.push(cartridges);
 			
             idSuffix++;
         }

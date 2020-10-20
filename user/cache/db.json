@@ -2411,6 +2411,7 @@
 		"fleaOffer": "db/cacheBase/fleaOffer.json",
 		"globals": "db/cacheBase/globals.json",
 		"locations": "db/cacheBase/locations.json",
+		"location_statics": "db/cacheBase/location_statics.json",
 		"matchMetrics": "db/cacheBase/matchMetrics.json",
 		"traders": {
 			"54cb50c76803fa8b248b4571": {

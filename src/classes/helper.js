@@ -710,11 +710,11 @@ function arrayIntersect(a, b) {
 }
 
 function getPreset (id){
-	if(typeof globals.ItemPresets[id] == "undefined"){
-		logger.throwErr("Couldnot find preset: " + id, "src/classe/helper.js 714");
+	if(typeof globals.data.ItemPresets[id] == "undefined"){
+		logger.logError("Couldnot find preset: " + id + " at src/classe/helper.js 714");
 		return null;
 	}
-	return globals.ItemPresets[id];
+	return globals.data.ItemPresets[id];
 }
 // TODO: REWORK EVERYTHING ABOVE ~Maoci
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {
