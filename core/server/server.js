@@ -285,8 +285,8 @@ class Server {
         }
 
 		global._Database.globals = json.readParsed(db.cacheBase.globals);
-		if(typeof global._Database.globals != "undefined")
-			global._Database.globals = global._Database.globals;
+		if(typeof global._Database.globals.data != "undefined")
+			global._Database.globals = global._Database.globals.data;
 		global._Database.gameplayConfig = json.readParsed(db.user.configs.gameplay);
 		
         // execute start callback
@@ -309,11 +309,11 @@ class Server {
 			global.global._Database.someothershit
 		*/
 		global._Database.items = json.readParsed(db.user.cache.items);
-		if(typeof global._Database.items != "undefined")
-			global._Database.items = global._Database.items;
+		if(typeof global._Database.items.data != "undefined")
+			global._Database.items = global._Database.items.data;
 		global._Database.templates = json.readParsed(db.user.cache.templates);
-		if(typeof global._Database.templates != "undefined")
-			global._Database.templates = global._Database.templates;
+		if(typeof global._Database.templates.data != "undefined")
+			global._Database.templates = global._Database.templates.data;
 		
 		
 		logger.logInfo("Starting server...");

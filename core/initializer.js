@@ -28,7 +28,7 @@ class Initializer {
 		global.internal.fs = require('fs');
 		global.internal.path = require('path');
 		global.internal.util = require('util');
-		global.internal.resolve = path.resolve;
+		global.internal.resolve = global.internal.path.resolve;
 		global.internal.zlib = require('zlib');
 		global.internal.https = require('https');
 		global.internal.selfsigned = require('selfsigned');

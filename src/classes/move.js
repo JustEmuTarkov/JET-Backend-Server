@@ -360,256 +360,273 @@ function swapItem(pmcData, body, sessionID) {
 * its used for "add" item like gifts etc.
 * */
 function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
-    let PlayerStash = helper_f.getPlayerStash(sessionID);
-    let stashY = PlayerStash[1];
-    let stashX = PlayerStash[0];
-    let inventoryItems;
+	const fenceID = "579dc571d53a0658a154fbec";
+	let itemLib = [];
+	let itemsToAdd = [];
 
-    if (body.item_id in global._Database.globals.ItemPresets) {
-        inventoryItems = helper_f.clone(global._Database.globals.ItemPresets[body.item_id]._items);
-        body.item_id = inventoryItems[0]._id;
-    } else if (body.tid === "579dc571d53a0658a154fbec") {
-        let item = json.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data.items[body.item_id];
-        inventoryItems = [{_id: body.item_id, _tpl: item._tpl}];
-    } else {
-        inventoryItems = trader_f.handler.getAssort(sessionID, body.tid).items;
-    }
+	for (let baseItem of body.items)
+	{
+		if (baseItem.item_id in global._Database.globals.ItemPresets)
+		{
+			const presetItems = helper_f.clone(global._Database.globals.ItemPresets[baseItem.item_id]._items);
+			itemLib.push(...presetItems);
+			baseItem.isPreset = true;
+			baseItem.item_id = presetItems[0]._id;
+		}
+		else if (helper_f.isMoneyTpl(baseItem.item_id))
+		{
+			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
+		}
+		else if (body.tid === fenceID)
+		{
+			/* Note by reider123: Idk when it is used; even when I buy stuffs from fence, this is not called since body.tid is changed to "ragfair" in trade.js.
+			I think It can be just deleted. I just fixed it to make more sense, though. */
+			const fenceItem = json.readParsed(db.user.cache[`assort_${fenceID}`]).items;
+			const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
+			itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
+		}
+		else
+		{
+			// Only grab the relevant trader items and add unique values
+			const traderItems = trader_f.handler.getAssort(sessionID, body.tid).items;
+			const relevantItems = helper_f.findAndReturnChildrenAsItems(traderItems, baseItem.item_id);
+			const toAdd = relevantItems.filter(traderItem => !itemLib.some(item => traderItem._id === item._id));
+			itemLib.push(...toAdd);
+		}
 
-    for (let item of inventoryItems) {
-        if (item._id === body.item_id) {
-            let MaxStacks = 1;
-            let StacksValue = [];
-            let tmpItem = helper_f.getItem(item._tpl)[1];
+		for (let item of itemLib)
+		{
+			if (item._id === baseItem.item_id)
+			{
+				const tmpItem = helper_f.getItem(item._tpl)[1];
+				const itemToAdd = { itemRef: item, count: baseItem.count, isPreset: baseItem.isPreset };
+				let MaxStacks = 1;
 
-            // split stacks if the size is higher than allowed by StackMaxSize
-            if (body.count > tmpItem._props.StackMaxSize) {
-                let count = body.count;
-                let calc = body.count - (Math.floor(body.count / tmpItem._props.StackMaxSize) * tmpItem._props.StackMaxSize);
+				// split stacks if the size is higher than allowed by StackMaxSize
+				if (baseItem.count > tmpItem._props.StackMaxSize)
+				{
+					let count = baseItem.count;
+					let calc = baseItem.count - (Math.floor(baseItem.count / tmpItem._props.StackMaxSize) * tmpItem._props.StackMaxSize);
 
-                MaxStacks = (calc > 0) ? MaxStacks + Math.floor(count / tmpItem._props.StackMaxSize) : Math.floor(count / tmpItem._props.StackMaxSize);
+					MaxStacks = (calc > 0) ? MaxStacks + Math.floor(count / tmpItem._props.StackMaxSize) : Math.floor(count / tmpItem._props.StackMaxSize);
 
-                for (let sv = 0; sv < MaxStacks; sv++) {
-                    if (count > 0) {
-                        if (count > tmpItem._props.StackMaxSize) {
-                            count = count - tmpItem._props.StackMaxSize;
-                            StacksValue[sv] = tmpItem._props.StackMaxSize;
-                        } else {
-                            StacksValue[sv] = count;
-                        }
-                    }
-                }
-            } else {
-                StacksValue[0] = body.count;
-            }
-            // stacks prepared
+					for (let sv = 0; sv < MaxStacks; sv++)
+					{
+						if (count > 0)
+						{
+							let newItemToAdd = helper_f.clone(itemToAdd);
+							if (count > tmpItem._props.StackMaxSize)
+							{
+								count = count - tmpItem._props.StackMaxSize;
+								newItemToAdd.count = tmpItem._props.StackMaxSize;
+							}
+							else
+							{
+								newItemToAdd.count = count;
+							}
+							itemsToAdd.push(newItemToAdd);
+						}
+					}
+				}
+				else
+				{
+					itemsToAdd.push(itemToAdd);
+				}
+				// stacks prepared
+			}
+		}
+	}
 
-            for (let stacks = 0; stacks < MaxStacks; stacks++) {
-                //update profile on each stack so stash recalculate will have new items
-                pmcData = profile_f.handler.getPmcProfile(sessionID);
+	// Find an empty slot in stash for each of the items being added
+	let StashFS_2D = helper_f.getPlayerStashSlotMap(pmcData, sessionID);
+	for (let itemToAdd of itemsToAdd)
+	{
+		let itemSize = helper_f.getItemSize(itemToAdd.itemRef._tpl, itemToAdd.itemRef._id, itemLib);
+		let findSlotResult = helper_f.findSlotForItem(StashFS_2D, itemSize[0], itemSize[1]);
 
-                let StashFS_2D = helper_f.recheckInventoryFreeSpace(pmcData, sessionID);
-                let ItemSize = helper_f.getSize(item._tpl, item._id, inventoryItems);
-                let tmpSizeX = ItemSize[0];
-                let tmpSizeY = ItemSize[1];
-                let rotation = false;
-                let minVolume = (tmpSizeX < tmpSizeY ? tmpSizeX : tmpSizeY) - 1;
-                let limitY = stashY - minVolume;
-                let limitX = stashX - minVolume;
+		if (findSlotResult.success)
+		{
+			/* Fill in the StashFS_2D with an imaginary item, to simulate it already being added
+			* so the next item to search for a free slot won't find the same one */
+			let itemSizeX = findSlotResult.rotation ? itemSize[1] : itemSize[0];
+			let itemSizeY = findSlotResult.rotation ? itemSize[0] : itemSize[1];
 
-                addedProperly:
-                    for (let y = 0; y < limitY; y++) {
-                        for (let x = 0; x < limitX; x++) {
-                            let badSlot = "no";
-                            for (let itemY = 0; itemY < tmpSizeY; itemY++) {
-                                if(badSlot === "no" && y + tmpSizeY - 1 > stashY - 1) {
-                                    badSlot = "yes";
-                                    break;
-                                }
+			try
+			{
+				StashFS_2D = helper_f.fillContainerMapWithItem(StashFS_2D, findSlotResult.x, findSlotResult.y, itemSizeX, itemSizeY);
+			}
+			catch (err)
+			{
+				logger.logError("fillContainerMapWithItem returned with an error" + typeof err === "string" ? ` -> ${err}` : "");
+				return helper_f.appendErrorToOutput(output, "Not enough stash space");
+			}
 
-                                for (let itemX = 0; itemX < tmpSizeX; itemX++) {
-                                    if(badSlot === "no" && x + tmpSizeX - 1 > stashX - 1) {
-                                        badSlot = "yes";
-                                        break;
-                                    }
+			itemToAdd.location = { x: findSlotResult.x, y: findSlotResult.y, rotation: findSlotResult.rotation };
+		}
+		else
+		{
+			return helper_f.appendErrorToOutput(output, "Not enough stash space");
+		}
+	}
 
-                                    if (StashFS_2D[y + itemY][x + itemX] !== 0) {
-                                        badSlot = "yes";
-                                        break;
-                                    }
-                                }
+	// We've succesfully found a slot for each item, let's execute the callback and see if it fails (ex. payMoney might fail)
+	try
+	{
+		if (typeof callback === "function")
+		{
+			callback();
+		}
+	}
+	catch (err)
+	{
+		let message = typeof err === "string" ? err : "An unknown error occurred";
+		return helper_f.appendErrorToOutput(output, message);
+	}
 
-                                if (badSlot === "yes") {
-                                    break;
-                                }
-                            }
-                            
-                            /**Try to rotate if there is enough room for the item
-                             * Only occupies one grid of items, no rotation required
-                             * */
-                            if(badSlot === "yes" && tmpSizeX * tmpSizeY > 1) {
-                                badSlot = "no";
-                                for (let itemY = 0; itemY < tmpSizeX; itemY++) {
-                                    if (badSlot === "no" && y + tmpSizeX - 1 > stashY - 1) {
-                                        badSlot = "yes";
-                                        break;
-                                    }
-                                    for (let itemX = 0; itemX < tmpSizeY; itemX++) {
-                                        if (badSlot === "no" && x + tmpSizeY - 1 > stashX - 1) {
-                                            badSlot = "yes";
-                                            break;
-                                        }
+	for (let itemToAdd of itemsToAdd)
+	{
+		let newItem = utility.generateNewItemId();
+		let toDo = [[itemToAdd.itemRef._id, newItem]];
+		let upd = {"StackObjectsCount": itemToAdd.count};
 
-                                        if (StashFS_2D[y + itemY][x + itemX] !== 0) {
-                                            badSlot = "yes";
-                                            break;
-                                        }
-                                    }
-    
-                                    if (badSlot === "yes") {
-                                        break;
-                                    }
-                                }
+		//if it is from ItemPreset, load preset's upd data too.
+		if (itemToAdd.isPreset)
+		{
+			for (let updID in itemToAdd.itemRef.upd)
+			{
+				upd[updID] = itemToAdd.itemRef.upd[updID];
+			}
+		}
 
-                                if (badSlot === "no") {
-                                    rotation = true;
-                                }
-                            }
+		// in case people want all items to be marked as found in raid
+		if (gameplayConfig.trading.buyItemsMarkedFound)
+		{
+			foundInRaid = true;
+		}
 
-                            
+		// hideout items need to be marked as found in raid
+		if (foundInRaid)
+		{
+			upd["SpawnedInSession"] = true;
+		}
 
-                            if (badSlot === "yes") {
-                                continue;
-                            }
+		output.items.new.push({
+			"_id": newItem,
+			"_tpl": itemToAdd.itemRef._tpl,
+			"parentId": pmcData.Inventory.stash,
+			"slotId": "hideout",
+			"location": {"x": itemToAdd.location.x, "y": itemToAdd.location.y, "r": itemToAdd.location.rotation ? 1 : 0},
+			"upd": upd
+		});
 
-                            logger.logInfo(`Item placed at position [${x},${y}]`, "", "", true);
-                            let newItem = utility.generateNewItemId();
-                            let toDo = [[item._id, newItem]];
-                            let upd = {"StackObjectsCount": StacksValue[stacks]};
+		pmcData.Inventory.items.push({
+			"_id": newItem,
+			"_tpl": itemToAdd.itemRef._tpl,
+			"parentId": pmcData.Inventory.stash,
+			"slotId": "hideout",
+			"location": {"x": itemToAdd.location.x, "y": itemToAdd.location.y, "r": itemToAdd.location.rotation ? 1 : 0},
+			"upd": upd
+		});
 
-                            // in case people want all items to be marked as found in raid
-                            if (global._Database.gameplayConfig.trading.buyItemsMarkedFound) {
-                                foundInRaid = true;
-                            }
+		// If this is an ammobox, add cartridges to it.
+		// Damaged ammo box are not loaded.
+		const itemInfo = helper_f.getItem(itemToAdd.itemRef._tpl)[1];
+		let ammoBoxInfo = itemInfo._props.StackSlots;
+		if (ammoBoxInfo !== undefined && itemInfo._name.indexOf("_damaged") < 0)
+		{
+			// Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
+			let maxCount = ammoBoxInfo[0]._max_count;
+			let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
+			let ammoStackMaxSize = helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
+			let ammos = [];
+			let location = 0;
 
-                            // hideout items need to be marked as found in raid
-                            if (foundInRaid) {
-                                upd["SpawnedInSession"] = true;
-                            }
+			while (maxCount > 0)
+			{
+				let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
+				ammos.push({
+					"_id": utility.generateNewItemId(),
+					"_tpl": ammoTmplId,
+					"parentId": toDo[0][1],
+					"slotId": "cartridges",
+					"location": location,
+					"upd": {"StackObjectsCount": ammoStackSize}
+				});
 
-                            output.items.new.push({
-                                "_id": newItem,
-                                "_tpl": item._tpl,
-                                "parentId": pmcData.Inventory.stash,
-                                "slotId": "hideout",
-                                "location": {"x": x, "y": y, "r": rotation ? 1: 0},
-                                "upd": upd
-                            });
+				location++;
+				maxCount -= ammoStackMaxSize;
+			}
 
-                            pmcData.Inventory.items.push({
-                                "_id": newItem,
-                                "_tpl": item._tpl,
-                                "parentId": pmcData.Inventory.stash,
-                                "slotId": "hideout",
-                                "location": {"x": x, "y": y, "r": rotation ? 1: 0},
-                                "upd": upd
-                            });
+			[output.items.new, pmcData.Inventory.items].forEach(x => x.push.apply(x, ammos));
+		}
 
-                            // If this is an ammobox, add cartridges to it.
-                            // Damaged ammo box are not loaded.
-                            let ammoBoxInfo = tmpItem._props.StackSlots;
-                            if (ammoBoxInfo !== undefined && tmpItem._name.indexOf("_damaged") < 0) {
-                                // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
-                                let maxCount = ammoBoxInfo[0]._max_count;
-                                let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
-                                let ammoStackMaxSize = helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
-                                let ammos = [];
-                                let location = 0;
+		while (toDo.length > 0)
+		{
+			for (let tmpKey in itemLib)
+			{
+				if (itemLib[tmpKey].parentId && itemLib[tmpKey].parentId === toDo[0][0])
+				{
+					newItem = utility.generateNewItemId();
 
-                                while(true) {
-                                    let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
-                                    ammos.push({
-                                        "_id": utility.generateNewItemId(),
-                                        "_tpl": ammoTmplId,
-                                        "parentId": toDo[0][1],
-                                        "slotId": "cartridges",
-                                        "location": location,
-                                        "upd": {"StackObjectsCount": ammoStackSize}
-                                    });
+					let SlotID = itemLib[tmpKey].slotId;
 
-                                    location++;
-                                    maxCount -= ammoStackMaxSize;
-                                    if(maxCount <= 0) {
-                                        break;
-                                    }
-                                }
-                               
-                                [output.items.new, pmcData.Inventory.items].forEach(x => x.push.apply(x, ammos));
-                            }
-							//console.log(items.data);
-                            while (true) {
-                                if (toDo.length === 0) {
-                                    break;
-                                }
-								
-                                for (let tmpKey in inventoryItems) {
-                                    if (inventoryItems[tmpKey].parentId && global._Database.items[inventoryItems[tmpKey]._tpl].parentId === toDo[0][0]) {
-                                        newItem = utility.generateNewItemId();
+					//if it is from ItemPreset, load preset's upd data too.
+					if (itemToAdd.isPreset)
+					{
+						upd = {"StackObjectsCount": itemToAdd.count};
+						for (let updID in itemLib[tmpKey].upd)
+						{
+							upd[updID] = itemLib[tmpKey].upd[updID];
+						}
+					}
 
-                                        let SlotID = inventoryItems[tmpKey].slotId;
+					if (SlotID === "hideout")
+					{
+						output.items.new.push({
+							"_id": newItem,
+							"_tpl": itemLib[tmpKey]._tpl,
+							"parentId": toDo[0][1],
+							"slotId": SlotID,
+							"location": {"x": itemToAdd.location.x, "y": itemToAdd.location.y, "r": "Horizontal"},
+							"upd": upd
+						});
 
-                                        if (SlotID === "hideout") {
-                                            output.items.new.push({
-                                                "_id": newItem,
-                                                "_tpl": inventoryItems[tmpKey]._tpl,
-                                                "parentId": toDo[0][1],
-                                                "slotId": SlotID,
-                                                "location": {"x": x, "y": y, "r": "Horizontal"},
-                                                "upd": upd
-                                            });
+						pmcData.Inventory.items.push({
+							"_id": newItem,
+							"_tpl": itemLib[tmpKey]._tpl,
+							"parentId": toDo[0][1],
+							"slotId": itemLib[tmpKey].slotId,
+							"location": {"x": itemToAdd.location.x, "y": itemToAdd.location.y, "r": "Horizontal"},
+							"upd": upd
+						});
+					}
+					else
+					{
+						output.items.new.push({
+							"_id": newItem,
+							"_tpl": itemLib[tmpKey]._tpl,
+							"parentId": toDo[0][1],
+							"slotId": SlotID,
+							"upd": upd
+						});
 
-                                            pmcData.Inventory.items.push({
-                                                "_id": newItem,
-                                                "_tpl": inventoryItems[tmpKey]._tpl,
-                                                "parentId": toDo[0][1],
-                                                "slotId": inventoryItems[tmpKey].slotId,
-                                                "location": {"x": x, "y": y, "r": "Horizontal"},
-                                                "upd": upd
-                                            });
-                                        } else {
-                                            output.items.new.push({
-                                                "_id": newItem,
-                                                "_tpl": inventoryItems[tmpKey]._tpl,
-                                                "parentId": toDo[0][1],
-                                                "slotId": SlotID,
-                                                "upd": upd
-                                            });
+						pmcData.Inventory.items.push({
+							"_id": newItem,
+							"_tpl": itemLib[tmpKey]._tpl,
+							"parentId": toDo[0][1],
+							"slotId": itemLib[tmpKey].slotId,
+							"upd": upd
+						});
+					}
 
-                                            pmcData.Inventory.items.push({
-                                                "_id": newItem,
-                                                "_tpl": inventoryItems[tmpKey]._tpl,
-                                                "parentId": toDo[0][1],
-                                                "slotId": inventoryItems[tmpKey].slotId,
-                                                "upd": upd
-                                            });
-                                        }
+					toDo.push([itemLib[tmpKey]._id, newItem]);
+				}
+			}
 
-                                        toDo.push([inventoryItems[tmpKey]._id, newItem]);
-                                    }
-                                }
-
-                                toDo.splice(0, 1);
-                            }
-
-                            break addedProperly;
-                        }
-                    }
-            }
-
-            return output;
-        }
-    }
-
-    return "";
+			toDo.splice(0, 1);
+		}
+	}
+	return output;
 }
 
 module.exports.moveItem = moveItem;
