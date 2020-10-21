@@ -1,7 +1,7 @@
 "use strict";
 
 function main(sessionID) {
-    if (!account_f.accountServer.isWiped(sessionID)) {
+    if (!account_f.handler.isWiped(sessionID)) {
         updateTraders(sessionID);
         updatePlayerHideout(sessionID);
     }
@@ -11,9 +11,9 @@ function updateTraders(sessionID) {
     // update each hour
     let update_per = 3600;
     let timeNow = Math.floor(Date.now() / 1000);
-    let tradersToUpdateList = trader_f.traderServer.getAllTraders(sessionID);
+    let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID);
 
-    dialogue_f.dialogueServer.removeExpiredItems(sessionID);
+    dialogue_f.handler.removeExpiredItems(sessionID);
 
     for (let i = 0; i < tradersToUpdateList.length; i++) {
         if ((tradersToUpdateList[i].supply_next_time + update_per) > timeNow) {
@@ -34,8 +34,8 @@ function updateTraders(sessionID) {
 }
 
 function updatePlayerHideout(sessionID) {
-    let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
-    let recipes = json.parse(json.read(db.user.cache.hideout_production));
+    let pmcData = profile_f.handler.getPmcProfile(sessionID);
+    let recipes = json.readParsed(db.user.cache.hideout_production);
     let solarPowerLevel = 0;
     let btcFarmCGs = 0;
     let isGeneratorOn;

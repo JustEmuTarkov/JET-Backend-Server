@@ -10,7 +10,7 @@ class AccountServer {
     }
 
     initialize() {
-        this.accounts = json.parse(json.read(db.user.configs.accounts));
+        this.accounts = json.readParsed(db.user.configs.accounts);
     }
 
     saveToDisk() {
@@ -136,5 +136,5 @@ function getPath(sessionID) {
 	return `user/profiles/${sessionID}/`;
 }
 
-module.exports.accountServer = new AccountServer();
+module.exports.handler = new AccountServer();
 module.exports.getPath = getPath;

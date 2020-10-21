@@ -5,7 +5,7 @@ exports.cache = () => {
 
     logger.logInfo("Caching: [MOD] AllItemsExamined");
 
-    let base = json.parse(json.read(db.user.cache.items));
+    let base = json.readParsed(db.user.cache.items);
 
     for (let file in base.data) {
         let data = base.data[file];

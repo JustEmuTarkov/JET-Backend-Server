@@ -1,3 +1,3 @@
 exports.load = () => {
-    trader_f.traderServer.initialize();
+    trader_f.handler.initialize();
 }

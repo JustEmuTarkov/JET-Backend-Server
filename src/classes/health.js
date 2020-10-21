@@ -38,7 +38,7 @@ class HealthServer {
     // }
 
     offraidHeal(pmcData, body, sessionID) {
-        let output = item_f.itemServer.getOutput();
+        let output = item_f.handler.getOutput();
     
         // update medkit used (hpresource)
         for (let item of pmcData.Inventory.items) {
@@ -64,7 +64,7 @@ class HealthServer {
     }
 
     offraidEat(pmcData, body, sessionID) {        
-        let output = item_f.itemServer.getOutput();
+        let output = item_f.handler.getOutput();
         let resourceLeft;
         let maxResource = {};
     
@@ -175,7 +175,7 @@ class HealthServer {
         healthInfo.Hydration = pmcData.Health.Hydration.Current + info.difference.Hydration;
 
         this.saveHealth(pmcData, healthInfo, sessionID)
-        return item_f.itemServer.getOutput();
+        return item_f.handler.getOutput();
     }
 
     addEffect(pmcData, sessionID, info) {
@@ -216,7 +216,7 @@ class HealthServer {
 
     /* apply the health changes to the profile */
     applyHealth(pmcData, sessionID) {
-        if (!gameplayConfig.inraid.saveHealthEnabled) {
+        if (!global._Database.gameplayConfig.inraid.saveHealthEnabled) {
             return;
         }
 
@@ -227,7 +227,7 @@ class HealthServer {
             if (item !== "Hydration" && item !== "Energy") {
                 /* set body part health */
                 pmcData.Health.BodyParts[item].Health.Current = (nodeHealth[item] <= 0)
-                    ? Math.round((pmcData.Health.BodyParts[item].Health.Maximum * gameplayConfig.inraid.saveHealthMultiplier))
+                    ? Math.round((pmcData.Health.BodyParts[item].Health.Maximum * global._Database.gameplayConfig.inraid.saveHealthMultiplier))
                     : nodeHealth[item];
             } else {
                 /* set resources */
@@ -269,4 +269,4 @@ class HealthServer {
     }
 }
 
-module.exports.healthServer = new HealthServer();
+module.exports.handler = new HealthServer();

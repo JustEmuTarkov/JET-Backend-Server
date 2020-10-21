@@ -1,5 +1,5 @@
 function execute(url, info, sessionID){
-	let output = profile_f.profileServer.changeNickname(info, sessionID);
+	let output = profile_f.handler.changeNickname(info, sessionID);
     
     if (output == "taken") {
         return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse)

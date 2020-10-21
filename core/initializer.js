@@ -7,35 +7,43 @@ class Initializer {
 		this.initializeItemRoute();
 		
 		// start watermark and server
-		watermark.run();
+		require('./server/watermark.js').run();
+
 		server.start();
+		
+		console.log(global._Database);
     }
 
     /* load core functionality */
     initializeCore() {
+		
+		global.internal = {};
+        global.db = {}; // used only for caching
+        global.res = {}; // used for deliver an images
+		global._Database = {};
+
 		global.startTimestamp = new Date().getTime();
 		
         /* setup utilites */
-		global.executedDir = process.cwd();
-		global.fs = require('fs');
-		global.path = require('path');
-		global.util = require('util');
-		global.resolve = require('path').resolve;
-		global.zlib = require('zlib');
-		global.https = require('https');
-		global.selfsigned = require('selfsigned');
-		global.psList = require('ps-list');
-		global.process = require('process');
+		global.internal.fs = require('fs');
+		global.internal.path = require('path');
+		global.internal.util = require('util');
+		global.internal.resolve = path.resolve;
+		global.internal.zlib = require('zlib');
+		global.internal.https = require('https');
+		global.internal.selfsigned = require('selfsigned');
+		global.internal.psList = require('ps-list');
+		global.internal.process = require('process');
+		global.executedDir = internal.process.cwd();
 		
+		// internal packages
+        global.json = require('./util/json.js');
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);
-        global.json = require('./util/json.js');
 		
         /* setup core files */
         global.serverConfig = json.readParsed("user/configs/server.json");
         global.modsConfig = json.readParsed("user/configs/mods.json");
-        global.db = {};
-        global.res = {};
 
         /* setup routes and cache */
         const route = require('./server/route.js');
@@ -45,15 +53,15 @@ class Initializer {
         global.router = (require('./server/router.js').router);
         global.events = require('./server/events.js');
         global.server = (require('./server/server.js').server);
-        global.watermark = require('./server/watermark.js');
     }
 
     /* load exception handler */
     initializeExceptions() {
-        process.on('uncaughtException', (error, promise) => {
+        internal.process.on('uncaughtException', (error, promise) => {
             logger.logError("[Server]:" + server.getVersion());
             logger.logError("[Trace]:");
             logger.logData(error);
+			logger.logData(" ");
         });
     }
 
@@ -62,11 +70,11 @@ class Initializer {
         logger.logSuccess("Create: Item Action Callbacks");
 		// Load Item Route's
 		// move this later to other file or something like that :)
-		item_f.itemServer.updateRouteStruct();
+		item_f.handler.updateRouteStruct();
 		let itemHandlers = "";
-		for(let iRoute in item_f.itemServer.routeStructure){
+		for(let iRoute in item_f.handler.routeStructure){
 			itemHandlers += iRoute + ", ";
-			item_f.itemServer.addRoute(iRoute, item_f.itemServer.routeStructure[iRoute]);
+			item_f.handler.addRoute(iRoute, item_f.handler.routeStructure[iRoute]);
 		}
 		logger.logInfo("[Actions] " + itemHandlers.slice(0, -2));
     }

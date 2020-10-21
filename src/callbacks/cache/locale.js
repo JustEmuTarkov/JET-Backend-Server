@@ -19,15 +19,15 @@ exports.cache = () => {
 
         logger.logInfo(`Caching: locale_${locale}.json + locale_menu_${locale}.json`);
 
-        base.interface = json.parse(json.read(inputNode.interface));
-        base.error = json.parse(json.read(inputNode.error));
+        base.interface = json.readParsed(inputNode.interface);
+        base.error = json.readParsed(inputNode.error);
 
         for (let name of inputDir) {
 			// loop through all inputDir's
-			base[name] = json.parse(json.read(`./db/locales/${locale}/_${name}.json`));
+			base[name] = json.readParsed(`./db/locales/${locale}/_${name}.json`);
 
         }
-		let menu = json.parse(json.read(inputNode.menu));
+		let menu = json.readParsed(inputNode.menu);
         json.write(`user/cache/locale_${locale}.json`, base);
         json.write(`user/cache/locale_menu_${locale}.json`, menu);
     }

@@ -109,10 +109,10 @@ class Server {
 
     generateCertificate() {
 
-        const certDir = resolve(__dirname, '../../user/certs');
+        const certDir = internal.resolve(__dirname, '../../user/certs');
 
-        const certFile = resolve(certDir, 'cert.pem');
-        const keyFile = resolve(certDir, 'key.pem');
+        const certFile = internal.resolve(certDir, 'cert.pem');
+        const keyFile = internal.resolve(certDir, 'key.pem');
 
         let cert,
             key;
@@ -129,7 +129,7 @@ class Server {
 
                 let fingerprint;
 
-                ({ cert, private: key, fingerprint } = selfsigned.generate([{ name: 'commonName', value: this.ip + "/" }], { days: 365 }));
+                ({ cert, private: key, fingerprint } = internal.selfsigned.generate([{ name: 'commonName', value: this.ip + "/" }], { days: 365 }));
 
                 logger.logInfo(`Generated self-signed x509 certificate ${fingerprint}, valid 365 days`);
 
@@ -146,7 +146,7 @@ class Server {
     sendZlibJson(resp, output, sessionID) {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json'], 'content-encoding' : 'deflate', 'Set-Cookie' : 'PHPSESSID=' + sessionID});
     
-        zlib.deflate(output, function (err, buf) {
+        internal.zlib.deflate(output, function (err, buf) {
             resp.end(buf);
         });
     }
@@ -247,7 +247,7 @@ class Server {
         // request with data
         if (req.method === "POST") {
             req.on('data', function (data) {
-                zlib.inflate(data, function (err, body) {
+                internal.zlib.inflate(data, function (err, body) {
                     let jsonData = ((body !== typeof "undefined" && body !== null && body !== "") ? body.toString() : '{}');
                     server.sendResponse(sessionID, req, resp, jsonData);
                 });
@@ -269,7 +269,7 @@ class Server {
                 let data = server.getFromBuffer(sessionID);
                 server.resetBuffer(sessionID);
 
-                zlib.inflate(data, function (err, body) {
+                internal.zlib.inflate(data, function (err, body) {
                     let jsonData = ((body !== typeof "undefined" && body !== null && body !== "") ? body.toString() : '{}');
                     server.sendResponse(sessionID, req, resp, jsonData);
                 });
@@ -284,18 +284,42 @@ class Server {
             this.cacheCallback[type]();
         }
 
+		global._Database.globals = json.readParsed(db.cacheBase.globals);
+		if(typeof global._Database.globals != "undefined")
+			global._Database.globals = global._Database.globals;
+		global._Database.gameplayConfig = json.readParsed(db.user.configs.gameplay);
+		
         // execute start callback
         logger.logInfo("[Warmup]: Start callbacks...");
-		this.startCallback["loadStaticdata"](); // this need to run first cause reasons
+		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
         for (let type in this.startCallback) {
 			if(type == "loadStaticdata") continue;
             this.startCallback[type]();
         }
 		
+		// Load Global Accesable Data Structures
+		/*
+			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
+			// 
+			global.global._Database.items
+			global.global._Database.globals
+			global.global._Database.templates
+			global.global._Database.gameplayConfig
+			global.global._Database.assort[traderID]
+			global.global._Database.someothershit
+		*/
+		global._Database.items = json.readParsed(db.user.cache.items);
+		if(typeof global._Database.items != "undefined")
+			global._Database.items = global._Database.items;
+		global._Database.templates = json.readParsed(db.user.cache.templates);
+		if(typeof global._Database.templates != "undefined")
+			global._Database.templates = global._Database.templates;
+		
+		
 		logger.logInfo("Starting server...");
 		let backend = this.backendUrl;
         /* create server */
-        let httpsServer = https.createServer(this.generateCertificate(), (req, res) => {
+        let httpsServer = internal.https.createServer(this.generateCertificate(), (req, res) => {
             this.handleRequest(req, res);
         }).listen(this.port, this.ip, function() {
             logger.logSuccess(`Server is working at: ${backend}`);
@@ -303,7 +327,7 @@ class Server {
 
         /* server is already running or program using privileged port without root */
         httpsServer.on('error', function(e) {
-            if (process.platform === "linux" && !(process.getuid && process.getuid() === 0) && e.port < 1024) {
+            if (internal.process.platform === "linux" && !(internal.process.getuid && internal.process.getuid() === 0) && e.port < 1024) {
 				logger.throwErr("» Non-root processes cannot bind to ports below 1024.", ">> core/server.server.js line 274");
             } else if (e.code == "EADDRINUSE") {
 				psList().then(data => {
@@ -313,7 +337,7 @@ class Server {
 						if((procName.indexOf("node") != -1 || 
 						procName.indexOf("server") != -1 ||
 						procName.indexOf("emu") != -1 ||
-						procName.indexOf("justemu") != -1) && proc.pid != process.pid){
+						procName.indexOf("justemu") != -1) && proc.pid != internal.process.pid){
 							logger.logWarning(`ProcessID: ${proc.pid} - Name: ${proc.name}`);
 							cntProc++;
 						}

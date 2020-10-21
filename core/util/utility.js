@@ -40,7 +40,7 @@ exports.getDirList = (path) => {
 // removeDir
 exports.removeDir = (dir) => {
     for (file of json.readDir(dir)) {
-        let curPath = path.join(dir, file);
+        let curPath = internal.path.join(dir, file);
 
         if (json.lstatSync(curPath).isDirectory()) {
             this.removeDir(curPath);
@@ -53,7 +53,7 @@ exports.removeDir = (dir) => {
 }
 // getServerUptimeInSeconds
 exports.getServerUptimeInSeconds = () => {
-    return Math.floor(process.uptime());
+    return Math.floor(internal.process.uptime());
 }
 // getTimestamp
 exports.getTimestamp = () => {

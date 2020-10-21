@@ -32,16 +32,16 @@ class Logger {
         let filepath = folder + file;
 
         // create log folder
-        if (!fs.existsSync(folder)) { +
-            fs.mkdirSync(folder);
+        if (!json.exist(folder)) { +
+            json.mkdir(folder);
         }
 
         // create log file
-        if (!fs.existsSync(filepath)) {
-            fs.writeFileSync(filepath, "");
+        if (!json.exist(filepath)) {
+            json.write(filepath, "");
         }
 
-        this.fileStream = fs.createWriteStream(filepath, {flags: 'w'});
+        this.fileStream = json.createWriteStream(filepath);
     }
 
     log(type, data, colorFront = "", colorBack = "") {
@@ -77,7 +77,7 @@ class Logger {
         }
 
         // write the logged data to the file
-		this.fileStream.write(util.format(deltaTime+type+"-"+data+"\n"));
+		this.fileStream.write(internal.util.format(deltaTime+type+"-"+data+"\n"));
     }
 
     logError(text) {

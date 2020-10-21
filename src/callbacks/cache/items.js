@@ -9,7 +9,7 @@ exports.cache = () => {
     let inputFiles = db.items;
     for (let file in inputFiles) {
         let filePath = inputFiles[file];
-        let NodeFileData = json.parse(json.read(filePath));
+        let NodeFileData = json.readParsed(filePath);
 		for (let items of NodeFileData)
 		{
 			base.data[items._id] = items;

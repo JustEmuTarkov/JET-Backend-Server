@@ -10,7 +10,7 @@ exports.cache = () => {
 
     for (let file in inputFiles) {
         let filePath = inputFiles[file];
-        let fileData = json.parse(json.read(filePath));
+        let fileData = json.readParsed(filePath);
 
         base.data.push(fileData);
     }

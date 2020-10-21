@@ -16,7 +16,7 @@ class BundlesServer {
             }
 
             let manifestPath = res.bundles[i].manifest;
-            let manifest = json.parse(json.read(manifestPath)).manifest;
+            let manifest = json.readParsed(manifestPath).manifest;
             let modName = res.bundles[i].manifest.split("/")[2];
             let bundleDir = "";
             let manifestPathSplit = manifestPath.split("/");
@@ -65,11 +65,11 @@ class BundlesServer {
     
 
     getFilePath(bundleDir, key) {
-        return `${path.join(__dirname).split("src")[0]}user/mods/${bundleDir}StreamingAssets/Windows/${key}`.replace(/\\/g, "/");
+        return `${internal.path.join(__dirname).split("src")[0]}user/mods/${bundleDir}StreamingAssets/Windows/${key}`.replace(/\\/g, "/");
     }
 
     getHttpPath(bundleDir, key) {
         return `${this.backendUrl}/files/bundle/${key}`;
     }
 }
-module.exports.bundlesServer = new BundlesServer();
+module.exports.handler = new BundlesServer();

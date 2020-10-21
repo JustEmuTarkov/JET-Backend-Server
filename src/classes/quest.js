@@ -106,12 +106,12 @@ function acceptQuest(pmcData, body, sessionID) {
     // Create a dialog message for starting the quest.
     // Note that for starting quests, the correct locale field is "description", not "startedMessageText".
     let quest = getCachedQuest(body.qid);
-    let questLocale = json.parse(json.read(db.locales["en"].quest[body.qid]));
+    let questLocale = json.readParsed(db.locales["en"].quest[body.qid]);
     let questRewards = getQuestRewardItems(quest, state);
     let messageContent = {
         "templateId": questLocale.startedMessageText,
         "type": dialogue_f.getMessageTypeValue('questStart'),
-        "maxStorageTime": gameplayConfig.other.RedeemTime *3600
+        "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime *3600
 
     };
 
@@ -119,13 +119,13 @@ function acceptQuest(pmcData, body, sessionID) {
         messageContent = {
             "templateId": questLocale.description,
             "type": dialogue_f.getMessageTypeValue('questStart'),
-            "maxStorageTime": gameplayConfig.other.RedeemTime *3600
+            "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime *3600
         };
     }
 
-    dialogue_f.dialogueServer.addDialogueMessage(quest.traderId, messageContent, sessionID, questRewards);
+    dialogue_f.handler.addDialogueMessage(quest.traderId, messageContent, sessionID, questRewards);
     
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function completeQuest(pmcData, body, sessionID) {
@@ -176,7 +176,7 @@ function completeQuest(pmcData, body, sessionID) {
     for (let reward of quest.rewards.Success) {
         switch (reward.type) {
             case "Skill":
-                pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+                pmcData = profile_f.handler.getPmcProfile(sessionID);
 
                 for (let skill of pmcData.Skills.Common) {
                     if (skill.Id === reward.target) {
@@ -187,38 +187,38 @@ function completeQuest(pmcData, body, sessionID) {
                 break;
 
             case "Experience":
-                pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+                pmcData = profile_f.handler.getPmcProfile(sessionID);
                 pmcData.Info.Experience += parseInt(reward.value);
                 break;
 
             case "TraderStanding":
-                pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+                pmcData = profile_f.handler.getPmcProfile(sessionID);
                 pmcData.TraderStandings[reward.target].currentStanding += parseFloat(reward.value);
-                trader_f.traderServer.lvlUp(reward.target, sessionID);
+                trader_f.handler.lvlUp(reward.target, sessionID);
                 break;
                 
             case "TraderUnlock":
-                trader_f.traderServer.changeTraderDisplay(reward.target, true, sessionID);
+                trader_f.handler.changeTraderDisplay(reward.target, true, sessionID);
                 break;
         }
     }
 
     // Create a dialog message for completing the quest.
     let questDb = getCachedQuest(body.qid);
-    let questLocale = json.parse(json.read(db.locales["en"].quest[body.qid]));
+    let questLocale = json.readParsed(db.locales["en"].quest[body.qid]);
     let messageContent = {
         "templateId": questLocale.successMessageText,
         "type": dialogue_f.getMessageTypeValue('questSuccess'),
-        "maxStorageTime": gameplayConfig.other.RedeemTime * 3600
+        "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime * 3600
     }
 
-    dialogue_f.dialogueServer.addDialogueMessage(questDb.traderId, messageContent, sessionID, questRewards);
-    return item_f.itemServer.getOutput();
+    dialogue_f.handler.addDialogueMessage(questDb.traderId, messageContent, sessionID, questRewards);
+    return item_f.handler.getOutput();
 }
 
 function handoverQuest(pmcData, body, sessionID) {
     const quest = getCachedQuest(body.qid);
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
     let types = ["HandoverItem", "WeaponAssembly"];
     let handoverMode = true;
     let value = 0;

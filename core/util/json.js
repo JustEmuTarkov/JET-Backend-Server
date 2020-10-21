@@ -3,48 +3,43 @@
 function createDir(file) {    
     let filePath = file.substr(0, file.lastIndexOf('/'));
 
-    if (!fs.existsSync(filePath)) {
-        fs.mkdirSync(filePath, { recursive: true });
+    if (!internal.fs.existsSync(filePath)) {
+        internal.fs.mkdirSync(filePath, { recursive: true });
     }
 }
 
-function stringify(data, oneLiner = false) {
-	if(oneLiner)
-		return JSON.stringify(data);
-    return JSON.stringify(data, null, "\t");
-}
+exports.stringify = (data, oneLiner = false) => { return (oneLiner) ? JSON.stringify(data) : JSON.stringify(data, null, "\t"); }
 
-exports.createReadStream = (file) => { return fs.createReadStream(file); }
+exports.createReadStream = (file) => { return internal.fs.createReadStream(file); }
+exports.createWriteStream = (file) => { return internal.fs.createWriteStream(file, {flags: 'w'}); }
 
-exports.readParsed = (file) => { return JSON.parse(fs.readFileSync(file, 'utf8')); }
+exports.readParsed = (file) => { return JSON.parse(internal.fs.readFileSync(file, 'utf8')); }
 
 exports.parse = (string) => { return JSON.parse(string); }
 
-exports.read = (file) => { return fs.readFileSync(file, 'utf8'); }
+exports.read = (file) => { return internal.fs.readFileSync(file, 'utf8'); }
 
-exports.exist = (file) => { return fs.existsSync(file); }
+exports.exist = (file) => { return internal.fs.existsSync(file); }
 
-exports.readDir = (path) => { return fs.readdirSync(path); }
+exports.readDir = (path) => { return internal.fs.readdirSync(path); }
 
-exports.statSync = (path) => { return fs.statSync(path); }
+exports.statSync = (path) => { return internal.fs.statSync(path); }
 
-exports.lstatSync = (path) => { return fs.lstatSync(path); }
+exports.lstatSync = (path) => { return internal.fs.lstatSync(path); }
 
-exports.unlink = (path) => { return fs.unlinkSync(path); }
+exports.unlink = (path) => { return internal.fs.unlinkSync(path); }
 
-exports.rmDir = (path) => { return fs.rmdirSync(path); }
+exports.rmDir = (path) => { return internal.fs.rmdirSync(path); }
 
-exports.mkDir = (path) => { return fs.mkdirSync(path); }
+exports.mkDir = (path) => { return internal.fs.mkdirSync(path); }
 
 exports.write = (file, data, raw = false) => {
 	if(file.indexOf('/') != -1)
 		createDir(file);
 	if(raw)
 	{
-		fs.writeFileSync(file, data);
+		internal.fs.writeFileSync(file, data);
 		return;
 	}
-    fs.writeFileSync(file, stringify(data), 'utf8');
+    internal.fs.writeFileSync(file, JSON.stringify(data, null, "\t"), 'utf8');
 }
-
-module.exports.stringify = stringify;

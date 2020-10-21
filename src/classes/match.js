@@ -25,16 +25,16 @@ class MatchServer {
 */
 
     getEnabled() {
-        return gameplayConfig.match.enabled;
+        return global._Database.gameplayConfig.match.enabled;
     }
 
     getProfile(info) {
         if (info.profileId.includes("pmcAID")) {
-            return profile_f.profileServer.getCompleteProfile(info.profileId.replace("pmcAID", "AID"));
+            return profile_f.handler.getCompleteProfile(info.profileId.replace("pmcAID", "AID"));
         }
 
         if (info.profileId.includes("scavAID")) {
-            return profile_f.profileServer.getCompleteProfile(info.profileId.replace("scavAID", "AID"));
+            return profile_f.handler.getCompleteProfile(info.profileId.replace("scavAID", "AID"));
         }
 
         return null;
@@ -50,7 +50,7 @@ class MatchServer {
         
         // --- LOOP (DO THIS FOR EVERY PLAYER IN GROUP)
         // get player profile
-        let account = account_f.accountServer.find(sessionID);
+        let account = account_f.handler.find(sessionID);
         let profileID = "";
         
         if (info.savage === true) {
@@ -89,4 +89,4 @@ class MatchServer {
     }
 }
 
-module.exports.matchServer = new MatchServer();
+module.exports.handler = new MatchServer();

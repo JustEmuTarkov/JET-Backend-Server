@@ -1,3 +1,3 @@
 exports.load = () => {
-    account_f.accountServer.initialize();
+    account_f.handler.initialize();
 }

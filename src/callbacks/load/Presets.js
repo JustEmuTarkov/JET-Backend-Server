@@ -1,3 +1,3 @@
 exports.load = () => {
-    preset_f.itemPresets.initialize();
+    preset_f.handler.initialize();
 }

@@ -3,7 +3,7 @@ exports.execute = (sessionID, req, resp, body) => {
 
 	logger.logInfo(`[BUNDLE]: ${req.url}`);
     
-    let bundle = bundles_f.bundlesServer.getBundleByKey(bundleKey, true);
+    let bundle = bundles_f.handler.getBundleByKey(bundleKey, true);
     let path = bundle.path;
 
     // send bundle

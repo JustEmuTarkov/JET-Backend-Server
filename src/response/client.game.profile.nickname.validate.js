@@ -1,5 +1,5 @@
 function execute(url, info, sessionID){
-	let output = profile_f.profileServer.validateNickname(info, sessionID);
+	let output = profile_f.handler.validateNickname(info, sessionID);
     
     if (output == "taken") {
         return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse)

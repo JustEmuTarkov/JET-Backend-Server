@@ -2,7 +2,7 @@
 
 class ItemPresets {
     initialize() {
-        const presets = Object.values(globals.data.ItemPresets);
+        const presets = Object.values(global._Database.globals.ItemPresets);
         const reverse = {};
 
         for (const p of presets) {
@@ -19,7 +19,7 @@ class ItemPresets {
     }
 
     isPreset(id) {
-        return id in globals.data.ItemPresets;
+        return id in global._Database.globals.ItemPresets;
     }
 
     hasPreset(templateId) {
@@ -35,7 +35,7 @@ class ItemPresets {
         const ids = this.lookup[templateId];
 
         for (const id of ids) {
-            presets.push(globals.data.ItemPresets[id]);
+            presets.push(global._Database.globals.ItemPresets[id]);
         }
 
         return presets;
@@ -59,7 +59,7 @@ class ItemPresets {
 
     getBaseItemTpl(presetId) {
         if (this.isPreset(presetId)) {
-            let preset = globals.data.ItemPresets[presetId];
+            let preset = global._Database.globals.ItemPresets[presetId];
 
             for (let item of preset._items) {
                 if (preset._parent === item._id) {
@@ -72,4 +72,4 @@ class ItemPresets {
     }
 }
 
-module.exports.itemPresets = new ItemPresets();
+module.exports.handler = new ItemPresets();

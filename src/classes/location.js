@@ -115,7 +115,7 @@ class LocationServer {
 
             //Check if LootItem is overlapping
             let position = data.Position.x + "," + data.Position.y + "," + data.Position.z;
-            if (!gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position))
+            if (!global._Database.gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position))
             {
                 //Clear selected loot
                 dynamic[rndLootIndex].data.splice(rndLootTypeIndex, 1);
@@ -362,4 +362,4 @@ class LocationServer {
     }
 }
 
-module.exports.locationServer = new LocationServer();
+module.exports.handler = new LocationServer();

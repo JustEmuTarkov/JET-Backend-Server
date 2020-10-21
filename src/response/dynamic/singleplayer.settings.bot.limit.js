@@ -15,6 +15,6 @@ function execute(url, info, sessionID){
 	if(type == "bossStormtrooper" || type ==  "followerStormtrooper")
 		type = "followerBully";
 	
-    return response_f.noBody(gameplayConfig.bots.limits[type]);
+    return response_f.noBody(global._Database.gameplayConfig.bots.limits[type]);
 }
 exports.execute = execute;

@@ -3,8 +3,8 @@
 /* Based on the item action, determine whose inventories we should be looking at for from and to. */
 function getOwnerInventoryItems(body, sessionID) {
     let isSameInventory = false;
-    let pmcItems = profile_f.profileServer.getPmcProfile(sessionID).Inventory.items;
-    let scavData = profile_f.profileServer.getScavProfile(sessionID);
+    let pmcItems = profile_f.handler.getPmcProfile(sessionID).Inventory.items;
+    let scavData = profile_f.handler.getScavProfile(sessionID);
     let fromInventoryItems = pmcItems;
     let fromType = "pmc";
 
@@ -13,7 +13,7 @@ function getOwnerInventoryItems(body, sessionID) {
             fromInventoryItems = scavData.Inventory.items;
             fromType = "scav";
         } else if (body.fromOwner.type === "Mail") {
-            fromInventoryItems = dialogue_f.dialogueServer.getMessageItemContents(body.fromOwner.id, sessionID);
+            fromInventoryItems = dialogue_f.handler.getMessageItemContents(body.fromOwner.id, sessionID);
             fromType = "mail";
         }
     }
@@ -46,7 +46,7 @@ function getOwnerInventoryItems(body, sessionID) {
 * otherwise, move is contained within the same profile_f.
 * */
 function moveItem(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
    /*  if (inventoryItems.isMail) {
@@ -183,15 +183,15 @@ function removeItem(profileData, body, output, sessionID) {
 }
 
 function discardItem(pmcData, body, sessionID) {
-    insurance_f.insuranceServer.remove(pmcData, body.item, sessionID);
-    return removeItem(pmcData, body.item, item_f.itemServer.getOutput(), sessionID);
+    insurance_f.handler.remove(pmcData, body.item, sessionID);
+    return removeItem(pmcData, body.item, item_f.handler.getOutput(), sessionID);
 }
 
 /* Split Item
 * spliting 1 item into 2 separate items ...
 * */
 function splitItem(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
     let location = body.container.location;
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
@@ -244,7 +244,7 @@ function splitItem(pmcData, body, sessionID) {
 * merges 2 items into one, deletes item from body.item and adding number of stacks into body.with
 * */
 function mergeItem(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
     for (let key in inventoryItems.to) {
@@ -288,7 +288,7 @@ function mergeItem(pmcData, body, sessionID) {
 * Used to take items from scav inventory into stash or to insert ammo into mags (shotgun ones) and reloading weapon by clicking "Reload"
 * */
 function transferItem(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     let itemFrom = null, itemTo = null;
 
@@ -337,7 +337,7 @@ function transferItem(pmcData, body, sessionID) {
 * its used for "reload" if you have weapon in hands and magazine is somewhere else in rig or backpack in equipment
 * */
 function swapItem(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     for (let iterItem of pmcData.Inventory.items) {
         if (iterItem._id === body.item) {
@@ -365,14 +365,14 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
     let stashX = PlayerStash[0];
     let inventoryItems;
 
-    if (body.item_id in globals.data.ItemPresets) {
-        inventoryItems = helper_f.clone(globals.data.ItemPresets[body.item_id]._items);
+    if (body.item_id in global._Database.globals.ItemPresets) {
+        inventoryItems = helper_f.clone(global._Database.globals.ItemPresets[body.item_id]._items);
         body.item_id = inventoryItems[0]._id;
     } else if (body.tid === "579dc571d53a0658a154fbec") {
-        let item = json.parse(json.read(db.user.cache.assort_579dc571d53a0658a154fbec)).data.items[body.item_id];
+        let item = json.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data.items[body.item_id];
         inventoryItems = [{_id: body.item_id, _tpl: item._tpl}];
     } else {
-        inventoryItems = trader_f.traderServer.getAssort(sessionID, body.tid).items;
+        inventoryItems = trader_f.handler.getAssort(sessionID, body.tid).items;
     }
 
     for (let item of inventoryItems) {
@@ -405,7 +405,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 
             for (let stacks = 0; stacks < MaxStacks; stacks++) {
                 //update profile on each stack so stash recalculate will have new items
-                pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+                pmcData = profile_f.handler.getPmcProfile(sessionID);
 
                 let StashFS_2D = helper_f.recheckInventoryFreeSpace(pmcData, sessionID);
                 let ItemSize = helper_f.getSize(item._tpl, item._id, inventoryItems);
@@ -487,7 +487,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                             let upd = {"StackObjectsCount": StacksValue[stacks]};
 
                             // in case people want all items to be marked as found in raid
-                            if (gameplayConfig.trading.buyItemsMarkedFound) {
+                            if (global._Database.gameplayConfig.trading.buyItemsMarkedFound) {
                                 foundInRaid = true;
                             }
 
@@ -552,7 +552,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
                                 }
 								
                                 for (let tmpKey in inventoryItems) {
-                                    if (inventoryItems[tmpKey].parentId && items.data[inventoryItems[tmpKey]._tpl].parentId === toDo[0][0]) {
+                                    if (inventoryItems[tmpKey].parentId && global._Database.items[inventoryItems[tmpKey]._tpl].parentId === toDo[0][0]) {
                                         newItem = utility.generateNewItemId();
 
                                         let SlotID = inventoryItems[tmpKey].slotId;

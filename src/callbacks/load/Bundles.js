@@ -1,3 +1,3 @@
 exports.load = () => {
-    bundles_f.bundlesServer.initialize();
+    bundles_f.handler.initialize();
 }

@@ -1,4 +1,4 @@
 function execute(url, info, sessionID){
-	return response_f.getBody(match_f.matchServer.getProfile(info));
+	return response_f.getBody(match_f.handler.getProfile(info));
 }
 exports.execute = execute;

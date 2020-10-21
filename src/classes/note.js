@@ -6,7 +6,7 @@ function addNote(pmcData, body, sessionID) {
 		"Text": body.note.Text
     });
     
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function editNode(pmcData, body, sessionID) {
@@ -15,12 +15,12 @@ function editNode(pmcData, body, sessionID) {
 		"Text": body.note.Text
     };
     
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function deleteNote(pmcData, body, sessionID) {
     pmcData.Notes.Notes.splice(body.index, 1);
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 module.exports.addNote = addNote;

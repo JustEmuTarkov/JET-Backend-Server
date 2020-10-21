@@ -6,5 +6,5 @@ exports.execute = (sessionID, req, resp, data) => {
     let splittedUrl = req.url.split('/');
 
     sessionID = splittedUrl[splittedUrl.length - 1].split("?last_id")[0];
-    notifier_f.notifierService.notificationWaitAsync(resp, sessionID);
+    notifier_f.handler.notificationWaitAsync(resp, sessionID);
 }

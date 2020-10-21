@@ -14,11 +14,11 @@ class InraidServer {
     }
 
     removeMapAccessKey(offraidData, sessionID) {
-		if(typeof offraid_f.inraidServer.players[sessionID] == "undefined"){
-			logger.logError("Disabling: Remove map key on entering, cause of offraid_f.inraidServer.players[sessionID] is undefined");
+		if(typeof offraid_f.handler.players[sessionID] == "undefined"){
+			logger.logError("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
 			return;
 		}
-        let map = json.readParsed(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]).base;
+        let map = json.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
         let mapKey = map.AccessKeys[0];
 
         if (!mapKey) {
@@ -245,19 +245,19 @@ function getSecuredContainer(items) {
 }
 
 function saveProgress(offraidData, sessionID) {
-    if (!gameplayConfig.inraid.saveLootEnabled) {
+    if (!global._Database.gameplayConfig.inraid.saveLootEnabled) {
         return;
     }
 	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
 	let offlineWorksProperly = false;
-	if(typeof offraid_f.inraidServer.players[sessionID] != "undefined")
-		if(json.exist(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]))
+	if(typeof offraid_f.handler.players[sessionID] != "undefined")
+		if(json.exist(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]))
 			offlineWorksProperly = true;
     let insuranceEnabled = false;
 	if(!offlineWorksProperly){
 		logger.logError("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
 	} else {
-		let map = json.readParsed(db.locations[offraid_f.inraidServer.players[sessionID].Location.toLowerCase()]).base;
+		let map = json.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
 		insuranceEnabled = map.Insurance;
 	}
 	if(typeof offraidData == "undefined")
@@ -273,8 +273,8 @@ function saveProgress(offraidData, sessionID) {
 		logger.logError(offraidData.profile);
 		return;
 	}
-    let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
-    let scavData = profile_f.profileServer.getScavProfile(sessionID);
+    let pmcData = profile_f.handler.getPmcProfile(sessionID);
+    let scavData = profile_f.handler.getScavProfile(sessionID);
     const isPlayerScav = offraidData.isPlayerScav;
     const isDead = (offraidData.exit !== "survived" && offraidData.exit !== "runner");
     const preRaidGear = (isPlayerScav) ? [] : getPlayerGear(pmcData.Inventory.items);
@@ -302,8 +302,8 @@ function saveProgress(offraidData, sessionID) {
         }
 
         // Remove the Lab card
-        offraid_f.inraidServer.removeMapAccessKey(offraidData, sessionID);
-        offraid_f.inraidServer.removePlayer(sessionID);
+        offraid_f.handler.removeMapAccessKey(offraidData, sessionID);
+        offraid_f.handler.removePlayer(sessionID);
     }
 
     //Check for exit status
@@ -320,34 +320,34 @@ function saveProgress(offraidData, sessionID) {
     // set profile equipment to the raid equipment
     if (isPlayerScav) {
         scavData = setInventory(scavData, offraidData.profile);
-        health_f.healthServer.initializeHealth(sessionID);
-        profile_f.profileServer.setScavProfile(sessionID, scavData);
+        health_f.handler.initializeHealth(sessionID);
+        profile_f.handler.setScavProfile(sessionID, scavData);
         return;
     } else {
         pmcData = setInventory(pmcData, offraidData.profile);
-        health_f.healthServer.saveHealth(pmcData, offraidData.health, sessionID);
+        health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
     }
 
     // remove inventory if player died and send insurance items
     //TODO: dump of prapor/therapist dialogues that are sent when you die in lab with insurance.
     if (insuranceEnabled) {
-        insurance_f.insuranceServer.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
+        insurance_f.handler.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
     }
 
     if (isDead) {
         if (insuranceEnabled) {
-            insurance_f.insuranceServer.storeDeadGear(pmcData, offraidData, preRaidGear, sessionID);
+            insurance_f.handler.storeDeadGear(pmcData, offraidData, preRaidGear, sessionID);
         }
         pmcData = deleteInventory(pmcData, sessionID);
         //Delete carried quests items
         offraidData.profile.Stats.CarriedQuestItems = []
     }
     if (insuranceEnabled) {
-        insurance_f.insuranceServer.sendInsuredItems(pmcData, sessionID);
+        insurance_f.handler.sendInsuredItems(pmcData, sessionID);
     }
 }
 
-module.exports.inraidServer = new InraidServer();
+module.exports.handler = new InraidServer();
 module.exports.saveProgress = saveProgress;
 module.exports.getSecuredContainer = getSecuredContainer;
 module.exports.getPlayerGear = getPlayerGear;

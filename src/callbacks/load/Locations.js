@@ -1,3 +1,3 @@
 exports.load = () => {
-    location_f.locationServer.initialize();
+    location_f.handler.initialize();
 }

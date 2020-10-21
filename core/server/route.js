@@ -97,9 +97,9 @@ function detectMissingMods() {
         /* add mod to the list */
         if (!found) {
             if (!config.version || config.files || config.filepaths) {
-                logger.logError(`Mod ${mod} is out of date and not compatible with this version of ${process.title}`);
+                logger.logError(`Mod ${mod} is out of date and not compatible with this version of ${internal.process.title}`);
                 logger.logError("Forcing server shutdown...");
-                process.exit(1);
+                internal.process.exit(1);
             }
             logger.logWarning(`Mod ${mod} not installed, adding it to the modlist`);
             modsConfig.push({"name": config.name, "author": config.author, "version": config.version, "enabled": true});
@@ -252,9 +252,8 @@ exports.all = () => {
         loadAllMods();
         dump();
 
-        return;
+        //return;
     }
-
     db = json.readParsed("user/cache/db.json");
     res = json.readParsed("user/cache/res.json");
 }

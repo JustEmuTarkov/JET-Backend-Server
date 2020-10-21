@@ -4,7 +4,7 @@ function foldItem(pmcData, body, sessionID) {
     for (let item of pmcData.Inventory.items) {
         if (item._id && item._id === body.item) {
             item.upd.Foldable = {"Folded": body.value};
-            return item_f.itemServer.getOutput();
+            return item_f.handler.getOutput();
         }
     }
 
@@ -15,7 +15,7 @@ function toggleItem(pmcData, body, sessionID) {
     for (let item of pmcData.Inventory.items) {
         if (item._id && item._id === body.item) {
             item.upd.Togglable = {"On": body.value};
-            return item_f.itemServer.getOutput();
+            return item_f.handler.getOutput();
         }
     }
 
@@ -41,7 +41,7 @@ function tagItem(pmcData, body, sessionID) {
                 Object.assign(item, myobject); // merge myobject into item -- overwrite same properties and add missings
             }
 
-            return item_f.itemServer.getOutput();
+            return item_f.handler.getOutput();
         }
     }
 
@@ -56,7 +56,7 @@ function bindItem(pmcData, body, sessionID) {
     }
 
     pmcData.Inventory.fastPanel[body.index] = body.item;
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function examineItem(pmcData, body, sessionID) {
@@ -74,7 +74,7 @@ function examineItem(pmcData, body, sessionID) {
 
         // get trader assort
         if (body.fromOwner.type === "Trader") {
-            pmcItems = trader_f.traderServer.getAssort(sessionID, body.fromOwner.id).items;
+            pmcItems = trader_f.handler.getAssort(sessionID, body.fromOwner.id).items;
         }
 
         // get hideout item
@@ -83,8 +83,8 @@ function examineItem(pmcData, body, sessionID) {
         }
     }
 
-    if (preset_f.itemPresets.isPreset(itemID)) {
-        itemID = preset_f.itemPresets.getBaseItemTpl(itemID);
+    if (preset_f.handler.isPreset(itemID)) {
+        itemID = preset_f.handler.getBaseItemTpl(itemID);
     }
 
     if (itemID === "") {
@@ -112,22 +112,22 @@ function examineItem(pmcData, body, sessionID) {
     }
 
     // item found
-	if(typeof items.data[itemID] == "undefined"){
+	if(typeof global._Database.items[itemID] == "undefined"){
 		logger.logError(`file not found with id: ${itemID}`);
 	}
-    let item = items.data[itemID];
+    let item = global._Database.items[itemID];
     pmcData.Info.Experience += item._props.ExamineExperience;
     pmcData.Encyclopedia[itemID] = true;
 
     //logger.logSuccess(`EXAMINED: ${itemID}`);
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function readEncyclopedia(pmcData, body, sessionID) {
     for (let id of body.ids) {
         pmcData.Encyclopedia[id] = true;
     }
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 module.exports.foldItem = foldItem;

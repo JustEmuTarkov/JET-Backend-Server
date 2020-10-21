@@ -14,7 +14,7 @@ exports.cache = () => {
 		if(typeof db.assort[trader].quests == "object")
 			throw "db.assort[trader].quests isnt a path";
 		
-        let data = json.parse(json.read(db.assort[trader].quests));
+        let data = json.readParsed(db.assort[trader].quests);
 		for(let quest in data){
 			base.data.push(data[quest]);
 		}

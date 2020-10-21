@@ -17,7 +17,7 @@ class ProfileServer {
     loadProfilesFromDisk(sessionID) {
 		if(typeof sessionID == "undefined")
 			logger.throwErr("Session ID is undefined", "~/src/classes/profile.js | 19")
-        this.profiles[sessionID]['pmc'] = json.parse(json.read(getPmcPath(sessionID)));
+        this.profiles[sessionID]['pmc'] = json.readParsed(getPmcPath(sessionID));
         this.generateScav(sessionID);
     }
 
@@ -39,16 +39,16 @@ class ProfileServer {
     getProfile(sessionID, type) {
         if (!(sessionID in this.profiles)) {
             this.initializeProfile(sessionID);
-            dialogue_f.dialogueServer.initializeDialogue(sessionID);
-            health_f.healthServer.initializeHealth(sessionID);
-            insurance_f.insuranceServer.resetSession(sessionID);
+            dialogue_f.handler.initializeDialogue(sessionID);
+            health_f.handler.initializeHealth(sessionID);
+            insurance_f.handler.resetSession(sessionID);
         }
 
         return this.profiles[sessionID][type];
     }
 	
 	getProfileById(ID, type) {
-        return json.parse(json.read(`user/profiles/${ID}/character.json`));
+        return json.readParsed(`user/profiles/${ID}/character.json`);
     }
 
 
@@ -67,19 +67,19 @@ class ProfileServer {
     getCompleteProfile(sessionID) {
         let output = [];
 
-        if (!account_f.accountServer.isWiped(sessionID)) {
-            output.push(profile_f.profileServer.getPmcProfile(sessionID));
-            output.push(profile_f.profileServer.getScavProfile(sessionID));
+        if (!account_f.handler.isWiped(sessionID)) {
+            output.push(profile_f.handler.getPmcProfile(sessionID));
+            output.push(profile_f.handler.getScavProfile(sessionID));
         }
 
         return output;
     }
 
     createProfile(info, sessionID) {
-        let account = account_f.accountServer.find(sessionID);
+        let account = account_f.handler.find(sessionID);
         let folder = account_f.getPath(account.id);
-        let pmcData = json.parse(json.read(db.profile[account.edition][`character_${info.side.toLowerCase()}`]));
-        let storage = json.parse(json.read(db.profile[account.edition][`storage_${info.side.toLowerCase()}`]));
+        let pmcData = json.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
+        let storage = json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`]);
 
         // delete existing profile
         if (this.profiles[account.id]) {
@@ -111,11 +111,11 @@ class ProfileServer {
 
         // traders 
         for (let traderID in db.cacheBase.traders) {
-            trader_f.traderServer.resetTrader(account.id, traderID);
+            trader_f.handler.resetTrader(account.id, traderID);
         }
 
         // don't wipe profile again
-        account_f.accountServer.setWipe(account.id, false);
+        account_f.handler.setWipe(account.id, false);
     }
 
     generateScav(sessionID) {
@@ -128,7 +128,7 @@ class ProfileServer {
         // Set cooldown time.
         // Make sure to apply ScavCooldownTimer bonus from Hideout if the player has it.
         let currDt = Date.now() / 1000;
-        let scavLockDuration = globals.data.config.SavagePlayCooldown;
+        let scavLockDuration = global._Database.globals.config.SavagePlayCooldown;
         let modifier = 1;
         for (let bonus of pmcData.Bonuses) {
             if (bonus.type === "ScavCooldownTimer") {
@@ -149,7 +149,7 @@ class ProfileServer {
             return "tooshort";
         }
 
-        if (account_f.accountServer.nicknameTaken(info)) {
+        if (account_f.handler.nicknameTaken(info)) {
             return "taken";
         }
 
@@ -181,7 +181,7 @@ function getPmcPath(sessionID) {
 }
 
 function getStashType(sessionID) {
-    let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+    let pmcData = profile_f.handler.getPmcProfile(sessionID);
 
     for (let item of pmcData.Inventory.items) {
         if (item._id === pmcData.Inventory.stash) {
@@ -196,18 +196,18 @@ function getStashType(sessionID) {
 function calculateLevel(pmcData) {
     let exp = 0;
 
-    for (let level in globals.data.config.exp.level.exp_table) {
+    for (let level in global._Database.globals.config.exp.level.exp_table) {
         if (pmcData.Info.Experience < exp) {
             break;
         }
 
         pmcData.Info.Level = parseInt(level);
-        exp += globals.data.config.exp.level.exp_table[level].exp;
+        exp += global._Database.globals.config.exp.level.exp_table[level].exp;
     }
 
     return pmcData.Info.Level;
 }
 
-module.exports.profileServer = new ProfileServer();
+module.exports.handler = new ProfileServer();
 module.exports.getStashType = getStashType;
 module.exports.calculateLevel = calculateLevel;

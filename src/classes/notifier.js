@@ -59,7 +59,7 @@ class NotifierService {
 			}, 15000);
 
 			setInterval(function() {
-				if (notifier_f.notifierService.hasMessagesInQueue(sessionID)) {
+				if (notifier_f.handler.hasMessagesInQueue(sessionID)) {
 					resolve();
 				}
 			}, 300);
@@ -88,5 +88,5 @@ function createNewMessageNotification(dialogueMessage) {
 	return {type: "new_message", eventId: dialogueMessage._id, data : {"dialogId": dialogueMessage.uid, "message": dialogueMessage}};
 }
 
-module.exports.notifierService = new NotifierService();
+module.exports.handler = new NotifierService();
 module.exports.createNewMessageNotification = createNewMessageNotification;

@@ -135,7 +135,7 @@ class InsuranceServer {
         let parentIds = [];
         for (let insuredItem of pmcData.InsuredItems) {
             if (preRaidGearHash[insuredItem.itemId] && !(securedContainerItemHash[insuredItem.itemId]) && !(typeof pmcItemsHash[insuredItem.itemId] === "undefined") && !(pmcItemsHash[insuredItem.itemId].slotId === "SecuredContainer")) {
-                /*if (utility.getRandomInt(0, 99) >= gameplayConfig.trading.insureReturnChance) {
+                /*if (utility.getRandomInt(0, 99) >= global._Database.gameplayConfig.trading.insureReturnChance) {
                     parentIds.push(insuredItem.itemId);
                     continue;
                 }*/
@@ -157,14 +157,14 @@ class InsuranceServer {
     /* sends stored insured items as message */
     sendInsuredItems(pmcData, sessionID) {
         for (let traderId in this.insured[sessionID]) {
-            let trader = trader_f.traderServer.getTrader(traderId);
-            let dialogueTemplates = json.parse(json.read(db.dialogues[traderId]));
+            let trader = trader_f.handler.getTrader(traderId);
+            let dialogueTemplates = json.readParsed(db.dialogues[traderId]);
             let messageContent = {
                 "templateId": dialogueTemplates.insuranceStart[utility.getRandomInt(0, dialogueTemplates.insuranceStart.length - 1)],
                 "type": dialogue_f.getMessageTypeValue("npcTrader")
             };
 
-            dialogue_f.dialogueServer.addDialogueMessage(traderId, messageContent, sessionID);
+            dialogue_f.handler.addDialogueMessage(traderId, messageContent, sessionID);
 
             messageContent = {
                 "templateId": dialogueTemplates.insuranceFound[utility.getRandomInt(0, dialogueTemplates.insuranceFound.length - 1)],
@@ -194,13 +194,13 @@ class InsuranceServer {
 
     processReturn(event) {
         // Inject a little bit of a surprise by failing the insurance from time to time ;)
-        if (utility.getRandomInt(0, 99) >= gameplayConfig.trading.insureReturnChance) {
-            let insuranceFailedTemplates = json.parse(json.read(db.dialogues[event.data.traderId])).insuranceFailed;
+        if (utility.getRandomInt(0, 99) >= global._Database.gameplayConfig.trading.insureReturnChance) {
+            let insuranceFailedTemplates = json.readParsed(db.dialogues[event.data.traderId]).insuranceFailed;
             event.data.messageContent.templateId = insuranceFailedTemplates[utility.getRandomInt(0, insuranceFailedTemplates.length - 1)];
             event.data.items = [];
         }
 
-        dialogue_f.dialogueServer.addDialogueMessage(event.data.traderId, event.data.messageContent, event.sessionId, event.data.items);
+        dialogue_f.handler.addDialogueMessage(event.data.traderId, event.data.messageContent, event.sessionId, event.data.items);
     }
 }
 
@@ -210,14 +210,14 @@ function getItemPrice(_tpl) {
 
     if (typeof (global.templatesById) === "undefined") {
         global.templatesById = {};
-        templates.data.Items.forEach(i => templatesById[i.Id] = i);
+        global._Database.templates.Items.forEach(i => templatesById[i.Id] = i);
     }
 
     if (_tpl in templatesById) {
         let template = templatesById[_tpl];
         price = template.Price;
     } else {
-        let item = items.data[_tpl];
+        let item = global._Database.items[_tpl];
         price = item._props.CreditsPrice;
     }
 
@@ -225,7 +225,7 @@ function getItemPrice(_tpl) {
 }
 
 function getPremium(pmcData, inventoryItem, traderId) {
-    let premium = getItemPrice(inventoryItem._tpl) * (gameplayConfig.trading.insureMultiplier * 3);
+    let premium = getItemPrice(inventoryItem._tpl) * (global._Database.gameplayConfig.trading.insureMultiplier * 3);
     premium -= premium * (pmcData.TraderStandings[traderId].currentStanding > 0.5 ? 0.5 : pmcData.TraderStandings[traderId].currentStanding);
     return Math.round(premium);
 }
@@ -233,7 +233,7 @@ function getPremium(pmcData, inventoryItem, traderId) {
 /* calculates insurance cost */
 function cost(info, sessionID) {
     let output = {};
-    let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+    let pmcData = profile_f.handler.getPmcProfile(sessionID);
 
     let inventoryItemsHash = {};
     pmcData.Inventory.items.forEach(i => inventoryItemsHash[i._id] = i);
@@ -287,9 +287,9 @@ function insure(pmcData, body, sessionID) {
         });
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
-module.exports.insuranceServer = new InsuranceServer();
+module.exports.handler = new InsuranceServer();
 module.exports.cost = cost;
 module.exports.insure = insure;

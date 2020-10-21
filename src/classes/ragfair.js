@@ -135,7 +135,7 @@ function getOffers(sessionID, request) {
     let offers = [];
 
     if (!request.linkedSearchId && !request.neededSearchId) {
-        response.categories = (trader_f.traderServer.getAssort(sessionID, "ragfair")).loyal_level_items;
+        response.categories = (trader_f.handler.getAssort(sessionID, "ragfair")).loyal_level_items;
     }
 
     if (request.buildCount) {
@@ -179,7 +179,7 @@ function getOffers(sessionID, request) {
 
 function getOffersFromTraders(sessionID, request)
 {
-    let jsonToReturn = json.parse(json.read(db.user.cache.ragfair_offers)); 
+    let jsonToReturn = json.readParsed(db.user.cache.ragfair_offers); 
     let offersFilters = []; //this is an array of item tpl who filter only items to show
 
     jsonToReturn.categories = {}
@@ -244,7 +244,7 @@ function getOffersFromTraders(sessionID, request)
                 // check if offer is really available, removes any quest locked items not in current assort of a trader
                 let tmpOffer = jsonToReturn.offers[offer];
                 let traderId = tmpOffer.user.id;
-                let traderAssort = trader_f.traderServer.getAssort(sessionID, traderId).items;
+                let traderAssort = trader_f.handler.getAssort(sessionID, traderId).items;
                 let keepItem = false; // for testing
                 for (let item of traderAssort) {
                     if (item._id === tmpOffer.root) {
@@ -302,7 +302,7 @@ function calculateCost(barter_scheme)//theorical , not tested not implemented
 }
 
 function getLinkedSearchList(linkedSearchId) {
-    let item = items.data[linkedSearchId];
+    let item = global._Database.items[linkedSearchId];
     // merging all possible filters without duplicates
     let result = new Set([
         ...getFilters(item, "Slots"),
@@ -316,7 +316,7 @@ function getLinkedSearchList(linkedSearchId) {
 function getNeededSearchList(neededSearchId) {
     let result = [];
 
-    for (let item of Object.values(items.data)) {
+    for (let item of Object.values(global._Database.items)) {
         if (isInFilter(neededSearchId, item, "Slots")
          || isInFilter(neededSearchId, item, "Chambers")
          || isInFilter(neededSearchId, item, "Cartridges")) {
@@ -356,17 +356,17 @@ function getCategoryList(handbookId) {
 
 function createOffer(template, onlyFunc, usePresets = true) {
     // Some slot filters reference bad items
-    if (!(template in global.items.data)) {
+    if (!(template in global._Database.items)) {
         logger.logWarning(`Item ${template} does not exist`);
         return [];
     }
 
-    let offerBase = json.parse(json.read(db.cacheBase.fleaOffer));
+    let offerBase = json.readParsed(db.cacheBase.fleaOffer);
     let offers = [];
 
     // Preset
-    if (usePresets && preset_f.itemPresets.hasPreset(template)) {
-        let presets = helper_f.clone(preset_f.itemPresets.getPresets(template));
+    if (usePresets && preset_f.handler.hasPreset(template)) {
+        let presets = helper_f.clone(preset_f.handler.getPresets(template));
         
         for (let p of presets) {
             let offer = helper_f.clone(offerBase);
@@ -383,14 +383,14 @@ function createOffer(template, onlyFunc, usePresets = true) {
             offer._id = p._id;               // The offer's id is now the preset's id
             offer.root = mods[0]._id;        // Sets the main part of the weapon
             offer.items = mods;
-            offer.requirements[0].count = Math.round(rub * gameplayConfig.trading.ragfairMultiplier);
+            offer.requirements[0].count = Math.round(rub * global._Database.gameplayConfig.trading.ragfairMultiplier);
             offers.push(offer);
         }
     }
 
     // Single item
-    if (!preset_f.itemPresets.hasPreset(template) || !onlyFunc) {
-        let rubPrice = Math.round(helper_f.getTemplatePrice(template) * gameplayConfig.trading.ragfairMultiplier);
+    if (!preset_f.handler.hasPreset(template) || !onlyFunc) {
+        let rubPrice = Math.round(helper_f.getTemplatePrice(template) * global._Database.gameplayConfig.trading.ragfairMultiplier);
         offerBase._id = template;
         offerBase.items[0]._tpl = template;
         offerBase.requirements[0].count = rubPrice;

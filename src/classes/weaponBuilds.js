@@ -6,7 +6,7 @@ function getPath(sessionID) {
 }
 
 function getUserBuilds(sessionID) {
-	let userBuildsMap = json.parse(json.read(getPath(sessionID)));
+	let userBuildsMap = json.readParsed(getPath(sessionID));
 
 	let userBuilds = [];
 
@@ -21,8 +21,8 @@ function SaveBuild(pmcData, body, sessionID) {
 	delete body.Action;
 	body.id = utility.generateNewItemId();	
 
-	let output = item_f.itemServer.getOutput();
-	let savedBuilds = json.parse(json.read(getPath(sessionID)));
+	let output = item_f.handler.getOutput();
+	let savedBuilds = json.readParsed(getPath(sessionID));
 
 	// replace duplicate ID's. The first item is the base item.
 	// The root ID and the base item ID need to match.
@@ -36,7 +36,7 @@ function SaveBuild(pmcData, body, sessionID) {
 }
 
 function RemoveBuild(pmcData, body, sessionID) {
-    let savedBuilds = json.parse(json.read(getPath(sessionID)));
+    let savedBuilds = json.readParsed(getPath(sessionID));
 
     for (let name in savedBuilds) {
         if (savedBuilds[name].id === body.id) {
@@ -46,7 +46,7 @@ function RemoveBuild(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 module.exports.getPath = getPath;

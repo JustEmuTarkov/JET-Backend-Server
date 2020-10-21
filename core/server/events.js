@@ -29,12 +29,12 @@ class ScheduledEventHandler {
 	}
 
 	loadSchedule() {
-		if (!fs.existsSync(db.user.events.schedule)) {
+		if (!json.exist(db.user.events.schedule)) {
 			this.scheduledEvents = [];
 			return;
 		}
 
-		this.scheduledEvents = json.parse(json.read(db.user.events.schedule));
+		this.scheduledEvents = json.readParsed(db.user.events.schedule);
 	}
 
 	processSchedule() {

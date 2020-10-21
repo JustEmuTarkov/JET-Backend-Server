@@ -5,9 +5,9 @@ let production = undefined;
 let scavcase = undefined;
 
 function initialize() {
-    areas = json.parse(json.read(db.user.cache.hideout_areas));
-    production = json.parse(json.read(db.user.cache.hideout_production));
-    scavcase = json.parse(json.read(db.user.cache.hideout_scavcase));
+    areas = json.readParsed(db.user.cache.hideout_areas);
+    production = json.readParsed(db.user.cache.hideout_production);
+    scavcase = json.readParsed(db.user.cache.hideout_scavcase);
 }
 
 function upgrade(pmcData, body, sessionID) {
@@ -21,7 +21,7 @@ function upgrade(pmcData, body, sessionID) {
             if (pmcData.Inventory.items[inventoryItem]._tpl === "5449016a4bdc2d6f028b456f") {
                 pmcData.Inventory.items[inventoryItem].upd.StackObjectsCount -= itemToPay.count;
             } else {
-                move_f.removeItem(pmcData, pmcData.Inventory.items[inventoryItem]._id, item_f.itemServer.getOutput(), sessionID);
+                move_f.removeItem(pmcData, pmcData.Inventory.items[inventoryItem]._id, item_f.handler.getOutput(), sessionID);
             }
         }
     }
@@ -46,7 +46,7 @@ function upgrade(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 // validating the upgrade
@@ -77,12 +77,12 @@ function upgradeComplete(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 // move items from hideout
 function putItemsInAreaSlots(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     for (let itemToMove in body.items) {
         for (let inventoryItem of pmcData.Inventory.items) {
@@ -119,7 +119,7 @@ function putItemsInAreaSlots(pmcData, body, sessionID) {
 }
 
 function takeItemsFromAreaSlots(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     for (let area of pmcData.Hideout.Areas) {
         if (area.type !== body.areaType) {
@@ -135,7 +135,7 @@ function takeItemsFromAreaSlots(pmcData, body, sessionID) {
             };
 
             output = move_f.addItem(pmcData, newReq, output, sessionID);
-            pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+            pmcData = profile_f.handler.getPmcProfile(sessionID);
             output.items.new[0].upd = itemToMove.upd;
 
             for (let item of pmcData.Inventory.items) {
@@ -155,7 +155,7 @@ function takeItemsFromAreaSlots(pmcData, body, sessionID) {
             };
 
             output = move_f.addItem(pmcData, newReq, output, sessionID);
-            pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+            pmcData = profile_f.handler.getPmcProfile(sessionID);
             area.slots.splice(0, 1);
         }
     }
@@ -170,13 +170,13 @@ function toggleArea(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function singleProductionStart(pmcData, body, sessionID) {
     registerProduction(pmcData, body, sessionID);
 
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     for (let itemToDelete of body.items) {
         output = move_f.removeItem(pmcData, itemToDelete.id, output, sessionID);
@@ -186,7 +186,7 @@ function singleProductionStart(pmcData, body, sessionID) {
 }
 
 function scavCaseProductionStart(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
     for (let moneyToEdit of body.items) {
         for (let inventoryItem in pmcData.Inventory.items) {
             if (pmcData.Inventory.items[inventoryItem]._id === moneyToEdit.id) {
@@ -199,7 +199,7 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
         }
     }
 
-    let scavcase = json.parse(json.read(db.user.cache.hideout_scavcase));
+    let scavcase = json.readParsed(db.user.cache.hideout_scavcase);
 
     for (let recipe in scavcase.data) {
         if (body.recipeId == scavcase.data[recipe]._id) {
@@ -214,9 +214,9 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
 
             for (let rarityType in rarityItemCounter) {
                 while (rarityItemCounter[rarityType] !== 0) {
-                    let random = utility.getRandomIntEx(Object.keys(items.data).length)
-                    let randomKey = Object.keys(items.data)[random];
-                    let tempItem = items.data[randomKey];
+                    let random = utility.getRandomIntEx(Object.keys(global._Database.items).length)
+                    let randomKey = Object.keys(global._Database.items)[random];
+                    let tempItem = global._Database.items[randomKey];
 
                     // products are not registered correctly
                     if (tempItem._props.Rarity === rarityType) {
@@ -248,11 +248,11 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
 
 function continuousProductionStart(pmcData, body, sessionID) {
     registerProduction(pmcData, body, sessionID);
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 function getBTC(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     let newBTC = {
         "item_id": "59faff1d86f7746c51718c9c",
@@ -269,7 +269,7 @@ function getBTC(pmcData, body, sessionID) {
 }
 
 function takeProduction(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
+    let output = item_f.handler.getOutput();
 
     if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
         return getBTC(pmcData, body, sessionID);
@@ -291,8 +291,8 @@ function takeProduction(pmcData, body, sessionID) {
         let id = production.data[recipe].endProduct;
 
         // replace the base item with its main preset
-        if (preset_f.itemPresets.hasPreset(id)) {
-            id = preset_f.itemPresets.getStandardPreset(id)._id;
+        if (preset_f.handler.hasPreset(id)) {
+            id = preset_f.handler.getStandardPreset(id)._id;
         }
 
         let newReq = {
@@ -316,7 +316,7 @@ function takeProduction(pmcData, body, sessionID) {
 	pmcData.Hideout.Production["14"].Products = pmcData.Hideout.Production["141"].Products;
             // give items BEFORE deleting the production
             for (let itemProd of pmcData.Hideout.Production[prod].Products) {
-                pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+                pmcData = profile_f.handler.getPmcProfile(sessionID);
 
                 let newReq = {
                     "item_id": itemProd._tpl,

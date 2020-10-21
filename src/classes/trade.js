@@ -11,14 +11,14 @@ exports.buyItem = (pmcData, body, sessionID) => {
     }
 
     logger.logSuccess(`Bought item: ${body.item_id}`);
-    return move_f.addItem(pmcData, body, item_f.itemServer.getOutput(), sessionID);
+    return move_f.addItem(pmcData, body, item_f.handler.getOutput(), sessionID);
 }
 
 // Selling item to trader
 exports.sellItem = (pmcData, body, sessionID) => {
     let money = 0;
-    let prices = trader_f.traderServer.getPurchasesData(body.tid, sessionID);
-    let output = item_f.itemServer.getOutput();
+    let prices = trader_f.handler.getPurchasesData(body.tid, sessionID);
+    let output = item_f.handler.getOutput();
 
     for (let sellItem of body.items) {
         for (let item of pmcData.Inventory.items) {
@@ -35,7 +35,7 @@ exports.sellItem = (pmcData, body, sessionID) => {
                 logger.logInfo(`Selling: ${checkID}`);
 
                 // remove item
-                insurance_f.insuranceServer.remove(pmcData, checkID, sessionID);
+                insurance_f.handler.remove(pmcData, checkID, sessionID);
                 output = move_f.removeItem(pmcData, checkID, output, sessionID);
 
                 // add money to return to the player
@@ -70,12 +70,12 @@ exports.confirmTrading = (pmcData, body, sessionID) => {
 
 // Ragfair trading
 exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
-    let ragfair_offers_traders = json.parse(json.read(db.user.cache.ragfair_offers));
+    let ragfair_offers_traders = json.readParsed(db.user.cache.ragfair_offers);
     let offers = body.offers;
-    let output = item_f.itemServer.getOutput()
+    let output = item_f.handler.getOutput()
 
     for (let offer of offers) {
-        pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+        pmcData = profile_f.handler.getPmcProfile(sessionID);
 
         body = {
             "Action": "TradingConfirm",

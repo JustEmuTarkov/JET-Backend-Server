@@ -6,7 +6,7 @@ class DialogueServer {
 	}
 
 	initializeDialogue(sessionID) {
-		this.dialogues[sessionID] = json.parse(json.read(getPath(sessionID)));
+		this.dialogues[sessionID] = json.readParsed(getPath(sessionID));
 	}
 
 	saveToDisk(sessionID) {
@@ -122,7 +122,7 @@ class DialogueServer {
 		dialogue.messages.push(message);
 
 		let notificationMessage = notifier_f.createNewMessageNotification(message);
-		notifier_f.notifierService.addToMessageQueue(notificationMessage, sessionID);
+		notifier_f.handler.addToMessageQueue(notificationMessage, sessionID);
 
 	}
 
@@ -253,6 +253,6 @@ function findAndReturnChildren(messageItems, itemid) {
     return list;
 }
 
-module.exports.dialogueServer = new DialogueServer();
+module.exports.handler = new DialogueServer();
 module.exports.getMessageTypeValue = getMessageTypeValue;
 module.exports.findAndReturnChildren = findAndReturnChildren;

@@ -3,7 +3,7 @@
 let customization = undefined;
 
 function initialize() {
-	customization = json.parse(json.read(db.user.cache.customization)).data;
+	customization = json.readParsed(db.user.cache.customization).data;
 }
 
 function getCustomization() {
@@ -31,13 +31,13 @@ function wearClothing(pmcData, body, sessionID) {
 		}
 	}
 
-	return item_f.itemServer.getOutput();
+	return item_f.handler.getOutput();
 }
 
 function buyClothing(pmcData, body, sessionID) {
-	let output = item_f.itemServer.getOutput();
-	let storage = json.parse(json.read(getPath(sessionID)));
-	let offers = trader_f.traderServer.getAllCustomization(sessionID);
+	let output = item_f.handler.getOutput();
+	let storage = json.readParsed(getPath(sessionID));
+	let offers = trader_f.handler.getAllCustomization(sessionID);
 
 	// check if outfit already exists
 	for (let suiteId of storage.data.suites) {

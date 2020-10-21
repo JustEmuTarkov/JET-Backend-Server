@@ -27,8 +27,8 @@ function getBoxSpacing(isUpper = 0, text = ""){
 
 module.exports.run = () => {
     /* set window name */
-	process.stdout.setEncoding('utf8');
-    process.title = textTable[0];
+	internal.process.stdout.setEncoding('utf8');
+    internal.process.title = textTable[0];
 
 	// Get longest string here
 	let lastText = "";
@@ -44,7 +44,7 @@ module.exports.run = () => {
     let box_width_spa = getBoxSpacing();
 
     /* reset cursor to begin */
-    process.stdout.write('\u001B[2J\u001B[0;0f');
+    internal.process.stdout.write('\u001B[2J\u001B[0;0f');
 
     /* Intro Display */
     logger.logRequest(`┌─${box_width_top}─┐`);

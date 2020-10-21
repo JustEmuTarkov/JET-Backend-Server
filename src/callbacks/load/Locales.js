@@ -1,3 +1,3 @@
 exports.load = () => {
-    locale_f.localeServer.initialize();
+    locale_f.handler.initialize();
 }

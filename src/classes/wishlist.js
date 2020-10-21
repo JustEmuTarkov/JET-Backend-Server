@@ -8,13 +8,13 @@ function addToWishList(pmcData, body, sessionID) {
     for (let item in pmcData['Wishlist']) {
         // don't add the item
         if (pmcData.WishList[item] === body['templateId']) {
-            return item_f.itemServer.getOutput();
+            return item_f.handler.getOutput();
         }
     }
 
     // add the item to the wishlist
     pmcData.WishList.push(body['templateId']);
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 /* Removing item to wishlist
@@ -28,7 +28,7 @@ function removeFromWishList(pmcData, body, sessionID) {
         if (pmcData.WishList[i] === body['templateId']) { pmcData.WishList.splice(i, 1); }
     }
 
-    return item_f.itemServer.getOutput();
+    return item_f.handler.getOutput();
 }
 
 /* Reset wishlist to empty []

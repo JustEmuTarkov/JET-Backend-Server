@@ -14,13 +14,13 @@ function tplLookup() {
             }
         }
 
-        for (let x of templates.data.Items) {
+        for (let x of global._Database.templates.Items) {
             lookup.items.byId[x.Id] = x.Price;
             lookup.items.byParent[x.ParentId] || (lookup.items.byParent[x.ParentId] = []);
             lookup.items.byParent[x.ParentId].push(x.Id);
         }
 
-        for (let x of templates.data.Categories) {
+        for (let x of global._Database.templates.Categories) {
             lookup.categories.byId[x.Id] = x.ParentId ? x.ParentId : null;
             if (x.ParentId) { // root as no parent
                 lookup.categories.byParent[x.ParentId] || (lookup.categories.byParent[x.ParentId] = []);
@@ -131,8 +131,8 @@ function fromRUB(value, currency) {
 * output: boolean
 * */
 function payMoney(pmcData, body, sessionID) {
-    let output = item_f.itemServer.getOutput();
-    let trader = trader_f.traderServer.getTrader(body.tid, sessionID);
+    let output = item_f.handler.getOutput();
+    let trader = trader_f.handler.getTrader(body.tid, sessionID);
     let currencyTpl = getCurrency(trader.currency);
 
     // delete barter things(not a money) from inventory
@@ -204,12 +204,12 @@ function payMoney(pmcData, body, sessionID) {
     let saleSum = pmcData.TraderStandings[body.tid].currentSalesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 
     pmcData.TraderStandings[body.tid].currentSalesSum = saleSum;
-    trader_f.traderServer.lvlUp(body.tid, sessionID);
+    trader_f.handler.lvlUp(body.tid, sessionID);
     output.currentSalesSums[body.tid] = saleSum;
 
     // save changes
     logger.logSuccess("Items taken. Status OK.");
-    item_f.itemServer.setOutput(output);
+    item_f.handler.setOutput(output);
     return true;
 }
 
@@ -286,10 +286,10 @@ function isItemInStash(pmcData, item) {
 * output: none (output is sended to item.js, and profile is saved to file)
 * */
 function getMoney(pmcData, amount, body, output, sessionID) {
-    let trader = trader_f.traderServer.getTrader(body.tid, sessionID);
+    let trader = trader_f.handler.getTrader(body.tid, sessionID);
     let currency = getCurrency(trader.currency);
     let calcAmount = fromRUB(inRUB(amount, currency), currency);
-    let maxStackSize = (json.parse(json.read(db.items[currency])))._props.StackMaxSize;
+    let maxStackSize = (json.readParsed(db.items[currency]))._props.StackMaxSize;
     let skip = false;
 
     for (let item of pmcData.Inventory.items) {
@@ -367,7 +367,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     let saleSum = pmcData.TraderStandings[body.tid].currentSalesSum + amount;
 
     pmcData.TraderStandings[body.tid].currentSalesSum = saleSum;
-    trader_f.traderServer.lvlUp(body.tid, sessionID);
+    trader_f.handler.lvlUp(body.tid, sessionID);
     output.currentSalesSums[body.tid] = saleSum;
 
     return output;
@@ -379,8 +379,8 @@ function getMoney(pmcData, amount, body, output, sessionID) {
 * */
 function getPlayerStash(sessionID) { //this sets automaticly a stash size from items.json (its not added anywhere yet cause we still use base stash)
     let stashTPL = profile_f.getStashType(sessionID);
-    let stashX = (items.data[stashTPL]._props.Grids[0]._props.cellsH !== 0) ? items.data[stashTPL]._props.Grids[0]._props.cellsH : 10;
-    let stashY = (items.data[stashTPL]._props.Grids[0]._props.cellsV !== 0) ? items.data[stashTPL]._props.Grids[0]._props.cellsV : 66;
+    let stashX = (global._Database.items[stashTPL]._props.Grids[0]._props.cellsH !== 0) ? global._Database.items[stashTPL]._props.Grids[0]._props.cellsH : 10;
+    let stashY = (global._Database.items[stashTPL]._props.Grids[0]._props.cellsV !== 0) ? global._Database.items[stashTPL]._props.Grids[0]._props.cellsV : 66;
     return [stashX, stashY];
 }
 
@@ -389,8 +389,8 @@ function getPlayerStash(sessionID) { //this sets automaticly a stash size from i
 * output: [ItemFound?(true,false), itemData]
 * */
 function getItem(template) { // -> Gets item from <input: _tpl>
-    if (template in items.data) {
-        return [true, items.data[template]];
+    if (template in global._Database.items) {
+        return [true, global._Database.items[template]];
     }
 
     return [false, {}];
@@ -685,7 +685,7 @@ function splitStack(item) {
         return [item];
     }
 
-    let maxStack = json.parse(json.read(db.items[item._tpl]))._props.StackMaxSize;
+    let maxStack = json.readParsed(db.items[item._tpl])._props.StackMaxSize;
     let count = item.upd.StackObjectsCount;
     let stacks = [];
 
@@ -710,11 +710,11 @@ function arrayIntersect(a, b) {
 }
 
 function getPreset (id){
-	if(typeof globals.data.ItemPresets[id] == "undefined"){
+	if(typeof global._Database.globals.ItemPresets[id] == "undefined"){
 		logger.logError("Couldnot find preset: " + id + " at src/classe/helper.js 714");
 		return null;
 	}
-	return globals.data.ItemPresets[id];
+	return global._Database.globals.ItemPresets[id];
 }
 // TODO: REWORK EVERYTHING ABOVE ~Maoci
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {

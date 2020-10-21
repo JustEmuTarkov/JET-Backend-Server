@@ -15,9 +15,9 @@ class ItemServer {
 	
 	updateRouteStruct(){
 		this.routeStructure = {
-			"Eat": health_f.healthServer.offraidEat,
-			"Heal": health_f.healthServer.offraidHeal,
-			"RestoreHealth": health_f.healthServer.healthTreatment,
+			"Eat": health_f.handler.offraidEat,
+			"Heal": health_f.handler.offraidHeal,
+			"RestoreHealth": health_f.handler.healthTreatment,
 			"CustomizationWear": customization_f.wearClothing,
 			"CustomizationBuy": customization_f.buyClothing,
 			"HideoutUpgrade": hideout_f.upgrade,
@@ -54,8 +54,8 @@ class ItemServer {
 			"RagFairBuyOffer": trade_f.confirmRagfairTrading,
 			"SaveBuild": weaponbuilds_f.saveBuild,
 			"RemoveBuild": weaponbuilds_f.removeBuild,
-			"AddToWishList": wishList_f.addToWishList,
-			"RemoveFromWishList": wishList_f.removeFromWishList
+			"AddToWishList": wishlist_f.addToWishList,
+			"RemoveFromWishList": wishlist_f.removeFromWishList
 		}
 	}
 	
@@ -63,7 +63,7 @@ class ItemServer {
         let result = "";
         
         for (let body of info.data) {
-            let pmcData = profile_f.profileServer.getPmcProfile(sessionID);
+            let pmcData = profile_f.handler.getPmcProfile(sessionID);
 
             if (body.Action in this.routes) {
                 result = this.routes[body.Action](pmcData, body, sessionID);
@@ -93,4 +93,4 @@ class ItemServer {
     }
 }
 
-module.exports.itemServer = new ItemServer();
+module.exports.handler = new ItemServer();
