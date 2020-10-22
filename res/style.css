@@ -1,0 +1,202 @@
+/*
+* MaociStyle v1.0.0 - a lightweight boilerplate style
+* Created by TheMaoci 01/11/2019 using some things from Skeleton library
+* Skeleton library - Dave Gamache - getskeleton.com
+*/
+/* Maoci Website styles */
+@font-face {
+	font-family: Bender;
+	src: url("bender.light.otf") format("opentype");
+}
+* {
+	letter-spacing: 0.15rem;
+	font-family: Bender;
+}
+body {
+	color: red!important;
+	background: black;
+}
+li {
+	color: #e1e0c6 !important
+}
+a {
+	color: aqua;
+	font-size: 14px;
+	text-decoration: none;
+}
+i {
+	color: rgba(255, 0, 0, 0.7)
+}
+i b {
+	color: rgba(255, 0, 0, 0.9)
+}
+a:hover {
+	color: #f00;
+}
+.ft {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: left;
+	padding: 5px;
+}
+h1 {
+	font-size: 3rem!important;
+	line-height: 3.5rem;
+}
+h2 {
+	font-size:2rem!important;
+	line-height:2rem!important;
+	margin:0!important;
+}
+#github:hover *,
+#youtube:hover * {
+	color: #a00
+}
+#github,
+#youtube {
+	width: 200px;
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+}
+#github p,
+#youtube p {
+	padding: 5px 12px;
+	display: inline;
+	top: 0;
+	position: absolute;
+}
+.youtube-vid {
+	display:inline-block;
+}
+/* Grid */
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.columns {
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+	.container {
+		width: 85%;
+		padding: 0;
+	}
+}
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+	.container {
+		width: 80%;
+	}
+	.columns {
+		margin-left: 4%;
+	}
+	.columns:first-child {
+		margin-left: 0;
+	}
+	/* Offsets */
+}
+/* Base Styles */
+/* NOTE: html is set to 62.5% so that all the REM measurements throughout Skeleton are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.5em;
+	line-height: 1.6;
+	font-weight: 400;
+}
+/* Typography */
+h1 {
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: 300;
+}
+h1 {
+	font-size: 4.0rem;
+	line-height: 1.2;
+	letter-spacing: -.1rem;
+}
+/* Larger than phablet */
+@media (min-width: 550px) {
+	h1 {
+		font-size: 5.0rem;
+	}
+}
+@media (min-width: 1000px) {
+	h1 {
+		font-size: 3.0rem;
+	}
+}
+p {
+	margin-top: 0;
+}
+.container:after,
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Media Queries */
+@media (max-width: 700px) {
+	.one.column,
+	.one.columns,
+	.two.columns,
+	.three.columns,
+	.four.columns,
+	.five.columns,
+	.six.columns,
+	.seven.columns,
+	.eight.columns,
+	.nine.columns,
+	.ten.columns,
+	.eleven.columns,
+	.twelve.columns {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+@media (min-width: 700px) {
+	.one.column,
+	.one.columns,
+	.two.columns,
+	.three.columns,
+	.four.columns,
+	.five.columns,
+	.six.columns {
+		width: 48%;
+		margin-left: 0;
+	}
+	.seven.columns,
+	.eight.columns,
+	.nine.columns,
+	.ten.columns,
+	.eleven.columns,
+	.twelve.columns {
+		width: 100%; 
+		margin-left: 0;
+	}
+}
+@media (min-width: 1200px) {
+	.one.column,
+	.one.columns { width: 4.66666666667%; }
+	.two.columns { width: 13.3333333333%; }
+	.three.columns { width: 22%; }
+	.four.columns { width: 30.6666666667%; }
+	.five.columns { width: 39.3333333333%; }
+	.six.columns { width: 48%; }
+	.seven.columns { width: 56.6666666667%; }
+	.eight.columns { width: 65.3333333333%; }
+	.nine.columns { width: 74.0%; }
+	.ten.columns { width: 82.6666666667%; }
+	.eleven.columns { width: 91.3333333333%; }
+	.twelve.columns { width: 100%; margin-left: 0; }
+}

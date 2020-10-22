@@ -93,7 +93,8 @@ class Logger {
     }
 
     logInfo(text) {
-        this.log("[INFO]", text, "white", "blue");
+		if(!serverConfig.hideInfoLogs)
+			this.log("[INFO]", text, "white", "blue");
     }
 
     logRequest(text, data = "") {

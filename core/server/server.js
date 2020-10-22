@@ -13,6 +13,8 @@ class Server {
             txt: 'text/plain',
             jpg: 'image/jpeg',
             png: 'image/png',
+            css: 'text/css',
+            otf: 'font/opentype',
             json: 'application/json'
         };
 		this.createCacheCallback();
@@ -32,6 +34,7 @@ class Server {
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
+
 	createStartCallback(){
         this.startCallback = {};
 		let path = "./src/callbacks/load";
@@ -42,6 +45,7 @@ class Server {
 		}
 		logger.logSuccess("Create: Start Callback");
 	}
+	
 	createReceiveCallback(){
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
@@ -52,6 +56,7 @@ class Server {
 		}
 		logger.logSuccess("Create: Receive Callback");
 	}
+	
 	createRespondCallback(){
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
@@ -178,28 +183,22 @@ class Server {
 
     sendResponse(sessionID, req, resp, body) {
         let output = "";
-    
+		if(req.url == "/favicon.ico"){
+			this.sendFile(resp, "res/icon.ico");
+			return;
+		}
+		if(req.url.includes(".css")){
+			this.sendFile(resp, "res/style.css");
+			return;
+		}
+		if(req.url.includes("bender.light.otf")){
+			this.sendFile(resp, "res/bender.light.otf");
+			return;
+		}
 		if(req.url == "/")
 		{
-			output = "<body><style>h2{font-size:20px;padding:3px 5px;} h3{font-size:18px;padding:3px 15px;} p{font-size:14px;padding:3px 25px} body{color:#fff;background:#000}</style>";
-			let data = json.readParsed(db.user.configs.gameplay);
-			for(let category in data){
-				output += "<h2>" + category + "</h2>";
-				for (let sub in data[category])
-				{
-					if(typeof data[category][sub] == "object"){
-						output += "<h3>" + sub + "</h3>";
-						for(let subSub in data[category][sub])
-						{
-							output += "<p>- " + subSub + ": " + data[category][sub][subSub] + "</p>";
-						}
-					} else {
-						output += "<p>- " + sub + ": " + data[category][sub] + "</p>";
-					}
-				}
-			}
-			
-			output += "</body>";
+			home_f.processSaveData(body);
+			output = home_f.renderPage();
 			this.sendHtml(resp, output, "");
 			return;
 		}
@@ -247,7 +246,20 @@ class Server {
         // request with data
         if (req.method === "POST") {
             req.on('data', function (data) {
+				if(req.url == "/"){
+					let _Data = data.toString();
+					_Data = _Data.split('&');
+					let _newData = {};
+					for(let item in _Data){
+						let datas = _Data[item].split('=');
+						_newData[datas[0]] = datas[1];
+						//_Data[item] = ;
+					}
+                    server.sendResponse(sessionID, req, resp, _newData);
+					return;
+				}
                 internal.zlib.inflate(data, function (err, body) {
+
                     let jsonData = ((body !== typeof "undefined" && body !== null && body !== "") ? body.toString() : '{}');
                     server.sendResponse(sessionID, req, resp, jsonData);
                 });
@@ -276,47 +288,29 @@ class Server {
             });
         }
     }
-
-    start() {
-        // execute cache callback
-        logger.logInfo("[Warmup]: Cache callbacks...");
-        for (let type in this.cacheCallback) {
-            this.cacheCallback[type]();
-        }
-
+	
+	// private function
+	_loadGlobals(){
 		global._Database.globals = json.readParsed(db.cacheBase.globals);
+		//allow to use file with {data:{}} as well as {}
 		if(typeof global._Database.globals.data != "undefined")
 			global._Database.globals = global._Database.globals.data;
+	}
+	// private function
+	_loadGameplayConfig(){
 		global._Database.gameplayConfig = json.readParsed(db.user.configs.gameplay);
-		
-        // execute start callback
-        logger.logInfo("[Warmup]: Start callbacks...");
-		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
-        for (let type in this.startCallback) {
-			if(type == "loadStaticdata") continue;
-            this.startCallback[type]();
-        }
-		
-		// Load Global Accesable Data Structures
-		/*
-			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
-			// 
-			global.global._Database.items
-			global.global._Database.globals
-			global.global._Database.templates
-			global.global._Database.gameplayConfig
-			global.global._Database.assort[traderID]
-			global.global._Database.someothershit
-		*/
+	}
+	// private function
+	_loadDatabaseItems(){
 		global._Database.items = json.readParsed(db.user.cache.items);
 		if(typeof global._Database.items.data != "undefined")
 			global._Database.items = global._Database.items.data;
 		global._Database.templates = json.readParsed(db.user.cache.templates);
 		if(typeof global._Database.templates.data != "undefined")
 			global._Database.templates = global._Database.templates.data;
-		
-		
-		logger.logInfo("Starting server...");
+	}
+	
+	_serverStart(){
 		let backend = this.backendUrl;
         /* create server */
         let httpsServer = internal.https.createServer(this.generateCertificate(), (req, res) => {
@@ -350,6 +344,39 @@ class Server {
 				throw e;
 			};
         });
+	}
+
+    start() {
+        // execute cache callback
+        logger.logInfo("[Warmup]: Cache callbacks...");
+        for (let type in this.cacheCallback) {
+            this.cacheCallback[type]();
+        }
+		this._loadGlobals();
+		this._loadGameplayConfig();
+		
+        // execute start callback
+        logger.logInfo("[Warmup]: Start callbacks...");
+		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
+        for (let type in this.startCallback) {
+			if(type == "loadStaticdata") continue;
+            this.startCallback[type]();
+        }
+		
+		// Load Global Accesable Data Structures
+		/*
+			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
+			// 
+			global.global._Database.items
+			global.global._Database.globals
+			global.global._Database.templates
+			global.global._Database.gameplayConfig
+			global.global._Database.assort[traderID]
+			global.global._Database.someothershit
+		*/
+		this._loadDatabaseItems();
+		logger.logInfo("Starting server...");
+		this._serverStart();
     }
 }
 

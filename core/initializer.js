@@ -10,8 +10,6 @@ class Initializer {
 		require('./server/watermark.js').run();
 
 		server.start();
-		
-		console.log(global._Database);
     }
 
     /* load core functionality */
@@ -38,12 +36,14 @@ class Initializer {
 		
 		// internal packages
         global.json = require('./util/json.js');
+        global.serverConfig = json.readParsed("user/configs/server.json");
+        global.modsConfig = json.readParsed("user/configs/mods.json");
+		
+		
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);
 		
         /* setup core files */
-        global.serverConfig = json.readParsed("user/configs/server.json");
-        global.modsConfig = json.readParsed("user/configs/mods.json");
 
         /* setup routes and cache */
         const route = require('./server/route.js');
