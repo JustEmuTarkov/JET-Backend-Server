@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return response_f.nullResponse();
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => response_f.nullResponse();

@@ -1,3 +1,1 @@
-exports.execute = (url, info, sessionID) => {
-	return response_f.getBody(global._Database.items);
-}
+exports.execute = (url, info, sessionID) => response_f.getBody(global._Database.items);

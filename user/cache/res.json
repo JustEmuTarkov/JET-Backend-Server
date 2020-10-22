@@ -1,4 +1,7 @@
 {
+	"bender.light": "res/bender.light.otf",
+	"icon": "res/icon.ico",
+	"style": "res/style.css",
 	"banners": {
 		"banner_bear": "res/banners/banner_bear.jpg",
 		"banner_bear.jpg": "res/banners/banner_bear.jpg.bak",

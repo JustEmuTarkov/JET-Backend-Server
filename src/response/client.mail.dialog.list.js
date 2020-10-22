@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return dialogue_f.handler.generateDialogueList(sessionID);
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => dialogue_f.handler.generateDialogueList(sessionID);

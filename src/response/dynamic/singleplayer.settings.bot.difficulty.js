@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
 	let splittedUrl = url.split('/');
     let type = splittedUrl[splittedUrl.length - 2].toLowerCase();
     let difficulty = splittedUrl[splittedUrl.length - 1];
@@ -27,4 +27,3 @@ function execute(url, info, sessionID){
 
     return json.read(db.bots[type].difficulties[difficulty]);
 }
-exports.execute = execute;

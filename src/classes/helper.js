@@ -422,7 +422,7 @@ function getInventoryItemHash(InventoryItem) {
 * outputs [width, height]
 * */
 function getSize(itemtpl, itemID, InventoryItem) { // -> Prepares item Width and height returns [sizeX, sizeY]
-    return getSizeByInventoryItemHash(itemtpl, itemID, getInventoryItemHash(InventoryItem));
+    return helper_f.getSizeByInventoryItemHash(itemtpl, itemID, getInventoryItemHash(InventoryItem));
 }
 
 /* 
@@ -437,17 +437,9 @@ function getSizeByInventoryItemHash(itemtpl, itemID, inventoryItemHash) {
     let FoldableWeapon = tmpItem._props.Foldable;
     let FoldedSlot = tmpItem._props.FoldedSlot;
 
-    let SizeUp = 0;
-    let SizeDown = 0;
-    let SizeLeft = 0;
-    let SizeRight = 0;
-
-    let ForcedUp = 0;
-    let ForcedDown = 0;
-    let ForcedLeft = 0;
-    let ForcedRight = 0;
-    let outX = tmpItem._props.Width;
-    let outY = tmpItem._props.Height;
+    let SizeUp = 0, SizeDown = 0, SizeLeft = 0, SizeRight = 0;
+    let ForcedUp = 0, ForcedDown = 0, ForcedLeft = 0, ForcedRight = 0;
+    let outX = tmpItem._props.Width,outY = tmpItem._props.Height;
     let skipThisItems = ["5448e53e4bdc2d60728b4567", "566168634bdc2d144c8b456c", "5795f317245977243854e041"];
     let rootFolded = rootItem.upd && rootItem.upd.Foldable && rootItem.upd.Foldable.Folded === true
 
@@ -537,7 +529,7 @@ function findAndReturnChildrenAsItems(items, itemID) {
 
     for (let childitem of items) {
         // Include itself.
-        if (childitem._id == itemID) {
+        if (childitem._id === itemID) {
             list.push(childitem);
             continue;
         }
@@ -556,24 +548,14 @@ function findAndReturnChildrenAsItems(items, itemID) {
 * on the level of the dogtag
 */
 function isDogtag(itemId) {
-    return itemId === "59f32bb586f774757e1e8442" || itemId === "59f32c3b86f77472a31742f0" ? true : false;
+    return itemId === "59f32bb586f774757e1e8442" || itemId === "59f32c3b86f77472a31742f0";
 }
 
 function isNotSellable(itemid) {
-    let moneyItems = [
-        "544901bf4bdc2ddf018b456d", //wad of rubles
-        "5449016a4bdc2d6f028b456f", // rubles
-        "569668774bdc2da2298b4568", // euros
-        "5696686a4bdc2da3298b456a" // dolars
-    ];
-
-    for (let tpl of moneyItems) {
-        if (itemid === tpl) {
-            return true;
-        }
-    }
-
-    return false;
+    return "544901bf4bdc2ddf018b456d" === itemid ||
+        "5449016a4bdc2d6f028b456f" === itemid ||
+        "569668774bdc2da2298b4568" === itemid ||
+        "5696686a4bdc2da3298b456a" === itemid;
 }
 
 /* Gets the identifier for a child using slotId, locationX and locationY. */
@@ -581,7 +563,6 @@ function getChildId(item) {
     if (!("location" in item)) {
         return item.slotId;
     }
-
     return item.slotId + ',' + item.location.x + ',' + item.location.y;
 }
 
@@ -812,9 +793,9 @@ module.exports.appendErrorToOutput = (output, message = "An unknown error occurr
 	return output;
 }
 
-module.exports.getItemSize = (itemtpl, itemID, InventoryItem) => { // -> Prepares item Width and height returns [sizeX, sizeY]
+/*module.exports.getItemSize = (itemtpl, itemID, InventoryItem) => { // -> Prepares item Width and height returns [sizeX, sizeY]
     return helper_f.getSizeByInventoryItemHash(itemtpl, itemID, this.getInventoryItemHash(InventoryItem));
-}
+}*/
 	
 module.exports.getInventoryItemHash = (InventoryItem) => {
 	let inventoryItemHash = {
@@ -839,6 +820,43 @@ module.exports.getInventoryItemHash = (InventoryItem) => {
 		inventoryItemHash.byParentId[item.parentId].push(item);
 	}
 	return inventoryItemHash;
+}
+
+module.exports.getPlayerStashSlotMap = (sessionID, pmcData) => {
+	// recalculate stach taken place
+	let PlayerStashSize = getPlayerStash(sessionID);
+	let Stash2D = Array(PlayerStashSize[1]).fill(0).map(x => Array(PlayerStashSize[0]).fill(0));
+
+	let inventoryItemHash = helper_f.getInventoryItemHash(pmcData.Inventory.items);
+
+	for (let item of inventoryItemHash.byParentId[pmcData.Inventory.stash])
+	{
+		if (!("location" in item))
+		{
+			continue;
+		}
+
+		let tmpSize = helper_f.getSizeByInventoryItemHash(item._tpl, item._id, inventoryItemHash);
+		let iW = tmpSize[0]; // x
+		let iH = tmpSize[1]; // y
+		let fH = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iW : iH);
+		let fW = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iH : iW);
+		let fillTo = item.location.x + fW;
+
+		for (let y = 0; y < fH; y++)
+		{
+			try
+			{
+				Stash2D[item.location.y + y].fill(1, item.location.x, fillTo);
+			}
+			catch (e)
+			{
+				logger.logError(`[OOB] for item with id ${item._id}; Error message: ${e}`);
+			}
+		}
+	}
+
+	return Stash2D;
 }
 // note from 2027: there IS a thing i didn't explore and that is Merges With Children
 // -> Prepares item Width and height returns [sizeX, sizeY]

@@ -1,3 +1,1 @@
-exports.execute = (url, info, sessionID) => {
-	return response_f.emptyArrayResponse();
-}
+exports.execute = (url, info, sessionID) => response_f.emptyArrayResponse();

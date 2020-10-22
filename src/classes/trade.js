@@ -9,9 +9,15 @@ exports.buyItem = (pmcData, body, sessionID) => {
         logger.logError("no money found");
         return "";
     }
-
+	const newReq = {
+		"items": [{
+			"item_id": body.item_id,
+			"count": body.count,
+		}],
+		"tid": body.tid
+	};
     logger.logSuccess(`Bought item: ${body.item_id}`);
-    return move_f.addItem(pmcData, body, item_f.handler.getOutput(), sessionID);
+    return move_f.addItem(pmcData, newReq, item_f.handler.getOutput(), sessionID);
 }
 
 // Selling item to trader

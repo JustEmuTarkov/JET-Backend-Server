@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
 	return response_f.getBody(
 		{
 			"queued": false, 
@@ -21,4 +21,3 @@ function execute(url, info, sessionID){
 		}
 	);
 }
-exports.execute = execute;

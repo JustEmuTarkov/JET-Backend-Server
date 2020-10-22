@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return json.read(db.user.cache.hideout_production);
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => json.read(db.user.cache.hideout_production);

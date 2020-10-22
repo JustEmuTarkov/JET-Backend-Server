@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
 	let output = match_f.handler.getEnabled();
   
     if (output === false) {
@@ -7,4 +7,3 @@ function execute(url, info, sessionID){
   
     return response_f.getBody(output);
 }
-exports.execute = execute;

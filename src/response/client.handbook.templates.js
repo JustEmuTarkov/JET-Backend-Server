@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return json.stringify(templates);
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => response_f.getBody(global._Database.templates);

@@ -85,7 +85,7 @@
 				}
 			}
 		},
-		"UpdateTime": 1602981118
+		"UpdateTime": 1603389690
 	},
 	"Inventory": {
 		"items": [
@@ -254,21 +254,6 @@
 				}
 			},
 			{
-				"_id": "5df7b9abef12bf7a252437a7",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 5,
-					"y": 1,
-					"r": 0,
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 50
-				}
-			},
-			{
 				"_id": "5df7b9abef12bf7a252437ac",
 				"_tpl": "5755356824597772cb798962",
 				"parentId": "5df7b9abef12bf7a2524385f",
@@ -403,27 +388,6 @@
 				}
 			},
 			{
-				"_id": "5df7b9abef12bf7a252437b8",
-				"_tpl": "5448c12b4bdc2d02308b456f",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 2,
-					"y": 0,
-					"r": "Horizontal",
-					"isSearched": true
-				}
-			},
-			{
-				"_id": "5df7b9abef12bf7a252437b7",
-				"_tpl": "573718ba2459775a75491131",
-				"parentId": "5df7b9abef12bf7a252437b8",
-				"slotId": "cartridges",
-				"upd": {
-					"StackObjectsCount": 8
-				}
-			},
-			{
 				"_id": "5df7b9abef12bf7a252437b9",
 				"_tpl": "544fb25a4bdc2dfb738b4567",
 				"parentId": "5df7b9abef12bf7a2524385f",
@@ -540,21 +504,6 @@
 				}
 			},
 			{
-				"_id": "5df7b9abef12bf7a252437c1",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 5,
-					"y": 3,
-					"r": 0,
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 50
-				}
-			},
-			{
 				"_id": "5df7b9abef12bf7a252437c2",
 				"_tpl": "5449016a4bdc2d6f028b456f",
 				"parentId": "5df7b9abef12bf7a2524385f",
@@ -566,7 +515,7 @@
 					"isSearched": true
 				},
 				"upd": {
-					"StackObjectsCount": 100000
+					"StackObjectsCount": 135068
 				}
 			},
 			{
@@ -770,21 +719,6 @@
 					"y": 13,
 					"r": 0,
 					"isSearched": true
-				}
-			},
-			{
-				"_id": "5df7b9abef12bf7a252437d9",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 5,
-					"y": 0,
-					"r": 0,
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 50
 				}
 			},
 			{
@@ -1090,21 +1024,6 @@
 				"location": {
 					"x": 5,
 					"y": 6,
-					"r": 0,
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 50
-				}
-			},
-			{
-				"_id": "5df7b9abef12bf7a252437f2",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 5,
-					"y": 2,
 					"r": 0,
 					"isSearched": true
 				},
@@ -1651,21 +1570,6 @@
 				}
 			},
 			{
-				"_id": "I112719003567201064dOKYH",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"upd": {
-					"StackObjectsCount": 1
-				},
-				"location": {
-					"x": 4,
-					"y": 1,
-					"r": "Horizontal",
-					"isSearched": true
-				}
-			},
-			{
 				"_id": "I1127190055036628131xBWj",
 				"_tpl": "576a63cd2459771e796e0e11",
 				"parentId": "I112719008035685069b8bqN",
@@ -1685,21 +1589,6 @@
 				"location": {
 					"x": 0,
 					"y": 2,
-					"r": "Horizontal",
-					"isSearched": true
-				}
-			},
-			{
-				"_id": "I112719002878296597wImD1",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"upd": {
-					"StackObjectsCount": 1
-				},
-				"location": {
-					"x": 3,
-					"y": 1,
 					"r": "Horizontal",
 					"isSearched": true
 				}
@@ -1729,21 +1618,6 @@
 				}
 			},
 			{
-				"_id": "I112719002497578862pQCDg",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"upd": {
-					"StackObjectsCount": 1
-				},
-				"location": {
-					"x": 3,
-					"y": 0,
-					"r": "Horizontal",
-					"isSearched": true
-				}
-			},
-			{
 				"_id": "I112719009306251361Wxqdl",
 				"_tpl": "576a63cd2459771e796e0e11",
 				"parentId": "I112719003404853741jUGHl",
@@ -1768,21 +1642,6 @@
 				}
 			},
 			{
-				"_id": "I112719002694657359Krrsv",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"upd": {
-					"StackObjectsCount": 1
-				},
-				"location": {
-					"x": 4,
-					"y": 0,
-					"r": "Horizontal",
-					"isSearched": true
-				}
-			},
-			{
 				"_id": "I112719003865810661UOhor",
 				"_tpl": "576a63cd2459771e796e0e11",
 				"parentId": "I112719005016365632qyfCH",
@@ -1801,70 +1660,10 @@
 				}
 			},
 			{
-				"_id": "I1127190265256206208CuJ7",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 3,
-					"y": 3,
-					"r": "Horizontal",
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 1
-				}
-			},
-			{
-				"_id": "I1127190263013079662xlkA",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 3,
-					"y": 2,
-					"r": "Horizontal",
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 1
-				}
-			},
-			{
 				"_id": "I1127190261147197094AN6F",
 				"_tpl": "576a5ed62459771e9c2096cb",
 				"parentId": "I112719003404853741jUGHl",
 				"slotId": "mod_magazine",
-				"upd": {
-					"StackObjectsCount": 1
-				}
-			},
-			{
-				"_id": "I1127190261114658938I0yg",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 4,
-					"y": 2,
-					"r": "Horizontal",
-					"isSearched": true
-				},
-				"upd": {
-					"StackObjectsCount": 1
-				}
-			},
-			{
-				"_id": "I1127190263054950979plYo",
-				"_tpl": "576a5ed62459771e9c2096cb",
-				"parentId": "5df7b9abef12bf7a2524385f",
-				"slotId": "hideout",
-				"location": {
-					"x": 4,
-					"y": 3,
-					"r": "Horizontal",
-					"isSearched": true
-				},
 				"upd": {
 					"StackObjectsCount": 1
 				}
@@ -1885,16 +1684,6 @@
 				"slotId": "mod_magazine",
 				"upd": {
 					"StackObjectsCount": 1
-				}
-			},
-			{
-				"_id": "I1127190432362910905L9T4",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I112719002694657359Krrsv",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
 				}
 			},
 			{
@@ -1931,76 +1720,6 @@
 				"_id": "I031716271064933107gcHsy",
 				"_tpl": "56d59d3ad2720bdb418b4577",
 				"parentId": "I1127190274072500490HOZy",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031716306883251405idIUR",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I112719002497578862pQCDg",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031717314469934615sRpEK",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I112719003567201064dOKYH",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031717322093035746D7Crv",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I112719002878296597wImD1",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031717585981607767mF3qc",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I1127190261114658938I0yg",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I03171803368557413yFU3Ji",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I1127190263013079662xlkA",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031718228570828370za6Cm",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I1127190263054950979plYo",
-				"slotId": "cartridges",
-				"location": 0,
-				"upd": {
-					"StackObjectsCount": 18
-				}
-			},
-			{
-				"_id": "I031718238111267132DLcal",
-				"_tpl": "56d59d3ad2720bdb418b4577",
-				"parentId": "I1127190265256206208CuJ7",
 				"slotId": "cartridges",
 				"location": 0,
 				"upd": {
@@ -3575,7 +3294,7 @@
 	"TraderStandings": {
 		"54cb50c76803fa8b248b4571": {
 			"currentLevel": 1,
-			"currentSalesSum": 0,
+			"currentSalesSum": 35068,
 			"currentStanding": 0.2,
 			"NextLoyalty": null,
 			"loyaltyLevels": {

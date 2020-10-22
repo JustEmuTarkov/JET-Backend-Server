@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return response_f.getBody({"Friends":[], "Ignore":[], "InIgnoreList":[]});
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => response_f.getBody({"Friends":[], "Ignore":[], "InIgnoreList":[]});
