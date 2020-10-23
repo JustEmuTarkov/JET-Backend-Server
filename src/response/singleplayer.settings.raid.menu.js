@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
     return response_f.noBody({
             "aiAmount": "AsOnline",
             "aiDifficulty": "AsOnline",
@@ -7,4 +7,3 @@ function execute(url, info, sessionID){
             "taggedAndCursed": false
         });
 }
-exports.execute = execute;

@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return response_f.getBody(location_f.handler.generateAll());
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => response_f.getBody(location_f.handler.generateAll());

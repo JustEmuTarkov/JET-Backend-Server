@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return "IMAGE";
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => "IMAGE";

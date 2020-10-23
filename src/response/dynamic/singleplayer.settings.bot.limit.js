@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
 	let splittedUrl = url.split('/');
     let type = splittedUrl[splittedUrl.length - 1];
 
@@ -17,4 +17,3 @@ function execute(url, info, sessionID){
 	
     return response_f.noBody(global._Database.gameplayConfig.bots.limits[type]);
 }
-exports.execute = execute;

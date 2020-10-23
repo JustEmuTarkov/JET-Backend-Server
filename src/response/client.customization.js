@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return response_f.getBody(customization_f.getCustomization());
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => response_f.getBody(customization_f.getCustomization());

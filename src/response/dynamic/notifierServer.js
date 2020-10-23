@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return "NOTIFY";
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => "NOTIFY";

@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return json.read(db.user.cache.hideout_scavcase);
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => json.read(db.user.cache.hideout_scavcase);

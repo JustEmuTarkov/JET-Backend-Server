@@ -1,4 +1,4 @@
-function execute(url, info, sessionID){
+exports.execute = (url, info, sessionID) => {
 	let output = profile_f.handler.changeNickname(info, sessionID);
     
     if (output == "taken") {
@@ -11,4 +11,3 @@ function execute(url, info, sessionID){
     
     return response_f.getBody({"status": 0, "nicknamechangedate": Math.floor(new Date() / 1000)});
 }
-exports.execute = execute;

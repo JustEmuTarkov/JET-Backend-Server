@@ -363,7 +363,6 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	const fenceID = "579dc571d53a0658a154fbec";
 	let itemLib = [];
 	let itemsToAdd = [];
-
 	for (let baseItem of body.items)
 	{
 		if (baseItem.item_id in global._Database.globals.ItemPresets)
@@ -438,7 +437,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	}
 
 	// Find an empty slot in stash for each of the items being added
-	let StashFS_2D = helper_f.getPlayerStashSlotMap(pmcData, sessionID);
+	console.log(pmcData);
+	let StashFS_2D = helper_f.getPlayerStashSlotMap(sessionID, pmcData);
 	for (let itemToAdd of itemsToAdd)
 	{
 		let itemSize = helper_f.getItemSize(itemToAdd.itemRef._tpl, itemToAdd.itemRef._id, itemLib);

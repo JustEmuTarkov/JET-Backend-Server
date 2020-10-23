@@ -1,4 +1,1 @@
-function execute(url, info, sessionID){
-	return quest_f.getQuestsCache(url, info, sessionID);
-}
-exports.execute = execute;
+exports.execute = (url, info, sessionID) => quest_f.getQuestsCache(url, info, sessionID);

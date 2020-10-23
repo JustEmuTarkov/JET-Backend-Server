@@ -216,7 +216,7 @@ exports.all = () => {
     if (!json.exist("user/mods/")) {
         json.mkDir("user/mods/");
     }
-	if(json.readDir("./user/cache").length < 31)
+	if(!json.exist("./user/cache") || json.readDir("./user/cache").length < 31)
 	{ // health number of cache file count is 31 as for now ;)
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
