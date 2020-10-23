@@ -15,15 +15,41 @@ function DetectInput(data, name){
 	}*/
 	return data;
 }
+function PageHeader(content){
+	return '<html><head><title>JustEmuTarkov</title><link rel="stylesheet" id="style" href="style.css" type="text/css" media="all"><style>h2{font-size:16px;padding:3px 0 0 10px;margin:0;} h3{font-size:14px;padding:3px 0 0 15px;margin:0;} p{font-size:12px;padding:3px 0 0 25px;margin:0;} body{color:#fff;background:#000} table{border-bottom:1px solid #aaa;} .right{text-align:right;}</style></head><body>'+content+'</body></html>';
 
-module.exports.renderPage = () => {
-	// loads data
+}
+module.exports.RenderHomePage = () => {
+	let html = "";
+	html += `<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<h1>${server.name} ${server.version}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="six columns">
+			<ul>
+				<li><a href="/server/config/gameplay"> Gameplay Config </a></li>
+				<li><a href="/server/config/server"> Server Config </a></li>
+				<li><a href="/server/config/accounts"> Account's Config </a></li>
+				<li><a href="/server/config/profiles"> Profile's Config </a></li>
+			</ul>
+		</div>
+		<div class="six columns">
+			<br/>
+			<p><i> Our Website: <a href="https://justemutarkov.github.io/">${server.name} Website</a> </i></p>
+			<p><i> Our Github: <a href="https://github.com/justemutarkov">${server.name} Github</a> </i></p>
+			<p><i> More on our discord: <a href="https://discord.gg/mpB9Utz">discord.gg/mpB9Utz</a> </i></p>
+		</div>
+	</div>`;
+	html += `</div>`;
+	html = PageHeader(html); // adds header and footer + some stypes etc.
+	return html;
+}
+module.exports.RenderGameplayConfigPage = () => {
 	let data = json.readParsed(db.user.configs.gameplay);
-	// render page
-	'<div class="container"><div class="row">'
-	
-	
-	let html = "<form action='/' method='post'>";
+	let html = '<div class="container"><div class="row"><form action="/" method="post">';
 	for(let category in data){
 		html += '<div class="four columns"><table width="100%"><tr><td><h2>' + category + '</h2></td></tr>';
 		for (let sub in data[category])
@@ -40,13 +66,26 @@ module.exports.renderPage = () => {
 		}
 		html += "</table></div>"
 	}
-	html += '</div><div class="row"><div class="twelve columns"><button type="submit"> Save </button></div></form></div></div>';
-	
-	let content = '<html><head><title>JustEmuTarkov</title><link rel="stylesheet" id="style" href="style.css" type="text/css" media="all"><style>h2{font-size:16px;padding:3px 0 0 10px;margin:0;} h3{font-size:14px;padding:3px 0 0 15px;margin:0;} p{font-size:12px;padding:3px 0 0 25px;margin:0;} body{color:#fff;background:#000} table{border-bottom:1px solid #aaa;} .right{text-align:right;}</style></head><body>'+html+'</body></html>';
+	html += '</div><div class="row"><div class="twelve columns"><button type="submit"> Save </button></div></form></div></div>';	
+	html = PageHeader(html); // adds header and footer + some stypes etc.
+	return html;
+}
 
-	return content;
+module.exports.renderPage = () => {
+	// loads data
+	let data = json.readParsed(db.user.configs.gameplay);
+	// render page
+	
+	let html = '<div class="container"><div class="row">';
+	html += "This is Example Page In HTML";
+	html += 'We can add shit to it how much we want';
+	html += '</div></div>';//we need to end this with 2 div closing tags
+	html = PageHeader(html); // this will render footer and header + some styles title of the page etc.
+
+	return html;
 	
 }
+
 function OutputConvert(data){
 	// its not nececerly needed but its ok.
 	if(typeof data === "string")
@@ -60,7 +99,6 @@ function OutputConvert(data){
 		}
 		return _test;
 	}
-	
 }
 module.exports.processSaveData = (data) => {
 	if(data == "") return;

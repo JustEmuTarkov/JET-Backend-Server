@@ -195,10 +195,17 @@ class Server {
 			this.sendFile(resp, "res/bender.light.otf");
 			return;
 		}
+		
+		if(req.url.includes("/server/config")){
+			// load html page represented by home_f
+			output = router.getResponse(req, body, sessionID);
+			this.sendHtml(resp, output, "");
+		}
 		if(req.url == "/")
 		{
-			home_f.processSaveData(body);
-			output = home_f.renderPage();
+			//home_f.processSaveData(body);
+			// its hard to create a file `.js` in folder in windows cause it looks cancerous so we gonna write this code here 
+			output = home_f.RenderHomePage();
 			this.sendHtml(resp, output, "");
 			return;
 		}
@@ -246,14 +253,13 @@ class Server {
         // request with data
         if (req.method === "POST") {
             req.on('data', function (data) {
-				if(req.url == "/"){
+				if(req.url == "/" || req.url.includes("/server/config")){
 					let _Data = data.toString();
 					_Data = _Data.split('&');
 					let _newData = {};
 					for(let item in _Data){
 						let datas = _Data[item].split('=');
 						_newData[datas[0]] = datas[1];
-						//_Data[item] = ;
 					}
                     server.sendResponse(sessionID, req, resp, _newData);
 					return;

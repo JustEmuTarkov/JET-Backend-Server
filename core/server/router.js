@@ -38,25 +38,17 @@ class Router {
 		}
 		logger.logSuccess("Create: Dynamic Response Callbacks");
 	}
-    /* sets static routes to check for */
-    /*addStaticRoute(route, callback) {
-        this.staticRoutes[route] = callback;
-    }*/
-
-    /* sets dynamic routes to check for */
-    /*addDynamicRoute(route, callback) {
-        this.dynamicRoutes[route] = callback;
-    }*/
 
     getResponse(req, body, sessionID) {
         let output = "";
         let url = req.url;
         let info = {};
-        /* parse body */
-        if (body !== "") {
-            info = json.parse(body);
-        }
-    
+		if(typeof body != "object"){
+			/* parse body */
+			if (body !== "") {
+				info = json.parse(body);
+			}
+		}
         /* remove retry from URL */
         if (url.includes("?retry=")) {
             url = url.split("?retry=")[0];
