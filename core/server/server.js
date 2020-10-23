@@ -330,7 +330,7 @@ class Server {
             if (internal.process.platform === "linux" && !(internal.process.getuid && internal.process.getuid() === 0) && e.port < 1024) {
 				logger.throwErr("» Non-root processes cannot bind to ports below 1024.", ">> core/server.server.js line 274");
             } else if (e.code == "EADDRINUSE") {
-				psList().then(data => {
+				internal.psList().then(data => {
 					let cntProc = 0;
 					for(let proc of data){
 						let procName = proc.name.toLowerCase();
