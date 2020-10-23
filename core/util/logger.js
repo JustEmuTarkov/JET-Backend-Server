@@ -33,7 +33,7 @@ class Logger {
 
         // create log folder
         if (!json.exist(folder)) { +
-            json.mkdir(folder);
+            json.mkDir(folder);
         }
 
         // create log file
