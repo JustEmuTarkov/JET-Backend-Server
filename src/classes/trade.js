@@ -102,7 +102,7 @@ exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
             }
         }
 
-        output = confirmTrading(pmcData, body, sessionID);
+        output = this.confirmTrading(pmcData, body, sessionID);
     }
     
     return output;
