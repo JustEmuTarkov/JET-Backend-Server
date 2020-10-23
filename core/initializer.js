@@ -61,7 +61,6 @@ class Initializer {
             logger.logError("[Server]:" + server.getVersion());
             logger.logError("[Trace]:");
             logger.logData(error);
-			logger.logData(" ");
         });
     }
 

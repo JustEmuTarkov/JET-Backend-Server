@@ -33,7 +33,7 @@ class Logger {
 
         // create log folder
         if (!json.exist(folder)) { +
-            json.mkdir(folder);
+            json.mkDir(folder);
         }
 
         // create log file
@@ -65,19 +65,24 @@ class Logger {
 		let deltaTime = (serverConfig.debugTimer)?"["+((new Date().getTime() - global.startTimestamp)/1000).toFixed(2)+"s] ":" ";
         // print data
         if (colors[0] !== "" || colors[1] !== "") {
-			if(type != "")
+			if(type != "" && type != "LogData")
 				console.log(setColors+type+"\x1b[0m"+deltaTime+data);
 			else 
 				console.log(setColors+data+"\x1b[0m");
         } else {
-			if(type != "")
+			if(type != "" && type != "LogData")
 				console.log(type+deltaTime+data);
 			else
 				console.log(data);
         }
 
         // write the logged data to the file
-		this.fileStream.write(internal.util.format(deltaTime+type+"-"+data+"\n"));
+		if(type == "LogData"){
+			this.fileStream.write(internal.util.format(data));
+			this.fileStream.write(internal.util.format("\n"));//just new line
+		} else {
+			this.fileStream.write(internal.util.format(deltaTime+type+"-"+data+"\n"));
+		}
     }
 
     logError(text) {
@@ -105,7 +110,7 @@ class Logger {
     }
 
     logData(data) {
-        this.log("", data);
+        this.log("LogData", data);
     }
 	
 	throwErr(message, where, additional = ""){
