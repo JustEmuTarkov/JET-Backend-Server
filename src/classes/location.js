@@ -91,7 +91,7 @@ class LocationServer {
         //logger.logSuccess("A total of " + count + " containers generated");
 
         // dyanmic loot
-        let max = 2000;//location_f.config.limits[name];
+        let max = global._Database.gameplayConfig.locationloot[name];//location_f.config.limits[name];
         count = 0;
 
         // Loot position list for filtering the lootItem in the same position.

@@ -24,6 +24,7 @@ exports.execute = (url, info, sessionID) => {
     {
         type = "pmcbot";
     }
-
-    return json.read(db.bots[type].difficulties[difficulty]);
+	
+	let getFileText = json.read(db.bots[type].difficulties[difficulty]);
+    return getFileText;
 }
