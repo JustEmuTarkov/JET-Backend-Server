@@ -24,7 +24,7 @@ exports.cache = () => {
 
         for (let name of inputDir) {
 			// loop through all inputDir's
-			base[name] = json.readParsed(`./db/locales/${locale}/_${name}.json`);
+			base[name] = json.readParsed(`./db/locales/${locale}/${name}.json`);
 
         }
 		let menu = json.readParsed(inputNode.menu);

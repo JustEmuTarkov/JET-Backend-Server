@@ -55,7 +55,8 @@ class ItemServer {
 			"SaveBuild": weaponbuilds_f.saveBuild,
 			"RemoveBuild": weaponbuilds_f.removeBuild,
 			"AddToWishList": wishlist_f.addToWishList,
-			"RemoveFromWishList": wishlist_f.removeFromWishList
+			"RemoveFromWishList": wishlist_f.removeFromWishList,
+			"ApplyInventoryChanges": move_f.applyInventoryChanges
 		}
 	}
 	

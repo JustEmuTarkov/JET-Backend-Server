@@ -793,9 +793,9 @@ module.exports.appendErrorToOutput = (output, message = "An unknown error occurr
 	return output;
 }
 
-/*module.exports.getItemSize = (itemtpl, itemID, InventoryItem) => { // -> Prepares item Width and height returns [sizeX, sizeY]
+module.exports.getItemSize = (itemtpl, itemID, InventoryItem) => { // -> Prepares item Width and height returns [sizeX, sizeY]
     return helper_f.getSizeByInventoryItemHash(itemtpl, itemID, this.getInventoryItemHash(InventoryItem));
-}*/
+}
 	
 module.exports.getInventoryItemHash = (InventoryItem) => {
 	let inventoryItemHash = {

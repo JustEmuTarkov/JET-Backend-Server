@@ -46,6 +46,7 @@ function getOwnerInventoryItems(body, sessionID) {
 * otherwise, move is contained within the same profile_f.
 * */
 function moveItem(pmcData, body, sessionID) {
+	console.log(body);
     let output = item_f.handler.getOutput();
 
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
@@ -66,6 +67,54 @@ function moveItem(pmcData, body, sessionID) {
     }
 
     return output;
+}
+
+module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
+	/*
+	{
+	  Action: 'Move',
+	  item: 'I923216551462920213oltoe',
+	  to: {
+		id: '5df7b9abef12bf7a2524385f',
+		container: 'hideout',
+		location: { x: 4, y: 5, r: 'Horizontal', isSearched: true }
+	  }
+	}
+	
+	{
+	  changedItems: [
+		{
+		  _id: '5df7b9abef12bf7a2524379e',
+		  _tpl: '56dfef82d2720bbd668b4567',
+		  parentId: '5df7b9abef12bf7a2524385f',
+		  slotId: 'hideout',
+		  location: [Object],
+		  upd: [Object]
+		},
+		...
+	  ]
+		
+	}
+	*/
+	let itemFrom = profile_f.handler.getPmcProfile(sessionID).Inventory.items;
+	
+	for(let itemToChange of body.changedItems){
+		let action = {
+		  Action: 'Move',
+		  item: itemToChange._id,
+		  to: {
+			id: itemToChange.parentId,
+			container: 'hideout',
+			location: { x: itemToChange.location.x, y: itemToChange.location.y, r: itemToChange.location.r, isSearched: itemToChange.location.isSearched }
+		  }
+		};
+		console.log(action);
+		moveItemInternal(itemFrom, action);
+		
+		//output = moveItem(pmcData, body, sessionID)
+	}
+	
+	console.log("TODO: CHeck if working.")
 }
 
 /* Internal helper function to transfer an item from one profile to another.
@@ -499,7 +548,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		}
 
 		// in case people want all items to be marked as found in raid
-		if (gameplayConfig.trading.buyItemsMarkedFound)
+		if (global._Database.gameplayConfig.trading.buyItemsMarkedFound)
 		{
 			foundInRaid = true;
 		}

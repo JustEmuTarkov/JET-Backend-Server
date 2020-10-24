@@ -1,24 +1,8 @@
 {
-	"AID729321183725862260g8L": {
-		"id": "AID729321183725862260g8L",
-		"nickname": "",
-		"email": "SERVER",
-		"password": "123",
-		"wipe": false,
-		"edition": "Edge Of Darkness"
-	},
-	"AID729321252303904354MwE": {
-		"id": "AID729321252303904354MwE",
-		"nickname": "",
-		"email": "Maoci",
-		"password": "123",
-		"wipe": false,
-		"edition": "Edge Of Darkness"
-	},
 	"AID8131647517931710690RF": {
 		"id": "AID8131647517931710690RF",
 		"nickname": "",
-		"email": "Maoci2",
+		"email": "Maoci",
 		"password": "123",
 		"wipe": false,
 		"edition": "Edge Of Darkness"

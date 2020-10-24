@@ -98,13 +98,15 @@ class TraderServer {
 
     getAssort(sessionID, traderID) {
         if (!(traderID in this.assorts)) {
-            if (traderID === "579dc571d53a0658a154fbec") {
-                logger.logWarning("generating fence");
-                this.generateFenceAssort();
-            } else {
+			// for modders generate endgame items for fence where you need to exchange it for that items
+			
+            //if (traderID === "579dc571d53a0658a154fbec") {
+            //    logger.logWarning("generating fence");
+            //    this.generateFenceAssort();
+            //} else {
                 let tmp = json.readParsed(db.user.cache["assort_" + traderID]);
                 this.assorts[traderID] = tmp.data;
-            }
+            //}
         }
 
         let baseAssorts = this.assorts[traderID];
