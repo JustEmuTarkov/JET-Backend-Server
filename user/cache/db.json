@@ -3002,10 +3002,49 @@
 	},
 	"user": {
 		"configs": {
-			"server": "user/config/server.json"
+			"server": "user/config/server.json",
+			"accounts": "user/configs/accounts.json",
+			"gameplay": "user/configs/gameplay.json"
 		},
 		"events": {
 			"schedule": "user/events/schedule.json"
+		},
+		"profiles": {
+			"character": "user/profiles/__REPLACEME__/character.json",
+			"dialogue": "user/profiles/__REPLACEME__/dialogue.json",
+			"storage": "user/profiles/__REPLACEME__/storage.json",
+			"userbuilds": "user/profiles/__REPLACEME__/userbuilds.json"
+		},
+		"cache": {
+			"items": "user/cache/items.json",
+			"quests": "user/cache/quests.json",
+			"locations": "user/cache/locations.json",
+			"languages": "user/cache/languages.json",
+			"customization": "user/cache/customization.json",
+			"hideout_areas": "user/cache/hideout_areas.json",
+			"hideout_production": "user/cache/hideout_production.json",
+			"hideout_scavcase": "user/cache/hideout_scavcase.json",
+			"weather": "user/cache/weather.json",
+			"templates": "user/cache/templates.json",
+			"mods": "user/cache/mods.json",
+			"ragfair_offers": "user/cache/ragfair_offers.json",
+			"assort_54cb50c76803fa8b248b4571": "user/cache/assort_54cb50c76803fa8b248b4571.json",
+			"assort_54cb57776803fa99248b456e": "user/cache/assort_54cb57776803fa99248b456e.json",
+			"assort_579dc571d53a0658a154fbec": "user/cache/assort_579dc571d53a0658a154fbec.json",
+			"assort_58330581ace78e27b8b10cee": "user/cache/assort_58330581ace78e27b8b10cee.json",
+			"assort_5935c25fb3acc3127c3d8cd9": "user/cache/assort_5935c25fb3acc3127c3d8cd9.json",
+			"assort_5a7c2eca46aef81a7ca2145d": "user/cache/assort_5a7c2eca46aef81a7ca2145d.json",
+			"assort_5ac3b934156ae10c4430e83c": "user/cache/assort_5ac3b934156ae10c4430e83c.json",
+			"assort_5c0647fdd443bc2504c2d371": "user/cache/assort_5c0647fdd443bc2504c2d371.json",
+			"assort_ragfair": "user/cache/assort_ragfair.json",
+			"locale_en": "user/cache/locale_en.json",
+			"locale_menu_en": "user/cache/locale_menu_en.json",
+			"locale_fr": "user/cache/locale_fr.json",
+			"locale_menu_fr": "user/cache/locale_menu_fr.json",
+			"locale_ge": "user/cache/locale_ge.json",
+			"locale_menu_ge": "user/cache/locale_menu_ge.json",
+			"locale_ru": "user/cache/locale_ru.json",
+			"locale_menu_ru": "user/cache/locale_menu_ru.json"
 		}
 	}
 }
