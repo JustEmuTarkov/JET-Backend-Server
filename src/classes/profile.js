@@ -98,7 +98,7 @@ class ProfileServer {
         pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
 
         // storage
-        storage.data._id = "pmc" + account.id;
+        storage._id = "pmc" + account.id;
 
         // create profile
         json.write(`${folder}character.json`, pmcData);
