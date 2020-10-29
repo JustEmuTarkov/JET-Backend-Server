@@ -79,7 +79,7 @@ class ProfileServer {
         let account = account_f.handler.find(sessionID);
         let folder = account_f.getPath(account.id);
         let pmcData = json.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
-        let storage = json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`]);
+        let storage = { _id: "", suits: json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
 
         // delete existing profile
         if (this.profiles[account.id]) {
@@ -98,8 +98,9 @@ class ProfileServer {
         pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
 
         // storage
-        storage._id = "pmc" + account.id;
-
+        storage['_id'] = "pmc" + account.id;
+		
+		storage = {"err": 0,"errmsg": null,"data": storage};
         // create profile
         json.write(`${folder}character.json`, pmcData);
         json.write(`${folder}storage.json`, storage);
