@@ -15,19 +15,32 @@ class TraderServer {
         }
     }
 
-    getTrader(traderID) {
+    getTrader(traderID, sessionID) {
+		
+		let pmcData = profile_f.handler.getPmcProfile(sessionID);
+		if (!(traderID in pmcData.TraderStandings))
+        {
+			trader_f.handler.resetTrader(sessionID, traderID);
+            this.lvlUp(traderID, sessionID);
+        }
+		let trader = this.traders[traderID];
+        trader.display = pmcData.TraderStandings[traderID].display;
+		trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
+        trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding.toFixed(3);
+        trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
+
         return this.traders[traderID];
     }
 
-    changeTraderDisplay(traderID, status, sessionID) {
-        let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        pmcData.TraderStandings[traderID].display = status;
-    }
+    changeTraderDisplay = (traderID, status, sessionID) => profile_f.handler.getPmcProfile(sessionID)
+														.TraderStandings[traderID].display = status;
 
     getAllTraders(sessionID) {
 		
-		if(typeof sessionID == "undefined")
+		if(typeof sessionID == "undefined"){
 			console.log("sessionID: " + sessionID);
+			return;
+		}
 		
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let Traders = [];
@@ -47,8 +60,9 @@ class TraderServer {
 
             trader.display = pmcData.TraderStandings[traderID].display;
             trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
-            trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding;
+            trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding.toFixed(3);
             trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
+			
             Traders.push(trader);
         }
         return Traders;
@@ -80,6 +94,7 @@ class TraderServer {
     }
 
     resetTrader(sessionID, traderID) {
+		console.log(traderID);
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let traderWipe = json.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
@@ -97,16 +112,11 @@ class TraderServer {
     }
 
     getAssort(sessionID, traderID) {
-        if (!(traderID in this.assorts)) {
+		if (!(traderID in this.assorts))
+		{
 			// for modders generate endgame items for fence where you need to exchange it for that items
-			
-            //if (traderID === "579dc571d53a0658a154fbec") {
-            //    logger.logWarning("generating fence");
-            //    this.generateFenceAssort();
-            //} else {
-                let tmp = json.readParsed(db.user.cache["assort_" + traderID]);
-                this.assorts[traderID] = tmp.data;
-            //}
+			let tmp = json.readParsed(db.user.cache["assort_" + traderID]);
+			this.assorts[traderID] = tmp.data;
         }
 
         let baseAssorts = this.assorts[traderID];
@@ -151,7 +161,6 @@ class TraderServer {
                     }
                 }
         }
-
         return assorts;
     }
 
@@ -256,7 +265,7 @@ class TraderServer {
     getCustomization(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let allSuits = customization_f.getCustomization();
-        let suitArray = json.readParsed(db.user.cache["customization_" + traderID]);
+        let suitArray = json.readParsed(db.assort[traderID].suits);
         let suitList = [];
 
         for (let suit of suitArray) {
@@ -278,7 +287,7 @@ class TraderServer {
         let output = [];
 
         for (let traderID in this.traders) {
-            if (db.user.cache["customization_" + traderID] !== undefined) {
+            if (db.assort[traderID].suits !== undefined) {
                 output = output.concat(this.getCustomization(traderID, sessionID));
             }
         }

@@ -19,7 +19,8 @@
 			"barter_scheme": "db/assort/579dc571d53a0658a154fbec/barter_scheme.json",
 			"items": "db/assort/579dc571d53a0658a154fbec/items.json",
 			"loyal_level_items": "db/assort/579dc571d53a0658a154fbec/loyal_level_items.json",
-			"questassort": "db/assort/579dc571d53a0658a154fbec/questassort.json"
+			"questassort": "db/assort/579dc571d53a0658a154fbec/questassort.json",
+			"suits": "db/assort/579dc571d53a0658a154fbec/suits.json"
 		},
 		"58330581ace78e27b8b10cee": {
 			"barter_scheme": "db/assort/58330581ace78e27b8b10cee/barter_scheme.json",
@@ -43,7 +44,8 @@
 			"barter_scheme": "db/assort/5ac3b934156ae10c4430e83c/barter_scheme.json",
 			"items": "db/assort/5ac3b934156ae10c4430e83c/items.json",
 			"loyal_level_items": "db/assort/5ac3b934156ae10c4430e83c/loyal_level_items.json",
-			"questassort": "db/assort/5ac3b934156ae10c4430e83c/questassort.json"
+			"questassort": "db/assort/5ac3b934156ae10c4430e83c/questassort.json",
+			"suits": "db/assort/5ac3b934156ae10c4430e83c/suits.json"
 		},
 		"5c0647fdd443bc2504c2d371": {
 			"barter_scheme": "db/assort/5c0647fdd443bc2504c2d371/barter_scheme.json",
@@ -2987,7 +2989,8 @@
 	},
 	"templates": {
 		"categories": "db/templates/categories.json",
-		"items": "db/templates/items.json"
+		"items": "db/templates/items.json",
+		"quests": "db/templates/quests.json"
 	},
 	"weather": {
 		"fog": "db/weather/fog.json",

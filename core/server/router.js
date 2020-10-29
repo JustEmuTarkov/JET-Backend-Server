@@ -33,9 +33,21 @@ class Router {
 				route = "?" + route;
 			else
 				route = "/" + route.replace(/\./g, "/");
+			
+			if(route.includes("getTrader")){
+				route = route + "/";
+			}
 			let callback = require("../../src/response/dynamic/" + file);
 			this.dynamicRoutes[route] = callback.execute;
 		}
+		
+		//reverse the order...
+		let new_obj = {}
+		let rev_obj = Object.keys(this.dynamicRoutes).reverse();
+		for (let obj of rev_obj)
+			new_obj[obj] = this.dynamicRoutes[obj];
+		this.dynamicRoutes = new_obj;
+		
 		logger.logSuccess("Create: Dynamic Response Callbacks");
 	}
 
@@ -58,10 +70,12 @@ class Router {
         if (url in this.staticRoutes) {
             output = this.staticRoutes[url](url, info, sessionID);
         } else {
+			let found = "";
+			let scrappedURL = url.slice("/", "");
             for (let key in this.dynamicRoutes) {
-                if (url.includes(key)) {
-                    output = this.dynamicRoutes[key](url, info, sessionID);
-                }
+				if (url.includes(key)) {
+					output = this.dynamicRoutes[key](url, info, sessionID);
+				}
             }
         }
     

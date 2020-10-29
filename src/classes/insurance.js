@@ -157,7 +157,7 @@ class InsuranceServer {
     /* sends stored insured items as message */
     sendInsuredItems(pmcData, sessionID) {
         for (let traderId in this.insured[sessionID]) {
-            let trader = trader_f.handler.getTrader(traderId);
+            let trader = trader_f.handler.getTrader(traderId, sessionID);
             let dialogueTemplates = json.readParsed(db.dialogues[traderId]);
             let messageContent = {
                 "templateId": dialogueTemplates.insuranceStart[utility.getRandomInt(0, dialogueTemplates.insuranceStart.length - 1)],

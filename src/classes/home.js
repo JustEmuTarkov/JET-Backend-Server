@@ -119,8 +119,5 @@ module.exports.processSaveData = (data) => {
 				_data[category][sub] = OutputConvert(data[sub]);
 			}
 		}
-	}
-
-	console.log(_data);
-	
+	}	
 }

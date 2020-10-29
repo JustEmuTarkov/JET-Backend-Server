@@ -35,9 +35,9 @@
 	},
 	"gridHeight": 160,
 	"loyalty": {
-		"currentLevel": 1,
-		"currentStanding": 0,
-		"currentSalesSum": 0,
+		"currentLevel": 4,
+		"currentStanding": 10,
+		"currentSalesSum": 10000000,
 		"loyaltyLevels": {
 			"0": {
 				"minLevel": 1,

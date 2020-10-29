@@ -46,7 +46,6 @@ function getOwnerInventoryItems(body, sessionID) {
 * otherwise, move is contained within the same profile_f.
 * */
 function moveItem(pmcData, body, sessionID) {
-	console.log(body);
     let output = item_f.handler.getOutput();
 
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
@@ -108,10 +107,8 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
 			location: { x: itemToChange.location.x, y: itemToChange.location.y, r: itemToChange.location.r, isSearched: itemToChange.location.isSearched }
 		  }
 		};
-		console.log(action);
 		moveItemInternal(itemFrom, action);
 		
-		//output = moveItem(pmcData, body, sessionID)
 	}
 	
 	console.log("TODO: CHeck if working.")
@@ -486,7 +483,6 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	}
 
 	// Find an empty slot in stash for each of the items being added
-	console.log(pmcData);
 	let StashFS_2D = helper_f.getPlayerStashSlotMap(sessionID, pmcData);
 	for (let itemToAdd of itemsToAdd)
 	{
