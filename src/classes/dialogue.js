@@ -114,7 +114,7 @@ class DialogueServer {
 			"text": messageContent.text,
 			"hasRewards": rewards.length > 0,
 			"rewardCollected": false,
-			"items": items,
+			"items": stashItems,
 			"maxStorageTime": messageContent.maxStorageTime,
 			"systemData": messageContent.systemData
 		};
