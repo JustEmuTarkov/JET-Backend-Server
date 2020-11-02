@@ -79,7 +79,7 @@ class ProfileServer {
         let account = account_f.handler.find(sessionID);
         let folder = account_f.getPath(account.id);
         let pmcData = json.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
-        let storage = { _id: "", suits: json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
+        let storage = { _id: "", suites: json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
 
         // delete existing profile
         if (this.profiles[account.id]) {
