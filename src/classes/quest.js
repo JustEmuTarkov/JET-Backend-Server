@@ -206,7 +206,8 @@ function completeQuest(pmcData, body, sessionID) {
 
     // Create a dialog message for completing the quest.
     let questDb = getCachedQuest(body.qid);
-    let questLocale = json.readParsed(db.locales["en"].quest[body.qid]);
+	let questLocale = json.readParsed(db.locales["en"].quest);
+    questLocale = questLocale[body.qid];
     let messageContent = {
         "templateId": questLocale.successMessageText,
         "type": dialogue_f.getMessageTypeValue('questSuccess'),
