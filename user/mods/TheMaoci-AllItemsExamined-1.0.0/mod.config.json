@@ -3,7 +3,8 @@
 	"author": "TheMaoci",
 	"version": "1.0.0",
 	"license": "MIT",
+	"lateExecute": true,
 	"src": {
-		"TheMaoci-AllItemsExamined": "src/callbacks/cache/allitemsexamined.js"
+		"TheMaoci-AllItemsExamined": "src/AllItemsExamined.js"
 	}
 }

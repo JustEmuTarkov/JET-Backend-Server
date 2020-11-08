@@ -16,6 +16,7 @@ class Initializer {
     initializeCore() {
 		
 		global.internal = {};
+		global.core = {};
         global.db = {}; // used only for caching
         global.res = {}; // used for deliver an images
 		global._Database = {};
@@ -46,8 +47,8 @@ class Initializer {
         /* setup core files */
 
         /* setup routes and cache */
-        const route = require('./server/route.js');
-        route.all();
+        global.core.route = require('./server/route.js');
+        global.core.route.all();
 
         /* core logic */
         global.router = (require('./server/router.js').router);

@@ -381,6 +381,8 @@ class Server {
 			global.global._Database.someothershit
 		*/
 		this._loadDatabaseItems();
+		global.core.route.LateModLoad();
+		
 		logger.logInfo("Starting server...");
 		this._serverStart();
     }

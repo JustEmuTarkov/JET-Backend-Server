@@ -23,23 +23,14 @@ function scanRecursiveMod(filepath, baseNode, modNode) {
 }
 // loadMod
 function loadMod(mod, filepath) {
-    logger.logInfo("[Loading] Mod " + mod.author + "-" + mod.name + "-" + mod.version);
-
-    //let src = json.readParsed("user/cache/loadorder.json");
-	
-	if(json.exist("db/"))
-		if ("db" in mod) {
-			db = scanRecursiveMod(filepath, db, mod.db);
-		}
-
-    if ("res" in mod) {
-        res = scanRecursiveMod(filepath, res, mod.res);
-    }
-
-    /*if ("src" in mod) {
-        src = scanRecursiveMod(filepath, src, mod.src);
-        json.write("user/cache/loadorder.json", src);
-    }*/
+	let modName = `${mod.author}-${mod.name}-${mod.version}`;
+	for(let srcToExecute in mod.src){
+		let path = `../../user/mods/${modName}/${mod.src[srcToExecute]}`;
+		
+		let ModScript = require(path).mod;
+		
+		ModScript(); // execute mod
+	}
 }
 // detectChangedMods
 function detectChangedMods() {
@@ -88,7 +79,8 @@ function detectMissingMods() {
         /* check if mod is already in the list */
         for (let installed of modsConfig) {
             if (installed.name === config.name) {
-                logger.logInfo(`Mod ${mod} is installed`);
+				let modType = (config.lateExecute)?"LateExecute":"InstantExecute";
+                logger.logInfo(`Mod ${mod} is installed - (${modType})`);
                 found = true;
                 break;
             }
@@ -136,15 +128,15 @@ function isRebuildRequired() {
 }
 // loadAllMods
 function loadAllMods() {
-    for (let element of modsConfig) {
+    for (let element of global.modsConfig) {
         if (!element.enabled) {
-            logger.logWarning("Skipping disabled mod " + element.author + "-" + element.name + "-" + element.version);
             continue;
         }
 
         let filepath = getModFilepath(element);
         let mod = json.readParsed(filepath + "mod.config.json");
-        loadMod(mod, filepath);
+		if(!mod.lateExecute)
+			loadMod(mod, filepath);
     }
 }
 // flush
@@ -249,11 +241,24 @@ exports.all = () => {
         flush();
         routeAll();
         detectMissingMods();
-        loadAllMods();
         dump();
-
-        //return;
     }
+	
+	loadAllMods();
+	
     db = json.readParsed("user/cache/db.json");
     res = json.readParsed("user/cache/res.json");
+}
+
+exports.LateModLoad = () => {
+    logger.logInfo("Executing LateModLoad Routes");
+	for (let element of global.modsConfig) {
+        if (!element.enabled) {
+            continue;
+        }
+        let filepath = getModFilepath(element);
+        let mod = json.readParsed(filepath + "mod.config.json");
+		if(mod.lateExecute)
+			loadMod(mod, filepath);
+    }
 }
