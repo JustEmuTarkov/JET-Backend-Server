@@ -3,21 +3,10 @@ exports.cache = () => {
         return;
     }
 
-    logger.logInfo("Caching: quests");
-
+    logger.logInfo("Caching: quests.json");
     let base = {"err": 0, "errmsg": null, "data": []};
-    /* assort */
-	//base.data = db.assort;
-    for (let trader in db.assort) {
-        if (typeof db.assort[trader].quests == "undefined")
-            continue;
-		if(typeof db.assort[trader].quests == "object")
-			throw "db.assort[trader].quests isnt a path";
-		
-        let data = json.readParsed(db.assort[trader].quests);
-		for(let quest in data){
-			base.data.push(data[quest]);
-		}
-    }
+
+    base.data = json.readParsed(db.templates.quests);
+	
     json.write("user/cache/quests.json", base);
 }
