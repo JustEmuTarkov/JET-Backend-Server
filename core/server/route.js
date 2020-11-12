@@ -24,13 +24,16 @@ function scanRecursiveMod(filepath, baseNode, modNode) {
 // loadMod
 function loadMod(mod, filepath) {
 	let modName = `${mod.author}-${mod.name}-${mod.version}`;
-	for(let srcToExecute in mod.src){
-		let path = `../../user/mods/${modName}/${mod.src[srcToExecute]}`;
-		
-		let ModScript = require(path).mod;
-		
-		ModScript(); // execute mod
-	}
+	if(typeof mod.src != "undefined")
+		for(let srcToExecute in mod.src){
+			let path = `../../user/mods/${modName}/${mod.src[srcToExecute]}`;
+			
+			let ModScript = require(path).mod;
+			
+			ModScript(); // execute mod
+		}
+	if(typeof mod.res != "undefined")
+		res = scanRecursiveMod(filepath, res, mod.res);
 }
 // detectChangedMods
 function detectChangedMods() {

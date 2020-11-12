@@ -18,7 +18,7 @@ class Initializer {
 		global.internal = {};
 		global.core = {};
         global.db = {}; // used only for caching
-        global.res = {}; // used for deliver an images
+        global.res = {}; // used for deliver files
 		global._Database = {};
 
 		global.startTimestamp = new Date().getTime();
