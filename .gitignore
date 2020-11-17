@@ -39,6 +39,8 @@ build.js
 Release
 dev
 _mods
+_core
+coreMinify
 
 ## windows
 desktop.ini

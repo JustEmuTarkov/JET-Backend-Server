@@ -70,58 +70,16 @@ function moveItem(pmcData, body, sessionID) {
 }
 
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
-	/*
-	{
-	  Action: 'Move',
-	  item: 'I923216551462920213oltoe',
-	  to: {
-		id: '5df7b9abef12bf7a2524385f',
-		container: 'hideout',
-		location: { x: 4, y: 5, r: 'Horizontal', isSearched: true }
-	  }
-	}
-	{
-	  changedItems: [
-		{
-		  _id: '5df7b9abef12bf7a2524379e',
-		  _tpl: '56dfef82d2720bbd668b4567',
-		  parentId: '5df7b9abef12bf7a2524385f',
-		  slotId: 'hideout',
-		  location: [Object],
-		  upd: [Object]
-		},
-		...
-	  ]
-		
-	}
-	*/
 	for(let itemToChange of body.changedItems)
 	{
 		// itemToChange (_id,_tpl,parentId,slotId,location,upd)
 		
 		for(let inventoryItem in pmcData.Inventory.items){
 			if(pmcData.Inventory.items[inventoryItem]._id == itemToChange._id){
-				console.log("moved: " + pmcData.Inventory.items[inventoryItem]._id);
 				pmcData.Inventory.items[inventoryItem] = itemToChange;
 			}
 		}
 	}
-	/*
-	for(let itemToChange of body.changedItems){
-		let action = {
-		  Action: 'Move',
-		  item: itemToChange._id,
-		  to: {
-			id: itemToChange.parentId,
-			container: 'hideout',
-			location: { x: itemToChange.location.x, y: itemToChange.location.y, r: itemToChange.location.r, isSearched: itemToChange.location.isSearched }
-		  }
-		};
-		moveItemInternal(itemFrom, action);
-	}
-	*/
-	
-	console.log("TODO: CHeck if working.");
 }
 
 /* Internal helper function to transfer an item from one profile to another.
