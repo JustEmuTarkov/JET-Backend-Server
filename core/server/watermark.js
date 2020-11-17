@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 const textTable = [
 	"JustEmuTarkov " + server.version,

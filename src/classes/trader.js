@@ -32,8 +32,7 @@ class TraderServer {
         return this.traders[traderID];
     }
 
-    changeTraderDisplay = (traderID, status, sessionID) => profile_f.handler.getPmcProfile(sessionID)
-														.TraderStandings[traderID].display = status;
+    changeTraderDisplay(traderID, status, sessionID) { profile_f.handler.getPmcProfile(sessionID).TraderStandings[traderID].display = status; }
 
     getAllTraders(sessionID) {
 		

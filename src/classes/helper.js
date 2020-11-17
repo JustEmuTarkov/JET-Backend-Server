@@ -694,7 +694,7 @@ function arrayIntersect(a, b) {
 
 function getPreset (id){
 	if(typeof global._Database.globals.ItemPresets[id] == "undefined"){
-		logger.logError("Couldnot find preset: " + id + " at src/classe/helper.js 714");
+		logger.logError("Couldnot find preset: " + id + " at src/classes/helper.js 697"); // Thanks SunRay1
 		return null;
 	}
 	return global._Database.globals.ItemPresets[id];

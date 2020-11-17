@@ -1,6 +1,7 @@
-
-class Initializer {
-    constructor() {
+class Initializer 
+{
+    constructor() 
+	{
         this.initializeCore();
         this.initializeExceptions();
         this.initializeClasses();
@@ -13,7 +14,8 @@ class Initializer {
     }
 
     /* load core functionality */
-    initializeCore() {
+    initializeCore() 
+	{
 		
 		global.internal = {};
 		global.core = {};

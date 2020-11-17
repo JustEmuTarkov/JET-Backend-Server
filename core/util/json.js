@@ -1,16 +1,9 @@
 "use strict";
 
-function createDir(file) {    
-    let filePath = file.substr(0, file.lastIndexOf('/'));
-
-    if (!internal.fs.existsSync(filePath)) {
-        internal.fs.mkdirSync(filePath, { recursive: true });
-    }
-}
-
 exports.stringify = (data, oneLiner = false) => { return (oneLiner) ? JSON.stringify(data) : JSON.stringify(data, null, "\t"); }
 
 exports.createReadStream = (file) => { return internal.fs.createReadStream(file); }
+
 exports.createWriteStream = (file) => { return internal.fs.createWriteStream(file, {flags: 'w'}); }
 
 exports.readParsed = (file) => { return JSON.parse(internal.fs.readFileSync(file, 'utf8')); }
@@ -33,12 +26,20 @@ exports.rmDir = (path) => { return internal.fs.rmdirSync(path); }
 
 exports.mkDir = (path) => { return internal.fs.mkdirSync(path); }
 
+function createDir(file) {    
+    let filePath = file.substr(0, file.lastIndexOf('/'));
+
+    if (!internal.fs.existsSync(filePath)) {
+        internal.fs.mkdirSync(filePath, { recursive: true });
+    }
+}
+
 exports.write = (file, data, raw = false) => {
 	if(file.indexOf('/') != -1)
 		createDir(file);
 	if(raw)
 	{
-		internal.fs.writeFileSync(file, data);
+		internal.fs.writeFileSync(file, JSON.stringify(data));
 		return;
 	}
     internal.fs.writeFileSync(file, JSON.stringify(data, null, "\t"), 'utf8');

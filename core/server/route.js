@@ -30,7 +30,7 @@ function loadMod(mod, filepath) {
 			
 			let ModScript = require(path).mod;
 			
-			ModScript(); // execute mod
+			ModScript(mod); // execute mod
 		}
 	if(typeof mod.res != "undefined")
 		res = scanRecursiveMod(filepath, res, mod.res);
@@ -246,8 +246,6 @@ exports.all = () => {
         detectMissingMods();
         dump();
     }
-	
-	loadAllMods();
 	
     db = json.readParsed("user/cache/db.json");
     res = json.readParsed("user/cache/res.json");

@@ -47,7 +47,8 @@ function getOwnerInventoryItems(body, sessionID) {
 * */
 function moveItem(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
-
+	//console.log(body);
+	//console.log(global._Database.items[pmcData.Inventory.items.find(item => item._id == body.item)._tpl]);
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
    /*  if (inventoryItems.isMail) {
         let idsToMove = dialogue_f.findAndReturnChildren(inventoryItems.from, body.item);
@@ -79,7 +80,6 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
 		location: { x: 4, y: 5, r: 'Horizontal', isSearched: true }
 	  }
 	}
-	
 	{
 	  changedItems: [
 		{
@@ -95,8 +95,18 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
 		
 	}
 	*/
-	let itemFrom = profile_f.handler.getPmcProfile(sessionID).Inventory.items;
-	
+	for(let itemToChange of body.changedItems)
+	{
+		// itemToChange (_id,_tpl,parentId,slotId,location,upd)
+		
+		for(let inventoryItem in pmcData.Inventory.items){
+			if(pmcData.Inventory.items[inventoryItem]._id == itemToChange._id){
+				console.log("moved: " + pmcData.Inventory.items[inventoryItem]._id);
+				pmcData.Inventory.items[inventoryItem] = itemToChange;
+			}
+		}
+	}
+	/*
 	for(let itemToChange of body.changedItems){
 		let action = {
 		  Action: 'Move',
@@ -108,10 +118,10 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
 		  }
 		};
 		moveItemInternal(itemFrom, action);
-		
 	}
+	*/
 	
-	console.log("TODO: CHeck if working.")
+	console.log("TODO: CHeck if working.");
 }
 
 /* Internal helper function to transfer an item from one profile to another.

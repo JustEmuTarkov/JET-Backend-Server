@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 class Server {
     constructor() {
@@ -7,7 +7,7 @@ class Server {
         this.ip = serverConfig.ip;
         this.port = serverConfig.port;
         this.backendUrl = "https://" + this.ip + ":" + this.port;
-        this.version = "1.0.0";
+        this.version = "1.0.1";
         this.mime = {
             html: 'text/html',
             txt: 'text/plain',
@@ -122,27 +122,33 @@ class Server {
         let cert,
             key;
 
-        try {
-            cert = json.read(certFile);
-            key = json.read(keyFile);
-        } catch (e) {
-            if (e.code === 'ENOENT') {
+        
+			if(json.exist(certFile) && json.exist(keyFile)){
+				cert = json.read(certFile);
+				key = json.read(keyFile);
+			} else {
+				if (!json.exist(certDir)) {
+					json.mkDir(certDir);
+				}
 
-                if (!json.exist(certDir)) {
-                    json.mkDir(certDir);
-                }
+				let fingerprint;
 
-                let fingerprint;
+				({ cert, private: key, fingerprint } = internal.selfsigned.generate(null, 
+                {
+				  keySize: 2048, // the size for the private key in bits (default: 1024)
+				  days: 365, // how long till expiry of the signed certificate (default: 365)
+				  algorithm: 'sha256', // sign the certificate with specified algorithm (default: 'sha1')
+				  extensions: [{ name: 'commonName', cA: true , value: this.ip + "/"}], // certificate extensions array
+				  pkcs7: true, // include PKCS#7 as part of the output (default: false)
+				  clientCertificate: true, // generate client cert signed by the original key (default: false)
+				  clientCertificateCN: 'jdoe' // client certificate's common name (default: 'John Doe jdoe123')
+				}));
 
-                ({ cert, private: key, fingerprint } = internal.selfsigned.generate([{ name: 'commonName', value: this.ip + "/" }], { days: 365 }));
+				logger.logInfo(`Generated self-signed sha256/2048 certificate ${fingerprint}, valid 365 days`);
 
-                logger.logInfo(`Generated self-signed x509 certificate ${fingerprint}, valid 365 days`);
-
-                json.write(certFile, cert, true);
-                json.write(keyFile, key, true);
-            } else {
-                throw e;
-            }
+				json.write(certFile, cert, true);
+				json.write(keyFile, key, true);
+			}
         }
 
         return { cert, key };
@@ -358,6 +364,9 @@ class Server {
         for (let type in this.cacheCallback) {
             this.cacheCallback[type]();
         }
+		if(serverConfig.rebuildCache)
+			global.core.route.loadAllMods();
+		
 		this._loadGlobals();
 		this._loadGameplayConfig();
 		
