@@ -377,6 +377,10 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	const fenceID = "579dc571d53a0658a154fbec";
 	let itemLib = [];
 	let itemsToAdd = [];
+	if (typeof body.items == "undefined"){
+        body.items = [{"item_id": body.item_id, "count": body.count}];
+    }
+	
 	for (let baseItem of body.items)
 	{
 		if (baseItem.item_id in global._Database.globals.ItemPresets)
@@ -639,6 +643,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 			toDo.splice(0, 1);
 		}
 	}
+	console.log(output);
 	return output;
 }
 

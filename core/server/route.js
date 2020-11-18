@@ -130,7 +130,7 @@ function isRebuildRequired() {
     return false;
 }
 // loadAllMods
-function loadAllMods() {
+exports.loadAllMods = () => {
     for (let element of global.modsConfig) {
         if (!element.enabled) {
             continue;

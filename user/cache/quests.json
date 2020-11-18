@@ -166,7 +166,7 @@
 							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5981a09b86f77455537a65ac"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -329,22 +329,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "2",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9269486f7747aab09a77c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5936d90786f7742b1420ba5b",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -537,22 +525,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "3",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5936da9e86f7742d65037edf",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -737,22 +713,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "5",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926c386f7747bbc027ac8"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5936da9e86f7742d65037edf",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -947,22 +911,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "6",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926e786f7747b37562689"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59c124d686f774189b3c843f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -1181,22 +1133,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "9",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926f786f77473e85737f3"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967530a86f77462ba22226b",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -1334,22 +1274,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9270886f7747b8150a3d7"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59675d6c86f7740a842fc482",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -1520,26 +1448,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "TraderLoyalty",
+						"_parent": "Level",
 						"_props": {
-							"target": "54cb50c76803fa8b248b4571",
 							"compareMethod": ">=",
-							"value": "2",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9280b86f77477925e27cb"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59675ea386f77414b32bded2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -1670,15 +1585,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5979f9ba86f7740f6c3fe9f2",
-							"status": [
-								2
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -1817,15 +1730,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "597a0f5686f774273b74f676",
-							"status": [
-								2
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -2045,22 +1956,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "5",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a60963486f7745c452e10d1"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59674eb386f774539f14813a",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -2265,22 +2164,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "17",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967725e86f774601a446662",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -2484,22 +2371,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "18",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59c50a9e86f7745fef66f4ff",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -2835,22 +2710,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "19",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59c50c8886f7745fed3193bf",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -2925,15 +2788,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "597a171586f77405ba6887d3",
-							"status": [
-								5
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -3198,22 +3059,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59c512ad86f7741f0d09de9b",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -3449,22 +3298,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59ca264786f77445a80ed044",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -3686,22 +3523,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "21",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a926b186f774753c5479a2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59ca29fb86f77445ab465c87",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -3876,15 +3701,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5c0d190cd09282029f5390d8",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -4190,15 +4013,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5c0d190cd09282029f5390d8",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -4332,22 +4153,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fab4186f77431f74f0de5"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967725e86f774601a446662",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -4466,22 +4275,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "35",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fab9286f77407e903a60d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967725e86f774601a446662",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -4650,15 +4447,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5979f8bb86f7743ec214c7a6",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -4870,22 +4665,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "21",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967725e86f774601a446662",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -5023,22 +4806,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "36",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596a1e6c86f7741ddc2d3206",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -5298,22 +5069,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5ede5528bc2ff1141a199367"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59c124d686f774189b3c843f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -5549,22 +5308,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5ee0d988c321a77fc55084cf"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ede55112c95834b583f052a",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -5799,15 +5546,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "59675ea386f77414b32bded2",
-							"status": [
-								2
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -5924,7 +5669,18 @@
 				"Fail": []
 			},
 			"conditions": {
-				"AvailableForStart": [],
+				"AvailableForStart": [
+					{
+						"_parent": "Level",
+						"_props": {
+							"compareMethod": ">=",
+							"value": "1",
+							"index": 0,
+							"parentId": "",
+							"id": "Jugador-QuestID"
+						}
+					}
+				],
 				"AvailableForFinish": [
 					{
 						"_parent": "FindItem",
@@ -6042,22 +5798,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "4",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9289f86f77477925e27d3"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967733e86f774602332fc84",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -6199,22 +5943,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "6",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a928cd86f7747804332c78"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5967733e86f774602332fc84",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -6376,15 +6108,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "59689fbd86f7740d137ebfc4",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -6511,22 +6241,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "8",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a928fe86f7747bbc027b26"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596a204686f774576d4c95de",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -6651,22 +6369,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9291086f7747b856b7c5e"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5969f90786f77420d2328015",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -6815,22 +6521,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "13",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9292d86f7747a6202256b"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5969f9e986f7741dde183a50",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7010,15 +6704,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5969f9e986f7741dde183a50",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7113,22 +6805,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "6",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a928be86f7747b375626be"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59689ee586f7740d1570bbd5",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7233,15 +6913,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5969f9e986f7741dde183a50",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7387,15 +7065,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "597a0f5686f774273b74f676",
-							"status": [
-								2
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7537,15 +7213,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "597a160786f77477531d39d2",
-							"status": [
-								5
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7735,27 +7409,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "596a218586f77420d232807c",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596b455186f77457cb50eccb",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -7858,15 +7518,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5969f9e986f7741dde183a50",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8040,15 +7698,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68661a86f774500f48afb0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8217,15 +7873,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68663e86f774501078f78a",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8403,15 +8057,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68665c86f774255929b4c7",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8497,15 +8149,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68667486f7742607157d28",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8638,22 +8288,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fd1b586f7742b3a651f74"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a68667486f7742607157d28",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8792,15 +8430,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68667486f7742607157d28",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -8902,27 +8538,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68669a86f774255929b4d4",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0be5fc86f774467a116593",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -9008,15 +8630,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a68665c86f774255929b4c7",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -9091,15 +8711,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5edab736cc183c769d778bc2",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -9297,46 +8915,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "36",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5edaba7c0c502106f869bc02",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5edabd13218d181e29451442",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5f04886a3937dc337a6b8238",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -9566,22 +9148,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5edac020218d181e29451446",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -9684,591 +9254,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "59674cd986f7744ab26e32f2",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596760e186f7741e11214d58",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c12452c86f7744b83469073",
-							"status": [
-								4
-							],
-							"index": 2,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "597a0e5786f77426d66c0636",
-							"status": [
-								4
-							],
-							"index": 3,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3477486f7741d651d6885",
-							"status": [
-								4
-							],
-							"index": 4,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b47825886f77468074618d3",
-							"status": [
-								4
-							],
-							"index": 5,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59ca1a6286f774509a270942",
-							"status": [
-								4
-							],
-							"index": 6,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b478ff486f7744d184ecbbf",
-							"status": [
-								4
-							],
-							"index": 7,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596a1e6c86f7741ddc2d3206",
-							"status": [
-								4
-							],
-							"index": 8,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c1141f386f77430ff393792",
-							"status": [
-								4
-							],
-							"index": 9,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3475486f7741d6224abd3",
-							"status": [
-								4
-							],
-							"index": 10,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bb5986f7741dfb660900",
-							"status": [
-								4
-							],
-							"index": 11,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5bc4893c86f774626f5ebf3e",
-							"status": [
-								4
-							],
-							"index": 12,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e4b786f77408251c4bfc",
-							"status": [
-								4
-							],
-							"index": 13,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae449d986f774453a54a7e1",
-							"status": [
-								4
-							],
-							"index": 14,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d6fb2c086f77449da599c24",
-							"status": [
-								4
-							],
-							"index": 15,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3479086f7742880308199",
-							"status": [
-								4
-							],
-							"index": 16,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e43786f7740a212217fa",
-							"status": [
-								4
-							],
-							"index": 17,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0d4e61d09282029f53920e",
-							"status": [
-								4
-							],
-							"index": 18,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0bd94186f7747a727f09b2",
-							"status": [
-								4
-							],
-							"index": 19,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0bc91486f7746ab41857a2",
-							"status": [
-								4
-							],
-							"index": 20,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c1128e386f7746565181106",
-							"status": [
-								4
-							],
-							"index": 21,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e45e86f77408251c4bfa",
-							"status": [
-								4
-							],
-							"index": 22,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e4d586f77443e625e388",
-							"status": [
-								4
-							],
-							"index": 23,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac346e886f7741d6118b99b",
-							"status": [
-								4
-							],
-							"index": 24,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27ba1c86f77461ea5a3c56",
-							"status": [
-								4
-							],
-							"index": 25,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae448bf86f7744d733e55ee",
-							"status": [
-								4
-							],
-							"index": 26,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0be13186f7746f016734aa",
-							"status": [
-								4
-							],
-							"index": 27,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae449a586f7744bde357696",
-							"status": [
-								4
-							],
-							"index": 28,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0d0d5086f774363760aef2",
-							"status": [
-								4
-							],
-							"index": 29,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c112d7e86f7740d6f647486",
-							"status": [
-								4
-							],
-							"index": 30,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e4ad86f77443e625e387",
-							"status": [
-								4
-							],
-							"index": 31,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5eaaaa7c93afa0558f3b5a1c",
-							"status": [
-								4
-							],
-							"index": 32,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "59ca2eb686f77445a80ed049",
-							"status": [
-								4
-							],
-							"index": 33,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0bde0986f77479cf22c2f8",
-							"status": [
-								4
-							],
-							"index": 34,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596a0e1686f7741ddf17dbee",
-							"status": [
-								4
-							],
-							"index": 35,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0bd01e86f7747cdd799e56",
-							"status": [
-								4
-							],
-							"index": 36,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e2a986f77409dd5cdf2a",
-							"status": [
-								4
-							],
-							"index": 37,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e46e86f77409453bce7c",
-							"status": [
-								4
-							],
-							"index": 38,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c1234c286f77406fa13baeb",
-							"status": [
-								4
-							],
-							"index": 39,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25aed386f77442734d25d2",
-							"status": [
-								4
-							],
-							"index": 40,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e48d86f77408251c4bfb",
-							"status": [
-								4
-							],
-							"index": 41,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b478d0f86f7744d190d91b5",
-							"status": [
-								4
-							],
-							"index": 42,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5968eb3186f7741dde183a4d",
-							"status": [
-								4
-							],
-							"index": 43,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d6fbc2886f77449d825f9d3",
-							"status": [
-								4
-							],
-							"index": 44,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e2d886f77442734d335e",
-							"status": [
-								4
-							],
-							"index": 45,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0bdb5286f774166e38eed4",
-							"status": [
-								4
-							],
-							"index": 46,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e44386f77409453bce7b",
-							"status": [
-								4
-							],
-							"index": 47,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c0d1c4cd0928202a02a6f5c",
-							"status": [
-								4
-							],
-							"index": 48,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -10847,15 +9839,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "596a0e1686f7741ddf17dbee",
-							"status": [
-								2
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11006,10 +9996,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "5",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a924c086f774792b624b63"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11185,22 +10175,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "7",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a924fb86f7747a683e405b"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596b36c586f77450d6045ad2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11435,22 +10413,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "8",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9250d86f7747aa94283f3"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596b43fb86f77457ca186186",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11622,22 +10588,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "8",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9252a86f7747975281404"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "596b43fb86f77457ca186186",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11837,22 +10791,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "8",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9254086f7747ab1774af3"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5979ed3886f77431307dc512",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -11959,22 +10901,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9257d86f774789e6e45b7"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5979eee086f774311955e614",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12176,22 +11106,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a925a286f774792b624b71"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5979f9ba86f7740f6c3fe9f2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12346,22 +11264,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a925b786f7747c3f075aaa"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "597a0b2986f77426d66c0633",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12504,22 +11410,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "597a0e5786f77426d66c0636",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12661,15 +11555,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "597a0f5686f774273b74f676",
-							"status": [
-								5
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12847,22 +11739,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "9",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a717086f7745a9e0647b8"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5979eee086f774311955e614",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -12965,22 +11845,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "9",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a718086f7745a9d6892d9"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27c99a86f7747d2c6bdd8e",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13080,22 +11948,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "22",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c1486f7747a2637c513"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "597a0e5786f77426d66c0636",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13260,15 +12116,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b478eca86f7744642012254",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13426,22 +12280,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "24",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c0986f77453572f54e0"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27d2af86f7744e1115b323",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13554,22 +12396,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "25",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0bfa86f77453572f54dc"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27d2af86f7744e1115b323",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13814,22 +12644,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "27",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c5886f7747a2910aacd"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b47926a86f7747ccc057c15",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -13990,15 +12808,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b4795fb86f7745876267770",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14211,15 +13027,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b4795fb86f7745876267770",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14368,15 +13182,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b4795fb86f7745876267770",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14460,15 +13272,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5c0bbaa886f7746941031d82",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14579,22 +13389,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a60963486f7745c452e10d1"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5eda19f0edce541157209cee",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14834,22 +13632,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a721986f7745b18478f01"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b87686f77460de0252a8",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -14969,22 +13755,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a722986f7745a9e0647dc"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a03153686f77442d90e2171",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -15203,22 +13977,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a723986f7745b18478f06"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a03173786f77451cb427172",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -15420,22 +14182,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a724986f7745a9e0647df"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a0327ba86f77456b9154236",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -15609,22 +14359,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a725b86f7745b18478f0d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a03296886f774569778596a",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -15784,22 +14522,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71a086f7745a7e19f63d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27d2af86f7744e1115b323",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -16005,22 +14731,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71b286f7745a7e19f642"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b75b86f7742e97191958",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -16338,22 +15052,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "10",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71c686f7745a9d6892e6"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b7a786f774579c3eb376",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -16546,22 +15248,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71d586f7745a7e19f646"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b7d686f77460d847e6a6",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -16753,22 +15443,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71e386f7745a9e0647d0"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b80086f774429a5d7e20",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17059,22 +15737,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a71f786f7745b18478ef9"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b87686f77460de0252a8",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17234,22 +15900,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a720886f7745aa21a06cd"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27b9de86f77464e5044585",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17351,22 +16005,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a726a86f7745b18478f10"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a0449d586f77474e66227b7",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17443,22 +16085,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a727b86f7745b18478f13"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27ba9586f7741b543d8e85",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17668,22 +16298,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a729086f7745a7e19f659"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bafb86f7741c73584017",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -17796,22 +16414,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72a286f7745a7e19f65c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bb1e86f7741f27621b7e",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18017,22 +16623,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72ba86f7745a9d6892fd"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bb3d86f77411ea361a21",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18160,22 +16754,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72c786f7745a7e19f661"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bafb86f7741c73584017",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18320,22 +16902,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72d786f7745a9e0647ef"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bb8386f7741c770d2d0a",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18477,22 +17047,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72e886f7745b18478f1d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bbf886f774333a418eeb",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18620,22 +17178,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a72f686f7745b18478f21"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bc1586f7741f6d40fa2f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18807,22 +17353,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a730586f7745aa21a06e5"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bc3686f7741c73584026",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -18987,22 +17521,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5a3a731486f7745a7e19f66e"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5a27bc6986f7741c7358402b",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -19210,22 +17732,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fd61e86f7742b38529146"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b4794cb86f774598100d5d4",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -19570,15 +18080,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5c0d0f1886f77457b8210226",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -19919,15 +18427,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a27bc8586f7741b543d8ea4",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -20239,15 +18745,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a27bc3686f7741c73584026",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -20420,10 +18924,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -20773,10 +19277,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "5",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf375f86f7741bb8377ff7"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -20969,22 +19473,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "11",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf37a186f7741843346d0c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac23c6186f7741247042bad",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -21202,22 +19694,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf37d486f7741841752ffc"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac2426c86f774138762edfe",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -21340,22 +19820,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "17",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf381a86f7741ce21f9aee"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac244eb86f7741356335af1",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -21493,22 +19961,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "18",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf383d86f7741bb8378000"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac242ab86f77412464f68b4",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -21646,22 +20102,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "15",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf37fa86f7741844039008"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac2428686f77412450b42bf",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -21783,22 +20227,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf388786f7741cdb2f7ef9"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac2426c86f774138762edfe",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -22013,22 +20445,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b0986f7741bb8378499"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac345dc86f774288030817f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -22203,22 +20623,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b2a86f7741cdb2f7f8c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3460c86f7742880308185",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -22400,22 +20808,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "14",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b3486f7741ce21f9b06"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3462b86f7741d6118b983",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -22559,22 +20955,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b6186f7741cdb2f7f8e"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac2426c86f774138762edfe",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -22732,22 +21116,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b7186f774184175301d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3467986f7741d6224abc2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23014,22 +21386,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "15",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b8886f77418440390b6"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac346a886f7744e1b083d67",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23206,22 +21566,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "15",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3b9986f77418403493b5"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac346cf86f7741d63233a02",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23336,22 +21684,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3c3086f77418d851688f"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3460c86f7742880308185",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23528,22 +21864,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3bcb86f77418403493b7"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac346a886f7744e1b083d67",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23748,22 +22072,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "12",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5acf3dd886f77418d85168f2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3467986f7741d6224abc2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -23902,22 +22214,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "19",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4134a86f7742574673cc5"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac244c486f77413e12cf945",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -24058,22 +22358,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "19",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4139286f774522e34389b"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae3267986f7742a413592fe",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -24324,22 +22612,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af413b686f774522c7a6791"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae3270f86f77445ba41d4dd",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -24546,22 +22822,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af413e486f774522e3438df"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae3277186f7745973054106",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -24683,22 +22947,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4140186f774522d460775"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae327c886f7745c7b3f2f3f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -24914,22 +23166,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "23",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0cc186f7744def7f3389"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae3280386f7742a41359364",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -25083,22 +23323,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "25",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0d6086f7742c1f5a3c4d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b47749f86f7746c5d6a5fd4",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -25252,22 +23480,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "27",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0cce86f774287331639a"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b47799d86f7746c5d6a5fd8",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -25454,22 +23670,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "29",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0d7186f77412bc326997"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b477b6f86f7747290681823",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -25720,22 +23924,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "35",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0ce686f77429c16dcb63"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5b477f7686f7744d1b23c4d2",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -25971,15 +24163,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5c1128e386f7746565181106",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26219,15 +24409,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5a27bc8586f7741b543d8ea4",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26316,22 +24504,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fb46386f7744a184fb3c2"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3464c86f7741d651d6877",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26496,22 +24672,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "35",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5c1fcf4086f7742b38527bde"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac3464c86f7741d651d6877",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26644,16 +24808,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ac23c6186f7741247042bad",
-							"status": [
-								4
-							],
-							"availableAfter": 0,
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26789,10 +24950,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "36",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5eda1a67ef0ad2643e73af31"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26918,10 +25079,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "15",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af414f286f774522f59b0d7"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -26991,15 +25152,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae448a386f7744d3730fff0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27107,15 +25266,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae448a386f7744d3730fff0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27376,15 +25533,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae448e586f7744dcf0c2a67",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27558,15 +25713,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae448f286f77448d73c0131",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27672,15 +25825,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae448e586f7744dcf0c2a67",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27856,15 +26007,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4493486f7744efa289417",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -27997,22 +26146,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "25",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4201386f774267375038c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4493d86f7744b8e15aa8f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28147,15 +26284,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4495086f77443c122bc40",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28292,15 +26427,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4495c86f7744e87761355",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28453,15 +26586,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4496986f774459e77beb6",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28605,22 +26736,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "26",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4192c86f774297e641027"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4495c86f7744e87761355",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28773,15 +26892,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4497b86f7744cf402ed00",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28867,15 +26984,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4498786f7744bde357695",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -28945,27 +27060,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4490786f7744ca822adcc",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4493d86f7744b8e15aa8f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29111,22 +27212,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4196886f7742a2627a4be"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae449b386f77446d8741719",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29235,22 +27324,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "40",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5af4186c86f77428ae313afa"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae449c386f7744bde357697",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29367,22 +27444,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "23",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c7b86f77479ee584ab0"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4495086f77443c122bc40",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29508,22 +27573,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "27",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c8786f77479806f3028"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4496986f774459e77beb6",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29743,22 +27796,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "29",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c9086f77453572f5538"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae449b386f77446d8741719",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -29887,22 +27928,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "24",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5b4f0c9d86f7744def7f3385"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4493d86f7744b8e15aa8f",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30092,15 +28121,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b47876e86f7744d1c353205",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30249,15 +28276,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b478b1886f7744d1b23c57d",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30375,28 +28400,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5b47891f86f7744d1b23c571",
-							"status": [
-								4
-							],
-							"availableAfter": 0,
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5c10f94386f774227172c572",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30508,15 +28518,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5ae4498786f7744bde357695",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30592,22 +28600,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "40",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "59a9269486f7747aab09a77c"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4497b86f7744cf402ed00",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30755,25 +28751,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ae4497b86f7744cf402ed00",
-							"status": [
-								4
-							],
-							"index": 0,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "40",
-							"index": 1,
+							"value": "1",
+							"index": 0,
 							"parentId": "",
-							"id": "59a9269486f7747aab09a78c"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -30913,25 +28897,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5e383a6386f77465910ce1f3",
-							"status": [
-								4
-							],
-							"index": 0,
-							"parentId": "",
-							"id": ""
-						}
-					},
-					{
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "40",
-							"index": 1,
+							"value": "1",
+							"index": 0,
 							"parentId": "",
-							"id": "59a9269486f7747aab09a77c"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31116,27 +29088,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d24b81486f77439c92d6ba8",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5ac242ab86f77412464f68b4",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31271,15 +29229,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc4776586f774512d07cf05",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31469,15 +29425,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc479e586f7747f376c7da3",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31628,15 +29582,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc47dbf86f7741ee74e93b9",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31734,15 +29686,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc480a686f7741af0342e29",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -31872,15 +29822,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc4826c86f774106d22d88b",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32000,15 +29948,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc4836986f7740c0152911c",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32167,15 +30113,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5bc4856986f77454c317bea7",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32275,15 +30219,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d2495a886f77425cd51e403",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32472,15 +30414,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d24b81486f77439c92d6ba8",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32690,15 +30630,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d24b81486f77439c92d6ba8",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32857,15 +30795,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25b6be86f77444001e1b89",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -32985,15 +30921,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25bfd086f77442734d3007",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33123,15 +31057,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25c81b86f77443e625dd71",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33283,15 +31215,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25c81b86f77443e625dd71",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33431,15 +31361,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25d2c186f77443e35162e5",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33560,15 +31488,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25dae186f77443e55d2f78",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33697,15 +31623,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25d2c186f77443e35162e5",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33839,15 +31763,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25c81b86f77443e625dd71",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -33997,15 +31919,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2b486f77409de05bba0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34171,15 +32091,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2b486f77409de05bba0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34278,15 +32196,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2cc86f77443e47ae019",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34433,15 +32349,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2c386f77443e7549029",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34616,15 +32530,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2e286f77444001e2e48",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34767,15 +32679,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2c386f77443e7549029",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -34893,15 +32803,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2cc86f77443e47ae019",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35034,15 +32942,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2ee86f77443e35162ea",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35147,22 +33053,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5d777f5d86f7742fa901bc77"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e44f86f77443e625e385",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35269,15 +33163,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25d2c186f77443e35162e5",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35400,15 +33292,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25cf2686f77443e75488d4",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35556,10 +33446,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "20",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5d77a29b86f7742fa65b6600"
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35687,22 +33577,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "28",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5d778e6c86f77461b27a235d"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e48186f77443e625e386",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -35825,15 +33703,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2cc86f77443e47ae019",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -36235,22 +34111,10 @@
 						"_parent": "Level",
 						"_props": {
 							"compareMethod": ">=",
-							"value": "30",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": "5d77940986f7742fa732bf0a"
-						}
-					},
-					{
-						"_parent": "Quest",
-						"_props": {
-							"target": "5d25e2ee86f77443e35162ea",
-							"status": [
-								4
-							],
-							"index": 1,
-							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -36417,15 +34281,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25e2b486f77409de05bba0",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -36546,15 +34408,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5d25d2c186f77443e35162e5",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],
@@ -36724,15 +34584,13 @@
 			"conditions": {
 				"AvailableForStart": [
 					{
-						"_parent": "Quest",
+						"_parent": "Level",
 						"_props": {
-							"target": "5edabd13218d181e29451442",
-							"status": [
-								4
-							],
+							"compareMethod": ">=",
+							"value": "1",
 							"index": 0,
 							"parentId": "",
-							"id": ""
+							"id": "Jugador-QuestID"
 						}
 					}
 				],

@@ -254,23 +254,28 @@ function continuousProductionStart(pmcData, body, sessionID) {
 function getBTC(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
 
-    let newBTC = {
-        "item_id": "59faff1d86f7746c51718c9c",
-        "count": 1,
+    let newBTC = { 
+		"items": [
+			{"item_id": "59faff1d86f7746c51718c9c", "count": 1}
+		],
         "tid": "ragfair"
     };
-
-    for (let bitcoin in pmcData.Hideout.Production["20"].Products) {
+	let startTime = pmcData.Hideout.Production["20"].StartTime;
+	let timeOfBtcExtraction = Math.floor(Date.now() / 1000);
+	let timer = json.readParsed(db.user.cache.hideout_production).data.find(prodArea => prodArea.areaType == 20);
+	
+	let how_much_earned = (timeOfBtcExtraction - startTime) / (timer.productionTime/timer.productionLimitCount);
+	how_much_earned = (how_much_earned > timer.productionLimitCount) ? timer.productionLimitCount : how_much_earned;
+    for (let cnt = 0; cnt < how_much_earned; cnt++) {
         output = move_f.addItem(pmcData, newBTC, output, sessionID, true);
     }
-
+	pmcData.Hideout.Production["20"].StartTime = timeOfBtcExtraction;
     pmcData.Hideout.Production["20"].Products = [];
     return output;
 }
 
 function takeProduction(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
-
     if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
         return getBTC(pmcData, body, sessionID);
     }

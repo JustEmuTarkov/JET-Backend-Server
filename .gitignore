@@ -41,6 +41,7 @@ dev
 _mods
 _core
 coreMinify
+user/mods
 
 ## windows
 desktop.ini

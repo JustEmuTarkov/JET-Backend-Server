@@ -123,33 +123,32 @@ class Server {
             key;
 
         
-			if(json.exist(certFile) && json.exist(keyFile)){
-				cert = json.read(certFile);
-				key = json.read(keyFile);
-			} else {
-				if (!json.exist(certDir)) {
-					json.mkDir(certDir);
-				}
-
-				let fingerprint;
-
-				({ cert, private: key, fingerprint } = internal.selfsigned.generate(null, 
-                {
-				  keySize: 2048, // the size for the private key in bits (default: 1024)
-				  days: 365, // how long till expiry of the signed certificate (default: 365)
-				  algorithm: 'sha256', // sign the certificate with specified algorithm (default: 'sha1')
-				  extensions: [{ name: 'commonName', cA: true , value: this.ip + "/"}], // certificate extensions array
-				  pkcs7: true, // include PKCS#7 as part of the output (default: false)
-				  clientCertificate: true, // generate client cert signed by the original key (default: false)
-				  clientCertificateCN: 'jdoe' // client certificate's common name (default: 'John Doe jdoe123')
-				}));
-
-				logger.logInfo(`Generated self-signed sha256/2048 certificate ${fingerprint}, valid 365 days`);
-
-				json.write(certFile, cert, true);
-				json.write(keyFile, key, true);
+		if(json.exist(certFile) && json.exist(keyFile)){
+			cert = json.read(certFile);
+			key = json.read(keyFile);
+		} else {
+			if (!json.exist(certDir)) {
+				json.mkDir(certDir);
 			}
-        }
+
+			let fingerprint;
+
+			({ cert, private: key, fingerprint } = internal.selfsigned.generate(null, 
+			{
+			  keySize: 2048, // the size for the private key in bits (default: 1024)
+			  days: 365, // how long till expiry of the signed certificate (default: 365)
+			  algorithm: 'sha256', // sign the certificate with specified algorithm (default: 'sha1')
+			  extensions: [{ name: 'commonName', cA: true , value: this.ip + "/"}], // certificate extensions array
+			  pkcs7: true, // include PKCS#7 as part of the output (default: false)
+			  clientCertificate: true, // generate client cert signed by the original key (default: false)
+			  clientCertificateCN: 'jdoe' // client certificate's common name (default: 'John Doe jdoe123')
+			}));
+
+			logger.logInfo(`Generated self-signed sha256/2048 certificate ${fingerprint}, valid 365 days`);
+
+			json.write(certFile, cert, true);
+			json.write(keyFile, key, true);
+		}
 
         return { cert, key };
     }
