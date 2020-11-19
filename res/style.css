@@ -43,33 +43,131 @@ a:hover {
 h1 {
 	font-size: 3rem!important;
 	line-height: 3.5rem;
+	text-transform: capitalize;
 }
 h2 {
 	font-size:2rem!important;
 	line-height:2rem!important;
 	margin:0!important;
+	padding:0!important;
+	text-transform: capitalize;
 }
-#github:hover *,
-#youtube:hover * {
-	color: #a00
+h3 {
+	margin:0!important;
+	padding:0!important;
+	text-transform: capitalize;
 }
-#github,
-#youtube {
-	width: 200px;
-	position: relative;
-	cursor: pointer;
-	display: inline-block;
+
+/* Form */
+.form{
+	margin:15px auto;
+	border-radius:2px;
 }
-#github p,
-#youtube p {
-	padding: 5px 12px;
-	display: inline;
-	top: 0;
-	position: absolute;
+.form div{ padding:20px;}
+.form h1{
+	display: block;
+	text-align: center;
+	padding: 0;
+	margin: 0px 0px 20px 0px;
+	color: #5C5C5C;
+	font-size:x-large;
 }
-.youtube-vid {
-	display:inline-block;
+.form ul{
+	list-style:none;
+	padding:0;
+	margin:0;	
 }
+.form li{
+	display: block;
+	padding: 9px;
+	border:1px solid #DDDDDD;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form li.submit{
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form li > label{
+	display: block;
+	float: left;
+	margin-top: -33px;
+	height: 18px;
+	padding: 2px 5px 2px 5px;
+	color: #F00;
+	font-size: 16px;
+	font-height: 900;
+	overflow: hidden;
+	text-transform: capitalize;
+}
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="datetime"],
+.form input[type="email"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="time"],
+.form input[type="url"],
+.form input[type="password"],
+.form textarea,
+.form select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0 0 0 10px;
+	background: #555555aa;
+	color: #fff;
+}
+.form input[type="text"]:focus,
+.form input[type="date"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="email"]:focus,
+.form input[type="number"]:focus,
+.form input[type="search"]:focus,
+.form input[type="time"]:focus,
+.form input[type="url"]:focus,
+.form input[type="password"]:focus,
+.form textarea:focus,
+.form select:focus 
+{
+}
+.form li > span{
+	background: #555555aa;
+	display: block;
+	padding: 3px;
+	margin: 5px -9px -9px -9px;
+	text-align: center;
+	color: #fff;
+	font-size: 11px;
+	text-transform: capitalize;
+}
+.form textarea{
+	resize:none;
+}
+.form input[type="submit"],
+.form input[type="button"]{
+	background: #555555aa;
+	border: none;
+	padding: 10px 20px 10px 20px;
+	border-bottom: 3px solid #F00;
+	border-radius: 3px;
+	color: #fff;
+}
+.form input[type="submit"]:hover,
+.form input[type="button"]:hover{
+	background: #888888aa;
+	color:#FF0;
+}
+
 /* Grid */
 .container {
 	position: relative;

@@ -1,18 +1,20 @@
 function DetectInput(data, name){
-	if(data == "true" || data == "false" || data == true || data == false)
-		return "<select name='" + name + "'><option value='true'>true</option><option value='false'>false</option></select>";
+	//console.log(typeof data + " " + data)
+	if(data == "true" || data == "false" || data == true || data == false){
+		let SelectedOption = (data === "true" || data === true);
+		return "<select name='" + name + "'>" +
+		"<option value='true' "+((SelectedOption)?"selected":"")+">true</option>" +
+		"<option value='false' "+((!SelectedOption)?"selected":"")+">false</option>" +
+		"</select>";
+	}
 	if(typeof data === "string")
-		return "<input size='10' name='" + name + "' value='" + data + "'/>"
+		return "<input type='text' size='10' name='" + name + "' value='" + data + "'/>"
 	if(typeof data === "number")
-		return "<input size='10' name='" + name + "' value='" + data + "'/>";
-	/*if(typeof data === "object"){
-		let html = "<select name='" + name + "'>";
-		for(let item in data){
-			html += "<option value='" + data[item] + "'>" + data[item] + "</option>";
-		}
-		html += "</select>";
-		return html;
-	}*/
+		if(data.toString().match(/[.]/))
+			return "<input type='number' step='0.001' size='10' name='" + name + "' value='" + data + "'/>";
+		else
+			return "<input type='number' size='10' name='" + name + "' value='" + data + "'/>";
+
 	return data;
 }
 function PageHeader(content){
@@ -32,6 +34,7 @@ module.exports.RenderHomePage = () => {
 			<ul>
 				<li><a href="/server/config/gameplay"> Gameplay Config </a></li>
 				<li><a href="/server/config/server"> Server Config </a></li>
+				<li><a href="/server/config/mods"> Mod's Config </a></li>
 				<li><a href="/server/config/accounts"> Account's Config </a></li>
 				<li><a href="/server/config/profiles"> Profile's Config </a></li>
 			</ul>
@@ -47,26 +50,69 @@ module.exports.RenderHomePage = () => {
 	html = PageHeader(html); // adds header and footer + some stypes etc.
 	return html;
 }
-module.exports.RenderGameplayConfigPage = () => {
+module.exports.RenderGameplayConfigPage = (url_return) => {
 	let data = json.readParsed(db.user.configs.gameplay);
-	let html = '<div class="container"><div class="row"><form action="/" method="post">';
+	let html = '<form action="'+url_return+'" method="post" class="form"><div class="container-full"><div class="row">';
 	for(let category in data){
-		html += '<div class="four columns"><table width="100%"><tr><td><h2>' + category + '</h2></td></tr>';
+		html += '<div class="four columns"><ul><li><h2>' + category + '</h2></li>';
 		for (let sub in data[category])
 		{
 			if(typeof data[category][sub] == "object"){
-				html += "<tr><td colspan=2><h3>" + sub + "</h3></td></tr>";
+				html += "<li><h3>" + sub + "</h3></li>";
 				for(let subSub in data[category][sub])
 				{
-					html += "<tr><td class='right'>" + subSub + "</td><td>" + DetectInput(data[category][sub][subSub],subSub) + "</td></tr>";
+					html += "<li><label for='"+subSub+"'>" + subSub + "</label>" + DetectInput(data[category][sub][subSub],subSub) + "<span></span></li>";
 				}
 			} else {
-				html += "<tr><td class='right'>" + sub + "</td><td>" + DetectInput(data[category][sub],sub) + "</td></tr>";
+				html += "<li><label for='"+sub+"'>" + sub + "</label>" + DetectInput(data[category][sub],sub) + "<span></span></li>";
 			}
 		}
-		html += "</table></div>"
+		html += "</ul></div>"
 	}
-	html += '</div><div class="row"><div class="twelve columns"><button type="submit"> Save </button></div></form></div></div>';	
+	html += '<div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></div></div></form>';	
+	html = PageHeader(html); // adds header and footer + some stypes etc.
+	return html;
+}
+module.exports.RenderServerConfigPage = (url_return) => {
+	
+	let data = json.readParsed(db.user.configs.server);
+	let html = '<div class="container-full"><div class="row"><form action="'+url_return+'" method="post" class="form">';
+	for(let category in data){
+		html += '<div class="four columns"><ul>';
+		if(typeof data[category] == "object"){
+			html += '<li><h2>' + category + '</h2></li>';
+			for (let sub in data[category])
+			{
+				if(typeof data[category][sub] == "object"){
+					html += "<li><h3>" + sub + "</h3></li>";
+					for(let subSub in data[category][sub])
+					{
+						html += "<li><label for='"+subSub+"'>" + subSub + "</label>" + DetectInput(data[category][sub][subSub],subSub) + "<span></span></li>";
+					}
+				} else {
+					html += "<li><label for='"+sub+"'>" + sub + "</label>" + DetectInput(data[category][sub],sub) + "<span></span></li>";
+				}
+			}
+		} else {
+			html += "<li><label for='"+category+"'>" + category + "</label>" + DetectInput(data[category],category) + "<span></span></li>";
+		}
+		html += "</ul></div>"
+	}
+	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></form></div></div>';	
+	html = PageHeader(html); // adds header and footer + some stypes etc.
+	return html;
+}
+module.exports.RenderModsConfigPage = (url_return) => {
+	console.log(global.internal.resolve("user/configs/mods.json"));
+	let data = json.readParsed(global.internal.resolve("user/configs/mods.json"));
+	let html = '<div class="container"><div class="row"><form action="'+url_return+'" method="post" class="form">';
+	for(let category in data){
+		html += '<div class="twelwe columns" style="text-align:center;margin:0;"><ul><li><h2>' + data[category].author + ' - ' + data[category].name + ' - ' + data[category].version + '</h2></li>';
+		html += "<li><label for='enabled'>Enabled</label>" + DetectInput(data[category].enabled, "enabled") + "<span></span></li>";
+		
+		html += "</ul></div>"
+	}
+	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></form></div></div>';	
 	html = PageHeader(html); // adds header and footer + some stypes etc.
 	return html;
 }
@@ -76,9 +122,9 @@ module.exports.renderPage = () => {
 	let data = json.readParsed(db.user.configs.gameplay);
 	// render page
 	
-	let html = '<div class="container"><div class="row">';
-	html += "This is Example Page In HTML";
-	html += 'We can add shit to it how much we want';
+	let html = '<div class="container-full"><div class="row">';
+	html += "This is Example Page In HTML<br>";
+	html += 'We can add shit to it later, it supports full html/css and javascript as normal website and it has javascript backend';
 	html += '</div></div>';//we need to end this with 2 div closing tags
 	html = PageHeader(html); // this will render footer and header + some styles title of the page etc.
 
@@ -88,22 +134,25 @@ module.exports.renderPage = () => {
 
 function OutputConvert(data){
 	// its not nececerly needed but its ok.
-	if(typeof data === "string")
-		return data;
-	if(typeof data === "boolean")
-		return !!JSON.parse(String(data).toLowerCase());
-	if(typeof data === "number"){
-		let _test = parseInt(data, 10);
-		if(parseFloat(data) - _test > 0){
+	if(data.match(/[0-9]/g)){
+		// its a number
+		if(data.match(/[.]/)){
+			// this one is float point one
 			return parseFloat(data);
+		} else {
+			return parseInt(data, 10);
 		}
-		return _test;
 	}
+	if(data.match(/^([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])$/g)){
+		return (data.toLowerCase() === "true")
+	}
+	//if(typeof data === "string")
+	return data;
 }
-module.exports.processSaveData = (data) => {
-	if(data == "") return;
-	console.log("I will save data here!!");
-	let _data = json.readParsed(db.user.configs.gameplay);
+
+module.exports.processSaveData = (data, fileName) => {
+	if(JSON.stringify(data) == "{}") return; // if its empty return
+	let _data = json.readParsed(fileName);
 	for(let category in _data)
 	{
 		for (let sub in _data[category])
@@ -111,13 +160,15 @@ module.exports.processSaveData = (data) => {
 			if(typeof _data[category][sub] == "object"){
 				for(let subSub in _data[category][sub])
 				{
-					
-					_data[category][sub][subSub] = OutputConvert(data[subSub]);
+					let dataToSave = OutputConvert(data[subSub]);
+					_data[category][sub][subSub] = dataToSave;
 				}
 			} else {
 				//console.log(sub);
-				_data[category][sub] = OutputConvert(data[sub]);
+				let dataToSave = OutputConvert(data[sub]);
+				_data[category][sub] = dataToSave;
 			}
 		}
-	}	
+	}
+	json.write(fileName, _data);
 }

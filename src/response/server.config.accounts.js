@@ -1,3 +1,4 @@
-exports.execute = (url, info, sessionID) => {
-	return home_f.renderPage();
-}
+exports.execute = (url, body, sessionID) => {
+	home_f.processSaveData(body, db.user.configs.accounts);
+	return home_f.RenderGameplayConfigPage("/server/config/accounts");
+	}

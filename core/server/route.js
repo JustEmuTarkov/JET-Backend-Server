@@ -196,7 +196,7 @@ function routeAll() {
     /* add important server paths */
     db.user = {
         "configs": {
-            "server": "user/config/server.json"
+            "server": "user/configs/server.json"
         },
         "events": {
             "schedule": "user/events/schedule.json"

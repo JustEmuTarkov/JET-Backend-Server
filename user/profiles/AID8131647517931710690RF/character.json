@@ -85,7 +85,7 @@
 				}
 			}
 		},
-		"UpdateTime": 1605643386
+		"UpdateTime": 1605746797
 	},
 	"Inventory": {
 		"items": [
@@ -3604,140 +3604,7 @@
 		"Counters": []
 	},
 	"BackendCounters": {},
-	"InsuredItems": [
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "5df7b9abef12bf7a25243804"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227303443602208gZT0"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227306295310432AjhW"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "5df7b9abef12bf7a25243803"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227309860823906UcIs"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227302214804788KagA"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227303063268029wLzM"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227304920917405qMvG"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "5df7b9abef12bf7a2524380e"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227301960807286XL0u"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227305148105025Rzen"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I91522273081187791348fn1"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227301150208513Jezv"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9152227306726412508LaOG"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "5df7b9abef12bf7a2524380d"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142132548162697fkgN"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142136665149524quMc"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142138081880715LdhE"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142137590883997pJXh"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142136050686890VcUl"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142134546663167sUQp"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142138443737938u8W8"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142132802869950gsKj"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142135795935661AKIK"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "5df7b9abef12bf7a252437ff"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142132524697765RpBy"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142132438308834OlCC"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I922214213725028804710wG"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142137045714623QoxR"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142133118054968xqAf"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142139408764318DKKb"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142139715620741ROEw"
-		},
-		{
-			"tid": "54cb50c76803fa8b248b4571",
-			"itemId": "I9222142132993831583Uy8W"
-		}
-	],
+	"InsuredItems": [],
 	"Hideout": {
 		"Production": {},
 		"Areas": [

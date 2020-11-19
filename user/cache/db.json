@@ -3245,7 +3245,7 @@
 	},
 	"user": {
 		"configs": {
-			"server": "user/config/server.json",
+			"server": "user/configs/server.json",
 			"accounts": "user/configs/accounts.json",
 			"gameplay": "user/configs/gameplay.json"
 		},

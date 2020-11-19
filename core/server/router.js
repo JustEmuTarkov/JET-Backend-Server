@@ -60,6 +60,10 @@ class Router {
 			if (body !== "") {
 				info = json.parse(body);
 			}
+		} else {
+			if(url.includes("/server/config") && !url.includes(".css")){
+				info = body;
+			}
 		}
         /* remove retry from URL */
         if (url.includes("?retry=")) {
