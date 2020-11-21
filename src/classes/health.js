@@ -174,7 +174,7 @@ class HealthServer {
         healthInfo.Energy = pmcData.Health.Energy.Current + info.difference.Energy;
         healthInfo.Hydration = pmcData.Health.Hydration.Current + info.difference.Hydration;
 
-        this.saveHealth(pmcData, healthInfo, sessionID)
+        health_f.handler.saveHealth(pmcData, healthInfo, sessionID);
         return item_f.handler.getOutput();
     }
 
@@ -216,7 +216,7 @@ class HealthServer {
 
     /* apply the health changes to the profile */
     applyHealth(pmcData, sessionID) {
-        if (!global._Database.gameplayConfig.inraid.saveHealthEnabled) {
+        if (!global._database.gameplayConfig.inraid.saveHealthEnabled) {
             return;
         }
 
@@ -227,7 +227,7 @@ class HealthServer {
             if (item !== "Hydration" && item !== "Energy") {
                 /* set body part health */
                 pmcData.Health.BodyParts[item].Health.Current = (nodeHealth[item] <= 0)
-                    ? Math.round((pmcData.Health.BodyParts[item].Health.Maximum * global._Database.gameplayConfig.inraid.saveHealthMultiplier))
+                    ? Math.round((pmcData.Health.BodyParts[item].Health.Maximum * global._database.gameplayConfig.inraid.saveHealthMultiplier))
                     : nodeHealth[item];
             } else {
                 /* set resources */

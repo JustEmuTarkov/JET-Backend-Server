@@ -10,10 +10,10 @@ exports.cache = () => {
 
     for (let file in inputFiles) {
         let filePath = inputFiles[file];
-        let fileData = json.readParsed(filePath);
+        let fileData = fileIO.readParsed(filePath);
 
         base.data.push(fileData);
     }
 
-    json.write("user/cache/hideout_scavcase.json", base);
+    fileIO.write("user/cache/hideout_scavcase.json", base);
 }

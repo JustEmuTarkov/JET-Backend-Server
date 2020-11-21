@@ -12,9 +12,7 @@
 				"ShortName": "",
 				"Description": "",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				]
 			}
 		},
@@ -28,9 +26,7 @@
 				"ShortName": "BearHead1",
 				"Description": "BearHead1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -64,9 +60,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -100,9 +94,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -136,9 +128,7 @@
 				"ShortName": "Head",
 				"Description": "Head",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -172,9 +162,7 @@
 				"ShortName": "Body",
 				"Description": "Body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -208,9 +196,7 @@
 				"ShortName": "Feet",
 				"Description": "Feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -244,9 +230,7 @@
 				"ShortName": "Hands",
 				"Description": "Hands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -280,9 +264,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -316,9 +298,7 @@
 				"ShortName": "wild_head_1",
 				"Description": "wild_head_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -352,9 +332,7 @@
 				"ShortName": "wild_body",
 				"Description": "wild_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -388,9 +366,7 @@
 				"ShortName": "wild_feet",
 				"Description": "wild_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -424,9 +400,7 @@
 				"ShortName": "SavageHands1",
 				"Description": "SavageHands1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -456,12 +430,7 @@
 			"_parent": "5cbdb4a2e2b501000d352ae2",
 			"_type": "Node",
 			"_props": {
-				"AvailableAsDefault": false,
-				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
-				]
+				"AvailableAsDefault": false
 			}
 		},
 		"5cd943c31388ce000a659df5": {
@@ -489,12 +458,7 @@
 					"x": 0,
 					"y": 0,
 					"z": 0
-				},
-				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
-				]
+				}
 			}
 		},
 		"5cd944ca1388ce03a44dc2a4": {
@@ -504,12 +468,7 @@
 			"_type": "Node",
 			"_props": {
 				"Body": "5cc0868e14c02e000c6bea68",
-				"Hands": "5cc086a314c02e000c6bea69",
-				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
-				]
+				"Hands": "5cc086a314c02e000c6bea69"
 			}
 		},
 		"5cd944d01388ce000a659df9": {
@@ -518,12 +477,7 @@
 			"_parent": "5cd943b21388ce03a44dc2a2",
 			"_type": "Node",
 			"_props": {
-				"Feet": "5cc0869814c02e000a4cad94",
-				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
-				]
+				"Feet": "5cc0869814c02e000a4cad94"
 			}
 		},
 		"5cd945d71388ce000a659dfb": {
@@ -536,9 +490,7 @@
 				"ShortName": "DefaultBearUpperSuite",
 				"Description": "DefaultBearUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": true,
 				"Body": "5cc0858d14c02e000c6bea66",
@@ -555,9 +507,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": true,
 				"Feet": "5cc085bb14c02e000e67a5c5"
@@ -573,8 +523,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -609,8 +557,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -645,8 +591,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -681,9 +625,8 @@
 				"ShortName": "DefaultUsecHead",
 				"Description": "DefaultUsecHead",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -717,8 +660,6 @@
 				"ShortName": "DefaultUsecLowerSuite",
 				"Description": "DefaultUsecLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": true,
@@ -735,8 +676,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": true,
@@ -754,9 +693,7 @@
 				"ShortName": "wild_body_1",
 				"Description": "wild_body_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -790,9 +727,7 @@
 				"ShortName": "wild_feet_1",
 				"Description": "wild_feet_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -826,9 +761,7 @@
 				"ShortName": "wild_head_2",
 				"Description": "wild_head_2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -862,9 +795,7 @@
 				"ShortName": "SavageHands2",
 				"Description": "SavageHands2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -898,9 +829,7 @@
 				"ShortName": "SavageLowerSuite1",
 				"Description": "SavageLowerSuite1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5cc2e5d014c02e15d53d9c03"
@@ -916,9 +845,7 @@
 				"ShortName": "SavageUpperSuite1",
 				"Description": "SavageUpperSuite1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5cc2e59214c02e000f16684e",
@@ -935,9 +862,7 @@
 				"ShortName": "SavageLowerSuite2",
 				"Description": "SavageLowerSuite2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5cde9fb87d6c8b0474535da9"
@@ -953,9 +878,7 @@
 				"ShortName": "SavageUpperSuite2",
 				"Description": "SavageUpperSuite2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5cde9f337d6c8b0474535da8",
@@ -972,9 +895,7 @@
 				"ShortName": "wild_Killa_body",
 				"Description": "wild_Killa_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1008,9 +929,7 @@
 				"ShortName": "SavageHands3",
 				"Description": "SavageHands3",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -1044,9 +963,7 @@
 				"ShortName": "Wild_Killa_feet",
 				"Description": "Wild_Killa_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1080,7 +997,6 @@
 				"ShortName": "LowerSuite",
 				"Description": "KillaLowerSuite",
 				"Side": [
-					"Savage",
 					"Bear",
 					"Usec"
 				],
@@ -1098,9 +1014,9 @@
 				"ShortName": "KillaUpperSuite",
 				"Description": "KillaUpperSuite",
 				"Side": [
-					"Savage",
 					"Bear",
-					"Usec"
+					"Usec",
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5cdea33e7d6c8b0474535dac",
@@ -1117,9 +1033,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1154,9 +1068,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1191,9 +1103,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1228,9 +1138,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1265,9 +1173,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -1302,8 +1208,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -1339,8 +1243,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -1376,8 +1278,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -1413,8 +1313,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -1450,8 +1348,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -1487,9 +1383,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1524,9 +1418,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1561,9 +1453,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1598,9 +1488,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1635,9 +1523,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -1672,8 +1558,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -1709,8 +1593,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -1746,8 +1628,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -1783,8 +1663,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -1820,8 +1698,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -1857,9 +1733,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -1894,9 +1768,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -1931,9 +1803,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -1968,9 +1838,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -2005,9 +1873,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -2042,8 +1908,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -2079,8 +1943,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -2116,8 +1978,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -2153,8 +2013,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -2190,8 +2048,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -2227,9 +2083,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d1f566d86f7744bcd13459a",
@@ -2247,9 +2101,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d1f565786f7743f8362bcd5",
@@ -2267,9 +2119,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d1f568486f7744bca3f0b98",
@@ -2287,9 +2137,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d1f567786f7744bcc04874f",
@@ -2307,9 +2155,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d1f564b86f7744bcb0acd16",
@@ -2327,8 +2173,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2347,8 +2191,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2367,8 +2209,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2387,8 +2227,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2407,8 +2245,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2427,9 +2263,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d1f58cb86f7744bca3f0b9a"
@@ -2446,9 +2280,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d1f58a086f7743f8362bcd9"
@@ -2465,9 +2297,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d1f58bd86f7744bce0ee9ef"
@@ -2484,9 +2314,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d1f58ab86f7743014162042"
@@ -2503,9 +2331,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d1f588e86f7744bcc048753"
@@ -2522,8 +2348,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2541,8 +2365,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2560,8 +2382,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2579,8 +2399,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2598,8 +2416,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -2617,9 +2433,7 @@
 				"ShortName": "wild_body_2",
 				"Description": "wild_body_2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2654,9 +2468,7 @@
 				"ShortName": "wild_body_3",
 				"Description": "wild_body_3",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2691,9 +2503,7 @@
 				"ShortName": "wild_body_1",
 				"Description": "wild_body_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2728,9 +2538,7 @@
 				"ShortName": "wild_security_body_1",
 				"Description": "wild_security_body_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2765,9 +2573,7 @@
 				"ShortName": "wild_security_body_2",
 				"Description": "wild_security_body_2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2802,9 +2608,7 @@
 				"ShortName": "wild_pmcBot_body",
 				"Description": "wild_pmcBot_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -2839,9 +2643,7 @@
 				"ShortName": "wild_security_feet_1",
 				"Description": "wild_security_feet_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -2876,9 +2678,7 @@
 				"ShortName": "wild_security_feet_1",
 				"Description": "wild_security_feet_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -2913,9 +2713,7 @@
 				"ShortName": "wild_pmcBot_feet",
 				"Description": "wild_pmcBot_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -2950,9 +2748,7 @@
 				"ShortName": "wild_head_2",
 				"Description": "wild_head_2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -2987,9 +2783,7 @@
 				"ShortName": "Wild_Dealmaker_head",
 				"Description": "Wild_Dealmaker_head",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -3024,9 +2818,7 @@
 				"ShortName": "Wild_Killa_head",
 				"Description": "Wild_Killa_head",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -3061,9 +2853,7 @@
 				"ShortName": "Wild_Dealmaker_feet",
 				"Description": "Wild_Dealmaker_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3098,8 +2888,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -3135,8 +2923,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -3155,8 +2941,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -3192,9 +2976,7 @@
 				"ShortName": "wild_Shturman_body",
 				"Description": "wild_Shturman_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3229,9 +3011,7 @@
 				"ShortName": "wild_Gluhar_body",
 				"Description": "wild_Gluhar_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3266,9 +3046,7 @@
 				"ShortName": "Tshirt_security_TshirtTatu_01",
 				"Description": "Tshirt_security_TshirtTatu_01",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3303,9 +3081,7 @@
 				"ShortName": "Tshirt_security_TshirtTatu_02",
 				"Description": "Tshirt_security_TshirtTatu_02",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3340,9 +3116,7 @@
 				"ShortName": "Top_security_Husky",
 				"Description": "Top_security_Husky",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3377,9 +3151,7 @@
 				"ShortName": "Top_security_Gorka4",
 				"Description": "Top_security_Gorka4",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3414,9 +3186,7 @@
 				"ShortName": "Pants_BOSS_Glukhar",
 				"Description": "Pants_BOSS_Glukhar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3451,9 +3221,7 @@
 				"ShortName": "Pants_BOSS_Shturman",
 				"Description": "Pants_BOSS_Shturman",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3488,9 +3256,7 @@
 				"ShortName": "Pants_security_Gorka4",
 				"Description": "Pants_security_Gorka4",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3525,9 +3291,7 @@
 				"ShortName": "Pants_security_Flora",
 				"Description": "Pants_security_Flora",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3562,9 +3326,7 @@
 				"ShortName": "Head_BOSS_Glukhar",
 				"Description": "Head_BOSS_Glukhar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -3599,9 +3361,7 @@
 				"ShortName": "Wild_Head_nonMesh",
 				"Description": "Wild_Head_nonMesh",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -3636,9 +3396,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3673,9 +3431,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3710,8 +3466,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -3747,9 +3501,7 @@
 				"ShortName": "wild_body",
 				"Description": "wild_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -3784,9 +3536,7 @@
 				"ShortName": "wild_feet",
 				"Description": "wild_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -3821,9 +3571,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5df89f1f86f77412631087ea",
@@ -3841,9 +3589,7 @@
 				"ShortName": "KillaUpperSuite",
 				"Description": "KillaUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5df8a10486f77412672a1e3a",
@@ -3861,9 +3607,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5df89f8f86f77412672a1e38"
@@ -3880,8 +3624,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -3899,9 +3641,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -3936,9 +3676,7 @@
 				"ShortName": "SavageLowerSuite2",
 				"Description": "SavageLowerSuite2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5df8a15186f77412640e2e6a"
@@ -3955,9 +3693,7 @@
 				"ShortName": "SavageHands1",
 				"Description": "SavageHands1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -3992,9 +3728,7 @@
 				"ShortName": "SavageHands1",
 				"Description": "SavageHands1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -4029,9 +3763,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5e4bb31586f7740695730568",
@@ -4049,9 +3781,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -4086,8 +3816,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -4123,9 +3851,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -4160,8 +3886,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -4197,9 +3921,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -4234,8 +3956,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -4271,9 +3991,7 @@
 				"ShortName": "wild_body_1",
 				"Description": "wild_body_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -4308,9 +4026,7 @@
 				"ShortName": "SavageHands1",
 				"Description": "SavageHands1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -4345,8 +4061,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -4365,9 +4079,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5e4bb39386f774067f79de05"
@@ -4384,8 +4096,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -4403,7 +4113,6 @@
 				"ShortName": "SavageUpperSuite1",
 				"Description": "SavageUpperSuite1",
 				"Side": [
-					"Savage",
 					"Bear",
 					"Usec"
 				],
@@ -4423,9 +4132,7 @@
 				"ShortName": "Top_BOSS_Sanitar",
 				"Description": "Top_BOSS_Sanitar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -4460,9 +4167,7 @@
 				"ShortName": "Pants_BOSS_Sanitar",
 				"Description": "Pants_BOSS_Sanitar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -4497,9 +4202,7 @@
 				"ShortName": "Head_BOSS_Sanitar",
 				"Description": "Head_BOSS_Sanitar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Head",
 				"Prefab": {
@@ -4534,9 +4237,7 @@
 				"ShortName": "DeafaultBearBody",
 				"Description": "DeafaultBearBody",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -4571,8 +4272,6 @@
 				"ShortName": "DefaultUsecBody",
 				"Description": "DefaultUsecBody",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Body",
@@ -4608,9 +4307,7 @@
 				"ShortName": "wild_body",
 				"Description": "wild_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Body",
 				"Prefab": {
@@ -4645,9 +4342,7 @@
 				"ShortName": "DefaultBearHands",
 				"Description": "DefaultBearHands",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -4682,8 +4377,6 @@
 				"ShortName": "DefaultUsecHands",
 				"Description": "DefaultUsecHands",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Hands",
@@ -4719,9 +4412,7 @@
 				"ShortName": "SavageHands1",
 				"Description": "SavageHands1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Savage"
 				],
 				"BodyPart": "Hands",
 				"Prefab": {
@@ -4756,9 +4447,7 @@
 				"ShortName": "DefaultBeerFeet",
 				"Description": "DefaultBeerFeet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"BodyPart": "Feet",
 				"Prefab": {
@@ -4793,8 +4482,6 @@
 				"ShortName": "DefaultUsecFeet",
 				"Description": "DefaultUsecFeet",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"BodyPart": "Feet",
@@ -4830,9 +4517,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5e9d9fa986f774054d6b89f2",
@@ -4850,8 +4535,6 @@
 				"ShortName": "DefaultUsecUpperSuite",
 				"Description": "DefaultUsecUpperSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -4870,9 +4553,7 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5e9dc97c86f774054c19ac9a"
@@ -4889,8 +4570,6 @@
 				"ShortName": "DefaultBearLowerSuite",
 				"Description": "DefaultBearLowerSuite",
 				"Side": [
-					"Savage",
-					"Bear",
 					"Usec"
 				],
 				"AvailableAsDefault": false,
@@ -4908,7 +4587,6 @@
 				"ShortName": "SavageUpperSuite1",
 				"Description": "SavageUpperSuite1",
 				"Side": [
-					"Savage",
 					"Bear",
 					"Usec"
 				],
@@ -4928,9 +4606,8 @@
 				"ShortName": "GluharBodySuit",
 				"Description": "GluharBodySuit",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7dd786f7744a7a274322",
@@ -4947,9 +4624,8 @@
 				"ShortName": "GluharLowerSuit",
 				"Description": "GluharLowerSuit",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d5e7f2a86f77427997cfb80"
@@ -4965,9 +4641,8 @@
 				"ShortName": "Pants_BOSS_Sanitar",
 				"Description": "Pants_BOSS_Sanitar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5e99762586f77466320ff9a9"
@@ -4983,9 +4658,8 @@
 				"ShortName": "Pants_BOSS_Shturman",
 				"Description": "Pants_BOSS_Shturman",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d5e7f3c86f7742797262063"
@@ -5001,9 +4675,8 @@
 				"ShortName": "Pants_security_Flora",
 				"Description": "Pants_security_Flora",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d5e7f8986f7742798716582"
@@ -5019,9 +4692,8 @@
 				"ShortName": "Pants_security_Gorka4",
 				"Description": "Pants_security_Gorka4",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d5e7f4986f7746956659f8a"
@@ -5037,9 +4709,8 @@
 				"ShortName": "TopSecurity_gorka4",
 				"Description": "TopSecurity_gorka4",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7e8386f774393602d6fa",
@@ -5056,9 +4727,8 @@
 				"ShortName": "Top_BOSS_Sanitar",
 				"Description": "Top_BOSS_Sanitar",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5e9975c486f774382b6320cb",
@@ -5075,9 +4745,8 @@
 				"ShortName": "Top_security_Husky",
 				"Description": "Top_security_Husky",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7e7586f77427997cfb7f",
@@ -5094,9 +4763,8 @@
 				"ShortName": "Tshirt_security_TshirtTatu_01",
 				"Description": "Tshirt_security_TshirtTatu_01",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7e4a86f774279a21cc0d",
@@ -5113,9 +4781,8 @@
 				"ShortName": "Tshirt_security_TshirtTatu_02",
 				"Description": "Tshirt_security_TshirtTatu_02",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7e5d86f774279b4f4b01",
@@ -5132,9 +4799,8 @@
 				"ShortName": "wild_body",
 				"Description": "wild_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5cc2e59214c02e000f16684e",
@@ -5151,9 +4817,8 @@
 				"ShortName": "Wild_Dealmaker_body",
 				"Description": "Wild_Dealmaker_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d28adcb86f77429242fc893",
@@ -5170,9 +4835,8 @@
 				"ShortName": "Wild_Dealmaker_feet",
 				"Description": "Wild_Dealmaker_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d28b3a186f7747f7e69ab8c"
@@ -5188,9 +4852,8 @@
 				"ShortName": "wild_feet",
 				"Description": "wild_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5cc2e5d014c02e15d53d9c03"
@@ -5206,9 +4869,8 @@
 				"ShortName": "wild_pmcBot_body",
 				"Description": "wild_pmcBot_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d28ae4986f7742926686187",
@@ -5225,9 +4887,8 @@
 				"ShortName": "wild_pmcBot_feet",
 				"Description": "wild_pmcBot_feet",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d28af7886f77429275dba25"
@@ -5243,9 +4904,8 @@
 				"ShortName": "wild_security_body_1",
 				"Description": "wild_security_body_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d28adfd86f774292364a6e5",
@@ -5262,9 +4922,8 @@
 				"ShortName": "wild_security_body_2",
 				"Description": "wild_security_body_2",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d28ae2986f7742926686185",
@@ -5281,9 +4940,8 @@
 				"ShortName": "wild_security_feet_1",
 				"Description": "wild_security_feet_1",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Feet": "5d28af5386f774292364a6e8"
@@ -5299,9 +4957,8 @@
 				"ShortName": "wild_Shturman_body",
 				"Description": "wild_Shturman_body",
 				"Side": [
-					"Savage",
-					"Bear",
-					"Usec"
+					"Usec",
+					"Bear"
 				],
 				"AvailableAsDefault": false,
 				"Body": "5d5e7c9186f774393602d6f9",

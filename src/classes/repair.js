@@ -21,7 +21,7 @@ exports.main = (pmcData, body, sessionID) => {
         }
 
         // get repair price and pay the money
-        let repairCost = Math.round((global._Database.items[itemToRepair._tpl]._props.RepairCost * repairItem.count * repairRate) * global._Database.gameplayConfig.trading.repairMultiplier);
+        let repairCost = Math.round((global._database.items[itemToRepair._tpl]._props.RepairCost * repairItem.count * repairRate) * global._database.gameplayConfig.trading.repairMultiplier);
 
         if (!helper_f.payMoney(pmcData, {"scheme_items": [{"id": repairItem._id, "count": Math.round(repairCost)}], "tid": body.tid}, sessionID)) {
             logger.logError("no money found");

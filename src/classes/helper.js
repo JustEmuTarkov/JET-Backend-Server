@@ -14,13 +14,13 @@ function tplLookup() {
             }
         }
 
-        for (let x of global._Database.templates.Items) {
+        for (let x of global._database.templates.Items) {
             lookup.items.byId[x.Id] = x.Price;
             lookup.items.byParent[x.ParentId] || (lookup.items.byParent[x.ParentId] = []);
             lookup.items.byParent[x.ParentId].push(x.Id);
         }
 
-        for (let x of global._Database.templates.Categories) {
+        for (let x of global._database.templates.Categories) {
             lookup.categories.byId[x.Id] = x.ParentId ? x.ParentId : null;
             if (x.ParentId) { // root as no parent
                 lookup.categories.byParent[x.ParentId] || (lookup.categories.byParent[x.ParentId] = []);
@@ -61,7 +61,8 @@ function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stash ta
 
     let inventoryItemHash = getInventoryItemHash(pmcData.Inventory.items)
 
-    for (let item of inventoryItemHash.byParentId[pmcData.Inventory.stash]) {
+    for (let item of inventoryItemHash.byParentId[pmcData.Inventory.stash])
+	{
         if (!("location" in item)) {
             continue;
         }
@@ -73,9 +74,11 @@ function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stash ta
         let fW = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iH : iW);
         let fillTo = item.location.x + fW;
 
-        for (let y = 0; y < fH; y++) {
+        for (let y = 0; y < fH; y++) 
+		{
             // fixed filling out of bound
-            //if (item.location.y + y >= PlayerStash[1] && fillTo >= PlayerStash[0]) {
+            //if (item.location.y + y >= PlayerStash[1] && fillTo >= PlayerStash[0])
+			//{
             //    continue;
             //}
 
@@ -289,7 +292,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     let trader = trader_f.handler.getTrader(body.tid, sessionID);
     let currency = getCurrency(trader.currency);
     let calcAmount = fromRUB(inRUB(amount, currency), currency);
-    let maxStackSize = global._Database.items[currency]._props.StackMaxSize;
+    let maxStackSize = global._database.items[currency]._props.StackMaxSize;
     let skip = false;
 
     for (let item of pmcData.Inventory.items) {
@@ -379,8 +382,8 @@ function getMoney(pmcData, amount, body, output, sessionID) {
 * */
 function getPlayerStash(sessionID) { //this sets automaticly a stash size from items.json (its not added anywhere yet cause we still use base stash)
     let stashTPL = profile_f.getStashType(sessionID);
-    let stashX = (global._Database.items[stashTPL]._props.Grids[0]._props.cellsH !== 0) ? global._Database.items[stashTPL]._props.Grids[0]._props.cellsH : 10;
-    let stashY = (global._Database.items[stashTPL]._props.Grids[0]._props.cellsV !== 0) ? global._Database.items[stashTPL]._props.Grids[0]._props.cellsV : 66;
+    let stashX = (global._database.items[stashTPL]._props.Grids[0]._props.cellsH !== 0) ? global._database.items[stashTPL]._props.Grids[0]._props.cellsH : 10;
+    let stashY = (global._database.items[stashTPL]._props.Grids[0]._props.cellsV !== 0) ? global._database.items[stashTPL]._props.Grids[0]._props.cellsV : 66;
     return [stashX, stashY];
 }
 
@@ -389,8 +392,8 @@ function getPlayerStash(sessionID) { //this sets automaticly a stash size from i
 * output: [ItemFound?(true,false), itemData]
 * */
 function getItem(template) { // -> Gets item from <input: _tpl>
-    if (template in global._Database.items) {
-        return [true, global._Database.items[template]];
+    if (template in global._database.items) {
+        return [true, global._database.items[template]];
     }
 
     return [false, {}];
@@ -568,7 +571,7 @@ function getChildId(item) {
 
 function replaceIDs(pmcData, items, fastPanel = null) {
     // replace bsg shit long ID with proper one
-    let string_inventory = json.stringify(items);
+    let string_inventory = fileIO.stringify(items);
 
     for (let item of items) {
         let insuredItem = false;
@@ -668,7 +671,7 @@ function splitStack(item) {
         return [item];
     }
 
-    let maxStack = global._Database.items[item._tpl]._props.StackMaxSize;
+    let maxStack = global._database.items[item._tpl]._props.StackMaxSize;
     let count = item.upd.StackObjectsCount;
     let stacks = [];
 
@@ -685,19 +688,29 @@ function splitStack(item) {
 }
 
 function clone(x) {
-    return json.parse(json.stringify(x));
+    return fileIO.parse(fileIO.stringify(x));
 }
 
 function arrayIntersect(a, b) {
     return a.filter(x => b.includes(x));
 }
 
+// Searching for first item template ID and for preset ID
 function getPreset (id){
-	if(typeof global._Database.globals.ItemPresets[id] == "undefined"){
-		logger.logError("Couldnot find preset: " + id + " at src/classes/helper.js 697"); // Thanks SunRay1
-		return null;
+	let itmPreset = global._database.globals.ItemPresets[id];
+	if(typeof itmPreset == "undefined"){
+		for(let itemP in global._database.globals.ItemPresets){
+			if(global._database.globals.ItemPresets[itemP]._items[0]._tpl == id){
+				itmPreset = global._database.globals.ItemPresets[itemP];
+				break;
+			}
+		}
+		if(typeof itmPreset == "undefined"){
+			logger.logWarning("Could not find preset with id: " + id + " searched for Template ID of item and Preset ID");
+			return null;
+		}
 	}
-	return global._Database.globals.ItemPresets[id];
+	return itmPreset;
 }
 // TODO: REWORK EVERYTHING ABOVE ~Maoci
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {

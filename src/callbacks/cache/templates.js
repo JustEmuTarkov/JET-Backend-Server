@@ -12,7 +12,7 @@ exports.cache = () => {
     ];
 
     for (let path in inputDir) {
-        let _data = json.readParsed(db.templates[inputDir[path]]);
+        let _data = fileIO.readParsed(db.templates[inputDir[path]]);
 		if (path == 0) {
 			base.data.Categories = _data;
 		} else {
@@ -20,5 +20,5 @@ exports.cache = () => {
 		}
     }
 
-    json.write(`./user/cache/templates.json`, base);
+    fileIO.write(`./user/cache/templates.json`, base);
 }

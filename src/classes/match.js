@@ -25,7 +25,7 @@ class MatchServer {
 */
 
     getEnabled() {
-        return global._Database.gameplayConfig.match.enabled;
+        return global._database.gameplayConfig.match.enabled;
     }
 
     getProfile(info) {

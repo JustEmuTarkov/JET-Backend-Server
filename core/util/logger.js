@@ -32,16 +32,16 @@ class Logger {
         let filepath = folder + file;
 
         // create log folder
-        if (!json.exist(folder)) { +
-            json.mkDir(folder);
+        if (!fileIO.exist(folder)) { +
+            fileIO.mkDir(folder);
         }
 
         // create log file
-        if (!json.exist(filepath)) {
-            json.write(filepath, "");
+        if (!fileIO.exist(filepath)) {
+            fileIO.write(filepath, "");
         }
 
-        this.fileStream = json.createWriteStream(filepath);
+        this.fileStream = fileIO.createWriteStream(filepath);
     }
 
     log(type, data, colorFront = "", colorBack = "") {

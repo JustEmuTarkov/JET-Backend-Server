@@ -33,23 +33,23 @@ exports.getRandomIntEx = (max) => {
 }
 // getDirList
 exports.getDirList = (path) => {
-    return json.readDir(path).filter(function(file) {
-        return json.statSync(path + '/' + file).isDirectory();
+    return fileIO.readDir(path).filter(function(file) {
+        return fileIO.statSync(path + '/' + file).isDirectory();
     });
 }
 // removeDir
 exports.removeDir = (dir) => {
-    for (file of json.readDir(dir)) {
+    for (file of fileIO.readDir(dir)) {
         let curPath = internal.path.join(dir, file);
 
-        if (json.lstatSync(curPath).isDirectory()) {
+        if (fileIO.lstatSync(curPath).isDirectory()) {
             this.removeDir(curPath);
         } else {
-            json.unlink(curPath);
+            fileIO.unlink(curPath);
         }
     }
 
-    json.rmDir(dir);
+    fileIO.rmDir(dir);
 }
 // getServerUptimeInSeconds
 exports.getServerUptimeInSeconds = () => {

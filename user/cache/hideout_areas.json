@@ -13,7 +13,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -35,7 +35,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -72,7 +72,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 7200,
 					"description": ""
 				},
 				"3": {
@@ -127,7 +127,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 28800,
 					"description": ""
 				}
 			}
@@ -143,7 +143,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -175,7 +175,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -229,7 +229,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 18000,
 					"description": ""
 				},
 				"3": {
@@ -294,7 +294,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 57600,
 					"description": ""
 				}
 			}
@@ -310,7 +310,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -324,7 +324,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -349,7 +349,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 10800,
 					"description": ""
 				},
 				"3": {
@@ -396,7 +396,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 36000,
 					"description": ""
 				}
 			}
@@ -412,7 +412,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -426,7 +426,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -455,7 +455,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 10800,
 					"description": ""
 				},
 				"3": {
@@ -502,7 +502,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 61200,
 					"description": ""
 				}
 			}
@@ -518,7 +518,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -532,7 +532,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -573,7 +573,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 10800,
 					"description": ""
 				},
 				"3": {
@@ -620,7 +620,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 25200,
 					"description": ""
 				}
 			}
@@ -636,7 +636,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -652,7 +652,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -703,7 +703,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 86400,
 					"description": ""
 				},
 				"3": {
@@ -763,7 +763,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 172800,
 					"description": ""
 				},
 				"4": {
@@ -821,7 +821,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 345600,
 					"description": ""
 				}
 			}
@@ -837,7 +837,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -882,7 +882,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 7200,
 					"description": ""
 				},
 				"2": {
@@ -936,7 +936,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 28800,
 					"description": ""
 				},
 				"3": {
@@ -1009,7 +1009,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 57600,
 					"description": ""
 				}
 			}
@@ -1025,7 +1025,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1056,7 +1056,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -1110,7 +1110,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 10800,
 					"description": ""
 				},
 				"3": {
@@ -1180,7 +1180,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 43200,
 					"description": ""
 				}
 			}
@@ -1196,7 +1196,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1229,7 +1229,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -1286,7 +1286,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 14400,
 					"description": ""
 				},
 				"3": {
@@ -1352,7 +1352,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 50400,
 					"description": ""
 				}
 			}
@@ -1368,7 +1368,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1395,7 +1395,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -1444,7 +1444,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 7200,
 					"description": ""
 				},
 				"3": {
@@ -1511,7 +1511,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 36000,
 					"description": ""
 				}
 			}
@@ -1527,7 +1527,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1570,7 +1570,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -1611,7 +1611,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 10800,
 					"description": ""
 				},
 				"3": {
@@ -1657,7 +1657,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 39600,
 					"description": ""
 				}
 			}
@@ -1673,7 +1673,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1712,7 +1712,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -1789,7 +1789,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 21600,
 					"description": ""
 				},
 				"3": {
@@ -1856,7 +1856,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 86400,
 					"description": ""
 				}
 			}
@@ -1872,7 +1872,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1919,7 +1919,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 3600,
 					"description": ""
 				}
 			}
@@ -1935,7 +1935,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -1975,7 +1975,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 136800,
 					"description": ""
 				}
 			}
@@ -1991,7 +1991,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2038,7 +2038,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 144000,
 					"description": ""
 				}
 			}
@@ -2054,7 +2054,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2068,7 +2068,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"2": {
@@ -2098,7 +2098,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"3": {
@@ -2138,7 +2138,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 21600,
 					"description": ""
 				}
 			}
@@ -2154,7 +2154,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2192,7 +2192,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 345600,
 					"description": ""
 				}
 			}
@@ -2208,7 +2208,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2256,7 +2256,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 172800,
 					"description": ""
 				}
 			}
@@ -2272,7 +2272,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2327,7 +2327,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 223200,
 					"description": ""
 				}
 			}
@@ -2343,7 +2343,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2395,7 +2395,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 172800,
 					"description": ""
 				}
 			}
@@ -2411,7 +2411,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2469,7 +2469,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 108000,
 					"description": ""
 				},
 				"2": {
@@ -2523,7 +2523,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 151200,
 					"description": ""
 				},
 				"3": {
@@ -2582,7 +2582,7 @@
 						}
 					],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 345600,
 					"description": ""
 				}
 			}
@@ -2598,7 +2598,7 @@
 					"requirements": [],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				},
 				"1": {
@@ -2635,7 +2635,7 @@
 					],
 					"bonuses": [],
 					"slots": 0,
-					"constructionTime": 10,
+					"constructionTime": 0,
 					"description": ""
 				}
 			}

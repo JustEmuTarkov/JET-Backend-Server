@@ -21,31 +21,17 @@ function scanRecursiveMod(filepath, baseNode, modNode) {
 
     return baseNode;
 }
-// loadMod
-function loadMod(mod, filepath) {
-	let modName = `${mod.author}-${mod.name}-${mod.version}`;
-	if(typeof mod.src != "undefined")
-		for(let srcToExecute in mod.src){
-			let path = `../../user/mods/${modName}/${mod.src[srcToExecute]}`;
-			
-			let ModScript = require(path).mod;
-			
-			ModScript(mod); // execute mod
-		}
-	if(typeof mod.res != "undefined")
-		res = scanRecursiveMod(filepath, res, mod.res);
-}
 // detectChangedMods
 function detectChangedMods() {
     let changed = false;
 
     for (let mod of modsConfig) {
-        if (!json.exist(getModFilepath(mod) + "mod.config.json")) {
+        if (!fileIO.exist(getModFilepath(mod) + "mod.config.json")) {
             changed = true;
             break;
         }
 
-        let config = json.readParsed(getModFilepath(mod) + "mod.config.json");
+        let config = fileIO.readParsed(getModFilepath(mod) + "mod.config.json");
 
         if (mod.name !== config.name || mod.author !== config.author || mod.version !== config.version) {
             changed = true;
@@ -61,7 +47,7 @@ function detectChangedMods() {
 }
 // detectMissingMods
 function detectMissingMods() {
-    if (!json.exist("user/mods/")) {
+    if (!fileIO.exist("user/mods/")) {
         return;
     }
 
@@ -70,13 +56,13 @@ function detectMissingMods() {
 
     for (let mod of mods) {
         /* check if config exists */
-        if (!json.exist(dir + mod + "/mod.config.json")) {
+        if (!fileIO.exist(dir + mod + "/mod.config.json")) {
             logger.logError(`Mod ${mod} is missing mod.config.json`);
             continue;
 			// continue starting server only with displaying error that mod wasnt loaded properly
         }
 
-        let config = json.readParsed(dir + mod + "/mod.config.json");
+        let config = fileIO.readParsed(dir + mod + "/mod.config.json");
         let found = false;
 
         /* check if mod is already in the list */
@@ -99,19 +85,19 @@ function detectMissingMods() {
             logger.logWarning(`Mod ${mod} not installed, adding it to the modlist`);
             modsConfig.push({"name": config.name, "author": config.author, "version": config.version, "enabled": true});
             serverConfig.rebuildCache = true;
-            json.write("user/configs/mods.json", modsConfig);
+            fileIO.write("user/configs/mods.json", modsConfig);
         }
     }
 }
 // isRebuildRequired
 function isRebuildRequired() {
-    if (!json.exist("user/cache/mods.json")
-    || !json.exist("user/cache/db.json")
-    || !json.exist("user/cache/res.json")) {
+    if (!fileIO.exist("user/cache/mods.json")
+    || !fileIO.exist("user/cache/db.json")
+    || !fileIO.exist("user/cache/res.json")) {
         return true;
     }
 
-    let cachedlist = json.readParsed("user/cache/mods.json");
+    let cachedlist = fileIO.readParsed("user/cache/mods.json");
 
     if (modsConfig.length !== cachedlist.length) {
         return true;
@@ -129,17 +115,46 @@ function isRebuildRequired() {
 
     return false;
 }
+// loadMod
+function loadMod(mod, filepath, LoadType) {
+	let modName = `${mod.author}-${mod.name}-${mod.version}`;
+	if(typeof mod.src != "undefined")
+		for(let srcToExecute in mod.src){
+			if(mod.src[srcToExecute] == LoadType){
+				let path = `../../user/mods/${modName}/${srcToExecute}`;
+				
+				let ModScript = require(path).mod;
+				
+				ModScript(mod); // execute mod
+			}
+		}
+}
+function loadModSrc(mod, filepath){
+	if(typeof mod.res != "undefined")
+		res = scanRecursiveMod(filepath, res, mod.res);
+}
 // loadAllMods
-exports.loadAllMods = () => {
+exports.CacheModLoad = () => {
     for (let element of global.modsConfig) {
         if (!element.enabled) {
             continue;
         }
 
         let filepath = getModFilepath(element);
-        let mod = json.readParsed(filepath + "mod.config.json");
-		if(!mod.lateExecute)
-			loadMod(mod, filepath);
+        let mod = fileIO.readParsed(filepath + "mod.config.json");
+		loadMod(mod, filepath, "CacheModLoad");
+		loadModSrc(mod, filepath);
+    }
+}
+exports.TamperModLoad = () => {
+    logger.logInfo("Executing LateModLoad Routes");
+	for (let element of global.modsConfig) {
+        if (!element.enabled) {
+            continue;
+        }
+        let filepath = getModFilepath(element);
+        let mod = fileIO.readParsed(filepath + "mod.config.json");
+		loadMod(mod, filepath, "TamperModLoad");
     }
 }
 // flush
@@ -149,18 +164,18 @@ function flush() {
 }
 // dump
 function dump() {
-	if(json.exist("db/"))
-		json.write("user/cache/db.json", db);
-    json.write("user/cache/res.json", res);
+	if(fileIO.exist("db/"))
+		fileIO.write("user/cache/db.json", db);
+    fileIO.write("user/cache/res.json", res);
 }
 // scanRecursiveRoute
 function scanRecursiveRoute(filepath, deep = false) {
 	if(filepath == "db/")
-		if(!json.exist("db/"))
+		if(!fileIO.exist("db/"))
 			return;
     let baseNode = {};
     let directories = utility.getDirList(filepath);
-    let files = json.readDir(filepath);
+    let files = fileIO.readDir(filepath);
 
     // remove all directories from files
     for (let directory of directories) {
@@ -191,7 +206,7 @@ function routeAll() {
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route ressources");
     res = scanRecursiveRoute("res/");
-    //json.write("user/cache/loadorder.json", json.read("src/loadorder.json"), true);
+    //fileIO.write("user/cache/loadorder.json", fileIO.read("src/loadorder.json"), true);
 
     /* add important server paths */
     db.user = {
@@ -208,10 +223,10 @@ exports.all = () => {
 	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
 	
     // create mods folder if missing
-    if (!json.exist("user/mods/")) {
-        json.mkDir("user/mods/");
+    if (!fileIO.exist("user/mods/")) {
+        fileIO.mkDir("user/mods/");
     }
-	if(!json.exist("./user/cache") || json.readDir("./user/cache").length < 31)
+	if(!fileIO.exist("./user/cache") || fileIO.readDir("./user/cache").length < 31)
 	{ // health number of cache file count is 31 as for now ;)
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
@@ -220,7 +235,7 @@ exports.all = () => {
 		detectMissingMods();
 
     /* check if loadorder is missing */
-    /*if (!json.exist("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
+    /*if (!fileIO.exist("user/cache/loadorder.json") && !serverConfig.rebuildCache) {
         logger.logWarning("Loadorder missing. Rebuild Required.")
         serverConfig.rebuildCache = true;
     }*/
@@ -247,19 +262,7 @@ exports.all = () => {
         dump();
     }
 	
-    db = json.readParsed("user/cache/db.json");
-    res = json.readParsed("user/cache/res.json");
+    db = fileIO.readParsed("user/cache/db.json");
+    res = fileIO.readParsed("user/cache/res.json");
 }
 
-exports.LateModLoad = () => {
-    logger.logInfo("Executing LateModLoad Routes");
-	for (let element of global.modsConfig) {
-        if (!element.enabled) {
-            continue;
-        }
-        let filepath = getModFilepath(element);
-        let mod = json.readParsed(filepath + "mod.config.json");
-		if(mod.lateExecute)
-			loadMod(mod, filepath);
-    }
-}

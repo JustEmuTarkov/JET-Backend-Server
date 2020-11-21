@@ -8,7 +8,7 @@ class Router {
 	
 	createStaticResponses(){
         this.staticRoutes = {};
-		let getStaticRoute = json.readDir("./src/response");
+		let getStaticRoute = fileIO.readDir("./src/response");
 		for(let file of getStaticRoute){
 			if(file.indexOf('_') == 0) continue;
 			if(!file.includes(".js")) continue;
@@ -21,7 +21,7 @@ class Router {
 	}
 	createDynamicResponses(){
 		this.dynamicRoutes = {};
-		let getDynamicRoute = json.readDir("./src/response/dynamic");
+		let getDynamicRoute = fileIO.readDir("./src/response/dynamic");
 		for(let file of getDynamicRoute){
 			//if(file.includes('_')) continue; // fucks up the last_id dynamic response
 			if(!file.includes(".js")) continue;
@@ -58,7 +58,7 @@ class Router {
 		if(typeof body != "object"){
 			/* parse body */
 			if (body !== "") {
-				info = json.parse(body);
+				info = fileIO.parse(body);
 			}
 		} else {
 			if(url.includes("/server/config") && !url.includes(".css")){

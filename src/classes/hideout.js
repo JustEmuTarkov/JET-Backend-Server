@@ -5,9 +5,9 @@ let production = undefined;
 let scavcase = undefined;
 
 function initialize() {
-    areas = json.readParsed(db.user.cache.hideout_areas);
-    production = json.readParsed(db.user.cache.hideout_production);
-    scavcase = json.readParsed(db.user.cache.hideout_scavcase);
+    areas = fileIO.readParsed(db.user.cache.hideout_areas);
+    production = fileIO.readParsed(db.user.cache.hideout_production);
+    scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
 }
 
 function upgrade(pmcData, body, sessionID) {
@@ -199,7 +199,7 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
         }
     }
 
-    let scavcase = json.readParsed(db.user.cache.hideout_scavcase);
+    let scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
 
     for (let recipe in scavcase.data) {
         if (body.recipeId == scavcase.data[recipe]._id) {
@@ -214,9 +214,9 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
 
             for (let rarityType in rarityItemCounter) {
                 while (rarityItemCounter[rarityType] !== 0) {
-                    let random = utility.getRandomIntEx(Object.keys(global._Database.items).length)
-                    let randomKey = Object.keys(global._Database.items)[random];
-                    let tempItem = global._Database.items[randomKey];
+                    let random = utility.getRandomIntEx(Object.keys(global._database.items).length)
+                    let randomKey = Object.keys(global._database.items)[random];
+                    let tempItem = global._database.items[randomKey];
 
                     // products are not registered correctly
                     if (tempItem._props.Rarity === rarityType) {
@@ -262,7 +262,7 @@ function getBTC(pmcData, body, sessionID) {
     };
 	let startTime = pmcData.Hideout.Production["20"].StartTime;
 	let timeOfBtcExtraction = Math.floor(Date.now() / 1000);
-	let timer = json.readParsed(db.user.cache.hideout_production).data.find(prodArea => prodArea.areaType == 20);
+	let timer = fileIO.readParsed(db.user.cache.hideout_production).data.find(prodArea => prodArea.areaType == 20);
 	
 	let how_much_earned = (timeOfBtcExtraction - startTime) / (timer.productionTime/timer.productionLimitCount);
 	how_much_earned = (how_much_earned > timer.productionLimitCount) ? timer.productionLimitCount : how_much_earned;

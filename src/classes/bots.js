@@ -8,7 +8,7 @@ function getRandomValue(node) {
 	if(typeof node == "string")
 	{
 		if(node.indexOf(".json") != -1){
-			randomizedObject = json.readParsed(node);
+			randomizedObject = fileIO.readParsed(node);
 		} else {
 			return node;
 		}
@@ -23,7 +23,7 @@ function getRandomValue(node) {
 	if(typeof randomizedObject == "string")
 		if(randomizedObject.indexOf(".json") != -1){
 			let pathToCheck = randomizedObject;
-			randomizedObject = json.readParsed(randomizedObject);
+			randomizedObject = fileIO.readParsed(randomizedObject);
 			if(typeof randomizedObject.BodyParts == "object")
 				return randomizedObject;
 			if(pathToCheck.indexOf("inventory") != -1)
@@ -38,7 +38,7 @@ function getRandomValue(node) {
 function getRandomExperience() {
 	let exp = 0;
 
-	let expTable = global._Database.globals.config.exp.level.exp_table;
+	let expTable = global._database.globals.config.exp.level.exp_table;
 
 	// Get random level based on the exp table.
 	let randomLevel = utility.getRandomInt(0, expTable.length - 1) + 1;
@@ -114,12 +114,12 @@ function generateBot(bot, role, sessionID) {
 	let node = {};
 
 	// chance to spawn simulated PMC AIs
-	if ((type === "assault" || type === "marksman" || type === "pmcBot") && global._Database.gameplayConfig.bots.pmc.enabled) {
+	if ((type === "assault" || type === "marksman" || type === "pmcBot") && global._database.gameplayConfig.bots.pmc.enabled) {
 		let spawnChance = utility.getRandomInt(0, 99);
 		let sideChance = utility.getRandomInt(0, 99);
 
-		if (spawnChance < global._Database.gameplayConfig.bots.pmc.spawnChance) {
-			if (sideChance < global._Database.gameplayConfig.bots.pmc.usecChance) {
+		if (spawnChance < global._database.gameplayConfig.bots.pmc.spawnChance) {
+			if (sideChance < global._database.gameplayConfig.bots.pmc.usecChance) {
 				bot.Info.Side = "Usec";
 				type = "usec";
 			} else {
@@ -137,7 +137,7 @@ function generateBot(bot, role, sessionID) {
 	}
 	// generate bot
 	node = db.bots[type.toLowerCase()];
-	let appearance = json.readParsed(node.appearance);
+	let appearance = fileIO.readParsed(node.appearance);
 	bot.Info.Settings.Role = role;
 	bot.Info.Nickname = getRandomValue(node.names);
 	bot.Info.experience = getRandomExperience();
@@ -200,7 +200,7 @@ function generate(info, sessionID) {
 		info['conditions'] = [{Limit: 1, Difficulty: "normal", Role: "assault"}];
 	for (let condition of info.conditions) {
 		for (let i = 0; i < condition.Limit; i++) {
-			let bot = json.readParsed(db.cacheBase.botBase);
+			let bot = fileIO.readParsed(db.cacheBase.botBase);
 
 			bot._id = "bot" + utility.getRandomIntEx(99999999);
 			bot.Info.Settings.BotDifficulty = condition.Difficulty;

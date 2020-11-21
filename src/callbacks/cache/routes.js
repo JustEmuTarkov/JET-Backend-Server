@@ -40,5 +40,5 @@ exports.cache = () => {
         db.user.cache["locale_" + locale] = "user/cache/locale_" + locale + ".json";
         db.user.cache["locale_menu_" + locale] = "user/cache/locale_menu_" + locale + ".json";
     }
-    json.write("user/cache/db.json", db);
+    fileIO.write("user/cache/db.json", db);
 }

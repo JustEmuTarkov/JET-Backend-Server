@@ -1,1 +1,1 @@
-exports.execute = (url, info, sessionID) => json.read(db.hideout.settings);
+exports.execute = (url, info, sessionID) => fileIO.read(db.hideout.settings);

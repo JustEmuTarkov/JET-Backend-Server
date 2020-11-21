@@ -15,7 +15,7 @@ exports.cache = () => {
         if (trader === "ragfair" || trader === "579dc571d53a0658a154fbec") {
             continue;
         }
-        let allAssort = json.readParsed("./user/cache/assort_" + trader + ".json");
+        let allAssort = fileIO.readParsed("./user/cache/assort_" + trader + ".json");
         allAssort = allAssort.data;
     
         for (let itemAssort of allAssort.items) {
@@ -48,13 +48,13 @@ exports.cache = () => {
     }
 
     response.offers = offers;
-    json.write("user/cache/ragfair_offers.json", response);
+    fileIO.write("user/cache/ragfair_offers.json", response);
 }
 
 function loadCache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
     let offers = [];
-    let offerBase = json.readParsed(db.cacheBase.fleaOffer);
-    let traderObj = json.readParsed(db.cacheBase.traders[trader].base);
+    let offerBase = fileIO.readParsed(db.cacheBase.fleaOffer);
+    let traderObj = fileIO.readParsed(db.cacheBase.traders[trader].base);
 
     offerBase._id = itemsToSell[0]._id;
     offerBase.intId = counter;

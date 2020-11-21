@@ -7,7 +7,7 @@ class Server {
         this.ip = serverConfig.ip;
         this.port = serverConfig.port;
         this.backendUrl = "https://" + this.ip + ":" + this.port;
-        this.version = "1.0.1";
+        this.version = "1.0.2";
         this.mime = {
             html: 'text/html',
             txt: 'text/plain',
@@ -27,7 +27,7 @@ class Server {
 	createCacheCallback(){
         this.cacheCallback = {};
 		let path = "./src/callbacks/cache";
-		let files = json.readDir(path);
+		let files = fileIO.readDir(path);
 		for(let file of files){
 			let scriptName = "cache" + file.replace(".js","");
 			this.cacheCallback[scriptName] = require("../../src/callbacks/cache/" + file).cache;
@@ -38,7 +38,7 @@ class Server {
 	createStartCallback(){
         this.startCallback = {};
 		let path = "./src/callbacks/load";
-		let files = json.readDir(path);
+		let files = fileIO.readDir(path);
 		for(let file of files){
 			let scriptName = "load" + file.replace(".js","");
 			this.startCallback[scriptName] = require("../../src/callbacks/load/" + file).load;
@@ -49,7 +49,7 @@ class Server {
 	createReceiveCallback(){
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
-		let files = json.readDir(path);
+		let files = fileIO.readDir(path);
 		for(let file of files){
 			let scriptName = file.replace(".js","");
 			this.receiveCallback[scriptName] = require("../../src/callbacks/receive/" + file).execute;
@@ -60,7 +60,7 @@ class Server {
 	createRespondCallback(){
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
-		let files = json.readDir(path);
+		let files = fileIO.readDir(path);
 		for(let file of files){
 			let scriptName = file.replace(".js","");
 			this.respondCallback[scriptName] = require("../../src/callbacks/respond/" + file).execute;
@@ -123,12 +123,12 @@ class Server {
             key;
 
         
-		if(json.exist(certFile) && json.exist(keyFile)){
-			cert = json.read(certFile);
-			key = json.read(keyFile);
+		if(fileIO.exist(certFile) && fileIO.exist(keyFile)){
+			cert = fileIO.read(certFile);
+			key = fileIO.read(keyFile);
 		} else {
-			if (!json.exist(certDir)) {
-				json.mkDir(certDir);
+			if (!fileIO.exist(certDir)) {
+				fileIO.mkDir(certDir);
 			}
 
 			let fingerprint;
@@ -146,8 +146,8 @@ class Server {
 
 			logger.logInfo(`Generated self-signed sha256/2048 certificate ${fingerprint}, valid 365 days`);
 
-			json.write(certFile, cert, true);
-			json.write(keyFile, key, true);
+			fileIO.write(certFile, cert, true);
+			fileIO.write(keyFile, key, true);
 		}
 
         return { cert, key };
@@ -174,7 +174,7 @@ class Server {
     sendFile(resp, file) {
         let pathSlic = file.split("/");
         let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
-        let fileStream = json.createReadStream(file);
+        let fileStream = fileIO.createReadStream(file);
     
         fileStream.on('open', function () {
             resp.setHeader('Content-Type', type);
@@ -247,7 +247,7 @@ class Server {
         const sessionID = utility.getCookies(req)['PHPSESSID'];
 		let displaySessID = ((typeof sessionID != "undefined")?`[${sessionID}]`:"");
 		
-		if(req.url.substr(0,6) != "/files" && req.url.substr(0,6) != "/notif" && req.url != "/client/game/keepalive" && req.url != "/player/health/sync")
+		if(req.url.substr(0,6) != "/files" && req.url.substr(0,6) != "/notif" && req.url != "/client/game/keepalive" && req.url != "/player/health/sync" && !req.url.includes(".css") && !req.url.includes(".otf") && !req.url.includes(".ico"))
 			logger.logRequest(req.url, `${displaySessID}[${IP}] `);
     
         // request without data
@@ -302,23 +302,23 @@ class Server {
 	
 	// private function
 	_loadGlobals(){
-		global._Database.globals = json.readParsed(db.cacheBase.globals);
+		global._database.globals = fileIO.readParsed(db.cacheBase.globals);
 		//allow to use file with {data:{}} as well as {}
-		if(typeof global._Database.globals.data != "undefined")
-			global._Database.globals = global._Database.globals.data;
+		if(typeof global._database.globals.data != "undefined")
+			global._database.globals = global._database.globals.data;
 	}
 	// private function
 	_loadGameplayConfig(){
-		global._Database.gameplayConfig = json.readParsed(db.user.configs.gameplay);
+		global._database.gameplayConfig = fileIO.readParsed(db.user.configs.gameplay);
 	}
 	// private function
 	_loadDatabaseItems(){
-		global._Database.items = json.readParsed(db.user.cache.items);
-		if(typeof global._Database.items.data != "undefined")
-			global._Database.items = global._Database.items.data;
-		global._Database.templates = json.readParsed(db.user.cache.templates);
-		if(typeof global._Database.templates.data != "undefined")
-			global._Database.templates = global._Database.templates.data;
+		global._database.items = fileIO.readParsed(db.user.cache.items);
+		if(typeof global._database.items.data != "undefined")
+			global._database.items = global._database.items.data;
+		global._database.templates = fileIO.readParsed(db.user.cache.templates);
+		if(typeof global._database.templates.data != "undefined")
+			global._database.templates = global._database.templates.data;
 	}
 	
 	_serverStart(){
@@ -364,7 +364,7 @@ class Server {
             this.cacheCallback[type]();
         }
 		if(serverConfig.rebuildCache)
-			global.core.route.loadAllMods();
+			global.core.route.CacheModLoad(); // CacheModLoad
 		
 		this._loadGlobals();
 		this._loadGameplayConfig();
@@ -381,15 +381,15 @@ class Server {
 		/*
 			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
 			// 
-			global.global._Database.items
-			global.global._Database.globals
-			global.global._Database.templates
-			global.global._Database.gameplayConfig
-			global.global._Database.assort[traderID]
-			global.global._Database.someothershit
+			global.global._database.items
+			global.global._database.globals
+			global.global._database.templates
+			global.global._database.gameplayConfig
+			global.global._database.assort[traderID]
+			global.global._database.someothershit
 		*/
 		this._loadDatabaseItems();
-		global.core.route.LateModLoad();
+		global.core.route.TamperModLoad(); // TamperModLoad
 		
 		logger.logInfo("Starting server...");
 		this._serverStart();

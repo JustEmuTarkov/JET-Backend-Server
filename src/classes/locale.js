@@ -7,15 +7,15 @@ class LocaleServer {
     }
 
     initialize() {
-        this.languages = json.readParsed(db.user.cache.languages);
+        this.languages = fileIO.readParsed(db.user.cache.languages);
 
         for (let lang in db.locales) {
-			let menuFile = (json.exist(db.user.cache["locale_menu_" + lang.toLowerCase()])?db.user.cache["locale_menu_" + lang.toLowerCase()]:db.locales[lang].menu);
-            this.menu[lang] = json.readParsed(menuFile);
+			let menuFile = (fileIO.exist(db.user.cache["locale_menu_" + lang.toLowerCase()])?db.user.cache["locale_menu_" + lang.toLowerCase()]:db.locales[lang].menu);
+            this.menu[lang] = fileIO.readParsed(menuFile);
 			if(typeof this.menu[lang].data != "undefined"){
 				this.menu[lang] = this.menu[lang].data;
 			}
-            this.global[lang] = json.readParsed(db.user.cache["locale_" + lang.toLowerCase()]);
+            this.global[lang] = fileIO.readParsed(db.user.cache["locale_" + lang.toLowerCase()]);
 			if(typeof this.global[lang].data != "undefined"){
 				this.global[lang] = this.global[lang].data;
 			}

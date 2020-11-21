@@ -17,7 +17,7 @@ class ProfileServer {
     loadProfilesFromDisk(sessionID) {
 		if(typeof sessionID == "undefined")
 			logger.throwErr("Session ID is undefined", "~/src/classes/profile.js | 19")
-        this.profiles[sessionID]['pmc'] = json.readParsed(getPmcPath(sessionID));
+        this.profiles[sessionID]['pmc'] = fileIO.readParsed(getPmcPath(sessionID));
         this.generateScav(sessionID);
     }
 
@@ -27,7 +27,7 @@ class ProfileServer {
 
     saveToDisk(sessionID) {
         if ("pmc" in this.profiles[sessionID]) {
-            json.write(getPmcPath(sessionID), this.profiles[sessionID]['pmc']);
+            fileIO.write(getPmcPath(sessionID), this.profiles[sessionID]['pmc']);
         }
     }
 
@@ -48,7 +48,7 @@ class ProfileServer {
     }
 	
 	getProfileById(ID, type) {
-        return json.readParsed(`user/profiles/${ID}/character.json`);
+        return fileIO.readParsed(`user/profiles/${ID}/character.json`);
     }
 
 
@@ -78,8 +78,8 @@ class ProfileServer {
     createProfile(info, sessionID) {
         let account = account_f.handler.find(sessionID);
         let folder = account_f.getPath(account.id);
-        let pmcData = json.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
-        let storage = { _id: "", suites: json.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
+        let pmcData = fileIO.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
+        let storage = { _id: "", suites: fileIO.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
 
         // delete existing profile
         if (this.profiles[account.id]) {
@@ -102,10 +102,10 @@ class ProfileServer {
 		
 		storage = {"err": 0,"errmsg": null,"data": storage};
         // create profile
-        json.write(`${folder}character.json`, pmcData);
-        json.write(`${folder}storage.json`, storage);
-        json.write(`${folder}userbuilds.json`, {});
-        json.write(`${folder}dialogue.json`, {});
+        fileIO.write(`${folder}character.json`, pmcData);
+        fileIO.write(`${folder}storage.json`, storage);
+        fileIO.write(`${folder}userbuilds.json`, {});
+        fileIO.write(`${folder}dialogue.json`, {});
 
         // load to memory
         let profile = this.getProfile(account.id, 'pmc');
@@ -129,7 +129,7 @@ class ProfileServer {
         // Set cooldown time.
         // Make sure to apply ScavCooldownTimer bonus from Hideout if the player has it.
         let currDt = Date.now() / 1000;
-        let scavLockDuration = global._Database.globals.config.SavagePlayCooldown;
+        let scavLockDuration = global._database.globals.config.SavagePlayCooldown;
         let modifier = 1;
         for (let bonus of pmcData.Bonuses) {
             if (bonus.type === "ScavCooldownTimer") {
@@ -197,13 +197,13 @@ function getStashType(sessionID) {
 function calculateLevel(pmcData) {
     let exp = 0;
 
-    for (let level in global._Database.globals.config.exp.level.exp_table) {
+    for (let level in global._database.globals.config.exp.level.exp_table) {
         if (pmcData.Info.Experience < exp) {
             break;
         }
 
         pmcData.Info.Level = parseInt(level);
-        exp += global._Database.globals.config.exp.level.exp_table[level].exp;
+        exp += global._database.globals.config.exp.level.exp_table[level].exp;
     }
 
     return pmcData.Info.Level;

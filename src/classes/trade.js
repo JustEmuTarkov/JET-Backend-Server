@@ -76,7 +76,7 @@ exports.confirmTrading = (pmcData, body, sessionID) => {
 
 // Ragfair trading
 exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
-    let ragfair_offers_traders = json.readParsed(db.user.cache.ragfair_offers);
+    let ragfair_offers_traders = fileIO.readParsed(db.user.cache.ragfair_offers);
     let offers = body.offers;
     let output = item_f.handler.getOutput()
 

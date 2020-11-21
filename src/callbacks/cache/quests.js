@@ -6,7 +6,7 @@ exports.cache = () => {
     logger.logInfo("Caching: quests.json");
     let base = {"err": 0, "errmsg": null, "data": []};
 
-    base.data = json.readParsed(db.templates.quests);
+    base.data = fileIO.readParsed(db.templates.quests);
 	
-    json.write("user/cache/quests.json", base);
+    fileIO.write("user/cache/quests.json", base);
 }

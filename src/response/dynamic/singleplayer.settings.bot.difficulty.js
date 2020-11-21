@@ -4,7 +4,7 @@ exports.execute = (url, info, sessionID) => {
     let difficulty = splittedUrl[splittedUrl.length - 1];
 
     if (type === "core") {
-        return json.read(db.cacheBase.botCore);
+        return fileIO.read(db.cacheBase.botCore);
     }
 
     if (type === "cursedassault")
@@ -25,6 +25,6 @@ exports.execute = (url, info, sessionID) => {
         type = "pmcbot";
     }
 	
-	let getFileText = json.read(db.bots[type].difficulties[difficulty]);
+	let getFileText = fileIO.read(db.bots[type].difficulties[difficulty]);
     return getFileText;
 }

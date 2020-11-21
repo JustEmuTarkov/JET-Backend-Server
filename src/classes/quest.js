@@ -15,7 +15,7 @@
 let questsCache = undefined;
 
 function initialize() {
-    questsCache = json.read(db.user.cache.quests);
+    questsCache = fileIO.read(db.user.cache.quests);
 }
 
 function getQuestsCache() {
@@ -23,7 +23,7 @@ function getQuestsCache() {
 }
 
 function getCachedQuest(qid) {
-    let quests = json.parse(questsCache);
+    let quests = fileIO.parse(questsCache);
 
     for (let quest of quests.data) {
         if (quest._id === qid) {
@@ -112,7 +112,7 @@ function acceptQuest(pmcData, body, sessionID) {
     let messageContent = {
         "templateId": locale_f.handler.getGlobal().mail[questLocale.startedMessageText],
         "type": dialogue_f.getMessageTypeValue('questStart'),
-        "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime *3600
+        "maxStorageTime": global._database.gameplayConfig.other.RedeemTime *3600
 
     };
 
@@ -120,7 +120,7 @@ function acceptQuest(pmcData, body, sessionID) {
         messageContent = {
             "templateId": questLocale.description,
             "type": dialogue_f.getMessageTypeValue('questStart'),
-            "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime *3600
+            "maxStorageTime": global._database.gameplayConfig.other.RedeemTime *3600
         };
     }
 
@@ -206,12 +206,12 @@ function completeQuest(pmcData, body, sessionID) {
 
     // Create a dialog message for completing the quest.
     let questDb = getCachedQuest(body.qid);
-	let questLocale = json.readParsed(db.locales["en"].quest);
+	let questLocale = fileIO.readParsed(db.locales["en"].quest);
     questLocale = questLocale[body.qid];
     let messageContent = {
         "templateId": questLocale.successMessageText,
         "type": dialogue_f.getMessageTypeValue('questSuccess'),
-        "maxStorageTime": global._Database.gameplayConfig.other.RedeemTime * 3600
+        "maxStorageTime": global._database.gameplayConfig.other.RedeemTime * 3600
     }
 
     dialogue_f.handler.addDialogueMessage(questDb.traderId, messageContent, sessionID, questRewards);

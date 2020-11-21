@@ -1,1 +1,1 @@
-exports.execute = (url, info, sessionID) => json.read(db.user.cache.hideout_areas);
+exports.execute = (url, info, sessionID) => fileIO.read(db.user.cache.hideout_areas);

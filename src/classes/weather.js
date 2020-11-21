@@ -3,21 +3,21 @@
 let weather = undefined;
 
 function initialize() {
-    weather = json.readParsed(db.user.cache.weather);
+    weather = fileIO.readParsed(db.user.cache.weather);
 }
 
 function generate() {
     let output = {};
 
     // set weather
-    if (global._Database.gameplayConfig.location.forceWeatherEnabled) {
-        output = weather.data[global._Database.gameplayConfig.location.forceWeatherId];
+    if (global._database.gameplayConfig.location.forceWeatherEnabled) {
+        output = weather.data[global._database.gameplayConfig.location.forceWeatherId];
     } else {
         output = weather.data[utility.getRandomInt(0, weather.data.length - 1)];
     }
 
     // replace date and time
-    if (global._Database.gameplayConfig.location.realTimeEnabled) {
+    if (global._database.gameplayConfig.location.realTimeEnabled) {
         // Apply acceleration to time computation.
         let computedDate = new Date();
         let deltaSeconds = utility.getServerUptimeInSeconds() * output.acceleration;

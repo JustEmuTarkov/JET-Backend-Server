@@ -23,7 +23,7 @@
 	"bots": {
 		"pmc": {
 			"enabled": true,
-			"spawnChance": 35,
+			"spawnChance": 50,
 			"usecChance": 50
 		},
 		"limits": {
@@ -61,6 +61,11 @@
 		"forceWeatherId": false
 	},
 	"locationloot": {
+		"containers": {
+			"ChanceForEmpty": 25,
+			"ChanceToSpawnNextItem": 30,
+			"AttemptsToPlaceLoot": 20
+		},
 		"allowLootOverlay": false,
 		"bigmap": 1000,
 		"develop": 30,

@@ -6,7 +6,7 @@ function getPath(sessionID) {
 }
 
 function getUserBuilds(sessionID) {
-	let userBuildsMap = json.readParsed(getPath(sessionID));
+	let userBuildsMap = fileIO.readParsed(getPath(sessionID));
 
 	let userBuilds = [];
 
@@ -22,7 +22,7 @@ function SaveBuild(pmcData, body, sessionID) {
 	body.id = utility.generateNewItemId();	
 
 	let output = item_f.handler.getOutput();
-	let savedBuilds = json.readParsed(getPath(sessionID));
+	let savedBuilds = fileIO.readParsed(getPath(sessionID));
 
 	// replace duplicate ID's. The first item is the base item.
 	// The root ID and the base item ID need to match.
@@ -30,18 +30,18 @@ function SaveBuild(pmcData, body, sessionID) {
 	body.root = body.items[0]._id;
 
 	savedBuilds[body.name] = body;
-	json.write(getPath(sessionID), savedBuilds);
+	fileIO.write(getPath(sessionID), savedBuilds);
 	output.builds.push(body);
     return output;
 }
 
 function RemoveBuild(pmcData, body, sessionID) {
-    let savedBuilds = json.readParsed(getPath(sessionID));
+    let savedBuilds = fileIO.readParsed(getPath(sessionID));
 
     for (let name in savedBuilds) {
         if (savedBuilds[name].id === body.id) {
             delete savedBuilds[name];
-            json.write(getPath(sessionID), savedBuilds);
+            fileIO.write(getPath(sessionID), savedBuilds);
             break;
         }
     }

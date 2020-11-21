@@ -25,16 +25,16 @@ class ScheduledEventHandler {
 	}
 
 	saveToDisk() {
-		json.write(db.user.events.schedule, this.scheduledEvents);
+		fileIO.write(db.user.events.schedule, this.scheduledEvents);
 	}
 
 	loadSchedule() {
-		if (!json.exist(db.user.events.schedule)) {
+		if (!fileIO.exist(db.user.events.schedule)) {
 			this.scheduledEvents = [];
 			return;
 		}
 
-		this.scheduledEvents = json.readParsed(db.user.events.schedule);
+		this.scheduledEvents = fileIO.readParsed(db.user.events.schedule);
 	}
 
 	processSchedule() {

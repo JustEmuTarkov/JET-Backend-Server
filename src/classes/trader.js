@@ -10,8 +10,8 @@ class TraderServer {
     /* Load all the traders into memory. */
     initialize() {
         for (let traderID in db.cacheBase.traders) {
-            this.traders[traderID] = json.readParsed(db.cacheBase.traders[traderID].base);
-            this.traders[traderID].sell_category = json.readParsed(db.cacheBase.traders[traderID].categories);
+            this.traders[traderID] = fileIO.readParsed(db.cacheBase.traders[traderID].base);
+            this.traders[traderID].sell_category = fileIO.readParsed(db.cacheBase.traders[traderID].categories);
         }
     }
 
@@ -96,7 +96,7 @@ class TraderServer {
 		console.log(traderID);
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        let traderWipe = json.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
+        let traderWipe = fileIO.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
 
         pmcData.TraderStandings[traderID] = {
             "currentLevel": 1,
@@ -114,7 +114,7 @@ class TraderServer {
 		if (!(traderID in this.assorts))
 		{
 			// for modders generate endgame items for fence where you need to exchange it for that items
-			let tmp = json.readParsed(db.user.cache["assort_" + traderID]);
+			let tmp = fileIO.readParsed(db.user.cache["assort_" + traderID]);
 			this.assorts[traderID] = tmp.data;
         }
 
@@ -132,8 +132,8 @@ class TraderServer {
 			if(typeof db.cacheBase.traders[traderID].questassort == "undefined")
 			{
 				questassort = {"started": {},"success": {},"fail": {}};
-			} else if(json.exist(db.cacheBase.traders[traderID].questassort)){
-				questassort = json.readParsed(db.cacheBase.traders[traderID].questassort);
+			} else if(fileIO.exist(db.cacheBase.traders[traderID].questassort)){
+				questassort = fileIO.readParsed(db.cacheBase.traders[traderID].questassort);
 			} else {
 				questassort = {"started": {},"success": {},"fail": {}};
 			}
@@ -169,7 +169,7 @@ class TraderServer {
         let names = Object.keys(db.assort[fenceId].loyal_level_items);
         let added = [];
 
-        for (let i = 0; i < global._Database.gameplayConfig.trading.fenceAssortSize; i++) {
+        for (let i = 0; i < global._database.gameplayConfig.trading.fenceAssortSize; i++) {
             let traderID = names[utility.getRandomInt(0, names.length - 1)];
 
             if (added.includes(traderID)) {
@@ -180,8 +180,8 @@ class TraderServer {
             added.push(traderID);
 
             //it's the item
-            if (!(traderID in global._Database.globals.ItemPresets)) {
-				let TraderData = json.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data;
+            if (!(traderID in global._database.globals.ItemPresets)) {
+				let TraderData = fileIO.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data;
                 base.data.items.push(TraderData.items[traderID]);
                 base.data.barter_scheme[traderID] = TraderData.barter_scheme[traderID];
                 base.data.loyal_level_items[traderID] = TraderData.loyal_level_items[traderID];
@@ -190,8 +190,8 @@ class TraderServer {
 
             //it's itemPreset
             let rub = 0;
-            let itemPresets = json.parse(json.stringify(global._Database.globals.ItemPresets[traderID]._items, true));
-            let ItemRootOldId = global._Database.globals.ItemPresets[traderID]._parent;
+            let itemPresets = fileIO.parse(fileIO.stringify(global._database.globals.ItemPresets[traderID]._items, true));
+            let ItemRootOldId = global._database.globals.ItemPresets[traderID]._parent;
 
             for (let i = 0; i < itemPresets.length; i++) {
                 let mod = itemPresets[i];
@@ -217,9 +217,9 @@ class TraderServer {
                 rub += helper_f.getTemplatePrice(it._tpl);
             }
 
-            base.data.barter_scheme[traderID] = json.readParsed(db.assort[fenceId].barter_scheme[traderID]);
+            base.data.barter_scheme[traderID] = fileIO.readParsed(db.assort[fenceId].barter_scheme[traderID]);
             base.data.barter_scheme[traderID][0][0].count = rub;
-            base.data.loyal_level_items[traderID] = json.readParsed(db.assort[fenceId].loyal_level_items[traderID]);
+            base.data.loyal_level_items[traderID] = fileIO.readParsed(db.assort[fenceId].loyal_level_items[traderID]);
         }
 
         this.assorts[fenceId] = base.data;
@@ -264,7 +264,7 @@ class TraderServer {
     getCustomization(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let allSuits = customization_f.getCustomization();
-        let suitArray = json.readParsed(db.assort[traderID].suits);
+        let suitArray = fileIO.readParsed(db.assort[traderID].suits);
         let suitList = [];
 
         for (let suit of suitArray) {
@@ -315,7 +315,7 @@ class TraderServer {
 
             // find all child of the item (including itself) and sum the price 
             for (let childItem of helper_f.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
-                let tempPrice = (global._Database.items[childItem._tpl]._props.CreditsPrice >= 1) ? global._Database.items[childItem._tpl]._props.CreditsPrice : 1;
+                let tempPrice = (global._database.items[childItem._tpl]._props.CreditsPrice >= 1) ? global._database.items[childItem._tpl]._props.CreditsPrice : 1;
                 let count = ("upd" in childItem && "StackObjectsCount" in childItem.upd) ? childItem.upd.StackObjectsCount : 1;
                 price = price + (tempPrice * count);
             }

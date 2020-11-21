@@ -179,7 +179,7 @@ function getOffers(sessionID, request) {
 
 function getOffersFromTraders(sessionID, request)
 {
-    let jsonToReturn = json.readParsed(db.user.cache.ragfair_offers); 
+    let jsonToReturn = fileIO.readParsed(db.user.cache.ragfair_offers); 
     let offersFilters = []; //this is an array of item tpl who filter only items to show
 
     jsonToReturn.categories = {}
@@ -302,7 +302,7 @@ function calculateCost(barter_scheme)//theorical , not tested not implemented
 }
 
 function getLinkedSearchList(linkedSearchId) {
-    let item = global._Database.items[linkedSearchId];
+    let item = global._database.items[linkedSearchId];
     // merging all possible filters without duplicates
     let result = new Set([
         ...getFilters(item, "Slots"),
@@ -316,7 +316,7 @@ function getLinkedSearchList(linkedSearchId) {
 function getNeededSearchList(neededSearchId) {
     let result = [];
 
-    for (let item of Object.values(global._Database.items)) {
+    for (let item of Object.values(global._database.items)) {
         if (isInFilter(neededSearchId, item, "Slots")
          || isInFilter(neededSearchId, item, "Chambers")
          || isInFilter(neededSearchId, item, "Cartridges")) {
@@ -356,12 +356,12 @@ function getCategoryList(handbookId) {
 
 function createOffer(template, onlyFunc, usePresets = true) {
     // Some slot filters reference bad items
-    if (!(template in global._Database.items)) {
+    if (!(template in global._database.items)) {
         logger.logWarning(`Item ${template} does not exist`);
         return [];
     }
 
-    let offerBase = json.readParsed(db.cacheBase.fleaOffer);
+    let offerBase = fileIO.readParsed(db.cacheBase.fleaOffer);
     let offers = [];
 
     // Preset
@@ -383,14 +383,14 @@ function createOffer(template, onlyFunc, usePresets = true) {
             offer._id = p._id;               // The offer's id is now the preset's id
             offer.root = mods[0]._id;        // Sets the main part of the weapon
             offer.items = mods;
-            offer.requirements[0].count = Math.round(rub * global._Database.gameplayConfig.trading.ragfairMultiplier);
+            offer.requirements[0].count = Math.round(rub * global._database.gameplayConfig.trading.ragfairMultiplier);
             offers.push(offer);
         }
     }
 
     // Single item
     if (!preset_f.handler.hasPreset(template) || !onlyFunc) {
-        let rubPrice = Math.round(helper_f.getTemplatePrice(template) * global._Database.gameplayConfig.trading.ragfairMultiplier);
+        let rubPrice = Math.round(helper_f.getTemplatePrice(template) * global._database.gameplayConfig.trading.ragfairMultiplier);
         offerBase._id = template;
         offerBase.items[0]._tpl = template;
         offerBase.requirements[0].count = rubPrice;

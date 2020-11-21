@@ -71,7 +71,7 @@ class NotifierService {
 			let message = this.popMessageFromQueue(sessionID);
 			// Purposefully using default JSON stringify function here to avoid newline insertion
 			// since the client expects different messages to be split by the newline character.
-			data.push(json.stringify(message, true));
+			data.push(fileIO.stringify(message, true));
 		}
 	
 		// If we timed out and don't have anything to send, just send a ping notification.

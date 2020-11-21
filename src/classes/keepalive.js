@@ -35,7 +35,7 @@ function updateTraders(sessionID) {
 
 function updatePlayerHideout(sessionID) {
     let pmcData = profile_f.handler.getPmcProfile(sessionID);
-    let recipes = json.readParsed(db.user.cache.hideout_production);
+    let recipes = fileIO.readParsed(db.user.cache.hideout_production);
     let solarPowerLevel = 0;
     let btcFarmCGs = 0;
     let isGeneratorOn;

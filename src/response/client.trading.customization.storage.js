@@ -1,1 +1,1 @@
-exports.execute = (url, info, sessionID) => json.read(customization_f.getPath(sessionID));
+exports.execute = (url, info, sessionID) => fileIO.read(customization_f.getPath(sessionID));

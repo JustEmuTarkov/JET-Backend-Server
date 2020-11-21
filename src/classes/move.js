@@ -48,7 +48,7 @@ function getOwnerInventoryItems(body, sessionID) {
 function moveItem(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
 	//console.log(body);
-	//console.log(global._Database.items[pmcData.Inventory.items.find(item => item._id == body.item)._tpl]);
+	//console.log(global._database.items[pmcData.Inventory.items.find(item => item._id == body.item)._tpl]);
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
    /*  if (inventoryItems.isMail) {
         let idsToMove = dialogue_f.findAndReturnChildren(inventoryItems.from, body.item);
@@ -383,9 +383,9 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	
 	for (let baseItem of body.items)
 	{
-		if (baseItem.item_id in global._Database.globals.ItemPresets)
+		if (baseItem.item_id in global._database.globals.ItemPresets)
 		{
-			const presetItems = helper_f.clone(global._Database.globals.ItemPresets[baseItem.item_id]._items);
+			const presetItems = helper_f.clone(global._database.globals.ItemPresets[baseItem.item_id]._items);
 			itemLib.push(...presetItems);
 			baseItem.isPreset = true;
 			baseItem.item_id = presetItems[0]._id;
@@ -398,7 +398,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		{
 			/* Note by reider123: Idk when it is used; even when I buy stuffs from fence, this is not called since body.tid is changed to "ragfair" in trade.js.
 			I think It can be just deleted. I just fixed it to make more sense, though. */
-			const fenceItem = json.readParsed(db.user.cache[`assort_${fenceID}`]).items;
+			const fenceItem = fileIO.readParsed(db.user.cache[`assort_${fenceID}`]).items;
 			const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
 			itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
 		}
@@ -516,7 +516,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		}
 
 		// in case people want all items to be marked as found in raid
-		if (global._Database.gameplayConfig.trading.buyItemsMarkedFound)
+		if (global._database.gameplayConfig.trading.buyItemsMarkedFound)
 		{
 			foundInRaid = true;
 		}

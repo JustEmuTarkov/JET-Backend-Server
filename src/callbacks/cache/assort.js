@@ -12,11 +12,11 @@ exports.cache = () => {
 		
 		for(let path in inputNode){
 			if(path != "questassort" && path != "customization" && path != "quests"){
-				base.data[path] = json.readParsed(inputNode[path]);
+				base.data[path] = fileIO.readParsed(inputNode[path]);
 			}
 		}
 		
-        json.write(`./user/cache/assort_${trader}.json`, base);
+        fileIO.write(`./user/cache/assort_${trader}.json`, base);
     }
 
     /* customization */
@@ -27,10 +27,10 @@ exports.cache = () => {
             let base = [];
 
             for (let file in db.assort[trader].customization) {
-                base.push(json.readParsed(db.assort[trader].customization[file]));
+                base.push(fileIO.readParsed(db.assort[trader].customization[file]));
             }
 
-            json.write(`./user/cache/customization_${trader}.json`, base);
+            fileIO.write(`./user/cache/customization_${trader}.json`, base);
         }
     }
 }

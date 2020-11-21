@@ -6,12 +6,12 @@ class DialogueServer {
 	}
 
 	initializeDialogue(sessionID) {
-		this.dialogues[sessionID] = json.readParsed(getPath(sessionID));
+		this.dialogues[sessionID] = fileIO.readParsed(getPath(sessionID));
 	}
 
 	saveToDisk(sessionID) {
 		if (sessionID in this.dialogues) {
-			json.write(getPath(sessionID), this.dialogues[sessionID]);
+			fileIO.write(getPath(sessionID), this.dialogues[sessionID]);
 		}
 	}
 
@@ -22,7 +22,7 @@ class DialogueServer {
 			data.push(this.getDialogueInfo(dialogueId, sessionID));
 		}
 
-		return `{"err":0,"errmsg":null,"data": ${json.stringify(data)}}`;
+		return `{"err":0,"errmsg":null,"data": ${fileIO.stringify(data)}}`;
 	}
 
 	/* Get the content of a dialogue. */
@@ -56,7 +56,7 @@ class DialogueServer {
 		}
 		dialogue.attachmentsNew = attachmentsNew;
 
-		return json.stringify({"err":0,"errmsg":null, "data": {'messages': this.dialogues[sessionID][dialogueId].messages}});
+		return fileIO.stringify({"err":0,"errmsg":null, "data": {'messages': this.dialogues[sessionID][dialogueId].messages}});
 	}
 
 	/*

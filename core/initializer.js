@@ -21,7 +21,7 @@ class Initializer
 		global.core = {};
         global.db = {}; // used only for caching
         global.res = {}; // used for deliver files
-		global._Database = {};
+		global._database = {};
 
 		global.startTimestamp = new Date().getTime();
 		
@@ -38,9 +38,10 @@ class Initializer
 		global.executedDir = internal.process.cwd();
 		
 		// internal packages
-        global.json = require('./util/json.js');
-        global.serverConfig = json.readParsed("user/configs/server.json");
-        global.modsConfig = json.readParsed("user/configs/mods.json");
+        global.fileIO = require('./util/fileIO.js');
+        //global.json = fileIO;
+        global.serverConfig = fileIO.readParsed("user/configs/server.json");
+        global.modsConfig = fileIO.readParsed("user/configs/mods.json");
 		
 		
         global.utility = require('./util/utility.js');
@@ -85,7 +86,7 @@ class Initializer
     initializeClasses() {
         logger.logSuccess("Create: Classes as global variables");
 		let path = executedDir + "/src/classes";
-		let files = json.readDir(path);
+		let files = fileIO.readDir(path);
 		let loadedModules = "";
 		global["helper_f"] = require(executedDir + "/src/classes/helper.js");
 		for(let file of files){

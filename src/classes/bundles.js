@@ -16,7 +16,7 @@ class BundlesServer {
             }
 
             let manifestPath = res.bundles[i].manifest;
-            let manifest = json.readParsed(manifestPath).manifest;
+            let manifest = fileIO.readParsed(manifestPath).manifest;
             let modName = res.bundles[i].manifest.split("/")[2];
             let bundleDir = "";
             let manifestPathSplit = manifestPath.split("/");

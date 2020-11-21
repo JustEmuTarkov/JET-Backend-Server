@@ -51,7 +51,7 @@ module.exports.RenderHomePage = () => {
 	return html;
 }
 module.exports.RenderGameplayConfigPage = (url_return) => {
-	let data = json.readParsed(db.user.configs.gameplay);
+	let data = fileIO.readParsed(db.user.configs.gameplay);
 	let html = '<form action="'+url_return+'" method="post" class="form"><div class="container-full"><div class="row">';
 	for(let category in data){
 		html += '<div class="four columns"><ul><li><h2>' + category + '</h2></li>';
@@ -73,10 +73,41 @@ module.exports.RenderGameplayConfigPage = (url_return) => {
 	html = PageHeader(html); // adds header and footer + some stypes etc.
 	return html;
 }
+module.exports.RenderAccountsConfigPage = (url_return) => {
+	let data = fileIO.readParsed(db.user.configs.accounts);
+	let html = '<div class="container-full"><div class="row">';
+	for(let category in data){
+		html += '<div class="four columns"><form action="'+url_return+'" method="post" class="form"><ul><li><h2>' + category + '</h2></li>';
+		for (let sub in data[category])
+		{
+			if(typeof data[category][sub] == "object"){
+				html += "<li><h3>" + sub + "</h3></li>";
+				for(let subSub in data[category][sub])
+				{
+					if(subSub != "id" && subSub != "nickname")
+						html += "<li><label for='"+subSub+"'>" + subSub + "</label>" + DetectInput(data[category][sub][subSub],subSub) + "<span></span></li>";
+					else
+					{
+						html += "<li><label for='"+subSub+"'>" + subSub + "</label>" + data[category][sub][subSub] + "<span></span></li>";
+					}
+				}
+			} else {
+				if(sub != "id" && sub != "nickname")
+					html += "<li><label for='"+sub+"'>" + sub + "</label>" + DetectInput(data[category][sub],sub) + "<span></span></li>";
+				else
+					html += "<li><label for='"+sub+"'><input type='hidden' value='" + data[category][sub] + "' name='" + sub + "'/>" + sub + "</label>" + data[category][sub] + "<span></span></li>";
+			}
+		}
+		html += "<li class=submit><input type='submit' value='Save'></li></ul></form></div>";
+	}
+	html += '</div></div>';	
+	html = PageHeader(html); // adds header and footer + some stypes etc.
+	return html;
+}
 module.exports.RenderServerConfigPage = (url_return) => {
 	
-	let data = json.readParsed(db.user.configs.server);
-	let html = '<div class="container-full"><div class="row"><form action="'+url_return+'" method="post" class="form">';
+	let data = fileIO.readParsed(db.user.configs.server);
+	let html = '<form action="'+url_return+'" method="post" class="form"><div class="container-full"><div class="row">';
 	for(let category in data){
 		html += '<div class="four columns"><ul>';
 		if(typeof data[category] == "object"){
@@ -98,28 +129,26 @@ module.exports.RenderServerConfigPage = (url_return) => {
 		}
 		html += "</ul></div>"
 	}
-	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></form></div></div>';	
+	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></div></div></form>';	
 	html = PageHeader(html); // adds header and footer + some stypes etc.
 	return html;
 }
 module.exports.RenderModsConfigPage = (url_return) => {
-	console.log(global.internal.resolve("user/configs/mods.json"));
-	let data = json.readParsed(global.internal.resolve("user/configs/mods.json"));
-	let html = '<div class="container"><div class="row"><form action="'+url_return+'" method="post" class="form">';
-	for(let category in data){
+	let data = fileIO.readParsed(global.internal.resolve("user/configs/mods.json"));
+	let html = '<form action="'+url_return+'" method="post" class="form"><div class="container"><div class="row">';
+	for(let category in data)
+	{
 		html += '<div class="twelwe columns" style="text-align:center;margin:0;"><ul><li><h2>' + data[category].author + ' - ' + data[category].name + ' - ' + data[category].version + '</h2></li>';
-		html += "<li><label for='enabled'>Enabled</label>" + DetectInput(data[category].enabled, "enabled") + "<span></span></li>";
-		
-		html += "</ul></div>"
+		html += "<li><label for='enabled'>Enabled</label>" + DetectInput(data[category].enabled, data[category].author + '-' + data[category].name + '-' + data[category].version) + "<span></span></li>";
+		html += "</ul></div>";
 	}
-	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></form></div></div>';	
+	html += '</div><div class="row"><div class="twelve columns"><ul><li class=submit><input type="submit" value="Save"></li></ul></div></div></div></form>';
 	html = PageHeader(html); // adds header and footer + some stypes etc.
 	return html;
 }
-
 module.exports.renderPage = () => {
 	// loads data
-	let data = json.readParsed(db.user.configs.gameplay);
+	let data = fileIO.readParsed(db.user.configs.gameplay);
 	// render page
 	
 	let html = '<div class="container-full"><div class="row">';
@@ -131,7 +160,6 @@ module.exports.renderPage = () => {
 	return html;
 	
 }
-
 function OutputConvert(data){
 	// its not nececerly needed but its ok.
 	if(data.match(/[0-9]/g)){
@@ -152,7 +180,7 @@ function OutputConvert(data){
 
 module.exports.processSaveData = (data, fileName) => {
 	if(JSON.stringify(data) == "{}") return; // if its empty return
-	let _data = json.readParsed(fileName);
+	let _data = fileIO.readParsed(fileName);
 	for(let category in _data)
 	{
 		for (let sub in _data[category])
@@ -164,11 +192,35 @@ module.exports.processSaveData = (data, fileName) => {
 					_data[category][sub][subSub] = dataToSave;
 				}
 			} else {
-				//console.log(sub);
 				let dataToSave = OutputConvert(data[sub]);
 				_data[category][sub] = dataToSave;
 			}
 		}
 	}
-	json.write(fileName, _data);
+	fileIO.write(fileName, _data);
+}
+module.exports.processSaveAccountsData = (data, fileName) => {
+	if(JSON.stringify(data) == "{}") return; // if its empty return
+	let _data = fileIO.readParsed(fileName);
+	//_data[data.id].nickname = (data.nickname;
+	_data[data.id].email = data.email;
+	_data[data.id].password = data.password;
+	_data[data.id].wipe = data.wipe;
+	_data[data.id].edition = data.edition.replace("+", " ").replace("%2B", " ").replace("+", " ").replace("%2B", " ");
+	
+	fileIO.write(global.internal.resolve(fileName), _data);
+}
+module.exports.processSaveModData = (data, fileName) => {
+	if(JSON.stringify(data) == "{}") return; // if its empty return
+	let _data = fileIO.readParsed(fileName);
+
+	for(let modToChange in data)
+	{
+		for(let mod of _data){
+			if(`${mod.author}-${mod.name}-${mod.version}` == modToChange){
+				mod.enabled = data[modToChange];
+			}
+		}
+	}
+	fileIO.write(fileName, _data);
 }
