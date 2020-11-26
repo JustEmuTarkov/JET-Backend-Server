@@ -19,7 +19,6 @@ function GetLootContainerData(ItemID,LootContainerNode){
 	}
 	return null;
 }
-
 function GenerateLootList(container){
 	let LootList = {};
 	let SpawnFilter = container._props.SpawnFilter;
@@ -48,7 +47,6 @@ function GenerateLootList(container){
 	}
 	return LootList;
 }
-
 function FindIfItemIsAPreset(ID_TO_SEARCH){
 	for(let item in _database.globals.ItemPresets){
 		if(typeof _database.globals.ItemPresets[item]._encyclopedia == "undefined") continue;
@@ -57,21 +55,243 @@ function FindIfItemIsAPreset(ID_TO_SEARCH){
 	}
 	return null;
 }
+function _MountedLootPush(typeArray, ids, output) {
+	let count = 0;
+	for (let i in typeArray)
+	{
+		let data = typeArray[i];
 
+		if (data.Id in ids)
+			continue;
+
+		ids[data.Id] = true;
+		output.Loot.push(data);
+		count++;
+	}
+	return count;
+}
+function _ForcedLootPush(typeArray, ids, output) {
+	let count = 0;
+	for (let i in typeArray)
+	{
+		let data = typeArray[i].data[0];
+
+		if (data.Id in ids)
+			continue;
+
+		ids[data.Id] = true;
+		output.Loot.push(data);
+		count++;
+	}
+	return count;
+}
+function _StaticsLootPush(typeArray, ids, output) {
+	let count = 0;
+	for (let i in typeArray)
+        {
+            let data = typeArray[i];
+
+            if (data.Id in ids)
+                continue;
+
+            ids[data.Id] = true;
+
+            if (data.Items.length > 1)
+                data.Items.splice(1);
+
+            _GenerateContainerLoot(data.Items);
+            output.Loot.push(data);
+            count++;
+        }
+	return count;
+}
+function _RollMaxItemsToSpawn(container){
+	let minCount = 0;
+	let maxItemsPossibleToSpawn = container._props.Grids[0]._props.cellsV * container._props.Grids[0]._props.cellsH;
+	let rollForContainer = utility.getRandomInt(0, 100);
+	if(rollForContainer > _database.gameplayConfig.locationloot.containers.ChanceForEmpty){
+		for (let i = 0; i < maxItemsPossibleToSpawn; i++)
+		{
+			let roll = utility.getRandomInt(0, 100);
+
+			if (roll < _database.gameplayConfig.locationloot.containers.ChanceToSpawnNextItem)
+			{
+				minCount++;
+			}
+		}
+	}
+	return minCount;
+}
+function _GenerateContainerLoot(_items) {
+	// we are getting the lootcontainer node and selecting proper loot container
+	let LootContainerNode = LoadLootContainerNode();
+	if(LootContainerNode == null)
+		throw "LootContainerNode is null something goes wrong please check db.items[???LootContainer???.json] file";
+	
+	let container = GetLootContainerData(_items[0]._tpl,LootContainerNode);
+	if(container == null)
+		throw "GetLootContainerData is null something goes wrong please check if container template: "+_items[0]._tpl+" exists";
+
+	// {"chance":50,"minCount":0,"maxCount":2,"width":2,"height":2,"maxProbability":114711,"items":[]}
+	//container._props.Grids[0]._props.cellsH // Width
+	//container._props.Grids[0]._props.cellsV // Height
+	//container._props.SpawnFilter // Array of items/categories to spawn
+	//_database.items[_ID_]._props.SpawnChance // ItemSpawnChance
+	
+	let LootList = GenerateLootList(container);
+
+	let parentId = _items[0]._id;
+	let idPrefix = parentId.substring(0, parentId.length - 4);
+	let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
+	let container2D = Array(container._props.Grids[0]._props.cellsV).fill().map(() => Array(container._props.Grids[0]._props.cellsH).fill(0));
+	let maxProbability = container.maxProbability;
+	
+	let minCount = _RollMaxItemsToSpawn(container);
+	let ContainerSlots = container._props.Grids[0]._props.cellsH;
+	for (let i = 0; i < minCount; i++)
+	{
+		let item = {};
+		let containerItem = {};
+		let result = { success: false };
+		let maxAttempts = _database.gameplayConfig.locationloot.containers.AttemptsToPlaceLoot;
+
+		while (!result.success && maxAttempts)
+		{
+			let rolling_pool = [];
+			for(let lootItem in LootList){
+				let roll = utility.getRandomInt(0, 10000);
+				let itemChance = LootList[lootItem]._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots);
+				if(itemChance < roll){
+					rolling_pool.push(LootList[lootItem]);
+				}
+			}
+			let rolled = null;
+			if(rolling_pool.length > 0){
+				rolled = rolling_pool.find(item => utility.getRandomInt(0, 10000) < item._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots));
+			}
+			//let rolled = LootList.find(itm => itm._props.SpawnChance <= roll);
+
+			if(rolled != null){
+				item = helper_f.getItem(rolled._id)[1];
+				
+				if (rolled.preset != null)
+				{
+					let size = helper_f.getItemSize(item._id, rolled.preset._items[0]._id, rolled.preset._items);
+					// Guns will need to load a preset of items
+					item._props.presetId = rolled.preset._id;
+					item._props.Width = size[0];
+					item._props.Height = size[1];
+				}
+				result = helper_f.findSlotForItem(container2D, item._props.Width, item._props.Height);
+			}
+			maxAttempts--;
+		}
+
+		// if we weren't able to find an item to fit after 20 tries then container is probably full
+		if (!result.success)
+			break;
+
+		container2D = helper_f.fillContainerMapWithItem(
+			container2D, result.x, result.y, item._props.Width, item._props.Height, result.rotation);
+		let rot = result.rotation ? 1 : 0;
+
+		if (item._props.presetId)
+		{
+			// Process gun preset into container items
+			let preset = helper_f.getPreset(item._id);
+			if(preset == null) continue;
+			preset._items[0].parentId = parentId;
+			preset._items[0].slotId = "main";
+			preset._items[0].location = { "x": result.x, "y": result.y, "r": rot};
+
+			for (var p in preset._items)
+			{
+				_items.push(preset._items[p]);
+
+				if (preset._items[p].slotId === "mod_magazine")
+				{
+					let mag = helper_f.getItem(preset._items[p]._tpl)[1];
+					let cartridges = {
+						"_id": idPrefix + idSuffix.toString(16),
+						"_tpl": item._props.defAmmo,
+						"parentId": preset._items[p]._id,
+						"slotId": "cartridges",
+						"upd": { "StackObjectsCount": mag._props.Cartridges[0]._max_count }
+					};
+
+					_items.push(cartridges);
+					idSuffix++;
+				}
+			}
+
+			continue;
+		}
+
+		containerItem = {
+			"_id": idPrefix + idSuffix.toString(16),
+			"_tpl": item._id,
+			"parentId": parentId,
+			"slotId": "main",
+			"location": { "x": result.x, "y": result.y, "r": rot}
+		};
+
+		let cartridges;
+		if (item._parent === "543be5dd4bdc2deb348b4569" || item._parent === "5485a8684bdc2da71d8b4567")
+		{
+			// Money or Ammo stack
+			let stackCount = utility.getRandomInt(item._props.StackMinRandom, item._props.StackMaxRandom);
+			containerItem.upd = { "StackObjectsCount": stackCount };
+		}
+		else if (item._parent === "543be5cb4bdc2deb348b4568")
+		{
+			// Ammo container
+			idSuffix++;
+
+			cartridges = {
+				"_id": idPrefix + idSuffix.toString(16),
+				"_tpl": item._props.StackSlots[0]._props.filters[0].Filter[0],
+				"parentId": containerItem._id,
+				"slotId": "cartridges",
+				"upd": { "StackObjectsCount": item._props.StackMaxRandom }
+			};
+		}
+		else if (item._parent === "5448bc234bdc2d3c308b4569")
+		{
+			// Magazine
+			idSuffix++;
+			cartridges = {
+				"_id": idPrefix + idSuffix.toString(16),
+				"_tpl": item._props.Cartridges[0]._props.filters[0].Filter[0],
+				"parentId": parentId,
+				"slotId": "cartridges",
+				"upd": { "StackObjectsCount": item._props.Cartridges[0]._max_count }
+			};
+		}
+
+		_items.push(containerItem);
+		
+		if (cartridges)
+			_items.push(cartridges);
+		
+		idSuffix++;
+	}
+}
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
     constructor() {
-        this.locations = {};
-		this.location = {};
-		this.loot = {};
+        this.Locations = {};
+		this.LocationBase = {};
+		//this.loot = {};
     }
-
     /* Load all the locations into memory. */
     initialize() {
-		this.locations = fileIO.readParsed(db.user.cache.locations);
-		this.loot = fileIO.readParsed(db.cacheBase.location_statics);
+		// load all needed data into memory
+		for(let location in db.locations){
+			this.Locations[location] = fileIO.readParsed(db.locations[location]);
+		}
+		this.LocationBase = fileIO.readParsed(db.cacheBase.locations);
+		//this.loot = fileIO.readParsed(db.cacheBase.location_statics);
     }
-
     /* generates a random location preset to use for local session */
     generate(name) {
 		//check if one file loot is existing
@@ -82,10 +302,10 @@ class LocationServer {
 			logger.logWarning("No Such Location");
 			return;
 		}
-		this.location = fileIO.readParsed(db.locations[name]);
+		let location = this.Locations[name];
 		
-        const locationLootChanceModifier = this.location.base.GlobalLootChanceModifier;
-        let output = this.location.base;
+        const locationLootChanceModifier = location.base.GlobalLootChanceModifier;
+        let output = location.base;
         let ids = {};
 
         // don't generate loot on hideout
@@ -94,16 +314,17 @@ class LocationServer {
             return output;
         }
 
-        let forced = this.location.loot.forced;
-        let mounted = this.location.loot.mounted;
-        let statics = this.location.loot.static;
-        let dynamic = this.location.loot.dynamic;
+        let forced = location.loot.forced;
+        let mounted = location.loot.mounted;
+        let statics = location.loot.static;
+        let dynamic = location.loot.dynamic;
         output.Loot = [];
-
         let count = 0;
 		let counters = [];
+		
+		count = _MountedLootPush(mounted, ids, output);
         // mounted weapons
-        for (let i in mounted)
+        /*for (let i in mounted)
         {
             let data = mounted[i];
 
@@ -113,11 +334,12 @@ class LocationServer {
             ids[data.Id] = true;
             output.Loot.push(data);
 			count++;
-        }
+        }*/
 		counters.push(count);
 		count = 0;
+		count = _ForcedLootPush(forced, ids, output);
 		// forced loot
-        for (let i in forced)
+        /*for (let i in forced)
         {
             let data = forced[i].data[0];
 
@@ -127,11 +349,12 @@ class LocationServer {
             ids[data.Id] = true;
             output.Loot.push(data);
 			count++;
-        }
+        }*/
 		counters.push(count);
         count = 0;
+		count = _StaticsLootPush(statics, ids, output)
         // static loot
-        for (let i in statics)
+        /*for (let i in statics)
         {
             let data = statics[i];
 
@@ -146,7 +369,7 @@ class LocationServer {
             this.generateContainerLoot(data.Items);
             output.Loot.push(data);
             count++;
-        }
+        }*/
 		counters.push(count);
 
         // dyanmic loot
@@ -174,7 +397,7 @@ class LocationServer {
 
             //Check if LootItem is overlapping
             let position = data.Position.x + "," + data.Position.y + "," + data.Position.z;
-            if (!global._database.gameplayConfig.locationloot.allowLootOverlay && lootPositions.includes(position))
+            if (!global._database.gameplayConfig.locationloot.allowLootOverlap && lootPositions.includes(position))
             {
                 //Clear selected loot
                 dynamic[rndLootIndex].data.splice(rndLootTypeIndex, 1);
@@ -227,10 +450,10 @@ class LocationServer {
                 }
             }
 
-            const num = utility.getRandomInt(0, 100);
-            const spawnChance = helper_f.getItem(data.Items[0]._tpl)[1]['_props']['SpawnChance'];
-            const itemChance = (spawnChance * locationLootChanceModifier).toFixed(0);
-            if (itemChance >= num)
+            const num = utility.getRandomInt(0, 10000);
+            const spawnChance = helper_f.getItem(data.Items[0]._tpl)[1]['_props']['SpawnChance'] * 100;
+            const itemChance = spawnChance * locationLootChanceModifier;
+            if (itemChance < num)
             {
                 count += 1;
                 lootPositions.push(position);
@@ -253,184 +476,8 @@ class LocationServer {
 				return obj;
 		}
 	}
-	
 	// TODO: rework required - weard functions to replace later on ;)
-	generateContainerLoot(_items) {
-		// REWRITE IT TO TAKE ADVANTAGE OF items.json over some retarded bilion additional files
-		
-		// we are getting the lootcontainer node and selecting proper loot container
-		let LootContainerNode = LoadLootContainerNode();
-		if(LootContainerNode == null)
-			throw "LootContainerNode is null something goes wrong please check db.items[???LootContainer???.json] file";
-		
-		let container = GetLootContainerData(_items[0]._tpl,LootContainerNode);
-		if(container == null)
-			throw "GetLootContainerData is null something goes wrong please check if container template: "+_items[0]._tpl+" exists";
-
-		// {"chance":50,"minCount":0,"maxCount":2,"width":2,"height":2,"maxProbability":114711,"items":[]}
-		
-		//container._props.Grids[0]._props.cellsH // Width
-		//container._props.Grids[0]._props.cellsV // Height
-		
-		//container._props.SpawnFilter // Array of items/categories to spawn
-		
-		let LootList = GenerateLootList(container);
-		
-		// LootList[_ID_]._props.SpawnChance
-		
-		// spawn filter need to be done for categories to add indyvidual items to the list
-		
-		//_database.items[_ID_]._props.SpawnChance // ItemSpawnChance
-		
-        //let container = this.loot[_items[0]._tpl];
-        let parentId = _items[0]._id;
-        let idPrefix = parentId.substring(0, parentId.length - 4);
-        let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
-        let container2D = Array(container._props.Grids[0]._props.cellsV).fill().map(() => Array(container._props.Grids[0]._props.cellsH).fill(0));
-		
-		let maxItemsPossibleToSpawn = container._props.Grids[0]._props.cellsV * container._props.Grids[0]._props.cellsH;
-		
-        let maxProbability = container.maxProbability;
-        let minCount = 0;
-		let rollForContainer = utility.getRandomInt(0, 100);
-		if(rollForContainer > _database.gameplayConfig.locationloot.containers.ChanceForEmpty){
-			for (let i = 0; i < maxItemsPossibleToSpawn; i++)
-			{
-				let roll = utility.getRandomInt(0, 100);
-
-				if (roll < _database.gameplayConfig.locationloot.containers.ChanceToSpawnNextItem)
-				{
-					minCount++;
-				}
-			}
-		}
-
-        for (let i = 0; i < minCount; i++)
-        {
-            let item = {};
-            let containerItem = {};
-            let result = { success: false };
-            let maxAttempts = _database.gameplayConfig.locationloot.containers.AttemptsToPlaceLoot;
-
-            while (!result.success && maxAttempts)
-            {
-                let roll = utility.getRandomInt(0, 100);
-				let rolling_pool = [];
-				for(let lootItem in LootList){
-					if(LootList[lootItem]._props.SpawnChance <= roll){
-						rolling_pool.push(LootList[lootItem]);
-					}
-				}
-				let rolled = null;
-				if(rolling_pool.length > 0)
-					rolled = rolling_pool[Math.floor(Math.random() * rolling_pool.length)];
-                //let rolled = LootList.find(itm => itm._props.SpawnChance <= roll);
-
-				if(rolled != null){
-					item = helper_f.getItem(rolled._id)[1];
-					
-					if (rolled.preset != null)
-					{
-						let size = helper_f.getItemSize(item._id, rolled.preset._items[0]._id, rolled.preset._items);
-						// Guns will need to load a preset of items
-						item._props.presetId = rolled.preset._id;
-						item._props.Width = size[0];
-						item._props.Height = size[1];
-					}
-					result = helper_f.findSlotForItem(container2D, item._props.Width, item._props.Height);
-				}
-                maxAttempts--;
-            }
-
-            // if we weren't able to find an item to fit after 20 tries then container is probably full
-            if (!result.success)
-                break;
-
-            container2D = helper_f.fillContainerMapWithItem(
-                container2D, result.x, result.y, item._props.Width, item._props.Height, result.rotation);
-            let rot = result.rotation ? 1 : 0;
-
-            if (item._props.presetId)
-            {
-                // Process gun preset into container items
-                let preset = helper_f.getPreset(item._id);
-				if(preset == null) continue;
-                preset._items[0].parentId = parentId;
-                preset._items[0].slotId = "main";
-                preset._items[0].location = { "x": result.x, "y": result.y, "r": rot};
-
-                for (var p in preset._items)
-                {
-                    _items.push(preset._items[p]);
-
-                    if (preset._items[p].slotId === "mod_magazine")
-                    {
-                        let mag = helper_f.getItem(preset._items[p]._tpl)[1];
-                        let cartridges = {
-                            "_id": idPrefix + idSuffix.toString(16),
-                            "_tpl": item._props.defAmmo,
-                            "parentId": preset._items[p]._id,
-                            "slotId": "cartridges",
-                            "upd": { "StackObjectsCount": mag._props.Cartridges[0]._max_count }
-                        };
-
-                        _items.push(cartridges);
-                        idSuffix++;
-                    }
-                }
-
-                continue;
-            }
-
-            containerItem = {
-                "_id": idPrefix + idSuffix.toString(16),
-                "_tpl": item._id,
-                "parentId": parentId,
-                "slotId": "main",
-                "location": { "x": result.x, "y": result.y, "r": rot}
-            };
-
-            let cartridges;
-            if (item._parent === "543be5dd4bdc2deb348b4569" || item._parent === "5485a8684bdc2da71d8b4567")
-            {
-                // Money or Ammo stack
-                let stackCount = utility.getRandomInt(item._props.StackMinRandom, item._props.StackMaxRandom);
-                containerItem.upd = { "StackObjectsCount": stackCount };
-            }
-            else if (item._parent === "543be5cb4bdc2deb348b4568")
-            {
-                // Ammo container
-                idSuffix++;
-
-                cartridges = {
-                    "_id": idPrefix + idSuffix.toString(16),
-                    "_tpl": item._props.StackSlots[0]._props.filters[0].Filter[0],
-                    "parentId": containerItem._id,
-                    "slotId": "cartridges",
-                    "upd": { "StackObjectsCount": item._props.StackMaxRandom }
-                };
-            }
-            else if (item._parent === "5448bc234bdc2d3c308b4569")
-            {
-                // Magazine
-                idSuffix++;
-                cartridges = {
-                    "_id": idPrefix + idSuffix.toString(16),
-                    "_tpl": item._props.Cartridges[0]._props.filters[0].Filter[0],
-                    "parentId": parentId,
-                    "slotId": "cartridges",
-                    "upd": { "StackObjectsCount": item._props.Cartridges[0]._max_count }
-                };
-            }
-
-            _items.push(containerItem);
-			
-            if (cartridges)
-                _items.push(cartridges);
-			
-            idSuffix++;
-        }
-    }
+	
 /*
 	================================================================================================================
 */
@@ -445,20 +492,19 @@ class LocationServer {
 		// lets try to read from cache
 		if(!utility.isUndefined(db.user.cache.locations))
 		{
-			if(fileIO.exist(db.user.cache.locations))
+			if(fileIO.exist(db.cacheBase.locations))
 			{
 				let base = fileIO.readParsed(db.cacheBase.locations);
-				let data = fileIO.readParsed(db.user.cache.locations);
 				let newData = {};
-				for(let location in data){
-					newData[data[location]._Id] = data[location];
+				for(let location in this.Locations){
+					newData[this.Locations[location].base._Id] = this.Locations[location].base;
 				}
 				base.data.locations = newData;
 				return base.data;
 			}
-			logger.logError(`What the fuck did you put into db.user.cache.locations: ${db.user.cache.locations}`);
+			logger.logError(`Missing file db/cacheBase/locations.json`);
 		}
-		throw "USE A FUCKING CACHE SYSTEM U MORON!!";
+		throw "Missing file db/cacheBase/locations.json";
     }
 }
 

@@ -699,14 +699,15 @@ function arrayIntersect(a, b) {
 function getPreset (id){
 	let itmPreset = global._database.globals.ItemPresets[id];
 	if(typeof itmPreset == "undefined"){
+		/* this was causing an error where preset id couldnt be found on the client and caused client stop loading map...
 		for(let itemP in global._database.globals.ItemPresets){
 			if(global._database.globals.ItemPresets[itemP]._items[0]._tpl == id){
 				itmPreset = global._database.globals.ItemPresets[itemP];
 				break;
 			}
-		}
+		}*/
 		if(typeof itmPreset == "undefined"){
-			logger.logWarning("Could not find preset with id: " + id + " searched for Template ID of item and Preset ID");
+			logger.logWarning("Preset of id: " + id + " not found on a list (this warning is not important)");
 			return null;
 		}
 	}

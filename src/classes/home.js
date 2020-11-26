@@ -162,6 +162,9 @@ module.exports.renderPage = () => {
 }
 function OutputConvert(data){
 	// its not nececerly needed but its ok.
+	if((data.match(/./g) || []).length > 1){
+		return data; // this is IP man...
+	}
 	if(data.match(/[0-9]/g)){
 		// its a number
 		if(data.match(/[.]/)){
@@ -178,12 +181,29 @@ function OutputConvert(data){
 	return data;
 }
 
+module.exports.processSaveServerData = (data, fileName) => {
+	if(JSON.stringify(data) == "{}") return; // if its empty return
+	let _data = fileIO.readParsed(fileName);
+	for(let category in _data)
+	{
+		if(typeof _data[category] == "object"){
+			for(let name in _data[category]){
+				_data[category][name] = OutputConvert(data[name]);
+				if(typeof _data[category][name] == "string")
+					_data[category][name] = _data[category][name].replace(/[+]/g, " ");
+			}
+		} else {
+			_data[category] = OutputConvert(data[category]);
+		}
+	}
+	fileIO.write(fileName, _data);
+}
 module.exports.processSaveData = (data, fileName) => {
 	if(JSON.stringify(data) == "{}") return; // if its empty return
 	let _data = fileIO.readParsed(fileName);
 	for(let category in _data)
 	{
-		for (let sub in _data[category])
+		for (let sub of _data[category])
 		{
 			if(typeof _data[category][sub] == "object"){
 				for(let subSub in _data[category][sub])

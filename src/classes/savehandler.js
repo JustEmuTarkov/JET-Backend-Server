@@ -16,7 +16,7 @@ function initialize() {
 	if (global._database.gameplayConfig.autosave.saveIntervalSec > 0) {
         setInterval(function() {
             savehandler_f.saveOpenSessions();
-            logger.logSuccess("Player progress autosaved!");
+            logger.logInfo("Player progress autosaved!");
         }, global._database.gameplayConfig.autosave.saveIntervalSec * 1000);
     }
 }

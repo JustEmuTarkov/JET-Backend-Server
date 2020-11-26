@@ -2653,40 +2653,51 @@
 		"fleaOffer": "db/cacheBase/fleaOffer.json",
 		"globals": "db/cacheBase/globals.json",
 		"locations": "db/cacheBase/locations.json",
-		"location_statics": "db/cacheBase/location_statics.json",
 		"matchMetrics": "db/cacheBase/matchMetrics.json",
 		"traders": {
 			"54cb50c76803fa8b248b4571": {
 				"base": "db/cacheBase/traders/54cb50c76803fa8b248b4571/base.json",
-				"categories": "db/cacheBase/traders/54cb50c76803fa8b248b4571/categories.json"
+				"categories": "db/cacheBase/traders/54cb50c76803fa8b248b4571/categories.json",
+				"dialogue": "db/cacheBase/traders/54cb50c76803fa8b248b4571/dialogue.json",
+				"questassort": "db/cacheBase/traders/54cb50c76803fa8b248b4571/questassort.json"
 			},
 			"54cb57776803fa99248b456e": {
 				"base": "db/cacheBase/traders/54cb57776803fa99248b456e/base.json",
-				"categories": "db/cacheBase/traders/54cb57776803fa99248b456e/categories.json"
+				"categories": "db/cacheBase/traders/54cb57776803fa99248b456e/categories.json",
+				"dialogue": "db/cacheBase/traders/54cb57776803fa99248b456e/dialogue.json",
+				"questassort": "db/cacheBase/traders/54cb57776803fa99248b456e/questassort.json"
 			},
 			"579dc571d53a0658a154fbec": {
 				"base": "db/cacheBase/traders/579dc571d53a0658a154fbec/base.json",
-				"categories": "db/cacheBase/traders/579dc571d53a0658a154fbec/categories.json"
+				"categories": "db/cacheBase/traders/579dc571d53a0658a154fbec/categories.json",
+				"questassort": "db/cacheBase/traders/579dc571d53a0658a154fbec/questassort.json",
+				"suits": "db/cacheBase/traders/579dc571d53a0658a154fbec/suits.json"
 			},
 			"58330581ace78e27b8b10cee": {
 				"base": "db/cacheBase/traders/58330581ace78e27b8b10cee/base.json",
-				"categories": "db/cacheBase/traders/58330581ace78e27b8b10cee/categories.json"
+				"categories": "db/cacheBase/traders/58330581ace78e27b8b10cee/categories.json",
+				"questassort": "db/cacheBase/traders/58330581ace78e27b8b10cee/questassort.json"
 			},
 			"5935c25fb3acc3127c3d8cd9": {
 				"base": "db/cacheBase/traders/5935c25fb3acc3127c3d8cd9/base.json",
-				"categories": "db/cacheBase/traders/5935c25fb3acc3127c3d8cd9/categories.json"
+				"categories": "db/cacheBase/traders/5935c25fb3acc3127c3d8cd9/categories.json",
+				"questassort": "db/cacheBase/traders/5935c25fb3acc3127c3d8cd9/questassort.json"
 			},
 			"5a7c2eca46aef81a7ca2145d": {
 				"base": "db/cacheBase/traders/5a7c2eca46aef81a7ca2145d/base.json",
-				"categories": "db/cacheBase/traders/5a7c2eca46aef81a7ca2145d/categories.json"
+				"categories": "db/cacheBase/traders/5a7c2eca46aef81a7ca2145d/categories.json",
+				"questassort": "db/cacheBase/traders/5a7c2eca46aef81a7ca2145d/questassort.json"
 			},
 			"5ac3b934156ae10c4430e83c": {
 				"base": "db/cacheBase/traders/5ac3b934156ae10c4430e83c/base.json",
-				"categories": "db/cacheBase/traders/5ac3b934156ae10c4430e83c/categories.json"
+				"categories": "db/cacheBase/traders/5ac3b934156ae10c4430e83c/categories.json",
+				"questassort": "db/cacheBase/traders/5ac3b934156ae10c4430e83c/questassort.json",
+				"suits": "db/cacheBase/traders/5ac3b934156ae10c4430e83c/suits.json"
 			},
 			"5c0647fdd443bc2504c2d371": {
 				"base": "db/cacheBase/traders/5c0647fdd443bc2504c2d371/base.json",
-				"categories": "db/cacheBase/traders/5c0647fdd443bc2504c2d371/categories.json"
+				"categories": "db/cacheBase/traders/5c0647fdd443bc2504c2d371/categories.json",
+				"questassort": "db/cacheBase/traders/5c0647fdd443bc2504c2d371/questassort.json"
 			},
 			"ragfair": {
 				"base": "db/cacheBase/traders/ragfair/base.json",
@@ -3175,7 +3186,6 @@
 		}
 	},
 	"locations": {
-		"base": "db/locations/base.json",
 		"bigmap": "db/locations/bigmap.json",
 		"develop": "db/locations/develop.json",
 		"factory4_day": "db/locations/factory4_day.json",

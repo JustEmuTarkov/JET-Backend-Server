@@ -643,7 +643,6 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 			toDo.splice(0, 1);
 		}
 	}
-	console.log(output);
 	return output;
 }
 
