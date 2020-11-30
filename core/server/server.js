@@ -36,7 +36,6 @@ class Server {
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
-
 	createStartCallback(){
         this.startCallback = {};
 		let path = "./src/callbacks/load";
@@ -47,7 +46,6 @@ class Server {
 		}
 		logger.logSuccess("Create: Start Callback");
 	}
-	
 	createReceiveCallback(){
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
@@ -58,7 +56,6 @@ class Server {
 		}
 		logger.logSuccess("Create: Receive Callback");
 	}
-	
 	createRespondCallback(){
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
@@ -73,7 +70,6 @@ class Server {
     resetBuffer(sessionID) {
         this.buffers[sessionID] = undefined;
     }
-
     putInBuffer(sessionID, data, bufLength) {
         if (this.buffers[sessionID] === undefined || this.buffers[sessionID].allocated !== bufLength) {
             this.buffers[sessionID] = {
@@ -93,29 +89,23 @@ class Server {
     getFromBuffer(sessionID) {
         return this.buffers[sessionID].buffer;
     }
-
     getName() {
         return this.name;
     }
-
     getIp() {
         return this.ip;
     }
-
     getPort() {
         return this.port;
     }
-
     getBackendUrl() {
 		if(this.second_backendUrl != null)
 			return this.second_backendUrl;
         return this.backendUrl;
     }
-
     getVersion() {
         return this.version;
     }
-
     generateCertificate() {
 
         const certDir = internal.resolve(__dirname, '../../user/certs');
@@ -164,17 +154,14 @@ class Server {
             resp.end(buf);
         });
     }
-    
     sendTextJson(resp, output) {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json']});
         resp.end(output);
     }
-	
 	sendHtml(resp, output) {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
         resp.end(output);
     }
-    
     sendFile(resp, file) {
         let pathSlic = file.split("/");
         let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
@@ -244,7 +231,6 @@ class Server {
             this.sendZlibJson(resp, output, sessionID);
         }
     }
-
     handleRequest(req, resp) {
         let IP = req.connection.remoteAddress.replace("::ffff:", "");
 		    IP = ((IP == "127.0.0.1")?"LOCAL":IP);
@@ -315,6 +301,46 @@ class Server {
 	_loadGameplayConfig(){
 		global._database.gameplayConfig = fileIO.readParsed(db.user.configs.gameplay);
 	}
+	_loadBotsData(){
+		global._database.bots = {};
+		for(let botType in db.bots){
+			global._database.bots[botType] = {};
+			let difficulty_easy = null;
+			let difficulty_normal =  null;
+			let difficulty_hard = null;
+			let difficulty_impossible = null;
+			if(typeof db.bots[botType].difficulty != "undefined"){
+				if(typeof db.bots[botType].difficulty.easy != "undefined")
+					difficulty_easy = fileIO.readParsed(db.bots[botType].difficulty.easy);
+				if(typeof db.bots[botType].difficulty.normal != "undefined")
+					difficulty_normal = fileIO.readParsed(db.bots[botType].difficulty.normal);
+				if(typeof db.bots[botType].difficulty.hard != "undefined")
+					difficulty_hard = fileIO.readParsed(db.bots[botType].difficulty.hard);
+				if(typeof db.bots[botType].difficulty.impossible != "undefined")
+					difficulty_impossible = fileIO.readParsed(db.bots[botType].difficulty.impossible);
+			}
+			global._database.bots[botType].difficulty = {
+				"easy": difficulty_easy,
+				"normal": difficulty_normal,
+				"hard": difficulty_hard,
+				"impossible": difficulty_impossible,
+			};
+			global._database.bots[botType].appearance = fileIO.readParsed(db.bots[botType].appearance);
+			global._database.bots[botType].chances = fileIO.readParsed(db.bots[botType].chances);
+			global._database.bots[botType].experience = fileIO.readParsed(db.bots[botType].experience);
+			global._database.bots[botType].generation = fileIO.readParsed(db.bots[botType].generation);
+			global._database.bots[botType].health = fileIO.readParsed(db.bots[botType].health);
+			global._database.bots[botType].inventory = fileIO.readParsed(db.bots[botType].inventory);
+			global._database.bots[botType].names = fileIO.readParsed(db.bots[botType].names);
+		}
+	}
+	_loadCoreData(){
+		global._database.core = {};
+		global._database.core.botBase = fileIO.readParsed(db.cacheBase.botBase);
+		global._database.core.botCore = fileIO.readParsed(db.cacheBase.botCore);
+		global._database.core.fleaOffer = fileIO.readParsed(db.cacheBase.fleaOffer);
+		global._database.core.matchMetrics = fileIO.readParsed(db.cacheBase.matchMetrics);
+	}
 	// private function
 	_loadDatabaseItems(){
 		global._database.items = fileIO.readParsed(db.user.cache.items);
@@ -370,8 +396,14 @@ class Server {
 		if(serverConfig.rebuildCache)
 			global.core.route.CacheModLoad(); // CacheModLoad
 		
+        logger.logInfo("[Warmup]: Loading Database: CoreData...");
+		this._loadCoreData();
+        logger.logInfo("[Warmup]: Loading Database: Globals...");
 		this._loadGlobals();
+        logger.logInfo("[Warmup]: Loading Database: GameplayConfig...");
 		this._loadGameplayConfig();
+        logger.logInfo("[Warmup]: Loading Database: BotsData...");
+		this._loadBotsData();
 		
         // execute start callback
         logger.logInfo("[Warmup]: Start callbacks...");

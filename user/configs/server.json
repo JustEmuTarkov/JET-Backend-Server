@@ -6,7 +6,7 @@
 	"rebuildCache": false,
 	"name": "JustEmuTarkov",
 	"offline": {
-		"OfflineLootPatch": false,
+		"OfflineLootPatch": true,
 		"InsuranceScreenPatch": true,
 		"BossSpawnChancePatch": true,
 		"BotTemplateLimitPatch": true,

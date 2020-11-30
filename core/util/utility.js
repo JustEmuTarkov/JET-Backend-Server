@@ -1,4 +1,9 @@
 "use strict";
+// WipeDependencies
+exports.wipeDepend = (data) => {
+	return JSON.parse(JSON.stringify(data));
+}
+
 // getCookies
 exports.getCookies = (req) => {
     let found = {};
@@ -31,13 +36,13 @@ exports.getRandomInt = (min = 0, max = 100) => {
 exports.getRandomIntEx = (max) => {
     return (max > 1) ? Math.floor(Math.random() * (max - 2) + 1) : 1;
 }
-// getDirList
+// getDirList TODO: OBSOLETE
 exports.getDirList = (path) => {
     return fileIO.readDir(path).filter(function(file) {
         return fileIO.statSync(path + '/' + file).isDirectory();
     });
 }
-// removeDir
+// removeDir TODO: OBSOLETE
 exports.removeDir = (dir) => {
     for (file of fileIO.readDir(dir)) {
         let curPath = internal.path.join(dir, file);
@@ -132,4 +137,91 @@ exports.secondsToTime = (timestamp) =>{
 // isUndefined
 exports.isUndefined = (dataToCheck) => {
 	return typeof dataToCheck == "undefined";
+}
+exports.getArrayValue = (arr) => {
+	return arr[utility.getRandomInt(0, arr.length - 1)];
+}
+
+/*
+ *	PROFILE UTILITIES
+ *
+*/
+
+exports.generateInventoryID = (profile) => {
+	let itemsByParentHash = {};
+	let inventoryItemHash = {};
+	let inventoryId = "";
+
+	// Generate inventoryItem list
+	for (let item of profile.Inventory.items)
+	{
+		inventoryItemHash[item._id] = item;
+
+		if (item._tpl === "55d7217a4bdc2d86028b456d")
+		{
+			inventoryId = item._id;
+			continue;
+		}
+
+		if (!("parentId" in item))
+		{
+			continue;
+		}
+
+		if (!(item.parentId in itemsByParentHash))
+		{
+			itemsByParentHash[item.parentId] = [];
+		}
+
+		itemsByParentHash[item.parentId].push(item);
+	}
+
+	// update inventoryId
+	const newInventoryId = utility.generateNewItemId();
+	inventoryItemHash[inventoryId]._id = newInventoryId;
+	profile.Inventory.equipment = newInventoryId;
+
+	// update inventoryItem id
+	if (inventoryId in itemsByParentHash)
+	{
+		for (let item of itemsByParentHash[inventoryId])
+		{
+			item.parentId = newInventoryId;
+		}
+	}
+
+	return profile;
+}
+
+exports.splitStack = (item) => 
+{
+	if (!("upd" in item) || !("StackObjectsCount" in item.upd))
+	{
+		return [item];
+	}
+
+	let maxStack = global._database.items[item._tpl]._props.StackMaxSize;
+	let count = item.upd.StackObjectsCount;
+	let stacks = [];
+
+	// If the current count is already equal or less than the max
+	// then just return the item as is.
+	if (count <= maxStack)
+	{
+		stacks.push(utility.wipeDepend(item));
+		return stacks;
+	}
+
+	while (count)
+	{
+		let amount = Math.min(count, maxStack);
+		let newStack = utility.wipeDepend(item);
+
+		newStack._id = utility.generateNewItemId();
+		newStack.upd.StackObjectsCount = amount;
+		count -= amount;
+		stacks.push(newStack);
+	}
+
+	return stacks;
 }

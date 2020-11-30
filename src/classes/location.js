@@ -323,53 +323,15 @@ class LocationServer {
 		let counters = [];
 		
 		count = _MountedLootPush(mounted, ids, output);
-        // mounted weapons
-        /*for (let i in mounted)
-        {
-            let data = mounted[i];
 
-            if (data.Id in ids)
-                continue;
-
-            ids[data.Id] = true;
-            output.Loot.push(data);
-			count++;
-        }*/
 		counters.push(count);
 		count = 0;
 		count = _ForcedLootPush(forced, ids, output);
-		// forced loot
-        /*for (let i in forced)
-        {
-            let data = forced[i].data[0];
 
-            if (data.Id in ids)
-                continue;
-
-            ids[data.Id] = true;
-            output.Loot.push(data);
-			count++;
-        }*/
 		counters.push(count);
         count = 0;
 		count = _StaticsLootPush(statics, ids, output)
-        // static loot
-        /*for (let i in statics)
-        {
-            let data = statics[i];
 
-            if (data.Id in ids)
-                continue;
-
-            ids[data.Id] = true;
-
-            if (data.Items.length > 1)
-                data.Items.splice(1);
-
-            this.generateContainerLoot(data.Items);
-            output.Loot.push(data);
-            count++;
-        }*/
 		counters.push(count);
 
         // dyanmic loot

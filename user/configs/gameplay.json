@@ -23,8 +23,13 @@
 	"bots": {
 		"pmc": {
 			"enabled": true,
-			"spawnChance": 50,
-			"usecChance": 50
+			"usecChance": 50,
+			"types": {
+				"followerTest": 100,
+                "bossTest": 100,
+                "assault": 10,
+                "pmcBot": 10
+			}
 		},
 		"limits": {
 			"assault": 30,
@@ -65,7 +70,7 @@
 			"ChanceForEmpty": 10,
 			"ChanceToSpawnNextItem": 70,
 			"AttemptsToPlaceLoot": 15,
-			"ItemSpawnChanceDivider": false
+			"ItemSpawnChanceDivider": 1
 		},
 		"allowLootOverlap": false,
 		"bigmap": 10000,

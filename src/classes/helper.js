@@ -67,7 +67,7 @@ function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stash ta
             continue;
         }
 
-        let tmpSize = getSizeByInventoryItemHash(item._tpl, item._id, inventoryItemHash);
+        let tmpSize = helper_f.getSizeByInventoryItemHash(item._tpl, item._id, inventoryItemHash);
         let iW = tmpSize[0]; // x
         let iH = tmpSize[1]; // y
         let fH = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iW : iH);
@@ -713,6 +713,47 @@ function getPreset (id){
 	}
 	return itmPreset;
 }
+
+module.exports.getContainerMap = (containerW, containerH, itemList, containerId) => {
+        const container2D = Array(containerH).fill(0).map(() => Array(containerW).fill(0));
+        const inventoryItemHash = helper_f.getInventoryItemHash(itemList);
+
+        const containerItemHash = inventoryItemHash.byParentId[containerId];
+        if (!containerItemHash)
+        {
+            // No items in the container
+            return container2D;
+        }
+
+        for (const item of containerItemHash)
+        {
+            if (!("location" in item))
+            {
+                continue;
+            }
+
+            const tmpSize = helper_f.getSizeByInventoryItemHash(item._tpl, item._id, inventoryItemHash);
+            const iW = tmpSize[0]; // x
+            const iH = tmpSize[1]; // y
+            const fH = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iW : iH);
+            const fW = ((item.location.r === 1 || item.location.r === "Vertical" || item.location.rotation === "Vertical") ? iH : iW);
+            const fillTo = item.location.x + fW;
+
+            for (let y = 0; y < fH; y++)
+            {
+                try
+                {
+                    container2D[item.location.y + y].fill(1, item.location.x, fillTo);
+                }
+                catch (e)
+                {
+                    logger.logError(`[OOB] for item with id ${item._id}; Error message: ${e}`);
+                }
+            }
+        }
+
+        return container2D;
+    }
 // TODO: REWORK EVERYTHING ABOVE ~Maoci
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {
 	let itemWidth = rotate ? itemH : itemW;

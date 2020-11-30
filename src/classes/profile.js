@@ -51,7 +51,6 @@ class ProfileServer {
         return fileIO.readParsed(`user/profiles/${ID}/character.json`);
     }
 
-
     getPmcProfile(sessionID) {
         return this.getProfile(sessionID, 'pmc');
     }
@@ -76,15 +75,29 @@ class ProfileServer {
     }
 
     createProfile(info, sessionID) {
+		
         let account = account_f.handler.find(sessionID);
         let folder = account_f.getPath(account.id);
-        let pmcData = fileIO.readParsed(db.profile[account.edition][`character_${info.side.toLowerCase()}`]);
-        let storage = { _id: "", suites: fileIO.readParsed(db.profile[account.edition][`storage_${info.side.toLowerCase()}`])};
+
+		let ChoosedSide = info.side.toLowerCase();
+		let ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
+		
+		let DefaultProfile = fileIO.readParsed(db.profile[account.edition].character);
+		let Outfits = fileIO.readParsed(db.profile[account.edition].starting_outfit);
+		
+		let pmcData = DefaultProfile;
+		
+		// Set choosed side of player
+		pmcData.Info.Side = pmcData.Info.Side.replace("__REPLACEME__", ChoosedSideCapital);
+		pmcData.Info.Voice = pmcData.Info.Voice.replace("__REPLACEME__", ChoosedSideCapital);
+		pmcData.Customization = Outfits[ChoosedSide];
+        let storage = { _id: "", suites: fileIO.readParsed(db.profile[account.edition].storage)};
+		storage = storage[ChoosedSide];
+				
 
         // delete existing profile
         if (this.profiles[account.id]) {
             delete this.profiles[account.id];
-
             events.scheduledEventHandler.wipeScheduleForSession(sessionID);
         }
 
@@ -98,9 +111,8 @@ class ProfileServer {
         pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
 
         // storage
-        storage['_id'] = "pmc" + account.id;
+		storage = {"err": 0,"errmsg": null,"data": { _id: pmcData._id, "suites": storage}};
 		
-		storage = {"err": 0,"errmsg": null,"data": storage};
         // create profile
         fileIO.write(`${folder}character.json`, pmcData);
         fileIO.write(`${folder}storage.json`, storage);

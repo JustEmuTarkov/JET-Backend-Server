@@ -14,5 +14,13 @@
 		"password": "test",
 		"wipe": false,
 		"edition": "Edge Of Darkness"
+	},
+	"AID10271716524193211713b": {
+		"id": "AID10271716524193211713b",
+		"nickname": "",
+		"email": "test2",
+		"password": "123",
+		"wipe": false,
+		"edition": "Developer"
 	}
 }
