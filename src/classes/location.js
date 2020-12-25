@@ -461,7 +461,7 @@ class LocationServer {
 				for(let location in this.Locations){
 					newData[this.Locations[location].base._Id] = this.Locations[location].base;
 				}
-				base.data.locations = newData;
+				base.locations = newData;
 				return base.data;
 			}
 			logger.logError(`Missing file db/cacheBase/locations.json`);

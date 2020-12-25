@@ -39,7 +39,6 @@ class Initializer
 		
 		// internal packages
         global.fileIO = require('./util/fileIO.js');
-        //global.json = fileIO;
         global.serverConfig = fileIO.readParsed("user/configs/server.json");
         global.modsConfig = fileIO.readParsed("user/configs/mods.json");
 		
@@ -91,7 +90,7 @@ class Initializer
 		global["helper_f"] = require(executedDir + "/src/classes/helper.js");
 		for(let file of files){
 			loadedModules += file.replace(".js",", ");
-			if(file == "helper.js") continue;
+			if(file === "helper.js") continue;
 			let name = file.replace(".js","") + "_f";
 			global[name] = require(executedDir + "/src/classes/" + file);
 		}

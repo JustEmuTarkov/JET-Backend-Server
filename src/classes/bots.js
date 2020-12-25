@@ -488,7 +488,8 @@ class Generator
             switch (modSlot)
             {
                 case "patron_in_weapon":
-                    itemSlot = parentTemplate._props.Chambers.find(c => c._name === modSlot);
+					// TODO: can cause a bug of Big Guns!!!
+                    //itemSlot = parentTemplate._props.Chambers.find(c => c._name === modSlot);
                     break;
                 case "cartridges":
                     itemSlot = parentTemplate._props.Cartridges.find(c => c._name === modSlot);
@@ -836,6 +837,7 @@ class Generator
                 "_tpl": ammoTpl,
                 "parentId": magazine._id,
                 "slotId": "cartridges",
+				"location": 0,
                 "upd": {"StackObjectsCount": stackSize}
             });
         }

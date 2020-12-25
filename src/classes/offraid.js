@@ -315,7 +315,7 @@ function saveProgress(offraidData, sessionID) {
         offraidData.profile = RemoveFoundItems(offraidData.profile)
     }
 
-    offraidData.profile.Inventory.items = helper_f.replaceIDs(offraidData.profile, offraidData.profile.Inventory.items, offraidData.profile.Inventory.fastPanel);
+    //offraidData.profile.Inventory.items = helper_f.replaceIDs(offraidData.profile, offraidData.profile.Inventory.items, offraidData.profile.Inventory.fastPanel);
 
     // set profile equipment to the raid equipment
     if (isPlayerScav) {

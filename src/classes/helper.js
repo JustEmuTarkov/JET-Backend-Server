@@ -420,14 +420,6 @@ function getInventoryItemHash(InventoryItem) {
     return inventoryItemHash;
 }
 
-/* Calculate Size of item inputed
-* inputs Item template ID, Item Id, InventoryItem (item from inventory having _id and _tpl)
-* outputs [width, height]
-* */
-function getSize(itemtpl, itemID, InventoryItem) { // -> Prepares item Width and height returns [sizeX, sizeY]
-    return helper_f.getSizeByInventoryItemHash(itemtpl, itemID, getInventoryItemHash(InventoryItem));
-}
-
 /* 
 note from 2027: there IS a thing i didn't explore and that is Merges With Children
 note from Maoci: you can merge and split items from parent-childrens
@@ -1012,7 +1004,6 @@ module.exports.findMoney = findMoney;
 module.exports.getMoney = getMoney;
 module.exports.getPlayerStash = getPlayerStash;
 module.exports.getItem = getItem;
-module.exports.getSize = getSize;
 module.exports.findAndReturnChildren = findAndReturnChildren;
 module.exports.findAndReturnChildrenByItems = findAndReturnChildrenByItems;
 module.exports.findAndReturnChildrenAsItems = findAndReturnChildrenAsItems;

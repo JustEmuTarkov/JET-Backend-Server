@@ -5,6 +5,7 @@ exports.cache = () => {
 	logger.logInfo("Caching: locations.json");
 	let locations = {};
 	for (let name in db.locations) {
+		if(name === "_test"){ continue; }
 		if (name === "base") {
 			continue;
 		}

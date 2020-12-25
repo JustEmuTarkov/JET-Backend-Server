@@ -5,5 +5,12 @@
 	"license": "MIT",
 	"src": {
 		"src/AllItemsExamined.js": "TamperModLoad"
+	},
+	"res": {
+		"bundles": {
+			"shit": {
+				"s": "res/bundles/shit/s.txt"
+			}
+		}
 	}
 }

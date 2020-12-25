@@ -32,11 +32,11 @@
 		"LoadOfflineRaidScreenPatch": true,
 		"ScavPrefabLoadPatch": true,
 		"ScavProfileLoadPatch": true,
-		"ScavSpawnPointPatch": true,
+		"ScavSpawnPointPatch": false,
 		"ScavExfilPatch": true,
 		"EndByTimerPatch": true
 	},
-	"hideInfoLogs": false,
+	"hideInfoLogs": true,
 	"debugTimer": true,
 	"translations": {
 		"alreadyInUse": "The nickname is already in use",

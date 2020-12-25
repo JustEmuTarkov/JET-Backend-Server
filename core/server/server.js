@@ -20,7 +20,7 @@ class Server {
             json: 'application/json'
         };
 		this.createCacheCallback();
-		this.createStartCallback();
+		//this.createStartCallback();
 		this.createReceiveCallback();
 		this.createRespondCallback();
 		this.respondCallback["DONE"] = this.killResponse.bind(this);
@@ -36,7 +36,7 @@ class Server {
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
-	createStartCallback(){
+	/*createStartCallback(){
         this.startCallback = {};
 		let path = "./src/callbacks/load";
 		let files = fileIO.readDir(path);
@@ -45,7 +45,7 @@ class Server {
 			this.startCallback[scriptName] = require("../../src/callbacks/load/" + file).load;
 		}
 		logger.logSuccess("Create: Start Callback");
-	}
+	}*/
 	createReceiveCallback(){
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
@@ -395,7 +395,7 @@ class Server {
         }
 		if(serverConfig.rebuildCache)
 			global.core.route.CacheModLoad(); // CacheModLoad
-		
+		global.core.route.ResModLoad(); // load Res Mods
         logger.logInfo("[Warmup]: Loading Database: CoreData...");
 		this._loadCoreData();
         logger.logInfo("[Warmup]: Loading Database: Globals...");
@@ -408,9 +408,16 @@ class Server {
         // execute start callback
         logger.logInfo("[Warmup]: Start callbacks...");
 		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
-        for (let type in this.startCallback) {
-			if(type == "loadStaticdata") continue;
-            this.startCallback[type]();
+        for (let type in global) {
+			if(type.indexOf("_f") != type.length-2) continue;
+			if(typeof global[type].handler == "object"){
+				if(typeof global[type].handler.initialize == "function"){
+					global[type].handler.initialize();
+				}
+			}
+			if(typeof global[type].initialize == "function"){
+					global[type].initialize();
+			}
         }
 		
 		// Load Global Accesable Data Structures
@@ -426,6 +433,12 @@ class Server {
 		*/
 		this._loadDatabaseItems();
 		global.core.route.TamperModLoad(); // TamperModLoad
+
+		/*console.log("staticRoutes")
+		console.log(router.staticRoutes)
+		console.log("dynamicRoutes")
+		console.log(router.dynamicRoutes)
+		return;*/
 		
 		logger.logInfo("Starting server...");
 		this._serverStart();

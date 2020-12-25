@@ -30,8 +30,7 @@ function detectChangedMods() {
             changed = true;
             break;
         }
-
-        let config = fileIO.readParsed(getModFilepath(mod) + "mod.config.json");
+        let config = fileIO.readParsed(getModFilepath(mod) + "/mod.config.json");
 
         if (mod.name !== config.name || mod.author !== config.author || mod.version !== config.version) {
             changed = true;
@@ -143,8 +142,20 @@ exports.CacheModLoad = () => {
         let filepath = getModFilepath(element);
         let mod = fileIO.readParsed(filepath + "mod.config.json");
 		loadMod(mod, filepath, "CacheModLoad");
-		loadModSrc(mod, filepath);
     }
+	
+}
+// loadResMods
+exports.ResModLoad = () => {
+    for (let element of global.modsConfig) {
+        if (!element.enabled) {
+            continue;
+        }
+        let filepath = getModFilepath(element);
+        let mod = fileIO.readParsed(filepath + "mod.config.json");
+		loadModSrc(mod, filepath)
+    }
+	
 }
 exports.TamperModLoad = () => {
     logger.logInfo("Executing LateModLoad Routes");
