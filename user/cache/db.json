@@ -910,6 +910,7 @@
 	"locales": {
 		"en": {
 			"banners": "db/locales/en/banners.json",
+			"customization": "db/locales/en/customization.json",
 			"en": "db/locales/en/en.json",
 			"enum": "db/locales/en/enum.json",
 			"error": "db/locales/en/error.json",
@@ -926,6 +927,7 @@
 		},
 		"fr": {
 			"banners": "db/locales/fr/banners.json",
+			"customization": "db/locales/fr/customization.json",
 			"enum": "db/locales/fr/enum.json",
 			"error": "db/locales/fr/error.json",
 			"fr": "db/locales/fr/fr.json",
@@ -942,6 +944,7 @@
 		},
 		"ge": {
 			"banners": "db/locales/ge/banners.json",
+			"customization": "db/locales/ge/customization.json",
 			"enum": "db/locales/ge/enum.json",
 			"error": "db/locales/ge/error.json",
 			"ge": "db/locales/ge/ge.json",
@@ -958,6 +961,7 @@
 		},
 		"ru": {
 			"banners": "db/locales/ru/banners.json",
+			"customization": "db/locales/ru/customization.json",
 			"enum": "db/locales/ru/enum.json",
 			"error": "db/locales/ru/error.json",
 			"handbook": "db/locales/ru/handbook.json",
