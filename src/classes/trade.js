@@ -22,7 +22,6 @@ exports.buyItem = (pmcData, body, sessionID) => {
 
 // Selling item to trader
 exports.sellItem = (pmcData, body, sessionID) => {
-	console.log(body);
     let money = 0;
     let prices = trader_f.handler.getPurchasesData(body.tid, sessionID);
     let output = item_f.handler.getOutput();

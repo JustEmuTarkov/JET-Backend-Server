@@ -7,7 +7,6 @@ exports.cache = () => {
         let inputNode = db.locales[locale];
         let inputDir = [
             "banners",
-            "customization",
             "handbook",
             "locations",
             "mail",

@@ -466,14 +466,17 @@ class LocationServer {
 		// lets try to read from cache
 		if(!utility.isUndefined(db.user.cache.locations))
 		{
-
-			let base = this.LocationBase;
-			let newData = {};
-			for(let location in this.Locations){
-				newData[this.Locations[location].base._Id] = this.Locations[location].base;
+			if(fileIO.exist(db.cacheBase.locations))
+			{
+				let base = fileIO.readParsed(db.cacheBase.locations);
+				let newData = {};
+				for(let location in this.Locations){
+					newData[this.Locations[location].base._Id] = this.Locations[location].base;
+				}
+				base.locations = newData;
+				return base.data;
 			}
-			base.locations = newData;
-			return base;
+			logger.logError(`Missing file db/cacheBase/locations.json`);
 		}
 		throw "Missing file db/cacheBase/locations.json";
     }
