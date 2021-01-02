@@ -118,8 +118,8 @@ class Server {
 
         
 		if(fileIO.exist(certFile) && fileIO.exist(keyFile)){
-			cert = fileIO.read(certFile);
-			key = fileIO.read(keyFile);
+			cert = fileIO.readParsed(certFile);
+			key = fileIO.readParsed(keyFile);
 		} else {
 			if (!fileIO.exist(certDir)) {
 				fileIO.mkDir(certDir);
