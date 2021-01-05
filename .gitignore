@@ -18,6 +18,10 @@ node_modules
 node.exe
 ## if you dont want to push cache folders
 ## user/cache
+
+# ignore cache backup folder
+user/cacheBak 
+
 db/assort
 db/customization
 db/hideout
