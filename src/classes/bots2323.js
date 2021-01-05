@@ -80,12 +80,13 @@ function addDogtag(bot, sessionID) {
 }
 
 function generateHealth(selectedHealth){
-	let HealthBase = {"Hydration":{"Current":100,"Maximum":100},"Energy":{"Current":100,"Maximum":100},"BodyParts":{"Head":{"Health":{"Current":35,"Maximum":35}},"Chest":{"Health":{"Current":80,"Maximum":80}},"Stomach":{"Health":{"Current":70,"Maximum":70}},"LeftArm":{"Health":{"Current":60,"Maximum": 60}},"RightArm":{"Health":{"Current":60,"Maximum": 60}},"LeftLeg":{"Health":{"Current": 65,"Maximum": 65}},"RightLeg":{"Health":{"Current": 65,"Maximum": 65}}},"UpdateTime": 1598664622};
+	let HealthBase = {"Hydration":{"Current":100,"Maximum":100},"Energy":{"Current":100,"Maximum":100},"Temperature":{"Current": 40,"Maximum": 40},"BodyParts":{"Head":{"Health":{"Current":35,"Maximum":35}},"Chest":{"Health":{"Current":80,"Maximum":80}},"Stomach":{"Health":{"Current":70,"Maximum":70}},"LeftArm":{"Health":{"Current":60,"Maximum": 60}},"RightArm":{"Health":{"Current":60,"Maximum": 60}},"LeftLeg":{"Health":{"Current": 65,"Maximum": 65}},"RightLeg":{"Health":{"Current": 65,"Maximum": 65}}},"UpdateTime": 1598664622};
 	let bodyparts = ["Head","Chest","Stomach","LeftArm","RightArm","LeftLeg","RightLeg"];
 	/* db/bots/<>/health/default.json
 	{
 	   "Hydration": 100,
 	   "Energy": 100,
+	   "Temperature": 40,
 	   "BodyParts":{
 		  "Head": 35,
 		  "Chest": 80,
@@ -97,6 +98,8 @@ function generateHealth(selectedHealth){
 	   }
 	}
 	*/
+	HealthBase.Temperature.Current = selectedHealth.Temperature;
+	HealthBase.Temperature.Maximum = selectedHealth.Temperature;
 	HealthBase.Hydration.Current = selectedHealth.Hydration;
 	HealthBase.Hydration.Maximum = selectedHealth.Hydration;
 	HealthBase.Energy.Current = selectedHealth.Energy;

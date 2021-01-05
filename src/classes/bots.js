@@ -143,6 +143,10 @@ class Controller
                 "Current": utility.getRandomInt(healthObj.Energy.min, healthObj.Energy.max),
                 "Maximum": healthObj.Energy.max
             },
+            "Temperature": {
+                "Current": utility.getRandomInt(healthObj.Temperature.min, healthObj.Temperature.max),
+                "Maximum": healthObj.Temperature.max
+            },
             "BodyParts": {
                 "Head": {
                     "Health": {

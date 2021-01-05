@@ -7,6 +7,10 @@
 		"min": 100,
 		"max": 100
 	},
+	"Temperature": {
+		"min": 35,
+		"max": 40
+	},
 	"BodyParts": {
 		"Head": {
 			"min": 35,

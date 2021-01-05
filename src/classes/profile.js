@@ -56,6 +56,7 @@ class ProfileServer {
     }
 
     getScavProfile(sessionID) {
+        console.log(JSON.stringify(this.getProfile(sessionID, 'scav')))
         return this.getProfile(sessionID, 'scav');
     }
 
