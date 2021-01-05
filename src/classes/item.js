@@ -14,6 +14,7 @@ class ItemServer {
     }
 	
 	updateRouteStruct(){
+		console.log(global)
 		this.routeStructure = {
 			"Eat": health_f.handler.offraidEat,
 			"Heal": health_f.handler.offraidHeal,
@@ -52,8 +53,8 @@ class ItemServer {
 			"ReadEncyclopedia": status_f.readEncyclopedia,
 			"TradingConfirm": trade_f.confirmTrading,
 			"RagFairBuyOffer": trade_f.confirmRagfairTrading,
-			"SaveBuild": weaponbuilds_f.saveBuild,
-			"RemoveBuild": weaponbuilds_f.removeBuild,
+			"SaveBuild": weaponBuilds_f.saveBuild,
+			"RemoveBuild": weaponBuilds_f.removeBuild,
 			"AddToWishList": wishlist_f.addToWishList,
 			"RemoveFromWishList": wishlist_f.removeFromWishList,
 			"ApplyInventoryChanges": move_f.applyInventoryChanges
