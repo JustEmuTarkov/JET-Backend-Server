@@ -159,6 +159,9 @@ function _GenerateContainerLoot(_items) {
 	
 	let minCount = _RollMaxItemsToSpawn(container);
 	let ContainerSlots = container._props.Grids[0]._props.cellsH;
+
+	let itemWidth = 0;
+	let itemHeight = 0;
 	for (let i = 0; i < minCount; i++)
 	{
 		let item = {};
@@ -190,10 +193,10 @@ function _GenerateContainerLoot(_items) {
 					let size = helper_f.getItemSize(item._id, rolled.preset._items[0]._id, rolled.preset._items);
 					// Guns will need to load a preset of items
 					item._props.presetId = rolled.preset._id;
-					item._props.Width = size[0];
-					item._props.Height = size[1];
+					itemWidth = size[0];
+					itemHeight = size[1];
 				}
-				result = helper_f.findSlotForItem(container2D, item._props.Width, item._props.Height);
+				result = helper_f.findSlotForItem(container2D, itemWidth, itemHeight);
 			}
 			maxAttempts--;
 		}
@@ -203,7 +206,7 @@ function _GenerateContainerLoot(_items) {
 			break;
 
 		container2D = helper_f.fillContainerMapWithItem(
-			container2D, result.x, result.y, item._props.Width, item._props.Height, result.rotation);
+			container2D, result.x, result.y, itemWidth, itemHeight, result.rotation);
 		let rot = result.rotation ? 1 : 0;
 
 		if (item._props.presetId)
