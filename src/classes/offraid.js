@@ -1,5 +1,7 @@
 "use strict";
 
+const { logger } = require("../../core/util/logger");
+
 class InraidServer {
     constructor() {
         this.players = {};
@@ -106,10 +108,24 @@ function setInventory(pmcData, profile) {
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
 
-    for (let item of profile.Inventory.items) {
+    // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
+    let duplicates = []
+
+    x: for (let item of profile.Inventory.items) {
+        for (let key in pmcData.Inventory.items) { 
+            let currid = pmcData.Inventory.items[key]._id
+            if (currid == item._id) {
+                duplicates.push(item._id)
+                continue x;
+            }
+        }
         pmcData.Inventory.items.push(item);
     }
     pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+
+    if (duplicates.length > 0) {
+        logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`)
+    }
 
     return pmcData;
 }
