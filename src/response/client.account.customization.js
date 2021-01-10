@@ -9,6 +9,5 @@ exports.execute = (url, info, sessionID) => {
             t.push(i._id)
         }
     }
-    console.log(JSON.parse(response_f.getBody(t)).data)
     return response_f.getBody(t)
 }
