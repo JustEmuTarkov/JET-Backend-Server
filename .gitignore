@@ -17,11 +17,15 @@ slnx-journal.sqlite
 node_modules
 node.exe
 ## if you dont want to push cache folders
-## user/cache
+user/cache
 
 # ignore cache backup folder
 user/cacheBak 
-
+db/bots
+db/cacheBase
+db/dialogues
+db/locations_test
+db/quests
 db/assort
 db/customization
 db/hideout
@@ -31,6 +35,7 @@ db/locations
 db/ragfair
 db/templates
 db/weather
+db/profile
 db2
 db3
 db4
