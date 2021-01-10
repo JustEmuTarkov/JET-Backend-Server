@@ -56,3 +56,5 @@ src/____responses
 Server-Icon.exe
 Server-Uncompressed.exe
 Server.exe
+user/configs/accounts.json
+user/configs/mods.json
