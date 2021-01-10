@@ -105,6 +105,8 @@ class ProfileServer {
         pmcData.savage = "scav" + account.id;
         pmcData.Info.Nickname = info.nickname;
         pmcData.Info.LowerNickname = info.nickname.toLowerCase();
+		pmcData.Info.Voice = customization_f.getCustomization()[info.voiceId]._name;
+		pmcData.Customization.Head = info.headId;
         pmcData.Info.RegistrationDate = Math.floor(new Date() / 1000);
         pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
 
