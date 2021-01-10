@@ -90,10 +90,8 @@ class ProfileServer {
 		// Set choosed side of player
 		pmcData.Info.Side = pmcData.Info.Side.replace("__REPLACEME__", ChoosedSideCapital);
 		pmcData.Info.Voice = pmcData.Info.Voice.replace("__REPLACEME__", ChoosedSideCapital);
-		pmcData.Customization = Outfits[ChoosedSide];
-        let storage = { _id: "", suites: fileIO.readParsed(db.profile[account.edition].storage)};
-		storage = storage[ChoosedSide];
-				
+        pmcData.Customization = Outfits[ChoosedSide];   
+        let storage = { _id: "", suites: []};
 
         // delete existing profile
         if (this.profiles[account.id]) {
@@ -111,7 +109,9 @@ class ProfileServer {
         pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
 
         // storage
-		storage = {"err": 0,"errmsg": null,"data": { _id: pmcData._id, "suites": storage}};
+        let def = fileIO.readParsed(db.profile[account.edition].storage);
+        storage = {"err": 0,"errmsg": null,"data": { _id: pmcData._id, "suites": def[ChoosedSide]}};
+        console.log(JSON.stringify(storage, null, 2))
 		
         // create profile
         fileIO.write(`${folder}character.json`, pmcData);
