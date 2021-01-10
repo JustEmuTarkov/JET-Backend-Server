@@ -111,7 +111,6 @@ class ProfileServer {
         // storage
         let def = fileIO.readParsed(db.profile[account.edition].storage);
         storage = {"err": 0,"errmsg": null,"data": { _id: pmcData._id, "suites": def[ChoosedSide]}};
-        console.log(JSON.stringify(storage, null, 2))
 		
         // create profile
         fileIO.write(`${folder}character.json`, pmcData);
