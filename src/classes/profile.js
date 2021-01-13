@@ -82,15 +82,16 @@ class ProfileServer {
 		let ChoosedSide = info.side.toLowerCase();
 		let ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
 		
-		let DefaultProfile = fileIO.readParsed(db.profile[account.edition].character);
-		let Outfits = fileIO.readParsed(db.profile[account.edition].starting_outfit);
+
+		let DefaultProfile = fileIO.readParsed(db.profile[account.edition][("character_" + ChoosedSide)]);
+		//let Outfits = fileIO.readParsed(db.profile[account.edition].starting_outfit);
 		
 		let pmcData = DefaultProfile;
 		
 		// Set choosed side of player
 		pmcData.Info.Side = pmcData.Info.Side.replace("__REPLACEME__", ChoosedSideCapital);
 		pmcData.Info.Voice = pmcData.Info.Voice.replace("__REPLACEME__", ChoosedSideCapital);
-        pmcData.Customization = Outfits[ChoosedSide];   
+        //pmcData.Customization = Outfits[ChoosedSide];   
         let storage = { _id: "", suites: []};
 
         // delete existing profile
