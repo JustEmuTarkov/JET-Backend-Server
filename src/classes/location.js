@@ -215,7 +215,7 @@ function _GenerateContainerLoot(_items) {
 		if (item._props.presetId)
 		{
 			// Process gun preset into container items
-			let preset = helper_f.getPreset(item.props.presetId);
+			let preset = helper_f.getPreset(item._props.presetId);
 			if(preset == null) continue;
 			preset._items[0].parentId = parentId;
 			preset._items[0].slotId = "main";
