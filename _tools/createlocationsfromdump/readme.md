@@ -1,0 +1,1 @@
+Place files from locations_test/ in here. Should only be one file per map.
