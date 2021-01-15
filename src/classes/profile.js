@@ -80,10 +80,16 @@ class ProfileServer {
         let folder = account_f.getPath(account.id);
 
 		let ChoosedSide = info.side.toLowerCase();
-		let ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
-		
+        let ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
+        
+        let DefaultProfile = null
 
-		let DefaultProfile = fileIO.readParsed(db.profile[account.edition][("character_" + ChoosedSide)]);
+        if (account.edition == "Developer") {
+            DefaultProfile = fileIO.readParsed(db.profile[account.edition]["character"]);
+        } else {
+            DefaultProfile = fileIO.readParsed(db.profile[account.edition][("character_" + ChoosedSide)]);
+        }
+
 		//let Outfits = fileIO.readParsed(db.profile[account.edition].starting_outfit);
 		
 		let pmcData = DefaultProfile;
