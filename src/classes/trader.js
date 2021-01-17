@@ -1,10 +1,12 @@
 "use strict";
 
 /* TraderServer class maintains list of traders for each sessionID in memory. */
-class TraderServer {
+class TraderServer
+{
     constructor() {
         this.traders = {};
         this.assorts = {};
+        this.fence_generated_at = 0;
     }
 
     /* Load all the traders into memory. */
@@ -16,42 +18,43 @@ class TraderServer {
     }
 
     getTrader(traderID, sessionID) {
-		
-		let pmcData = profile_f.handler.getPmcProfile(sessionID);
-		if (!(traderID in pmcData.TraderStandings))
-        {
-			trader_f.handler.resetTrader(sessionID, traderID);
+
+        let pmcData = profile_f.handler.getPmcProfile(sessionID);
+        if (!(traderID in pmcData.TraderStandings)) {
+            trader_f.handler.resetTrader(sessionID, traderID);
             this.lvlUp(traderID, sessionID);
         }
-		let trader = this.traders[traderID];
+        let trader = this.traders[traderID];
         trader.display = pmcData.TraderStandings[traderID].display;
-		trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
+        trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
         trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding.toFixed(3);
         trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
 
         return this.traders[traderID];
     }
 
-    changeTraderDisplay(traderID, status, sessionID) { profile_f.handler.getPmcProfile(sessionID).TraderStandings[traderID].display = status; }
+    changeTraderDisplay(traderID, status, sessionID) {
+        profile_f.handler.getPmcProfile(sessionID).TraderStandings[traderID].display = status;
+    }
 
     getAllTraders(sessionID) {
-		
-		if(typeof sessionID == "undefined"){
-			console.log("sessionID: " + sessionID);
-			return;
-		}
-		
+
+        if (typeof sessionID == "undefined") {
+            console.log("sessionID: " + sessionID);
+            return;
+        }
+
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let Traders = [];
 
         for (let traderID in this.traders) {
-			
+
             if (traderID === "ragfair") {
                 continue;
             }
 
             if (!(traderID in pmcData.TraderStandings)) {
-				console.log("reseting trader: " + traderID);
+                console.log("Resetting trader: " + traderID);
                 this.resetTrader(sessionID, traderID);
             }
 
@@ -61,7 +64,7 @@ class TraderServer {
             trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
             trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding.toFixed(3);
             trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
-			
+
             Traders.push(trader);
         }
         return Traders;
@@ -93,7 +96,7 @@ class TraderServer {
     }
 
     resetTrader(sessionID, traderID) {
-		console.log(traderID);
+        console.log(traderID);
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let traderWipe = fileIO.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
@@ -110,12 +113,43 @@ class TraderServer {
         this.lvlUp(traderID, sessionID);
     }
 
+    iter_item_children(item, item_list) {
+        // Iterates through children of `item` present in `item_list`
+        return item_list.filter((child_item) => child_item.parentId === item._id)
+    }
+
+    iter_item_children_recursively(item, item_list) {
+        // Recursively iterates through children of `item` present in `item_list`
+
+        let stack = this.iter_item_children(item, item_list)
+        let child_items = [...stack]
+
+        while (stack.length > 0) {
+            let child = stack.pop()
+            let children_of_child = this.iter_item_children(child, item_list)
+            stack.push(...children_of_child)
+            child_items.push(...children_of_child)
+        }
+
+        return child_items
+    }
+
     getAssort(sessionID, traderID) {
-		if (!(traderID in this.assorts))
-		{
-			// for modders generate endgame items for fence where you need to exchange it for that items
-			let tmp = fileIO.readParsed(db.user.cache["assort_" + traderID]);
-			this.assorts[traderID] = tmp.data;
+        if (traderID === "579dc571d53a0658a154fbec") {
+            // Lifetime in seconds
+            const fence_assort_lifetime = 60 * 10
+
+            const current_time = Math.floor(new Date().getTime() / 1000)
+            if (this.fence_generated_at + fence_assort_lifetime < current_time) {
+                this.fence_generated_at = current_time
+                this.generateFenceAssort()
+            }
+        }
+
+        if (!(traderID in this.assorts)) {
+            // for modders generate endgame items for fence where you need to exchange it for that items
+            let tmp = fileIO.readParsed(db.user.cache["assort_" + traderID]);
+            this.assorts[traderID] = tmp.data;
         }
 
         let baseAssorts = this.assorts[traderID];
@@ -128,104 +162,94 @@ class TraderServer {
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
             let level = this.traders[traderID].loyalty.currentLevel;
-			let questassort = {};
-			if(typeof db.cacheBase.traders[traderID].questassort == "undefined")
-			{
-				questassort = {"started": {},"success": {},"fail": {}};
-			} else if(fileIO.exist(db.cacheBase.traders[traderID].questassort)){
-				questassort = fileIO.readParsed(db.cacheBase.traders[traderID].questassort);
-			} else {
-				questassort = {"started": {},"success": {},"fail": {}};
-			}
+            let questassort = {};
+            if (typeof db.cacheBase.traders[traderID].questassort == "undefined") {
+                questassort = {"started": {}, "success": {}, "fail": {}};
+
+            } else if (fileIO.exist(db.cacheBase.traders[traderID].questassort)) {
+                questassort = fileIO.readParsed(db.cacheBase.traders[traderID].questassort);
+
+            } else {
+                questassort = {"started": {}, "success": {}, "fail": {}};
+            }
 
             for (let key in baseAssorts.loyal_level_items) {
-                    let requiredLevel = baseAssorts.loyal_level_items[key];
-                    if (requiredLevel > level) {
-                        assorts = this.removeItemFromAssort(assorts, key);
-                        continue;
-                    }
-
-                    if (key in questassort.started && quest_f.getQuestStatus(pmcData, questassort.started[key]) !== "Started") {
-                        assorts = this.removeItemFromAssort(assorts, key);
-                        continue;
-                    }
-
-                    if (key in questassort.success && quest_f.getQuestStatus(pmcData, questassort.success[key]) !== "Success") {
-                        assorts = this.removeItemFromAssort(assorts, key);
-                        continue;
-                    }
-
-                    if (key in questassort.fail && quest_f.getQuestStatus(pmcData, questassort.fail[key]) !== "Fail") {
-                        assorts = this.removeItemFromAssort(assorts, key);
-                    }
+                let requiredLevel = baseAssorts.loyal_level_items[key];
+                if (requiredLevel > level) {
+                    assorts = this.removeItemFromAssort(assorts, key);
+                    continue;
                 }
+
+                if (key in questassort.started && quest_f.getQuestStatus(pmcData, questassort.started[key]) !== "Started") {
+                    assorts = this.removeItemFromAssort(assorts, key);
+                    continue;
+                }
+
+                if (key in questassort.success && quest_f.getQuestStatus(pmcData, questassort.success[key]) !== "Success") {
+                    assorts = this.removeItemFromAssort(assorts, key);
+                    continue;
+                }
+
+                if (key in questassort.fail && quest_f.getQuestStatus(pmcData, questassort.fail[key]) !== "Fail") {
+                    assorts = this.removeItemFromAssort(assorts, key);
+                }
+            }
         }
         return assorts;
     }
 
     generateFenceAssort() {
-        let fenceId = "579dc571d53a0658a154fbec";
-        let base = {"err": 0, "errmsg": null, "data": {"items": [], "barter_scheme": {}, "loyal_level_items": {}}};
-        let names = Object.keys(db.assort[fenceId].loyal_level_items);
-        let added = [];
+        const fenceId = "579dc571d53a0658a154fbec"
+        let base = {"err": 0, "errmsg": null, "data": {"items": [], "barter_scheme": {}, "loyal_level_items": {}}}
 
-        for (let i = 0; i < global._database.gameplayConfig.trading.fenceAssortSize; i++) {
-            let traderID = names[utility.getRandomInt(0, names.length - 1)];
 
-            if (added.includes(traderID)) {
-                i--;
-                continue;
-            }
+        let fence_base_assort = fileIO.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data.items
 
-            added.push(traderID);
+        let fence_base_assort_root_items = fence_base_assort.filter((item) => item.parentId === "hideout")
 
-            //it's the item
-            if (!(traderID in global._database.globals.ItemPresets)) {
-				let TraderData = fileIO.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data;
-                base.data.items.push(TraderData.items[traderID]);
-                base.data.barter_scheme[traderID] = TraderData.barter_scheme[traderID];
-                base.data.loyal_level_items[traderID] = TraderData.loyal_level_items[traderID];
-                continue;
-            }
+        let assort_root_items = []
+        let assort_child_items = []
 
-            //it's itemPreset
-            let rub = 0;
-            let itemPresets = fileIO.parse(fileIO.stringify(global._database.globals.ItemPresets[traderID]._items, true));
-            let ItemRootOldId = global._database.globals.ItemPresets[traderID]._parent;
-
-            for (let i = 0; i < itemPresets.length; i++) {
-                let mod = itemPresets[i];
-
-                //build root Item info
-                if (!("parentId" in mod)) {
-                    mod._id = traderID;
-                    mod.parentId = "hideout"
-                    mod.slotId = "hideout";
-                    mod.upd = {
-                        "UnlimitedCount": true,
-                        "StackObjectsCount": 999999999
-                    }
-                } else if (mod.parentId == ItemRootOldId) {
-                    mod.parentId = traderID;
-                }
-            }
-
-            base.data.items.push.apply(base.data.items, itemPresets);
-
-            //calculate preset price
-            for (let it of itemPresets) {
-                rub += helper_f.getTemplatePrice(it._tpl);
-            }
-
-            base.data.barter_scheme[traderID] = fileIO.readParsed(db.assort[fenceId].barter_scheme[traderID]);
-            base.data.barter_scheme[traderID][0][0].count = rub;
-            base.data.loyal_level_items[traderID] = fileIO.readParsed(db.assort[fenceId].loyal_level_items[traderID]);
+        // Picking random items from assort that aren't children of anything (Not a weapon mods, etc)
+        const FENCE_ASSORT_SIZE = global._database.gameplayConfig.trading.fenceAssortSize
+        for (let i = 0; i < FENCE_ASSORT_SIZE; i++) {
+            let random_item_index = utility.getRandomInt(0, fence_base_assort_root_items.length - 1)
+            let random_item = fence_base_assort_root_items[random_item_index]
+            assort_root_items.push(random_item)
         }
 
-        this.assorts[fenceId] = base.data;
+        // We also have to include child items of generated ones
+        for (let item of assort_root_items) {
+            let children = this.iter_item_children_recursively(item, fence_base_assort)
+            assort_child_items.push(...children)
+        }
+
+        const assort = []
+        assort.push(...assort_root_items)
+        assort.push(...assort_child_items)
+
+        base.data.items = assort
+
+        // A barter scheme for root items
+        const barter_scheme = {}
+        for (const item of assort_root_items) {
+            let item_price = helper_f.getTemplatePrice(item._tpl)
+            for (const child_item of this.iter_item_children_recursively(item, assort_child_items)) {
+                item_price += helper_f.getTemplatePrice(child_item._tpl)
+            }
+
+            barter_scheme[item._id] = [[
+                {
+                    count: Math.round(item_price),
+                    _tpl: "5449016a4bdc2d6f028b456f" // Rubles template
+                }
+            ]]
+        }
+        base.data.barter_scheme = barter_scheme
+        this.assorts[fenceId] = base.data
     }
 
-    // Deep clone (except for the actual items) from base assorts. 
+    // Deep clone (except for the actual items) from base assorts.
     copyFromBaseAssorts(baseAssorts) {
         let newAssorts = {};
         newAssorts.items = [];
@@ -313,7 +337,7 @@ class TraderServer {
                 continue;
             }
 
-            // find all child of the item (including itself) and sum the price 
+            // find all child of the item (including itself) and sum the price
             for (let childItem of helper_f.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
                 let tempPrice = (global._database.items[childItem._tpl]._props.CreditsPrice >= 1) ? global._database.items[childItem._tpl]._props.CreditsPrice : 1;
                 let count = ("upd" in childItem && "StackObjectsCount" in childItem.upd) ? childItem.upd.StackObjectsCount : 1;
@@ -341,11 +365,13 @@ class TraderServer {
             }
 
             // get real price
-            if (trader.discount > 0) { price -= (trader.discount / 100) * price }
+            if (trader.discount > 0) {
+                price -= (trader.discount / 100) * price
+            }
             price = helper_f.fromRUB(price, currency);
             price = (price > 0 && price !== "NaN") ? price : 1;
 
-            output[item._id] = [[{ "_tpl": currency, "count": price.toFixed(0) }]];
+            output[item._id] = [[{"_tpl": currency, "count": price.toFixed(0)}]];
         }
 
         return output;
