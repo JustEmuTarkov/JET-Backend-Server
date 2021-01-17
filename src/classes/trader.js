@@ -135,11 +135,20 @@ class TraderServer
     }
 
     getAssort(sessionID, traderID) {
-        if (traderID === "579dc571d53a0658a154fbec") {
+        if (traderID === "579dc571d53a0658a154fbec") { // Fence
             // Lifetime in seconds
             const fence_assort_lifetime = 60 * 10
 
+            // Current time in seconds
             const current_time = Math.floor(new Date().getTime() / 1000)
+
+            // Initial Fence generation pass.
+            if (this.fence_generated_at === 0 || !this.fence_generated_at) {
+                this.fence_generated_at = current_time
+                this.generateFenceAssort()
+            }
+
+            console.log(`Generated: ${this.fence_generated_at} + Lifetime: ${fence_assort_lifetime} < ${current_time}`)
             if (this.fence_generated_at + fence_assort_lifetime < current_time) {
                 this.fence_generated_at = current_time
                 this.generateFenceAssort()
