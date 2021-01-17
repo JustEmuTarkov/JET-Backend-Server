@@ -163,7 +163,6 @@ class TraderServer
                 this.generateFenceAssort()
             }
 
-            console.log(`Generated: ${this.fence_generated_at} + Lifetime: ${fence_assort_lifetime} < ${current_time}`)
             if (this.fence_generated_at + fence_assort_lifetime < current_time) {
                 this.fence_generated_at = current_time
                 this.generateFenceAssort()
@@ -244,7 +243,7 @@ class TraderServer
             fence_assort.push(random_item, ...random_item_children)
 
 
-            let item_price = helper_f.getTemplatePrice(item._tpl)
+            let item_price = helper_f.getTemplatePrice(random_item._tpl)
             for (const child_item of random_item_children) {
                 item_price += helper_f.getTemplatePrice(child_item._tpl)
             }
