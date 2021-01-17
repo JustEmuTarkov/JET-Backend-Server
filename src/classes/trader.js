@@ -134,6 +134,21 @@ class TraderServer
         return child_items
     }
 
+    generate_item_ids(...items) {
+        const ids_map = {}
+
+        for (const item of items) {
+            ids_map[item._id] = utility.generateNewItemId()
+        }
+
+        for (const item of items) {
+            item._id = ids_map[item._id]
+            if (item.parentId in ids_map) {
+                item.parentId = ids_map[item.parentId]
+            }
+        }
+    }
+
     getAssort(sessionID, traderID) {
         if (traderID === "579dc571d53a0658a154fbec") {
             // Lifetime in seconds
@@ -207,44 +222,33 @@ class TraderServer
 
         let fence_base_assort_root_items = fence_base_assort.filter((item) => item.parentId === "hideout")
 
-        let assort_root_items = []
-        let assort_child_items = []
+        const fence_assort = []
+        const barter_scheme = {}
 
-        // Picking random items from assort that aren't children of anything (Not a weapon mods, etc)
         const FENCE_ASSORT_SIZE = global._database.gameplayConfig.trading.fenceAssortSize
         for (let i = 0; i < FENCE_ASSORT_SIZE; i++) {
             let random_item_index = utility.getRandomInt(0, fence_base_assort_root_items.length - 1)
             let random_item = fence_base_assort_root_items[random_item_index]
-            assort_root_items.push(random_item)
-        }
+            let random_item_children = this.iter_item_children_recursively(random_item, fence_base_assort)
 
-        // We also have to include child items of generated ones
-        for (let item of assort_root_items) {
-            let children = this.iter_item_children_recursively(item, fence_base_assort)
-            assort_child_items.push(...children)
-        }
+            this.generate_item_ids(random_item, ...random_item_children)
+            fence_assort.push(random_item, ...random_item_children)
 
-        const assort = []
-        assort.push(...assort_root_items)
-        assort.push(...assort_child_items)
 
-        base.data.items = assort
-
-        // A barter scheme for root items
-        const barter_scheme = {}
-        for (const item of assort_root_items) {
             let item_price = helper_f.getTemplatePrice(item._tpl)
-            for (const child_item of this.iter_item_children_recursively(item, assort_child_items)) {
+            for (const child_item of random_item_children) {
                 item_price += helper_f.getTemplatePrice(child_item._tpl)
             }
 
-            barter_scheme[item._id] = [[
+            barter_scheme[random_item._id] = [[
                 {
                     count: Math.round(item_price),
                     _tpl: "5449016a4bdc2d6f028b456f" // Rubles template
                 }
             ]]
         }
+
+        base.data.items = fence_assort
         base.data.barter_scheme = barter_scheme
         this.assorts[fenceId] = base.data
     }
