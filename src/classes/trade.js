@@ -1,10 +1,6 @@
 "use strict";
 
 exports.buyItem = (pmcData, body, sessionID) => {
-    if (body.tid === "579dc571d53a0658a154fbec") {
-        body.tid = "ragfair";
-    }
-
     if (!helper_f.payMoney(pmcData, body, sessionID)) {
         logger.logError("no money found");
         return "";

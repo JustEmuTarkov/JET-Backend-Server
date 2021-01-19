@@ -374,7 +374,7 @@ function swapItem(pmcData, body, sessionID) {
 * its used for "add" item like gifts etc.
 * */
 function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
-	const fenceID = "579dc571d53a0658a154fbec";
+	// const fenceID = "579dc571d53a0658a154fbec";
 	let itemLib = [];
 	let itemsToAdd = [];
 	if (typeof body.items == "undefined"){
@@ -394,14 +394,12 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		{
 			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
 		}
-		else if (body.tid === fenceID)
+		/*else if (body.tid === fenceID)
 		{
-			/* Note by reider123: Idk when it is used; even when I buy stuffs from fence, this is not called since body.tid is changed to "ragfair" in trade.js.
-			I think It can be just deleted. I just fixed it to make more sense, though. */
 			const fenceItem = fileIO.readParsed(db.user.cache[`assort_${fenceID}`]).items;
 			const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
 			itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
-		}
+		}*/
 		else
 		{
 			// Only grab the relevant trader items and add unique values
