@@ -240,6 +240,7 @@ class TraderServer
             let random_item_children = this.iter_item_children_recursively(random_item, fence_base_assort)
 
             this.generate_item_ids(random_item, ...random_item_children)
+            if (fence_assort.some(el => el._id === random_item._id)) { continue; } // Prevent duplicate item IDs.
             fence_assort.push(random_item, ...random_item_children)
 
 
