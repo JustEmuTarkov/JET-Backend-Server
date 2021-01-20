@@ -12,7 +12,7 @@ class ItemServer {
     addRoute(route, callback) {
         this.routes[route] = callback;
     }
-	
+
 	updateRouteStruct(){
 		console.log(global)
 		this.routeStructure = {
@@ -60,22 +60,21 @@ class ItemServer {
 			"ApplyInventoryChanges": move_f.applyInventoryChanges
 		}
 	}
-	
-    handleRoutes(info, sessionID) {
-        let result = "";
-        
-        for (let body of info.data) {
-            let pmcData = profile_f.handler.getPmcProfile(sessionID);
-            if (body.Action in this.routes) {
-                result = this.routes[body.Action](pmcData, body, sessionID);
-            } else {
-                logger.logError(`[UNHANDLED ACTION] ${body.Action} with body ${body}`);
-            }
-        }
 
-        this.resetOutput();
-        return result;
-    }
+	handleRoutes(info, sessionID) {
+		this.resetOutput();
+
+		for (let body of info.data) {
+			let pmcData = profile_f.handler.getPmcProfile(sessionID);
+			if (body.Action in this.routes) {
+				this.routes[body.Action](pmcData, body, sessionID);
+			} else {
+				logger.logError(`[UNHANDLED ACTION] ${body.Action} with body ${body}`);
+			}
+		}
+		return this.output;
+	}
+
 
     getOutput() {
         if (this.output === "") {

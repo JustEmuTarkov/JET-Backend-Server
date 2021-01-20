@@ -70,17 +70,32 @@ function moveItem(pmcData, body, sessionID) {
 }
 
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
-	for(let itemToChange of body.changedItems)
-	{
-		// itemToChange (_id,_tpl,parentId,slotId,location,upd)
-		
-		for(let inventoryItem in pmcData.Inventory.items){
-			if(pmcData.Inventory.items[inventoryItem]._id == itemToChange._id){
-				pmcData.Inventory.items[inventoryItem] = itemToChange;
-			}
-		}
-	}
+    const output = item_f.handler.getOutput()
+
+    if (body.changedItems !== null) {
+        for (const changed_item of body.changedItems) {
+            for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
+                if (item._id === changed_item._id) {
+                    pmcData.Inventory.items[key] = changed_item
+                    output.items.change.push(changed_item)
+                    break
+                }
+            }
+        }
+    }
+    if (body.deletedItems !== null) {
+        for (const deleted_item of body.deletedItems) {
+            for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
+                if (item._id === deleted_item._id) {
+                    pmcData.Inventory.items.splice(key)
+                    output.items.del.push(deleted_item)
+                    break
+                }
+            }
+        }
+    }
 }
+
 
 /* Internal helper function to transfer an item from one profile to another.
 * fromProfileData: Profile of the source.
@@ -267,13 +282,13 @@ function mergeItem(pmcData, body, sessionID) {
                 if (inventoryItems.from[key2]._id && inventoryItems.from[key2]._id === body.item) {
                     let stackItem0 = 1;
                     let stackItem1 = 1;
-                    
+
                     if (!(inventoryItems.to[key].upd && inventoryItems.to[key].upd.StackObjectsCount)) {
                         inventoryItems.to[key].upd = {"StackObjectsCount" : 1};
                     } else if (!(inventoryItems.to[key2].upd && inventoryItems.to[key2].upd.StackObjectsCount)) {
                         inventoryItems.from[key2].upd = {"StackObjectsCount" : 1};
                     }
-                    
+
                     if ("upd" in inventoryItems.to[key]) {
                         stackItem0 = inventoryItems.to[key].upd.StackObjectsCount;
                     }
@@ -380,7 +395,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 	if (typeof body.items == "undefined"){
         body.items = [{"item_id": body.item_id, "count": body.count}];
     }
-	
+
 	for (let baseItem of body.items)
 	{
 		if (baseItem.item_id in global._database.globals.ItemPresets)
