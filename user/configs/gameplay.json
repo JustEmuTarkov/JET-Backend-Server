@@ -68,9 +68,14 @@
 	"locationloot": {
 		"containers": {
 			"ChanceForEmpty": 10,
-			"ChanceToSpawnNextItem": 70,
+			"ChanceToSpawnNextItem": 40,
 			"AttemptsToPlaceLoot": 15,
-			"ItemSpawnChanceDivider": 1
+			"rarityMultipliers":{
+				"Not_exist": 0,
+				"Common": 1,
+				"Rare": 0.7,
+				"Superrare": 0.4
+			}
 		},
 		"allowLootOverlap": false,
 		"bigmap": 10000,
