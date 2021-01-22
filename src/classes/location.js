@@ -58,6 +58,14 @@ function GenerateLootList(container){
 			}
 		}
 	}
+	// Shuffle LootList for added randomization
+	LootList = Object.keys(LootList)
+	.map((key) => ({key, value: LootList[key]}))
+	.sort((a, b) => b.key.localeCompare(a.key))
+	.reduce((acc, e) => {
+		acc[e.key] = e.value;
+		return acc;
+	}, {});
 	return LootList;
 }
 function FindIfItemIsAPreset(ID_TO_SEARCH){
@@ -67,6 +75,18 @@ function FindIfItemIsAPreset(ID_TO_SEARCH){
 			return _database.globals.ItemPresets[item];
 	}
 	return null;
+}
+function GetRarityMultiplier(rarity){
+	switch(rarity.toLowerCase()){
+		case "not_exist":
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.not_exist;
+		case "rare":
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.rare;
+		case "superrare":
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.superrare;
+		default:
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.common;
+	}
 }
 function _MountedLootPush(typeArray, ids, output) {
 	let count = 0;
@@ -159,9 +179,16 @@ function _GenerateContainerLoot(_items) {
 	let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
 	let container2D = Array(container._props.Grids[0]._props.cellsV).fill().map(() => Array(container._props.Grids[0]._props.cellsH).fill(0));
 	let maxProbability = container.maxProbability;
+	let addedPresets = [];
 	
 	let minCount = _RollMaxItemsToSpawn(container);
 	let ContainerSlots = container._props.Grids[0]._props.cellsH;
+
+	let totalChance = 0;
+	for(let item in LootList){
+		if(LootList[item]._props.SpawnChance)
+			totalChance += LootList[item]._props.SpawnChance * GetRarityMultiplier(LootList[item]._props.Rarity);
+	}
 
 	let itemWidth = 0;
 	let itemHeight = 0;
@@ -174,34 +201,46 @@ function _GenerateContainerLoot(_items) {
 
 		while (!result.success && maxAttempts)
 		{
-			let rolling_pool = [];
-			for(let lootItem in LootList){
-				let roll = utility.getRandomInt(0, 10000);
-				let itemChance = LootList[lootItem]._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots);
-				if(itemChance < roll){
-					rolling_pool.push(LootList[lootItem]);
-				}
-			}
+			let currentTotal = 0;
+			let roll = Math.random() * totalChance;
+			//let rolling_pool = [];
 			let rolled = null;
-			if(rolling_pool.length > 0){
-				rolled = rolling_pool.find(item => utility.getRandomInt(0, 10000) < item._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots));
+			for(let lootItem in LootList){
+				currentTotal += LootList[lootItem]._props.SpawnChance * GetRarityMultiplier(LootList[lootItem]._props.Rarity);
+				if(currentTotal >= roll){
+					rolled = LootList[lootItem];
+					break;
+				}
+				//let roll = utility.getRandomInt(0, 10000);
+				//let itemChance = LootList[lootItem]._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots);
+				//if(itemChance < roll){
+				//	rolling_pool.push(LootList[lootItem]);
+				//}
 			}
+			//if(rolling_pool.length > 0){
+			//	rolled = rolling_pool.find(item => utility.getRandomInt(0, 10000) < item._props.SpawnChance * 100 / (_database.gameplayConfig.locationloot.containers.ItemSpawnChanceDivider * ContainerSlots));
+			//}
 			//let rolled = LootList.find(itm => itm._props.SpawnChance <= roll);
 
 			if(rolled != null){
 				item = helper_f.getItem(rolled._id)[1];
+				itemWidth = item._props.Width;
+				itemHeight = item._props.Height;
 				
 				if (rolled.preset != null)
 				{
+					// Prevent the same preset from spawning twice (it makes the client mad)
+					if(addedPresets.includes(rolled.preset._id))
+					{
+						i--;
+						continue;
+					}
+					addedPresets.push(rolled.preset._id);
 					let size = helper_f.getItemSize(item._id, rolled.preset._items[0]._id, rolled.preset._items);
 					// Guns will need to load a preset of items
 					item._props.presetId = rolled.preset._id;
 					itemWidth = size[0];
 					itemHeight = size[1];
-				}
-				else{
-					itemWidth = item._props.Width;
-					itemHeight = item._props.Height;
 				}
 				result = helper_f.findSlotForItem(container2D, itemWidth, itemHeight);
 			}
