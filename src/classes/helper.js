@@ -750,7 +750,7 @@ module.exports.getContainerMap = (containerW, containerH, itemList, containerId)
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {
 	let itemWidth = rotate ? itemH : itemW;
 	let itemHeight = rotate ? itemW : itemH;
-
+	
 	for (let tmpY = y; tmpY < y + itemHeight; tmpY++)
 	{
 		for (let tmpX = x; tmpX < x + itemWidth; tmpX++)
@@ -779,14 +779,14 @@ module.exports.findSlotForItem = (container2D, itemWidth, itemHeight) => {
 	{
 		let foundSlot = true;
 		for (let itemY = 0; itemY < itemH; itemY++) {
-			if (foundSlot && y + itemH - 1 > containerY - 1)
+			if (foundSlot && y + itemH > containerY)
 			{
 				foundSlot = false;
 				break;
 			}
 
 			for (let itemX = 0; itemX < itemW; itemX++) {
-				if (foundSlot && x + itemW - 1 > containerX - 1)
+				if (foundSlot && x + itemW > containerX)
 				{
 					foundSlot = false;
 					break;
@@ -827,7 +827,7 @@ module.exports.findSlotForItem = (container2D, itemWidth, itemHeight) => {
 			return { success: true, x, y, rotation };
 		}
 	}
-
+	
 	return { success: false, x: null, y: null, rotation: false };
 }
 module.exports.appendErrorToOutput = (output, message = "An unknown error occurred", title = "Error") => {

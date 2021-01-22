@@ -199,6 +199,10 @@ function _GenerateContainerLoot(_items) {
 					itemWidth = size[0];
 					itemHeight = size[1];
 				}
+				else{
+					itemWidth = item._props.Width;
+					itemHeight = item._props.Height;
+				}
 				result = helper_f.findSlotForItem(container2D, itemWidth, itemHeight);
 			}
 			maxAttempts--;
