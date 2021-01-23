@@ -79,13 +79,13 @@ function FindIfItemIsAPreset(ID_TO_SEARCH){
 function GetRarityMultiplier(rarity){
 	switch(rarity.toLowerCase()){
 		case "not_exist":
-			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.not_exist;
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.Not_exist;
 		case "rare":
-			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.rare;
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.Rare;
 		case "superrare":
-			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.superrare;
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.Superrare;
 		default:
-			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.common;
+			return global._database.gameplayConfig.locationloot.containers.RarityMultipliers.Common;
 	}
 }
 function _MountedLootPush(typeArray, ids, output) {

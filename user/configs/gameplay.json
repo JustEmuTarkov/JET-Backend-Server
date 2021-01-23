@@ -70,7 +70,7 @@
 			"ChanceForEmpty": 10,
 			"ChanceToSpawnNextItem": 40,
 			"AttemptsToPlaceLoot": 15,
-			"rarityMultipliers":{
+			"RarityMultipliers":{
 				"Not_exist": 0,
 				"Common": 1,
 				"Rare": 0.7,
