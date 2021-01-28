@@ -8,7 +8,8 @@
 		"saveLootEnabled": true,
 		"saveWeaponDurability": true,
 		"saveHealthEnabled": true,
-		"saveHealthMultiplier": 0.1
+		"saveHealthMultiplier": 0.1,
+		"miaOnTimerEnd": false
 	},
 	"other": {
 		"RedeemTime": 48
