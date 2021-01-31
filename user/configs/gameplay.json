@@ -28,8 +28,8 @@
 			"types": {
 				"followerTest": 100,
                 "bossTest": 100,
-                "assault": 10,
-                "pmcBot": 10
+                "assault": 35,
+                "pmcBot": 35
 			}
 		},
 		"limits": {
