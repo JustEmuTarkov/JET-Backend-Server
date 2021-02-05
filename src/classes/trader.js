@@ -14,6 +14,17 @@ class TraderServer
         for (let traderID in db.cacheBase.traders) {
             this.traders[traderID] = fileIO.readParsed(db.cacheBase.traders[traderID].base);
             this.traders[traderID].sell_category = fileIO.readParsed(db.cacheBase.traders[traderID].categories);
+			if(this.traders[traderID].repair.price_rate === 0)
+			{
+				this.traders[traderID].repair.price_rate = 100;
+				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier - 1;
+			}
+			else{
+				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;	
+			}
+			if(this.traders[traderID].repair.price_rate <= 0){
+				this.traders[traderID].repair.price_rate = -100;
+			}
         }
     }
 
