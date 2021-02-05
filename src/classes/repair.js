@@ -3,7 +3,6 @@
 exports.main = (pmcData, body, sessionID) => {
     let output = item_f.handler.getOutput();
     let trader = trader_f.handler.getTrader(body.tid, sessionID);
-    console.log(trader.repair.price_rate);
     let repairRate = (trader.repair.price_rate === 0) ? 1 : (trader.repair.price_rate / 100 + 1);
 
     // find the item to repair
