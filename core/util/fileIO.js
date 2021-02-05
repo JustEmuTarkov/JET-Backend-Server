@@ -1,5 +1,7 @@
 "use strict";
 
+const writeAtomically = require('write-json-file');
+
 exports.stringify = (data, oneLiner = false) => { return (oneLiner) ? JSON.stringify(data) : JSON.stringify(data, null, "\t"); }
 
 exports.createReadStream = (file) => { return internal.fs.createReadStream(file); }
@@ -53,13 +55,22 @@ function _getCaller() {
     return undefined;
 }
 
-exports.write = (file, data, raw = false) => {
+exports.write = (file, data, raw = false, atomic = true) => {
 	if(file.indexOf('/') != -1)
 		createDir(file);
 	if(raw)
 	{
-		internal.fs.writeFileSync(file, JSON.stringify(data));
-		return;
+        if (atomic) {
+            writeAtomically.sync(file, JSON.stringify(data));
+        } else {
+            internal.fs.writeFileSync(file, JSON.stringify(data));
+        }
+        return;
 	}
-    internal.fs.writeFileSync(file, JSON.stringify(data, null, "\t"), 'utf8');
+    if (atomic) {
+        writeAtomically.sync(file, data, 'utf8');
+    } else {
+        internal.fs.writeFileSync(file, JSON.stringify(data, null, "\t"), 'utf8');
+    }
+    return;
 }
