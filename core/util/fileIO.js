@@ -61,7 +61,7 @@ exports.write = (file, data, raw = false, atomic = true) => {
 	if(raw)
 	{
         if (atomic) {
-            writeAtomically.sync(file, JSON.stringify(data));
+            writeAtomically.sync(file, data);
         } else {
             internal.fs.writeFileSync(file, JSON.stringify(data));
         }
