@@ -344,7 +344,7 @@ function takeProduction(pmcData, body, sessionID) {
 function registerProduction(pmcData, body, sessionID) {
     for (let recipe in production.data) {
         if (body.recipeId === production.data[recipe]._id) {
-            pmcData.Hideout.Production[production.data[recipe].areaType] = {
+            pmcData.Hideout.Production[production.data[recipe]._id] = {
                 "Progress": 0,
                 "inProgress": true,
                 "RecipeId": body.recipeId,
