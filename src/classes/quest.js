@@ -244,10 +244,10 @@ function handoverQuest(pmcData, body, sessionID) {
         // remove the right quantity of given items
         amount = Math.min(itemHandover.count, value - counter);
         counter += amount;
-        if (itemHandover.count - amount > 0) {
+        if (itemHandover.count - amount >= 0) {
             changeItemStack(pmcData, itemHandover.id, itemHandover.count - amount, output);
 
-            if (counter === value) {
+            if (counter === value || counter > value) {
                 break;
             }
         }
