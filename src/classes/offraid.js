@@ -17,7 +17,7 @@ class InraidServer {
 
     removeMapAccessKey(offraidData, sessionID) {
 		if(typeof offraid_f.handler.players[sessionID] == "undefined"){
-			logger.logError("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
+			logger.logWarning("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
 			return;
 		}
         let map = fileIO.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
@@ -271,7 +271,7 @@ function saveProgress(offraidData, sessionID) {
 			offlineWorksProperly = true;
     let insuranceEnabled = false;
 	if(!offlineWorksProperly){
-		logger.logError("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
+		logger.logWarning("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
 	} else {
 		let map = fileIO.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
 		insuranceEnabled = map.Insurance;
