@@ -493,7 +493,7 @@ class Generator
             {
                 case "patron_in_weapon":
 					// TODO: can cause a bug of Big Guns!!!
-                    //itemSlot = parentTemplate._props.Chambers.find(c => c._name === modSlot);
+                    itemSlot = parentTemplate._props.Chambers.find(c => c._name === modSlot);
                     break;
                 case "cartridges":
                     itemSlot = parentTemplate._props.Cartridges.find(c => c._name === modSlot);
