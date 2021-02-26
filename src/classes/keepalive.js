@@ -16,6 +16,9 @@ function updateTraders(sessionID) {
     dialogue_f.handler.removeExpiredItems(sessionID);
 
     for (let i = 0; i < tradersToUpdateList.length; i++) {
+        if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") {
+            update_per = global._database.gameplayConfig.trading.fenceRefreshInterval * 60;
+        }
         if ((tradersToUpdateList[i].supply_next_time + update_per) > timeNow) {
             continue;
         }

@@ -161,8 +161,8 @@ class TraderServer
 
     getAssort(sessionID, traderID) {
         if (traderID === "579dc571d53a0658a154fbec") { // Fence
-            // Lifetime in seconds
-            let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval;
+            // Get lifetime in minutes * 60 (seconds)
+            let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval * 60; 
 
             // Current time in seconds
             let current_time = Math.floor(new Date().getTime() / 1000);
@@ -175,6 +175,7 @@ class TraderServer
 
             if (this.fence_generated_at + fence_assort_lifetime < current_time) {
                 this.fence_generated_at = current_time;
+                logger.logInfo("We are regenerating Fence's assort.")
                 this.generateFenceAssort();
             }
         }
