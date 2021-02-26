@@ -1,5 +1,7 @@
 "use strict";
 
+const { Logger } = require("nexe/lib/logger");
+
 /* TraderServer class maintains list of traders for each sessionID in memory. */
 class TraderServer
 {
@@ -163,7 +165,7 @@ class TraderServer
         if (traderID === "579dc571d53a0658a154fbec") { // Fence
             // Get lifetime in minutes * 60 (seconds)
             let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval * 60; 
-            
+
             // Current time in seconds
             let current_time = Math.floor(new Date().getTime() / 1000);
 
@@ -171,13 +173,12 @@ class TraderServer
             if (this.fence_generated_at === 0 || !this.fence_generated_at) {
                 this.fence_generated_at = current_time;
                 this.generateFenceAssort();
-                console.log("We are generating initial fence.")
             }
 
             if (this.fence_generated_at + fence_assort_lifetime < current_time) {
                 this.fence_generated_at = current_time;
+                logger.logInfo("We are regenerating Fence's assort.")
                 this.generateFenceAssort();
-                console.log("We are generating fence @ " + current_time)
             }
         }
 
