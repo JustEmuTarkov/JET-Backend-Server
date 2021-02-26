@@ -107,7 +107,6 @@ class TraderServer
     }
 
     resetTrader(sessionID, traderID) {
-        console.log(traderID);
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let traderWipe = fileIO.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);

@@ -14,7 +14,6 @@ class ItemServer {
     }
 
 	updateRouteStruct(){
-		console.log(global)
 		this.routeStructure = {
 			"Eat": health_f.handler.offraidEat,
 			"Heal": health_f.handler.offraidHeal,
