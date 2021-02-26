@@ -1,7 +1,5 @@
 "use strict";
 
-const { Logger } = require("nexe/lib/logger");
-
 /* TraderServer class maintains list of traders for each sessionID in memory. */
 class TraderServer
 {
