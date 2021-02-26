@@ -161,29 +161,21 @@ class TraderServer
 
     getAssort(sessionID, traderID) {
         if (traderID === "579dc571d53a0658a154fbec") { // Fence
-            if(global._database.gameplayConfig.trading.fenceRefreshOnCommand){
+            // Lifetime in seconds
+            let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval;
+
+            // Current time in seconds
+            let current_time = Math.floor(new Date().getTime() / 1000);
+
+            // Initial Fence generation pass.
+            if (this.fence_generated_at === 0 || !this.fence_generated_at) {
+                this.fence_generated_at = current_time;
                 this.generateFenceAssort();
             }
-            else{
-                // Lifetime in seconds
-                let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval;
 
-                // Current time in seconds
-                let current_time = Math.floor(new Date().getTime() / 1000);
-                console.log(fence_assort_lifetime);
-                console.log(this.fence_generated_at + fence_assort_lifetime);
-                console.log(current_time);
-
-                // Initial Fence generation pass.
-                if (this.fence_generated_at === 0 || !this.fence_generated_at) {
-                    this.fence_generated_at = current_time;
-                    this.generateFenceAssort();
-                }
-
-                if (this.fence_generated_at + fence_assort_lifetime < current_time) {
-                    this.fence_generated_at = current_time;
-                    this.generateFenceAssort();
-                }
+            if (this.fence_generated_at + fence_assort_lifetime < current_time) {
+                this.fence_generated_at = current_time;
+                this.generateFenceAssort();
             }
         }
 
