@@ -181,13 +181,13 @@ class TraderServer
                     this.generateFenceAssort();
                 }
 
-            if (this.fence_generated_at + fence_assort_lifetime < current_time) {
-                this.fence_generated_at = current_time;
-                logger.logInfo("We are regenerating Fence's assort.")
-                this.generateFenceAssort();
-            }
-        }
-
+				if (this.fence_generated_at + fence_assort_lifetime < current_time) {
+					this.fence_generated_at = current_time;
+					logger.logInfo("We are regenerating Fence's assort.")
+					this.generateFenceAssort();
+				}
+			}
+		}
         if (!(traderID in this.assorts)) {
             // for modders generate endgame items for fence where you need to exchange it for that items
             let tmp = fileIO.readParsed(db.user.cache["assort_" + traderID]);
