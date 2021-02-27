@@ -59,7 +59,7 @@
 		"insureMultiplier": 0.1,
 		"insureReturnChance": 75,
 		"fenceAssortSize": 60,
-		"fenceRefreshInterval": 10,
+		"fenceRefreshInterval": 600,
 		"buyItemsMarkedFound": false
 	},
 	"location": {
