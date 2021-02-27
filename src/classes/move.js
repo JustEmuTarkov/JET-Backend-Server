@@ -409,16 +409,20 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		{
 			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
 		}
-		/*else if (body.tid === fenceID)
-		{
-			const fenceItem = fileIO.readParsed(db.user.cache[`assort_${fenceID}`]).items;
-			const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
-			itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
-		}*/
+		// else if (body.tid === fenceID)
+		// {
+			// const fenceItem = trader_f.handler.assorts[fenceID].items;
+			// const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
+			// itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
+		// }
 		else
 		{
 			// Only grab the relevant trader items and add unique values
-			const traderItems = trader_f.handler.getAssort(sessionID, body.tid).items;
+			let isBuyingFromFence = false;
+			if(body.tid === "579dc571d53a0658a154fbec")
+				isBuyingFromFence = true;
+			
+			const traderItems = trader_f.handler.getAssort(sessionID, body.tid, isBuyingFromFence).items;
 			const relevantItems = helper_f.findAndReturnChildrenAsItems(traderItems, baseItem.item_id);
 			const toAdd = relevantItems.filter(traderItem => !itemLib.some(item => traderItem._id === item._id));
 			itemLib.push(...toAdd);

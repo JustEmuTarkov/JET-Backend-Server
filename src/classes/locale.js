@@ -19,7 +19,13 @@ class LocaleServer {
 			if(typeof this.global[lang].data != "undefined"){
 				this.global[lang] = this.global[lang].data;
 			}
+			// putting some watermarking inside game
+			// later separate this into single languages and put it below this forloop
+			this.global[lang].interface["Attention! This is a Beta version of Escape from Tarkov for testing purposes."] = "Attention! This is Emulated version of \"Escape from Tarkov\". Provided by JustEmuTarkov Team (justemutarkov.eu).";
+			this.global[lang].interface["NDA free warning"] = "If you like this game make sure to support official creators of this game (BattleState Games)";
+			this.global[lang].interface["Offline raid description"] = "You are now entering an emulated version of a Tarkov raid. This emulated raid has all the features of a live version, but it has no connection to BSG's servers, and stays local on your PC.\nOther PMCs will spawn as emulated AI, and will spawn with randomized gear, levels, inventory, and names. This means you can loot, kill, and extract as you would online, and keep your inventory when you extract, but you cannot bring this loot into live EFT servers.\nIf you have any questions, don't hesitate to join the JustEmuTarkov Discord for assistance.";
         }
+		// here if we gonna have language translations :)
     }
 
     getLanguages() {
