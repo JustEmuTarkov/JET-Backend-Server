@@ -34,7 +34,8 @@
 		"ScavProfileLoadPatch": true,
 		"ScavSpawnPointPatch": false,
 		"ScavExfilPatch": true,
-		"EndByTimerPatch": true
+		"EndByTimerPatch": true,
+		"SpawnRandomizationPatch": true
 	},
 	"hideInfoLogs": true,
 	"debugTimer": true,
