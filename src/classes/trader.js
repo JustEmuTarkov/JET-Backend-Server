@@ -17,12 +17,15 @@ class TraderServer
 			if(this.traders[traderID].repair.price_rate === 0)
 			{
 				this.traders[traderID].repair.price_rate = 100;
-				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier - 1;
+				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
+				this.traders[traderID].repair.price_rate -= 100;
 			}
 			else{
-				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;	
+				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
+				if(this.traders[traderID].repair.price_rate == 0)
+					this.traders[traderID].repair.price_rate = -1;
 			}
-			if(this.traders[traderID].repair.price_rate <= 0){
+			if(this.traders[traderID].repair.price_rate < 0){
 				this.traders[traderID].repair.price_rate = -100;
 			}
         }
