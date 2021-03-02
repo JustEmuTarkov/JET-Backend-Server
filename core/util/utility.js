@@ -111,17 +111,21 @@ exports.generateNewDialogueId = () => {
     return this.generateNewId("D");
 }
 // generateNewId
-exports.generateNewId = (prefix) => {
+exports.generateNewId = (prefix = "", useOld = false) => {
     let getTime = new Date();
-    let month = getTime.getMonth().toString();
-    let date = getTime.getDate().toString();
-    let hour = getTime.getHours().toString();
-    let minute = getTime.getMinutes().toString();
-    let second = getTime.getSeconds().toString();
-    let random = this.getRandomInt(1000000000, 9999999999).toString();
-    let retVal = prefix + (month + date + hour + minute + second + random).toString();
-    let sign = this.makeSign(24 - retVal.length).toString();
-    return retVal + sign;
+	let retVal = ""
+	if(useOld){
+		retVal = prefix
+		retVal += getTime.getMonth().toString();
+		retVal += getTime.getDate().toString();
+		retVal += getTime.getHours().toString();
+		retVal += (parseInt(getTime.getMinutes()) + parseInt(getTime.getSeconds())).toString();
+		retVal += this.getRandomInt(1000000, 9999999).toString();
+		retVal += this.makeSign(24 - retVal.length).toString();
+	} else {
+		retVal = prefix + this.makeSign(23).toString();
+	}
+    return retVal;
 }
 // secondsToTime
 exports.secondsToTime = (timestamp) =>{
