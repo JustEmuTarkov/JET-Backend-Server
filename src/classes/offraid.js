@@ -115,7 +115,7 @@ function setInventory(pmcData, profile) {
         for (let key in pmcData.Inventory.items) { 
             let currid = pmcData.Inventory.items[key]._id
             if (currid == item._id) {
-                duplicates.push(item._id)
+                duplicates.push(item)
                 continue x;
             }
         }
@@ -124,7 +124,14 @@ function setInventory(pmcData, profile) {
     pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
     if (duplicates.length > 0) {
-        logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`)
+        logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Regenerating IDs...`)
+        for (let item in duplicates) {
+            let oldid = duplicates[item]._id
+            let newid = utility.generateNewItemId()
+            duplicates[item]._id = newid; // Hopefully generate a unique ID to prevent further ID collisions.
+            pmcData.Inventory.items.push(duplicates[item]); // TODO: Do a second pass for regenerating IDs ??
+            logger.logWarning(`Replaced duplicate ID '${oldid}' with new ID '${newid}'.`)
+        }
     }
 
     return pmcData;
