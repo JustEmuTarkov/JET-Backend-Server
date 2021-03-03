@@ -19,15 +19,18 @@ function generate() {
     // replace date and time
     if (global._database.gameplayConfig.location.realTimeEnabled) {
         // Apply acceleration to time computation.
-        let computedDate = new Date();
+        let timeInSeconds = new Date().getTime() / 1000; // date in seconds
         let deltaSeconds = utility.getServerUptimeInSeconds() * output.acceleration;
-        computedDate.setSeconds(computedDate.getSeconds() + deltaSeconds);
+		
+		let newDateInSeconds = timeInSeconds + deltaSeconds; 
+		
+		let newDateObj = new Date(newDateInSeconds * 1000);
 
-        let time = utility.formatTime(computedDate).replace("-", ":").replace("-", ":");
-        let date = utility.formatDate(computedDate);
+        let time = utility.formatTime(newDateObj).replace("-", ":").replace("-", ":");
+        let date = utility.formatDate(newDateObj);
         let datetime = `${date} ${time}`;
 
-        output.weather.timestamp = Math.floor(computedDate / 1000);
+        output.weather.timestamp = Math.floor(newDateObj / 1000);
         output.weather.date = date;
         output.weather.time = datetime;
         output.date = date;
