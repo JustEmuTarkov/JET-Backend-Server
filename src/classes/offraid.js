@@ -103,13 +103,17 @@ function RemoveFoundItems(profile) {
     return profile;
 }
 
-function setInventory(pmcData, profile) {
+function setInventory(pmcData, profile, sessionID = null, isScav = false) {
+    let pointer = pmcData;
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
 
-    // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
+    // Fix to duplicate IDs being saved to profile after raid. -- kiobu
     let duplicates = []
+    let itemsToPush = []
+
+    if (isScav) { pmcData = profile_f.handler.getPmcProfile(sessionID) }
 
     x: for (let item of profile.Inventory.items) {
         for (let key in pmcData.Inventory.items) { 
@@ -119,8 +123,14 @@ function setInventory(pmcData, profile) {
                 continue x;
             }
         }
-        pmcData.Inventory.items.push(item);
+        itemsToPush.push(item)
     }
+    pmcData = pointer;
+
+    for (let item in itemsToPush) {
+        pmcData.Inventory.items.push(itemsToPush[item]);
+    }
+
     pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
     if (duplicates.length > 0) {
@@ -354,7 +364,7 @@ function saveProgress(offraidData, sessionID) {
 
     // set profile equipment to the raid equipment
     if (isPlayerScav) {
-        scavData = setInventory(scavData, offraidData.profile);
+        scavData = setInventory(scavData, offraidData.profile, sessionID, true);
         health_f.handler.initializeHealth(sessionID);
         profile_f.handler.setScavProfile(sessionID, scavData);
         return;
