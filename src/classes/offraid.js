@@ -108,34 +108,22 @@ function setInventory(pmcData, profile, sessionID = null, isScav = false) {
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
 
-    let profileToCheck = pmcData;
-    if (isScav) { profileToCheck = profile_f.handler.getPmcProfile(sessionID) }
-
     // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
     let duplicates = []
 
-    x: for (let item of profile.Inventory.items) {
-        for (let key in profileToCheck.Inventory.items) { 
-            let currid = profileToCheck.Inventory.items[key]._id
-            if (currid == item._id) {
-                duplicates.push(item)
-                continue x;
-            }
-        }
-        pmcData.Inventory.items.push(item);
-    }
-    pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+    let regeneratedItems = helper_f.replaceIDs(profile, profile.Inventory.items)
 
-    if (duplicates.length > 0) {
-        logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Regenerating IDs...`)
-        for (let item in duplicates) {
-            let oldid = duplicates[item]._id
-            let newid = utility.generateNewItemId()
-            duplicates[item]._id = newid; // Hopefully generate a unique ID to prevent further ID collisions.
-            pmcData.Inventory.items.push(duplicates[item]); // TODO: Do a second pass for regenerating IDs ??
-            logger.logWarning(`Replaced duplicate ID '${oldid}' with new ID '${newid}'.`)
+    logger.logWarning("Regenerating IDs...")
+
+    for (let item in regeneratedItems) {
+        if (!regeneratedItems[item].hasOwnProperty("_id")) {
+            continue;
+        } else {
+            pmcData.Inventory.items.push(regeneratedItems[item]);
         }
     }
+
+    pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
     return pmcData;
 }
