@@ -913,6 +913,14 @@ module.exports.getPlayerStashSlotMap = (sessionID, pmcData) => {
 module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash) => {
 	let toDo = [itemID];
 	let tmpItem = helper_f.getItem(itemtpl)[1];
+
+    // Prevent traders not working if an template ID does not fetch a real item. -- kiobu
+    // Note: This may cause problems when attempting to place an item in the same/relative place as a broken template item.
+    if (JSON.stringify(tmpItem) === "{}") {
+        logger.logError(`Could not find item from the given template ID in profile: ${itemtpl}. You should remove this item from your profile.`)
+        return []; // Return empty array to continue execution.
+    }
+
 	let rootItem = inventoryItemHash.byItemId[itemID];
 	let FoldableWeapon = tmpItem._props.Foldable;
 	let FoldedSlot = tmpItem._props.FoldedSlot;
