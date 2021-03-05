@@ -104,33 +104,26 @@ function RemoveFoundItems(profile) {
 }
 
 function setInventory(pmcData, profile, sessionID = null, isScav = false) {
-    let pointer = pmcData;
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
 
-    // Fix to duplicate IDs being saved to profile after raid. -- kiobu
-    let duplicates = []
-    let itemsToPush = []
+    let profileToCheck = pmcData;
+    if (isScav) { profileToCheck = profile_f.handler.getPmcProfile(sessionID) }
 
-    if (isScav) { pmcData = profile_f.handler.getPmcProfile(sessionID) }
+    // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
+    let duplicates = []
 
     x: for (let item of profile.Inventory.items) {
-        for (let key in pmcData.Inventory.items) { 
-            let currid = pmcData.Inventory.items[key]._id
+        for (let key in profileToCheck.Inventory.items) { 
+            let currid = profileToCheck.Inventory.items[key]._id
             if (currid == item._id) {
                 duplicates.push(item)
                 continue x;
             }
         }
-        itemsToPush.push(item)
+        pmcData.Inventory.items.push(item);
     }
-    pmcData = pointer;
-
-    for (let item in itemsToPush) {
-        pmcData.Inventory.items.push(itemsToPush[item]);
-    }
-
     pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
     if (duplicates.length > 0) {
