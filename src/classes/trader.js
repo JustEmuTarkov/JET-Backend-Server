@@ -369,6 +369,7 @@ class TraderServer
 
             // find all child of the item (including itself) and sum the price
             for (let childItem of helper_f.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
+                if (!global._database.items[childItem._tpl]) { continue; } // Ignore child item if it does not have an entry in the db. -- kiobu
                 let tempPrice = (global._database.items[childItem._tpl]._props.CreditsPrice >= 1) ? global._database.items[childItem._tpl]._props.CreditsPrice : 1;
                 let count = ("upd" in childItem && "StackObjectsCount" in childItem.upd) ? childItem.upd.StackObjectsCount : 1;
                 price = price + (tempPrice * count);
