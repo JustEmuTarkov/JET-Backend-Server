@@ -1,6 +1,6 @@
 # Server Readme.md
   
-## Preparing to use
+## Preparing to Use
   
 - Get node from [Node x64](https://nodejs.org/dist/v14.10.0/node-v14.10.0-x64.msi) or [Node x32](https://nodejs.org/dist/v14.10.0/node-v14.10.0-x86.msi)  
   - If its not working as intended uninstall it and get one of LTS version's [Node x64](https://nodejs.org/dist/v12.18.3/node-v12.18.3-x64.msi) or [Node x32](https://nodejs.org/dist/v12.18.3/node-v12.18.3-x86.msi)  
@@ -12,7 +12,7 @@
 _Let me know if its missing something in the instalation/run_  
   
   
-## Database folders
+## Database Folders
   
 **This folders are not required after "cache" is done**
 - assort
@@ -54,7 +54,7 @@ _Let me know if its missing something in the instalation/run_
 - file `removeUselessDB_folders.cmd` removes folders listed above from db folder.
 - `all_locales.7z` contains all locales which you can include to your server it weights too much so thats why i left it in archive - you will need to edit them abit so make sure you dont mess it up :)
 
-## Variables accessing and structure
+## Variables Accessing and Structure
   _unifying global scope variables_
 variables below are global which means you can access them without assigning them anywhere.
   
