@@ -151,8 +151,8 @@ function createPaymentBody(body, stacks) {
             return retval.scheme_items[i].count += acc 
         })
     }
-    console.log(retval.scheme_items)
-    return retval;*/
+    console.log(retval.scheme_items)*/
+    return retval;
 }
 
 /* take money and insert items into return to server request
