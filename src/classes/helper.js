@@ -129,6 +129,32 @@ function fromRUB(value, currency) {
     return Math.round(value / getTemplatePrice(currency));
 }
 
+/* Generate a payment body based off of a scheme_items */
+function createPaymentBody(body, stacks) {
+    let retval = body
+    x: for (let k in body.scheme_items) {
+        let count = body.scheme_items[k].count;
+        for (let item in stacks) {
+            if (stacks[item].upd.StackObjectsCount >= count) {
+                retval.scheme_items[k].id = stacks[item]._id
+                stacks[item].upd.StackObjectsCount - count;
+                continue x;
+            }
+        }
+    }
+
+    /*console.log(retval.scheme_items)
+    if (retval.scheme_items.every((obj) => {
+        return obj.id == retval.scheme_items[0].id
+    })) {
+        retval.scheme_items.reduce((acc, val, i) => {
+            return retval.scheme_items[i].count += acc 
+        })
+    }
+    console.log(retval.scheme_items)
+    return retval;*/
+}
+
 /* take money and insert items into return to server request
 * input:
 * output: boolean
@@ -162,7 +188,7 @@ function payMoney(pmcData, body, sessionID) {
     }
 
     // find all items with currency _tpl id
-    const moneyItems = this.findMoney("tpl", pmcData, currencyTpl);
+    const moneyItems = findMoney("tpl", pmcData, currencyTpl);
 
     let barterPrice = 0;
     let amountMoney = 0;
@@ -179,6 +205,9 @@ function payMoney(pmcData, body, sessionID) {
     if (moneyItems.length <= 0 || amountMoney < barterPrice) {
         return false;
     }
+
+    let moneyItemsIds = []
+    moneyItems.map((el) => { moneyItemsIds.push(el._id) })
 
     // Refactor buying items. -- kiobu
     for (let m in moneyItems) {
@@ -201,6 +230,8 @@ function payMoney(pmcData, body, sessionID) {
                         output.items.change.push(thisMoneyStack);
                     }
                 }
+            } else if (!moneyItemsIds.includes(body.scheme_items[k].id)) {
+                payMoney(pmcData, createPaymentBody(body, moneyItems), sessionID) // recursive call.
             }
         }
     }
