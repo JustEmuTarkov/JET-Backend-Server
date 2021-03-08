@@ -201,7 +201,7 @@ function payMoney(pmcData, body, sessionID) {
     let amountMoney = 0;
 
     for (let item of moneyItems) {
-        amountMoney += item.upd.StackObjectsCount;
+        amountMoney += !item.hasOwnProperty("upd") ? 1 : item.upd.StackObjectsCount;
     }
 
     // if no money in inventory or amount is not enough we return false
@@ -212,7 +212,7 @@ function payMoney(pmcData, body, sessionID) {
     let leftToPay = barterPrice;
 
     for (let moneyItem of moneyItems) {
-        let itemAmount = !moneyItem.upd ? 1 : moneyItem.upd.StackObjectsCount; // Handle occurence when there is a stack of 1.
+        let itemAmount = !moneyItem.hasOwnProperty("upd") ? 1 : moneyItem.upd.StackObjectsCount; // Handle occurence when there is a stack of 1.
 
         if (leftToPay >= itemAmount) {
             leftToPay -= itemAmount;
