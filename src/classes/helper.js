@@ -188,17 +188,20 @@ function payMoney(pmcData, body, sessionID) {
     }
 
     // find all items with currency _tpl id
-    const moneyItems = findMoney("tpl", pmcData, currencyTpl);
+    const moneyItems = this.findMoney("tpl", pmcData, currencyTpl);
 
+    // prepare a price for barter
     let barterPrice = 0;
-    let amountMoney = 0;
 
     for (let item of body.scheme_items) {
         barterPrice += item.count;
     }
 
+    // prepare the amount of money in the profile
+    let amountMoney = 0;
+
     for (let item of moneyItems) {
-        amountMoney += !item.hasOwnProperty("upd") ? 1 : item.upd.StackObjectsCount;
+        amountMoney += item.upd.StackObjectsCount;
     }
 
     // if no money in inventory or amount is not enough we return false
@@ -206,33 +209,26 @@ function payMoney(pmcData, body, sessionID) {
         return false;
     }
 
-    let moneyItemsIds = []
-    moneyItems.map((el) => { moneyItemsIds.push(el._id) })
+    let leftToPay = barterPrice;
 
-    // Refactor buying items. -- kiobu
-    for (let m in moneyItems) {
-        for (let k in body.scheme_items) {
-            if (body.scheme_items[k].id === moneyItems[m]._id) {
-                // We found the stack.
-                let thisMoneyStack = moneyItems[m]
-                let shouldTake = body.scheme_items[k].count;
+    for (let moneyItem of moneyItems) {
+        let itemAmount = !moneyItem.upd ? 1 : moneyItem.upd.StackObjectsCount; // Handle occurence when there is a stack of 1.
 
-                // This is a stack of one.
-                if (!thisMoneyStack.hasOwnProperty("upd")) {
-                    output = move_f.removeItem(pmcData, thisMoneyStack._id, output, sessionID);
-                } else {
-                    // Taking count from this stack would give us a total of 0 (or less, which should not occur) left in the stack.
-                    if (thisMoneyStack.upd.StackObjectsCount - shouldTake <= 0) {
-                        output = move_f.removeItem(pmcData, thisMoneyStack._id, output, sessionID);
-                    // Take money from a stack.
-                    } else {
-                        thisMoneyStack.upd.StackObjectsCount -= shouldTake
-                        output.items.change.push(thisMoneyStack);
-                    }
-                }
-            } else if (!moneyItemsIds.includes(body.scheme_items[k].id)) {
-                payMoney(pmcData, createPaymentBody(body, moneyItems), sessionID) // recursive call.
+        if (leftToPay >= itemAmount) {
+            leftToPay -= itemAmount;
+            output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
+        } else {
+            if (!moneyItem.upd) {
+                output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
+            } else {
+                moneyItem.upd.StackObjectsCount -= leftToPay;
+                output.items.change.push(moneyItem);
             }
+            leftToPay = 0;
+        }
+
+        if (leftToPay === 0) {
+            break;
         }
     }
 
