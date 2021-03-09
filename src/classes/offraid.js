@@ -111,7 +111,7 @@ function setInventory(pmcData, profile, sessionID = null, isScav = false) {
     // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
     let duplicates = []
 
-    let regeneratedItems = helper_f.replaceIDs(profile, profile.Inventory.items)
+    let regeneratedItems = helper_f.replaceIDs(profile, profile.Inventory.items, profile.Inventory.fastPanel)
 
     logger.logWarning("Regenerating IDs...")
 
@@ -119,6 +119,13 @@ function setInventory(pmcData, profile, sessionID = null, isScav = false) {
         if (!regeneratedItems[item].hasOwnProperty("_id")) {
             continue;
         } else {
+            for (let k in pmcData.Inventory.items) {
+                if (pmcData.Inventory.items[k]._id === regeneratedItems[item]._id) {
+                    let old = regeneratedItems[item]._id
+                    regeneratedItems[item]._id = utility.generateNewItemId()
+                    logger.logWarning(`ID collision found AFTER regeneration. Changed ${old} to ${regeneratedItems[item]._id}`)
+                }
+            }
             pmcData.Inventory.items.push(regeneratedItems[item]);
         }
     }
