@@ -226,6 +226,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn) {
                 }
             });
             btcProd.Progress -= final_prodtime;
+            logger.logSuccess("Bitcoin produced on server.")
         } else {
             btcProd.Progress = 0;
         }

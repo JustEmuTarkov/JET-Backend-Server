@@ -56,7 +56,8 @@ class ItemServer {
 			"RemoveBuild": weaponbuilds_f.removeBuild,
 			"AddToWishList": wishlist_f.addToWishList,
 			"RemoveFromWishList": wishlist_f.removeFromWishList,
-			"ApplyInventoryChanges": move_f.applyInventoryChanges
+			"ApplyInventoryChanges": move_f.applyInventoryChanges,
+			"CreateMapMarker": status_f.handleMapMarker 
 		}
 	}
 

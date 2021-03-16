@@ -130,9 +130,28 @@ function readEncyclopedia(pmcData, body, sessionID) {
     return item_f.handler.getOutput();
 }
 
+function handleMapMarker(pmcData, body, sessionID) {
+
+    for (let k in pmcData.Inventory.items) {
+        let curritem = pmcData.Inventory.items[k]
+        if (curritem._id === body.item) {
+            if (!curritem.upd.Map) {
+                curritem.upd.Map = {
+                    "Markers": []
+                }
+            }
+            curritem.upd.Map.Markers.push(body.mapMarker)
+            console.log(body.mapMarker)
+        }
+    }
+
+    return item_f.handler.getOutput();
+}
+
 module.exports.foldItem = foldItem;
 module.exports.toggleItem = toggleItem;
 module.exports.tagItem = tagItem;
 module.exports.bindItem = bindItem;
 module.exports.examineItem = examineItem;
 module.exports.readEncyclopedia = readEncyclopedia;
+module.exports.handleMapMarker = handleMapMarker;
