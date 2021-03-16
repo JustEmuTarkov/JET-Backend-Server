@@ -206,6 +206,7 @@ function updateAirFilters(airFilterArea) {
 
 function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn) {
 
+    let production = fileIO.readParsed(db.user.cache.hideout_production).data.find(prodArea => prodArea.areaType == 20);
     let time_elapsed = (Math.floor(Date.now() / 1000)) - btcProd.StartTime;
 
     if (isGeneratorOn == true) {
@@ -213,9 +214,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn) {
     }
 
     let t2 = Math.pow((0.05 + (btcFarmCGs - 1) / 49 * 0.15), -1); //THE FUNCTION TO REDUCE TIME OF PRODUCTION DEPENDING OF CGS
-    let final_prodtime = Math.floor(t2 * 3600)
-
-    //console.log("next bitcoin : " +  utility.secondsToTime(final_prodtime - btcProd.Progress) + " (" + utility.secondsToTime(btcProd.Progress) +" elapsed)" )
+    let final_prodtime = Math.floor(t2 * (production.productionTime / 20))
 
     while (btcProd.Progress > final_prodtime) {
         if (btcProd.Products.length < 3) {

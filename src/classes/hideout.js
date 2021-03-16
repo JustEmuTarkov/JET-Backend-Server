@@ -265,6 +265,11 @@ function handleBitcoinReproduction(pmcData, sessionID) {
         output = move_f.addItem(pmcData, bitcoin, output, sessionID)
     })
 
+    // We should maybe promisify this.
+    if (pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].Products.length === 0) {
+        logger.logWarning("No bitcoins to collect in profile (client/server desync).")
+    }
+
     // Restart production.
 	pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].StartTime = Math.floor(Date.now() / 1000);
     pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].Products = [];
