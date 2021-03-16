@@ -251,33 +251,32 @@ function continuousProductionStart(pmcData, body, sessionID) {
     return item_f.handler.getOutput();
 }
 
-function getBTC(pmcData, body, sessionID) {
+function handleBitcoinReproduction(pmcData, sessionID) {
     let output = item_f.handler.getOutput();
 
-    let newBTC = { 
+    let bitcoin = { 
 		"items": [
 			{"item_id": "59faff1d86f7746c51718c9c", "count": 1}
 		],
         "tid": "ragfair"
     };
-	let startTime = pmcData.Hideout.Production["20"].StartTime;
-	let timeOfBtcExtraction = Math.floor(Date.now() / 1000);
-	let timer = fileIO.readParsed(db.user.cache.hideout_production).data.find(prodArea => prodArea.areaType == 20);
-	
-	let how_much_earned = (timeOfBtcExtraction - startTime) / (timer.productionTime/timer.productionLimitCount);
-	how_much_earned = (how_much_earned > timer.productionLimitCount) ? timer.productionLimitCount : how_much_earned;
-    for (let cnt = 0; cnt < how_much_earned; cnt++) {
-        output = move_f.addItem(pmcData, newBTC, output, sessionID, true);
-    }
-	pmcData.Hideout.Production["20"].StartTime = timeOfBtcExtraction;
-    pmcData.Hideout.Production["20"].Products = [];
+
+    pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].Products.forEach((_) => {
+        output = move_f.addItem(pmcData, bitcoin, output, sessionID)
+    })
+
+    // Restart production.
+	pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].StartTime = Math.floor(Date.now() / 1000);
+    pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].Products = [];
+
     return output;
 }
 
 function takeProduction(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
+
     if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
-        return getBTC(pmcData, body, sessionID);
+        return handleBitcoinReproduction(pmcData, sessionID)
     }
 
     for (let recipe in production.data) {
@@ -288,7 +287,9 @@ function takeProduction(pmcData, body, sessionID) {
         // delete the production in profile Hideout.Production
         for (let prod in pmcData.Hideout.Production) {
             if (pmcData.Hideout.Production[prod].RecipeId === body.recipeId) {
-                delete pmcData.Hideout.Production[prod];
+                if (body.recipeId === "5d5c205bd582a50d042a3c0e") { 
+                    continue
+                } else { delete pmcData.Hideout.Production[prod]; }
             }
         }
 
@@ -344,14 +345,18 @@ function takeProduction(pmcData, body, sessionID) {
 function registerProduction(pmcData, body, sessionID) {
     for (let recipe in production.data) {
         if (body.recipeId === production.data[recipe]._id) {
-            pmcData.Hideout.Production[production.data[recipe]._id] = {
-                "Progress": 0,
-                "inProgress": true,
-                "RecipeId": body.recipeId,
-                "Products": [],
-                "SkipTime": 0,
-                "StartTime": Math.floor(Date.now() / 1000)
-            };
+            try {
+                pmcData.Hideout.Production[production.data[recipe]._id] = {
+                    "Progress": 0,
+                    "inProgress": true,
+                    "RecipeId": body.recipeId,
+                    "Products": [],
+                    "SkipTime": 0,
+                    "StartTime": Math.floor(Date.now() / 1000)
+                };
+            } catch (e) {
+                logger.logError(`Attempted to register production of ${body.recipeId}, but no production was found in the profile.`)
+            }
         }
     }
 }
