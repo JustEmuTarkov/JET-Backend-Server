@@ -86,6 +86,9 @@ function FindIfItemIsAPreset(ID_TO_SEARCH){
 	}
 	return null;
 }
+function DeepCopy(obj){
+	return JSON.parse(JSON.stringify(obj));
+}
 function GetRarityMultiplier(rarity){
 	switch(rarity.toLowerCase()){
 		case "not_exist":
@@ -102,7 +105,7 @@ function _MountedLootPush(typeArray, ids, output) {
 	let count = 0;
 	for (let i in typeArray)
 	{
-		let data = JSON.parse(JSON.stringify(typeArray[i]));
+		let data = DeepCopy(typeArray[i]);
 
 		if (data.Id in ids)
 			continue;
@@ -129,7 +132,7 @@ function _ForcedLootPush(typeArray, ids, output) {
 	let count = 0;
 	for (let i in typeArray)
 	{
-		let data = JSON.parse(JSON.stringify(typeArray[i].data[0]));
+		let data = DeepCopy(typeArray[i].data[0]);
 
 		if (data.Id in ids)
 			continue;
@@ -300,7 +303,7 @@ function _GenerateContainerLoot(_items) {
 
 			for (var p in preset._items)
 			{
-				_items.push(preset._items[p]);
+				_items.push(DeepCopy(preset._items[p]));
 
 				if (preset._items[p].slotId === "mod_magazine")
 				{
@@ -421,7 +424,7 @@ class LocationServer {
         let mounted = location.loot.mounted;
         let statics = location.loot.static;
 		// Deep copy so the variable contents can be edited non-destructively
-        let dynamic = JSON.parse(JSON.stringify(location.loot.dynamic));
+        let dynamic = DeepCopy(location.loot.dynamic);
         output.Loot = [];
         let count = 0;
 		let counters = [];
