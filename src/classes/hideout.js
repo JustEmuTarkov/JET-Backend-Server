@@ -253,6 +253,7 @@ function continuousProductionStart(pmcData, body, sessionID) {
 
 function handleBitcoinReproduction(pmcData, sessionID) {
     let output = item_f.handler.getOutput();
+    keepalive_f.main(sessionID) // Force keepalive call to prevent client/server desync.
 
     let bitcoin = { 
 		"items": [
@@ -265,9 +266,8 @@ function handleBitcoinReproduction(pmcData, sessionID) {
         output = move_f.addItem(pmcData, bitcoin, output, sessionID)
     })
 
-    // We should maybe promisify this.
     if (pmcData.Hideout.Production["5d5c205bd582a50d042a3c0e"].Products.length === 0) {
-        logger.logWarning("No bitcoins to collect in profile (client/server desync).")
+        logger.logWarning("No bitcoins to collect in profile.")
     }
 
     // Restart production.
