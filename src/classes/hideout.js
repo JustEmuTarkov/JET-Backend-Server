@@ -229,10 +229,10 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
                     }
                 }
             }
-	pmcData.Hideout.Production["141"] = {
-	    "Products": products
-	};
-            pmcData.Hideout.Production["14"] = {
+            pmcData.Hideout.Production["141"] = {
+                "Products": products
+            };
+            pmcData.Hideout.Production[body.recipeId] = {
                 "Progress": 0,
                 "inProgress": true,
                 "RecipeId": body.recipeId,
