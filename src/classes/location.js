@@ -102,12 +102,24 @@ function _MountedLootPush(typeArray, ids, output) {
 	let count = 0;
 	for (let i in typeArray)
 	{
-		let data = typeArray[i];
+		let data = JSON.parse(JSON.stringify(typeArray[i]));
 
 		if (data.Id in ids)
 			continue;
 
 		ids[data.Id] = true;
+		
+		let changedIds = {};
+		for(var item of data.Items){
+			let newId = utility.generateNewItemId();
+			changedIds[item._id] = newId;
+			if(item._id == data.Root)
+				data.Root = newId;
+			item._id = newId;
+			if(!item.parentId) continue;
+
+			item.parentId = changedIds[item.parentId];
+		}
 		output.Loot.push(data);
 		count++;
 	}
@@ -117,12 +129,22 @@ function _ForcedLootPush(typeArray, ids, output) {
 	let count = 0;
 	for (let i in typeArray)
 	{
-		let data = typeArray[i].data[0];
+		let data = JSON.parse(JSON.stringify(typeArray[i].data[0]));
 
 		if (data.Id in ids)
 			continue;
 
 		ids[data.Id] = true;
+		for(var item of data.Items){
+			let newId = utility.generateNewItemId();
+			changedIds[item._id] = newId;
+			if(item._id == data.Root)
+				data.Root = newId;
+			item._id = newId;
+			if(!item.parentId) continue;
+
+			item.parentId = changedIds[item.parentId];
+		}
 		output.Loot.push(data);
 		count++;
 	}
@@ -343,6 +365,15 @@ function _GenerateContainerLoot(_items) {
 		if (cartridges)
 			_items.push(cartridges);
 		
+		let changedIds = {};
+		for(let item of _items){
+			var newId = utility.generateNewItemId();
+			changedIds[item._id] = newId;
+			item._id = newId;
+
+			if(!item.parentId) continue;
+			item.parentId = changedIds[item.parentId];
+		}
 		idSuffix++;
 	}
 }
@@ -405,6 +436,8 @@ class LocationServer {
 		count = _StaticsLootPush(statics, ids, output)
 
 		counters.push(count);
+
+
 
         // dyanmic loot
         let max = global._database.gameplayConfig.locationloot[name];//location_f.config.limits[name];
