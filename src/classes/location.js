@@ -154,21 +154,22 @@ function _ForcedLootPush(typeArray, ids, output) {
 function _StaticsLootPush(typeArray, ids, output) {
 	let count = 0;
 	for (let i in typeArray)
-        {
-            let data = typeArray[i];
+	{
+		let data = typeArray[i];
 
-            if (data.Id in ids)
-                continue;
+		if (data.Id in ids)
+			continue;
 
-            ids[data.Id] = true;
+		ids[data.Id] = true;
 
-            if (data.Items.length > 1)
-                data.Items.splice(1);
+		if (data.Items.length > 1)
+			data.Items.splice(1);
 
-            _GenerateContainerLoot(data.Items);
-            output.Loot.push(data);
-            count++;
-        }
+		_GenerateContainerLoot(data.Items);
+		data.Root = data.Items[0]._id;
+		output.Loot.push(data);
+		count++;
+	}
 	return count;
 }
 function _RollMaxItemsToSpawn(container){
@@ -369,13 +370,11 @@ function _GenerateContainerLoot(_items) {
 	}
 	let changedIds = {};
 	for(let item of _items){
-		if(item == _items[0]) continue;
 		let newId = utility.generateNewItemId();
 		changedIds[item._id] = newId;
 		item._id = newId;
 
-		if(!item.parentId || !changedIds[item.parentId]) continue;
-		console.log(changedIds[item.parentId])
+		if(!item.parentId) continue;
 		item.parentId = changedIds[item.parentId];
 	}
 }
