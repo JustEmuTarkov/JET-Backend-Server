@@ -85,6 +85,12 @@
 					"type": "Item"
 				},
 				{
+					"templateId": "5c06779c86f77426e00dd782",
+					"count": 6,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
 					"templateId": "5c06782b86f77426df5407d2",
 					"count": 7,
 					"isFunctional": false,

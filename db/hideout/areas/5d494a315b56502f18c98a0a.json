@@ -31,6 +31,18 @@
 					"type": "Item"
 				},
 				{
+					"templateId": "590c595c86f7747884343ad7",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "5d0378d486f77420421a5ff4",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
 					"traderId": "58330581ace78e27b8b10cee",
 					"loyaltyLevel": 3,
 					"type": "TraderLoyalty"

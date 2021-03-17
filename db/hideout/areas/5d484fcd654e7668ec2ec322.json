@@ -79,6 +79,12 @@
 					"type": "Item"
 				},
 				{
+					"templateId": "5e831507ea0a7c419c2f9bd9",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
 					"areaType": 7,
 					"requiredLevel": 1,
 					"type": "Area"

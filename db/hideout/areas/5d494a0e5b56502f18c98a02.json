@@ -26,6 +26,18 @@
 					"type": "Item"
 				},
 				{
+					"templateId": "573474f924597738002c6174",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "573478bc24597738002c6175",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
 					"skillName": "Memory",
 					"skillLevel": 8,
 					"type": "Skill"

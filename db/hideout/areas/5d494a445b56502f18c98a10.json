@@ -21,19 +21,19 @@
 				},
 				{
 					"templateId": "5734779624597737e04bf329",
-					"count": 10,
+					"count": 15,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
 					"templateId": "57347c2e24597744902c94a1",
-					"count": 5,
+					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
 					"templateId": "59e36c6f86f774176c10a2a7",
-					"count": 5,
+					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -90,19 +90,19 @@
 				},
 				{
 					"templateId": "57347c2e24597744902c94a1",
-					"count": 5,
+					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
 					"templateId": "590a3b0486f7743954552bdb",
-					"count": 5,
+					"count": 15,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
 					"templateId": "5d1b313086f77425227d1678",
-					"count": 2,
+					"count": 5,
 					"isFunctional": false,
 					"type": "Item"
 				}
@@ -155,13 +155,13 @@
 				},
 				{
 					"templateId": "5d1b2fa286f77425227d1674",
-					"count": 2,
+					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
 					"templateId": "5d1b327086f7742525194449",
-					"count": 4,
+					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
 				}

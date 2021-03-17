@@ -19,6 +19,12 @@
 					"count": 2000,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "5c13cef886f774072e618e82",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],
@@ -42,6 +48,12 @@
 				},
 				{
 					"templateId": "59e35de086f7741778269d84",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "5e2af29386f7746d4159f077",
 					"count": 1,
 					"isFunctional": false,
 					"type": "Item"
