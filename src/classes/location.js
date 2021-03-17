@@ -366,8 +366,9 @@ function _GenerateContainerLoot(_items) {
 			_items.push(cartridges);
 		
 		let changedIds = {};
-		for(let item of _items){
-			var newId = utility.generateNewItemId();
+		for(let i = 1; i < _items.length; i++){
+			let item = _items[i];
+			let newId = utility.generateNewItemId();
 			changedIds[item._id] = newId;
 			item._id = newId;
 
