@@ -134,6 +134,7 @@ function _ForcedLootPush(typeArray, ids, output) {
 		if (data.Id in ids)
 			continue;
 
+		let changedIds = {};
 		ids[data.Id] = true;
 		for(var item of data.Items){
 			let newId = utility.generateNewItemId();

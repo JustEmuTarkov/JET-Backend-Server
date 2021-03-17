@@ -103,7 +103,7 @@ function RemoveFoundItems(profile) {
     return profile;
 }
 
-function setInventory(pmcData, profile, sessionID = null, isScav = false) {
+function setInventory(pmcData, profile) {
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
     move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
@@ -111,26 +111,21 @@ function setInventory(pmcData, profile, sessionID = null, isScav = false) {
     // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
     let duplicates = []
 
-    let regeneratedItems = helper_f.replaceIDs(profile, profile.Inventory.items, profile.Inventory.fastPanel)
-
-    logger.logWarning("Regenerating IDs...")
-
-    for (let item in regeneratedItems) {
-        if (!regeneratedItems[item].hasOwnProperty("_id")) {
-            continue;
-        } else {
-            for (let k in pmcData.Inventory.items) {
-                if (pmcData.Inventory.items[k]._id === regeneratedItems[item]._id) {
-                    let old = regeneratedItems[item]._id
-                    regeneratedItems[item]._id = utility.generateNewItemId()
-                    logger.logWarning(`ID collision found AFTER regeneration. Changed ${old} to ${regeneratedItems[item]._id}`)
-                }
+    x: for (let item of profile.Inventory.items) {
+        for (let key in pmcData.Inventory.items) { 
+            let currid = pmcData.Inventory.items[key]._id
+            if (currid == item._id) {
+                duplicates.push(item._id)
+                continue x;
             }
-            pmcData.Inventory.items.push(regeneratedItems[item]);
         }
+        pmcData.Inventory.items.push(item);
     }
-
     pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+
+    if (duplicates.length > 0) {
+        logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`)
+    }
 
     return pmcData;
 }
