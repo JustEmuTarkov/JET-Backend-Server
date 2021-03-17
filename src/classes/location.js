@@ -365,18 +365,18 @@ function _GenerateContainerLoot(_items) {
 		
 		if (cartridges)
 			_items.push(cartridges);
-		
-		let changedIds = {};
-		for(let i = 1; i < _items.length; i++){
-			let item = _items[i];
-			let newId = utility.generateNewItemId();
-			changedIds[item._id] = newId;
-			item._id = newId;
-
-			if(!item.parentId) continue;
-			item.parentId = changedIds[item.parentId];
-		}
 		idSuffix++;
+	}
+	let changedIds = {};
+	for(let item of _items){
+		if(item == _items[0]) continue;
+		let newId = utility.generateNewItemId();
+		changedIds[item._id] = newId;
+		item._id = newId;
+
+		if(!item.parentId || !changedIds[item.parentId]) continue;
+		console.log(changedIds[item.parentId])
+		item.parentId = changedIds[item.parentId];
 	}
 }
 /* LocationServer class maintains list of locations in memory. */
