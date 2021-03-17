@@ -110,6 +110,9 @@ exports.generateNewItemId = () => {
 exports.generateNewDialogueId = () => {
     return this.generateNewId("D");
 }
+
+const { v4: uuidv4 } = require('uuid')
+
 // generateNewId
 exports.generateNewId = (prefix = "", useOld = false) => {
     let getTime = new Date();
@@ -123,7 +126,7 @@ exports.generateNewId = (prefix = "", useOld = false) => {
 		retVal += this.getRandomInt(1000000, 9999999).toString();
 		retVal += this.makeSign(24 - retVal.length).toString();
 	} else {
-		retVal = prefix + this.makeSign(23).toString();
+		retVal = `${prefix}-${uuidv4()}`
 	}
     return retVal;
 }
