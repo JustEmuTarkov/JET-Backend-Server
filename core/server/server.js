@@ -350,6 +350,19 @@ class Server {
 		if(typeof global._database.templates.data != "undefined")
 			global._database.templates = global._database.templates.data;
 	}
+	_loadDatabaseHideout(){
+		global._database.hideout.areas = fileIO.readParsed(db.user.cache.hideout_areas);
+		if(typeof global._database.hideout.areas.data != "undefined")
+			global._database.hideout.areas = global._database.hideout.areas.data;
+		
+		global._database.hideout.production = fileIO.readParsed(db.user.cache.hideout_production);
+		if(typeof global._database.hideout.production.data != "undefined")
+			global._database.hideout.production = global._database.hideout.production.data;
+		
+		global._database.hideout.scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
+		if(typeof global._database.hideout.scavcase.data != "undefined")
+			global._database.hideout.scavcase = global._database.hideout.scavcase.data;
+	}
 	
 	_serverStart(){
 		let backend = this.backendUrl;
@@ -404,6 +417,8 @@ class Server {
 		this._loadGameplayConfig();
         logger.logInfo("[Warmup]: Loading Database: BotsData...");
 		this._loadBotsData();
+        logger.logInfo("[Warmup]: Loading Database: Hideout...");
+		this._loadDatabaseHideout();
 		
         // execute start callback
         logger.logInfo("[Warmup]: Start callbacks...");

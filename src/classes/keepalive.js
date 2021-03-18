@@ -56,7 +56,11 @@ function updatePlayerHideout(sessionID) {
                     pmcData.Hideout.Areas[area] = updateFuel(pmcData.Hideout.Areas[area], solarPowerLevel); //i know solapower is always false but let me find a workaround later
                 }
                 break;
-
+			case 6:
+                if (isGeneratorOn) {
+                    pmcData.Hideout.Areas[area] = updateWaterFilters(pmcData.Hideout.Areas[area])
+                }
+                break;
             case 17:
                 if (isGeneratorOn) {
                     pmcData.Hideout.Areas[area] = updateAirFilters(pmcData.Hideout.Areas[area])
@@ -122,7 +126,40 @@ function updatePlayerHideout(sessionID) {
     }
 
 }
+function updateWaterFilters(waterFilterArea) {
+	// thanks to Alexter161
+    let decreaseValue = 0.00333;
 
+    for (let i = 0; i < waterFilterArea.slots.length; i++) {
+        if (waterFilterArea.slots[i].item == null || waterFilterArea.slots[i].item === undefined) {
+            continue;
+        } else {
+            let resourceValue = (waterFilterArea.slots[i].item[0].upd && waterFilterArea.slots[i].item[0].upd.Resource)
+                ? waterFilterArea.slots[i].item[0].upd.Resource.Value
+                : null;
+            if (resourceValue == null) {
+                resourceValue = 100 - decreaseValue;
+            } else {
+                resourceValue -= decreaseValue
+            }
+            resourceValue = Math.round(resourceValue * 10000) / 10000;
+
+            if (resourceValue > 0) {
+                waterFilterArea.slots[i].item[0].upd = {
+                    "StackObjectsCount": 1,
+                    "Resource": {
+                        "Value": resourceValue
+                    }
+                };
+                logger.logInfo("Water filter: " + resourceValue + " filter time left on tank slot " + (i + 1));
+            } else {
+                waterFilterArea.slots[i].item[0] = null;
+            }
+            break;
+        }
+    }
+    return waterFilterArea;
+}
 function updateFuel(generatorArea, solarPower) {
     let noFuelAtAll = true;
     let decreaseFuel = 0.0665;
