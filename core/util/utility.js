@@ -100,7 +100,7 @@ exports.makeSign = (Length) => {
 }
 // generateNewAccountId
 exports.generateNewAccountId = () => {
-    return this.generateNewId("AID");
+    return this.generateNewId("AID", true);
 }
 // generateNewItemId
 exports.generateNewItemId = () => {
