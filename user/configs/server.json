@@ -37,7 +37,7 @@
 		"EndByTimerPatch": true,
 		"SpawnRandomizationPatch": true,
 		"RemoveAddOfferButton": true,
-		"NoFiltersPatch": true
+		"NoFiltersPatch": false
 	},
 	"hideInfoLogs": true,
 	"debugTimer": true,
