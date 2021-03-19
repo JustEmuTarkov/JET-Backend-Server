@@ -441,8 +441,6 @@ class LocationServer {
 
 		counters.push(count);
 
-
-
         // dyanmic loot
         let max = global._database.gameplayConfig.locationloot[name];//location_f.config.limits[name];
         count = 0;

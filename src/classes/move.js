@@ -60,7 +60,8 @@ function moveItem(pmcData, body, sessionID) {
             }
         }
         moveItemInternal(inventoryItems.to, body);
-    } else */ if (inventoryItems.sameInventory) {
+    } else */ 
+	if (inventoryItems.sameInventory) {
         moveItemInternal(inventoryItems.from, body);
     } else {
         moveItemToProfile(inventoryItems.from, inventoryItems.to, body);
@@ -324,15 +325,13 @@ function transferItem(pmcData, body, sessionID) {
     for (let iterItem of pmcData.Inventory.items) {
         if (iterItem._id === body.item) {
             itemFrom = iterItem;
-        }
-        else if (iterItem._id === body.with) {
+        } else if (iterItem._id === body.with) {
             itemTo = iterItem;
         }
         if (itemFrom !== null && itemTo !== null) break;
     }
 
-    if (itemFrom !== null && itemTo !== null)
-    {
+    if (itemFrom !== null && itemTo !== null) {
         let stackFrom = 1;
 
         if ("upd" in itemFrom) {
@@ -409,12 +408,6 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		{
 			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
 		}
-		// else if (body.tid === fenceID)
-		// {
-			// const fenceItem = trader_f.handler.assorts[fenceID].items;
-			// const item = fenceItem[fenceItem.findIndex(i => i._id === baseItem.item_id)];
-			// itemLib.push({ _id: baseItem.item_id, _tpl: item._tpl });
-		// }
 		else
 		{
 			// Only grab the relevant trader items and add unique values
