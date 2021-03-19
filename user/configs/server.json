@@ -35,7 +35,9 @@
 		"ScavSpawnPointPatch": false,
 		"ScavExfilPatch": true,
 		"EndByTimerPatch": true,
-		"SpawnRandomizationPatch": true
+		"SpawnRandomizationPatch": true,
+		"RemoveAddOfferButton": true,
+		"NoFiltersPatch": true
 	},
 	"hideInfoLogs": true,
 	"debugTimer": true,

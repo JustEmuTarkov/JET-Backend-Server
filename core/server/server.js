@@ -351,6 +351,8 @@ class Server {
 			global._database.templates = global._database.templates.data;
 	}
 	_loadDatabaseHideout(){
+		if(!global._database.hideout)
+			global._database.hideout = {};
 		global._database.hideout.areas = fileIO.readParsed(db.user.cache.hideout_areas);
 		if(typeof global._database.hideout.areas.data != "undefined")
 			global._database.hideout.areas = global._database.hideout.areas.data;
