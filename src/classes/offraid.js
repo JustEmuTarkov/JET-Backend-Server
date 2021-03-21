@@ -332,20 +332,6 @@ function saveProgress(offraidData, sessionID) {
         offraidData.profile = RemoveFoundItems(offraidData.profile)
     }
 
-    //offraidData.profile.Inventory.items = helper_f.replaceIDs(offraidData.profile, offraidData.profile.Inventory.items, offraidData.profile.Inventory.fastPanel);
-
-    // If an item ID or parent ID is over 24 characters (the max), shorten it. This should fix
-    // a bug where you can't sell rounds unloaded from a magazine mid-raid. -- kiobu
-    for (let k in offraidData.profile.Inventory.items) {
-        let item = offraidData.profile.Inventory.items[k]
-        if (item._id && item._id.length > 24) {
-            item._id = utility.generateNewItemId()
-        }
-        if (item.parentId && item.parentId.length > 24) {
-            item.parentId = utility.generateNewItemId()
-        }
-    }
-
     // set profile equipment to the raid equipment
     if (isPlayerScav) {
         scavData = setInventory(scavData, offraidData.profile, sessionID, true);
