@@ -60,7 +60,8 @@ function recheckInventoryFreeSpace(pmcData, sessionID) { // recalculate stash ta
     let Stash2D = Array(PlayerStash[1]).fill(0).map(x => Array(PlayerStash[0]).fill(0));
 
     let inventoryItemHash = getInventoryItemHash(pmcData.Inventory.items)
-
+	if(!inventoryItemHash.byParentId[pmcData.Inventory.stash])
+		inventoryItemHash.byParentId[pmcData.Inventory.stash] = [];
     for (let item of inventoryItemHash.byParentId[pmcData.Inventory.stash])
 	{
         if (!("location" in item)) {
