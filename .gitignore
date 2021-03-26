@@ -40,7 +40,7 @@ user/mods/*
 !user/mods/TheMaoci-LocationsWaveEditor-1.0.0
 !user/mods/TheMaoci-NoFallDamage-1.0.0
 user/cache
-
+db-propNextStructure/
 ## windows
 desktop.ini
 JET-Backend-Server.7z
