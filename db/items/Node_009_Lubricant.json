@@ -14,7 +14,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 40,
+			"SpawnChance": 15,
 			"CreditsPrice": 1320,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -143,7 +143,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 40,
+			"SpawnChance": 16,
 			"CreditsPrice": 2020,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -403,7 +403,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 15,
+			"SpawnChance": 11,
 			"CreditsPrice": 9617,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -668,7 +668,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 17,
+			"SpawnChance": 11,
 			"CreditsPrice": 3800,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -733,7 +733,7 @@
 			"Height": 2,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 18,
+			"SpawnChance": 14,
 			"CreditsPrice": 60604,
 			"ItemSound": "magazine_metal",
 			"Prefab": {

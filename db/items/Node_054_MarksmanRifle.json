@@ -13,8 +13,8 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Superrare",
-			"SpawnChance": 4,
+			"Rarity": "Rare",
+			"SpawnChance": 2,
 			"CreditsPrice": 43605,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -294,7 +294,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.2,
+			"CameraRecoil": 0.22,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0,
@@ -358,7 +358,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 2,
+			"SpawnChance": 3,
 			"CreditsPrice": 24605,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -641,7 +641,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 2,
+			"SpawnChance": 3,
 			"CreditsPrice": 25605,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -885,7 +885,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 5,
+			"SpawnChance": 4,
 			"CreditsPrice": 30264,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -1086,7 +1086,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.2,
+			"CameraRecoil": 0.19,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.02,
@@ -1150,7 +1150,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 1,
+			"SpawnChance": 2,
 			"CreditsPrice": 41605,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -1525,8 +1525,8 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 2,
+			"Rarity": "Superrare",
+			"SpawnChance": 0.02,
 			"CreditsPrice": 41605,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -1695,7 +1695,7 @@
 			],
 			"RecolDispersion": 25,
 			"bFirerate": 30,
-			"Ergonomics": 37,
+			"Ergonomics": 14,
 			"Velocity": 0,
 			"bEffDist": 900,
 			"bHearDist": 140,
@@ -1790,8 +1790,8 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 0.5,
+			"Rarity": "Superrare",
+			"SpawnChance": 1,
 			"CreditsPrice": 54336,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
@@ -2036,7 +2036,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.2,
+			"CameraRecoil": 0.17,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.095,

@@ -103,8 +103,8 @@
 			"Width": 1,
 			"Height": 2,
 			"StackMaxSize": 1,
-			"Rarity": "Rare",
-			"SpawnChance": 5,
+			"Rarity": "Common",
+			"SpawnChance": 2,
 			"CreditsPrice": 5441,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -194,7 +194,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 4,
+			"SpawnChance": 3,
 			"CreditsPrice": 9230,
 			"ItemSound": "grenade",
 			"Prefab": {
@@ -246,7 +246,7 @@
 			"FragmentsCount": 100,
 			"FragmentType": "5996f6cb86f774678763a6ca",
 			"Strength": 120,
-			"ContusionDistance": 0,
+			"ContusionDistance": 9,
 			"throwDamMax": 0,
 			"explDelay": 3,
 			"Blindness": {
@@ -336,7 +336,7 @@
 			"FragmentsCount": 35,
 			"FragmentType": "5996f6d686f77467977ba6cc",
 			"Strength": 65,
-			"ContusionDistance": 1,
+			"ContusionDistance": 7,
 			"throwDamMax": 0,
 			"explDelay": 2,
 			"Blindness": {
@@ -373,8 +373,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Rare",
-			"SpawnChance": 5,
+			"Rarity": "Common",
+			"SpawnChance": 3,
 			"CreditsPrice": 5600,
 			"ItemSound": "grenade",
 			"Prefab": {
@@ -426,7 +426,7 @@
 			"FragmentsCount": 90,
 			"FragmentType": "5996f6d686f77467977ba6cc",
 			"Strength": 80,
-			"ContusionDistance": 0,
+			"ContusionDistance": 12,
 			"throwDamMax": 0,
 			"explDelay": 3.5,
 			"Blindness": {
@@ -516,7 +516,7 @@
 			"FragmentsCount": 75,
 			"FragmentType": "5996f6fc86f7745e585b4de3",
 			"Strength": 110,
-			"ContusionDistance": 0,
+			"ContusionDistance": 11,
 			"throwDamMax": 0,
 			"explDelay": 5,
 			"Blindness": {
@@ -553,8 +553,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Common",
-			"SpawnChance": 2,
+			"Rarity": "Rare",
+			"SpawnChance": 3,
 			"CreditsPrice": 7230,
 			"ItemSound": "grenade",
 			"Prefab": {
@@ -606,7 +606,7 @@
 			"FragmentsCount": 70,
 			"FragmentType": "5996f6cb86f774678763a6ca",
 			"Strength": 100,
-			"ContusionDistance": 0,
+			"ContusionDistance": 10,
 			"throwDamMax": 0,
 			"explDelay": 3.5,
 			"Blindness": {

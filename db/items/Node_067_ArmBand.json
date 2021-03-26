@@ -383,8 +383,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 50,
+			"Rarity": "Superrare",
+			"SpawnChance": 0.1,
 			"CreditsPrice": 20000,
 			"ItemSound": "item_cloth_generic",
 			"Prefab": {
@@ -420,9 +420,13 @@
 			"CanRequireOnRagfair": true,
 			"ConflictingItems": [],
 			"FixedPrice": false,
-			"Unlootable": false,
-			"UnlootableFromSlot": "FirstPrimaryWeapon",
-			"UnlootableFromSide": [],
+			"Unlootable": true,
+			"UnlootableFromSlot": "ArmBand",
+			"UnlootableFromSide": [
+				"Bear",
+				"Usec",
+				"Savage"
+			],
 			"ChangePriceCoef": 1,
 			"AllowSpawnOnLocations": [],
 			"SendToClient": true,

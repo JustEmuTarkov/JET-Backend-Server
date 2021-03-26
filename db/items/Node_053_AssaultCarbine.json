@@ -212,7 +212,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.3,
+			"CameraRecoil": 0.18,
 			"CameraSnap": 3.5,
 			"ReloadMode": "InternalMagazine",
 			"CenterOfImpact": 0.07,
@@ -456,7 +456,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.3,
+			"CameraRecoil": 0.18,
 			"CameraSnap": 3.5,
 			"ReloadMode": "InternalMagazine",
 			"CenterOfImpact": 0.05,
@@ -764,7 +764,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.2,
+			"CameraRecoil": 0.21,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.065,
@@ -827,8 +827,8 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 1,
+			"Rarity": "Superrare",
+			"SpawnChance": 0.5,
 			"CreditsPrice": 58147,
 			"ItemSound": "weap_ar",
 			"Prefab": {
@@ -1059,10 +1059,10 @@
 			],
 			"RecolDispersion": 25,
 			"bFirerate": 900,
-			"Ergonomics": 43,
+			"Ergonomics": 46,
 			"Velocity": 0,
 			"bEffDist": 400,
-			"bHearDist": 80,
+			"bHearDist": 70,
 			"isChamberLoad": true,
 			"chamberAmmoCount": 1,
 			"isBoltCatch": false,
@@ -1092,7 +1092,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.2,
+			"CameraRecoil": 0.16,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.1,

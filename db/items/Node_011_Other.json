@@ -872,7 +872,7 @@
 			"Height": 2,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 34,
+			"SpawnChance": 28,
 			"CreditsPrice": 56000,
 			"ItemSound": "smallmetal",
 			"Prefab": {
@@ -1270,7 +1270,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 40,
+			"SpawnChance": 20,
 			"CreditsPrice": 2210,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -1402,7 +1402,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 50,
+			"SpawnChance": 22,
 			"CreditsPrice": 2500,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -1468,7 +1468,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 15,
+			"SpawnChance": 13,
 			"CreditsPrice": 7984,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -1600,7 +1600,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 30,
+			"SpawnChance": 16,
 			"CreditsPrice": 3120,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -1661,7 +1661,7 @@
 			"ShortName": "item_barter_other_tea",
 			"Description": "item_barter_other_tea",
 			"Weight": 0.2,
-			"BackgroundColor": "grey",
+			"BackgroundColor": "violet",
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
@@ -1732,7 +1732,7 @@
 			"Height": 2,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 2,
+			"SpawnChance": 1,
 			"CreditsPrice": 24500,
 			"ItemSound": "item_plastic_generic",
 			"Prefab": {
