@@ -14,7 +14,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 3,
+			"SpawnChance": 2,
 			"CreditsPrice": 9175,
 			"ItemSound": "med_pills",
 			"Prefab": {
@@ -63,13 +63,25 @@
 			"medEffectType": "duringUse",
 			"MaxHpResource": 0,
 			"hpResourceRate": 0,
-			"StimulatorBuffs": "",
-			"effects_health": [],
+			"StimulatorBuffs": "Buffs_drink_milk",
+			"effects_health": {
+				"Energy": {
+					"value": 5
+				},
+				"Hydration": {
+					"value": -5
+				}
+			},
 			"effects_damage": {
 				"Pain": {
 					"delay": 0,
 					"duration": 150,
 					"fadeOut": 5
+				},
+				"Intoxication": {
+					"delay": 0,
+					"duration": 0,
+					"fadeOut": 0
 				}
 			}
 		},
@@ -90,7 +102,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 1,
+			"SpawnChance": 0.5,
 			"CreditsPrice": 19259,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -142,13 +154,13 @@
 			"StimulatorBuffs": "BuffsGoldenStarBalm",
 			"effects_health": {
 				"Energy": {
-					"value": -10
+					"value": -15
 				}
 			},
 			"effects_damage": {
 				"Pain": {
 					"delay": 0,
-					"duration": 400,
+					"duration": 350,
 					"fadeOut": 20
 				},
 				"Contusion": {
@@ -227,12 +239,12 @@
 			"RagFairCommissionModifier": 1,
 			"medUseTime": 5,
 			"medEffectType": "duringUse",
-			"MaxHpResource": 12,
+			"MaxHpResource": 15,
 			"hpResourceRate": 0,
 			"StimulatorBuffs": "",
 			"effects_health": {
 				"Hydration": {
-					"value": -8
+					"value": -15
 				}
 			},
 			"effects_damage": {
@@ -317,10 +329,10 @@
 			"StimulatorBuffs": "",
 			"effects_health": {
 				"Energy": {
-					"value": -5
+					"value": -10
 				},
 				"Hydration": {
-					"value": -10
+					"value": -15
 				}
 			},
 			"effects_damage": {
@@ -404,13 +416,13 @@
 			"StimulatorBuffs": "",
 			"effects_health": {
 				"Hydration": {
-					"value": -7
+					"value": -17
 				}
 			},
 			"effects_damage": {
 				"Pain": {
 					"delay": 0,
-					"duration": 100,
+					"duration": 80,
 					"fadeOut": 15
 				}
 			}
@@ -478,15 +490,15 @@
 			"RagFairCommissionModifier": 1,
 			"medUseTime": 6,
 			"medEffectType": "duringUse",
-			"MaxHpResource": 10,
+			"MaxHpResource": 6,
 			"hpResourceRate": 0,
 			"StimulatorBuffs": "",
 			"effects_health": {
 				"Energy": {
-					"value": -2
+					"value": -5
 				},
 				"Hydration": {
-					"value": -2
+					"value": -5
 				}
 			},
 			"effects_damage": {

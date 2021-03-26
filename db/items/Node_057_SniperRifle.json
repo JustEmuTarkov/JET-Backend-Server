@@ -149,7 +149,7 @@
 			"RecolDispersion": 10,
 			"bFirerate": 30,
 			"Ergonomics": 13,
-			"Velocity": 1.81,
+			"Velocity": 2.81,
 			"bEffDist": 1000,
 			"bHearDist": 100,
 			"isChamberLoad": true,
@@ -399,7 +399,7 @@
 			"RecolDispersion": 10,
 			"bFirerate": 30,
 			"Ergonomics": 13,
-			"Velocity": 1.81,
+			"Velocity": 3.81,
 			"bEffDist": 1000,
 			"bHearDist": 100,
 			"isChamberLoad": true,
@@ -718,8 +718,8 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 39,
-			"Velocity": 1.81,
+			"Ergonomics": 49,
+			"Velocity": 2.6,
 			"bEffDist": 1000,
 			"bHearDist": 80,
 			"isChamberLoad": true,
@@ -752,7 +752,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.4,
+			"CameraRecoil": 0.35,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.016,
@@ -961,7 +961,7 @@
 			"RecolDispersion": 10,
 			"bFirerate": 30,
 			"Ergonomics": 26,
-			"Velocity": 1.81,
+			"Velocity": 2.9,
 			"bEffDist": 1000,
 			"bHearDist": 100,
 			"isChamberLoad": true,
@@ -1198,7 +1198,7 @@
 			"RecolDispersion": 10,
 			"bFirerate": 30,
 			"Ergonomics": 25,
-			"Velocity": 1.81,
+			"Velocity": 3.81,
 			"bEffDist": 1000,
 			"bHearDist": 80,
 			"isChamberLoad": true,
@@ -1232,7 +1232,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.4,
+			"CameraRecoil": 0.3,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.005,
@@ -1506,7 +1506,7 @@
 			"RecolDispersion": 10,
 			"bFirerate": 30,
 			"Ergonomics": 30,
-			"Velocity": 1.81,
+			"Velocity": 5.81,
 			"bEffDist": 1000,
 			"bHearDist": 80,
 			"isChamberLoad": true,
@@ -1540,7 +1540,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.4,
+			"CameraRecoil": 0.3,
 			"CameraSnap": 3.5,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.005,
@@ -1801,7 +1801,7 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.4,
+			"CameraRecoil": 0.3,
 			"CameraSnap": 3.5,
 			"ReloadMode": "InternalMagazine",
 			"CenterOfImpact": 0.011,

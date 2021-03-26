@@ -1589,7 +1589,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 6,
+			"SpawnChance": 4,
 			"CreditsPrice": 80152,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -1911,7 +1911,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 6,
+			"SpawnChance": 2,
 			"CreditsPrice": 80000,
 			"ItemSound": "generic",
 			"Prefab": {

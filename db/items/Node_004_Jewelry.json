@@ -274,7 +274,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 1,
+			"SpawnChance": 0.4,
 			"CreditsPrice": 123577,
 			"ItemSound": "jewelry",
 			"Prefab": {
@@ -339,7 +339,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Superrare",
-			"SpawnChance": 0.5,
+			"SpawnChance": 1,
 			"CreditsPrice": 60290,
 			"ItemSound": "jewelry",
 			"Prefab": {
@@ -1183,8 +1183,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Common",
-			"SpawnChance": 4,
+			"Rarity": "Not_exist",
+			"SpawnChance": 7,
 			"CreditsPrice": 7000,
 			"ItemSound": "jewelry",
 			"Prefab": {
@@ -1248,8 +1248,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Rare",
-			"SpawnChance": 4,
+			"Rarity": "Not_exist",
+			"SpawnChance": 7,
 			"CreditsPrice": 10000,
 			"ItemSound": "jewelry",
 			"Prefab": {
@@ -1313,8 +1313,8 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Superrare",
-			"SpawnChance": 6,
+			"Rarity": "Not_exist",
+			"SpawnChance": 7,
 			"CreditsPrice": 20000,
 			"ItemSound": "jewelry",
 			"Prefab": {

@@ -14,7 +14,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Not_exist",
-			"SpawnChance": 0.4,
+			"SpawnChance": 0.01,
 			"CreditsPrice": 110000,
 			"ItemSound": "weap_dmr",
 			"Prefab": {

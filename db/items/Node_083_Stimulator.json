@@ -1078,7 +1078,7 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
+			"Rarity": "Superrare",
 			"SpawnChance": 0.5,
 			"CreditsPrice": 62000,
 			"ItemSound": "med_stimulator",

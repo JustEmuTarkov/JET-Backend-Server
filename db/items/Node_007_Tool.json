@@ -144,7 +144,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 21,
+			"SpawnChance": 18,
 			"CreditsPrice": 2141,
 			"ItemSound": "spec_multitool",
 			"Prefab": {

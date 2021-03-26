@@ -14,7 +14,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Common",
-			"SpawnChance": 15,
+			"SpawnChance": 12,
 			"CreditsPrice": 1855,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -164,7 +164,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 20,
+			"SpawnChance": 14,
 			"CreditsPrice": 1830,
 			"ItemSound": "med_bandage",
 			"Prefab": {
@@ -296,8 +296,8 @@
 					"delay": 0,
 					"duration": 0,
 					"fadeOut": 0,
-					"healthPenaltyMin": 45,
-					"healthPenaltyMax": 60
+					"healthPenaltyMin": 35,
+					"healthPenaltyMax": 50
 				}
 			}
 		},
@@ -394,7 +394,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 7,
+			"SpawnChance": 5,
 			"CreditsPrice": 2570,
 			"ItemSound": "med_bandage",
 			"Prefab": {
@@ -611,8 +611,8 @@
 					"delay": 0,
 					"duration": 0,
 					"fadeOut": 0,
-					"healthPenaltyMin": 80,
-					"healthPenaltyMax": 90
+					"healthPenaltyMin": 70,
+					"healthPenaltyMax": 82
 				}
 			}
 		},
