@@ -1,0 +1,32 @@
+[
+	{
+		"TimeFromMatchStart": {
+			"minimum": 0,
+			"maximum": 1
+		},
+		"SpawnedAmount": {
+			"minimum": 0,
+			"maximum": 1
+		},
+		"SpawnPoints": "BotZone",
+		"BotSide": "Savage",
+		"BotPreset": "normal",
+		"WildSpawnType": "assault",
+		"isPlayers": false
+	},
+	{
+		"TimeFromMatchStart": {
+			"minimum": 1,
+			"maximum": 2
+		},
+		"SpawnedAmount": {
+			"minimum": 1,
+			"maximum": 2
+		},
+		"SpawnPoints": "BotZone",
+		"BotSide": "Savage",
+		"BotPreset": "normal",
+		"WildSpawnType": "assault",
+		"isPlayers": false
+	}
+]
