@@ -97,6 +97,10 @@ class Logger {
         this.log("[SUCCESS]", text, "white", "green");
     }
 
+    logDebug(text) {
+        this.log("[DEBUG]", text, "black", "white");
+    }
+
     logInfo(text) {
 		if(!serverConfig.hideInfoLogs)
 			this.log("[INFO]", text, "white", "blue");
