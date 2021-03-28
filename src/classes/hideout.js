@@ -329,7 +329,7 @@ function takeProduction(pmcData, body, sessionID) {
             if (pmcData.Hideout.Production[prod].RecipeId !== body.recipeId) {
                 continue;
             }
-			pmcData.Hideout.Production["14"].Products = pmcData.Hideout.Production["141"].Products;
+			pmcData.Hideout.Production[prod].Products = pmcData.Hideout.Production["141"].Products;
             // give items BEFORE deleting the production
             for (let itemProd of pmcData.Hideout.Production[prod].Products) {
                 pmcData = profile_f.handler.getPmcProfile(sessionID);
