@@ -1,1 +1,1 @@
-exports.execute = (url, info, sessionID) => quest_f.getQuestsCache(url, info, sessionID);
+exports.execute = (url, info, sessionID) => quest_f.getQuestsForPlayer(url, info, sessionID);

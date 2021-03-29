@@ -22,6 +22,21 @@ function getQuestsCache() {
     return questsCache;
 }
 
+//Fix for new quests where previous quest already required to found in raid items as same ID
+function getQuestsForPlayer(url, info, sessionID){
+	let _profile = profile_f.handler.getPmcProfile(sessionID);
+	let quests = fileIO.parse(questsCache);
+	
+	for(let quest of quests.data){
+		if(getQuestStatus(_profile, quest._id) == "Success"){
+			quest.conditions.AvailableForStart = [];
+			quest.conditions.AvailableForFinish = [];
+			quest.conditions.Fail = [];
+		}
+	}
+	return fileIO.stringify(quests, true);
+}
+
 function getCachedQuest(qid) {
     let quests = fileIO.parse(questsCache);
 
@@ -336,6 +351,7 @@ function getQuestStatus(pmcData, questID) {
 
 module.exports.initialize = initialize;
 module.exports.getQuestsCache = getQuestsCache;
+module.exports.getQuestsForPlayer = getQuestsForPlayer;
 module.exports.acceptQuest = acceptQuest;
 module.exports.completeQuest = completeQuest;
 module.exports.handoverQuest = handoverQuest;
