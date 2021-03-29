@@ -248,6 +248,15 @@ function handoverQuest(pmcData, body, sessionID) {
     let counter = 0;
     let amount;
 
+    // Set the counter to the backend counter if it exists.
+    for (let k in pmcData.BackendCounters) {
+        if (pmcData.BackendCounters[k].qid === body.qid) {
+            try {
+                counter = pmcData.BackendCounters[k].value > 0 ? pmcData.BackendCounters[k].value : 0
+            } catch (_) { }
+        }
+    }
+
     for (let condition of quest.conditions.AvailableForFinish) {
         if (condition._props.id === body.conditionId && types.includes(condition._parent)) {
             value = parseInt(condition._props.value);

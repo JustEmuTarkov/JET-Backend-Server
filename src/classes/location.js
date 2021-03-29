@@ -534,8 +534,35 @@ class LocationServer {
             }
         }
 
-        // done generating
-        logger.logInfo(`Generated location ${name} with [mounted: ${counters[0]} | forcedLoot: ${counters[1]} | statics: ${counters[2]} | dynamic: ${count}]`);
+		// print all item spawns with names for debugging purposes if enabled.
+		if (global.serverConfig.lootDebug) {
+			require('util').inspect.defaultOptions.maxArrayLength = null; 
+			logger.logSuccess(`Generated location ${name} with [mounted: ${counters[0]} | forcedLoot: ${counters[1]} | statics: ${counters[2]} | dynamic: ${count}]`);
+
+			let locale = fileIO.readParsed(db.locales["en"].templates)
+			let spawns = {}
+
+			for (let k in output.Loot) {
+				for (let item of output.Loot[k].Items) {
+					spawns[item._tpl] ? spawns[item._tpl] += 1 : spawns[item._tpl] = 1
+				}
+			}
+
+			let spawnarr = []
+			
+			for (let tpl in spawns) {
+				let localized = (locale[tpl].Name).toString()
+
+				spawnarr.push({[localized]: spawns[tpl]})
+			}
+
+			logger.logSuccess("Location item spawns:")
+			spawnarr.forEach((el) => {
+				logger.logDebug(`${Object.values(el)[0]}x - ${Object.keys(el)[0]}`)
+			})
+		}
+
+		// done generating
 		counters = null;
         return output;
     }

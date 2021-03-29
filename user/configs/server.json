@@ -39,6 +39,7 @@
 		"RemoveAddOfferButton": true,
 		"NoFiltersPatch": false
 	},
+	"lootDebug": false,
 	"hideInfoLogs": true,
 	"debugTimer": true,
 	"translations": {

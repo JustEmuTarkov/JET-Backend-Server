@@ -187,19 +187,26 @@ function singleProductionStart(pmcData, body, sessionID) {
 
 function scavCaseProductionStart(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput();
-    for (let moneyToEdit of body.items) {
-        for (let inventoryItem in pmcData.Inventory.items) {
-            if (pmcData.Inventory.items[inventoryItem]._id === moneyToEdit.id) {
-                pmcData.Inventory.items[inventoryItem].upd.StackObjectsCount -= moneyToEdit.count;
-            } else {
-                for (let itemToDelete of body.items) {
-                    output = move_f.removeItem(pmcData, itemToDelete.id, output, sessionID);
+    console.log(body.items)
+
+    for (let item of body.items) {
+        for (let iitem in pmcData.Inventory.items) {
+            if (item.id === pmcData.Inventory.items[iitem]._id) {
+                let tpl = pmcData.Inventory.items[iitem]._tpl
+                if (helper_f.isMoneyTpl(tpl)) {
+                    if (pmcData.Inventory.items[iitem].upd.StackObjectsCount - item.count <= 0) {
+                        output = move_f.removeItem(pmcData, item.id, output, sessionID);
+                    } else {
+                        pmcData.Inventory.items[iitem].upd.StackObjectsCount -= item.count
+                    }
+                } else {
+                    output = move_f.removeItem(pmcData, item.id, output, sessionID);
                 }
             }
         }
     }
 
-    for (let recipe in _database.hideout.scavcase.data) {
+    for (let recipe in _database.hideout.scavcase) {
         if (body.recipeId == _database.hideout.scavcase[recipe]._id) {
             let rarityItemCounter = {};
             let products = [];
@@ -322,7 +329,7 @@ function takeProduction(pmcData, body, sessionID) {
             if (pmcData.Hideout.Production[prod].RecipeId !== body.recipeId) {
                 continue;
             }
-			pmcData.Hideout.Production["14"].Products = pmcData.Hideout.Production["141"].Products;
+			pmcData.Hideout.Production[prod].Products = pmcData.Hideout.Production["141"].Products;
             // give items BEFORE deleting the production
             for (let itemProd of pmcData.Hideout.Production[prod].Products) {
                 pmcData = profile_f.handler.getPmcProfile(sessionID);
