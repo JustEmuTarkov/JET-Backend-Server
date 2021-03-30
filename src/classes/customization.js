@@ -1,13 +1,7 @@
 "use strict";
 
-let customization = undefined;
-
-function initialize() {
-	customization = fileIO.readParsed(db.user.cache.customization).data;
-}
-
 function getCustomization() {
-	return customization;
+	return global._database.customization;
 }
 
 function getPath(sessionID) {
@@ -17,7 +11,7 @@ function getPath(sessionID) {
 
 function wearClothing(pmcData, body, sessionID) {
 	for (let i = 0; i < body.suites.length; i++) {
-		let suite = customization[body.suites[i]];
+		let suite = global._database.customization[body.suites[i]];
 
 		// this parent reffers to Lower Node
 		if (suite._parent == "5cd944d01388ce000a659df9") {
@@ -82,7 +76,6 @@ function buyClothing(pmcData, body, sessionID) {
 	return output;
 }
 
-module.exports.initialize = initialize;
 module.exports.getCustomization = getCustomization;
 module.exports.getPath = getPath;
 module.exports.wearClothing = wearClothing;

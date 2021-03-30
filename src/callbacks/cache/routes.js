@@ -28,10 +28,10 @@ exports.cache = () => {
     db.user.configs.accounts = "user/configs/accounts.json";
     db.user.configs.gameplay = "user/configs/gameplay.json";
 
-    for (let trader in db.assort) {
+    for (let trader in db.traders) {
         db.user.cache["assort_" + trader] = "user/cache/assort_" + trader + ".json";
 
-        if ("customization" in db.assort[trader]) {
+        if ("suits" in db.traders[trader]) {
             db.user.cache["customization_" + trader] = "user/cache/customization_" + trader + ".json";
         }
     }

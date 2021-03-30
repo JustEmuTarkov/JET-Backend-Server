@@ -36,16 +36,6 @@ class Server {
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
-	/*createStartCallback(){
-        this.startCallback = {};
-		let path = "./src/callbacks/load";
-		let files = fileIO.readDir(path);
-		for(let file of files){
-			let scriptName = "load" + file.replace(".js","");
-			this.startCallback[scriptName] = require("../../src/callbacks/load/" + file).load;
-		}
-		logger.logSuccess("Create: Start Callback");
-	}*/
 	createReceiveCallback(){
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
@@ -66,7 +56,6 @@ class Server {
 		}
 		logger.logSuccess("Create: Respond Callback");
 	}
-
     resetBuffer(sessionID) {
         this.buffers[sessionID] = undefined;
     }
@@ -85,7 +74,6 @@ class Server {
         buf.written += data.length;
         return buf.written === buf.allocated;
     }
-    
     getFromBuffer(sessionID) {
         return this.buffers[sessionID].buffer;
     }
@@ -146,7 +134,6 @@ class Server {
 
         return { cert, key };
     }
-
     sendZlibJson(resp, output, sessionID) {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json'], 'content-encoding' : 'deflate', 'Set-Cookie' : 'PHPSESSID=' + sessionID});
     
@@ -290,82 +277,6 @@ class Server {
         }
     }
 	
-	// private function
-	_loadGlobals(){
-		global._database.globals = fileIO.readParsed(db.cacheBase.globals);
-		//allow to use file with {data:{}} as well as {}
-		if(typeof global._database.globals.data != "undefined")
-			global._database.globals = global._database.globals.data;
-	}
-	// private function
-	_loadGameplayConfig(){
-		global._database.gameplayConfig = fileIO.readParsed(db.user.configs.gameplay);
-	}
-	_loadBotsData(){
-		global._database.bots = {};
-		for(let botType in db.bots){
-			global._database.bots[botType] = {};
-			let difficulty_easy = null;
-			let difficulty_normal =  null;
-			let difficulty_hard = null;
-			let difficulty_impossible = null;
-			if(typeof db.bots[botType].difficulty != "undefined"){
-				if(typeof db.bots[botType].difficulty.easy != "undefined")
-					difficulty_easy = fileIO.readParsed(db.bots[botType].difficulty.easy);
-				if(typeof db.bots[botType].difficulty.normal != "undefined")
-					difficulty_normal = fileIO.readParsed(db.bots[botType].difficulty.normal);
-				if(typeof db.bots[botType].difficulty.hard != "undefined")
-					difficulty_hard = fileIO.readParsed(db.bots[botType].difficulty.hard);
-				if(typeof db.bots[botType].difficulty.impossible != "undefined")
-					difficulty_impossible = fileIO.readParsed(db.bots[botType].difficulty.impossible);
-			}
-			global._database.bots[botType].difficulty = {
-				"easy": difficulty_easy,
-				"normal": difficulty_normal,
-				"hard": difficulty_hard,
-				"impossible": difficulty_impossible,
-			};
-			global._database.bots[botType].appearance = fileIO.readParsed(db.bots[botType].appearance);
-			global._database.bots[botType].chances = fileIO.readParsed(db.bots[botType].chances);
-			global._database.bots[botType].experience = fileIO.readParsed(db.bots[botType].experience);
-			global._database.bots[botType].generation = fileIO.readParsed(db.bots[botType].generation);
-			global._database.bots[botType].health = fileIO.readParsed(db.bots[botType].health);
-			global._database.bots[botType].inventory = fileIO.readParsed(db.bots[botType].inventory);
-			global._database.bots[botType].names = fileIO.readParsed(db.bots[botType].names);
-		}
-	}
-	_loadCoreData(){
-		global._database.core = {};
-		global._database.core.botBase = fileIO.readParsed(db.cacheBase.botBase);
-		global._database.core.botCore = fileIO.readParsed(db.cacheBase.botCore);
-		global._database.core.fleaOffer = fileIO.readParsed(db.cacheBase.fleaOffer);
-		global._database.core.matchMetrics = fileIO.readParsed(db.cacheBase.matchMetrics);
-	}
-	// private function
-	_loadDatabaseItems(){
-		global._database.items = fileIO.readParsed(db.user.cache.items);
-		if(typeof global._database.items.data != "undefined")
-			global._database.items = global._database.items.data;
-		global._database.templates = fileIO.readParsed(db.user.cache.templates);
-		if(typeof global._database.templates.data != "undefined")
-			global._database.templates = global._database.templates.data;
-	}
-	_loadDatabaseHideout(){
-		if(!global._database.hideout)
-			global._database.hideout = {};
-		global._database.hideout.areas = fileIO.readParsed(db.user.cache.hideout_areas);
-		if(typeof global._database.hideout.areas.data != "undefined")
-			global._database.hideout.areas = global._database.hideout.areas.data;
-		
-		global._database.hideout.production = fileIO.readParsed(db.user.cache.hideout_production);
-		if(typeof global._database.hideout.production.data != "undefined")
-			global._database.hideout.production = global._database.hideout.production.data;
-		
-		global._database.hideout.scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
-		if(typeof global._database.hideout.scavcase.data != "undefined")
-			global._database.hideout.scavcase = global._database.hideout.scavcase.data;
-	}
-	
 	_serverStart(){
 		let backend = this.backendUrl;
         /* create server */
@@ -411,20 +322,15 @@ class Server {
 		if(serverConfig.rebuildCache)
 			global.core.route.CacheModLoad(); // CacheModLoad
 		global.core.route.ResModLoad(); // load Res Mods
-        logger.logInfo("[Warmup]: Loading Database: CoreData...");
-		this._loadCoreData();
-        logger.logInfo("[Warmup]: Loading Database: Globals...");
-		this._loadGlobals();
-        logger.logInfo("[Warmup]: Loading Database: GameplayConfig...");
-		this._loadGameplayConfig();
-        logger.logInfo("[Warmup]: Loading Database: BotsData...");
-		this._loadBotsData();
-        logger.logInfo("[Warmup]: Loading Database: Hideout...");
-		this._loadDatabaseHideout();
 		
+		logger.logInfo("[Warmup]: Loading Database");
+		require("../../src/database.js").execute();
+        
         // execute start callback
         logger.logInfo("[Warmup]: Start callbacks...");
 		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
+		
+		// will not be required if all data is loaded into memory
         for (let type in global) {
 			if(type.indexOf("_f") != type.length-2) continue;
 			if(typeof global[type].handler == "object"){
@@ -448,7 +354,6 @@ class Server {
 			global.global._database.assort[traderID]
 			global.global._database.someothershit
 		*/
-		this._loadDatabaseItems();
 		global.core.route.TamperModLoad(); // TamperModLoad
 
 		/*console.log("staticRoutes")

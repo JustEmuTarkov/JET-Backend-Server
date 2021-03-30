@@ -4,6 +4,7 @@ const { logger } = require("../../core/util/logger");
 
 class InraidServer {
     constructor() {
+		// this needs to be saved on drive so if player closes server it can keep it going after restart
         this.players = {};
     }
 

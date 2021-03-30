@@ -3,34 +3,32 @@ exports.cache = () => {
         return;
     }
     /* assort */
-    for (let trader in db.assort) {
+    for (let trader in db.traders) {
         logger.logInfo(`Caching: assort_${trader}.json`);
-
         let base = {"err": 0, "errmsg": null, "data": {"items": [], "barter_scheme": {}, "loyal_level_items": {}}};
-		
-        let inputNode = db.assort[trader];
-		
-		for(let path in inputNode){
-			if(path != "questassort" && path != "customization" && path != "quests"){
-				base.data[path] = fileIO.readParsed(inputNode[path]);
-			}
+        let inputNodes = fileIO.readParsed(db.traders[trader].assort);
+		for(let item in inputNodes){
+			for(let assort_item in inputNodes[item].items)
+				base.data.items.push(inputNodes[item].items[assort_item]);
+			base.data.barter_scheme[item] = inputNodes[item].barter_scheme;
+			base.data.loyal_level_items[item] = inputNodes[item].loyality;
 		}
-		
+	
         fileIO.write(`./user/cache/assort_${trader}.json`, base);
-    }
-
-    /* customization */
-    for (let trader in db.assort) {
-        if ("customization" in db.assort[trader]) {
+		
+		if ("suits" in db.traders[trader]) {
             logger.logInfo(`Caching: customization_${trader}.json`);
 
-            let base = [];
-
-            for (let file in db.assort[trader].customization) {
-                base.push(fileIO.readParsed(db.assort[trader].customization[file]));
-            }
-
-            fileIO.write(`./user/cache/customization_${trader}.json`, base);
+			if(typeof db.traders[trader].suits == "string"){
+				fileIO.write(`./user/cache/customization_${trader}.json`, fileIO.readParsed(db.traders[trader].suits));
+			} else {
+				let base = [];
+				for (let file in db.traders[trader].suits) {
+					base.push(fileIO.readParsed(db.traders[trader].suits[file]));
+				}
+				fileIO.write(`./user/cache/customization_${trader}.json`, base);
+			}
+            
         }
     }
 }

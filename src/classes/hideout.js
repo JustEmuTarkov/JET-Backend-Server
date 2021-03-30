@@ -1,15 +1,5 @@
 "use strict";
 
-let areas = undefined;
-let production = undefined;
-let scavcase = undefined;
-
-function initialize() {
-    areas = fileIO.readParsed(db.user.cache.hideout_areas);
-    production = fileIO.readParsed(db.user.cache.hideout_production);
-    scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
-}
-
 function upgrade(pmcData, body, sessionID) {
     for (let itemToPay of body.items) {
         for (let inventoryItem in pmcData.Inventory.items) {
@@ -411,7 +401,6 @@ function applyPlayerUpgradesBonuses(pmcData, bonus) {
     pmcData.Bonuses.push(bonus);
 }
 
-module.exports.initialize = initialize;
 module.exports.upgrade = upgrade;
 module.exports.upgradeComplete = upgradeComplete;
 module.exports.putItemsInAreaSlots = putItemsInAreaSlots;

@@ -4,19 +4,12 @@ exports.cache = () => {
     }
 	logger.logInfo("Caching: locations.json");
 	let locations = {};
-	for (let name in db.locations) {
-		if(name === "_test"){ continue; }
-		if (name === "base") {
-			continue;
-		}
-
-		let location = fileIO.readParsed(db.locations[name]);
-
-		locations[name] = location;
-		// structure
-		/*
-			LocationName { base: {}, loot: {}}
-		*/
+	for (let name in db.locations.base) {
+		let _location = { "base": {}, "loot": {}};
+		_location.base = fileIO.readParsed(db.locations.base[name]);
+		if(typeof db.locations.loot[name] != "undefined")
+			_location.loot = fileIO.readParsed(db.locations.loot[name]);
+		locations[name] = _location;
 	}
 	fileIO.write("user/cache/locations.json", locations);
 }

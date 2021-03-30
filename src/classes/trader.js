@@ -5,31 +5,10 @@ class TraderServer
 {
     constructor() {
         this.traders = {};
-        this.assorts = {};
         this.fence_generated_at = 0;
     }
 
     /* Load all the traders into memory. */
-    initialize() {
-        for (let traderID in db.cacheBase.traders) {
-            this.traders[traderID] = fileIO.readParsed(db.cacheBase.traders[traderID].base);
-            this.traders[traderID].sell_category = fileIO.readParsed(db.cacheBase.traders[traderID].categories);
-			if(this.traders[traderID].repair.price_rate === 0)
-			{
-				this.traders[traderID].repair.price_rate = 100;
-				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
-				this.traders[traderID].repair.price_rate -= 100;
-			}
-			else{
-				this.traders[traderID].repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
-				if(this.traders[traderID].repair.price_rate == 0)
-					this.traders[traderID].repair.price_rate = -1;
-			}
-			if(this.traders[traderID].repair.price_rate < 0){
-				this.traders[traderID].repair.price_rate = -100;
-			}
-        }
-    }
 
     getTrader(traderID, sessionID) {
 
@@ -38,13 +17,13 @@ class TraderServer
             trader_f.handler.resetTrader(sessionID, traderID);
             this.lvlUp(traderID, sessionID);
         }
-        let trader = this.traders[traderID];
+        let trader = global._database.traders[traderID].base;
         trader.display = pmcData.TraderStandings[traderID].display;
         trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
         trader.loyalty.currentStanding = pmcData.TraderStandings[traderID].currentStanding.toFixed(3);
         trader.loyalty.currentSalesSum = pmcData.TraderStandings[traderID].currentSalesSum;
 
-        return this.traders[traderID];
+        return global._database.traders[traderID].base;
     }
 
     changeTraderDisplay(traderID, status, sessionID) {
@@ -61,7 +40,7 @@ class TraderServer
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let Traders = [];
 
-        for (let traderID in this.traders) {
+        for (let traderID in global._database.traders) {
 
             if (traderID === "ragfair") {
                 continue;
@@ -72,7 +51,7 @@ class TraderServer
                 this.resetTrader(sessionID, traderID);
             }
 
-            let trader = this.traders[traderID];
+            let trader = global._database.traders[traderID].base;
 
             trader.display = pmcData.TraderStandings[traderID].display;
             trader.loyalty.currentLevel = pmcData.TraderStandings[traderID].currentLevel;
@@ -86,7 +65,7 @@ class TraderServer
 
     lvlUp(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        let loyaltyLevels = this.traders[traderID].loyalty.loyaltyLevels;
+        let loyaltyLevels = global._database.traders[traderID].base.loyalty.loyaltyLevels;
 
         // level up player
         pmcData.Info.Level = profile_f.calculateLevel(pmcData);
@@ -106,7 +85,7 @@ class TraderServer
 
         // set level
         pmcData.TraderStandings[traderID].currentLevel = targetLevel;
-        this.traders[traderID].loyalty.currentLevel = targetLevel;
+        global._database.traders[traderID].base.loyalty.currentLevel = targetLevel;
     }
 
     resetTrader(sessionID, traderID) {
@@ -119,8 +98,8 @@ class TraderServer
             "currentSalesSum": traderWipe.initialSalesSum,
             "currentStanding": traderWipe.initialStanding,
             "NextLoyalty": null,
-            "loyaltyLevels": this.traders[traderID].loyalty.loyaltyLevels,
-            "display": this.traders[traderID].display
+            "loyaltyLevels": global._database.traders[traderID].base.loyalty.loyaltyLevels,
+            "display": global._database.traders[traderID].base.display
         };
 
         this.lvlUp(traderID, sessionID);
@@ -186,13 +165,13 @@ class TraderServer
 				this.generateFenceAssort();
 			}
 		}
-        if (!(traderID in this.assorts)) {
-            // for modders generate endgame items for fence where you need to exchange it for that items
-            let tmp = fileIO.readParsed(db.user.cache["assort_" + traderID]);
-            this.assorts[traderID] = tmp.data;
-        }
+        // if (!(traderid in this.assorts)) {
+            // // for modders generate endgame items for fence where you need to exchange it for that items
+            // let tmp = fileio.readparsed(db.user.cache["assort_" + traderid]);
+            // global._database.traders[traderid].assort = tmp.data;
+        // }
 
-        let baseAssorts = this.assorts[traderID];
+        let baseAssorts = global._database.traders[traderId].assort;
 
         // Build what we're going to return.
         let assorts = this.copyFromBaseAssorts(baseAssorts);
@@ -201,7 +180,7 @@ class TraderServer
 
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
-            let level = this.traders[traderID].loyalty.currentLevel;
+            let level = global._database.traders[traderID].base.loyalty.currentLevel;
             let questassort = {};
             if (typeof db.cacheBase.traders[traderID].questassort == "undefined") {
                 questassort = {"started": {}, "success": {}, "fail": {}};
@@ -240,7 +219,7 @@ class TraderServer
 
     generateFenceAssort() {
         const fenceId = "579dc571d53a0658a154fbec"
-        let base = {"err": 0, "errmsg": null, "data": {"items": [], "barter_scheme": {}, "loyal_level_items": {}}}
+        let base = {"items": [], "barter_scheme": {}, "loyal_level_items": {}};
 
 
         let fence_base_assort = fileIO.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data.items
@@ -256,14 +235,14 @@ class TraderServer
             let random_item = fence_base_assort_root_items[random_item_index]
             let random_item_children = this.iter_item_children_recursively(random_item, fence_base_assort)
 
-            this.generate_item_ids(random_item, ...random_item_children)
+            this.generate_item_ids(random_item, ...random_item_children);
             if (fence_assort.some(el => el._id === random_item._id)) { continue; } // Prevent duplicate item IDs.
-            fence_assort.push(random_item, ...random_item_children)
+            fence_assort.push(random_item, ...random_item_children);
 
 
-            let item_price = helper_f.getTemplatePrice(random_item._tpl)
+            let item_price = helper_f.getTemplatePrice(random_item._tpl);
             for (const child_item of random_item_children) {
-                item_price += helper_f.getTemplatePrice(child_item._tpl)
+                item_price += helper_f.getTemplatePrice(child_item._tpl);
             }
 
             barter_scheme[random_item._id] = [[
@@ -271,12 +250,12 @@ class TraderServer
                     count: Math.round(item_price),
                     _tpl: "5449016a4bdc2d6f028b456f" // Rubles template
                 }
-            ]]
+            ]];
         }
 
-        base.data.items = fence_assort
-        base.data.barter_scheme = barter_scheme
-        this.assorts[fenceId] = base.data
+        base.items = fence_assort;
+        base.barter_scheme = barter_scheme;
+        global._database.traders[fenceId].assort = base;
     }
 
     // Deep clone (except for the actual items) from base assorts.
@@ -339,7 +318,7 @@ class TraderServer
     getAllCustomization(sessionID) {
         let output = [];
 
-        for (let traderID in this.traders) {
+        for (let traderID in global._database.traders) {
             if (db.assort[traderID].suits !== undefined) {
                 output = output.concat(this.getCustomization(traderID, sessionID));
             }
@@ -350,7 +329,7 @@ class TraderServer
 
     getPurchasesData(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        let trader = this.traders[traderID];
+        let trader = global._database.traders[traderID].base;
         let currency = helper_f.getCurrency(trader.currency);
         let output = {};
 
