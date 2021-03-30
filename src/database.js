@@ -1,5 +1,5 @@
 function _load_Globals() {
-	global._database.globals = fileIO.readParsed(db.cacheBase.globals);
+	global._database.globals = fileIO.readParsed(db.base.globals);
 	//allow to use file with {data:{}} as well as {}
 	if(typeof global._database.globals.data != "undefined")
 		global._database.globals = global._database.globals.data;
@@ -43,10 +43,10 @@ function _load_BotsData() {
 }
 function _load_CoreData() {
 	global._database.core = {};
-	global._database.core.botBase = fileIO.readParsed(db.cacheBase.botBase);
-	global._database.core.botCore = fileIO.readParsed(db.cacheBase.botCore);
-	global._database.core.fleaOffer = fileIO.readParsed(db.cacheBase.fleaOffer);
-	global._database.core.matchMetrics = fileIO.readParsed(db.cacheBase.matchMetrics);
+	global._database.core.botBase = fileIO.readParsed(db.base.botBase);
+	global._database.core.botCore = fileIO.readParsed(db.base.botCore);
+	global._database.core.fleaOffer = fileIO.readParsed(db.base.fleaOffer);
+	global._database.core.matchMetrics = fileIO.readParsed(db.base.matchMetrics);
 }
 function _load_ItemsData() {
 	global._database.items = fileIO.readParsed(db.user.cache.items);
@@ -104,14 +104,14 @@ function _load_LocationData() {
 	for(let _location in _locations){
 		global._database.locations[_location] = _locations[_location];
 	}
-	global._database.core.location_base = fileIO.readParsed(db.cacheBase.locations);
+	global._database.core.location_base = fileIO.readParsed(db.base.locations);
 }
 function _load_TradersData() {
-	for (let traderID in db.cacheBase.traders) {
+	for (let traderID in db.traders) {
 		global._database.traders = {};
 		global._database.traders[traderID] = {"base": {}, "assort": {}};
-		global._database.traders[traderID].base = fileIO.readParsed(db.cacheBase.traders[traderID].base);
-		global._database.traders[traderID].base.sell_category = fileIO.readParsed(db.cacheBase.traders[traderID].categories);
+		global._database.traders[traderID].base = fileIO.readParsed(db.traders[traderID].base);
+		global._database.traders[traderID].base.sell_category = fileIO.readParsed(db.traders[traderID].categories);
 		global._database.traders[traderID].assort = fileIO.readParsed(db.user.cache["assort_" + traderID]);
 		
 		if(global._database.traders[traderID].base.repair.price_rate === 0)

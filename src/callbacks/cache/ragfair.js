@@ -11,7 +11,7 @@ exports.cache = () => {
     let offers = [];
     let counter = 0;
 
-    for (let trader in db.assort) {
+    for (let trader in db.traders) {
         if (trader === "ragfair" || trader === "579dc571d53a0658a154fbec") {
             continue;
         }
@@ -53,8 +53,8 @@ exports.cache = () => {
 
 function loadCache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {
     let offers = [];
-    let offerBase = fileIO.readParsed(db.cacheBase.fleaOffer);
-    let traderObj = fileIO.readParsed(db.cacheBase.traders[trader].base);
+    let offerBase = fileIO.readParsed(db.base.fleaOffer);
+    let traderObj = fileIO.readParsed(db.traders[trader].base);
 
     offerBase._id = itemsToSell[0]._id;
     offerBase.intId = counter;
