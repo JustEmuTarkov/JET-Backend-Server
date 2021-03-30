@@ -12,22 +12,16 @@
 * 7 - MarkedAsFailed
 */
 
-let questsCache = undefined;
-
-function initialize() {
-    questsCache = fileIO.read(db.user.cache.quests);
-}
-
 function getQuestsCache() {
-    return questsCache;
+    return fileIO.stringify(global._database.quests, true);
 }
 
 //Fix for new quests where previous quest already required to found in raid items as same ID
 function getQuestsForPlayer(url, info, sessionID){
 	let _profile = profile_f.handler.getPmcProfile(sessionID);
-	let quests = fileIO.parse(questsCache);
+	let quests = utility.wipeDepend(global._database.quests);
 	
-	for(let quest of quests.data){
+	for(let quest of quests){
 		if(getQuestStatus(_profile, quest._id) == "Success"){
 			quest.conditions.AvailableForStart = [];
 			quest.conditions.AvailableForFinish = [];
@@ -38,9 +32,7 @@ function getQuestsForPlayer(url, info, sessionID){
 }
 
 function getCachedQuest(qid) {
-    let quests = fileIO.parse(questsCache);
-
-    for (let quest of quests.data) {
+    for (let quest of global._database.quests) {
         if (quest._id === qid) {
             return quest;
         }
@@ -358,7 +350,6 @@ function getQuestStatus(pmcData, questID) {
     return "Locked";
 }
 
-module.exports.initialize = initialize;
 module.exports.getQuestsCache = getQuestsCache;
 module.exports.getQuestsForPlayer = getQuestsForPlayer;
 module.exports.acceptQuest = acceptQuest;

@@ -383,34 +383,16 @@ function _GenerateContainerLoot(_items) {
 }
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
-    constructor() {
-        this.Locations = {};
-		this.LocationBase = {};
-		//this.loot = {};
-    }
-    /* Load all the locations into memory. */
-    initialize() {
-		// load all needed data into memory
-		var locations = fileIO.readParsed(db.user.cache.locations)
-		for(let location in locations){
-			this.Locations[location] = locations[location];
-		}
-		this.LocationBase = fileIO.readParsed(db.cacheBase.locations);
-		//this.loot = fileIO.readParsed(db.cacheBase.location_statics);
-    }
     /* generates a random location preset to use for local session */
     generate(name) {
-		//check if one file loot is existing
-        //let output = this.locations[name];
-		
 		// dont read next time ??
-		if(typeof db.locations[name] == "undefined"){
+		if(typeof global._database.locations[name] == "undefined"){
 			logger.logWarning("No Such Location");
 			return;
 		}
-		let location = this.Locations[name];
+		let _location = global._database.locations[name];
 		
-        const locationLootChanceModifier = location.base.GlobalLootChanceModifier;
+        const locationLootChanceModifier = _location.base.GlobalLootChanceModifier;
         let output = location.base;
         let ids = {};
 
@@ -420,11 +402,11 @@ class LocationServer {
             return output;
         }
 
-        let forced = location.loot.forced;
-        let mounted = location.loot.mounted;
-        let statics = location.loot.static;
+        let forced = _location.loot.forced;
+        let mounted = _location.loot.mounted;
+        let statics = _location.loot.static;
 		// Deep copy so the variable contents can be edited non-destructively
-        let dynamic = DeepCopy(location.loot.dynamic);
+        let dynamic = DeepCopy(_location.loot.dynamic);
         output.Loot = [];
         let count = 0;
 		let counters = [];
@@ -573,10 +555,7 @@ class LocationServer {
 		}
 	}
 	// TODO: rework required - weard functions to replace later on ;)
-	
-/*
-	================================================================================================================
-*/
+
     /* get a location with generated loot data */
     get(Location) {
         let name = Location.toLowerCase().replace(" ", "");
@@ -589,10 +568,10 @@ class LocationServer {
 		if(!utility.isUndefined(db.user.cache.locations))
 		{
 
-			let base = this.LocationBase;
+			let base = global._database.core.location_base;
 			let newData = {};
-			for(let location in this.Locations){
-				newData[this.Locations[location].base._Id] = this.Locations[location].base;
+			for(let location in global._database.locations){
+				newData[global._database.locations[location].base._Id] = global._database.locations[location].base;
 			}
 			base.locations = newData;
 			return base;
