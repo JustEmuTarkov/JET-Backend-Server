@@ -182,11 +182,11 @@ class TraderServer
             // 1 is min level, 4 is max level
             let level = global._database.traders[traderID].base.loyalty.currentLevel;
             let questassort = {};
-            if (typeof db.cacheBase.traders[traderID].questassort == "undefined") {
+            if (typeof db.traders[traderID].questassort == "undefined") {
                 questassort = {"started": {}, "success": {}, "fail": {}};
 
-            } else if (fileIO.exist(db.cacheBase.traders[traderID].questassort)) {
-                questassort = fileIO.readParsed(db.cacheBase.traders[traderID].questassort);
+            } else if (fileIO.exist(db.traders[traderID].questassort)) {
+                questassort = fileIO.readParsed(db.traders[traderID].questassort);
 
             } else {
                 questassort = {"started": {}, "success": {}, "fail": {}};

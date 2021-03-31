@@ -131,7 +131,7 @@ class ProfileServer {
         let profile = this.getProfile(account.id, 'pmc');
 
         // traders 
-        for (let traderID in db.cacheBase.traders) {
+        for (let traderID in db.traders) {
             trader_f.handler.resetTrader(account.id, traderID);
         }
 

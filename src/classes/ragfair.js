@@ -361,7 +361,7 @@ function createOffer(template, onlyFunc, usePresets = true) {
         return [];
     }
 
-    let offerBase = fileIO.readParsed(db.cacheBase.fleaOffer);
+    let offerBase = fileIO.readParsed(db.base.fleaOffer);
     let offers = [];
 
     // Preset
