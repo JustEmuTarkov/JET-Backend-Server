@@ -31,7 +31,6 @@ class TraderServer
     }
 
     getAllTraders(sessionID) {
-
         if (typeof sessionID == "undefined") {
             console.log("sessionID: " + sessionID);
             return;
@@ -39,9 +38,7 @@ class TraderServer
 
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let Traders = [];
-
         for (let traderID in global._database.traders) {
-
             if (traderID === "ragfair") {
                 continue;
             }
@@ -171,7 +168,7 @@ class TraderServer
             // global._database.traders[traderid].assort = tmp.data;
         // }
 
-        let baseAssorts = global._database.traders[traderId].assort;
+        let baseAssorts = global._database.traders[traderID].assort;
 
         // Build what we're going to return.
         let assorts = this.copyFromBaseAssorts(baseAssorts);

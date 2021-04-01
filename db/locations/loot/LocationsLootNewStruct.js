@@ -100,19 +100,28 @@ function NewStruct(LootID, Position, Rotation, Items, IsStatic, UseGravity, Rand
 		_pos = 0;
 	if(_rot[0] == 0 && _rot[1] == 0 && _rot[2] == 0)
 		_rot = 0;
-	return {
+	
+	let struct = {
 			"id": LootID,
-			"IsStatic": IsStatic,
-			"useGravity": UseGravity,
-			"randomRotation": RandomRotation,
+			//"IsStatic": IsStatic,
+			//"useGravity": UseGravity,
+			//"randomRotation": RandomRotation,
 			"Position": _pos,
 			"Rotation": _rot,
 			"Items": Items
-		};
+		}
+	if(IsStatic)
+		struct["IsStatic"] = true;
+	if(UseGravity)
+		struct["useGravity"] = true;
+	if(RandomRotation)
+		struct["randomRotation"] = true;
+	
+	return struct;
 }
 
 for(let file of getFiles){
-	if(file.includes("_") || file == "new")
+	if(file == "LocationsLootNewStruct.js" || file == "new")
 		continue;
 	let _newStruct = {forced: [], mounted: [], static: [], dynamic: []};
 	let data = readParsed("./" + file);

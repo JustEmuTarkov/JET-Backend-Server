@@ -424,7 +424,7 @@ class LocationServer {
 		let _location = global._database.locations[name];
 		
         const locationLootChanceModifier = _location.base.GlobalLootChanceModifier;
-        let output = location.base;
+        let output = _location.base;
         let ids = {};
 
         // don't generate loot on hideout

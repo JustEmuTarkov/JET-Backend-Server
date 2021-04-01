@@ -242,7 +242,7 @@ function payMoney(pmcData, body, sessionID) {
     output.currentSalesSums[body.tid] = saleSum;
 
     // save changes
-    logger.logSuccess("Items taken. Status OK.");
+    //logger.logSuccess("Items taken. Status OK.");
     item_f.handler.setOutput(output);
     return true;
 }

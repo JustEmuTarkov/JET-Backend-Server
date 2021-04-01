@@ -107,13 +107,14 @@ function _load_LocationData() {
 	global._database.core.location_base = fileIO.readParsed(db.base.locations);
 }
 function _load_TradersData() {
+	global._database.traders = {};
 	for (let traderID in db.traders) {
-		global._database.traders = {};
 		global._database.traders[traderID] = {"base": {}, "assort": {}};
 		global._database.traders[traderID].base = fileIO.readParsed(db.traders[traderID].base);
 		global._database.traders[traderID].base.sell_category = fileIO.readParsed(db.traders[traderID].categories);
 		global._database.traders[traderID].assort = fileIO.readParsed(db.user.cache["assort_" + traderID]);
-		
+		if(typeof global._database.traders[traderID].assort.data != "undefined")
+			global._database.traders[traderID].assort = global._database.traders[traderID].assort.data;
 		if(global._database.traders[traderID].base.repair.price_rate === 0)
 		{
 			global._database.traders[traderID].base.repair.price_rate = 100;

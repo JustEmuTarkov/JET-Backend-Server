@@ -28,7 +28,7 @@ function getQuestsForPlayer(url, info, sessionID){
 			quest.conditions.Fail = [];
 		}
 	}
-	return fileIO.stringify(quests, true);
+	return quests;
 }
 
 function getCachedQuest(qid) {
