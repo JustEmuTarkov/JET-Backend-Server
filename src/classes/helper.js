@@ -354,6 +354,10 @@ function getMoney(pmcData, amount, body, output, sessionID) {
                 break;
             }
             continue;
+        } else {
+            skip = false // Force a new stack to be created.
+            logger.logWarning(`You have a stack of money that is greater than the max stack size. This may cause issues with buying and selling. ID: ${item._id}`)
+            break;
         }
     }
 
