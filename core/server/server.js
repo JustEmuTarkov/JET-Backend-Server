@@ -327,7 +327,7 @@ class Server {
 		require("../../src/database.js").execute();
         
         // execute start callback
-        logger.logInfo("[Warmup]: Start callbacks...");
+        //logger.logInfo("[Warmup]: Start callbacks...");
 		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
 		
 		// will not be required if all data is loaded into memory

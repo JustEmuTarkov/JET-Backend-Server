@@ -29,7 +29,7 @@ exports.cache = () => {
 
         }
 		let menu = fileIO.readParsed(inputNode.menu);
-        fileIO.write(`user/cache/locale_${locale}.json`, base);
-        fileIO.write(`user/cache/locale_menu_${locale}.json`, menu);
+        fileIO.write(`user/cache/locale_${locale}.json`, base, true, false);
+        fileIO.write(`user/cache/locale_menu_${locale}.json`, menu, true, false);
     }
 }

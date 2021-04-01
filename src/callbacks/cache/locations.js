@@ -135,5 +135,5 @@ exports.cache = () => {
 		}
 		locations[name] = _location;
 	}
-	fileIO.write("user/cache/locations.json", locations);
+	fileIO.write("user/cache/locations.json", locations, true, false);
 }

@@ -20,5 +20,5 @@ exports.cache = () => {
 		}
     }
 
-    fileIO.write(`./user/cache/templates.json`, base);
+    fileIO.write(`./user/cache/templates.json`, base, true, false);
 }

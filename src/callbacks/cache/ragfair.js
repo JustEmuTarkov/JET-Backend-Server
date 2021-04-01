@@ -48,7 +48,7 @@ exports.cache = () => {
     }
 
     response.offers = offers;
-    fileIO.write("user/cache/ragfair_offers.json", response);
+    fileIO.write("user/cache/ragfair_offers.json", response, true, false);
 }
 
 function loadCache(itemsToSell, barter_scheme, loyal_level, trader, counter = 911) {

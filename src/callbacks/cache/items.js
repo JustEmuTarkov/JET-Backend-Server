@@ -16,5 +16,5 @@ exports.cache = () => {
 		}
     }
 
-    fileIO.write("user/cache/items.json", base);
+    fileIO.write("user/cache/items.json", base, true, false);
 }

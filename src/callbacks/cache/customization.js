@@ -15,5 +15,5 @@ exports.cache = () => {
         base.data[file] = fileData;
     }
 
-    fileIO.write("user/cache/customization.json", base);
+    fileIO.write("user/cache/customization.json", base, true, false);
 }

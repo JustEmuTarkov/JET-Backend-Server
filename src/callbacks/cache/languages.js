@@ -14,5 +14,5 @@ exports.cache = () => {
         base.data.push(fileData);
     }
 
-    fileIO.write("user/cache/languages.json", base);
+    fileIO.write("user/cache/languages.json", base, true, false);
 }

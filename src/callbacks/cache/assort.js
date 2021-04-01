@@ -14,19 +14,19 @@ exports.cache = () => {
 			base.data.loyal_level_items[item] = inputNodes[item].loyality;
 		}
 	
-        fileIO.write(`./user/cache/assort_${trader}.json`, base);
+        fileIO.write(`./user/cache/assort_${trader}.json`, base, true, false);
 		
 		if ("suits" in db.traders[trader]) {
             logger.logInfo(`Caching: customization_${trader}.json`);
 
 			if(typeof db.traders[trader].suits == "string"){
-				fileIO.write(`./user/cache/customization_${trader}.json`, fileIO.readParsed(db.traders[trader].suits));
+				fileIO.write(`./user/cache/customization_${trader}.json`, fileIO.readParsed(db.traders[trader].suits), true, false);
 			} else {
 				let base = [];
 				for (let file in db.traders[trader].suits) {
 					base.push(fileIO.readParsed(db.traders[trader].suits[file]));
 				}
-				fileIO.write(`./user/cache/customization_${trader}.json`, base);
+				fileIO.write(`./user/cache/customization_${trader}.json`, base, true, false);
 			}
             
         }

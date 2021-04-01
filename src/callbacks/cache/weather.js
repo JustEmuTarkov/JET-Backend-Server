@@ -15,5 +15,5 @@ exports.cache = () => {
         base.data.push(fileData);
     }
 
-    fileIO.write(`./user/cache/weather.json`, base);
+    fileIO.write(`./user/cache/weather.json`, base, true, false);
 }
