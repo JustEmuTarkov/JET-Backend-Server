@@ -8,21 +8,21 @@
 		"max": 100
 	},
 	"Temperature": {
-		"min": 35,
+		"min": 28,
 		"max": 40
 	},
 	"BodyParts": {
 		"Head": {
-			"min": 35,
-			"max": 35
+			"min": 50,
+			"max": 50
 		},
 		"Chest": {
-			"min": 150,
-			"max": 150
+			"min": 200,
+			"max": 200
 		},
 		"Stomach": {
-			"min": 120,
-			"max": 120
+			"min": 200,
+			"max": 200
 		},
 		"LeftArm": {
 			"min": 100,
@@ -33,12 +33,12 @@
 			"max": 100
 		},
 		"LeftLeg": {
-			"min": 110,
-			"max": 110
+			"min": 100,
+			"max": 100
 		},
 		"RightLeg": {
-			"min": 110,
-			"max": 110
+			"min": 100,
+			"max": 100
 		}
 	}
 }

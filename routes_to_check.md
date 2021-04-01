@@ -1,0 +1,10 @@
+https://127.0.0.1:443/client/items
+https://127.0.0.1:443/client/languages
+https://127.0.0.1:443/client/locations
+https://127.0.0.1:443/client/weather
+https://127.0.0.1:443/client/quest/list
+https://127.0.0.1:443/client/mode/offline
+https://127.0.0.1:443/client/locale/en
+https://127.0.0.1:443/client/menu/locale/en
+https://127.0.0.1:443/client/trading/api/getTrader/54cb50c76803fa8b248b4571
+https://127.0.0.1:443/client/trading/api/getTraderAssort/54cb50c76803fa8b248b4571

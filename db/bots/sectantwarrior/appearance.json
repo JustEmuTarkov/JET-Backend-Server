@@ -1,26 +1,19 @@
 {
 	"body": [
-		"5d28ae4986f7742926686187"
+		"5fb53d0b7b5d1342ee24bd64"
 	],
 	"feet": [
-		"5cc2e5d014c02e15d53d9c03",
-		"5cde9fb87d6c8b0474535da9",
-		"5d28af7886f77429275dba25"
+		"5fb535bd1c69e5198e234125",
+		"5fb535cf1c69e5198e234126"
 	],
 	"hands": [
-		"5cc0876314c02e000c6bea6b"
+		"5cc2e68f14c02e28b47de290"
 	],
 	"head": [
-		"5cc084dd14c02e000b0550a3",
-		"5cc2e4d014c02e000d0115f8",
-		"5cde9ff17d6c8b0474535daa"
+		"5fb52a537b5d1342ee24bd57",
+		"5fb5297a0359a84b77066e56"
 	],
 	"voice": [
-		"Bear_1",
-		"Bear_2",
-		"Bear_3",
-		"Usec_1",
-		"Usec_2",
-		"Usec_3"
+		"SectantWarrior"
 	]
 }

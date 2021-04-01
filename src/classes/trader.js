@@ -297,7 +297,7 @@ class TraderServer
     getCustomization(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let allSuits = customization_f.getCustomization();
-        let suitArray = fileIO.readParsed(db.assort[traderID].suits);
+        let suitArray = fileIO.readParsed(db.traders[traderID].suits);
         let suitList = [];
 
         for (let suit of suitArray) {
@@ -319,7 +319,7 @@ class TraderServer
         let output = [];
 
         for (let traderID in global._database.traders) {
-            if (db.assort[traderID].suits !== undefined) {
+            if (db.traders[traderID].suits !== undefined) {
                 output = output.concat(this.getCustomization(traderID, sessionID));
             }
         }

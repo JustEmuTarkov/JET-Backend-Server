@@ -1,5 +1,9 @@
 {
 	"items": {
+		"specialItems": {
+			"min": 0,
+			"max": 1
+		},
 		"healing": {
 			"min": 28,
 			"max": 88

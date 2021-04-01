@@ -1,17 +1,17 @@
 {
 	"equipment": {
-		"Headwear": 17,
-		"Earpiece": 0,
-		"FaceCover": 0,
-		"ArmorVest": 44,
+		"Headwear": 21,
+		"Earpiece": 9,
+		"FaceCover": 9,
+		"ArmorVest": 57,
 		"Eyewear": 0,
 		"ArmBand": 0,
 		"TacticalVest": 100,
-		"Backpack": 20,
+		"Backpack": 19,
 		"FirstPrimaryWeapon": 100,
 		"SecondPrimaryWeapon": 0,
 		"Holster": 0,
-		"Scabbard": 24
+		"Scabbard": 15
 	},
 	"mods": {
 		"mod_pistol_grip": 100,
