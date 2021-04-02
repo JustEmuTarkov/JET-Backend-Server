@@ -1,0 +1,67 @@
+{
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Fabrika",
+		"Description": "16 numaralı Kimya Fabrikasına ait tesisler ve sanayi bölgesi yasa dışı olarak TerraGroup şirketine kiralandı. Kontrat Savaşlarının gelip çattığı esnada bu fabrika, Tarkov'un sanayi bölgesini kontrol altında almaya kararlı olan USEC ve BEAR arasında bir çok silahlı çatışmaya şahit oldu.\n\nSonradan savaş dumanları dağıldığında ise fabrikanın tesisleri geride kalan sivillere, scavlere, ayrıca USEC ve BEAR birliklerinden geriye kalan harekatçılara da barınak oldu."
+	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Equator-2 alışveriş merkezinin geri kalan yerlileri tarafından yeniden tasarlanan gladyatör dövüşleri için geçici bir arena."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Gümrük",
+		"Description": "Fabrikanın hemen yanında bulunan geniş bir sanayi park arazisi. Bu arazi gümrük terminaline, yakıt depolama tesislerine, ofislere, lojmanlara ve daha çok çeşitli altyapısal binalara ev sahipliği yapar."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Orman",
+		"Description": "Priozersk Doğal Rezervi, yakın zamanda eyalet tarafından da korunan Kuzey Batı Federal Bölgesinin vahşi yaşam rezervinin bir parçası oldu."
+	},
+	"5704e47ed2720bb35b8b4568": {
+		"Name": "Kasaba",
+		"Description": "Verkhneye kentinin yeri olağanüstü bir bahçe ve açık hava dinlenme yeri olarak yerlilerin tercih ettiği, sahildeki küçük bir kasaba."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Deniz Feneri",
+		"Description": "Cape Dalniy'deki deniz feneri kentin önemli bir stratejik noktasıydı. Çatışmanın başlangıcında USEC o bölgeyi bir iniş alanı olarak kullandı, bu nedenle düşman PMC askerleri varlığını sıfıra indirmeyi amaçlayan BEAR birliklerinin ilgisini çekti."
+	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Kıyı Şeridi",
+		"Description": "Kıyı Şeridi, limanın bitişiğindeki Tarkov eteklerinin önemli bir bölümünü oluşturmaktadır.\nBölgede kısmen terk edilmiş bir köy, modern özel konutlar ve alanlar, bir botla tesisi olan uzun kıyı şeridi, benzin istasyonu, hava durumu istasyonu, hücresel baz istasyonu ve diğer tesisler bulunmaktadır.\nAsıl ilgi çeken yer, kendi hidroelektrik santraline sahip birkaç binadan oluşan büyük \"Azure Coast\" sağlık merkezidir. Tesis, bir zamanlar TerraGroup ve bağlı şirketlerinin Tarkov Limanı'ndan çıkarma hazırlığında, geçici barınma yeri olarak kullanıldı"
+	},
+	"5704e5a4d2720bb45b8b4567": {
+		"Name": "Terminal",
+		"Description": "Liman bölgesinin büyük bir bölümü, Emercom için yedek bir çıkarma noktası olacağı yönünde söylentiler dolaşıyor. "
+	},
+	"5704e5fad2720bc05b8b4567": {
+		"Name": "Rezerv",
+		"Description": "Gizli, Federal Devlet Rezerv Ajansı, şehir efsanelerine göre, yıllarca yetecek kadar besin maddesi içeriyor: gıda, tıbbi malzemeler ve diğer kaynaklar gibi. Tümüyle bir nükleer savaştan sağ kalmaya yeterli."
+	},
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Özel Bölge",
+		"Description": "Tarkov'un üst klas vatandaşlarının evleriyle kurulmuş özel konut alanı. Artan kaosun ilk dönemlerinde mülteci kampı olarak kullanılmış olsa da sonradan yağmacıların sıklıka uğradığı bir bölge haline gelmiştir."
+	},
+	"5714dbc024597771384a510d": {
+		"Name": "Kavşak",
+		"Description": "Güney-Doğu karayolundaki kavşak, kentin ulaşım sisteminde kritik bir noktadır. Esasen, liman ve liman alt yapısını Tarkov sanayisine bağlayan stratejik bir öneme sahiptir."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Banliyö",
+		"Description": "Uzun ve mutlu bir yaşam sürmek için Tarkov'un altyapı ve kaliteli yaşam ihtiyaçlarını karşılayabilen banliyö ve metropolitan bölgeleri."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Tarkov Sokakları",
+		"Description": "Tarkov şehir merkezi bankaralara, alışveriş merkezlerine, otellere ve aynı zamanda gelişen bir metropolün sunduğu diğer kolaylıklara ev sahipliği yapar."
+	},
+	"599319c986f7740dca3070a6": {
+		"Name": "Arena",
+		"Description": "Gladyatör dövüşleri için Equator-2 alışveriş merkezinden kalan yerliler tarafından elde kalan malzemelerle yeniden tasarlanan bir arena."
+	},
+	"59fc81d786f774390775787e": {
+		"Name": "Fabrika",
+		"Description": "16 nolu sanayi bölgesi'nin endüstriyel arazisi ve tesisleri TerraGroup şirketine illegal olarak kiralanmıştı. Sanayi bölgesi, sözleşme savaşları sırasında Tarkov'u kontrol etmek isteyen USEC ve BEAR arasında sayısız çatışmalara sahne oldu.\n\nSonraları, sanayi bölgesi, kaosun uyanışıyla dağılan USEC ve BEAR'dan kalanlar dahil olmak üzere, siviller, her türlü başıboş ordu üyeleri için bir sığınağa dönüştü"
+	},
+	"5b0fc42d86f7744a585f9105": {
+		"Name": "Laboratuvar",
+		"ShortName": "Laboratuvar",
+		"Description": "Terragrup yeraltı laboratuar kompleksi Tarkov'un hemen altında yer alan gizli bir bölgedir. Resmi olarak, bu araştırma merkezi mevcut değildir ve veri artıklarına dayanarak kimya, fizik, biyoloji ve yüksek teknoloji alanlarında Ar-Ge, test ve simülasyon projelerinde bulunmaktadır."
+	}
+}

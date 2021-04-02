@@ -1,0 +1,19 @@
+{
+	"Offer not found": "Scusate l'offerta è già stata acquistata",
+	"Unknown error": "Errore Sconosciuto",
+	"Attempted transaction with items missing from the stash": "Tentativo di transazione con elementi mancanti dall'inventario",
+	"The trader is out of cash": "Il mercante ha finito i soldi",
+	"The item is already sold": "L'oggetto è gia stato venduto",
+	"Trader does not deal in this type of items": "I mercanti non trattanto questo tipo di beni",
+	"Transaction error. The cost of goods has already changed.": "Errore di transazione. Il costo dei beni è già cambiato.",
+	"Not enough space in stash": "Non c'è abbastanza spazio per l'oggetto",
+	"You have already bought the maximum amount of this item in the current restock": "Hai già comprato la quantità massima di oggetti per il rifornimento corrente",
+	"Bad user loyalty level": "Livello di fedeltà non sufficiente",
+	"The trader is out of stock": "Il mercante è senza merce",
+	"230 - MAX LOGIN COUNT": "Hai raggiunto il massimo numero di tentativi. Riprova più tardi",
+	"1514 - Transaction error. The cost of goods has already changed.": "1514 - errore di Transazione. Il costo dei beni è già cambiato.",
+	"201 - Client not authorized or not selected game profile": "Client authorization failed, please restart the game or check the Internet connection",
+	"Backend error: Unknown Error": "Errore backend: Errore di connessione al backend",
+	"BackendErrorHeader": "Errore nel backend",
+	"BackendErrorMessage": "Si è verificato un errore lato backend"
+}

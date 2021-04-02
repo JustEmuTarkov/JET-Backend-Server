@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "Prywatna organizacja wojskowa USEC została utworzona w 1999 roku po połączeniu dwóch organizacji: KerniSEC oraz Safe Sea. W 2004 roku, agent międzynarodowego holdingu Terra Group skontaktował się z USEC, które po niedługim czasie stało się prywatną armią holdingu z placówkami na całym świecie i posiadającą ponad 7500 operatorów."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "Prywatna organizacja wojskowa BEAR została utworzona przez tajne rozporządzenie rządu Federacji Rosyjskiej jako czynnik zapobiegawczy nielegalnym działaniom Terra Group na terytorium rosyjskim."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRA GROUP",
+		"description": "Terra Group to międzynarodowa spółka holdingowa, której odłamy angażują się w szeroki zakres działalności. W jej skład wchodzi ponad 40 dużych przedsiębiorstw reprezentowanych przez oddziały w ponad 120 krajach na całym świecie."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "TerraGroup Labs PLC",
+		"description": "Brytyjska spółka z ograniczoną odpowiedzialnością, podmiot międzynarodowego holdingu Terra Group. Oficjalnie zajmuje się badaniami naukowymi związanymi z zastosowaniem biotechnologii w agrobiznesie i hodowli. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "Miasto Tarkow",
+		"description": "Tarkow to miasto położone na północnym zachodzie Rosji. Leży w regionie Norwińsk i jest jednym z dwóch głównych miast Norwińskiej Specjalnej Strefy Ekonomicznej."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Norwińska Specjalna Strefa Ekonomiczna",
+		"description": "Wydzielone terytorium w regionie Norwińsk, wliczając w to miasta Norwińsk i Tarkow z przylegającą do nich infrastrukturą. Posiada szczególny status prawny w stosunku do reszty Rosji i uprzywilejowane warunki ekonomiczne dla krajowych i zagranicznych przedsiębiorstw.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavy",
+		"description": "Pośród chaosu, bezprawia, niedoboru podstawowych produktów i braku miejsca do życia, pierwszymi do wzięcia sprawy w swoje ręce są szumowiny bez zasad moralnych i etycznych lub szybko je tracący pod wpływem panującej sytuacji. Zbierają się w grupy, gdzie jedyną zasadą jest prawo silniejszego. Są gotowi zabijać się nawzajem za lepszy łup. W ten sposób byli cywile stają się Scavami."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Najeźdźcy Scav",
+		"ShortName": "banner_scavraiders",
+		"Description": "Podejrzana grupa uzbrojonych ludzi, według plotek, składająca się z byłych operatorów PMC, lokalnych mieszkańców i innych z oczywistym szkoleniem bojowym oraz taktycznym."
+	}
+}

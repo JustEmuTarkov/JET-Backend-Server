@@ -1,0 +1,67 @@
+{
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Factory",
+		"Description": "A TerraGroup cégcsoportnak illegális bérleményébe tartozott a 16-os vegyi üzem és annak területe, valamint létesítményei. Az Egyezményes Háború ideje alatt a terület számos tűzharc központjává vált a USEC és a BEAR közötti hatalmi játékok miatt, amit Tarkov ipari területei fölött vívott dominancia tüzelt. \n\nKésőbb; a káosz nyomában; az üzem területe átalakult óvóhelyé a megmaradt civilek, katonák, fegyveresek és egyéb vademberek számára. Köztük az USEC és BEAR megmaradt emberi számára is."
+	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Aréna",
+		"Description": "Egy rögtönzött aréna gladiátor küzdelmek számára. Az Equator-2 plázából alakították át az itt maradt helyiek."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Customs",
+		"Description": "Az ipari park egy nagy területe a gyár szomszédságában. Ez a terület ad otthont a vámhatóság épületének, az üzemanyag tároló létesítményeknek, irodáknak és a lakórészeknek nem beszélve más infrastrukturális épületekről."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Woods",
+		"Description": "A Priozersky természetvédelmi terület nemrég vették fel az Északnyugat-Szövetségi Körzet államilag védett és érzékeny természeti területek jegyzékébe."
+	},
+	"5704e47ed2720bb35b8b4568": {
+		"Name": "Town",
+		"Description": "A Verkneje városi település egy tengerparti kisváros, amely a helyiek által is elismert kivételes kertészeti és szabadidős helyszín."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Lighthouse",
+		"Description": "A Dalnij-fok világítótornya valaha a város fontos stratégiai pontja volt. A konfliktus kitörésekor a USEC leszállási zónaként használta, ezzel felkeltve a BEAR csapatok figyelmét, akik az ellenséges élőerő jelenlétet nullára kívánták csökkenteni."
+	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Shoreline",
+		"Description": "A Partvonal a tarkovi külváros egy jelentős része a Kikötő területén.\n\nA terület nagy része egy kiüresedett, kihalt falvakkal, elhagyatott házakkal, modern, privát lakokkal, kihajózási lehetőségekkel, benzinkutakkal, időjárásjelző állomásokkal, telefonadókkal és egyéb létesítményekkel tarkított.\nLegkeresettebb pontja az \"Azúr-part\" egészségközpont, amely számtalan, saját vízerőművel rendelkező épületet foglal magába. A szállás már a TerraGroup és a hozzá kapcsolódó, tarkovi kikötőből szállító cégek átmeneti szállásaként is szolgált,"
+	},
+	"5704e5a4d2720bb45b8b4567": {
+		"Name": "Terminal",
+		"Description": "A kikötő nagy részét az Emercom kimentő pontjának tartják. "
+	},
+	"5704e5fad2720bc05b8b4567": {
+		"Name": "Tartalék",
+		"Description": "A Szövetségi Állami Tartalékügynökség rejtett raktára, ami a városi legendák szerint elég ellátmányt tartalmaz hogy évekig eltartson, többek között élelmet, gyógyszereket és más erőforrásokat szóval mindent ami egy totális atomháború túléléséhez kellhet."
+	},
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Magánszektor",
+		"Description": "Magán lakossági szektor, amely a Tarkov felsőbb osztályú lakóinak házaiból épült fel. Igazán ismertté akkor vált, mikor a kirobbant káosz első heteiben menekülttábor volt."
+	},
+	"5714dbc024597771384a510d": {
+		"Name": "Interchange",
+		"Description": "A dél-keleti autópálya-csomópont egy kritikus pont a város közlekedési rendszerében. Lényegében egy stratégiai csomópontnak mondható, mely összeköti a kikötői infrastruktúrát Tarkov ipari peremével. A csomópont közepén helyezkedik el az óriási méretű ULTRA bevásárló központ ami az EMERCOM evakuáció fő bázisa volt."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Suburbs",
+		"Description": "Tarkov külvárosi és ingázó területei tartalmazzák azt az infrastruktúrát ami megadja a kényelmet egy hosszú és boldog élethez."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Streets of Tarkov",
+		"Description": "Tarkov belvárosa adja az otthonát a bankoknak, bevásárlóközpontoknak, hoteleknek és a többi kényelmi épületnek amire egy virágzó metropolisznak szüksége van."
+	},
+	"599319c986f7740dca3070a6": {
+		"Name": "Aréna",
+		"Description": "Egy rögtönzött aréna gladiátor küzdelmek számára. Az Equator-2 plázából alakították át az itt maradt helyiek."
+	},
+	"59fc81d786f774390775787e": {
+		"Name": "Factory",
+		"Description": "A TerraGroup cégcsoportnak illegális bérleményébe tartozott a 16-os vegyi üzem és annak területe, valamint létesítményei. Az Egyezményes Háború ideje alatt a terület számos tűzharc központjává vált a USEC és a BEAR közötti hatalmi játékok miatt, amit Tarkov ipari területei fölött vívott dominancia tüzelt. \n\nKésőbb; a káosz nyomában; az üzem területe átalakult óvóhelyé a megmaradt civilek, katonák, fegyveresek és egyéb vademberek számára. Köztük az USEC és BEAR megmaradt emberi számára is"
+	},
+	"5b0fc42d86f7744a585f9105": {
+		"Name": "The Lab",
+		"ShortName": "The Lab",
+		"Description": "A Terragroup Laboratoriumok egy földalatti titkos laboratórium komplexum közvetlenül Tarkov közepe alatt.\nHivatalosan ez a kutató központ nem létezik, és adatfoszlányok nyomán is csak annyi derül ki hogy a kutatás és fejlesztés, tesztelés, és projekt szimuláció területein tevékenykednek, kémiában, fizikában, biológiában és csúcstechnológiában."
+	}
+}

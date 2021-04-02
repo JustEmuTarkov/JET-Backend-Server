@@ -1,0 +1,67 @@
+{
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Fábrica",
+		"Description": "El parque industrial y las instalaciones de la Planta Química No. 16 fueron alquiladas ilegalmente a la corporación TerraGroup. Durante la Guerra de los Contratos la planta se convirtió en el escenario de numerosos combates entre USEC y BEAR, los cuales determinaron el control del parque industrial de Tarkov.\n\nMás tarde, durante el caos, las instalaciones de la planta se convirtieron en un refugio para civiles, Scavs y todo tipo de fuerzas militares rezagadas, incluyendo restos dispersos de USEC y BEAR."
+	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Una arena improvisada para luchas de gladiadores, construida por los lugareños sobre los restos del centro comercial Equator-2."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Aduanas",
+		"Description": "Una amplia zona del parque industrial adyacente a la fábrica. La cual alberga una terminal aduanera, instalaciones de almacenamiento de combustible, oficinas y dormitorios así como otros tipos de edificios e infraestructuras."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Bosque",
+		"Description": "La Reserva Natural de Priozersk fue recientemente incluida en la lista de zonas de vida silvestre protegidas por el estado del Distrito Federal del Noroeste."
+	},
+	"5704e47ed2720bb35b8b4568": {
+		"Name": "Pueblo",
+		"Description": "El asentamiento urbano Verkhneye es un pequeño pueblo junto al mar, reconocido por los lugareños como un lugar excepcional de jardinería y recreación al aire libre."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Faro",
+		"Description": "El faro de Cabo Dalniy solía ser una posición estratégica importante de la ciudad. Al estallar el conflicto, USEC utilizó el área circundante al Faro como zona de aterrizaje, atrayendo así la atención de las fuerzas del BEAR, las cuales hicieron todo lo posible para reducir las fuerzas de la PMC hostil a cero."
+	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Costa",
+		"Description": "La Costa constituye una gran parte de las afueras de Tarkov y se encuentra junto al Puerto.\n\nLa zona alberga una aldea parcialmente abandonada, viviendas privadas modernas, campos de cultivo, una extensa playa, embarcadero, gasolinera, una estación meteorológica e incluso una estación de comunicaciones además de otras instalaciones. El punto de interés principal de la Costa es el sanatorio \"Azure Coast\", el cual consiste de varios edificios de lujo. El sanatorio es suministrado eléctricamente exclusivamente por una planta hidroeléctrica adyacente. El complejo fue temporalmente utilizado para alojar personal de TerraGroup y sus empresas asociadas mientas se preparaba la evacuación a través del Puerto de Tarkov"
+	},
+	"5704e5a4d2720bb45b8b4567": {
+		"Name": "Terminal",
+		"Description": "Una amplia sección de la zona portuaria, se rumorea que es el punto de extracción de respaldo de Emercom. "
+	},
+	"5704e5fad2720bc05b8b4567": {
+		"Name": "Reserva",
+		"Description": "La base secreta de la Agencia de la Reserva Federal del Estado que, según algunas leyendas urbanas, contiene suficientes provisiones para aguantar durante años: alimentos, medicamentos y otros recursos en cantidades suficientes como para sobrevivir a una guerra nuclear."
+	},
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Sector Privado",
+		"Description": "Sector residencial privado, construido con cabañas de los ciudadanos de la clase alta de Tarkov. En las primeras semanas del caos emergente, sirvió como campo de reunión para refugiados, pero después se convirtió en una conocida guarida para carroñeros."
+	},
+	"5714dbc024597771384a510d": {
+		"Name": "Intercambio",
+		"Description": "El intercambiador vial de la autopista Sur es un punto crítico en el sistema de transporte de la ciudad. Esta área estratégica conecta al puerto y la infraestructura portuaria con las afueras industriales de Tarkov. En el centro del intercambiador se encuentra un enorme centro comercial ULTRA, el cual se utilizó como base principal de operaciones durante la evacuación realizada por EMERCOM."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Suburbios",
+		"Description": "Los suburbios y las áreas residenciales de Tarkov tienen todas las infraestructuras y comodidades necesarias para una vida larga y feliz."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Calles de Tarkov",
+		"Description": "El centro de Tarkov alberga bancos, centros comerciales y hoteles, así como todos los servicios que una próspera ciudad podría necesitar."
+	},
+	"599319c986f7740dca3070a6": {
+		"Name": "Arena",
+		"Description": "Una arena improvisada para luchas de gladiadores, rediseñado sobre los restos de los locales del centro comercial Equator-2."
+	},
+	"59fc81d786f774390775787e": {
+		"Name": "Fábrica",
+		"Description": "El parque industrial y las instalaciones de la planta química No.16 fueron alquiladas ilegalmente a la compañía TerraGroup. Durante la Guerra de los Contratos las instalaciones de la planta se convirtieron en escenario de numerosos combates entre USEC y BEAR que determinaron el control del parque industrial de Tarkov.\n\nMás tarde, durante el caos, las instalaciones de la planta se convirtieron en un refugio para civiles, Scavs y todo tipo de fuerzas armadas y militares rezagadas, incluyendo restos dispersos de USEC y BEAR"
+	},
+	"5b0fc42d86f7744a585f9105": {
+		"Name": "Laboratorio",
+		"ShortName": "Laboratorio",
+		"Description": "El laboratorio subterráneo Terragroup Labs es un emplazamiento secreto situado justo debajo el centro de la ciudad de Tarkov. Oficialmente, este centro de investigación no existe y según algunos fragmentos de información, está centrado en prácticas de Investigación y Desarrollo, realizando pruebas y simulaciones de proyectos de diversas áreas relacionadas con la química, la física, la biología y la alta tecnología."
+	}
+}
