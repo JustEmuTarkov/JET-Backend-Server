@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "La compañía militar privada USEC se estableció en 1999 después de la fusión de dos compañías: KerniSEC y Safe Sea. En 2004, un agente de la tenedora internacional Terra Group se puso en contacto con USEC, que consecutivamente se convirtió en un ejército privado para la compañía, con oficinas en todo el mundo y más de 7.500 empleados."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "La compañía militar privada BEAR fue establecida por un decreto secreto del Gobierno de la Federación Rusa como contramedida a las actividades ilegales de Terra Group en territorio Ruso."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "TG es una compañía tenedora internacional cuyas subsidiarias participan en una amplia gama de actividades. Incorpora más de 40 grandes empresas, representada por sucursales en más de 120 países alrededor del mundo."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "TerraGroup Labs PLC",
+		"description": "Sociedad privada de responsabilidad limitada con sede en el Reino Unido, una subsidiaria de la tenedora internacional Terra Group. Oficialmente se ocupa de investigaciones científicas relacionadas con la biotecnología aplicada en la industria agraria y la agricultura. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "La ciudad de Tarkov",
+		"description": "Tarkov es una ciudad en el Noroeste Ruso, una entidad municipal en la región de Norvinsk y una de las dos principales ciudades en la Zona Económica Especial de Norvinsk."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Zona Económica Especial de Norvinsk",
+		"description": "Un territorio limitado dentro de la región de Norvinsk, que incluye las ciudades de Norvinsk y Tarkov además de objetos de infraestructura adyacentes, el cual posee una legislación especial en relación con el resto de Rusia y con condiciones económicas privilegiadas para empresas nacionales y extranjeras.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavs",
+		"description": "En medio del caos y la anarquía, la escasez de provisiones esenciales y de territorios, los primeros en alzarse son personajes sombríos, sinvergüenzas sin restricciones morales y éticas o rápidos para perderlas bajo la influencia de los acontecimientos. Se reúnen en manadas, viviendo bajo la ley del más fuerte, cortándose mutuamente las gargantas para obtener una mejor tajada del botín. Fue así como los civiles de ayer se convirtieron en Scavs."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Scav Raiders",
+		"ShortName": "banner_scavraiders",
+		"Description": "Un sombrío grupo armado, según los rumores, constan de antiguos operadores PMC, civiles y otra gente con entrenamiento táctico y de combate."
+	}
+}

@@ -21,7 +21,7 @@ class InraidServer {
 			logger.logWarning("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
 			return;
 		}
-        let map = fileIO.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
+        let map = global._database.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()].base;
         let mapKey = map.AccessKeys[0];
 
         if (!mapKey) {

@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "Birleşik Güvenlik",
+		"description": "USEC özel askeri şirketi 1999 yılında iki şirket: KerniSEC ve Safe Sea birleşmesinden sonra kuruldu. 2004 yılında, Terra Grup uluslararası holdinginin bir ajanı USEC'le iletişime geçti. Ardından, Dünya'nın her yerinde ofisleri ve 7500 den fazla çalışanı ile holdingin özel bir ordusu haline geldi."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "BEAR özel askeri bölüğü Rus Federasyonu hükümetinin gizli kararnamesi ile Terra Group'un Rus topraklarındaki yasadışı aktivitelerine karşı tedbir olarak kurulmuştur."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRA GRUP",
+		"description": "TG, yan kuruluşlarının geniş bir yelpazede faaliyet gösterdiği uluslararası bir holdingdir. Dünyada 120'den fazla ülkede şubeler tarafından temsil edilen 40'tan fazla büyük kuruluşu bünyesinde barındırmaktadır."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "TerraGrup Laboratuvarları Kamu Ltd Şti",
+		"description": "Terra Grup uluslararası holdinginin bir yan kuruluşu olan Birleşik Krallık merkezli özel limited şirketi. Resmi olarak tarım endüstrisinde ve çiftçiliğinde uygulanan biyoteknoloji ile ilgili bilimsel araştırmalar yapmaktadır. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "Tarkov Şehri",
+		"description": "Tarkov; Kuzeybatı Rusya'da bir şehirdir, Norvinsk bölgesindeki belediyeye ait bir oluşum ve Norvinsk Özel Ekonomik Bölgesi'nin iki ana şehrinden birisidir."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Norvinsk Özel Ekonomi Yerleşkesi",
+		"description": "Norvinsk bölgesindeki sınırlı arazide, Norvinsk ve Tarkov şehirlerinin yapılarına bağlı nesneleri de kapsayacak şekilde, Rusya'nın geri kalanı ile özel bir yasal ilişki içerisinde ve ulusal ve yabancı işletmeler için ayrıcalıklı ekonomik şartlara sahiptir.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Yağmacılar",
+		"description": "Kaosun ve kanunsuzluğun ortasında, etik değerlerini hızlı bir şekilde kaybedebilen kötü kişiliklerdir. Kurtlar sofrasına dönmüş dünyada sürüler halinde toplanıp, daha iyi bir ganimet için birbirlerinin boğazını keserler. Dünün sivilleri işte bu şekilde Yağmacı olurlar."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Yağmacı Birlikler",
+		"ShortName": "banner_scavraiders",
+		"Description": "Gizli, silahlı grup. Söylentilere göre, mücadele ve taktiksel eğitim alıyorlar, içersinde eskiden faaliyet gösteren PMC operatörleri, bölge halkı ve diğer bölgelerden insanlar vardır."
+	}
+}

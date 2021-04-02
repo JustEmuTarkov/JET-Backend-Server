@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Nombre real desconocido>",
+		"FirstName": "<Nombre real desconocido>",
+		"Nickname": "Fence",
+		"Location": "Red de puntos de venta ilegales por toda la ciudad de Tarkov y sus alrededores",
+		"Description": "El conflicto apenas había comenzado cuando Fence empezó a establecer puntos anónimos de compraventa. Sin embargo, manteniéndose en la sombra, ha conseguido crear una red de contrabandistas que opera por toda la región de Norvinsk."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Town",
+		"Description": "Suboficial a cargo de los almacenes de suministros de la base de reabastecimiento para las Tropas Internas, que imponen el bloqueo de la región de Norvinsk. Durante las Contract Wars suministró de forma secreta a los integrantes de la PMC BEAR de armas, munición y otras provisiones con las que contaba."
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Alexander Fyodorovich Kiselyov",
+		"FirstName": "Alexander",
+		"Nickname": "Skier",
+		"Location": "Customs",
+		"Description": "Empleado de la terminal aduanera portuaria. Al principio comerciaba con bienes de la terminal pero, durante el transcurso del conflicto, formó una banda para robar lo que pudiera encontrar por las cercanías de la terminal."
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "City",
+		"Description": "Directora del Departamento de Traumatología del Hospital Central de la ciudad de Tarkov."
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "Tadeusz Pilsudski",
+		"FirstName": "Tadeusz",
+		"Nickname": "Peacekeeper",
+		"Location": "Distrito portuario",
+		"Description": "Oficial intendente de las fuerzas de paz de la ONU, destinado a uno de los puntos de control principales que conducen a la zona portuaria de Tarkov. Los Cascos Azules se han aventurado a realizar pequeños negocios desde el principio, comprando cualquier cosa de valor que pudieran intercambiar por armamento occidental, municiones y otros tipo de equipo militar."
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "Name",
+		"FirstName": "Name",
+		"Nickname": "Name",
+		"Location": "Name",
+		"Description": "Name"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "Sergey Arsenyevich Samoylov",
+		"FirstName": "Sergey Arsenyevich",
+		"Nickname": "Mechanic",
+		"Location": "Planta Química Nº4",
+		"Description": "Era un capataz de la Planta Química Nº 4 antes del conflicto, aunque desde que este comenzó, se dedicó a trabajos de modificación y reparación de armas, así como al mantenimiento de equipos y tecnología avanzados. Prefiere vivir en soledad y en la clandestinidad, trabajando discretamente, pero sobre todo disfruta haciendo las tareas más complicadas y desafiantes."
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "Abramyan Arshavir Sarkisivich",
+		"FirstName": "Arshavir Sarkisivich",
+		"Nickname": "Ragman",
+		"Location": "Centro comercial ULTRA",
+		"Description": "Trabajó como directivo en el gran centro comercial ULTRA localizado a las afueras de Tarkov. Vende cualquier tipo de ropa y equipamiento."
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "Kharitonov Ivan Egorovich",
+		"FirstName": "Ivan Kharitonov",
+		"Nickname": "Jaeger",
+		"Location": "Reserva Natural de Priozersk",
+		"Description": "Trabajó de guarda forestal en la Reserva Natural de Priozersk, como parte del Servicio Estatal de Jaegers. Es un cazador profesional y especialista en supervivencia. Todavía se encarga de vigilar sin descanso, y pase lo que pase, el territorio de la Reserva ante cualquiera que la ponga en peligro."
+	}
+}

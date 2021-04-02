@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "A empresa militar privada USEC foi criada em 1999 após a fusão de duas empresas: KerniSEC e Safe Sea. Em 2004, um agente da holding internacional Terra Group entrou em contato com a USEC, que se tornaram consecutivamente, essencialmente, um exército privado da holding, com escritórios em todo o mundo e mais de 7500 funcionários."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "A companhia militar privada BEAR foi estabelecida por um decreto secreto do governo da Federação Russa como uma contra medida contra atividades ilegais do Grupo Terra no território russo."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "TG é uma companhia de \"holding\" transnacional que participa de uma vasta variedade de atividades. Incorpora mais de 40 grandes empresas, representadas por filiais em mais de 120 países no mundo."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "Laboratórios TerraGroup PLC",
+		"description": "Empresa privada limitada sediada no Reino Unido, uma subsidiária da holding internacional do Terra Group. Trata oficialmente de pesquisas científicas relacionadas à biotecnologia aplicada à agroindústria e à agricultura. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "A cidade de Tarkov",
+		"description": "Tarkov é uma cidade no Noroeste russo, uma entidade municipal dentro da região de Norvinsk, e uma das duas principais cidades da Zona Económica Especial de Norvinsk."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Zona Económica Especial de Norvinsk",
+		"description": "Um território limitado dentro da região de Norvinsk, incluindo as cidades de Norvinsk e Tarkov com objetos aderentes de infra-estruturas, possuíndo um status especial legal em relação ao resto da Rússia e condições económicas privilegiadas para empresas nacionais e estrangeiras.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavs",
+		"description": "No meio do caos e da anarquia, escassez de provisões vitais e territórios, os primeiros a levantar as cabeças são personagens obscuros, sem limites éticos e morais e muito facilmente corrompíveis. Juntam-se em grupos, vivendo pela lei do mais forte, matando uns aos outros pela melhor parte. Foi assim que antigos cidadãos se tornaram Scavs."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Scav Raiders",
+		"ShortName": "banner_scavraiders",
+		"Description": "Grupo obscuro de pessoas armadas, de acordo com rumores, composta por ex-operadores PMC, os moradores locais e outros, com treino de combate e treino tático."
+	}
+}

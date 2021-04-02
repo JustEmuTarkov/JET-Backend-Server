@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<姓名不详>",
+		"FirstName": "<姓名不详>",
+		"Nickname": "Fence",
+		"Location": "一个遍布塔科夫及其周边地区的销售网络",
+		"Description": "在冲突尚未开始之前，Fence的地下商业网络早已在这营业了。他一直隐姓埋名，但还是成功建立起了这个遍布诺文斯克地区、组织严密的走私网络。"
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "帕维尔·叶格罗维奇·罗曼年科",
+		"FirstName": "帕维尔·罗曼年科",
+		"Nickname": "Prapor",
+		"Location": "城镇",
+		"Description": "负责看管补给仓库的准尉，该仓库隶属于封锁诺文斯克地区的内卫部队。在“契约战争”期间秘密地为BEAR雇佣兵提供武器、弹药以及他拥有的其它资源。诺文斯克"
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "亚历山大·费奥多罗维奇·基谢廖夫",
+		"FirstName": "亚历山大",
+		"Nickname": "Skier",
+		"Location": "海关",
+		"Description": "曾是海关港口部门员工，最开始负责经手港口的货物。在塔科夫市的交火冲突中组织了一票人马，意图搜刮港口海关附近的一切物资。"
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "埃尔维拉·卡比布尔丽娜",
+		"FirstName": "埃尔维拉",
+		"Nickname": "Therapist",
+		"Location": "城市",
+		"Description": "塔科夫市中心医院创伤护理部主任。"
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "塔德乌什·毕苏斯基",
+		"FirstName": "塔德乌什",
+		"Nickname": "Peacekeeper",
+		"Location": "港口区",
+		"Description": "联合维和部队后勤军官，驻扎于某个通往塔科夫港口区的主要检查站。蓝头盔们从一开始就涉及了许多地下交易，用西方武器、弹药还有各式各样的军事装备来换取值钱的物品。"
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "全名",
+		"FirstName": "名字",
+		"Nickname": "昵称",
+		"Location": "地点",
+		"Description": "介绍"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "谢尔盖·阿森耶维奇·萨莫约洛夫",
+		"FirstName": "谢尔盖·阿森耶维奇",
+		"Nickname": "Mechanic",
+		"Location": "化工厂",
+		"Description": "在冲突开始前，他是一名化工厂工程师。很久以前他就从事武器改造和复杂技术设备的维护保养工作。他喜欢一个人独居，做事非常谨慎，对他来说，复杂又具有挑战性的任务胜过一切。"
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "亚伯拉罕·阿尔沙韦·萨克西维奇",
+		"FirstName": "阿尔沙韦·萨克西维奇",
+		"Nickname": "Ragman",
+		"Location": "塔科夫中央市场",
+		"Description": "他曾在塔科夫郊区的一个大型市场担任主管。出售任何与服饰和装备有关的东西。"
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "哈里托诺夫·伊万·叶戈罗维奇",
+		"FirstName": "伊万·哈里托诺夫",
+		"Nickname": "Jaeger",
+		"Location": "Priozersky保护区",
+		"Description": "他在Priozersky保护区内为特区狩猎处﻿﻿进行狩猎工作﻿。他是专业的猎手，也是生存专家﻿。无论如何，他都会一如既往地守卫他的狩猎场地，将不怀好意的人们驱逐出去。"
+	}
+}

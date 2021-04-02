@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "Súkromná vojenská spoločnosť - USEC, bola založená v roku 1999 spojením spoločností: KerniSEC a Safe Sea. V roku 2004 zástupca spoločnosti Terra Group international holding uzatvoril s vedením PMC USEC zmluvu, ktorou vytvoril súkromnú armádu firmy TG s počtom viac ako 7500 mužov a pobočkami po celom svete."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "BEAR súkromná vojenská spoločnosť bola založená tajným nariadením vlády Ruskej Federácie ako protiopatrenie proti nezákonným činnostiam Terra Group na ruskom území."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "Terra Group je nadnárodná holdingová spoločnosť, ktorej dcérskej spoločnosti sú zapojené do širokej škály aktivít. Holding obsahuje viac ako 40 rozsiahlych spoločnosti s pobočkami viac než 120 krajinách sveta."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "Laboratóriá TerraGroup PLC",
+		"description": "Dcérska spoločnosť Terra Group international holding s ručením obmedzený bola založená vo Veľkej Británií. Oficiálne sa zaoberá výskumom zameraným na biotechnológie a poľnohospodársky priemysel. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "Tarkov - centrum",
+		"description": "Tarkov je umiestnený na severozápade Ruska. Tento samosprávny celok ktorý patrí do Norvinského regionu a je jeden z dvoch najdôležitejších miest v Norvinskej zvláštnej ekonomickej zóne."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Norvinská špeciálna ekonomická zona",
+		"description": "Menšie územie vrámci Norvinského regiónu, ktoré zahŕňa mestá Norvinsk a Tarkov s priľahlou infraštruktúrou. Má osobitný právny status vo vzťahu k zvyšku Ruskej federácie spolu s privilegovanými ekonomickými podmienkami pre národné a zahraničné podniky.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavovia",
+		"description": "Uprostred chaosu a bezprávia, v núdzi o základne zásoby a miesto pre život, zdvíhajú svoje hlavy, ako prví, temné postavy bez morálnych zábran a etických zásad. A pokiaľ nejaké zabraný majú rýchlo o ne prichádzajú pod tlakom okolnosti. Zdržujú sa v malých skupinách, ktorým vládne zákon džungle, navzájom si idú po krku kvôli cennejšej koristi. Aj takto sa z niektorých civilistov stávajú Scavovia."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Raideri",
+		"ShortName": "banner_scavraiders",
+		"Description": "Pochybná skupina ozbrojených ľudí, o ktorej sa povráva, že sa skladá prevažne z bývalých PMC operátorov, miestnych občanov a ďalších ľudí s očividne taktickým a bojovým výcvikom."
+	}
+}
