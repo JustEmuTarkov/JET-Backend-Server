@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": false,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": true,
 	"stages": {
 		"0": {
 			"requirements": [],

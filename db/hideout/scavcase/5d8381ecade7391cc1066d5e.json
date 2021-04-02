@@ -1,6 +1,6 @@
 {
 	"_id": "5d8381ecade7391cc1066d5e",
-	"productionTime": 7700,
+	"ProductionTime": 7700,
 	"Requirements": [
 		{
 			"templateId": "5449016a4bdc2d6f028b456f",

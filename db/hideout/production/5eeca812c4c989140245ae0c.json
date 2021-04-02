@@ -15,7 +15,7 @@
 		},
 		{
 			"templateId": "573477e124597737dd42e191",
-			"count": 4,
+			"count": 8,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -27,14 +27,20 @@
 		},
 		{
 			"templateId": "5c05300686f7746dce784e5d",
+			"count": 2,
+			"isFunctional": false,
+			"type": "Item"
+		},
+		{
+			"templateId": "60391afc25aff57af81f7085",
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
 		}
 	],
-	"continuous": false,
-	"productionTime": 249000,
+	"productionTime": 349000,
 	"endProduct": "57347ca924597744596b4e71",
+	"continuous": false,
 	"count": 1,
 	"productionLimitCount": 0
 }

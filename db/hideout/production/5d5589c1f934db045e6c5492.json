@@ -13,9 +13,9 @@
 			"type": "Resource"
 		}
 	],
-	"continuous": true,
 	"productionTime": 19500,
 	"endProduct": "5d1b33a686f7742523398398",
+	"continuous": true,
 	"count": 1,
 	"productionLimitCount": 1
 }

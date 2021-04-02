@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": true,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": true,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -96,6 +97,12 @@
 					"traderId": "5c0647fdd443bc2504c2d371",
 					"loyaltyLevel": 2,
 					"type": "TraderLoyalty"
+				},
+				{
+					"templateId": "5e2af29386f7746d4159f077",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

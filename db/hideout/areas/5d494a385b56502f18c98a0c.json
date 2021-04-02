@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": false,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": false,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -26,7 +27,7 @@
 				},
 				{
 					"templateId": "569668774bdc2da2298b4568",
-					"count": 15000,
+					"count": 75000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -64,7 +65,7 @@
 				}
 			],
 			"slots": 0,
-			"constructionTime": 223200,
+			"constructionTime": 259200,
 			"description": ""
 		}
 	}

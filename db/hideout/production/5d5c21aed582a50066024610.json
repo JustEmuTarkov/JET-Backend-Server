@@ -15,20 +15,20 @@
 			"type": "Item"
 		},
 		{
+			"areaType": 7,
+			"requiredLevel": 2,
+			"type": "Area"
+		},
+		{
 			"templateId": "5e831507ea0a7c419c2f9bd9",
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
-		},
-		{
-			"areaType": 7,
-			"requiredLevel": 2,
-			"type": "Area"
 		}
 	],
-	"continuous": false,
 	"productionTime": 3000,
 	"endProduct": "590c678286f77426c9660122",
+	"continuous": false,
 	"count": 2,
 	"productionLimitCount": 0
 }

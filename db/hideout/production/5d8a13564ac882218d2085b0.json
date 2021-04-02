@@ -20,9 +20,9 @@
 			"type": "Area"
 		}
 	],
-	"continuous": false,
 	"productionTime": 4900,
 	"endProduct": "5734773724597737fd047c14",
+	"continuous": false,
 	"count": 3,
 	"productionLimitCount": 0
 }

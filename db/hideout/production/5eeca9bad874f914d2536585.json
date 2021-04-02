@@ -32,9 +32,9 @@
 			"type": "Item"
 		}
 	],
-	"continuous": false,
 	"productionTime": 41000,
 	"endProduct": "5b7c710788a4506dec015957",
+	"continuous": false,
 	"count": 1,
 	"productionLimitCount": 0
 }

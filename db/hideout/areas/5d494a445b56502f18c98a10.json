@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": true,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": true,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -149,7 +150,7 @@
 				},
 				{
 					"templateId": "5d1b39a386f774252339976f",
-					"count": 10,
+					"count": 15,
 					"isFunctional": false,
 					"type": "Item"
 				},

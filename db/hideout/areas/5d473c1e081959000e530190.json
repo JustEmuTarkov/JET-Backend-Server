@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": true,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": false,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -44,6 +45,12 @@
 					"areaType": 0,
 					"requiredLevel": 1,
 					"type": "Area"
+				},
+				{
+					"templateId": "5734779624597737e04bf329",
+					"count": 3,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],

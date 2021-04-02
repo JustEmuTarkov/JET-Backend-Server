@@ -9,14 +9,14 @@
 		},
 		{
 			"templateId": "5df8a72c86f77412640e2e83",
-			"count": 1,
+			"count": 5,
 			"isFunctional": false,
 			"type": "Item"
 		}
 	],
+	"productionTime": 5550,
+	"endProduct": "5d5d940f86f7742797262046",
 	"continuous": false,
-	"productionTime": 3550,
-	"endProduct": "5df8a4d786f77412672a1e3b",
 	"count": 1,
 	"productionLimitCount": 0
 }

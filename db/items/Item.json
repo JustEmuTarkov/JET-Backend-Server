@@ -58,7 +58,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		}
 	},
 	{
@@ -254,6 +255,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"knifeHitDelay": 0,
 			"knifeHitSlashRate": 0,
 			"knifeHitStabRate": 0,

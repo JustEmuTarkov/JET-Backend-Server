@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": false,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": false,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -43,12 +44,6 @@
 					"type": "Item"
 				},
 				{
-					"templateId": "590c31c586f774245e3141b2",
-					"count": 5,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
 					"templateId": "590c5bbd86f774785762df04",
 					"count": 4,
 					"isFunctional": false,
@@ -69,6 +64,12 @@
 					"areaType": 3,
 					"requiredLevel": 0,
 					"type": "Area"
+				},
+				{
+					"templateId": "590c31c586f774245e3141b2",
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
@@ -164,25 +165,7 @@
 				},
 				{
 					"templateId": "569668774bdc2da2298b4568",
-					"count": 150000,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
-					"templateId": "57347c77245977448d35f6e2",
-					"count": 5,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
-					"templateId": "57347c5b245977448d35f6e1",
-					"count": 5,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
-					"templateId": "590c35a486f774273531c822",
-					"count": 5,
+					"count": 200000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -205,6 +188,24 @@
 					"traderId": "5ac3b934156ae10c4430e83c",
 					"loyaltyLevel": 4,
 					"type": "TraderLoyalty"
+				},
+				{
+					"templateId": "57347c5b245977448d35f6e1",
+					"count": 10,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "57347c77245977448d35f6e2",
+					"count": 10,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590c35a486f774273531c822",
+					"count": 7,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

@@ -3,20 +3,14 @@
 	"areaType": 10,
 	"requirements": [
 		{
-			"templateId": "5d6fc78386f77449d825f9dc",
+			"templateId": "5d0379a886f77420407aa271",
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
 			"templateId": "590c5a7286f7747884343aea",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
-		},
-		{
-			"templateId": "57347b8b24597737dd42e192",
-			"count": 1,
+			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -26,9 +20,9 @@
 			"type": "Area"
 		}
 	],
-	"continuous": false,
-	"productionTime": 2160,
+	"productionTime": 6750,
 	"endProduct": "5d6fc87386f77449db3db94e",
+	"continuous": false,
 	"count": 2,
 	"productionLimitCount": 0
 }

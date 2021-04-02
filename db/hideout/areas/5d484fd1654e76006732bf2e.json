@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": true,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": true,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -142,14 +143,14 @@
 					"type": "Item"
 				},
 				{
-					"templateId": "5e2af00086f7746d3f3c33f7",
-					"count": 2,
+					"templateId": "59e35abd86f7741778269d82",
+					"count": 3,
 					"isFunctional": false,
 					"type": "Item"
 				},
 				{
-					"templateId": "59e35abd86f7741778269d82",
-					"count": 3,
+					"templateId": "5e2af00086f7746d3f3c33f7",
+					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
 				}

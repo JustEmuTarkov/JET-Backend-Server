@@ -21,20 +21,20 @@
 			"type": "Item"
 		},
 		{
+			"areaType": 7,
+			"requiredLevel": 1,
+			"type": "Area"
+		},
+		{
 			"templateId": "5e831507ea0a7c419c2f9bd9",
 			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
-		},
-		{
-			"areaType": 7,
-			"requiredLevel": 1,
-			"type": "Area"
 		}
 	],
-	"continuous": false,
-	"productionTime": 1980,
+	"productionTime": 1990,
 	"endProduct": "544fb45d4bdc2dee738b4568",
+	"continuous": false,
 	"count": 1,
 	"productionLimitCount": 0
 }

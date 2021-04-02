@@ -4,6 +4,7 @@
 	"enabled": true,
 	"needsFuel": true,
 	"takeFromSlotLocked": false,
+	"craftGivesExp": true,
 	"stages": {
 		"0": {
 			"requirements": [],
@@ -26,19 +27,7 @@
 				},
 				{
 					"templateId": "5696686a4bdc2da3298b456a",
-					"count": 10000,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
-					"templateId": "590c595c86f7747884343ad7",
-					"count": 2,
-					"isFunctional": false,
-					"type": "Item"
-				},
-				{
-					"templateId": "5d0378d486f77420421a5ff4",
-					"count": 1,
+					"count": 25000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -46,6 +35,18 @@
 					"traderId": "58330581ace78e27b8b10cee",
 					"loyaltyLevel": 3,
 					"type": "TraderLoyalty"
+				},
+				{
+					"templateId": "5d0378d486f77420421a5ff4",
+					"count": 4,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590c595c86f7747884343ad7",
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
