@@ -9,11 +9,18 @@ exports.cache = () => {
 		let base = {"err": 0, "errmsg": null, "data": []};
 		let inputFiles = db.hideout[type];
 		for (let file in inputFiles) {
-			let filePath = inputFiles[file];
-			let fileData = fileIO.readParsed(filePath);
-
-			base.data.push(fileData);
+			let data = fileIO.readParsed(inputFiles[file]);
+			if(typeof data.length != "undefined"){
+				for(let q in data)
+				{
+					base.data.push(data[q]);
+				}
+			} else {
+				base.data.push(data);
+			}
 		}
 		fileIO.write(`user/cache/hideout_${type}.json`, base, true, false);
 	}
+	
+	
 }

@@ -3411,13 +3411,13 @@
         "Insurance": {
           "MaxStorageTimeInHour": 72
         },
-        "TurnOffLogging": false,
+        "TurnOffLogging": true,
         "MemoryManagementSettings": {
-          "HeapPreAllocationEnabled": false,
-          "HeapPreAllocationMB": 200,
+          "HeapPreAllocationEnabled": true,
+          "HeapPreAllocationMB": 50,
           "OverrideRamCleanerSettings": true,
-          "RamCleanerEnabled": false,
-          "GigabytesRequiredToDisableGCDuringRaid": 7
+          "RamCleanerEnabled": true,
+          "GigabytesRequiredToDisableGCDuringRaid": 8
         },
         "SkillExpPerLevel": 100,
         "ReleaseProfiler": {
