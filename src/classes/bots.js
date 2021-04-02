@@ -847,6 +847,7 @@ class Generator
         }
         else
         {
+            cartridges._id = utility.generateNewItemId();
             cartridges._tpl = ammoTpl;
             cartridges.upd = {"StackObjectsCount": stackSize};
         }
