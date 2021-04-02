@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<tożsamość nieznana>",
+		"FirstName": "<tożsamość nieznana>",
+		"Nickname": "Paser",
+		"Location": "Sieć placówek rozsianych po całym Tarkowie i przedmieściach",
+		"Description": "Konflikt dopiero się zaogniał, gdy „Paser” zaczął zakładać anonimowe punkty obrotu towarami. Zachowując status incognito udało mu się stworzyć dobrze zorganizowaną sieć przemytniczą, która operuje w całym regionie Norwińsk."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Paweł Jegorowicz Romanenko",
+		"FirstName": "Paweł Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Miasto",
+		"Description": "Chorąży odpowiedzialny za utrzymanie magazynów w bazie Ministerstwa Spraw Wewnętrznych Federacji Rosyjskiej, utrzymującego blokadę regionu Norwińsk. W trakcie Wojen Kontraktowych zaopatrywał operatorów BEAR w broń, amunicję oraz inne towary i usługi, jakie miał do dyspozycji."
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Aleksander Fiodorowicz Kisielew",
+		"FirstName": "Aleksander",
+		"Nickname": "Narciarz",
+		"Location": "Skład celny",
+		"Description": "Pracownik portowego składu celnego. Początkowo dorabiał na sprzedaży towarów ze składu, z czasem założył gang, który grabi wszystko, co tylko może znaleźć na terenie składu i jego okolicach."
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elwira Khabibullina",
+		"FirstName": "Elwira",
+		"Nickname": "Terapeutka",
+		"Location": "Miasto",
+		"Description": "Ordynator oddziału chirurgii urazowej Szpitala Miejskiego w Tarkowie."
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "Tadeusz Piłsudski",
+		"FirstName": "Tadeusz",
+		"Nickname": "Rozjemca",
+		"Location": "Dzielnica portowa",
+		"Description": "Kwatermistrz sił pokojowych ONZ, stacjonujących w jednym z punktów kontrolnych prowadzących do strefy portowej w Tarkowie. „Niebieskie hełmy” od samego początku zajmują się drobnym handlem, kupując wszystko co wartościowe w zamian za zachodnią broń, amunicję i różnego rodzaju wyposażenie wojskowe."
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "Personalia",
+		"FirstName": "Imię",
+		"Nickname": "Pseudonim",
+		"Location": "Lokacja",
+		"Description": "Opis"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "Siergiej Arseniewicz Samojłow",
+		"FirstName": "Siergiej Arseniewicz",
+		"Nickname": "Mechanik",
+		"Location": "Zakład chemiczny",
+		"Description": "Przed rozpoczęciem konfliktu działał jako majster zakładu chemicznego. Od początku istnienia placówki pracował nad modyfikacjami i naprawą broni oraz przy nadzorował działanie specjalistycznego sprzętu. Jest typem samotnika, który działa dyskretnie, przedkładając skomplikowane i trudne zadania ponad inne."
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "Abramjan Arshavir Sarkisivich",
+		"FirstName": "Arshavir Sarkisivich",
+		"Nickname": "Ragman",
+		"Location": "Rynek główny w Tarkowie",
+		"Description": "Był właścicielem potężnego marketu położonego na przedmieściach Tarkowa. Handluje wszystkim, od ubrań po sprzęt wojskowy."
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "Iwan Charitonow Igorowicz",
+		"FirstName": "Iwan Charitonow",
+		"Nickname": "Jaeger",
+		"Location": "Rezerwat Priozerski",
+		"Description": "Pracował na terenie myśliwych w rezerwacie Priozerskim w Państwowej Służbie Leśnej. Profesjonalny myśliwy i specjalista od przetrwania. On strzegł i strzeże, bez względu na cokolwiek, swojego terenu łowieckiego od różnych agresywnych osobników."
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Fabryka",
+		"Description": "Placówka przemysłowa i obiekty zakładu chemicznego nr 16 zostały nielegalnie wynajęte korporacji TerraGroup. Podczas Wojen Kontraktowych teren ten stał się miejscem licznych starć pomiędzy USEC i BEAR, które dążyły do przejęcia kontroli nad przemysłową dzielnicą Tarkowa.\n\nW późniejszym czasie, kiedy pył bitewny opadł, obiekty te stały się schronieniem dla pozostałych cywilów, Scavów, a także sił zbrojnych, włączając w to rozbite oddziały USEC oraz BEAR."
+	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Centrum handlowe Równik-2 przystosowane przez pozostałych mieszkańców jako arena do walk na śmierć i życie."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Skład celny",
+		"Description": "Duży obszar parku przemysłowego przyległego do fabryki. Obszar ten mieści terminal celny, magazyny paliwowe, biura, budynki noclegowe oraz szereg innych budynków infrastruktury."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Las",
+		"Description": "Rezerwat przyrody Prioziersk stał się niedawno częścią chronionych przez państwo rezerwatów dzikiej przyrody Północno-Zachodniego Okręgu Federalnego."
+	},
+	"5704e47ed2720bb35b8b4568": {
+		"Name": "Miasto",
+		"Description": "Wierchnieje jest małym miasteczkiem na wybrzeżu, które lokalni mieszkańcy cenią sobie jako wymarzone miejsce do wypoczynku na świeżym powietrzu i ogrodnictwa."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Latarnia morska",
+		"Description": "Latarnia morska na przylądku Dalniem była kiedyś ważną pozycją strategiczną dla miasta. Po wybuchu konfliktu USEC używało obszaru latarni jako strefy lądowania i w ten sposób przyciągnęło uwagę sił BEAR, które zaciekle dążyły do zmniejszenia liczby wrogich sił do zera."
+	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Wybrzeże",
+		"Description": "Wybrzeże stanowi główną część przedmieść Tarkowa i położone jest obok obszaru portowego.\n\nNa tym obszarze znajduje się częściowo opuszczona wioska, nowoczesne prywatne domy, pola rolnicze, długie połacie plaży, przystań, stacja benzynowa, stacja meteorologiczna oraz stacja przekaźnikowa, a także różne obiekty handlowe. Główna atrakcja wybrzeża to sanatorium „Lazurowe Wybrzeże” składające się z kilku luksusowych budynków. Sanatorium jest zasilane w całości z pobliskiej elektrowni wodnej. Ośrodek był wcześniej używany jako tymczasowe zakwaterowanie dla personelu TerraGroup i wydziałów powiązanych z firmą w przygotowaniach do ewakuacji portu w Tarkowie."
+	},
+	"5704e5a4d2720bb45b8b4567": {
+		"Name": "Port morski",
+		"Description": "Duża część obszaru portowego podejrzewana jako zapasowy punkt ewakuacji dla EMERCOM."
+	},
+	"5704e5fad2720bc05b8b4567": {
+		"Name": "Rezerwy",
+		"Description": "Tajna baza Federalnej Agencji Rezerw Państwowych, która według miejskich legend zawiera wystarczająco dużo zapasów: żywności, leków i innych produktów, by przetrwać tam przez wiele lat. Zapasów jest na tyle dużo, że można by tam przetrwać wojnę nuklearną."
+	},
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Sektor prywatny",
+		"Description": "Prywatny sektor mieszkaniowy z domami elity mieszkańców Tarkowa. W pierwszych tygodniach chaosu służył jako obóz przejściowy dla uchodźców, a później stał się znaną speluną."
+	},
+	"5714dbc024597771384a510d": {
+		"Name": "Węzeł transportowy",
+		"Description": "Południowy węzeł transportowy jest kluczowym punktem dla komunikacji miasta. To strategiczne miejsce łączy port i przystań z przemysłowymi przedmieściami Tarkowa. Zlokalizowane w centrum węzła jest ogromne centrum handlowe ULTRA, który wykorzystywane było jako główna baza operacyjna do ewakuacji EMERCOM."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Przedmieścia",
+		"Description": "Przedmieścia i podmiejskie obszary Tarkowa zawierające całą infrastrukturę i udogodnienia do długiego i szczęśliwego życia."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Ulice Tarkowa",
+		"Description": "Centrum Tarkowa mieści banki, galerie handlowe i hotele, jak również wszystkie inne udogodnienia, jakich mogłaby potrzebować rozwijająca się metropolia."
+	},
+	"599319c986f7740dca3070a6": {
+		"Name": "Arena",
+		"Description": "Prowizoryczna arena walk gladiatorów zaprojektowana przez mieszkańców centrum handlowego Equator-2."
+	},
+	"59fc81d786f774390775787e": {
+		"Name": "Fabryka",
+		"Description": "Teren placówki chemicznej nr 16 został nielegalnie wynajęty wraz z jej budynkami firmie Terra Group. Podczas Wojen Kontraktowych, placówka była miejscem potyczek grup USEC i BEAR, które dążyły do przejęcia kontroli nad przemysłową dzielnicą Tarkowa.\n\nPo opadnięciu bitewnego pyłu placówka stała się schronieniem dla ocalałych cywilów, Scavów i niedobitków sił zbrojnych, w tym także rozbitych oddziałów USEC oraz BEAR."
+	},
+	"5b0fc42d86f7744a585f9105": {
+		"Name": "Laboratorium",
+		"ShortName": "Laboratorium",
+		"Description": "Podziemny kompleks laboratoriów TerraGroup Labs jest tajnym obiektem położonym bezpośrednio pod centrum Tarkowa. Oficjalnie ten ośrodek badawczy nie istnieje i, opierając się na skrawkach informacji, zajmuje się pracami badawczo-rozwojowymi, testowaniem i symulacją projektów w zakresie chemii, fizyki, biologii i nowych technologii."
+	}
+}
