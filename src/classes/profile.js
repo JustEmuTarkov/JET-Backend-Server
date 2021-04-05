@@ -17,8 +17,17 @@ class ProfileServer {
     loadProfilesFromDisk(sessionID) {
 		if(typeof sessionID == "undefined")
 			logger.throwErr("Session ID is undefined", "~/src/classes/profile.js | 19")
-        this.profiles[sessionID]['pmc'] = fileIO.readParsed(getPmcPath(sessionID));
-        this.generateScav(sessionID);
+        try {
+            this.profiles[sessionID]['pmc'] = fileIO.readParsed(getPmcPath(sessionID));
+            this.generateScav(sessionID);
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                return logger.logError(`There is a syntax error in the character.json file for AID ${sessionID}. This likely means you edited something improperly. Call stack: \n${e.stack}`)
+            } else {
+                return logger.logError(`There was an issue loading the user profile with session ID ${sessionID}. Call stack: \n${e.stack}`)
+            }
+        }
+        logger.logSuccess(`Loaded profile for AID ${sessionID} successfully.`)
     }
 
     getOpenSessions() {
