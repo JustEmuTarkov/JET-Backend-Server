@@ -37,6 +37,11 @@ class TraderServer
         }
 
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
+
+        if (!pmcData || typeof pmcData == "undefined") {
+            logger.logError(`Profile of ${sessionID} is undefined, and therefore cannot be loaded. Review the logs above for the cause.`)
+        }
+
         let Traders = [];
         for (let traderID in global._database.traders) {
             if (traderID === "ragfair") {
