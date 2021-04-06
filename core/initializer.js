@@ -91,7 +91,7 @@ class Initializer
 		for(let file of files){
 			loadedModules += file.replace(".js",", ");
 			if(file === "helper.js") continue;
-			let name = file.replace(".js","") + "_f";
+			let name = file.replace(".js","").toLowerCase() + "_f"; // fixes the weaponBuilds.js file bug ... lol
 			global[name] = require(executedDir + "/src/classes/" + file);
 		}
 		logger.logInfo("[Modules] " + loadedModules.slice(0, -2))
