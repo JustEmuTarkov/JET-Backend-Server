@@ -62,7 +62,7 @@ for(let trader of traderIDs){
 		itemToAddList = [];// clear list after
 	}
 	if(usingDumps){
-		fileIO.write(`./traders/${trader}/assort_new.json`, outputStruct, false, false);
+		fileIO.write(`./traders_concat/${trader}/assort.json`, outputStruct, false, false);
 	} else {
 		fileIO.write(`./traders/${trader}/assort.json`, outputStruct, false, false);
 	}
