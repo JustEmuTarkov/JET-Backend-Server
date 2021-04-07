@@ -88,6 +88,8 @@ class TraderServer
         // set level
         pmcData.TraderStandings[traderID].currentLevel = targetLevel;
         global._database.traders[traderID].base.loyalty.currentLevel = targetLevel;
+
+        return pmcData.TraderStandings[traderID].currentLevel
     }
 
     resetTrader(sessionID, traderID) {
@@ -182,7 +184,7 @@ class TraderServer
 
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
-            let level = global._database.traders[traderID].base.loyalty.currentLevel;
+            let level = this.lvlUp(traderID, sessionID) // returns user level.
             let questassort = {};
             if (typeof db.traders[traderID].questassort == "undefined") {
                 questassort = {"started": {}, "success": {}, "fail": {}};
