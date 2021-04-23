@@ -56,38 +56,41 @@ class InraidServer {
 
 /* adds SpawnedInSession property to items found in a raid */
 function markFoundItems(pmcData, profile, isPlayerScav) {
+	// thanks Mastah Killah#1650
     // mark items found in raid
-    for (let offraidItem of profile.Inventory.items) {
+	for (let offraidItem of profile.Inventory.items) {
         let found = false;
 
-        // mark new items for PMC, mark all items for scavs
+        // mark new items for PMC and all items for scavs
         if (!isPlayerScav) {
-            // check if the item exists
+            // check if the item exists in PMC inventory
             for (let item of pmcData.Inventory.items) {
                 if (offraidItem._id === item._id) {
-                    found = true;
+					// item found in PMC inventory
+					found = true;
+					// copy item previous FIR status
+					if ("upd" in item && "SpawnedInSession" in item.upd) {
+						// tests if offraidItem has the "upd" property. If it exists it copies the previous FIR status if not it creates a new "upd" property with that FIR status
+						(Object.getOwnPropertyDescriptor(offraidItem, "upd") !== undefined) ? Object.assign(offraidItem.upd, {"SpawnedInSession": item.upd.SpawnedInSession}) : Object.assign(offraidItem, {"upd": {"SpawnedInSession": item.upd.SpawnedInSession}});	// overwrite SpawnedInSession value with previous item value or create new value
+					}
+					// FIR status not found - delete offraidItem's SpawnedInSession if it exists
+					else if ("upd" in offraidItem && "SpawnedInSession" in offraidItem.upd) {
+						delete offraidItem.upd.SpawnedInSession;
+					}
                     break;
                 }
             }
-
-            if (found) {
-                // if the item exists and is taken inside the raid, remove the taken in raid status
-                if ("upd" in offraidItem && "SpawnedInSession" in offraidItem.upd) {
-                    delete offraidItem.upd.SpawnedInSession;
-                }
-
-                continue;
-            }
+			
+			// skip to next item if found
+			if (found) {
+				continue;
+			}
         }
 
-        // mark item found in raid
-        if ("upd" in offraidItem) {
-            offraidItem.upd.SpawnedInSession = true;
-        } else {
-            offraidItem.upd = {"SpawnedInSession": true};
-        }
+        // item not found in PMC inventory, add FIR status to new item
+		// tests if offraidItem has the "upd" property. If it exists it updates the FIR status if not it creates a new "upd" property
+		(Object.getOwnPropertyDescriptor(offraidItem, "upd") !== undefined) ? Object.assign(offraidItem.upd, {"SpawnedInSession": true}) : Object.assign(offraidItem, {"upd": {"SpawnedInSession": true}});
     }
-
     return profile;
 }
 
