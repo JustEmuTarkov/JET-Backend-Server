@@ -59,6 +59,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -208,6 +209,12 @@
 									"5f60e784f2bcbb675b00dac7",
 									"5d96141523f0ea1b7f2aacab",
 									"5bd073c986f7747f627e796c",
+									"603618feffd42c541047f771",
+									"603619720ca681766b6a0fc4",
+									"6040de02647ad86262233012",
+									"60361a7497633951dc245eb4",
+									"60361b0b5a45383c122086a1",
+									"60361b5a9a15b10d96792291",
 									"5b4327aa5acfc400175496e0",
 									"5b4329075acfc400153b78ff",
 									"5f994730c91ed922dd355de3",
@@ -339,6 +346,7 @@
 									"5645bcc04bdc2d363b8b4572",
 									"5aa2ba71e5b5b000137b758f",
 									"5b432b965acfc47a8774094e",
+									"6033fa48ffd42c541047f728",
 									"5c165d832e2216398b5a7e36",
 									"5e4d34ca86f774264f758330",
 									"5f60cd6cf2bcbb675b00dac6"
@@ -387,6 +395,7 @@
 									"5d6d2e22a4b9361bd5780d05",
 									"5e71f70186f77429ee09f183",
 									"5c1a1cc52e221602b3136e3d",
+									"603409c80ca681766b6a0fb2",
 									"5c0d32fcd174af02a1659c75",
 									"59e770b986f7742cbd762754"
 								]

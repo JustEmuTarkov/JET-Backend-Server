@@ -59,6 +59,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -125,6 +126,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -191,6 +193,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -257,6 +260,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -323,6 +327,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": true
@@ -389,6 +394,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 300,
 			"Resource": 300,
 			"DogTagQualities": false
@@ -455,6 +461,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": true
@@ -521,6 +528,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -587,6 +595,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -653,6 +662,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -719,6 +729,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -785,6 +796,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -851,6 +863,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -919,6 +932,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -985,6 +999,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1051,6 +1066,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1117,6 +1133,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1183,6 +1200,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1249,6 +1267,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1315,6 +1334,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1381,6 +1401,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1447,6 +1468,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1513,6 +1535,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1579,6 +1602,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1645,6 +1669,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1711,6 +1736,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false
@@ -1777,6 +1803,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 100,
 			"Resource": 100,
 			"DogTagQualities": false
@@ -1843,6 +1870,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0,
 			"DogTagQualities": false

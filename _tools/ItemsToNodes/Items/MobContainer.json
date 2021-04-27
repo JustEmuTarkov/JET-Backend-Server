@@ -59,6 +59,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -162,6 +163,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -293,6 +295,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -424,6 +427,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -555,6 +559,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -685,6 +690,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",
@@ -813,6 +819,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": true,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "main",

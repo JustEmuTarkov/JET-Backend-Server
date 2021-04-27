@@ -59,6 +59,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -357,6 +358,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -585,6 +587,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -891,6 +894,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -1163,6 +1167,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -1544,6 +1549,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{
@@ -1825,6 +1831,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [],
 			"Slots": [
 				{

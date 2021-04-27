@@ -26,7 +26,8 @@ function _write(file, data) {
 }
 
 var GlobalItems = _parse(_read("items.json"));
-GlobalItems = GlobalItems['data'];
+if(typeof GlobalItems['data'] != "undefined")
+	GlobalItems = GlobalItems['data'];
 var Nodes = [];
 console.log("Starting splitting...");
 

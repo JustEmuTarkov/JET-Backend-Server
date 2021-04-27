@@ -313,6 +313,26 @@ class Server {
         });
 	}
 
+	softRestart(){
+		logger.logInfo("[SoftRestart]: Reloading Database");
+		require("../../src/database.js").execute();
+		// will not be required if all data is loaded into memory
+		logger.logInfo("[SoftRestart]: Re-initializing");
+        for (let type in global) {
+			if(type.indexOf("_f") != type.length-2) continue;
+			if(typeof global[type].handler == "object"){
+				if(typeof global[type].handler.initialize == "function"){
+					global[type].handler.initialize();
+				}
+			}
+			if(typeof global[type].initialize == "function"){
+					global[type].initialize();
+			}
+        }
+		logger.logInfo("[SoftRestart]: Reloading TamperMods");
+		global.core.route.TamperModLoad(); // TamperModLoad
+
+	}
     start() {
         // execute cache callback
         logger.logInfo("[Warmup]: Cache callbacks...");
