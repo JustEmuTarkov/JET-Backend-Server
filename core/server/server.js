@@ -339,16 +339,13 @@ class Server {
         for (let type in this.cacheCallback) {
             this.cacheCallback[type]();
         }
+		
 		if(serverConfig.rebuildCache)
 			global.core.route.CacheModLoad(); // CacheModLoad
 		global.core.route.ResModLoad(); // load Res Mods
 		
 		logger.logInfo("[Warmup]: Loading Database");
 		require("../../src/database.js").execute();
-        
-        // execute start callback
-        //logger.logInfo("[Warmup]: Start callbacks...");
-		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
 		
 		// will not be required if all data is loaded into memory
         for (let type in global) {
@@ -362,26 +359,9 @@ class Server {
 					global[type].initialize();
 			}
         }
-		
-		// Load Global Accesable Data Structures
-		/*
-			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
-			// 
-			global.global._database.items
-			global.global._database.globals
-			global.global._database.templates
-			global.global._database.gameplayConfig
-			global.global._database.assort[traderID]
-			global.global._database.someothershit
-		*/
+
 		global.core.route.TamperModLoad(); // TamperModLoad
 
-		/*console.log("staticRoutes")
-		console.log(router.staticRoutes)
-		console.log("dynamicRoutes")
-		console.log(router.dynamicRoutes)
-		return;*/
-		
 		logger.logInfo("Starting server...");
 		this._serverStart();
     }
