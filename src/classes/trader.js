@@ -400,8 +400,8 @@ output : boolean
 function traderFilter(traderFilters, tplToCheck) {
 
     for (let filter of traderFilters) {
-        for (let iaaaaa of helper_f.templatesWithParent(filter)) {
-            if (iaaaaa == tplToCheck) {
+        for (let templateId of helper_f.templatesWithParent(filter)) {
+            if (templateId == tplToCheck) {
                 return true;
             }
         }

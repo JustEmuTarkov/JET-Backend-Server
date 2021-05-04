@@ -22,9 +22,9 @@ function upgrade(pmcData, body, sessionID) {
             continue;
         }
 
-        for (let hideout_stage in _database.hideout.areas) {
-            if (_database.hideout.areas[hideout_stage].type === body.areaType) {
-                let ctime = _database.hideout.areas[hideout_stage].stages[pmcData.Hideout.Areas[hideoutArea].level + 1].constructionTime;
+        for (let hideout_stage in global._database.hideout.areas) {
+            if (global._database.hideout.areas[hideout_stage].type === body.areaType) {
+                let ctime = global._database.hideout.areas[hideout_stage].stages[pmcData.Hideout.Areas[hideoutArea].level + 1].constructionTime;
 
                 if (ctime > 0) {
                     let timestamp = Math.floor(Date.now() / 1000);
@@ -52,7 +52,7 @@ function upgradeComplete(pmcData, body, sessionID) {
         pmcData.Hideout.Areas[hideoutArea].constructing = false;
 
         //go to apply bonuses
-        for (let area_bonus of _database.hideout.areas) {
+        for (let area_bonus of global._database.hideout.areas) {
             if (area_bonus.type !== pmcData.Hideout.Areas[hideoutArea].type) {
                 continue;
             }
@@ -196,13 +196,13 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
         }
     }
 
-    for (let recipe in _database.hideout.scavcase) {
-        if (body.recipeId == _database.hideout.scavcase[recipe]._id) {
+    for (let recipe in global._database.hideout.scavcase) {
+        if (body.recipeId == globals._database.hideout.scavcase[recipe]._id) {
             let rarityItemCounter = {};
             let products = [];
 
-            for (let rarity in _database.hideout.scavcase[recipe].EndProducts) {
-                if (_database.hideout.scavcase[recipe].EndProducts[rarity].max > 0) {
+            for (let rarity in global._database.hideout.scavcase[recipe].EndProducts) {
+                if (global._database.hideout.scavcase[recipe].EndProducts[rarity].max > 0) {
                     rarityItemCounter[rarity] = _database.hideout.scavcase[recipe].EndProducts[rarity].max;
                 }
             }
@@ -279,8 +279,8 @@ function takeProduction(pmcData, body, sessionID) {
         return handleBitcoinReproduction(pmcData, sessionID)
     }
 
-    for (let recipe in _database.hideout.production) {
-        if (body.recipeId !== _database.hideout.production[recipe]._id) {
+    for (let recipe in global._database.hideout.production) {
+        if (body.recipeId !== global._database.hideout.production[recipe]._id) {
             continue;
         }
 
@@ -294,7 +294,7 @@ function takeProduction(pmcData, body, sessionID) {
         }
 
         // create item and throw it into profile
-        let id = _database.hideout.production[recipe].endProduct;
+        let id = global._database.hideout.production[recipe].endProduct;
 
         // replace the base item with its main preset
         if (preset_f.handler.hasPreset(id)) {
@@ -303,7 +303,7 @@ function takeProduction(pmcData, body, sessionID) {
 
         let newReq = {
             "item_id": id,
-            "count": _database.hideout.production[recipe].count,
+            "count": global._database.hideout.production[recipe].count,
             "tid": "ragfair"
         };
 
@@ -343,10 +343,10 @@ function takeProduction(pmcData, body, sessionID) {
 }
 
 function registerProduction(pmcData, body, sessionID) {
-    for (let recipe in _database.hideout.production) {
-        if (body.recipeId === _database.hideout.production[recipe]._id) {
+    for (let recipe in global._database.hideout.production) {
+        if (body.recipeId === global._database.hideout.production[recipe]._id) {
             try {
-                pmcData.Hideout.Production[_database.hideout.production[recipe]._id] = {
+                pmcData.Hideout.Production[global._database.hideout.production[recipe]._id] = {
                     "Progress": 0,
                     "inProgress": true,
                     "RecipeId": body.recipeId,

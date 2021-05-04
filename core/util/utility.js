@@ -1,6 +1,6 @@
 "use strict";
 // WipeDependencies
-exports.wipeDepend = (data) => {
+exports.ClearDependencies = (data) => {
 	return JSON.parse(JSON.stringify(data));
 }
 

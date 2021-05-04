@@ -1,1 +1,1 @@
-exports.execute = (url, info, sessionID) => fileIO.read(db.user.cache.hideout_production);
+exports.execute = (url, info, sessionID) => response_f.getBody(global._database.hideout.production);

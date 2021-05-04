@@ -1,19 +1,11 @@
-"use strict";
-
-let weather = undefined;
-
-function initialize() {
-    weather = fileIO.readParsed(db.user.cache.weather);
-}
-
-function generate() {
+module.exports.generate = () => {
     let output = {};
 
     // set weather
     if (global._database.gameplayConfig.location.forceWeatherEnabled) {
-        output = weather.data[global._database.gameplayConfig.location.forceWeatherId];
+        output = global._database.weather.data[global._database.gameplayConfig.location.forceWeatherId];
     } else {
-        output = weather.data[utility.getRandomInt(0, weather.data.length - 1)];
+        output = global._database.weather.data[utility.getRandomInt(0, global._database.weather.data.length - 1)];
     }
 
     // replace date and time
@@ -39,6 +31,3 @@ function generate() {
 
     return output;
 }
-
-module.exports.initialize = initialize;
-module.exports.generate = generate;

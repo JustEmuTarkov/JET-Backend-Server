@@ -181,8 +181,13 @@ function payMoney(pmcData, body, sessionID) {
                     output = move_f.removeItem(pmcData, item._id, output, sessionID);
                     body.scheme_items[index].count = 0;
                 } else {
-                    currencyTpl = item._tpl;
-                    break;
+					// make sure number is correct and we are not trying to get stack which will become negative...
+					if(typeof item.upd.StackMaxSize != "undefined"){
+						if(item.upd.StackMaxSize >= body.scheme_items[index].count){
+							currencyTpl = item._tpl;
+							break;
+						}
+					}
                 }
             }
         }
@@ -257,7 +262,7 @@ function findMoney(by, pmcData, barter_itemID) { // find required items to take 
 
     for (const barterID of barterIDs) {
         let mapResult = pmcData.Inventory.items.filter(item => {
-            return by === "tpl" ? (item._tpl === barterID) : (item._id === barterID);
+            return (by === "tpl" ? (item._tpl === barterID) : (item._id === barterID)) && item.upd.StackMaxSize >= ;
         });
 
         itemsArray = Object.assign(itemsArray, mapResult);

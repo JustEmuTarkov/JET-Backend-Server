@@ -1,6 +1,6 @@
 "use strict";
 
-const { logger } = require("../../core/util/logger");
+//not required ....  its already loaded in globals. const { logger } = require("../../core/util/logger");
 
 class InraidServer {
     constructor() {

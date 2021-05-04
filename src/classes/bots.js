@@ -94,7 +94,7 @@ class Controller
                 const pmcSide = (utility.getRandomInt(0, 99) < global._database.gameplayConfig.bots.pmc.usecChance) ? "Usec" : "Bear";
                 const role = condition.Role;
                 const isPmc = (role in global._database.gameplayConfig.bots.pmc.types && utility.getRandomInt(0, 99) < global._database.gameplayConfig.bots.pmc.types[role]);
-                let bot = utility.wipeDepend(global._database.core.botBase);
+                let bot = utility.ClearDependencies(global._database.core.botBase);
 
                 bot.Info.Settings.BotDifficulty = condition.Difficulty;
                 bot.Info.Settings.Role = role;
@@ -304,7 +304,7 @@ class Generator
 
         bots_f.generator.generateLoot(templateInventory.items, generation.items);
 
-        return utility.wipeDepend(this.inventory);
+        return utility.ClearDependencies(this.inventory);
     }
 
     generateInventoryBase()
@@ -1094,7 +1094,7 @@ class ExhaustableArray
 {
     constructor(itemPool)
     {
-        this.pool = utility.wipeDepend(itemPool);
+        this.pool = utility.ClearDependencies(itemPool);
     }
 
     getRandomValue()
@@ -1105,7 +1105,7 @@ class ExhaustableArray
         }
 
         const index = utility.getRandomInt(0, this.pool.length - 1);
-        const toReturn = utility.wipeDepend(this.pool[index]);
+        const toReturn = utility.ClearDependencies(this.pool[index]);
         this.pool.splice(index, 1);
         return toReturn;
     }
