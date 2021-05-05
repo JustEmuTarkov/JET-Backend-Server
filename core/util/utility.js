@@ -215,14 +215,14 @@ exports.splitStack = (item) =>
 	// then just return the item as is.
 	if (count <= maxStack)
 	{
-		stacks.push(utility.wipeDepend(item));
+		stacks.push(utility.ClearDependencies(item));
 		return stacks;
 	}
 
 	while (count)
 	{
 		let amount = Math.min(count, maxStack);
-		let newStack = utility.wipeDepend(item);
+		let newStack = utility.ClearDependencies(item);
 
 		newStack._id = utility.generateNewItemId();
 		newStack.upd.StackObjectsCount = amount;
