@@ -181,9 +181,15 @@ function payMoney(pmcData, body, sessionID) {
                     output = move_f.removeItem(pmcData, item._id, output, sessionID);
                     body.scheme_items[index].count = 0;
                 } else {
+                    if (!item.hasOwnProperty("upd")) {
+                        // This stack doesn't have a StackObjectsCount or upd defined on it.
+                        item.upd = {
+                            "StackObjectsCount": 1
+                        }
+                    }
 					// make sure number is correct and we are not trying to get stack which will become negative...
-					if(typeof item.upd.StackMaxSize != "undefined"){
-						if(item.upd.StackMaxSize >= body.scheme_items[index].count){
+					if(typeof item.upd.StackObjectsCount != "undefined"){
+						if(item.upd.StackObjectsCount >= body.scheme_items[index].count){
 							currencyTpl = item._tpl;
 							break;
 						}
