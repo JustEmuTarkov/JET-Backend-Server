@@ -18,10 +18,9 @@ class InraidServer {
 
     removeMapAccessKey(offraidData, sessionID) {
 		if(typeof offraid_f.handler.players[sessionID] == "undefined"){
-			logger.logWarning("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
-			return;
+			return logger.logWarning("Disabling: remove the map access key, because offraid_f.handler.players[sessionID] is undefined.");
 		}
-        let map = global._database.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()].base;
+        let map = global._database.locations[offraid_f.handler.players[sessionID].locationId.toLowerCase()].base;
         let mapKey = map.AccessKeys[0];
 
         if (!mapKey) {
@@ -269,18 +268,18 @@ function saveProgress(offraidData, sessionID) {
     if (!global._database.gameplayConfig.inraid.saveLootEnabled) {
         return;
     }
-	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
-	let offlineWorksProperly = false;
-	if(typeof offraid_f.handler.players[sessionID] != "undefined")
-		if(fileIO.exist(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]))
-			offlineWorksProperly = true;
+
     let insuranceEnabled = false;
-	if(!offlineWorksProperly){
-		logger.logWarning("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
-	} else {
-		let map = fileIO.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
-		insuranceEnabled = map.Insurance;
-	}
+
+    try {
+        let map = fileIO.readParsed(db.locations.base[offraid_f.handler.players[sessionID].locationId.toLowerCase()]);
+        insuranceEnabled = map.Insurance;  
+    } catch (e) {
+        logger.logError(`There was an issue loading map data. Insurance may not be saved for this raid. Error: ${e.stack}`)
+        logger.logDebug(`Players object: ${offraid_f.handler.players}`)
+        logger.logDebug(`Current player object: ${JSON.stringify(offraid_f.handler.players[sessionID], null, 4)}`)
+    }
+
 	if(typeof offraidData == "undefined")
 	{
 		logger.logError("offraidData" + offraidData);
