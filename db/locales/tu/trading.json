@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Gerçek isim bilinmiyor>",
+		"FirstName": "<Gerçek ismi bilinmiyor>",
+		"Nickname": "Fence",
+		"Location": "Tarkov ve çevresi boyunca uzanan pazar ağı",
+		"Description": "Çatışma Fence'in malların alım satımı için anonim pazarlar açması ile yavaş yavaş başladı. Bu pazarları gizli tutarak, Norvinsk bölgesinin her yerinde iyi organize edilmiş bir kaçakçılık ağını kurmayı başardı."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Kasaba",
+		"Description": "Norvinsk bölgesindeki ablukayı uygulayan iç kuvvetlere malzeme sağlamaktan sorumlu üssün kıdemli subayı, sözleşme savaşları sırasında BEAR PMC operatörlerine gizlice silah, mühimmat ve diğer gerekli ekipmanları sağladı."
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Alexander Fyodorovich Kiselyov",
+		"FirstName": "Alexander",
+		"Nickname": "Skier",
+		"Location": "Gümrük",
+		"Description": "Liman bölgesinde gümrük terminali çalışanı. Başlangıçta terminal mallarını satarken, şimdilerde terminal civarında eline gelen her şeyi kapmak için bir çete oluşturdu."
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "Şehir",
+		"Description": "Tarkov Merkez Şehir Hastanesi Travma Bakımı Bölümü Başkanı."
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "Tadeusz Pilsudski",
+		"FirstName": "Tadeusz",
+		"Nickname": "Peacekeeper",
+		"Location": "Liman Bölgesi",
+		"Description": "BM barış gücü, Tarkov liman bölgesine giden merkezi kontrol noktalarından birinde görevli subay tedarik ediyor. Mavi kasklılar başından beri silah, cephane ve bazı askeri ekipman karşılığında değerli her şeyi satın alarak küçük anlaşmalara yöneliyor."
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "İsim",
+		"FirstName": "İsim",
+		"Nickname": "İsim",
+		"Location": "İsim",
+		"Description": "İsim"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "Sergey Arsenyevich Samoylov",
+		"FirstName": "Sergey Arsenyevich",
+		"Nickname": "Mechanic",
+		"Location": "Kimyasal Tesis",
+		"Description": "Kimyasal tesisin şefi savaştan önce, en başından beri silah modifikasyonu ve karmaşık ekipmanların onarımını ve teknisyenliğini yapardı. Yalnız yaşamayı tercih eder, her şey üzerinde karmaşık ve zorlu görev yerleştirerek el altından gizlice çalışır."
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "Abramyan Arshavir Sarkisivich",
+		"FirstName": "Arshavir Sarkisivich",
+		"Nickname": "Ragman",
+		"Location": "Tarkov'un merkezi pazarı",
+		"Description": "Tarkov'un kenar mahallelerin de bulunan büyük pazarda yönetici olarak çalıştı. Kıyafet ve ekipmanlar ile ilgili her şeyi satıyor."
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "Kharitonov Ivan Egorovich",
+		"FirstName": "Ivan Kharitonov",
+		"Nickname": "Jaeger",
+		"Location": "Priozersky rezerv",
+		"Description": "Devlet Avcılık Hizmetlerine ait Priozersky rezerv ormanındaki av arazisinde çalıştı. Profesyonel avcı ve hayatta kalma uzmanı. Koşullar ne olursa olsun, avlanma alanını olası tüm tehditlerden korudu ve daima koruyacak."
+	}
+}

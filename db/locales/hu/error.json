@@ -1,0 +1,19 @@
+{
+	"Offer not found": "Sajnos az ajánlatot már más megvásárolta",
+	"Unknown error": "Ismeretlen hiba",
+	"Attempted transaction with items missing from the stash": "A tranzakció elemei hiányoznak a rejtekhelyedből",
+	"The trader is out of cash": "A kereskedő kifogyott a pénzből",
+	"The item is already sold": "A tárgy már elkelt",
+	"Trader does not deal in this type of items": "A kereskedő nem foglalkozik ilyen típusú tárgyakkal",
+	"Transaction error. The cost of goods has already changed.": "Tranzakciós hiba. A termékek ára már megváltozott.",
+	"Not enough space in stash": "Nincs elég hely a tárgynak",
+	"You have already bought the maximum amount of this item in the current restock": "Már megvásároltad a maximális mennyiséget ebből a tárgyból ami jelenleg készleten van",
+	"Bad user loyalty level": "Nem megfelelő hűség szint",
+	"The trader is out of stock": "A kereskedő kifogyott a termékből",
+	"230 - MAX LOGIN COUNT": "Elérted a maximális próbálkozások számát. Próbáld meg később",
+	"1514 - Transaction error. The cost of goods has already changed.": "Tranzakciós hiba. A termékek ára már megváltozott (1514-es hiba).",
+	"201 - Client not authorized or not selected game profile": "Client authorization failed, please restart the game or check the Internet connection",
+	"Backend error: Unknown Error": "Backend hiba: Nem sikerült a backendhez csatlakozni",
+	"BackendErrorHeader": "Backend hiba",
+	"BackendErrorMessage": "Hiba történt a backend oldalán"
+}

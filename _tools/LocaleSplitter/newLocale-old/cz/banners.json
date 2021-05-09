@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "Soukromá vojenská společnost USEC byla založena v roce 1999 spojením společností: KerniSEC a Safe Sea. V roce 2004 jednatel společnosti Terra Group international holding uzavřel s vedením USEC kontrakt, čímž v podstatě vytvořil soukromou armádu firmy TG, o síle více než 7500 mužů s kancelářemi po celém světe."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "Soukromá vojenská společnost BEAR byla založena tajným nařízením vlády Ruské federace, jako opatření zaměřené proti nezákonné činnost společnosti Terra Group na Ruském území."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "Terra Group je nadnárodní holdingová společnost, jejíchž dceřiné společnosti jsou zapojeny do široké škály různých aktivit. Holding zahrnuje více než 40 velkých firem s pobočkami ve více než 120 zemích světa."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "Laboratoře TerraGroup PLC",
+		"description": "Dceřiná společnost Terra Group international holding byla založena ve Velké Británii a oficiálně se zabývá vědeckým výzkumem biotechnologií v agroprůmyslu a zemědělství. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "Tarkov - centrum",
+		"description": "Tarkov je město na ruském severozápadě, samosprávný celek v Norvinském regionu a jedno ze dvou nejdůležitějších měst v Norvinské zvláštní ekonomické zóně."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Norvinská zvláštní ekonomická zóna",
+		"description": "Nevelké území v regionu Norvinsk zahrnující města Norvinsk a Tarkov s přilehlými objekty infrastruktury. Tyto města mají zvláštní právní status ve vztahu ke zbytku Ruska a privilegované ekonomické podmínky pro národní a zahraniční podniky.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavové",
+		"description": "Uprostřed chaosu a bezpráví, v nedostatku základních zásob a místa pro život zvedají své hlavy jako první temné postavy bez morálních zábran a etických zásad. A pokud ještě nějaké zábrany mají, rychle o ně přicházejí pod tlakem okolností. Sdružují se do malých skupin a jako divoký psi si, dle zákona džungle, navzájem jdou po krku jen kvůli cennější kořisti. Takto se z někdejších obyvatel zrodili Scavové."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Scav Raiders",
+		"ShortName": "banner_scavraiders",
+		"Description": "Pochybná skupina ozbrojenců o které se říká, že je složena z operátorů PMC, místních obyvatel a dalších lidí s bojovými zkušenostmi a výcvikem."
+	}
+}

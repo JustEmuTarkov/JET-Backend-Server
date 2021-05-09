@@ -1,0 +1,19 @@
+{
+	"Offer not found": "Omlouvám se, nabízená položka byla již zakoupena",
+	"Unknown error": "Neznámá chyba",
+	"Attempted transaction with items missing from the stash": "Pokoušíte se o transakci se zbožím, které nemáte ve skrýši",
+	"The trader is out of cash": "Obchodník nemá hotovost",
+	"The item is already sold": "Položka je již prodaná",
+	"Trader does not deal in this type of items": "Obchodníka tento druh zboží nezajímá",
+	"Transaction error. The cost of goods has already changed.": "Chyba transakce. Cena zboží se změnila.",
+	"Not enough space in stash": "Ve skrýši nemáte dostatek místa",
+	"You have already bought the maximum amount of this item in the current restock": "Již jste koupili maximální množství této položky z aktuálně naskladněného množství",
+	"Bad user loyalty level": "Máte špatnou reputaci",
+	"The trader is out of stock": "Obchodník nemá naskladněno",
+	"230 - MAX LOGIN COUNT": "Dosáhl jste maximálního počtu pokusů, zkuste to později",
+	"1514 - Transaction error. The cost of goods has already changed.": "1514 - Chyba transakce. Cena zboží se změnila.",
+	"201 - Client not authorized or not selected game profile": "Client authorization failed, please restart the game or check the Internet connection",
+	"Backend error: Unknown Error": "Chyba backendu: Chyba připojení k backendu",
+	"BackendErrorHeader": "Backend error",
+	"BackendErrorMessage": "Došlo k chybě na straně backendu"
+}

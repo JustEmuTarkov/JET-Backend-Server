@@ -744,7 +744,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 3,
+			"SpawnChance": 4,
 			"CreditsPrice": 35000,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -810,7 +810,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 2,
+			"SpawnChance": 3,
 			"CreditsPrice": 52000,
 			"ItemSound": "generic",
 			"Prefab": {
@@ -876,7 +876,7 @@
 			"Height": 1,
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
-			"SpawnChance": 3,
+			"SpawnChance": 4,
 			"CreditsPrice": 6958,
 			"ItemSound": "generic",
 			"Prefab": {

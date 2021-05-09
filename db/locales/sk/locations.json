@@ -1,0 +1,67 @@
+{
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Factory",
+		"Description": "Priemyselná zóna a zariadenia chemičky č. 16 boli nelegálne prenajaté spoločnosti TerraGroup. Počas Contract Wars sa priestory závodu stali svedkami mnohých tvrdých prestreliek medzi operátormi USEC a BEAR, ktorí potom striedavo ovládali túto priemyselnú časť Tarkova.\n\nNestabilná situácia neskôr zapríčinila, že sa priestory zariadenia stali útočiskom pre zvyšných civilistov, odpadlíkov a všetkých druhov militantov a ozbrojených síl, vrátane rozptýlených jednotiek USEC a BEAR."
+	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Provizórna aréna určená pre \"gladiatorské\" súboje, vytvorená miestnymi z obchodného strediska Equator-2."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Customs",
+		"Description": "Veľký areál priemyselného parku sa nachádza v blízkosti továrne. V tejto oblasti sa nachádza colný terminál, sklady palív, kancelárie, ako aj rad ďalších budov infraštruktúry."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Woods",
+		"Description": "Prírodná rezervácia Priozersk bola donedávna zahrnutá do zoznamu štátom chránených prírodných rezervácií severozápadného okresu."
+	},
+	"5704e47ed2720bb35b8b4568": {
+		"Name": "Town",
+		"Description": "Mestečko Verkhneye je malá mestská zástavba pri mori. Medzi miestnymi známa ako výnimočné záhradkárske a relaxačné miesto."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Lighthouse",
+		"Description": "Maják na myse Dalniy kedysi býval strategickým miestom mesta. Na začiatku konfliktu ho operátori USEC používali ako pristávaciu zónu, čím prilákali pozornosť jednotiek BEAR, ktoré sa snažili obmedziť činnosti nepriateľských PMC až na nulu."
+	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Shoreline",
+		"Description": "Shoreline tvorí veľkú časti Tarkovského predmestia, susediacu s prístavom.\nV tejto oblasti nájdete čiastočne opustenú obec, moderné súkromne obydlia, poľnohospodársku pôdu, dlhé pobrežie s typickými stavbami, čerpaciu stanicu, meteorologickú stanicu, rádiový vysielač a ďaľšie miesta.\nHlavným bodom Vášho záujmu bude veľké kúpeľné stredisko \"Azure Coast\". ktoré sa skladá z niekoľkých budov s vlastnou vodnou elektrárňou. Tento rezort bol kedysi využívaný pre ubytovanie zamestnancov spoločnosti Tg počas príprav na evakuáciu, ktorá pribiehala pomocou tarkovského prístavu"
+	},
+	"5704e5a4d2720bb45b8b4567": {
+		"Name": "Terminal",
+		"Description": "O veľkej časti prístavu sa hovorilo ako o záložnom extrakčnom mieste Emercomu. "
+	},
+	"5704e5fad2720bc05b8b4567": {
+		"Name": "Reserve",
+		"Description": "Tajná základňa Agentúry federálnych štátnych rezerv, ktorá podľa miestnych legiend obsahuje dostatok zásob na prežitie počas niekoľkých rokov: jedlo, zdravotnícke pomôcky a ďalšie zdroje, dostatok na prežitie jadrovej vojny."
+	},
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Private Sector",
+		"Description": "Súkromná oblasť tvorená chatami, ktoré vlastnili obyvatelia Tarkova z vyšších vrstiev. Na začiatku rastúceho chaosu slúžili ako stavby dočasných úkrytov pre utečencov, ale teraz sú známym obľúbeným cieľom nájazdov Scavov."
+	},
+	"5714dbc024597771384a510d": {
+		"Name": "Interchange",
+		"Description": "Juhovýchodná diaľnica je kľúčovým miestom v dopravnom systéme mesta. Tento strategický dopravný uzol spájajúci prístav a priemyselnú časť Tarkova. V centre diaľničného uzla sa nachádza obrovské nákupné centrum ULTRA, ktoré bolo využité ako hlavná základňa pri operáciach spojených s evakuáciou EMERCOM."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Suburbs",
+		"Description": "Na predmestí a v prímestských oblastiach Tarkova sa nachádza dostatočná infraštruktúra a pohodlie stvorené pre dlhý a šťastný život."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Streets of Tarkov",
+		"Description": "Centrum mesta Tarkov obsahuje, banky, nákupné centrá a hotely, jednoducho všetko potrebné vybavenie pre prosperujúci metropolu."
+	},
+	"599319c986f7740dca3070a6": {
+		"Name": "Arena",
+		"Description": "Provizórna aréna určená pre \"gladiátorské\" súboje, upravená miestnymi z obchodného strediska Equator-2."
+	},
+	"59fc81d786f774390775787e": {
+		"Name": "Factory",
+		"Description": "Priemyselná zóna a zariadenia chemičky č.16 boli nelegálne prenajaté spoločnosti TerraGroup. Počas Contract Wars sa priestory závodu stali svedkami mnohých tvrdých prestreliek medzi operátormi USEC a BEAR, ktorí potom striedavo ovládali túto priemyselnú časť Tarkova.\n\nNestabilná situácia neskôr zapríčinila, že sa priestory zariadenia stali útočiskom pre zvyšných civilistov, odpadlíkov a všetkých druhov militantov a ozbrojených síl, vrátane rozptýlených jednotiek USEC a BEAR"
+	},
+	"5b0fc42d86f7744a585f9105": {
+		"Name": "The Lab",
+		"ShortName": "The Lab",
+		"Description": "Podzemný laboratórny komplex Terragroup Labs je tajným objektom priamo v centre mesta Tarkov. Oficiálne toto výskumné centrum neexistuje a na základe dátových zápisov sa zaoberá výskumno-vývojovými, testovacími a simulačnými projektmi v oblasti chémie, fyziky, biológie a hightech."
+	}
+}

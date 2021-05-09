@@ -299,6 +299,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5a718b548dc32e000d46d262",
 			"defAmmo": "5ede474b0c226a66f5402622",
+			"AdjustCollimatorsToTrajectory": true,
 			"shotgunDispersion": 10,
 			"Chambers": [
 				{

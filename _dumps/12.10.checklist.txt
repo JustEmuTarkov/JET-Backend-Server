@@ -1,0 +1,13 @@
+DONE:
+- globals
+- customization
+- hideout prods
+- hideout areas
+- scavcase prods
+- items
+- locales (en, rest of locales are outdated)
+- quests (as of latest dump)
+
+NEED TO DO:
+- locations (base and loot)
+- traders (assort, trader list, prices, etc.)

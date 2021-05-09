@@ -149,7 +149,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 13,
+			"Ergonomics": 17,
 			"Velocity": 2.81,
 			"bEffDist": 1000,
 			"bHearDist": 100,
@@ -158,6 +158,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5ae0973a5acfc4001562206c",
 			"defAmmo": "5887431f2459777e1612938f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -400,7 +401,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 13,
+			"Ergonomics": 17,
 			"Velocity": 3.81,
 			"bEffDist": 1000,
 			"bHearDist": 100,
@@ -409,6 +410,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5ae0973a5acfc4001562206c",
 			"defAmmo": "5887431f2459777e1612938f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -730,6 +732,7 @@
 			"isBoltCatch": true,
 			"defMagType": "559ba5b34bdc2d1f1a8b4582",
 			"defAmmo": "5887431f2459777e1612938f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -964,7 +967,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 26,
+			"Ergonomics": 36,
 			"Velocity": 2.9,
 			"bEffDist": 1000,
 			"bHearDist": 100,
@@ -973,6 +976,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5de653abf76fdc1ce94a5a2a",
 			"defAmmo": "59e655cb86f77411dc52a77b",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -1202,7 +1206,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 25,
+			"Ergonomics": 35,
 			"Velocity": 3.81,
 			"bEffDist": 1000,
 			"bHearDist": 80,
@@ -1211,6 +1215,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5df25b6c0b92095fd441e4cf",
 			"defAmmo": "58dd3ad986f77403051cba8f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -1511,7 +1516,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 30,
+			"Ergonomics": 40,
 			"Velocity": 5.81,
 			"bEffDist": 1000,
 			"bHearDist": 80,
@@ -1520,6 +1525,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5888988e24597752fe43a6fa",
 			"defAmmo": "58dd3ad986f77403051cba8f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -1773,7 +1779,7 @@
 			],
 			"RecolDispersion": 10,
 			"bFirerate": 30,
-			"Ergonomics": 23,
+			"Ergonomics": 33,
 			"Velocity": 1.81,
 			"bEffDist": 1000,
 			"bHearDist": 100,
@@ -1782,6 +1788,7 @@
 			"isBoltCatch": true,
 			"defMagType": "5bfea7ad0db834001c38f1ee",
 			"defAmmo": "5a6086ea4f39f99cd479502f",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{

@@ -1048,7 +1048,7 @@
 			"StackMaxSize": 1,
 			"Rarity": "Rare",
 			"SpawnChance": 2,
-			"CreditsPrice": 6000,
+			"CreditsPrice": 12000,
 			"ItemSound": "gear_goggles",
 			"Prefab": {
 				"path": "assets/content/items/equipment/glasses_npp/item_equipment_glasses_npp.bundle",
@@ -1119,12 +1119,12 @@
 			"HasHinge": false,
 			"MaterialType": "GlassVisor",
 			"RicochetParams": {
-				"x": 0,
-				"y": 0,
-				"z": 80
+				"x": 0.7,
+				"y": 0.3,
+				"z": 55
 			},
 			"DeafStrength": "None",
-			"BluntThroughput": 0,
+			"BluntThroughput": 0.35,
 			"ArmorMaterial": "Glass",
 			"BlindnessProtection": 0.1
 		},

@@ -1,0 +1,35 @@
+{
+	"5464e0404bdc2d2a708b4567": {
+		"name": "United Security",
+		"description": "A USEC privát katonai vállalatot 1999-ben alapították miután a KerniSEC, és a Safe Sea egyesült. 2004-ben a Terra Group egyik ügynöke felvette a kapcsolatot a USEC-el, és ennek következtében vált magánhadsereggé, irodákkal világszerte, illetve 7500 fős személyzettel."
+	},
+	"5464e0454bdc2d06708b4567": {
+		"name": "BEAR",
+		"description": "A BEAR egy magán katonai szervezet amely az Orosz Föderáció kormányának egy titkos rendelete alapján lett létrehozva a Terra Group Oroszország területén végzett illegális tevékenysége ellen."
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "A TG egy transznacionális csúcsvállalat amelynek leányvállalatai számos tevékenységet folytatnak. Több mint 40 nagyvállalatot foglal magában, melyeket több mint 120 országban képviselnek."
+	},
+	"5805f617245977100b2c1f41": {
+		"name": "TerraGroup Labs PLC",
+		"description": "Brit székhelyű korlátolt felelősségű társaság (PLC), a Terra Group nemzetközi holding leányvállalata. Hivatalosan biotechnológiai kutatásokat végeznek az agrár iparban és mezőgazdaságban. "
+	},
+	"5807be8924597742c603fa19": {
+		"name": "Tarkov városa",
+		"description": "Tarkov egy északnyugati orosz város, önálló önkormányzatisággal rendelkezik a Norvinsk régióban és a Norvinsk Különleges Gazdasági Övezet két városának egyike."
+	},
+	"5807bfe124597742a92e0a4c": {
+		"name": "Norvinsk-i speciális gazdasági terület",
+		"description": "Korlátozott terület a Norvinsk régióban, beleértve Norvinsk és Tarkov városait is a hozzá tartozó infrastrukturális objektumokkal amik egyedi jogállással rendelkeznek, Oroszország többi részével szemben, valamint kiváltságos gazdasági feltételekkel a nemzeti- és külföldi vállalkozások számára.  "
+	},
+	"5807c3f124597746bf2db2ce": {
+		"name": "Scavek",
+		"description": "A káosz és törvénytelenség közepette, a létfontosságú ellátmányok és területek hiánya miatt akik legelőször felbukkannak azok azon kétes alakok, akiket nem zavarnak a túlzott erkölcsi illetve etikai korlátozások vagy könnyedén elveszítik azokat a körülmények hatására. Falkákban gyülekeznek és farkas törvények szerint élnek, képesek akár egymás torkát is elvágni egy jobb falat reményében. Így lesz a mindennapi polgárból Scav."
+	},
+	"5c1b857086f77465f465faa4": {
+		"Name": "Scav fosztogatók",
+		"ShortName": "banner_scavraiders",
+		"Description": "Rejtélyes fegyveres csoport aminek, a pletykák szerint, tagjai az ex PMC katonák, helyi lakosok és más emberek akik harci és taktikai kiképzésben részesültek."
+	}
+}

@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<本名不詳>",
+		"FirstName": "<本名不詳>",
+		"Nickname": "Fence",
+		"Location": "タルコフ市内外のブラックマーケット",
+		"Description": "Fenceは紛争が始まる以前から、既に匿名で盗品を売買するためのルートを確立し始めていた。その後も自らの匿名性は維持しつつも、今やノルヴィンスク地方全域で展開されている密輸業者ネットワークをまとめ上げている。"
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Town",
+		"Description": "ノルヴィンスク地域を封鎖した国内軍の後方補給基地倉庫を管理するロシア連邦軍の准士官。契約戦争ではBEARのオペレーター達に武器、弾薬及び、その他の様々な物資をひそかに提供していた。"
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Alexander Fyodorovich Kiselyov",
+		"FirstName": "Alexander",
+		"Nickname": "Skier",
+		"Location": "Customs",
+		"Description": "港湾地区にある税関ターミナルの従業員。当初はターミナル内の品物で商売をしていただけだったが、紛争が激しくなる中で周囲のごろつきたちをまとめ上げ、ターミナル周辺を手中に収めた。"
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "City",
+		"Description": "タルコフ市中央病院の外科医長を務めている。"
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "Tadeusz Pilsudski",
+		"FirstName": "Tadeusz",
+		"Nickname": "Peacekeeper",
+		"Location": "港湾地域",
+		"Description": "国連平和維持軍の補給担当士官。タルコフ市の港湾地域へと繋がる中央検問所の1つに拠点を築いている。青ヘルメット達は紛争の最初期から積極的な少額取引を行っており、値打ち物を何でも買い取ったり、西側製の武器や弾薬、装備品と交換したりしている。"
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "本名",
+		"FirstName": "名前",
+		"Nickname": "通称",
+		"Location": "場所",
+		"Description": "説明"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "Sergey Arsenyevich Samoylov",
+		"FirstName": "Sergey Arsenyevich",
+		"Nickname": "Mechanic",
+		"Location": "化学プラント",
+		"Description": "かつては化学プラントの現場主任を務めており、紛争の初期から複雑な機器の修理や改造、メンテナンスに携わっていた。彼は人目に付かない孤独な生き方と慎重な行動を好み、困難に挑戦することを最優先とする気質だ。"
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "Abramyan Sarkisivich Arshavir",
+		"FirstName": "Arshavir Sarkisivich",
+		"Nickname": "Ragman",
+		"Location": "タルコフ中央市場",
+		"Description": "かつてはタルコフ郊外の大きな市場で管理人を務めていた。衣類や装備品に関するものは何でも取り扱う。"
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "Ivan Egorovich Kharitonov",
+		"FirstName": "Ivan Kharitonov",
+		"Nickname": "Jaeger",
+		"Location": "プリオゼルスキー自然保護区",
+		"Description": "野生動物保護管理局の職員としてプリオゼルスキー自然保護区で働いていた、プロのハンターかつサバイバルの専門家。彼はこれまでもこれからも、あらゆる不法侵入者から保護区を守り続ける。"
+	}
+}

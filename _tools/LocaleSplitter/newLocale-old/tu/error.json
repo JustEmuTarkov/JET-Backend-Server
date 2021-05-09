@@ -1,0 +1,19 @@
+{
+	"Offer not found": "Maalesef teklif zaten satın alındı",
+	"Unknown error": "Bilinmeyen hata",
+	"Attempted transaction with items missing from the stash": "Zuladan bulunmayan bir eşya ile işlem denendi",
+	"The trader is out of cash": "Tüccarın parası tükendi",
+	"The item is already sold": "Eşya zaten satıldı",
+	"Trader does not deal in this type of items": "Tüccar bu tür eşyalar için anlaşma yapmıyor",
+	"Transaction error. The cost of goods has already changed.": "İşlem hatası. Malların maliyeti zaten değişti.",
+	"Not enough space in stash": "Eşya için zulada alan yok",
+	"You have already bought the maximum amount of this item in the current restock": "Mevcut stoktaki bu eşyanın maksimum miktarını zaten aldınız",
+	"Bad user loyalty level": "Kullanıcı sadakat düzeyi kötü",
+	"The trader is out of stock": "Tüccarın stoku tükendi",
+	"230 - MAX LOGIN COUNT": "Maksimum giriş denemesine ulaştınız. Daha sonra tekrar deneyiniz",
+	"1514 - Transaction error. The cost of goods has already changed.": "1514 - İşlem hatası. Malların maliyeti zaten değişti.",
+	"201 - Client not authorized or not selected game profile": "Client authorization failed, please restart the game or check the Internet connection",
+	"Backend error: Unknown Error": "Backend error: Error connecting to backend",
+	"BackendErrorHeader": "Backend error",
+	"BackendErrorMessage": "An error occurred on backend side"
+}

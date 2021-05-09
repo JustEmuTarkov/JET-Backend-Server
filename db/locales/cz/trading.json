@@ -1,0 +1,65 @@
+{
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Skutečné jméno neznámé>",
+		"FirstName": "<Skutečné jméno neznámé>",
+		"Nickname": "Fence",
+		"Location": "Síť prodejen v Tarkově a jeho okolí",
+		"Description": "Konflikt sotva započal, když začal Fence zakládat anonymní prodejny. Ač se držel inkognito, zvládl vytvořit dobře organizovanou síť pašeráků po celém Norvinsku."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Město",
+		"Description": "Důstojník spravující zásobovací sklady na podpůrné základně pro jednotky ruského Ministerstva vnitřních věcí, které udržují blokádu norvinského regionu. Během Válek kontraktorů tajně zásoboval operátory BEAR zbraněmi, municí a dalším proviantem, který měl k dispozici."
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Alexander Fyodorovich Kiselyov",
+		"FirstName": "Alexandr",
+		"Nickname": "Skier",
+		"Location": "Customs",
+		"Description": "Zaměstnanec přístavního terminálu v Customs (celnice). Zpočátku kšeftoval jen se zbožím z překladiště, ale v průběhu konfliktu sestavil gang, díky kterému dosáhl i na zboží z blízkého okolí terminálu."
+	},
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Terapeutka",
+		"Location": "City",
+		"Description": "Vedoucí traumatologického oddělení centrální městské nemocnice v Tarkově."
+	},
+	"5935c25fb3acc3127c3d8cd9": {
+		"FullName": "Tadeusz Pilsudski",
+		"FirstName": "Tadeusz",
+		"Nickname": "Peacekeeper",
+		"Location": "Přístavní čtvrť",
+		"Description": "Zásobovací důstojník mírových sil UN (OSN), sídlící v jednom z hlavních kontrolních stanovišť vedoucích k tarkovskému přístavu. Modré helmy obchodovali s drobnými cennostmi od samého začátku. Skupovali všechno v jakékoliv hodnotě, výměnou za západní zbraně, munici a jiné vojenské vybavení."
+	},
+	"59c0ea2130c28d455c92e892": {
+		"FullName": "Jméno",
+		"FirstName": "Jméno",
+		"Nickname": "Jméno",
+		"Location": "Jméno",
+		"Description": "Jméno"
+	},
+	"5a7c2eca46aef81a7ca2145d": {
+		"FullName": "Sergej Arsenyevich Samoylov",
+		"FirstName": "Sergej Arsenyevich",
+		"Nickname": "Mechanik",
+		"Location": "Chemička",
+		"Description": "Předák z chemičky. Před konfliktem a na jeho počátku upravoval a opravoval zbraně a prováděl údržbu složitých zařízení a technologií. Preferuje život v ústraní a diskrétní jednání. Pracovat s ním je výzvou, jelikož zadává různorodé a obtížné úkoly."
+	},
+	"5ac3b934156ae10c4430e83c": {
+		"FullName": "Abramyan Arshavir Sarkisivich",
+		"FirstName": "Arshavir Sarkisivich",
+		"Nickname": "Ragman",
+		"Location": "Tarkovské centrální tržiště",
+		"Description": "Pracoval jako manažer obchodního domu na předměstí Tarkova. Prodává vše co se týče oblečení a výstroje."
+	},
+	"5c0647fdd443bc2504c2d371": {
+		"FullName": "Kharitonov Ivan Egorovich",
+		"FirstName": "Ivan Kharitonov",
+		"Nickname": "Jaeger",
+		"Location": "Pryozerská rezervace",
+		"Description": "Pracoval pod lesní správou v rezervaci Priozersky jako myslivecká stráž. Profesionální lovec a specialista na přežití. Bránil a stále brání vše co patřilo do jeho revíru před různými agresivními jedinci."
+	}
+}

@@ -111,6 +111,7 @@
 			"isBoltCatch": false,
 			"defMagType": "5cffa483d7ad1a049e54ef1e",
 			"defAmmo": "5cde8864d7f00c0010373be1",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -311,6 +312,7 @@
 			"isBoltCatch": false,
 			"defMagType": "5d52d479a4b936793d58c76b",
 			"defAmmo": "5d70e500a4b9364de70d38ce",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -626,6 +628,7 @@
 			"isBoltCatch": false,
 			"defMagType": "55d480c04bdc2d1d4e8b456a",
 			"defAmmo": "56dff3afd2720bba668b4567",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
