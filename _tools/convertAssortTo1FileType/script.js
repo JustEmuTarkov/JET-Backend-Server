@@ -44,6 +44,8 @@ for(let trader of traderIDs){
 	let outputStruct = {};
 	if(usingDumps){
 		dataStruct = fileIO.readParsed(`./traders_new/${trader}/assort.json`);
+		if(typeof dataStruct.data != "undefined")
+			dataStruct = dataStruct.data;
 	} else {
 		for(let inputName of inputFileName){
 			let path = `./traders/${trader}/assort/${inputName}.json`;
