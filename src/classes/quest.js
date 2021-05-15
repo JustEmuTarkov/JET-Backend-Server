@@ -20,7 +20,6 @@ function getQuestsCache() {
 function getQuestsForPlayer(url, info, sessionID){
 	let _profile = profile_f.handler.getPmcProfile(sessionID);
 	let quests = utility.ClearDependencies(global._database.quests);
-	
 	for(let quest of quests){
 		if(getQuestStatus(_profile, quest._id) == "Success"){
 			quest.conditions.AvailableForStart = [];

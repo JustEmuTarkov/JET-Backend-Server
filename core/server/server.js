@@ -149,7 +149,10 @@ class Server {
         resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
         resp.end(output);
     }
-    sendFile(resp, file) {
+    sendFile(resp, file, _params=null) {
+        if (!file) {
+            return logger.logError(`File was expected but was not found.`)
+        }
         let pathSlic = file.split("/");
         let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
         let fileStream = fileIO.createReadStream(file);
