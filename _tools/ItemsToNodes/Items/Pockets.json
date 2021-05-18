@@ -59,6 +59,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "pocket1",
@@ -244,6 +245,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"Grids": [
 				{
 					"_name": "pocket1",

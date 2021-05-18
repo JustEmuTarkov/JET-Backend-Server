@@ -58,7 +58,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -121,7 +122,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -184,7 +186,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -247,7 +250,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -310,7 +314,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -373,7 +378,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -436,7 +442,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -499,7 +506,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "573477e124597737dd42e191"
 	},
@@ -562,7 +570,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "573477e124597737dd42e191"
 	},
@@ -625,7 +634,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -688,7 +698,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -751,7 +762,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -814,7 +826,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -877,7 +890,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "573477e124597737dd42e191"
 	},
@@ -940,7 +954,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1003,7 +1018,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1066,7 +1082,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1129,7 +1146,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1192,7 +1210,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1255,7 +1274,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1318,7 +1338,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1381,7 +1402,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1444,7 +1466,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1507,7 +1530,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1570,7 +1594,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1633,7 +1658,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1703,7 +1729,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1766,7 +1793,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1829,7 +1857,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1892,7 +1921,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -1955,7 +1985,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "56742c324bdc2d150f8b456d"
 	},
@@ -2018,7 +2049,8 @@
 			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false
 		},
 		"_proto": "573477e124597737dd42e191"
 	}

@@ -73,6 +73,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0
 		}
@@ -137,6 +138,7 @@
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
 			"MaxResource": 0,
 			"Resource": 0
 		}
