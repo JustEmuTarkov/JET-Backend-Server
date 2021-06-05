@@ -58,9 +58,11 @@ function upgradeComplete(pmcData, body, sessionID) {
             }
 
             let bonuses = area_bonus.stages[pmcData.Hideout.Areas[hideoutArea].level].bonuses;
-
-            if (bonuses.length > 0) {
+            
+            //console.log(bonuses);
+            if (bonuses && bonuses.length > 0) {
                 for (let bonus of bonuses) {
+
                     applyPlayerUpgradesBonuses(pmcData, bonus);
                 }
             }
@@ -361,43 +363,12 @@ function registerProduction(pmcData, body, sessionID) {
     }
 }
 
-// BALIST0N, I got bad news for you
-// we do need to implement these after all
-// ...
-// with that I mean manual implementation
-// RIP, GL whoever is going to do this
 function applyPlayerUpgradesBonuses(pmcData, bonus) {
-    switch (bonus.type) {
-        case "StashSize":
 
-            for (let item in pmcData.Inventory.items) {
-                if (pmcData.Inventory.items[item]._id == pmcData.Inventory.stash) {
-                    pmcData.Inventory.items[item]._tpl = bonus.templateId;
-                }
-            }
-            break;
-
-        case "MaximumEnergyReserve":
-            pmcData.Health.Energy.Maximum = 110;
-            break;
-
-        case "EnergyRegeneration":
-        case "HydrationRegeneration":
-        case "HealthRegeneration":
-        case "DebuffEndDelay":
-        case "ScavCooldownTimer":// Implemented.
-        case "QuestMoneyReward":
-        case "InsuranceReturnTime":
-        case "ExperienceRate":
-        case "SkillGroupLevelingBoost":
-        case "RagfairCommission":
-        case "AdditionalSlots":
-        case "UnlockWeaponModification":
-        case "TextBonus":
-        case "FuelConsumption":
-            break;
-    }
-
+  if (bonus.type === "MaximumEnergyReserve")
+  {
+      pmcData.Health.Energy.Maximum += bonus.value;
+  }
     pmcData.Bonuses.push(bonus);
 }
 
