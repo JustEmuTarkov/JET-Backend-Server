@@ -312,8 +312,8 @@ function takeProduction(pmcData, body, sessionID) {
         return move_f.addItem(pmcData, newReq, output, sessionID, true);
     }
 
-    for (let recipe in scavcase.data) {
-        if (body.recipeId !== scavcase.data[recipe]._id) {
+    for (let recipe in global._database.hideout.scavcase) {
+        if (body.recipeId !== global._database.hideout.scavcase[recipe]._id) {
             continue;
         }
 
