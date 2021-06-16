@@ -857,19 +857,28 @@ class Generator
     {
         // Flatten all individual slot loot pools into one big pool, while filtering out potentially missing templates
         let lootTemplates = [];
+        let specTemplate = [];
+
         for (const [slot, pool] of Object.entries(lootPool))
         {
             if (!pool || !pool.length)
             {
                 continue;
             }
-            const poolItems = pool.map(lootTpl => global._database.items[lootTpl]);
-            lootTemplates.push(...poolItems.filter(x => !!x));
+            if (slot === "SpecialLoot"){
+                const specItems = pool.map(spcLootTpl => global._database.items[spcLootTpl]);
+                specTemplate.push(...specItems.filter(x => !!x));
+            }else{
+                const poolItems = pool.map(lootTpl => global._database.items[lootTpl]);
+                lootTemplates.push(...poolItems.filter(x => !!x));
+            }
         }
 
         // Sort all items by their worth to spawn chance ratio
         lootTemplates.sort((a, b) => bots_f.generator.compareByValue(a, b));
 
+        const specialLoot = specTemplate
+        
         // Get all healing items
         const healingItems = lootTemplates.filter(template => "medUseTime" in template._props);
 
@@ -886,12 +895,16 @@ class Generator
         let range = itemCounts.healing.max - itemCounts.healing.min;
         const healingItemCount = bots_f.generator.getBiasedRandomNumber(itemCounts.healing.min, itemCounts.healing.max, range, 3);
 
+        range = itemCounts.specialItems.max - itemCounts.specialItems.min;
+        const specialItemCount = bots_f.generator.getBiasedRandomNumber(itemCounts.specialItems.min, itemCounts.specialItems.max, range, 3);
+
         range = itemCounts.looseLoot.max - itemCounts.looseLoot.min;
         const lootItemCount = bots_f.generator.getBiasedRandomNumber(itemCounts.looseLoot.min, itemCounts.looseLoot.max, range, 5);
 
         range = itemCounts.grenades.max - itemCounts.grenades.min;
         const grenadeCount = bots_f.generator.getBiasedRandomNumber(itemCounts.grenades.min, itemCounts.grenades.max, range, 4);
-
+        
+        bots_f.generator.addLootFromPool(specialLoot, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], specialItemCount);
         bots_f.generator.addLootFromPool(healingItems, [EquipmentSlots.TacticalVest, EquipmentSlots.Pockets], healingItemCount);
         bots_f.generator.addLootFromPool(lootItems, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], lootItemCount);
         bots_f.generator.addLootFromPool(grenadeItems, [EquipmentSlots.TacticalVest, EquipmentSlots.Pockets], grenadeCount);
