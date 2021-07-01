@@ -1,0 +1,24 @@
+{
+	"config": {
+		"ClientSendRateLimit": 120,
+		"FramerateLimit": {
+			"MaxFramerateGameLimit": 144,
+			"MaxFramerateLobbyLimit": 60,
+			"MinFramerateLimit": 30
+		},
+		"MemoryManagment": {
+			"GigabytesRequiredToDisableGCDuringRaid": 128,
+			"HeapPreAllocationEnabled": true,
+			"HeapPreAllocationMB": 500,
+			"OverrideRamCleanerSettings": false,
+			"RamCleanerEnabled": false
+		},
+		"NVidiaHighlights": true,
+		"ReleaseProfiler": {
+			"Enabled": true,
+			"MaxRecords": 100,
+			"RecordTriggerValue": 2000
+		},
+		"TurnOffLogging": true
+	}
+}
