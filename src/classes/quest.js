@@ -208,7 +208,7 @@ function completeQuest(pmcData, body, sessionID) {
                     pmcData.TraderStandings[reward.target].currentStanding = 0;
                 }
 
-                trader_f.handler.lvlUp(reward.target, sessionID);
+                //trader_f.handler.lvlUp(reward.target, sessionID);
                 break;
                 
             case "TraderUnlock":

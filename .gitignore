@@ -22,11 +22,6 @@ Server JET*
 _Build
 # ignore cache backup folder
 user/cacheBak 
-db2
-db3
-db4
-db5
-db6
 coreMinified
 DB_removable
 Server.7z
@@ -44,7 +39,6 @@ db-propNextStructure/
 ## windows
 desktop.ini
 JET-Backend-Server.7z
-user/profiles
 src/____responses
 Server-Icon.exe
 Server-Uncompressed.exe

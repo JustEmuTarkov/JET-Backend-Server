@@ -16,7 +16,7 @@ class TraderServer
 		const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
         if (!(traderID in playerTraderStanding)) {
             trader_f.handler.resetTrader(sessionID, traderID);
-            this.lvlUp(traderID, sessionID);
+            //this.lvlUp(traderID, sessionID);
         }
         let trader = global._database.traders[traderID].base;
         trader.display = playerTraderStanding[traderID].display;
@@ -59,10 +59,10 @@ class TraderServer
 
             let trader = global._database.traders[traderID].base;
 
-            trader.display = playerTraderStanding[traderID].display;
-            trader.loyalty.currentLevel = playerTraderStanding[traderID].currentLevel;
-            trader.loyalty.currentStanding = playerTraderStanding[traderID].currentStanding.toFixed(3);
-            trader.loyalty.currentSalesSum = playerTraderStanding[traderID].currentSalesSum;
+            //trader.display = playerTraderStanding[traderID].display;
+            //trader.loyalty.currentLevel = playerTraderStanding[traderID].currentLevel;
+            //trader.loyalty.currentStanding = playerTraderStanding[traderID].currentStanding.toFixed(3);
+            //trader.loyalty.currentSalesSum = playerTraderStanding[traderID].currentSalesSum;
 
             Traders.push(trader);
         }
@@ -70,32 +70,32 @@ class TraderServer
     }
 
     lvlUp(traderID, sessionID) {
-        let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        let loyaltyLevels = global._database.traders[traderID].base.loyalty.loyaltyLevels;
+        //let pmcData = profile_f.handler.getPmcProfile(sessionID);
+        //let loyaltyLevels = global._database.traders[traderID].base.loyalty.loyaltyLevels;
 
         // level up player
-        pmcData.Info.Level = profile_f.calculateLevel(pmcData);
+        //pmcData.Info.Level = profile_f.calculateLevel(pmcData);
 
         // level up traders
-        let targetLevel = 0;
-		let playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
+        //let targetLevel = 0;
+		//let playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
 
-        for (let level in loyaltyLevels) {
-            if ((loyaltyLevels[level].minLevel <= pmcData.Info.Level
-                && loyaltyLevels[level].minSalesSum <= playerTraderStanding[traderID].currentSalesSum
-                && loyaltyLevels[level].minStanding <= playerTraderStanding[traderID].currentStanding)
-                && targetLevel < 4) {
+        //for (let level in loyaltyLevels) {
+        //    if ((loyaltyLevels[level].minLevel <= pmcData.Info.Level
+        //        && loyaltyLevels[level].minSalesSum <= playerTraderStanding[traderID].currentSalesSum
+        //        && loyaltyLevels[level].minStanding <= playerTraderStanding[traderID].currentStanding)
+        //        && targetLevel < 4) {
                 // level reached
-                targetLevel++;
-            }
-        }
+        //        targetLevel++;
+        //    }
+        //}
 
         // set level
-        playerTraderStanding[traderID].currentLevel = targetLevel;
-        global._database.traders[traderID].base.loyalty.currentLevel = targetLevel;
-		fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
+        //playerTraderStanding[traderID].currentLevel = targetLevel;
+        //global._database.traders[traderID].base.loyalty.currentLevel = targetLevel;
+		//fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
 		
-        return pmcData.TraderStandings[traderID].currentLevel
+        //return pmcData.TraderStandings[traderID].currentLevel
     }
 
     resetTrader(sessionID, traderID) {
@@ -113,7 +113,7 @@ class TraderServer
         };
 		fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
 
-        this.lvlUp(traderID, sessionID);
+        //this.lvlUp(traderID, sessionID);
 		
     }
 
@@ -192,7 +192,7 @@ class TraderServer
 
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
-            let level = this.lvlUp(traderID, sessionID) // returns user level.
+            //let level = this.lvlUp(traderID, sessionID) // returns user level.
             let questassort = {};
             if (typeof db.traders[traderID].questassort == "undefined") {
                 questassort = {"started": {}, "success": {}, "fail": {}};
@@ -206,10 +206,10 @@ class TraderServer
 
             for (let key in baseAssorts.loyal_level_items) {
                 let requiredLevel = baseAssorts.loyal_level_items[key];
-                if (requiredLevel > level) {
+                /*if (requiredLevel > level) {
                     assorts = this.removeItemFromAssort(assorts, key);
                     continue;
-                }
+                }*/
 
                 if (key in questassort.started && quest_f.getQuestStatus(pmcData, questassort.started[key]) !== "Started") {
                     assorts = this.removeItemFromAssort(assorts, key);
