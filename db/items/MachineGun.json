@@ -111,6 +111,7 @@
 			"isBoltCatch": false,
 			"defMagType": "5cffa483d7ad1a049e54ef1e",
 			"defAmmo": "5cde8864d7f00c0010373be1",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -177,7 +178,16 @@
 			"HipInnaccuracyGain": 0.16,
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
-			"BurstShotsCount": 3
+			"BurstShotsCount": 3,
+			"BaseMalfunctionChance": 0,
+			"AllowJam": false,
+			"AllowFeed": false,
+			"AllowMisfire": false,
+			"AllowSlide": false,
+			"DurabilityBurnRatio": 1,
+			"HeatFactor": 0,
+			"CoolFactor": 0,
+			"AllowOverheat": false
 		},
 		"_proto": "5447a9cd4bdc2dbd208b4567"
 	},
@@ -311,6 +321,7 @@
 			"isBoltCatch": false,
 			"defMagType": "5d52d479a4b936793d58c76b",
 			"defAmmo": "5d70e500a4b9364de70d38ce",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -376,7 +387,16 @@
 			"HipInnaccuracyGain": 0.16,
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
-			"BurstShotsCount": 3
+			"BurstShotsCount": 3,
+			"BaseMalfunctionChance": 0,
+			"AllowJam": false,
+			"AllowFeed": false,
+			"AllowMisfire": false,
+			"AllowSlide": false,
+			"DurabilityBurnRatio": 1,
+			"HeatFactor": 0,
+			"CoolFactor": 0,
+			"AllowOverheat": false
 		},
 		"_proto": "5447a9cd4bdc2dbd208b4567"
 	},
@@ -419,7 +439,7 @@
 			"LootExperience": 30,
 			"ExamineExperience": 10,
 			"HideEntrails": false,
-			"RepairCost": 60,
+			"RepairCost": 123,
 			"RepairSpeed": 5,
 			"ExtraSizeLeft": 0,
 			"ExtraSizeRight": 0,
@@ -602,7 +622,7 @@
 			"ammoCaliber": "Caliber545x39",
 			"Durability": 100,
 			"MaxDurability": 100,
-			"OperatingResource": 5000,
+			"OperatingResource": 6600,
 			"RepairComplexity": 0,
 			"durabSpawnMin": 25,
 			"durabSpawnMax": 75,
@@ -626,6 +646,7 @@
 			"isBoltCatch": false,
 			"defMagType": "55d480c04bdc2d1d4e8b456a",
 			"defAmmo": "56dff3afd2720bba668b4567",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 0,
 			"Chambers": [
 				{
@@ -662,8 +683,8 @@
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.04,
 			"AimPlane": 0.19,
-			"DeviationCurve": 1,
-			"DeviationMax": 100,
+			"DeviationCurve": 6,
+			"DeviationMax": 35,
 			"Foldable": true,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -692,7 +713,7 @@
 			"CompactHandling": true,
 			"SightingRange": 100,
 			"MinRepairDegradation": 0,
-			"MaxRepairDegradation": 0.01,
+			"MaxRepairDegradation": 0.04,
 			"IronSightRange": 100,
 			"MustBoltBeOpennedForExternalReload": false,
 			"MustBoltBeOpennedForInternalReload": false,
@@ -702,7 +723,16 @@
 			"HipInnaccuracyGain": 0.16,
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
-			"BurstShotsCount": 3
+			"BurstShotsCount": 3,
+			"BaseMalfunctionChance": 0.14,
+			"AllowJam": false,
+			"AllowFeed": false,
+			"AllowMisfire": true,
+			"AllowSlide": false,
+			"DurabilityBurnRatio": 1,
+			"HeatFactor": 1,
+			"CoolFactor": 1,
+			"AllowOverheat": false
 		},
 		"_proto": "5447a9cd4bdc2dbd208b4567"
 	}

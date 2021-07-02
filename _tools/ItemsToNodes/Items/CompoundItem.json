@@ -1,25 +1,5 @@
 [
 	{
-		"_id": "566168634bdc2d144c8b456c",
-		"_name": "SearchableItem",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"SearchSound": "cashregister_looting",
-			"BlocksArmorVest": false
-		}
-	},
-	{
-		"_id": "5795f317245977243854e041",
-		"_name": "SimpleContainer",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"TagColor": 0,
-			"TagName": ""
-		}
-	},
-	{
 		"_id": "5448fe124bdc2da5018b4567",
 		"_name": "Mod",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -43,6 +23,16 @@
 		}
 	},
 	{
+		"_id": "566168634bdc2d144c8b456c",
+		"_name": "SearchableItem",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"SearchSound": "cashregister_looting",
+			"BlocksArmorVest": false
+		}
+	},
+	{
 		"_id": "5671435f4bdc2d96058b4569",
 		"_name": "LockableContainer",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -51,6 +41,16 @@
 			"KeyIds": [
 				"543be5e94bdc2df1348b4568"
 			],
+			"TagColor": 0,
+			"TagName": ""
+		}
+	},
+	{
+		"_id": "5795f317245977243854e041",
+		"_name": "SimpleContainer",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
 			"TagColor": 0,
 			"TagName": ""
 		}
@@ -70,13 +70,6 @@
 		"_props": {}
 	},
 	{
-		"_id": "566abbb64bdc2d144c8b457d",
-		"_name": "Stash",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "543be5f84bdc2dd4348b456a",
 		"_name": "Equipment",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -87,6 +80,13 @@
 			"BlocksHeadwear": false,
 			"BlocksFaceCover": false
 		}
+	},
+	{
+		"_id": "566abbb64bdc2d144c8b457d",
+		"_name": "Stash",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
 	},
 	{
 		"_id": "5422acb9af1c889c16000029",
@@ -120,6 +120,7 @@
 			"isBoltCatch": false,
 			"defMagType": "5448bc234bdc2d3c308b4569",
 			"defAmmo": "5485a8684bdc2da71d8b4567",
+			"AdjustCollimatorsToTrajectory": false,
 			"shotgunDispersion": 10,
 			"Chambers": [],
 			"CameraRecoil": -0.5,
@@ -168,7 +169,16 @@
 			"HipInnaccuracyGain": 0.16,
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
-			"BurstShotsCount": 3
+			"BurstShotsCount": 3,
+			"BaseMalfunctionChance": 0,
+			"AllowJam": false,
+			"AllowFeed": false,
+			"AllowMisfire": false,
+			"AllowSlide": false,
+			"DurabilityBurnRatio": 1,
+			"HeatFactor": 0,
+			"CoolFactor": 0,
+			"AllowOverheat": false
 		}
 	}
 ]

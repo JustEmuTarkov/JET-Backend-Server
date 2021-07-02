@@ -1,12 +1,5 @@
 [
 	{
-		"_id": "55818afb4bdc2dde698b456d",
-		"_name": "Bipod",
-		"_parent": "550aa4154bdc2dd8348b456b",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "55818b0e4bdc2dde698b456e",
 		"_name": "LightLaser",
 		"_parent": "550aa4154bdc2dd8348b456b",
@@ -21,6 +14,13 @@
 		"_props": {
 			"ModesCount": 0
 		}
+	},
+	{
+		"_id": "55818afb4bdc2dde698b456d",
+		"_name": "Bipod",
+		"_parent": "550aa4154bdc2dd8348b456b",
+		"_type": "Node",
+		"_props": {}
 	},
 	{
 		"_id": "55818b084bdc2d5b648b4571",
@@ -46,18 +46,23 @@
 		"_props": {}
 	},
 	{
-		"_id": "56ea9461d2720b67698b456f",
-		"_name": "Gasblock",
-		"_parent": "550aa4154bdc2dd8348b456b",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "5a74651486f7744e73386dd1",
 		"_name": "AuxiliaryMod",
 		"_parent": "550aa4154bdc2dd8348b456b",
 		"_type": "Node",
-		"_props": {}
+		"_props": {
+			"ShiftsAimCamera": 0
+		}
+	},
+	{
+		"_id": "56ea9461d2720b67698b456f",
+		"_name": "Gasblock",
+		"_parent": "550aa4154bdc2dd8348b456b",
+		"_type": "Node",
+		"_props": {
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1
+		}
 	},
 	{
 		"_id": "5448fe394bdc2d0d028b456c",
@@ -65,7 +70,9 @@
 		"_parent": "550aa4154bdc2dd8348b456b",
 		"_type": "Node",
 		"_props": {
-			"muzzleModType": "silencer"
+			"muzzleModType": "silencer",
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1
 		}
 	},
 	{
@@ -74,6 +81,7 @@
 		"_parent": "550aa4154bdc2dd8348b456b",
 		"_type": "Node",
 		"_props": {
+			"CustomAimPlane": "",
 			"sightModType": "iron",
 			"aimingSensitivity": 0.2,
 			"SightModesCount": 1,

@@ -1,5 +1,14 @@
 [
 	{
+		"_id": "566965d44bdc2d814c8b4571",
+		"_name": "LootContainer",
+		"_parent": "566168634bdc2d144c8b456c",
+		"_type": "Node",
+		"_props": {
+			"SpawnFilter": []
+		}
+	},
+	{
 		"_id": "557596e64bdc2dc2118b4571",
 		"_name": "Pockets",
 		"_parent": "566168634bdc2d144c8b456c",
@@ -7,12 +16,13 @@
 		"_props": {}
 	},
 	{
-		"_id": "566965d44bdc2d814c8b4571",
-		"_name": "LootContainer",
+		"_id": "5448e53e4bdc2d60728b4567",
+		"_name": "Backpack",
 		"_parent": "566168634bdc2d144c8b456c",
 		"_type": "Node",
 		"_props": {
-			"SpawnFilter": []
+			"speedPenaltyPercent": 0,
+			"GridLayoutName": ""
 		}
 	},
 	{
@@ -31,16 +41,6 @@
 			"weaponErgonomicPenalty": 0,
 			"BluntThroughput": 0,
 			"ArmorMaterial": "UHMWPE"
-		}
-	},
-	{
-		"_id": "5448e53e4bdc2d60728b4567",
-		"_name": "Backpack",
-		"_parent": "566168634bdc2d144c8b456c",
-		"_type": "Node",
-		"_props": {
-			"speedPenaltyPercent": 0,
-			"GridLayoutName": ""
 		}
 	},
 	{

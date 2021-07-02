@@ -78,6 +78,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 0,
+			"CustomAimPlane": "",
 			"sightModType": "iron",
 			"aimingSensitivity": 0.2,
 			"SightModesCount": 1,

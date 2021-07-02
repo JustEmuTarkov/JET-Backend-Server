@@ -1,12 +1,5 @@
 [
 	{
-		"_id": "55818a104bdc2db9688b4569",
-		"_name": "Handguard",
-		"_parent": "55802f4a4bdc2ddb688b4569",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "55818a684bdc2ddd698b456d",
 		"_name": "PistolGrip",
 		"_parent": "55802f4a4bdc2ddb688b4569",
@@ -21,7 +14,18 @@
 		"_props": {
 			"CenterOfImpact": 0.01,
 			"ShotgunDispersion": 1,
-			"IsSilencer": false
+			"IsSilencer": false,
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1
+		}
+	},
+	{
+		"_id": "55818a104bdc2db9688b4569",
+		"_name": "Handguard",
+		"_parent": "55802f4a4bdc2ddb688b4569",
+		"_type": "Node",
+		"_props": {
+			"HeatFactor": 1
 		}
 	},
 	{
@@ -29,6 +33,9 @@
 		"_name": "Receiver",
 		"_parent": "55802f4a4bdc2ddb688b4569",
 		"_type": "Node",
-		"_props": {}
+		"_props": {
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1
+		}
 	}
 ]
