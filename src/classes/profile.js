@@ -75,9 +75,13 @@ class ProfileServer {
     getCompleteProfile(sessionID) {
         let output = [];
 
+		
         if (!account_f.handler.isWiped(sessionID)) {
+			let scav = profile_f.handler.getPmcProfile(sessionID);
+			scav._id = scav.savage;
+			scav.savage = null
+            output.push(scav);
             output.push(profile_f.handler.getPmcProfile(sessionID));
-            output.push(profile_f.handler.getScavProfile(sessionID));
         }
 
         return output;

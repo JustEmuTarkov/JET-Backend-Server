@@ -1,1 +1,318 @@
-{"_id":"5dcad04b30b2d43eb64ddab1","aid":0,"savage":null,"Info":{"Nickname":"Тимурка Предатель","LowerNickname":"","Side":"Savage","Voice":"Scav_2","Level":1,"Experience":0,"RegistrationDate":0,"GameVersion":"","AccountType":0,"MemberCategory":0,"lockedMoveCommands":false,"SavageLockTime":0,"LastTimePlayedAsSavage":0,"Settings":{"Role":"assault","BotDifficulty":"easy","Experience":-1},"NeedWipe":false,"GlobalWipe":false,"NicknameChangeDate":0},"Customization":{"Head":"5cc2e4d014c02e000d0115f8","Body":"5cde9f337d6c8b0474535da8","Feet":"5cde9fb87d6c8b0474535da9","Hands":"5cc2e68f14c02e28b47de290"},"Health":{},"Inventory":{},"Skills":{"Common":null,"Mastering":[],"Points":0},"Stats":{"SessionCounters":{"Items":[]},"OverallCounters":{"Items":[]}},"Encyclopedia":null,"ConditionCounters":{"Counters":[]},"BackendCounters":{},"InsuredItems":[],"Hideout":{"Production":{},"Areas":[{"type":0,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":1,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":2,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":3,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":4,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":5,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":6,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":7,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":8,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":9,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":10,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":11,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":12,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":13,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":14,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":15,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":16,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":17,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":18,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":19,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]},{"type":20,"level":0,"active":true,"passiveBonusesEnabled":true,"completeTime":0,"constructing":false,"slots":[]}]},"Bonuses":[]}
+{
+	"BackendCounters": {},
+	"Bonuses": [],
+	"ConditionCounters": {
+		"Counters": []
+	},
+	"Customization": {
+		"Body": "5cde9f337d6c8b0474535da8",
+		"Feet": "5cde9fb87d6c8b0474535da9",
+		"Hands": "5cc2e68f14c02e28b47de290",
+		"Head": "5cc2e4d014c02e000d0115f8"
+	},
+	"Encyclopedia": null,
+	"Health": {},
+	"Hideout": {
+		"Areas": [
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 1,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 3
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 0
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 1
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 2
+			},
+			{
+				"active": false,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 4
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 5
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 6
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 7
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 8
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 9
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 10
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 11
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 12
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 13
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 14
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 15
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 16
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": false,
+				"slots": [],
+				"type": 17
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 18
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 19
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 20
+			},
+			{
+				"active": true,
+				"completeTime": 0,
+				"constructing": false,
+				"lastRecipe": "",
+				"level": 0,
+				"passiveBonusesEnabled": true,
+				"slots": [],
+				"type": 21
+			}
+		],
+		"Production": {}
+	},
+	"Info": {
+		"AccountType": 0,
+		"BannedState": false,
+		"BannedUntil": 0,
+		"Bans": [],
+		"Experience": 0,
+		"GameVersion": "standard",
+		"IsStreamerModeAvailable": false,
+		"LastTimePlayedAsSavage": 0,
+		"Level": 1,
+		"LowerNickname": "maoci",
+		"MemberCategory": 0,
+		"NeedWipeOptions": [],
+		"Nickname": "Maoci",
+		"NicknameChangeDate": 0,
+		"RegistrationDate": 1625100000,
+		"SavageLockTime": 0,
+		"Settings": {
+			"BotDifficulty": "easy",
+			"Experience": -1,
+			"Role": "assault"
+		},
+		"Side": "Savage",
+		"Voice": "Scav_1",
+		"lastCompletedWipe": {
+			"$oid": "60dc4189eec53b57f35caade"
+		},
+		"lockedMoveCommands": false
+	},
+	"InsuredItems": [],
+	"Inventory": {},
+	"Notes": {
+		"Notes": []
+	},
+	"Quests": [],
+	"RagfairInfo": {
+		"isRatingGrowing": true,
+		"offers": [],
+		"rating": 0.2
+	},
+	"Skills": {
+		"Common": null,
+		"Mastering": [],
+		"Points": 0
+	},
+	"Stats": {
+		"Aggressor": null,
+		"CarriedQuestItems": [],
+		"DamageHistory": {
+			"BodyParts": [],
+			"LethalDamage": null,
+			"LethalDamagePart": "Head"
+		},
+		"DroppedItems": [],
+		"ExperienceBonusMult": 0,
+		"FoundInRaidItems": [],
+		"LastPlayerState": null,
+		"LastSessionDate": 0,
+		"OverallCounters": {
+			"Items": []
+		},
+		"SessionExperienceMult": 0,
+		"SurvivorClass": "Unknown",
+		"TotalInGameTime": 0,
+		"TotalSessionExperience": 0,
+		"Victims": []
+	},
+	"TradersInfo": {
+		"579dc571d53a0658a154fbec": {
+			"saleSum": 0,
+			"standing": 0,
+			"unlocked": true
+		}
+	},
+	"WishList": [],
+	"_id": "5dcad04b30b2d43eb64ddab1",
+	"aid": 0,
+	"savage": null
+}
