@@ -37,7 +37,8 @@
 		"EndByTimerPatch": true,
 		"SpawnRandomizationPatch": true,
 		"RemoveAddOfferButton": true,
-		"NoFiltersPatch": false
+		"NoFiltersPatch": false,
+		"JetLogger": true
 	},
 	"lootDebug": false,
 	"hideInfoLogs": false,
