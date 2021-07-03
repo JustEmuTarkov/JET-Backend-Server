@@ -302,7 +302,7 @@ class Generator
             }
         }
 
-        bots_f.generator.generateLoot(templateInventory.items, generation.items);
+        bots_f.generator.generateLoot(templateInventory.items, generation.items, equipmentChances);
 
         return utility.ClearDependencies(this.inventory);
     }
@@ -853,11 +853,13 @@ class Generator
         }
     }
 
-    generateLoot(lootPool, itemCounts)
+    generateLoot(lootPool, itemCounts, chances)
     {
         // Flatten all individual slot loot pools into one big pool, while filtering out potentially missing templates
         let lootTemplates = [];
         let specTemplate = [];
+				
+        const shouldSpawnSpecial = utility.getRandomIntEx(100) <= chances.items.specialItems;
 
         for (const [slot, pool] of Object.entries(lootPool))
         {
@@ -904,7 +906,9 @@ class Generator
         range = itemCounts.grenades.max - itemCounts.grenades.min;
         const grenadeCount = bots_f.generator.getBiasedRandomNumber(itemCounts.grenades.min, itemCounts.grenades.max, range, 4);
         
-        bots_f.generator.addLootFromPool(specialLoot, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], specialItemCount);
+		if (shouldSpawnSpecial)
+			bots_f.generator.addLootFromPool(specialLoot, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], specialItemCount);
+		
         bots_f.generator.addLootFromPool(healingItems, [EquipmentSlots.TacticalVest, EquipmentSlots.Pockets], healingItemCount);
         bots_f.generator.addLootFromPool(lootItems, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], lootItemCount);
         bots_f.generator.addLootFromPool(grenadeItems, [EquipmentSlots.TacticalVest, EquipmentSlots.Pockets], grenadeCount);

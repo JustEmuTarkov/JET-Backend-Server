@@ -66,5 +66,8 @@
 		"mod_trigger": 0,
 		"mod_hammer": 0,
 		"mod_catch": 0
+	},
+	"items": {
+		"specialItems": 10
 	}
 }
