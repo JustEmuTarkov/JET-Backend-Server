@@ -19,7 +19,7 @@ class ProfileServer {
 			logger.throwErr("Session ID is undefined", "~/src/classes/profile.js | 19")
         try {
             this.profiles[sessionID]['pmc'] = fileIO.readParsed(getPmcPath(sessionID));
-            this.generateScav(sessionID);
+            this.profiles[sessionID]['scav'] = this.generateScav(sessionID);
         } catch (e) {
             if (e instanceof SyntaxError) {
                 return logger.logError(`There is a syntax error in the character.json file for AID ${sessionID}. This likely means you edited something improperly. Call stack: \n${e.stack}`)
@@ -77,10 +77,7 @@ class ProfileServer {
 
 		
         if (!account_f.handler.isWiped(sessionID)) {
-			let scav = profile_f.handler.getPmcProfile(sessionID);
-			scav._id = scav.savage;
-			scav.savage = null
-            output.push(scav);
+            output.push(profile_f.handler.getScavProfile(sessionID));
             output.push(profile_f.handler.getPmcProfile(sessionID));
         }
 
@@ -174,7 +171,6 @@ class ProfileServer {
         scavLockDuration *= modifier;        
         scavData.Info.SavageLockTime = currDt + scavLockDuration;
         
-        this.profiles[sessionID]['scav'] = scavData;
         return scavData;
     }
 

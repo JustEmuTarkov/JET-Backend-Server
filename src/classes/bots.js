@@ -190,7 +190,8 @@ class Controller
                         "Maximum": healthObj.BodyParts.RightLeg.max
                     }
                 }
-            }
+            },
+			"UpdateTime": 1625165184
         };
     }
 
