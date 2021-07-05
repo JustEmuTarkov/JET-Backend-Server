@@ -34,28 +34,28 @@ class TraderServer
     }
 
     getAllTraders(sessionID) {
-        if (typeof sessionID == "undefined") {
-            console.log("sessionID: " + sessionID);
-            return;
-        }
+        //if (typeof sessionID == "undefined") {
+        //    console.log("sessionID: " + sessionID);
+        //    return;
+        //}
 
-        let pmcData = profile_f.handler.getPmcProfile(sessionID);
+        //let pmcData = profile_f.handler.getPmcProfile(sessionID);
 
-        if (!pmcData || typeof pmcData == "undefined") {
-            logger.logError(`Profile of ${sessionID} is undefined, and therefore cannot be loaded. Review the logs above for the cause.`)
-        }
+        //if (!pmcData || typeof pmcData == "undefined") {
+        //    logger.logError(`Profile of ${sessionID} is undefined, and therefore cannot be loaded. Review the logs above for the cause.`)
+        //}
 
         let Traders = [];
         for (let traderID in global._database.traders) {
             if (traderID === "ragfair") {
                 continue;
             }
-			const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
+			//const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
 
-            if (!(traderID in playerTraderStanding)) {
-                console.log("Resetting trader: " + traderID);
-                this.resetTrader(sessionID, traderID);
-            }
+            //if (!(traderID in playerTraderStanding)) {
+            //    console.log("Resetting trader: " + traderID);
+            //    this.resetTrader(sessionID, traderID);
+            //}
 
             let trader = global._database.traders[traderID].base;
 

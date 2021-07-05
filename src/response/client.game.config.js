@@ -5,19 +5,27 @@ exports.execute = (url, info, sessionID) => {
 			"banTime": 0, 
 			"hash": "BAN0", 
 			"lang": "en", 
+			"languages": {
+				"en": "English",
+				"fr": "French",
+				"ge": "German",
+				"ru": "Русский"
+			},
+			"ndaFree": false,
+			"reportAvailable": true,
 			"aid": sessionID, 
-			"token": "token_" + sessionID, 
-			"taxonomy": "341", 
-			"activeProfileId": 
-			"user" + sessionID + "pmc", 
-			"nickname": "user", 
+			"token": sessionID, 
+			"taxonomy": 6, 
+			"activeProfileId": "pmc" + sessionID, 
+			"nickname": profile_f.handler.getPmcProfile(sessionID).Info.Nickname, 
 			"backend": {
 				"Trading": server.getBackendUrl(), 
 				"Messaging": server.getBackendUrl(), 
 				"Main": server.getBackendUrl(), 
 				"RagFair": server.getBackendUrl()
 			}, 
-			"totalInGame": 0
+			"totalInGame": 0,
+			"utc_time": utility.getTimestamp()
 		}
 	);
 }
