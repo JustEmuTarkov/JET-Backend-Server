@@ -163,7 +163,7 @@
 			"Current": 36.6,
 			"Maximum": 40
 		},
-		"UpdateTime": 0
+		"UpdateTime": 1625590768
 	},
 	"Hideout": {
 		"Areas": [
@@ -495,8 +495,8 @@
 			{
 				"_id": "60de0d80c6b34f52845b4591",
 				"_tpl": "5ae30bad5acfc400185c2dc4",
-				"parentId": "60de0d80c6b34f52845b4592",
-				"slotId": "mod_sight_rear",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
 				"upd": {
 					"Sight": {
 						"ScopesCurrentCalibPointIndexes": [
@@ -507,6 +507,12 @@
 						],
 						"SelectedScope": 0
 					}
+				},
+				"location": {
+					"x": 7,
+					"y": 23,
+					"r": "Horizontal",
+					"isSearched": true
 				}
 			},
 			{
@@ -2443,6 +2449,18 @@
 				"slotId": "cartridges",
 				"upd": {
 					"StackObjectsCount": 17
+				}
+			},
+			{
+				"_id": "60de0d80c6b34f521345467",
+				"_tpl": "584984812459776a704a82a6",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
+				"location": {
+					"x": 0,
+					"y": 20,
+					"r": 0,
+					"isSearched": true
 				}
 			},
 			{
