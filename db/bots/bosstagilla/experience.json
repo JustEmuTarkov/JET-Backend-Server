@@ -7,7 +7,7 @@
 		"min": 1000,
 		"max": 1000
 	},
-	"standing" {
+	"standing": {
 		"kill": -0.2
 	}
 }
