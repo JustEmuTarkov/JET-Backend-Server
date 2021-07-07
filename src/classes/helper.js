@@ -233,11 +233,13 @@ function payMoney(pmcData, body, sessionID) {
         }
     }
 
+    const TraderStandings = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
+
     // set current sale sum
     // convert barterPrice itemTpl into RUB then convert RUB into trader currency
-    let saleSum = pmcData.TraderStandings[body.tid].currentSalesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
+    let saleSum = TraderStandings[body.tid].currentSalesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 
-    pmcData.TraderStandings[body.tid].currentSalesSum = saleSum;
+    TraderStandings[body.tid].currentSalesSum = saleSum;
     //trader_f.handler.lvlUp(body.tid, sessionID);
     output.currentSalesSums[body.tid] = saleSum;
 

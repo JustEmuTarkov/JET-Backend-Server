@@ -20,9 +20,11 @@ class TraderServer
         }
         let trader = global._database.traders[traderID].base;
         trader.display = playerTraderStanding[traderID].display;
+        /*
         trader.loyalty.currentLevel = playerTraderStanding[traderID].currentLevel;
         trader.loyalty.currentStanding = playerTraderStanding[traderID].currentStanding.toFixed(3);
         trader.loyalty.currentSalesSum = playerTraderStanding[traderID].currentSalesSum;
+        */
 
         return global._database.traders[traderID].base;
     }
@@ -99,16 +101,27 @@ class TraderServer
     }
 
     resetTrader(sessionID, traderID) {
+        logger.logInfo(`Resetting ${traderID}`)
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let traderWipe = fileIO.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
-		let playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
+		let playerTraderStanding; 
+        
+        try {
+            playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
+        } catch (e) {
+            // File doesn't exist yet.
+            if (e.code === 'ENOENT') {
+                fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, {});
+                playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
+            }
+        }
         playerTraderStanding[traderID] = {
             "currentLevel": 1,
             "currentSalesSum": traderWipe.initialSalesSum,
             "currentStanding": traderWipe.initialStanding,
             "NextLoyalty": null,
-            "loyaltyLevels": global._database.traders[traderID].base.loyalty.loyaltyLevels,
+            "loyaltyLevels": global._database.traders[traderID].base.loyaltyLevels,
             "display": global._database.traders[traderID].base.display
         };
 		fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);

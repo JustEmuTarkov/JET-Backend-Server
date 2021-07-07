@@ -17,7 +17,7 @@ exports.execute = (url, info, sessionID) => {
 			"token": sessionID, 
 			"taxonomy": 6, 
 			"activeProfileId": "pmc" + sessionID, 
-			"nickname": profile_f.handler.getPmcProfile(sessionID).Info.Nickname, 
+			"nickname": "user", 
 			"backend": {
 				"Trading": server.getBackendUrl(), 
 				"Messaging": server.getBackendUrl(), 
