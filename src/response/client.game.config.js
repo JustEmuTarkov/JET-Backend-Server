@@ -23,7 +23,6 @@ exports.execute = (url, info, sessionID) => {
 		"utc_time": utility.getTimestamp()
 	}
 	let languages = locale_f.handler.getLanguages().data;
-	console.log(languages);
 	for(let index in languages){
 		var lang = languages[index];
 		obj.languages[lang.ShortName] = lang.Name;
