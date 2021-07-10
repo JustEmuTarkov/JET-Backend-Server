@@ -161,7 +161,7 @@ function createPaymentBody(body, stacks) {
 * output: boolean
 * */
 function payMoney(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     let trader = trader_f.handler.getTrader(body.tid, sessionID);
     let currencyTpl = getCurrency(trader.currency);
 

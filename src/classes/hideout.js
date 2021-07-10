@@ -11,7 +11,7 @@ function upgrade(pmcData, body, sessionID) {
             if (pmcData.Inventory.items[inventoryItem]._tpl === "5449016a4bdc2d6f028b456f") {
                 pmcData.Inventory.items[inventoryItem].upd.StackObjectsCount -= itemToPay.count;
             } else {
-                move_f.removeItem(pmcData, pmcData.Inventory.items[inventoryItem]._id, item_f.handler.getOutput(), sessionID);
+                move_f.removeItem(pmcData, pmcData.Inventory.items[inventoryItem]._id, item_f.handler.getOutput(sessionID), sessionID);
             }
         }
     }
@@ -36,7 +36,7 @@ function upgrade(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 // validating the upgrade
@@ -67,12 +67,12 @@ function upgradeComplete(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 // move items from hideout
 function putItemsInAreaSlots(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     for (let itemToMove in body.items) {
         for (let inventoryItem of pmcData.Inventory.items) {
@@ -109,7 +109,7 @@ function putItemsInAreaSlots(pmcData, body, sessionID) {
 }
 
 function takeItemsFromAreaSlots(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     for (let area of pmcData.Hideout.Areas) {
         if (area.type !== body.areaType) {
@@ -160,13 +160,13 @@ function toggleArea(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function singleProductionStart(pmcData, body, sessionID) {
     registerProduction(pmcData, body, sessionID);
 
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     for (let itemToDelete of body.items) {
         output = move_f.removeItem(pmcData, itemToDelete.id, output, sessionID);
@@ -176,7 +176,7 @@ function singleProductionStart(pmcData, body, sessionID) {
 }
 
 function scavCaseProductionStart(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     console.log(body.items)
 
     for (let item of body.items) {
@@ -243,11 +243,11 @@ function scavCaseProductionStart(pmcData, body, sessionID) {
 
 function continuousProductionStart(pmcData, body, sessionID) {
     registerProduction(pmcData, body, sessionID);
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function handleBitcoinReproduction(pmcData, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     keepalive_f.main(sessionID) // Force keepalive call to prevent client/server desync.
 
     let bitcoin = { 
@@ -273,7 +273,7 @@ function handleBitcoinReproduction(pmcData, sessionID) {
 }
 
 function takeProduction(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
         return handleBitcoinReproduction(pmcData, sessionID)

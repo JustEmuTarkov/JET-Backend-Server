@@ -287,7 +287,7 @@ function insure(pmcData, body, sessionID) {
         });
     }
 
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 module.exports.handler = new InsuranceServer();

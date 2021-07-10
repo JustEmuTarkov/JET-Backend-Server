@@ -46,7 +46,7 @@ function getOwnerInventoryItems(body, sessionID) {
 * otherwise, move is contained within the same profile_f.
 * */
 function moveItem(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 	//console.log(body);
 	//console.log(global._database.items[pmcData.Inventory.items.find(item => item._id == body.item)._tpl]);
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
@@ -71,7 +71,7 @@ function moveItem(pmcData, body, sessionID) {
 }
 
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
-    const output = item_f.handler.getOutput()
+    const output = item_f.handler.getOutput(sessionID)
 
     if (body.changedItems !== null) {
         for (const changed_item of body.changedItems) {
@@ -214,14 +214,14 @@ function removeItem(profileData, body, output, sessionID) {
 
 function discardItem(pmcData, body, sessionID) {
     insurance_f.handler.remove(pmcData, body.item, sessionID);
-    return removeItem(pmcData, body.item, item_f.handler.getOutput(), sessionID);
+    return removeItem(pmcData, body.item, item_f.handler.getOutput(sessionID), sessionID);
 }
 
 /* Split Item
 * spliting 1 item into 2 separate items ...
 * */
 function splitItem(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     let location = body.container.location;
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
@@ -274,7 +274,7 @@ function splitItem(pmcData, body, sessionID) {
 * merges 2 items into one, deletes item from body.item and adding number of stacks into body.with
 * */
 function mergeItem(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
 
     for (let key in inventoryItems.to) {
@@ -318,7 +318,7 @@ function mergeItem(pmcData, body, sessionID) {
 * Used to take items from scav inventory into stash or to insert ammo into mags (shotgun ones) and reloading weapon by clicking "Reload"
 * */
 function transferItem(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     let itemFrom = null, itemTo = null;
 
@@ -365,7 +365,7 @@ function transferItem(pmcData, body, sessionID) {
 * its used for "reload" if you have weapon in hands and magazine is somewhere else in rig or backpack in equipment
 * */
 function swapItem(pmcData, body, sessionID) {
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
 
     for (let iterItem of pmcData.Inventory.items) {
         if (iterItem._id === body.item) {

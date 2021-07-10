@@ -38,7 +38,7 @@ class HealthServer {
     // }
 
     offraidHeal(pmcData, body, sessionID) {
-        let output = item_f.handler.getOutput();
+        let output = item_f.handler.getOutput(sessionID);
     
         // update medkit used (hpresource)
         for (let item of pmcData.Inventory.items) {
@@ -64,7 +64,7 @@ class HealthServer {
     }
 
     offraidEat(pmcData, body, sessionID) {        
-        let output = item_f.handler.getOutput();
+        let output = item_f.handler.getOutput(sessionID);
         let resourceLeft;
         let maxResource = {};
     
@@ -175,7 +175,7 @@ class HealthServer {
         healthInfo.Hydration = pmcData.Health.Hydration.Current + info.difference.Hydration;
 
         health_f.handler.saveHealth(pmcData, healthInfo, sessionID);
-        return item_f.handler.getOutput();
+        return item_f.handler.getOutput(sessionID);
     }
 
     addEffect(pmcData, sessionID, info) {

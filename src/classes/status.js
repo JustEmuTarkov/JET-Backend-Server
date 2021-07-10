@@ -4,7 +4,7 @@ function foldItem(pmcData, body, sessionID) {
     for (let item of pmcData.Inventory.items) {
         if (item._id && item._id === body.item) {
             item.upd.Foldable = {"Folded": body.value};
-            return item_f.handler.getOutput();
+            return item_f.handler.getOutput(sessionID);
         }
     }
 
@@ -15,7 +15,7 @@ function toggleItem(pmcData, body, sessionID) {
     for (let item of pmcData.Inventory.items) {
         if (item._id && item._id === body.item) {
             item.upd.Togglable = {"On": body.value};
-            return item_f.handler.getOutput();
+            return item_f.handler.getOutput(sessionID);
         }
     }
 
@@ -41,7 +41,7 @@ function tagItem(pmcData, body, sessionID) {
                 Object.assign(item, myobject); // merge myobject into item -- overwrite same properties and add missings
             }
 
-            return item_f.handler.getOutput();
+            return item_f.handler.getOutput(sessionID);
         }
     }
 
@@ -56,7 +56,7 @@ function bindItem(pmcData, body, sessionID) {
     }
 
     pmcData.Inventory.fastPanel[body.index] = body.item;
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function examineItem(pmcData, body, sessionID) {
@@ -120,14 +120,14 @@ function examineItem(pmcData, body, sessionID) {
     pmcData.Encyclopedia[itemID] = true;
 
     //logger.logSuccess(`EXAMINED: ${itemID}`);
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function readEncyclopedia(pmcData, body, sessionID) {
     for (let id of body.ids) {
         pmcData.Encyclopedia[id] = true;
     }
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function handleMapMarker(pmcData, body, sessionID) {
@@ -145,7 +145,7 @@ function handleMapMarker(pmcData, body, sessionID) {
         }
     }
 
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 module.exports.foldItem = foldItem;

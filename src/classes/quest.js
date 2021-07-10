@@ -133,7 +133,7 @@ function acceptQuest(pmcData, body, sessionID) {
 
     dialogue_f.handler.addDialogueMessage(quest.traderId, messageContent, sessionID, questRewards);
     
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function completeQuest(pmcData, body, sessionID) {
@@ -228,12 +228,12 @@ function completeQuest(pmcData, body, sessionID) {
     }
 
     dialogue_f.handler.addDialogueMessage(questDb.traderId, messageContent, sessionID, questRewards);
-    return item_f.handler.getOutput();
+    return item_f.handler.getOutput(sessionID);
 }
 
 function handoverQuest(pmcData, body, sessionID) {
     const quest = getCachedQuest(body.qid);
-    let output = item_f.handler.getOutput();
+    let output = item_f.handler.getOutput(sessionID);
     let types = ["HandoverItem", "WeaponAssembly"];
     let handoverMode = true;
     let value = 0;

@@ -25,11 +25,11 @@ function wearClothing(pmcData, body, sessionID) {
 		}
 	}
 
-	return item_f.handler.getOutput();
+	return item_f.handler.getOutput(sessionID);
 }
 
 function buyClothing(pmcData, body, sessionID) {
-	let output = item_f.handler.getOutput();
+	let output = item_f.handler.getOutput(sessionID);
 	let storage = fileIO.readParsed(getPath(sessionID));
 	let offers = trader_f.handler.getAllCustomization(sessionID);
 

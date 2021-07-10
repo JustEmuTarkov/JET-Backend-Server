@@ -85,13 +85,45 @@ class Initializer
     initializeClasses() {
         logger.logSuccess("Create: Classes as global variables");
 		let path = executedDir + "/src/classes";
-		let files = fileIO.readDir(path);
+		//let files = fileIO.readDir(path);
 		let loadedModules = "";
-		global["helper_f"] = require(executedDir + "/src/classes/helper.js");
-		for(let file of files){
+		const loadOrder = [
+		  'helper.js',   
+		  'account.js',  
+		  'bots.js',
+		  'bundles.js',  
+		  'customization.js',
+		  'dialogue.js', 
+		  'health.js',
+		  'hideout.js',
+		  'home.js',     
+		  'insurance.js',
+		  'profile.js',  
+		  'item.js',     
+		  'keepalive.js',
+		  'locale.js',   
+		  'location.js',
+		  'match.js',    
+		  'move.js',
+		  'note.js',     
+		  'notifier.js',
+		  'offraid.js',  
+		  'preset.js',
+		  'quest.js',
+		  'ragfair.js',  
+		  'repair.js',
+		  'response.js', 
+		  'savehandler.js',
+		  'status.js',   
+		  'trade.js',
+		  'trader.js',   
+		  'weaponbuilds.js',
+		  'weather.js',  
+		  'wishlist.js'
+		];
+		for(let file of loadOrder){
 			loadedModules += file.replace(".js",", ");
-			if(file === "helper.js") continue;
-			let name = file.replace(".js","").toLowerCase() + "_f"; // fixes the weaponBuilds.js file bug ... lol
+			let name = file.replace(".js","").toLowerCase() + "_f"; // fixes the weaponbuilds.js file bug ... lol
 			global[name] = require(executedDir + "/src/classes/" + file);
 		}
 		logger.logInfo("[Modules] " + loadedModules.slice(0, -2))

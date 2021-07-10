@@ -163,7 +163,7 @@
 			"Current": 36.6,
 			"Maximum": 40
 		},
-		"UpdateTime": 1625590768
+		"UpdateTime": 1625766085
 	},
 	"Hideout": {
 		"Areas": [
@@ -2454,12 +2454,12 @@
 			{
 				"_id": "60de0d80c6b34f521345467",
 				"_tpl": "584984812459776a704a82a6",
-				"parentId": "60de0d80c6b34f52845b4643",
-				"slotId": "hideout",
+				"parentId": "60de0d80c6b34f52845b45a1",
+				"slotId": "5",
 				"location": {
 					"x": 0,
-					"y": 20,
-					"r": 0,
+					"y": 1,
+					"r": "Horizontal",
 					"isSearched": true
 				}
 			},
