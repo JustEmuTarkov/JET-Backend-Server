@@ -322,7 +322,7 @@ function changeItemStack(pmcData, id, value, output) {
 
                 item.upd.StackObjectsCount = value;
 
-                output.items.change.push({
+                output.profileChanges[pmcData._id].items.change.push({
                     "_id": item._id,
                     "_tpl": item._tpl,
                     "parentId": item.parentId,
@@ -331,7 +331,7 @@ function changeItemStack(pmcData, id, value, output) {
                     "upd": { "StackObjectsCount": item.upd.StackObjectsCount }
                 });
             } else {
-                output.items.del.push({ "_id": id });
+                output.profileChanges[pmcData._id].items.del.push({ "_id": id });
                 pmcData.Inventory.items.splice(inventoryItem, 1);
             }
 

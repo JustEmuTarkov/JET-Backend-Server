@@ -223,7 +223,7 @@ function payMoney(pmcData, body, sessionID) {
                 output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
             } else {
                 moneyItem.upd.StackObjectsCount -= leftToPay;
-                output.items.change.push(moneyItem);
+                output.profileChanges[pmcData._id].items.change.push(moneyItem);
             }
             leftToPay = 0;
         }
@@ -241,7 +241,8 @@ function payMoney(pmcData, body, sessionID) {
 
     TraderStandings[body.tid].currentSalesSum = saleSum;
     //trader_f.handler.lvlUp(body.tid, sessionID);
-    output.currentSalesSums[body.tid] = saleSum;
+    //output.currentSalesSums[body.tid] = saleSum;
+	// TODO find where to put that shit ...
 
     // save changes
     //logger.logSuccess("Items taken. Status OK.");
@@ -350,7 +351,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
                 item.upd.StackObjectsCount = item.upd.StackObjectsCount + calcAmount;
             }
 
-            output.items.change.push(item);
+            output.profileChanges[pmcData._id].items.change.push(item);
 
             if (skip) {
                 break;
@@ -390,7 +391,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
                 };
 
                 pmcData.Inventory.items.push(MoneyItem);
-                output.items.new.push(MoneyItem);
+                output.profileChanges[pmcData._id].items.new.push(MoneyItem);
 
                 if (calcAmount <= 0) {
                     break wholeLoop;
@@ -404,7 +405,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
 
     pmcData.TraderStandings[body.tid].currentSalesSum = saleSum;
     //trader_f.handler.lvlUp(body.tid, sessionID);
-    output.currentSalesSums[body.tid] = saleSum;
+    //output.currentSalesSums[body.tid] = saleSum;
 
     return output;
 }

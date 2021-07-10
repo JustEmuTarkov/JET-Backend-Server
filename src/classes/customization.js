@@ -47,7 +47,7 @@ function buyClothing(pmcData, body, sessionID) {
 				if (pmcData.Inventory.items[item].upd.StackObjectsCount > sellItem.count) {
 					pmcData.Inventory.items[item].upd.StackObjectsCount -= sellItem.count;
 
-					output.items.change.push({
+					output.profileChanges[pmcData._id].items.change.push({
                         "_id": pmcData.Inventory.items[item]._id,
                         "_tpl": pmcData.Inventory.items[item]._tpl,
                         "parentId": pmcData.Inventory.items[item].parentId,
@@ -57,7 +57,7 @@ function buyClothing(pmcData, body, sessionID) {
 					});
 					break;
 				} else if (pmcData.Inventory.items[item].upd.StackObjectsCount === sellItem.count && sellItem.del === true) {
-					output.items.del.push({"_id": sellItem.id});
+					output.profileChanges[pmcData._id].items.del.push({"_id": sellItem.id});
                     pmcData.Inventory.items.splice(item, 1);					
 				}
 			}

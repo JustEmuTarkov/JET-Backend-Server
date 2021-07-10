@@ -103,7 +103,7 @@ class ItemServer {
 			 "quests":[],
 			 "ragFairOffers":[],
 			 "builds":[],
-			 "items":{},
+			 "items":{"change": [], "new": [], "del": []},
 			 "production":null,
 			 "skills":{
 				"Common":[

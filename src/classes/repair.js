@@ -43,7 +43,7 @@ exports.main = (pmcData, body, sessionID) => {
             itemToRepair.upd.FaceShield.Hits = 0;
         }
 
-        output.items.change.push(itemToRepair);
+        output.profileChanges[pmcData._id].items.change.push(itemToRepair);
     }
 
     return output;

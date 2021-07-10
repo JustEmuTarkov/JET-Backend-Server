@@ -126,10 +126,10 @@ function takeItemsFromAreaSlots(pmcData, body, sessionID) {
 
             output = move_f.addItem(pmcData, newReq, output, sessionID);
             pmcData = profile_f.handler.getPmcProfile(sessionID);
-            output.items.new[0].upd = itemToMove.upd;
+            output.profileChanges[pmcData._id].items.new[0].upd = itemToMove.upd;
 
             for (let item of pmcData.Inventory.items) {
-                if (item._id == output.items.new[0]._id) {
+                if (item._id == output.profileChanges[pmcData._id].items.new[0]._id) {
                     item.upd = itemToMove.upd;
                 }
             }
