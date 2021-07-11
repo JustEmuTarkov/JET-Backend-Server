@@ -250,6 +250,11 @@ exports.all = () => {
         logger.logWarning("Loadorder missing. Rebuild Required.")
         serverConfig.rebuildCache = true;
     }*/
+	if(!fileIO.exist("user/configs/mods.json")){
+		fileIO.write("user/configs/mods.json", [])
+	}
+	
+	//const loadModOrder = 
 
     // detect if existing mods changed
     if (detectChangedMods() && !serverConfig.rebuildCache) {
