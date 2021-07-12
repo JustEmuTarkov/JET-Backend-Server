@@ -233,19 +233,11 @@ function payMoney(pmcData, body, sessionID) {
         }
     }
 
-    const TraderStandings = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
-
-    // set current sale sum
-    // convert barterPrice itemTpl into RUB then convert RUB into trader currency
-    let saleSum = TraderStandings[body.tid].currentSalesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
-
-    TraderStandings[body.tid].currentSalesSum = saleSum;
-    //trader_f.handler.lvlUp(body.tid, sessionID);
-    //output.currentSalesSums[body.tid] = saleSum;
-	// TODO find where to put that shit ...
-
+    // set current sale sum -- convert barterPrice itemTpl into RUB then convert RUB into trader currency
+    pmcData.TradersInfo[body.tid].saleSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
+	
     // save changes
-    //logger.logSuccess("Items taken. Status OK.");
+    logger.logInfo("Items taken. Status OK.");
     item_f.handler.setOutput(output);
     return true;
 }
@@ -401,9 +393,9 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     }
 
     // set current sale sum
-    let saleSum = pmcData.TraderStandings[body.tid].currentSalesSum + amount;
-
-    pmcData.TraderStandings[body.tid].currentSalesSum = saleSum;
+	
+    pmcData.TradersInfo[body.tid].saleSum += amount;
+	
     //trader_f.handler.lvlUp(body.tid, sessionID);
     //output.currentSalesSums[body.tid] = saleSum;
 

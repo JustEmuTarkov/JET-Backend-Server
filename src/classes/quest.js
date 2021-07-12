@@ -201,11 +201,11 @@ function completeQuest(pmcData, body, sessionID) {
 
             case "TraderStanding":
                 pmcData = profile_f.handler.getPmcProfile(sessionID);
-                pmcData.TraderStandings[reward.target].currentStanding += parseFloat(reward.value);
+                pmcData.TraderInfo[reward.target].standing += parseFloat(reward.value);
 
                 // Prevent negative trader rep. Seems to still have a visual bug.
-                if (pmcData.TraderStandings[reward.target].currentStanding < 0) {
-                    pmcData.TraderStandings[reward.target].currentStanding = 0;
+                if (pmcData.TraderInfo[reward.target].standing < 0) {
+                    pmcData.TraderInfo[reward.target].standing = 0;
                 }
 
                 //trader_f.handler.lvlUp(reward.target, sessionID);

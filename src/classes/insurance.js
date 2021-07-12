@@ -226,7 +226,7 @@ function getItemPrice(_tpl) {
 
 function getPremium(pmcData, inventoryItem, traderId) {
     let premium = getItemPrice(inventoryItem._tpl) * (global._database.gameplayConfig.trading.insureMultiplier * 3);
-    premium -= premium * (pmcData.TraderStandings[traderId].currentStanding > 0.5 ? 0.5 : pmcData.TraderStandings[traderId].currentStanding);
+    premium -= premium * (pmcData.TradersInfo[traderId].standing > 0.5 ? 0.5 : pmcData.TradersInfo[traderId].standing);
     return Math.round(premium);
 }
 

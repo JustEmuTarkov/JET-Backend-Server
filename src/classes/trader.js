@@ -11,123 +11,42 @@ class TraderServer
     /* Load all the traders into memory. */
 
     getTrader(traderID, sessionID) {
-
-        let pmcData = profile_f.handler.getPmcProfile(sessionID);
-		const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
-        if (!(traderID in playerTraderStanding)) {
-            trader_f.handler.resetTrader(sessionID, traderID);
-            //this.lvlUp(traderID, sessionID);
-        }
-        let trader = global._database.traders[traderID].base;
-        trader.display = playerTraderStanding[traderID].display;
-        /*
-        trader.loyalty.currentLevel = playerTraderStanding[traderID].currentLevel;
-        trader.loyalty.currentStanding = playerTraderStanding[traderID].currentStanding.toFixed(3);
-        trader.loyalty.currentSalesSum = playerTraderStanding[traderID].currentSalesSum;
-        */
-
         return global._database.traders[traderID].base;
     }
 
     changeTraderDisplay(traderID, status, sessionID) {
-		const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
-        playerTraderStanding[traderID].display = status;
-		fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
+		// const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`)
+        // playerTraderStanding[traderID].display = status;
+		// fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
     }
 
     getAllTraders(sessionID) {
-        //if (typeof sessionID == "undefined") {
-        //    console.log("sessionID: " + sessionID);
-        //    return;
-        //}
-
-        //let pmcData = profile_f.handler.getPmcProfile(sessionID);
-
-        //if (!pmcData || typeof pmcData == "undefined") {
-        //    logger.logError(`Profile of ${sessionID} is undefined, and therefore cannot be loaded. Review the logs above for the cause.`)
-        //}
-
         let Traders = [];
-        for (let traderID in global._database.traders) {
+        for (const traderID in global._database.traders) {
             if (traderID === "ragfair") {
                 continue;
             }
-			//const playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
-
-            //if (!(traderID in playerTraderStanding)) {
-            //    console.log("Resetting trader: " + traderID);
-            //    this.resetTrader(sessionID, traderID);
-            //}
-
-            let trader = global._database.traders[traderID].base;
-
-            //trader.display = playerTraderStanding[traderID].display;
-            //trader.loyalty.currentLevel = playerTraderStanding[traderID].currentLevel;
-            //trader.loyalty.currentStanding = playerTraderStanding[traderID].currentStanding.toFixed(3);
-            //trader.loyalty.currentSalesSum = playerTraderStanding[traderID].currentSalesSum;
-
-            Traders.push(trader);
+            Traders.push(global._database.traders[traderID].base);
         }
         return Traders;
     }
 
-    lvlUp(traderID, sessionID) {
-        //let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        //let loyaltyLevels = global._database.traders[traderID].base.loyalty.loyaltyLevels;
-
-        // level up player
-        //pmcData.Info.Level = profile_f.calculateLevel(pmcData);
-
-        // level up traders
-        //let targetLevel = 0;
-		//let playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
-
-        //for (let level in loyaltyLevels) {
-        //    if ((loyaltyLevels[level].minLevel <= pmcData.Info.Level
-        //        && loyaltyLevels[level].minSalesSum <= playerTraderStanding[traderID].currentSalesSum
-        //        && loyaltyLevels[level].minStanding <= playerTraderStanding[traderID].currentStanding)
-        //        && targetLevel < 4) {
-                // level reached
-        //        targetLevel++;
-        //    }
-        //}
-
-        // set level
-        //playerTraderStanding[traderID].currentLevel = targetLevel;
-        //global._database.traders[traderID].base.loyalty.currentLevel = targetLevel;
-		//fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
-		
-        //return pmcData.TraderStandings[traderID].currentLevel
-    }
+    lvlUp(traderID, sessionID) {}
 
     resetTrader(sessionID, traderID) {
-        logger.logInfo(`Resetting ${traderID}`)
+        logger.logInfo(`Resetting ${traderID}`);
         let account = account_f.handler.find(sessionID);
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
-        let traderWipe = fileIO.readParsed(db.profile[account.edition]["trader_" + pmcData.Info.Side.toLowerCase()]);
-		let playerTraderStanding; 
-        
-        try {
-            playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
-        } catch (e) {
-            // File doesn't exist yet.
-            if (e.code === 'ENOENT') {
-                fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, {});
-                playerTraderStanding = fileIO.readParsed(`./user/profiles/${sessionID}/traderStanding.json`);
-            }
-        }
-        playerTraderStanding[traderID] = {
-            "currentLevel": 1,
-            "currentSalesSum": traderWipe.initialSalesSum,
-            "currentStanding": traderWipe.initialStanding,
-            "NextLoyalty": null,
-            "loyaltyLevels": global._database.traders[traderID].base.loyaltyLevels,
-            "display": global._database.traders[traderID].base.display
-        };
-		fileIO.write(`./user/profiles/${sessionID}/traderStanding.json`, playerTraderStanding);
-
-        //this.lvlUp(traderID, sessionID);
+        let traderWipe = fileIO.readParsed(db.profile[account.edition]["initialTraderStanding"]);
 		
+		if(typeof pmcData.TradersInfo[traderID] == "undefined")
+			pmcData.TradersInfo[traderID] = { "saleSum": 0, "standing": 0, "unlocked": true };
+		
+		if(traderID == "5c0647fdd443bc2504c2d371")
+			pmcData.TradersInfo[traderID].unlocked = false;
+		
+		pmcData.TradersInfo[traderID].saleSum = traderWipe.initialSalesSum;
+		pmcData.TradersInfo[traderID].standing = traderWipe.initialStanding;
     }
 
     iter_item_children(item, item_list) {
