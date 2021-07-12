@@ -4552,7 +4552,7 @@
         "Notes": []
     },
     "Quests": [],
-    "TraderStandings": {},
+	"TradersInfo": {},
     "RagfairInfo": {
         "rating": 0.2,
         "isRatingGrowing": true,

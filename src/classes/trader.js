@@ -4,12 +4,9 @@
 class TraderServer
 {
     constructor() {
-        this.traders = {};
         this.fence_generated_at = 0;
     }
-
-    /* Load all the traders into memory. */
-
+	
     getTrader(traderID, sessionID) {
         return global._database.traders[traderID].base;
     }
@@ -39,8 +36,12 @@ class TraderServer
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let traderWipe = fileIO.readParsed(db.profile[account.edition]["initialTraderStanding"]);
 		
-		if(typeof pmcData.TradersInfo[traderID] == "undefined")
-			pmcData.TradersInfo[traderID] = { "saleSum": 0, "standing": 0, "unlocked": true };
+		if(pmcData.TradersInfo[traderID] == undefined)
+			pmcData.TradersInfo[traderID] = { 
+				"saleSum": 0, 
+				"standing": 0, 
+				"unlocked": global._database.traders[traderID].base.unlockedByDefault 
+			};
 		
 		if(traderID == "5c0647fdd443bc2504c2d371")
 			pmcData.TradersInfo[traderID].unlocked = false;
