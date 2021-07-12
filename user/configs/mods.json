@@ -1,26 +1,22 @@
 [
 	{
-		"name": "AllItemsExamined",
-		"author": "TheMaoci",
-		"version": "1.0.0",
-		"enabled": true
+		"isEnabled": true,
+		"folder": "AllItemsExamined_1.0.0",
+		"order": 1
 	},
 	{
-		"name": "EquipRigsWithArmors",
-		"author": "TheMaoci",
-		"version": "1.0.0",
-		"enabled": true
+		"isEnabled": true,
+		"folder": "EquipRigsWithArmors_1.0.0",
+		"order": 2
 	},
 	{
-		"name": "LessWeightItems",
-		"author": "TheMaoci",
-		"version": "1.0.0",
-		"enabled": true
+		"isEnabled": true,
+		"folder": "NoFallDamage_1.0.0",
+		"order": 3
 	},
 	{
-		"name": "NoFallDamage",
-		"author": "TheMaoci",
-		"version": "1.0.0",
-		"enabled": true
+		"isEnabled": true,
+		"folder": "LessWeightItems_1.0.0",
+		"order": 4
 	}
 ]

@@ -1,0 +1,11 @@
+{
+	"name": "EquipRigsWithArmors",
+	"author": "TheMaoci",
+	"description": "Allows user to equip armor rigs with armors",
+	"license": "MIT",
+	"version": "1.0.0",
+	"src":{ 
+		"src/EquipRigsWithArmors.js": "TamperModLoad"
+	},
+	"required": []
+}

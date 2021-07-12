@@ -20,13 +20,13 @@ class Server {
             json: 'application/json'
         };
 		this.createCacheCallback();
-		//this.createStartCallback();
 		this.createReceiveCallback();
 		this.createRespondCallback();
 		this.respondCallback["DONE"] = this.killResponse.bind(this);
     }
 	
-	createCacheCallback(){
+	createCacheCallback()
+	{
         this.cacheCallback = {};
 		let path = "./src/callbacks/cache";
 		let files = fileIO.readDir(path);
@@ -36,7 +36,8 @@ class Server {
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
-	createReceiveCallback(){
+	createReceiveCallback()
+	{
         this.receiveCallback = {};
 		let path = "./src/callbacks/receive";
 		let files = fileIO.readDir(path);
@@ -46,7 +47,9 @@ class Server {
 		}
 		logger.logSuccess("Create: Receive Callback");
 	}
-	createRespondCallback(){
+
+	createRespondCallback()
+	{
         this.respondCallback = {};
 		let path = "./src/callbacks/respond";
 		let files = fileIO.readDir(path);
@@ -56,10 +59,14 @@ class Server {
 		}
 		logger.logSuccess("Create: Respond Callback");
 	}
-    resetBuffer(sessionID) {
+	
+    resetBuffer(sessionID) 
+	{
         this.buffers[sessionID] = undefined;
     }
-    putInBuffer(sessionID, data, bufLength) {
+	
+    putInBuffer(sessionID, data, bufLength) 
+	{
         if (this.buffers[sessionID] === undefined || this.buffers[sessionID].allocated !== bufLength) {
             this.buffers[sessionID] = {
                 written: 0,
@@ -74,27 +81,41 @@ class Server {
         buf.written += data.length;
         return buf.written === buf.allocated;
     }
-    getFromBuffer(sessionID) {
+	
+    getFromBuffer(sessionID) 
+	{
         return this.buffers[sessionID].buffer;
     }
-    getName() {
+
+    getName() 
+	{
         return this.name;
     }
-    getIp() {
+
+    getIp() 
+	{
         return this.ip;
     }
-    getPort() {
+
+    getPort() 
+	{
         return this.port;
     }
-    getBackendUrl() {
+
+    getBackendUrl() 
+	{
 		if(this.second_backendUrl != null)
 			return this.second_backendUrl;
         return this.backendUrl;
     }
-    getVersion() {
+ 
+	getVersion() 
+	{
         return this.version;
     }
-    generateCertificate() {
+
+    generateCertificate() 
+	{
 
         const certDir = internal.resolve(__dirname, '../../user/certs');
 
@@ -134,22 +155,30 @@ class Server {
 
         return { cert, key };
     }
-    sendZlibJson(resp, output, sessionID) {
+
+    sendZlibJson(resp, output, sessionID) 
+	{
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json'], 'content-encoding' : 'deflate', 'Set-Cookie' : 'PHPSESSID=' + sessionID});
     
         internal.zlib.deflate(output, function (err, buf) {
             resp.end(buf);
         });
     }
-    sendTextJson(resp, output) {
+
+    sendTextJson(resp, output) 
+	{
         resp.writeHead(200, "OK", {'Content-Type': this.mime['json']});
         resp.end(output);
     }
-	sendHtml(resp, output) {
+
+	sendHtml(resp, output) 
+	{
         resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
         resp.end(output);
     }
-    sendFile(resp, file) {
+
+    sendFile(resp, file) 
+	{
         let pathSlic = file.split("/");
         let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
         let fileStream = fileIO.createReadStream(file);
@@ -160,11 +189,13 @@ class Server {
         });
     }
 
-    killResponse() {
+    killResponse() 
+	{
         return;
     }
 
-    sendResponse(sessionID, req, resp, body) {
+    sendResponse(sessionID, req, resp, body) 
+	{
         let output = "";
 		if(req.url == "/favicon.ico"){
 			this.sendFile(resp, "res/icon.ico");
@@ -218,7 +249,9 @@ class Server {
             this.sendZlibJson(resp, output, sessionID);
         }
     }
-    handleRequest(req, resp) {
+    
+	handleRequest(req, resp) 
+	{
         let IP = req.connection.remoteAddress.replace("::ffff:", "");
 		    IP = ((IP == "127.0.0.1")?"LOCAL":IP);
         const sessionID = utility.getCookies(req)['PHPSESSID'];
@@ -277,7 +310,8 @@ class Server {
         }
     }
 	
-	_serverStart(){
+	_serverStart()
+	{
 		let backend = this.backendUrl;
         /* create server */
         let httpsServer = internal.https.createServer(this.generateCertificate(), (req, res) => {
@@ -313,7 +347,8 @@ class Server {
         });
 	}
 
-	softRestart(){
+	softRestart()
+	{
 		logger.logInfo("[SoftRestart]: Reloading Database");
 		require("../../src/database.js").execute();
 		// will not be required if all data is loaded into memory
@@ -330,18 +365,20 @@ class Server {
 			}
         }
 		logger.logInfo("[SoftRestart]: Reloading TamperMods");
-		global.core.route.TamperModLoad(); // TamperModLoad
+		global.mods_f.TamperModLoad(); // TamperModLoad
 
 	}
-    start() {
+
+    start() 
+	{
         // execute cache callback
         logger.logInfo("[Warmup]: Cache callbacks...");
         for (let type in this.cacheCallback) {
             this.cacheCallback[type]();
         }
 		if(serverConfig.rebuildCache)
-			global.core.route.CacheModLoad(); // CacheModLoad
-		global.core.route.ResModLoad(); // load Res Mods
+			global.mods_f.CacheModLoad(); // CacheModLoad
+		global.mods_f.ResModLoad(); // load Res Mods
 		
 		logger.logInfo("[Warmup]: Loading Database");
 		require("../../src/database.js").execute();
@@ -374,7 +411,7 @@ class Server {
 			global.global._database.assort[traderID]
 			global.global._database.someothershit
 		*/
-		global.core.route.TamperModLoad(); // TamperModLoad
+		global.mods_f.TamperModLoad(); // TamperModLoad
 
 		/*console.log("staticRoutes")
 		console.log(router.staticRoutes)
