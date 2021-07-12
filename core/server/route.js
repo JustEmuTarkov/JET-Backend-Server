@@ -296,8 +296,9 @@ exports.all = () => {
 		modsConfig = fileIO.readParsed(`user/configs/mods.json`);
 		for(let modKey in modsConfig){
 			const modInfo = modsConfig[modKey];
-			const modsConfig = fileIO.readParsed(`user/mods/${modInfo.folder}/mod.config.json`);
-			
+			const modConfig = fileIO.readParsed(`user/mods/${modInfo.folder}/mod.config.json`);
+			const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
+			modsRequirements[modUniqueID] = modConfig.required;
 			// unfinished
 		}
 	}
