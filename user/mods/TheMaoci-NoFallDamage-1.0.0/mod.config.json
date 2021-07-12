@@ -5,5 +5,6 @@
 	"license": "MIT",
 	"src": {
 		"src/script.js": "TamperModLoad"
-	}
+	},
+	"required": [{"name": "AllItemsExamined", "ver": "1.0.0"}]
 }

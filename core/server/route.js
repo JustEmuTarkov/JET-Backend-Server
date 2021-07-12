@@ -132,7 +132,8 @@ function loadModSrc(mod, filepath){
 	if(typeof mod.res != "undefined")
 		res = scanRecursiveMod(filepath, res, mod.res);
 }
-// loadAllMods
+
+
 exports.CacheModLoad = () => {
     for (let element of global.modsConfig) {
         if (!element.enabled) {
@@ -145,7 +146,6 @@ exports.CacheModLoad = () => {
     }
 	
 }
-// loadResMods
 exports.ResModLoad = () => {
     for (let element of global.modsConfig) {
         if (!element.enabled) {
@@ -168,6 +168,8 @@ exports.TamperModLoad = () => {
 		loadMod(mod, filepath, "TamperModLoad");
     }
 }
+
+
 // flush
 function flush() {
     db = {};
@@ -229,7 +231,10 @@ function routeAll() {
         }   
     }
 }
+
+
 // all
+
 exports.all = () => {
 	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
 	
@@ -242,6 +247,133 @@ exports.all = () => {
 		logger.logError("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
 	}
+	
+	// Loading mods (without execute)
+	let emptyModsConfig = false;
+	if(!fileIO.exist("user/configs/mods.json")){
+		fileIO.write("user/configs/mods.json", {});
+		emptyModsConfig = true;
+	}
+	// -- need to be mored to functions later on !!!
+	
+	let modsConfig = {};
+	let modsRequirements = {}
+	if(emptyModsConfig){
+		const modsFolder = fileIO.readDir("user/mods").filter(dir => dir.isDirectory());
+		for(const modFolder of modsFolder){
+			const modConfig = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
+			if(typeof modConfig.name != "undefined" && typeof modConfig.name != "string")
+			{
+				if(modConfig.author != "undefined" && typeof modConfig.author != "string")
+				{
+					if(modConfig.version != "undefined" && typeof modConfig.version != "string")
+					{
+						if(modConfig.required != "undefined")
+						{
+							const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
+							modsConfig[modUniqueID] = {
+								"isEnabled": true,
+								"folder": modFolder,
+								"order": -1
+							};
+							modsRequirements[modUniqueID] = modConfig.required;
+							
+						} else {
+							logger.logWarning(`requirements for a mod ${modFolder} are missing`);
+						}
+					} else {
+						logger.logWarning("mod config version is undefined or is not a string, of mod: " + modFolder);
+					}
+				} else {
+					logger.logWarning("mod config author is undefined or is not a string, of mod: " + modFolder);
+				}
+			} else {
+				logger.logWarning("mod config name is undefined or is not a string, of mod: " + modFolder);
+			}
+		}
+		fileIO.write("user/configs/mods.json", modsConfig);
+	} else {
+		modsConfig = fileIO.readParsed(`user/configs/mods.json`);
+		for(let modKey in modsConfig){
+			const modInfo = modsConfig[modKey];
+			const modsConfig = fileIO.readParsed(`user/mods/${modInfo.folder}/mod.config.json`);
+			
+			// unfinished
+		}
+	}
+	
+	let orderNumber = 1;
+	let AlreadyQueriedMods = [];
+	// first loop with no requirements
+	for(const key in modsRequirements){
+		const modRequired = modsRequirements[key];
+		if(modRequired.length == 0){
+			modsConfig[key].order = orderNumber;
+			orderNumber++;
+			AlreadyQueriedMods.push({ "name": modsConfig[key].name, "ver": modsConfig[key].version.split('.') });
+			delete modsRequirements[key];
+		}
+	}
+	// lets check requirements of first mod requirements
+	for(const key in modsRequirements){
+		const modRequired = modsRequirements[key];
+		if(modRequired.length == 1){
+			const foundMods = AlreadyQueriedMods.map(mod => mod.name == modConfig.required[0].name);
+			if(foundMods.length == 0)
+			{
+				logger.logWarning(`Mod: ${modConfig.name} failed to load cause of missing required mods`);
+				delete modsRequirements[key];
+				continue;
+			}
+			if(foundMods.length > 1){
+				logger.logWarning(`Mod: ${modConfig.name} found more then 1 required mod with the same name!!! will take first one for checking`);
+			}
+			let versionComparison = "equal";
+			let versionOfReqMod = modConfig.required[0].ver;
+			
+			if(versionOfReqMod.substring(0,1) == "^"){
+				versionComparison = "newEqual";
+				versionOfReqMod = versionOfReqMod.substring(1);
+			}
+			switch(versionComparison){
+				case "equal": 
+					if(foundMods[0].ver != versionOfReqMod)
+					{
+						logger.logWarning(`Mod: ${modConfig.name} failed to load cause of wrong version not "equal" to the required one`);
+						delete modsRequirements[key];
+						continue;
+					}
+				break;
+				case "newEqual": 
+					if(foundMods[0].ver != versionOfReqMod)
+					{
+						const requiredVersion = versionOfReqMod.split('.');
+						const foundVersion = foundMods[0].ver.split('.');
+						if(
+							requiredVersion[0] < foundVersion[0] || 
+							requiredVersion[1] < foundVersion[1] || 
+							requiredVersion[2] < foundVersion[2])
+						{
+							logger.logWarning(`Mod: ${modConfig.name} failed to load cause of wrong version not "equal" or newer to the required one`);
+							delete modsRequirements[key];
+							continue;
+						}
+					}
+				break;
+			}
+			// all is good we can add the mod
+			modsConfig[key].order = orderNumber;
+			orderNumber++;
+			AlreadyQueriedMods.push({ "name": modsConfig[key].name, "ver": modsConfig[key].version.split('.') });
+			delete modsRequirements[key];
+		}
+	}
+	
+		// unfinished// unfinished
+	
+	// end
+	
+	
 	if(!serverConfig.rebuildCache)
 		detectMissingMods();
 
@@ -250,9 +382,8 @@ exports.all = () => {
         logger.logWarning("Loadorder missing. Rebuild Required.")
         serverConfig.rebuildCache = true;
     }*/
-	if(!fileIO.exist("user/configs/mods.json")){
-		fileIO.write("user/configs/mods.json", [])
-	}
+	
+	
 	
 	//const loadModOrder = 
 
