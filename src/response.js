@@ -100,26 +100,26 @@ class Responses {
 			"/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu
 		}
 		this.dynamicResponses = {
-			"api/location": this.dynApiLocation,
-			"bundle": this.dynBundle,
-			"client/locale": this.dynClientLocale,
-			"client/menu/locale": this.dynClientMenuLocale,
-			"client/location/getLocalloot": this.dynClientLocationGetLocalloot,
-			"client/trading/api/getTrader": this.dynClientMenuLocale,
-			"client/trading/api/getTraderAssort": this.dynClientTradingApiGetTrader,
-			"client/trading/api/getUserAssortPrice/trader": this.dynClientTradingApiGetUserAssortPriceTrader,
-			"client/trading/customization": this.dynClientTradingCustomization,
-			"jpg": this.dynImageJpg,
-			"last_id": this.dynlast_id,
-			"notifierBase": this.dynNotifierBase,
-			"notifierServer": this.dynNotifierServer,
-			"png": this.dynImagePng,
-			"push/notifier/get": this.dynPushNotifierGet,
+			"/client/locale": this.dynClientLocale,
+			"/client/menu/locale": this.dynClientMenuLocale,
+			"/client/location/getLocalloot": this.dynClientLocationGetLocalloot,
+			"/client/trading/api/getUserAssortPrice/trader": this.dynClientTradingApiGetUserAssortPriceTrader,
+			"/client/trading/api/getTraderAssort": this.dynClientTradingApiGetTraderAssort,
+			"/client/trading/api/getTrader": this.dynClientTradingApiGetTrader,
+			"/client/trading/customization": this.dynClientTradingCustomization,
 			"server/profile": this.dynServerProfile,
 			"singleplayer/settings/bot/difficulty": this.dynSingleplayerSettingsBotDifficulty,
 			"singleplayer/settings/bot/limit": this.dynSingleplayerSettingsBotLimit,
 			"singleplayer/settings/defaultRaidSettings": this.dynSingleplayerSettingsDefaultRaidSettings,
-			"singleplayer/settings/weapon/durability": this.dynSingleplayerSettingsWeaponDurability
+			"singleplayer/settings/weapon/durability": this.dynSingleplayerSettingsWeaponDurability,
+			"push/notifier/get": this.dynPushNotifierGet,
+			"notifierBase": this.dynNotifierBase,
+			"notifierServer": this.dynNotifierServer,
+			"api/location": this.dynApiLocation,
+			"bundle": this.dynBundle,
+			"jpg": this.dynImageJpg,
+			"png": this.dynImagePng,
+			"last_id": this.dynlast_id,
 		}
 	}
 //dynamic
@@ -155,6 +155,7 @@ class Responses {
 		return response_f.getBody(trader_f.handler.getAssort(sessionID, TraderID));
 	}
 	dynClientTradingApiGetUserAssortPriceTrader(url, info, sessionID) {
+		sessionID = "AID8131647517931710690RF";
 		return response_f.getBody(trader_f.handler.getPurchasesData(url.substr(url.lastIndexOf('/') + 1), sessionID));
 	}
 	dynClientTradingCustomization(url, info, sessionID){
