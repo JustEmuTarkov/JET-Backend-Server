@@ -192,6 +192,14 @@ class ModLoader
 			if(!modInfo.isEnabled){
 				continue;
 			}
+
+			// Check if mod exists on disk.
+			if (!fileIO.exist(`user/mods/${modInfo.folder}`)) {
+				logger.logWarning(`Could not find the mod on disk for ${modKey}. Assuming it was removing...`)
+				delete this.modsConfig[modKey]
+				return;
+			}
+
 			const modConfig = fileIO.readParsed(`user/mods/${modInfo.folder}/mod.config.json`);
 			const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
 			this.modsRequirements[modUniqueID] = modConfig.required;
