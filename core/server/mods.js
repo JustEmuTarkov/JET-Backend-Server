@@ -204,7 +204,18 @@ class ModLoader
 			
 			for(const folderName of modsFolder)
 			{
-				const modConfig = fileIO.readParsed(`user/mods/${folderName}/mod.config.json`);
+				const configPath = `user/mods/${folderName}/mod.config.json`
+				if (!fileIO.exist(configPath)) {
+					logger.logError(`No mod config found for ${folderName}. Skipping...`)
+					return;
+				}
+				let modConfig;
+				try {
+					modConfig = fileIO.readParsed(configPath);
+				} catch (e) {
+					logger.logError(`There was an error reading the mod config for ${folderName}. Skipping... \nError: ${e.stack}`)
+					return;
+				}
 				const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
 				if(typeof modConfig[modUniqueID] == "undefined"){
 					this.modsConfig[modUniqueID] = {
