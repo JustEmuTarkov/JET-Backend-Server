@@ -91,7 +91,7 @@ function routeDatabaseAndResources()
 	logger.logInfo("Rebuilding cache: route database");
 	db = {};
 	db = scanRecursiveRoute("db/");
-	logger.logInfo("Rebuilding cache: route ressources");
+	logger.logInfo("Rebuilding cache: route resources");
 	res = {};
 	res = scanRecursiveRoute("res/");
 	//fileIO.write("user/cache/loadorder.json", fileIO.read("src/loadorder.json"), true);
@@ -221,10 +221,10 @@ class ModLoader
 			
 			for(const folderName of modsFolder)
 			{
-				const modConfig = fileIO.readParsed(`user/mods/${modInfo.folder}/mod.config.json`);
+				const modConfig = fileIO.readParsed(`user/mods/${folderName}/mod.config.json`);
 				const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
-				if(typeof this.modConfig[modUniqueID] == "undefined"){
-					this.modConfig[modUniqueID] = {
+				if(typeof modConfig[modUniqueID] == "undefined"){
+					this.modsConfig[modUniqueID] = {
 						"isEnabled": true,
 						"folder": folderName,
 						"order": -1
@@ -239,8 +239,15 @@ class ModLoader
 	queryNoRequirementMods()
 	{ // Add to the list mods without requirements aka CORE mods
 		for(const key in this.modsRequirements){
-			const modRequired = this.modsRequirements[key].length;
-			if(modRequired === 0)
+			let modRequired;
+
+			if (typeof this.modsRequirements[key] == "undefined") {
+				modRequired = 0 // Mod is missing a 'requirements' array.
+			} else {
+				modRequired = this.modsRequirements[key].length;
+			}
+
+			if (modRequired === 0)
 			{
 				const modConfigFile = fileIO.readParsed(`user/mods/${this.modsConfig[key].folder}/mod.config.json`);
 				this.modsConfig[key].order = this.orderNumber;
@@ -275,7 +282,7 @@ class ModLoader
 						});
 						if(typeof foundMods == "undefined")
 						{
-							logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load cause of missing required mods`);
+							logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to a missing dependency.`);
 							delete this.modsRequirements[key];
 							delete this.modsConfig[key];
 							continue;
@@ -292,8 +299,8 @@ class ModLoader
 							case "equal": 
 								if(foundMods.ver != versionOfReqMod)
 								{
-									logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load cause of wrong version not "equal" to the required one`);
-									logger.logWarning(`Mod: ${foundMods.ver} != ${versionOfReqMod}`);
+									logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to an uncompatible dependency version.`);
+									logger.logWarning(`Mod version is ${foundMods.ver} which is not the required version of ${versionOfReqMod}.`);
 									delete this.modsRequirements[key];
 									delete this.modsConfig[key];
 									continue;
@@ -309,7 +316,8 @@ class ModLoader
 										requiredVersion[1] < foundVersion[1] || 
 										requiredVersion[2] < foundVersion[2])
 									{
-										logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load cause of wrong version not "equal" or newer to the required one`);
+										logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to an uncompatible dependency version.`);
+										logger.logWarning(`Mod version is ${foundMods.ver} which is not the required version of ${versionOfReqMod} or newer.`);
 										delete this.modsRequirements[key];
 										delete this.modsConfig[key];
 										continue;
@@ -386,7 +394,7 @@ exports.load = () => {
     }
 	if(!fileIO.exist("./user/cache") || fileIO.readDir("./user/cache").length < 31)
 	{ // health number of cache file count is 31 as for now ;)
-		logger.logError("Missing files! Rebuilding cache required!");
+		logger.logWarning("Missing files! Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
 	}
 	let modLoader = new ModLoader();
