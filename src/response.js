@@ -103,6 +103,7 @@ class Responses {
 			"api/location": this.dynApiLocation,
 			"bundle": this.dynBundle,
 			"client/locale": this.dynClientLocale,
+			"client/menu/locale": this.dynClientMenuLocale,
 			"client/location/getLocalloot": this.dynClientLocationGetLocalloot,
 			"client/trading/api/getTrader": this.dynClientMenuLocale,
 			"client/trading/api/getTraderAssort": this.dynClientTradingApiGetTrader,
