@@ -1,14 +1,7 @@
 "use strict";
-// getModFilepath
 
-
-function getModFilepath(mod) 
+function scanRecursiveMod(filepath, baseNode, modNode) 
 {
-    return "user/mods/" + mod.author + "-" + mod.name + "-" + mod.version + "/";
-}
-
-// scanRecursiveMod
-function scanRecursiveMod(filepath, baseNode, modNode) {
     if (typeof modNode === "string") {
         baseNode = filepath + modNode;
     }
@@ -41,13 +34,12 @@ function loadMod(mod, filepath, LoadType)
 	{
 		if(mod.src[srcToExecute] == LoadType)
 		{
-			const ModScript = require(`../../${filepath}${srcToExecute}`).mod;
-			ModScript(mod); // execute mod
+			require(`../../${filepath}${srcToExecute}`).mod(mod); // execute mod
 		}
 	}
 }
 
-function loadModSrc(mod, filepath)
+function loadModRes(mod, filepath)
 {
 	if(typeof mod.res != "undefined")
 		res = scanRecursiveMod(filepath, res, mod.res);
@@ -115,12 +107,11 @@ exports.CacheModLoad = () =>
         if (!element.isEnabled) {
             continue;
         }
-
         const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
 		loadMod(mod, `user/mods/${element.folder}/`, "CacheModLoad");
     }
-	
 }
+
 exports.ResModLoad = () => 
 { // loading res files from mods if they exist
     for (let element of global.mods.toLoad) {
@@ -128,10 +119,10 @@ exports.ResModLoad = () =>
             continue;
         }
         const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
-		loadModSrc(mod, `user/mods/${element.folder}/`)
+		loadModRes(mod, `user/mods/${element.folder}/`)
     }
-	
 }
+
 exports.TamperModLoad = () => 
 { // Loading mods flagged as load after "server is ready to start"
     logger.logInfo("Executing LateModLoad Routes");
@@ -139,7 +130,6 @@ exports.TamperModLoad = () =>
         if (!element.isEnabled) {
             continue;
         }
-		
         const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
 		loadMod(mod, `user/mods/${element.folder}/`, "TamperModLoad");
     }
@@ -385,7 +375,6 @@ class ModLoader
 	}
 }
 
-
 exports.load = () => {
 	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
     // create mods folder if missing
@@ -416,4 +405,3 @@ exports.load = () => {
 		res = fileIO.readParsed("user/cache/res.json");
 	}
 }
-
