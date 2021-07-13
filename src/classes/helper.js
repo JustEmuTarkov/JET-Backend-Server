@@ -393,7 +393,13 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     }
 
     // set current sale sum
-	
+	if(typeof pmcData.TradersInfo[body.tid] == "undefined"){
+		pmcData.TradersInfo[body.tid] = {
+			"saleSum": 0,
+			"standing": 0,
+			"unlocked": true
+		};
+	}
     pmcData.TradersInfo[body.tid].saleSum += amount;
 	
     //trader_f.handler.lvlUp(body.tid, sessionID);

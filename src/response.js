@@ -271,7 +271,8 @@ class Responses {
 		return response_f.getBody({"uid": "pmc" + sessionID});
 	}
 	clientGameProfileItemsMoving(url, info, sessionID){
-		return response_f.getBody(item_f.handler.handleRoutes(info, sessionID));
+		const data = item_f.handler.handleRoutes(info, sessionID);
+		return response_f.getBody(data);
 	}
 	clientGameProfileList(url, info, sessionID){
 		return response_f.getBody(profile_f.handler.getCompleteProfile(sessionID));
