@@ -28,23 +28,6 @@ function isRebuildRequired()
     return false;
 }
 
-function loadMod(mod, filepath, LoadType)
-{
-	for(const srcToExecute in mod.src)
-	{
-		if(mod.src[srcToExecute] == LoadType)
-		{
-			require(`../../${filepath}${srcToExecute}`).mod(mod); // execute mod
-		}
-	}
-}
-
-function loadModRes(mod, filepath)
-{
-	if(typeof mod.res != "undefined")
-		res = scanRecursiveMod(filepath, res, mod.res);
-}
-
 function scanRecursiveRoute(filepath, deep = false) 
 { // recursively scans given path
 	if(filepath == "db/")
@@ -101,38 +84,48 @@ function routeDatabaseAndResources()
 	fileIO.write("user/cache/res.json", res);
 }
 
-exports.CacheModLoad = () => 
-{ // Loading mods flagged as load at creating cache
-    for (let element of global.mods.toLoad) {
-        if (!element.isEnabled) {
+function SortedModKeys()
+{
+	return Object.keys(global.mods.toLoad).sort((a,b) => (global.mods.toLoad[a].order > global.mods.toLoad[b].order) ? 1 : -1);
+}
+
+function loadMod(loadType)
+{
+	const sortedList = SortedModKeys();
+	for (let element of sortedList) {
+        if (!global.mods.toLoad[element].isEnabled) {
             continue;
         }
-        const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
-		loadMod(mod, `user/mods/${element.folder}/`, "CacheModLoad");
+        const mod = fileIO.readParsed(`user/mods/${global.mods.toLoad[element].folder}/mod.config.json`);
+		if(loadType == "ResModLoad"){
+			if(typeof mod.res != "undefined")
+				res = scanRecursiveMod(`user/mods/${global.mods.toLoad[element].folder}/`, res, mod.res);
+		} else {
+			for(const srcToExecute in mod.src)
+			{
+				if(mod.src[srcToExecute] == loadType)
+				{
+					require(`../../user/mods/${global.mods.toLoad[element].folder}/${srcToExecute}`).mod(mod); // execute mod
+				}
+			}
+		}
     }
+}
+
+exports.CacheModLoad = () => 
+{ // Loading mods flagged as load at creating cache
+	loadMod("CacheModLoad");
 }
 
 exports.ResModLoad = () => 
 { // loading res files from mods if they exist
-    for (let element of global.mods.toLoad) {
-        if (!element.isEnabled) {
-            continue;
-        }
-        const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
-		loadModRes(mod, `user/mods/${element.folder}/`)
-    }
+	loadMod("ResModLoad");
 }
 
 exports.TamperModLoad = () => 
 { // Loading mods flagged as load after "server is ready to start"
-    logger.logInfo("Executing LateModLoad Routes");
-	for (let element of global.mods.toLoad) {
-        if (!element.isEnabled) {
-            continue;
-        }
-        const mod = fileIO.readParsed(`user/mods/${element.folder}/mod.config.json`);
-		loadMod(mod, `user/mods/${element.folder}/`, "TamperModLoad");
-    }
+
+	loadMod("TamperModLoad");
 }
 
 class ModLoader 
@@ -370,7 +363,7 @@ class ModLoader
 
 		// save mods list to load
 		//return sorted to loading order list
-		global.mods.toLoad = this.sortModsByOrder();
+		global.mods.toLoad = this.modsConfig;//this.sortModsByOrder();
 		fileIO.write("user/configs/mods.json", global.mods.toLoad)
 	}
 }

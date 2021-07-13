@@ -1,16 +1,8 @@
 "use strict";
 
-class Server {
-    constructor() {
-        this.buffers = {};
-        this.name = serverConfig.name;
-        this.ip = serverConfig.ip;
-        this.port = serverConfig.port;
-        this.backendUrl = "https://" + this.ip + ":" + this.port;
-		this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
-        
-        this.version = "1.1.1";
-        this.mime = {
+class TarkovSend {
+	constructor() {
+		this.mime = {
             html: 'text/html',
             txt: 'text/plain',
             jpg: 'image/jpeg',
@@ -19,6 +11,53 @@ class Server {
             otf: 'font/opentype',
             json: 'application/json'
         };
+	}
+	zlibJson(resp, output, sessionID) 
+	{
+        resp.writeHead(200, "OK", {'Content-Type': this.mime['json'], 'content-encoding' : 'deflate', 'Set-Cookie' : 'PHPSESSID=' + sessionID});
+    
+        internal.zlib.deflate(output, function (err, buf) {
+            resp.end(buf);
+        });
+    }
+
+    txtJson(resp, output) 
+	{
+        resp.writeHead(200, "OK", {'Content-Type': this.mime['json']});
+        resp.end(output);
+    }
+
+	html(resp, output) 
+	{
+        resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
+        resp.end(output);
+    }
+
+    file(resp, file) 
+	{
+        let pathSlic = file.split("/");
+        let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
+        let fileStream = fileIO.createReadStream(file);
+    
+        fileStream.on('open', function () {
+            resp.setHeader('Content-Type', type);
+            fileStream.pipe(resp);
+        });
+    }
+}
+
+class Server {
+    constructor() {
+		this.tarkovSend = new TarkovSend();
+        this.buffers = {};
+        this.name = serverConfig.name;
+        this.ip = serverConfig.ip;
+        this.port = serverConfig.port;
+        this.backendUrl = "https://" + this.ip + ":" + this.port;
+		this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
+        
+        this.version = "1.1.1";
+        
 		this.createCacheCallback();
 		this.createReceiveCallback();
 		this.createRespondCallback();
@@ -64,7 +103,6 @@ class Server {
 	{
         this.buffers[sessionID] = undefined;
     }
-	
     putInBuffer(sessionID, data, bufLength) 
 	{
         if (this.buffers[sessionID] === undefined || this.buffers[sessionID].allocated !== bufLength) {
@@ -81,38 +119,16 @@ class Server {
         buf.written += data.length;
         return buf.written === buf.allocated;
     }
-	
     getFromBuffer(sessionID) 
 	{
         return this.buffers[sessionID].buffer;
     }
 
-    getName() 
-	{
-        return this.name;
-    }
-
-    getIp() 
-	{
-        return this.ip;
-    }
-
-    getPort() 
-	{
-        return this.port;
-    }
-
-    getBackendUrl() 
-	{
-		if(this.second_backendUrl != null)
-			return this.second_backendUrl;
-        return this.backendUrl;
-    }
- 
-	getVersion() 
-	{
-        return this.version;
-    }
+	getName(){ return this.name; }
+    getIp(){ return this.ip; }
+    getPort() { return this.port; }
+    getBackendUrl(){ return (this.second_backendUrl != null) ? this.second_backendUrl : this.backendUrl; }
+	getVersion(){ return this.version; }
 
     generateCertificate() 
 	{
@@ -156,71 +172,34 @@ class Server {
         return { cert, key };
     }
 
-    sendZlibJson(resp, output, sessionID) 
-	{
-        resp.writeHead(200, "OK", {'Content-Type': this.mime['json'], 'content-encoding' : 'deflate', 'Set-Cookie' : 'PHPSESSID=' + sessionID});
-    
-        internal.zlib.deflate(output, function (err, buf) {
-            resp.end(buf);
-        });
-    }
-
-    sendTextJson(resp, output) 
-	{
-        resp.writeHead(200, "OK", {'Content-Type': this.mime['json']});
-        resp.end(output);
-    }
-
-	sendHtml(resp, output) 
-	{
-        resp.writeHead(200, "OK", {'Content-Type': this.mime['html']});
-        resp.end(output);
-    }
-
-    sendFile(resp, file) 
-	{
-        let pathSlic = file.split("/");
-        let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
-        let fileStream = fileIO.createReadStream(file);
-    
-        fileStream.on('open', function () {
-            resp.setHeader('Content-Type', type);
-            fileStream.pipe(resp);
-        });
-    }
-
-    killResponse() 
-	{
-        return;
-    }
-
+	killResponse() { return; }
     sendResponse(sessionID, req, resp, body) 
 	{
         let output = "";
 		if(req.url == "/favicon.ico"){
-			this.sendFile(resp, "res/icon.ico");
+			this.tarkovSend.file(resp, "res/icon.ico");
 			return;
 		}
 		if(req.url.includes(".css")){
-			this.sendFile(resp, "res/style.css");
+			this.tarkovSend.file(resp, "res/style.css");
 			return;
 		}
 		if(req.url.includes("bender.light.otf")){
-			this.sendFile(resp, "res/bender.light.otf");
+			this.tarkovSend.file(resp, "res/bender.light.otf");
 			return;
 		}
 		
 		if(req.url.includes("/server/config")){
 			// load html page represented by home_f
 			output = router.getResponse(req, body, sessionID);
-			this.sendHtml(resp, output, "");
+			this.tarkovSend.html(resp, output, "");
 		}
 		if(req.url == "/")
 		{
 			//home_f.processSaveData(body);
 			// its hard to create a file `.js` in folder in windows cause it looks cancerous so we gonna write this code here 
 			output = home_f.RenderHomePage();
-			this.sendHtml(resp, output, "");
+			this.tarkovSend.html(resp, output, "");
 			return;
 		}
 	
@@ -246,7 +225,7 @@ class Server {
         if (output in this.respondCallback) {
             this.respondCallback[output](sessionID, req, resp, body);
         } else {
-            this.sendZlibJson(resp, output, sessionID);
+            this.tarkovSend.zlibJson(resp, output, sessionID);
         }
     }
     
@@ -382,11 +361,7 @@ class Server {
 		
 		logger.logInfo("[Warmup]: Loading Database");
 		require("../../src/database.js").execute();
-        
-        // execute start callback
-        //logger.logInfo("[Warmup]: Start callbacks...");
-		//this.startCallback["loadStaticdata"](); // this need to run first cause reasons
-		
+        		
 		// will not be required if all data is loaded into memory
         for (let type in global) {
 			if(type.indexOf("_f") != type.length-2) continue;
@@ -399,26 +374,9 @@ class Server {
 					global[type].initialize();
 			}
         }
-		
-		// Load Global Accesable Data Structures
-		/*
-			TODO: add more data here to not load them like retard each time aka assort etc. ~TheMaoci
-			// 
-			global.global._database.items
-			global.global._database.globals
-			global.global._database.templates
-			global.global._database.gameplayConfig
-			global.global._database.assort[traderID]
-			global.global._database.someothershit
-		*/
+
 		global.mods_f.TamperModLoad(); // TamperModLoad
 
-		/*console.log("staticRoutes")
-		console.log(router.staticRoutes)
-		console.log("dynamicRoutes")
-		console.log(router.dynamicRoutes)
-		return;*/
-		
 		logger.logInfo("Starting server...");
 		this._serverStart();
     }
