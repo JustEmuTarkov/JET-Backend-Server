@@ -107,7 +107,7 @@ class Responses {
 			"client/location/getLocalloot": this.dynClientLocationGetLocalloot,
 			"client/trading/api/getTrader": this.dynClientMenuLocale,
 			"client/trading/api/getTraderAssort": this.dynClientTradingApiGetTrader,
-			"client/trading/api/getUserAssortPrice.trader": this.dynClientTradingApiGetUserAssortPriceTrader,
+			"client/trading/api/getUserAssortPrice/trader": this.dynClientTradingApiGetUserAssortPriceTrader,
 			"client/trading/customization": this.dynClientTradingCustomization,
 			"jpg": this.dynImageJpg,
 			"last_id": this.dynlast_id,
