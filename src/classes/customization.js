@@ -1,15 +1,27 @@
 "use strict";
 
-function getCustomization() {
-	return global._database.customization;
-}
-
 function getPath(sessionID) {
 	let path = db.user.profiles.storage;
 	return path.replace("__REPLACEME__", sessionID);
 }
+module.exports.getPath = getPath;
 
-function wearClothing(pmcData, body, sessionID) {
+module.exports.getCustomization = () => {
+	return global._database.customization;
+}
+module.exports.getAccountCustomization = () => {
+	let t = []
+    for (let k in customization_f.getCustomization()) {
+        let i = customization_f.getCustomization()[k]
+        if (!i._props.Side || JSON.stringify(i._props.Side) == "[]") {
+            continue;
+        } else {
+            t.push(i._id)
+        }
+    }
+	return t;
+}
+module.exports.wearClothing = (pmcData, body, sessionID) => {
 	for (let i = 0; i < body.suites.length; i++) {
 		let suite = global._database.customization[body.suites[i]];
 
@@ -27,8 +39,7 @@ function wearClothing(pmcData, body, sessionID) {
 
 	return item_f.handler.getOutput(sessionID);
 }
-
-function buyClothing(pmcData, body, sessionID) {
+module.exports.buyClothing = (pmcData, body, sessionID) => {
 	let output = item_f.handler.getOutput(sessionID);
 	let storage = fileIO.readParsed(getPath(sessionID));
 	let offers = trader_f.handler.getAllCustomization(sessionID);
@@ -75,8 +86,3 @@ function buyClothing(pmcData, body, sessionID) {
 	fileIO.write(getPath(sessionID), storage);
 	return output;
 }
-
-module.exports.getCustomization = getCustomization;
-module.exports.getPath = getPath;
-module.exports.wearClothing = wearClothing;
-module.exports.buyClothing = buyClothing;
