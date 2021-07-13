@@ -195,7 +195,7 @@ class ModLoader
 
 			// Check if mod exists on disk.
 			if (!fileIO.exist(`user/mods/${modInfo.folder}`)) {
-				logger.logWarning(`Could not find the mod on disk for ${modKey}. Assuming it was removing...`)
+				logger.logWarning(`Could not find the mod on disk for ${modKey}. Assuming it was removed...`)
 				delete this.modsConfig[modKey]
 				return;
 			}
