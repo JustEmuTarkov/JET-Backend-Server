@@ -99,10 +99,10 @@ class ItemServer {
 		}
 		this.output.profileChanges[_profile._id] = {
 			 "_id": _profile._id,
-			 "experience":0,
-			 "quests":[],
-			 "ragFairOffers":[],
-			 "builds":[],
+			 "experience": 0,
+			 "quests":[], // are those current accepted quests ??
+			 "ragFairOffers":[], // are those current ragfair requests ?
+			 "builds":[], // are those current weapon builds ??
 			 "items":{"change": [], "new": [], "del": []},
 			 "production":null,
 			 "skills": _profile.Skills,
