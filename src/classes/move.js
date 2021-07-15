@@ -178,7 +178,7 @@ function handleCartridges(items, body) {
 function removeItemFromProfile(profileData, itemId, sessionID) {
     // get items to remove
     let ids_toremove = helper_f.findAndReturnChildren(profileData, itemId);
-    output = item_f.handler.getOutput(sessionID);
+    let output = item_f.handler.getOutput(sessionID);
      //remove one by one all related items and itself
     for (let i in ids_toremove) {
         for (let a in profileData.Inventory.items) {
