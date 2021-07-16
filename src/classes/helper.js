@@ -232,7 +232,13 @@ function payMoney(pmcData, body, sessionID) {
             break;
         }
     }
-
+    if(typeof pmcData.TradersInfo[body.tid] == "undefined"){
+        pmcData.TradersInfo[body.tid] = {
+            "saleSum": 0,
+            "standing": 0,
+            "unlocked": true
+        };
+    }
     // set current sale sum -- convert barterPrice itemTpl into RUB then convert RUB into trader currency
     pmcData.TradersInfo[body.tid].saleSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 	
