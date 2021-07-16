@@ -56,7 +56,7 @@ class Server {
         this.backendUrl = "https://" + this.ip + ":" + this.port;
 		this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
         
-        this.version = "1.1.1";
+        this.version = "1.1.2";
         
 		this.createCacheCallback();
 		this.createReceiveCallback();
