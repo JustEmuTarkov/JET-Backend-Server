@@ -71,7 +71,7 @@ function moveItem(pmcData, body, sessionID) {
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
     const output = item_f.handler.getOutput(sessionID)
 
-    if (Symbol.iterator in Object(body.deletedItems) && body.changedItems !== null) {
+    if (Symbol.iterator in Object(body.changedItems) && body.changedItems !== null) {
         for (const changed_item of body.changedItems) {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === changed_item._id) {
