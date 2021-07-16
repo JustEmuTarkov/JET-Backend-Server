@@ -82,7 +82,7 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
             }
         }
     }
-    if (body.deletedItems !== null) {
+    if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
         for (const deleted_item of body.deletedItems) {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === deleted_item._id) {
