@@ -272,10 +272,7 @@ class Responses {
 		return response_f.getBody({"uid": "pmc" + sessionID});
 	}
 	clientGameProfileItemsMoving(url, info, sessionID){
-		const util = require('util');
-		console.log(util.inspect(info, {showHidden: false, depth: null}));
 		const data = item_f.handler.handleRoutes(info, sessionID);
-		//console.log(util.inspect(data, {showHidden: false, depth: null}))
 		return response_f.getBody(data);
 	}
 	clientGameProfileList(url, info, sessionID){
