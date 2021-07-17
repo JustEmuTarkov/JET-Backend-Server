@@ -59,17 +59,26 @@ function _load_ItemsData() {
 function _load_HideoutData() {
 	if(!global._database.hideout)
 		global._database.hideout = {};
+
+	global._database.hideout.settings = fileIO.readParsed(db.hideout.settings);
+	if(typeof global._database.hideout.settings.data != "undefined"){
+		global._database.hideout.settings = global._database.hideout.settings.data;
+	}
+
 	global._database.hideout.areas = fileIO.readParsed(db.user.cache.hideout_areas);
-	if(typeof global._database.hideout.areas.data != "undefined")
+	if(typeof global._database.hideout.areas.data != "undefined"){
 		global._database.hideout.areas = global._database.hideout.areas.data;
-	
+	}
+				
 	global._database.hideout.production = fileIO.readParsed(db.user.cache.hideout_production);
-	if(typeof global._database.hideout.production.data != "undefined")
+	if(typeof global._database.hideout.production.data != "undefined"){
 		global._database.hideout.production = global._database.hideout.production.data;
+	}
 	
 	global._database.hideout.scavcase = fileIO.readParsed(db.user.cache.hideout_scavcase);
-	if(typeof global._database.hideout.scavcase.data != "undefined")
+	if(typeof global._database.hideout.scavcase.data != "undefined"){
 		global._database.hideout.scavcase = global._database.hideout.scavcase.data;
+	}
 }
 function _load_QuestsData() {
 	global._database.quests = fileIO.readParsed(db.user.cache.quests);

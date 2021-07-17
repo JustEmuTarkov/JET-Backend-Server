@@ -62,8 +62,7 @@ class ItemServer {
 	}
 
 	handleRoutes(info, sessionID) {
-		this.resetOutput();
-
+		this.resetOutput(sessionID);
 		for (let body of info.data) {
 			let pmcData = profile_f.handler.getPmcProfile(sessionID);
 			if (body.Action in this.routes) {
@@ -72,6 +71,7 @@ class ItemServer {
 				logger.logError(`[UNHANDLED ACTION] ${body.Action} with body ${body}`);
 			}
 		}
+		
 		return this.output;
 	}
 
@@ -99,72 +99,14 @@ class ItemServer {
 		}
 		this.output.profileChanges[_profile._id] = {
 			 "_id": _profile._id,
-			 "experience":0,
-			 "quests":[],
-			 "ragFairOffers":[],
-			 "builds":[],
+			 "experience": 0,
+			 "quests":[], // are those current accepted quests ??
+			 "ragFairOffers":[], // are those current ragfair requests ?
+			 "builds":[], // are those current weapon builds ??
 			 "items":{"change": [], "new": [], "del": []},
 			 "production":null,
-			 "skills":{
-				"Common":[
-					{"Id":"BotReload","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":-2147483648},
-					{"Id":"BotSound","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":-2147483648},
-					{"Id":"Endurance","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Strength","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Vitality","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Health","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"StressResistance","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Metabolism","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Immunity","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Perception","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Intellect","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Attention","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Charisma","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Memory","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Pistol","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Revolver","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"SMG","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Assault","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Shotgun","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Sniper","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"LMG","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"HMG","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Launcher","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"AttachedLauncher","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Throwing","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Melee","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"DMR","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"RecoilControl","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"AimDrills","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":-2147483648},
-					{"Id":"Surgery","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":-2147483648},
-					{"Id":"CovertMovement","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Search","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"MagDrills","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":-2147483648},
-					{"Id":"Sniping","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"ProneMovement","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"FieldMedicine","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"FirstAid","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"LightVests","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"HeavyVests","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"WeaponModding","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"AdvancedModding","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"NightOps","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"SilentOps","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Lockpicking","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"WeaponTreatment","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Freetrading","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Auctions","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Cleanoperations","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Barter","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Shadowconnections","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Taskperformance","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"Crafting","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0},
-					{"Id":"HideoutManagement","Progress":0,"PointsEarnedDuringSession":0,"LastAccess":0}
-				],
-				"Mastering":[],
-				"Points":0
-			 },
-			 "traderRelations":[]
+			 "skills": _profile.Skills,
+			 "traderRelations": _profile.TradersInfo
 		};
     }
 }

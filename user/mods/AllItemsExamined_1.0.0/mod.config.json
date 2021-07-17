@@ -1,0 +1,10 @@
+{
+	"name": "AllItemsExamined",
+	"author": "TheMaoci",
+	"version": "1.0.0",
+	"license": "MIT",
+	"src": {
+		"src/AllItemsExamined.js": "TamperModLoad"
+	},
+	"required": []
+}

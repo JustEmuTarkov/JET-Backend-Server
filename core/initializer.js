@@ -9,7 +9,7 @@ class Initializer
 		
 		// start watermark and server
 		require('./server/watermark.js').run();
-
+		this.consoleResponse = require('./server/console.js').consoleResponse;
 		server.start();
     }
 
@@ -39,18 +39,16 @@ class Initializer
 		
 		// internal packages
         global.fileIO = require('./util/fileIO.js');
-        global.serverConfig = fileIO.readParsed("user/configs/server.json");
-        global.modsConfig = fileIO.readParsed("user/configs/mods.json");
-		
-		
         global.utility = require('./util/utility.js');
         global.logger = (require('./util/logger.js').logger);
 		
-        /* setup core files */
+        global.serverConfig = fileIO.readParsed("user/configs/server.json");
+		
+		global.mods = { "toLoad": {}, "config": {} };
 
         /* setup routes and cache */
-        global.core.route = require('./server/route.js');
-        global.core.route.all();
+        global.mods_f = require('./server/mods.js');
+        global.mods_f.load();
 
         /* core logic */
         global.router = (require('./server/router.js').router);
@@ -59,7 +57,8 @@ class Initializer
     }
 
     /* load exception handler */
-    initializeExceptions() {
+    initializeExceptions() 
+	{
         internal.process.on('uncaughtException', (error, promise) => {
             logger.logError("[Server]:" + server.getVersion());
             logger.logError("[Trace]:");
@@ -68,7 +67,8 @@ class Initializer
     }
 
     /* load loadorder from cache */
-    initializeItemRoute() {
+    initializeItemRoute() 
+	{
         logger.logSuccess("Create: Item Action Callbacks");
 		// Load Item Route's
 		// move this later to other file or something like that :)
@@ -82,7 +82,8 @@ class Initializer
     }
 
     /* load classes */
-    initializeClasses() {
+    initializeClasses() 
+	{
         logger.logSuccess("Create: Classes as global variables");
 		let path = executedDir + "/src/classes";
 		//let files = fileIO.readDir(path);

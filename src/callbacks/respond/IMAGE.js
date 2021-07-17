@@ -22,5 +22,5 @@ exports.execute = (sessionID, req, resp, body) => {
     }
 
     // send image
-    server.sendFile(resp, baseNode[fileName]);
+    server.tarkovSend.file(resp, baseNode[fileName]);
 }

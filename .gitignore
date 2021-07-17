@@ -30,10 +30,9 @@ _mods
 _core
 coreMinify
 !user/mods/
-user/mods/*
-!user/mods/TheMaoci-AllItemsExamined-1.0.0
-!user/mods/TheMaoci-LocationsWaveEditor-1.0.0
-!user/mods/TheMaoci-NoFallDamage-1.0.0
+user/mods/*.7z
+user/mods/*.zip
+user/mods/*.rar
 user/cache
 db-propNextStructure/
 ## windows

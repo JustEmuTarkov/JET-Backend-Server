@@ -1,0 +1,16 @@
+{
+	"name": "LessWeightItems",
+	"author": "TheMaoci",
+	"description": "Weight of items changer",
+	"license": "MIT",
+	"version": "1.0.0",
+	"src":{ 
+		"src/LessWeightItems.js": "TamperModLoad"
+	},
+	"required": [],
+	"configuration": {
+		"NoWeight": true,
+		"ClampWeight": false,
+		"ClampWeightAbove": 1
+	}
+}

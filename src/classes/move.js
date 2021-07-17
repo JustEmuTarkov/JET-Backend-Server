@@ -47,8 +47,6 @@ function getOwnerInventoryItems(body, sessionID) {
 * */
 function moveItem(pmcData, body, sessionID) {
     let output = item_f.handler.getOutput(sessionID);
-	//console.log(body);
-	//console.log(global._database.items[pmcData.Inventory.items.find(item => item._id == body.item)._tpl]);
     let inventoryItems = getOwnerInventoryItems(body, sessionID);
    /*  if (inventoryItems.isMail) {
         let idsToMove = dialogue_f.findAndReturnChildren(inventoryItems.from, body.item);
@@ -73,7 +71,7 @@ function moveItem(pmcData, body, sessionID) {
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
     const output = item_f.handler.getOutput(sessionID)
 
-    if (body.changedItems !== null) {
+    if (Symbol.iterator in Object(body.changedItems) && body.changedItems !== null) {
         for (const changed_item of body.changedItems) {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === changed_item._id) {
@@ -84,7 +82,7 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
             }
         }
     }
-    if (body.deletedItems !== null) {
+    if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
         for (const deleted_item of body.deletedItems) {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === deleted_item._id) {
@@ -177,22 +175,20 @@ function handleCartridges(items, body) {
 }
 
 /* Remove item of itemId and all of its descendants from profile. */
-function removeItemFromProfile(profileData, itemId, output = null) {
+function removeItemFromProfile(profileData, itemId, sessionID) {
     // get items to remove
     let ids_toremove = helper_f.findAndReturnChildren(profileData, itemId);
-
+    let output = item_f.handler.getOutput(sessionID);
      //remove one by one all related items and itself
     for (let i in ids_toremove) {
-        if (output !== null) {
-            output.profileChanges[pmcData._id].items.del.push({"_id": ids_toremove[i]});
-        }
-
         for (let a in profileData.Inventory.items) {
             if (profileData.Inventory.items[a]._id === ids_toremove[i]) {
                 profileData.Inventory.items.splice(a, 1);
+                output.profileChanges[profileData._id].items.del.push(profileData.Inventory.items[a]);
             }
         }
     }
+    item_f.handler.setOutput(output);
 }
 
 /*
@@ -208,8 +204,8 @@ function removeItem(profileData, body, output, sessionID) {
         return "";
     }
 
-    removeItemFromProfile(profileData, toDo[0], output);
-    return output;
+    removeItemFromProfile(profileData, toDo[0], sessionID);
+    return item_f.handler.getOutput(sessionID);
 }
 
 function discardItem(pmcData, body, sessionID) {
