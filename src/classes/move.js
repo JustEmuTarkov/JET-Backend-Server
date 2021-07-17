@@ -184,14 +184,14 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
     // get items to remove
     let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
     let output = item_f.handler.getOutput(sessionID);
+
      //remove one by one all related items and itself
     for (let i in ids_toremove) {
         for (let a in pmcData.Inventory.items) {
             if (pmcData.Inventory.items[a]._id === ids_toremove[i]) {
-				if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
-					output.profileChanges[pmcData._id].items.del = [];
-                output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
-				
+				if(typeof output.profileChanges != "undefined" && output != ""){
+					output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
+				}
                 pmcData.Inventory.items.splice(a, 1);
             }
         }

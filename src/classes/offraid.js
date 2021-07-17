@@ -11,17 +11,19 @@ class InraidServer {
     addPlayer(sessionID, info) {
         this.players[sessionID] = info;
     }
-
+	getPlayer(sessionID){
+		return this.players[sessionID];
+	}
     removePlayer(sessionID) {
         delete this.players[sessionID];
     }
 
     removeMapAccessKey(offraidData, sessionID) {
-		if(typeof offraid_f.handler.players[sessionID] == "undefined"){
+		if(typeof offraid_f.handler.getPlayer(sessionID) == "undefined"){
 			logger.logWarning("Disabling: Remove map key on entering, cause of offraid_f.handler.players[sessionID] is undefined");
 			return;
 		}
-        let map = global._database.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()].base;
+        let map = global._database.locations[MapNameConversion(sessionID)].base;
         let mapKey = map.AccessKeys[0];
 
         if (!mapKey) {
@@ -265,95 +267,96 @@ function getSecuredContainer(items) {
     return inventoryItems;
 }
 
+function MapNameConversion(sessionID){
+	// change names to thenames of location file names that are loaded like that into the memory
+	let playerRaidData = offraid_f.handler.getPlayer(sessionID);
+	switch(playerRaidData.Location){
+		case "Customs": return "bigmap";
+		case "Factory": 
+		if(playerRaidData.Time == "CURR")
+			return "factory4_day";
+		else 
+			return "factory4_night";
+		case "Interchange": return "interchange";
+		case "Laboratory": return "laboratory";
+		case "ReserveBase": return "rezervbase";
+		case "Shoreline": return "shoreline";
+		case "Woods": return "woods";
+		default: return playerRaidData.Location;
+	}
+}
+
 function saveProgress(offraidData, sessionID) {
     if (!global._database.gameplayConfig.inraid.saveLootEnabled) {
         return;
     }
-	// TODO: FOr now it should work untill we figureout whats is fucked at dll - it will also prevent future data loss and will eventually disable feature then crash everything in the other hand. ~Maoci
-	let offlineWorksProperly = false;
-	if(typeof offraid_f.handler.players[sessionID] != "undefined")
-		if(fileIO.exist(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]))
-			offlineWorksProperly = true;
-    let insuranceEnabled = false;
-	if(!offlineWorksProperly){
-		logger.logWarning("insurance Disabled!! cause of varaible undefined or file not found. Check line 249-250 at src/classes/offraid.js");
-	} else {
-		let map = fileIO.readParsed(db.locations[offraid_f.handler.players[sessionID].Location.toLowerCase()]).base;
-		insuranceEnabled = map.Insurance;
-	}
+    const isPlayerScav = offraidData.isPlayerScav;
+	// Check for insurance if its enabled on this map
 	if(typeof offraidData == "undefined")
 	{
-		logger.logError("offraidData" + offraidData);
+		logger.logError("offraidData: undefined");
 		return;
 	}
 	if(typeof offraidData.exit == "undefined" || typeof offraidData.isPlayerScav == "undefined" || typeof offraidData.profile == "undefined")
 	{
-		logger.logError("offraidData variables are empty... (exit, isPlayerScav, profile)");
+		logger.logError("offraidData: variables are empty... (exit, isPlayerScav, profile)");
 		logger.logError(offraidData.exit);
 		logger.logError(offraidData.isPlayerScav);
 		logger.logError(offraidData.profile);
 		return;
 	}
+
+
     let pmcData = profile_f.handler.getPmcProfile(sessionID);
-    let scavData = profile_f.handler.getScavProfile(sessionID);
-    const isPlayerScav = offraidData.isPlayerScav;
-    const isDead = (offraidData.exit !== "survived" && offraidData.exit !== "runner");
-    const preRaidGear = (isPlayerScav) ? [] : getPlayerGear(pmcData.Inventory.items);
-
-    // set pmc data
-    if (!isPlayerScav) {
-        pmcData.Info.Level = offraidData.profile.Info.Level;
-        pmcData.Skills = offraidData.profile.Skills;
-        pmcData.Stats = offraidData.profile.Stats;
-        pmcData.Encyclopedia = offraidData.profile.Encyclopedia;
-        pmcData.ConditionCounters = offraidData.profile.ConditionCounters;
-        pmcData.Quests = offraidData.profile.Quests;
-
-        // For some reason, offraidData seems to drop the latest insured items.
-        // It makes more sense to use pmcData's insured items as the source of truth.
-        offraidData.profile.InsuredItems = pmcData.InsuredItems;
-
-        // add experience points
-        pmcData.Info.Experience += pmcData.Stats.TotalSessionExperience;
-        pmcData.Stats.TotalSessionExperience = 0;
-
-        // level 69 cap to prevent visual bug occuring at level 70
-        if (pmcData.Info.Experience > 23129881) {
-            pmcData.Info.Experience = 23129881;
-        }
-
-        // Remove the Lab card
-        offraid_f.handler.removeMapAccessKey(offraidData, sessionID);
-        offraid_f.handler.removePlayer(sessionID);
-    }
-
-    //Check for exit status
-    if (offraidData.exit === "survived") {
-        // mark found items and replace item ID's if the player survived
-        offraidData.profile = markFoundItems(pmcData, offraidData.profile, isPlayerScav);
-    } else {
-        //Or remove the FIR status if the player havn't survived
-        offraidData.profile = RemoveFoundItems(offraidData.profile)
-    }
-
-    // set profile equipment to the raid equipment
-    if (isPlayerScav) {
-        scavData = setInventory(scavData, offraidData.profile, sessionID, true);
+	
+	if (offraidData.exit === "survived") {
+		// mark found items and replace item ID's if the player survived
+		offraidData.profile = markFoundItems(pmcData, offraidData.profile, isPlayerScav);
+	} else {
+		//Or remove the FIR status if the player havn't survived
+		offraidData.profile = RemoveFoundItems(offraidData.profile)
+	}
+	
+	if(isPlayerScav){
+		let scavData = profile_f.handler.getScavProfile(sessionID);
+		scavData = setInventory(scavData, offraidData.profile, sessionID, true);
         health_f.handler.initializeHealth(sessionID);
         profile_f.handler.setScavProfile(sessionID, scavData);
         return;
-    } else {
-        pmcData = setInventory(pmcData, offraidData.profile);
-        health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
-    }
+		// ENDING HERE IF SCAV PLAYER !!!!
+	}
+	
+	pmcData.Info.Level = offraidData.profile.Info.Level;
+	pmcData.Skills = offraidData.profile.Skills;
+	pmcData.Stats = offraidData.profile.Stats;
+	pmcData.Encyclopedia = offraidData.profile.Encyclopedia;
+	pmcData.ConditionCounters = offraidData.profile.ConditionCounters;
+	pmcData.Quests = offraidData.profile.Quests;
+
+	// For some reason, offraidData seems to drop the latest insured items.
+	// It makes more sense to use pmcData's insured items as the source of truth.
+	offraidData.profile.InsuredItems = pmcData.InsuredItems;
+
+	// add experience points
+	pmcData.Info.Experience += pmcData.Stats.TotalSessionExperience;
+	pmcData.Stats.TotalSessionExperience = 0;
+
+	// Remove the Lab card
+	
+	pmcData = setInventory(pmcData, offraidData.profile);
+	health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
 
     // remove inventory if player died and send insurance items
     //TODO: dump of prapor/therapist dialogues that are sent when you die in lab with insurance.
+	const systemMapName = MapNameConversion(sessionID);
+	const insuranceEnabled = global._database.locations[systemMapName].base.Insurance;
+    const preRaidGear = getPlayerGear(pmcData.Inventory.items);
+	
     if (insuranceEnabled) {
         insurance_f.handler.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
     }
 
-    if (isDead) {
+    if ((offraidData.exit !== "survived" && offraidData.exit !== "runner")) {
         if (insuranceEnabled) {
             insurance_f.handler.storeDeadGear(pmcData, offraidData, preRaidGear, sessionID);
         }
@@ -364,6 +367,10 @@ function saveProgress(offraidData, sessionID) {
     if (insuranceEnabled) {
         insurance_f.handler.sendInsuredItems(pmcData, sessionID);
     }
+	
+	offraid_f.handler.removeMapAccessKey(offraidData, sessionID);
+	offraid_f.handler.removePlayer(sessionID);
+
 }
 
 module.exports.handler = new InraidServer();

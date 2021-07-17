@@ -98,7 +98,8 @@ class Responses {
 			"/server/softreset": this.serverSoftReset,
 			"/singleplayer/bundles": this.singleplayerBundles,
 			"/singleplayer/settings/raid/endstate": this.singleplayerSettingsRaidEndstate,
-			"/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu
+			"/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu,
+			"/singleplayer/settings/bot/difficulty": this.singleplayerSettingsBotDifficulty
 		}
 		this.dynamicResponses = {
 			"/client/locale": this.dynClientLocale,
@@ -468,9 +469,29 @@ class Responses {
 		return response_f.getBody(match_f.handler.joinMatch(info, sessionID));
 	}
 	clientMatchOfflineStart(url, info, sessionID){
+		/*
+			{
+			  locationName: 'Factory',
+			  entryPoint: 'Factory',
+			  startTime: 1626554822,
+			  dateTime: 'CURR',
+			  gameSettings: {
+				timeAndWeatherSettings: { isRandomTime: false, isRandomWeather: false },
+				botsSettings: { isEnabled: false, isScavWars: false, botAmount: 'AsOnline' },
+				wavesSettings: {
+				  botDifficulty: 'AsOnline',
+				  isBosses: true,
+				  isTaggedAndCursed: false,
+				  wavesBotAmount: 'AsOnline'
+				}
+			  }
+			}
+		*/
+		offraid_f.handler.addPlayer(sessionID, { "Location": info.locationName, "Time": info.dateTime });
 		return response_f.getBody(null);
 	}
 	clientMatchOfflineEnd(url, info, sessionID){
+		console.log(info)
 		return response_f.getBody(null);
 	}
 	clientMatchUpdatePing(url, info, sessionID){
@@ -641,6 +662,17 @@ class Responses {
 	}
 	singleplayerSettingsRaidMenu(url, info, sessionID){
 		return response_f.noBody(global._database.gameplayConfig.defaultRaidSettings);
+	}
+	singleplayerSettingsBotDifficulty(url, info, sessionID){
+		let data = [];
+		for(const botType in global._database.bots){
+			for(const difficulty in global._database.bots[botType].difficulty){
+				const key = `${difficulty}.${botType}`;
+				data.push({ "Key": key, "Value": global._database.bots[botType].difficulty[difficulty] });
+			}
+		}
+		return response_f.noBody(data);
+		//bots_f.getBotDifficulty(type, difficulty)
 	}
 };
 module.exports.responses = new Responses();
