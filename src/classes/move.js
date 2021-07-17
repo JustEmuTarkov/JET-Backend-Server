@@ -248,6 +248,10 @@ function splitItem(pmcData, body, sessionID) {
 
             let newItem = utility.generateNewItemId();
 
+			if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+				output.profileChanges[pmcData._id].items.change = [];
+            output.profileChanges[pmcData._id].items.change.push(item);
+			
 			if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
 				output.profileChanges[pmcData._id].items.new = [];
             output.profileChanges[pmcData._id].items.new.push({
