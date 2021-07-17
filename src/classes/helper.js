@@ -223,6 +223,8 @@ function payMoney(pmcData, body, sessionID) {
                 output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
             } else {
                 moneyItem.upd.StackObjectsCount -= leftToPay;
+				if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+					output.profileChanges[pmcData._id].items.change = [];
                 output.profileChanges[pmcData._id].items.change.push(moneyItem);
             }
             leftToPay = 0;
@@ -349,6 +351,8 @@ function getMoney(pmcData, amount, body, output, sessionID) {
                 item.upd.StackObjectsCount = item.upd.StackObjectsCount + calcAmount;
             }
 
+			if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+				output.profileChanges[pmcData._id].items.change = [];
             output.profileChanges[pmcData._id].items.change.push(item);
 
             if (skip) {
@@ -389,6 +393,8 @@ function getMoney(pmcData, amount, body, output, sessionID) {
                 };
 
                 pmcData.Inventory.items.push(MoneyItem);
+				if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+					output.profileChanges[pmcData._id].items.new = [];
                 output.profileChanges[pmcData._id].items.new.push(MoneyItem);
 
                 if (calcAmount <= 0) {

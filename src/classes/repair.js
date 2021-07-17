@@ -42,7 +42,8 @@ exports.main = (pmcData, body, sessionID) => {
         if ("FaceShield" in itemToRepair.upd && itemToRepair.upd.FaceShield.Hits > 0) {
             itemToRepair.upd.FaceShield.Hits = 0;
         }
-
+		if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+			output.profileChanges[pmcData._id].items.change = [];
         output.profileChanges[pmcData._id].items.change.push(itemToRepair);
     }
 

@@ -279,6 +279,8 @@ function handoverQuest(pmcData, body, sessionID) {
             let index = pmcData.Inventory.items.length;
 
             // important: don't tell the client to remove the attachments, it will handle it
+			if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+				output.profileChanges[pmcData._id].items.del = [];
             output.items.del.push({ "_id": itemHandover.id });
             counter = 1;
 
@@ -321,7 +323,8 @@ function changeItemStack(pmcData, id, value, output) {
                 let item = pmcData.Inventory.items[inventoryItem];
 
                 item.upd.StackObjectsCount = value;
-
+				if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+					output.profileChanges[pmcData._id].items.change = [];
                 output.profileChanges[pmcData._id].items.change.push({
                     "_id": item._id,
                     "_tpl": item._tpl,
@@ -331,7 +334,9 @@ function changeItemStack(pmcData, id, value, output) {
                     "upd": { "StackObjectsCount": item.upd.StackObjectsCount }
                 });
             } else {
-                output.profileChanges[pmcData._id].items.del.push({ "_id": id });
+				if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+					output.profileChanges[pmcData._id].items.del = [];
+				output.profileChanges[pmcData._id].items.del.push({ "_id": id });
                 pmcData.Inventory.items.splice(inventoryItem, 1);
             }
 

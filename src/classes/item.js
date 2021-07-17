@@ -87,6 +87,8 @@ class ItemServer {
     setOutput(data) {
         this.output = data;
     }
+	
+	
 
     resetOutput(sessionID) {
 		if(sessionID == "" || typeof sessionID == "undefined")
@@ -106,7 +108,7 @@ class ItemServer {
 			 "items":{"change": [], "new": [], "del": []},
 			 "production":null,
 			 "skills": _profile.Skills,
-			 "traderRelations": _profile.TradersInfo
+			 "traderRelations": []//_profile.TradersInfo
 		};
     }
 }

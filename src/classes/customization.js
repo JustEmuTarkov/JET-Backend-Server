@@ -58,6 +58,8 @@ module.exports.buyClothing = (pmcData, body, sessionID) => {
 				if (pmcData.Inventory.items[item].upd.StackObjectsCount > sellItem.count) {
 					pmcData.Inventory.items[item].upd.StackObjectsCount -= sellItem.count;
 
+					if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+						output.profileChanges[pmcData._id].items.change = [];
 					output.profileChanges[pmcData._id].items.change.push({
                         "_id": pmcData.Inventory.items[item]._id,
                         "_tpl": pmcData.Inventory.items[item]._tpl,
@@ -68,6 +70,9 @@ module.exports.buyClothing = (pmcData, body, sessionID) => {
 					});
 					break;
 				} else if (pmcData.Inventory.items[item].upd.StackObjectsCount === sellItem.count && sellItem.del === true) {
+					if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+						output.profileChanges[pmcData._id].items.del = [];
+
 					output.profileChanges[pmcData._id].items.del.push({"_id": sellItem.id});
                     pmcData.Inventory.items.splice(item, 1);					
 				}

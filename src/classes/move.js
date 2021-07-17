@@ -75,7 +75,10 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
         for (const changed_item of body.changedItems) {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === changed_item._id) {
-                    pmcData.Inventory.items[key] = changed_item
+                    pmcData.Inventory.items[key] = changed_item;
+					if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+						output.profileChanges[pmcData._id].items.change = [];
+
                     output.profileChanges[pmcData._id].items.change.push(changed_item)
                     break
                 }
@@ -87,6 +90,8 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
             for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
                 if (item._id === deleted_item._id) {
                     pmcData.Inventory.items.splice(key)
+					if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+						output.profileChanges[pmcData._id].items.del = [];
                     output.profileChanges[pmcData._id].items.del.push(deleted_item)
                     break
                 }
@@ -175,16 +180,19 @@ function handleCartridges(items, body) {
 }
 
 /* Remove item of itemId and all of its descendants from profile. */
-function removeItemFromProfile(profileData, itemId, sessionID) {
+function removeItemFromProfile(pmcData, itemId, sessionID) {
     // get items to remove
-    let ids_toremove = helper_f.findAndReturnChildren(profileData, itemId);
+    let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
     let output = item_f.handler.getOutput(sessionID);
      //remove one by one all related items and itself
     for (let i in ids_toremove) {
-        for (let a in profileData.Inventory.items) {
-            if (profileData.Inventory.items[a]._id === ids_toremove[i]) {
-                profileData.Inventory.items.splice(a, 1);
-                output.profileChanges[profileData._id].items.del.push(profileData.Inventory.items[a]);
+        for (let a in pmcData.Inventory.items) {
+            if (pmcData.Inventory.items[a]._id === ids_toremove[i]) {
+				if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+					output.profileChanges[pmcData._id].items.del = [];
+                output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
+				
+                pmcData.Inventory.items.splice(a, 1);
             }
         }
     }
@@ -197,7 +205,6 @@ function removeItemFromProfile(profileData, itemId, sessionID) {
 */
 function removeItem(profileData, body, output, sessionID) {
     let toDo = [body];
-
     //Find the item and all of it's relates
     if (toDo[0] === undefined || toDo[0] === null || toDo[0] === "undefined") {
 		logger.logError(`item id is ${toDo[0]} with body ${body}`);
@@ -241,6 +248,8 @@ function splitItem(pmcData, body, sessionID) {
 
             let newItem = utility.generateNewItemId();
 
+			if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+				output.profileChanges[pmcData._id].items.new = [];
             output.profileChanges[pmcData._id].items.new.push({
                 "_id": newItem,
                 "_tpl": item._tpl,
@@ -299,6 +308,8 @@ function mergeItem(pmcData, body, sessionID) {
                     }
 
                     inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
+					if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
+						output.profileChanges[pmcData._id].items.del = [];
                     output.profileChanges[pmcData._id].items.del.push({"_id": inventoryItems.from[key2]._id});
                     inventoryItems.from.splice(key2, 1);
                     return output;
@@ -533,6 +544,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 			upd["SpawnedInSession"] = true;
 		}
 
+		if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+			output.profileChanges[pmcData._id].items.new = [];
 		output.profileChanges[pmcData._id].items.new.push({
 			"_id": newItem,
 			"_tpl": itemToAdd.itemRef._tpl,
@@ -579,6 +592,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 				location++;
 				maxCount -= ammoStackMaxSize;
 			}
+			if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+				output.profileChanges[pmcData._id].items.new = [];
 
 			[output.profileChanges[pmcData._id].items.new, pmcData.Inventory.items].forEach(x => x.push.apply(x, ammos));
 		}
@@ -605,6 +620,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 
 					if (SlotID === "hideout")
 					{
+						if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+							output.profileChanges[pmcData._id].items.new = [];
 						output.profileChanges[pmcData._id].items.new.push({
 							"_id": newItem,
 							"_tpl": itemLib[tmpKey]._tpl,
@@ -625,6 +642,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 					}
 					else
 					{
+						if(typeof output.profileChanges[pmcData._id].items.new == "undefined")
+							output.profileChanges[pmcData._id].items.new = [];
 						output.profileChanges[pmcData._id].items.new.push({
 							"_id": newItem,
 							"_tpl": itemLib[tmpKey]._tpl,
