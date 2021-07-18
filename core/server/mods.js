@@ -116,11 +116,11 @@ function loadMod(loadType)
 					if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
 						if(mod.res.bundles.folders)
 						{
-							let fullPaths = mod.res.bundles.folders.map(x => internal.path.join(`user/mods/${modFolder}`, x));
+							let fullPaths = mod.res.bundles.folders.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
 							res.bundles.folders = res.bundles.folders.concat(fullPaths);
 						}
 						if(mod.res.bundles.files){
-							let fullPaths = mod.res.bundles.files.map(x => internal.path.join(`user/mods/${modFolder}`, x));
+							let fullPaths = mod.res.bundles.files.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
 							res.bundles.files = res.bundles.files.contcat(fullPaths);
 						}
 						mod.res.bundles.loaded = true;
