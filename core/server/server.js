@@ -56,47 +56,32 @@ class Server {
         this.backendUrl = "https://" + this.ip + ":" + this.port;
 		this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
         
-        this.version = "1.1.2";
+        this.version = "1.2.0";
         
-		this.createCacheCallback();
-		this.createReceiveCallback();
-		this.createRespondCallback();
-		this.respondCallback["DONE"] = this.killResponse.bind(this);
+		this.createCache();
+		this.createCallback();
     }
 	
-	createCacheCallback()
+	createCache()
 	{
         this.cacheCallback = {};
-		let path = "./src/callbacks/cache";
+		let path = "./src/cache";
 		let files = fileIO.readDir(path);
 		for(let file of files){
 			let scriptName = "cache" + file.replace(".js","");
-			this.cacheCallback[scriptName] = require("../../src/callbacks/cache/" + file).cache;
+			this.cacheCallback[scriptName] = require("../../src/cache/" + file).cache;
 		}
 		logger.logSuccess("Create: Cache Callback");
 	}
-	createReceiveCallback()
+	
+	createCallback()
 	{
-        this.receiveCallback = {};
-		let path = "./src/callbacks/receive";
-		let files = fileIO.readDir(path);
-		for(let file of files){
-			let scriptName = file.replace(".js","");
-			this.receiveCallback[scriptName] = require("../../src/callbacks/receive/" + file).execute;
-		}
+		const callbacks = require("../../src/callbacks.js").callbacks;
+		
+        this.receiveCallback = callbacks.getReceiveCallbacks();
+		this.respondCallback = callbacks.getRespondCallbacks();
+		
 		logger.logSuccess("Create: Receive Callback");
-	}
-
-	createRespondCallback()
-	{
-        this.respondCallback = {};
-		let path = "./src/callbacks/respond";
-		let files = fileIO.readDir(path);
-		for(let file of files){
-			let scriptName = file.replace(".js","");
-			this.respondCallback[scriptName] = require("../../src/callbacks/respond/" + file).execute;
-		}
-		logger.logSuccess("Create: Respond Callback");
 	}
 	
     resetBuffer(sessionID) 
@@ -172,7 +157,7 @@ class Server {
         return { cert, key };
     }
 
-	killResponse() { return; }
+	
     sendResponse(sessionID, req, resp, body) 
 	{
         let output = "";

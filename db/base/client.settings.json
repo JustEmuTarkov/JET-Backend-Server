@@ -9,9 +9,9 @@
 		"MemoryManagment": {
 			"GigabytesRequiredToDisableGCDuringRaid": 128,
 			"HeapPreAllocationEnabled": true,
-			"HeapPreAllocationMB": 400,
-			"OverrideRamCleanerSettings": false,
-			"RamCleanerEnabled": false
+			"HeapPreAllocationMB": 100,
+			"OverrideRamCleanerSettings": true,
+			"RamCleanerEnabled": true
 		},
 		"NVidiaHighlights": false,
 		"ReleaseProfiler": {
@@ -19,6 +19,6 @@
 			"MaxRecords": 1,
 			"RecordTriggerValue": 500000
 		},
-		"TurnOffLogging": true
+		"TurnOffLogging": false
 	}
 }
