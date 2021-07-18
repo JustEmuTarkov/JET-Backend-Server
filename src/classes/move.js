@@ -418,6 +418,10 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 		else if (helper_f.isMoneyTpl(baseItem.item_id))
 		{
 			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
+		} 
+		else if (body.tid == "")
+		{
+			itemLib.push({ _id: baseItem.item_id, _tpl: baseItem.item_id });
 		}
 		else
 		{

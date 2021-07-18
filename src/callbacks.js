@@ -2,24 +2,22 @@
 
 class Callbacks {
 	cosntructor(){
-		this.receive = {
+	}
+	getReceiveCallbacks()
+	{
+		return {
 			"insurance": this.receiveInsurance,
 			"SAVE": this.receiveSave
 		};
-		this.respond = {
+	}
+	getRespondCallbacks()
+	{
+		return {
 			"BUNDLE": this.respondBundle,
 			"IMAGE": this.respondImage,
 			"NOTIFY": this.respondNotify,
 			"DONE": this.respondKillResponse
 		};
-	}
-	getReceiveCallbacks()
-	{
-		return this.receive;
-	}
-	getRespondCallbacks()
-	{
-		return this.respond;
 	}
 	receiveInsurance(sessionID, req, resp, body, output)
 	{

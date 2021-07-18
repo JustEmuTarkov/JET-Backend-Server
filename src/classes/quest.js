@@ -83,7 +83,12 @@ function getQuestRewardItems(quest, state) {
             questRewards = questRewards.concat(processReward(reward));
         }
     }
-
+	// Quest items are found in raid !!
+	for(let questItem of questRewards){
+		if(typeof questItem.upd == "undefined")
+			questItem.upd = {};
+		questItem.upd["SpawnedInSession"] = true;
+	}
     return questRewards;
 }
 

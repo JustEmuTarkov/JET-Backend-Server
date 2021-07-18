@@ -4,6 +4,29 @@
 		{
 			"templateId": "566abbc34bdc2d92178b4576",
 			"type": "StashSize"
+		},
+		{
+			"value": 6,
+			"passive": true,
+			"production": false,
+			"visible": true,
+			"type": "HealthRegeneration"
+		},
+		{
+			"value": 0,
+			"passive": true,
+			"production": false,
+			"visible": true,
+			"id": "5d8b89addfc57a648453e89d",
+			"icon": "/files/Hideout/icon_hideout_createitem_meds.png",
+			"type": "TextBonus"
+		},
+		{
+			"value": -10,
+			"passive": true,
+			"production": false,
+			"visible": true,
+			"type": "DebuffEndDelay"
 		}
 	],
 	"ConditionCounters": {
@@ -163,7 +186,7 @@
 			"Current": 36.6,
 			"Maximum": 40
 		},
-		"UpdateTime": 1626560449
+		"UpdateTime": 1626631958
 	},
 	"Hideout": {
 		"Areas": [
@@ -182,7 +205,7 @@
 				"completeTime": 0,
 				"constructing": false,
 				"lastRecipe": "",
-				"level": 0,
+				"level": 1,
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 0
@@ -192,7 +215,7 @@
 				"completeTime": 0,
 				"constructing": false,
 				"lastRecipe": "",
-				"level": 0,
+				"level": 1,
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 1
@@ -242,7 +265,7 @@
 				"completeTime": 0,
 				"constructing": false,
 				"lastRecipe": "",
-				"level": 0,
+				"level": 1,
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 7
@@ -262,7 +285,7 @@
 				"completeTime": 0,
 				"constructing": false,
 				"lastRecipe": "",
-				"level": 0,
+				"level": 1,
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 9
@@ -322,7 +345,7 @@
 				"completeTime": 0,
 				"constructing": false,
 				"lastRecipe": "",
-				"level": 0,
+				"level": 1,
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 15
@@ -517,7 +540,7 @@
 					"isSearched": true
 				},
 				"upd": {
-					"StackObjectsCount": 249999
+					"StackObjectsCount": 164999
 				}
 			},
 			{
@@ -643,6 +666,51 @@
 				"location": 0,
 				"upd": {
 					"StackObjectsCount": 30
+				}
+			},
+			{
+				"_id": "I-82af64a5-3758-41f4-87d6-853cb8aef137",
+				"_tpl": "590a3efd86f77437d351a25b",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
+				"location": {
+					"x": 0,
+					"y": 0,
+					"r": 0
+				},
+				"upd": {
+					"StackObjectsCount": "1",
+					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-fdc45aad-b144-450b-85d9-073b256ecf24",
+				"_tpl": "590a3efd86f77437d351a25b",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
+				"location": {
+					"x": 1,
+					"y": 0,
+					"r": 0
+				},
+				"upd": {
+					"StackObjectsCount": "1",
+					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-f3a8f29d-9319-4802-ad9c-b8c21dabefa6",
+				"_tpl": "5449016a4bdc2d6f028b456f",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
+				"location": {
+					"x": 2,
+					"y": 0,
+					"r": 0
+				},
+				"upd": {
+					"StackObjectsCount": "500000",
+					"SpawnedInSession": true
 				}
 			}
 		],
@@ -826,12 +894,12 @@
 		},
 		{
 			"qid": "5967733e86f774602332fc84",
-			"startTime": 0,
+			"startTime": 1626630725,
 			"completedConditions": [],
 			"statusTimers": {
 				"1": 1626560357.27
 			},
-			"status": "AvailableForStart"
+			"status": "Started"
 		},
 		{
 			"qid": "5a27c99a86f7747d2c6bdd8e",

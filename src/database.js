@@ -79,6 +79,25 @@ function _load_HideoutData() {
 	if(typeof global._database.hideout.scavcase.data != "undefined"){
 		global._database.hideout.scavcase = global._database.hideout.scavcase.data;
 	}
+	// apply production time divider
+	for(let id in global._database.hideout.areas){
+		for(let id_stage in global._database.hideout.areas[id].stages){
+			let stage = global._database.hideout.areas[id].stages[id_stage];
+			if(stage.constructionTime != 0 && stage.constructionTime > global._database.gameplay.hideout.productionTimeDivide_Areas){
+				stage.constructionTime = stage.constructionTime / global._database.gameplay.hideout.productionTimeDivide_Areas
+			}
+		}
+	}
+	for(let id in global._database.hideout.production){
+		if(global._database.hideout.production[id].productionTime != 0 && global._database.hideout.production[id].productionTime > global._database.gameplay.hideout.productionTimeDivide_Production){
+			global._database.hideout.production[id].productionTime = global._database.hideout.production[id].productionTime / global._database.gameplay.hideout.productionTimeDivide_Production;
+		}
+	}
+	for(let id in global._database.hideout.scavcase){
+		if(global._database.hideout.production[id].ProductionTime != 0 && global._database.hideout.production[id].ProductionTime > global._database.gameplay.hideout.productionTimeDivide_ScavCase){
+			global._database.hideout.production[id].ProductionTime = global._database.hideout.production[id].ProductionTime / global._database.gameplay.hideout.productionTimeDivide_ScavCase;
+		}
+	}
 }
 function _load_QuestsData() {
 	global._database.quests = fileIO.readParsed(db.user.cache.quests);

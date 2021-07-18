@@ -9,7 +9,7 @@ class Initializer
 		
 		// start watermark and server
 		require('./server/watermark.js').run();
-		this.consoleResponse = require('./server/console.js').consoleResponse;
+		global.consoleResponse = require('./server/console.js').consoleResponse;
 		server.start();
     }
 

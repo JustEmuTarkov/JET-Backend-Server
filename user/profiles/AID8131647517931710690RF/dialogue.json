@@ -12,10 +12,21 @@
 				"rewardCollected": false,
 				"items": {},
 				"maxStorageTime": 172800
+			},
+			{
+				"_id": "D-d0f2d1b6-f011-4320-a719-07e3f9eaeb29",
+				"uid": "54cb57776803fa99248b456e",
+				"type": 10,
+				"dt": 1626630725.89,
+				"templateId": "5abe61a786f7746ad512da4e",
+				"hasRewards": false,
+				"rewardCollected": false,
+				"items": {},
+				"maxStorageTime": 172800
 			}
 		],
 		"pinned": false,
-		"new": 1,
+		"new": 2,
 		"attachmentsNew": 0
 	}
 }

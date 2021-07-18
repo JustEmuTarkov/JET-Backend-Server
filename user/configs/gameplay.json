@@ -21,6 +21,11 @@
 		"scavWars": false,
 		"taggedAndCursed": false
 	},
+	"hideout": {
+		"productionTimeDivide_Areas": 100,
+		"productionTimeDivide_ScavCase": 100,
+		"productionTimeDivide_Production": 100
+	},
 	"bots": {
 		"pmc": {
 			"enabled": true,

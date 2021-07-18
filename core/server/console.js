@@ -25,11 +25,35 @@ class ConsoleResponse {
             "register": this.registerAccount,
             "info": this.displayInfo,
             "help": this.displayInfo,
-            "h": this.displayInfo
+            "h": this.displayInfo,
+			"addItem": this.addItem
         }
     }
+	addCommand(commandName, _function)
+	{
+		this.commands[commandName] = _function;
+	}
+	removeCommand(commandName){
+		delete this.commands[commandName];
+	}
     // commands below !!
-    resetServer(commandStructure){
+    addItem(commandStructure){
+		/*
+			1 - sessionID
+			2 - itemID
+			3 - amount
+		*/
+		let sessionID = commandStructure[1];
+		let newItemList = { "items": [{"item_id": commandStructure[2], "count": commandStructure[3]}], "tid": "" };
+		console.log("sessionID: " + sessionID);
+		let pmcData = profile_f.handler.getPmcProfile(sessionID);
+		item_f.handler.resetOutput(sessionID);
+		let output = item_f.handler.getOutput(sessionID);
+		move_f.addItem(pmcData, newItemList, output, sessionID, true);
+		savehandler_f.saveOpenSessions();
+		logger.logInfo(`Item added: ${newItemList.items[0].item_id} count:${newItemList.items[0].count} session:${sessionID}`);
+	}
+	resetServer(commandStructure){
         logger.logRequest("Executing /restart command!")
         server.softRestart();
         logger.logSuccess("Restart Completed")
