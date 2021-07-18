@@ -37,7 +37,6 @@ class BundlesServer {
         var uniformPath = fullItemPath.replace(/\\/g, "/");
         var key = undefined;
 
-        console.log(uniformPath);
         if(uniformPath.toLowerCase().includes("/user/mods/"))
             key = uniformPath.split(/\/user\/mods\//i)[1];
         else if(uniformPath.toLowerCase().includes("/res/bundles/"))
@@ -50,7 +49,6 @@ class BundlesServer {
             var content = fileIO.read(manifestFile).toString();
             var dependencyKeys = content.replace(/\r/g, "").split("\n").filter(x => x !== null && x.match(/^ *$/) === null);
         }
-        console.log(key)
         var bundle = {
             "key": key,
             "path": this.getHttpPath(key),
