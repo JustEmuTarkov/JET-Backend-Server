@@ -102,10 +102,11 @@ function loadMod(loadType)
         if (!global.mods.toLoad[element].isEnabled) {
             continue;
         }
-        const mod = fileIO.readParsed(`user/mods/${global.mods.toLoad[element].folder}/mod.config.json`);
+		const modFolder = global.mods.toLoad[element].folder;
+        const mod = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
 		if(loadType == "ResModLoad"){
 			if(typeof mod.res != "undefined")
-				res = scanRecursiveMod(`user/mods/${global.mods.toLoad[element].folder}/`, res, mod.res);
+				res = scanRecursiveMod(`user/mods/${modFolder}/`, res, mod.res);
 		} else {
 			for(const srcToExecute in mod.src)
 			{
@@ -114,13 +115,18 @@ function loadMod(loadType)
 					// Add items to res.bundles
 					if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
 						if(mod.res.bundles.folders)
-							res.bundles.folders = res.bundles.folders.concat(mod.res.bundles.folders);
-						if(mod.res.bundles.files)
-							res.bundles.files = res.bundles.files.contcat(mod.res.bundles.files);
+						{
+							let fullPaths = mod.res.bundles.folders.map(x => internal.path.join(`user/mods/${modFolder}`, x));
+							res.bundles.folders = res.bundles.folders.concat(fullPaths);
+						}
+						if(mod.res.bundles.files){
+							let fullPaths = mod.res.bundles.files.map(x => internal.path.join(`user/mods/${modFolder}`, x));
+							res.bundles.files = res.bundles.files.contcat(fullPaths);
+						}
 						mod.res.bundles.loaded = true;
 					}
 
-					require(`../../user/mods/${global.mods.toLoad[element].folder}/${srcToExecute}`).mod(mod); // execute mod
+					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 			}
 		}
