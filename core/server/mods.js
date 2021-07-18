@@ -64,12 +64,17 @@ function scanRecursiveRoute(filepath, deep = false)
 function routeDatabaseAndResources() 
 { // populate global.db and global.res with folders data
 	logger.logInfo("Rebuilding cache: route database");
-	db = {};
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route resources");
-	res = {};
 	res = scanRecursiveRoute("res/");
-	//fileIO.write("user/cache/loadorder.json", fileIO.read("src/loadorder.json"), true);
+	
+	// populate res/bundles
+	res.bundles = {files: [], folders: []};
+	var path = 'res/bundles';
+	var results = fileIO.readDir(path, true);
+	var bundles = results.filter(x => x.toLowerCase().endswith('.bundle'));
+	var bundlePaths = bundles.map(x => internal.path.resolve(path, x));
+	res.bundles.files = res.bundles.files.concat(bundlePaths);
 
 	/* add important server paths */
 	db.user = {
@@ -96,16 +101,31 @@ function loadMod(loadType)
         if (!global.mods.toLoad[element].isEnabled) {
             continue;
         }
-        const mod = fileIO.readParsed(`user/mods/${global.mods.toLoad[element].folder}/mod.config.json`);
+        const modFolder = global.mods.toLoad[element].folder;
+        const mod = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
 		if(loadType == "ResModLoad"){
 			if(typeof mod.res != "undefined")
-				res = scanRecursiveMod(`user/mods/${global.mods.toLoad[element].folder}/`, res, mod.res);
+				res = scanRecursiveMod(`user/mods/${modFolder}/`, res, mod.res);
 		} else {
 			for(const srcToExecute in mod.src)
 			{
 				if(mod.src[srcToExecute] == loadType)
 				{
-					require(`../../user/mods/${global.mods.toLoad[element].folder}/${srcToExecute}`).mod(mod); // execute mod
+					// Add items to res.bundles
+					if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
+						if(mod.res.bundles.folders)
+						{
+							let fullPaths = mod.res.bundles.folders.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
+							res.bundles.folders = res.bundles.folders.concat(fullPaths);
+						}
+						if(mod.res.bundles.files){
+							let fullPaths = mod.res.bundles.files.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
+							res.bundles.files = res.bundles.files.contcat(fullPaths);
+						}
+						mod.res.bundles.loaded = true;
+					}
+
+					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 			}
 		}

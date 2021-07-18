@@ -16,7 +16,28 @@ exports.read = (file) => { return internal.fs.readFileSync(file, 'utf8'); }
 
 exports.exist = (file) => { return internal.fs.existsSync(file); }
 
-exports.readDir = (path) => { return internal.fs.readdirSync(path); }
+exports.readDir = (path, recursive = false) => {
+    var paths = [];
+    if(!internal.fs.existsSync(path)) return paths;
+
+    var items = internal.fs.readdirSync(path);
+
+    for(var i in items){
+        var fullPath = internal.path.join(path, items[i]);
+        if(this.lstatSync(fullPath).isDirectory()){
+            if(recursive){
+                var results = this.readDir(fullPath, true).map(x => internal.path.join(items[i], x));
+                if(results.length > 0)
+                    paths = paths.concat(results);
+            }
+            else
+                paths.push(items[i]);
+        }
+        else
+            paths.push(items[i]);
+    }
+    return paths.map(x => x.replace(/\\/g, "/").replace(/\/\//g, "/"));
+}
 
 exports.statSync = (path) => { return internal.fs.statSync(path); }
 

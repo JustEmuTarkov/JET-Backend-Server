@@ -35,8 +35,8 @@ class TarkovSend {
 
     file(resp, file) 
 	{
-        let pathSlic = file.split("/");
-        let type = this.mime[pathSlic[pathSlic.length -1].split(".")[1]] || this.mime['txt'];
+        const _split = file.split(".");
+        let type = this.mime[_split[_split.length - 1]] || this.mime['txt'];
         let fileStream = fileIO.createReadStream(file);
     
         fileStream.on('open', function () {
