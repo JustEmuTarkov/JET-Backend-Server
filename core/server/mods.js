@@ -64,11 +64,17 @@ function scanRecursiveRoute(filepath, deep = false)
 function routeDatabaseAndResources() 
 { // populate global.db and global.res with folders data
 	logger.logInfo("Rebuilding cache: route database");
-	db = {};
 	db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route resources");
-	res = {};
 	res = scanRecursiveRoute("res/");
+	// populate res/bundles
+	res.bundles = {files: [], folders: []};
+	var path = 'res/bundles';
+	var results = fileIO.readDir(path, true);
+	var bundles = results.filter(x => x.toLowerCase().endswith('.bundle'));
+	var bundlePaths = bundles.map(x => internal.path.resolve(path, x));
+	res.bundles.files = res.bundles.files.concat(bundlePaths);
+
 	//fileIO.write("user/cache/loadorder.json", fileIO.read("src/loadorder.json"), true);
 
 	/* add important server paths */
@@ -105,6 +111,15 @@ function loadMod(loadType)
 			{
 				if(mod.src[srcToExecute] == loadType)
 				{
+					// Add items to res.bundles
+					if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
+						if(mod.res.bundles.folders)
+							res.bundles.folders = res.bundles.folders.concat(mod.res.bundles.folders);
+						if(mod.res.bundles.files)
+							res.bundles.files = res.bundles.files.contcat(mod.res.bundles.files);
+						mod.res.bundles.loaded = true;
+					}
+
 					require(`../../user/mods/${global.mods.toLoad[element].folder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 			}
