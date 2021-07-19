@@ -312,10 +312,17 @@ function mergeItem(pmcData, body, sessionID) {
                     }
 
                     inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
+					
+					if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
+						output.profileChanges[pmcData._id].items.change = [];
+                    output.profileChanges[pmcData._id].items.change.push(inventoryItems.to[key]);
+					
 					if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
 						output.profileChanges[pmcData._id].items.del = [];
                     output.profileChanges[pmcData._id].items.del.push({"_id": inventoryItems.from[key2]._id});
+					
                     inventoryItems.from.splice(key2, 1);
+					item_f.handler.setOutput(output);
                     return output;
                 }
             }
@@ -367,6 +374,7 @@ function transferItem(pmcData, body, sessionID) {
         }
 
         itemTo.upd.StackObjectsCount = stackTo + body.count;
+		output.profileChanges[pmcData._id].change.push(itemTo);
     }
 
     return output;
@@ -383,15 +391,17 @@ function swapItem(pmcData, body, sessionID) {
             iterItem.parentId = body.to.id;         // parentId
             iterItem.slotId = body.to.container;    // slotId
             iterItem.location = body.to.location    // location
+			output.profileChanges[pmcData._id].change.push(iterItem);
         }
 
         if (iterItem._id === body.item2) {
             iterItem.parentId = body.to2.id;
             iterItem.slotId = body.to2.container;
             delete iterItem.location;
+			output.profileChanges[pmcData._id].change.push(iterItem);
         }
     }
-
+	item_f.handler.setOutput(output);
     return output;
 }
 

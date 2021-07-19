@@ -2,6 +2,10 @@
 
 function CreateStructureFromData(LootID, position, rotation, Items, IsStatic = false, UseGravity = false, RandomRotation = false)
 {
+	if(position == "0")
+		position = {"x": 0,"y": 0,"z": 0};
+	if(rotation == "0")
+		rotation = {"x": 0,"y": 0,"z": 0};
 	let structure = {
 		"id": LootID,
 		"data": [

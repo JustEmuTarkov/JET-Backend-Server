@@ -5,6 +5,8 @@ function Create_ForcedDynamicStruct(item_data){
 	let randomRotation = false;
 	let position = {x:0,y:0,z:0};
 	let rotation = {x:0,y:0,z:0};
+	let IsGroupPosition = false;
+	let GroupPositions = [];
 	
 	if(typeof item_data.IsStatic != "undefined")
 		isStatic = item_data.IsStatic;
@@ -24,6 +26,10 @@ function Create_ForcedDynamicStruct(item_data){
 		rotation.y = item_data.Rotation[1];
 		rotation.z = item_data.Rotation[2];
 	}
+	if(typeof item_data.IsGroupPosition != "undefined"){
+		IsGroupPosition = item_data.IsGroupPosition;
+		GroupPositions = item_data.GroupPositions;
+	}
 	return {
 		"id": item_data.id,
 		"data": [
@@ -34,8 +40,8 @@ function Create_ForcedDynamicStruct(item_data){
 				"randomRotation": randomRotation,
 				"Position": position,
 				"Rotation": rotation,
-				"IsGroupPosition": false,
-				"GroupPositions": [],
+				"IsGroupPosition": IsGroupPosition,
+				"GroupPositions": GroupPositions,
 				"Root": item_data.Items[0]._id,
 				"Items": item_data.Items
 			}
@@ -48,6 +54,8 @@ function Create_StaticMountedStruct(item_data){
 	let randomRotation = false;
 	let position = {x:0,y:0,z:0};
 	let rotation = {x:0,y:0,z:0};
+	let IsGroupPosition = false;
+	let GroupPositions = [];
 	
 	if(typeof item_data.IsStatic != "undefined")
 		isStatic = item_data.IsStatic;
@@ -67,6 +75,10 @@ function Create_StaticMountedStruct(item_data){
 		rotation.y = item_data.Rotation[1];
 		rotation.z = item_data.Rotation[2];
 	}
+	if(typeof item_data.IsGroupPosition != "undefined"){
+		IsGroupPosition = item_data.IsGroupPosition;
+		GroupPositions = item_data.GroupPositions;
+	}
 	return {
 		"Id": item_data.id,
 		"IsStatic": isStatic,
@@ -74,8 +86,8 @@ function Create_StaticMountedStruct(item_data){
 		"randomRotation": randomRotation,
 		"Position": position,
 		"Rotation": rotation,
-		"IsGroupPosition": false,
-		"GroupPositions": [],
+		"IsGroupPosition": IsGroupPosition,
+		"GroupPositions": GroupPositions,
 		"Root": item_data.Items[0]._id,
 		"Items": item_data.Items
 	};
