@@ -1,0 +1,52 @@
+{
+        "items": [
+            {
+                "_id": "5fe4977574f15b4ad31b6631",
+                "_tpl": "55d7217a4bdc2d86028b456d"
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b6625",
+                "_tpl": "544a11ac4bdc2d470e8b456a",
+                "parentId": "5fe4977574f15b4ad31b6631",
+                "slotId": "SecuredContainer"
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b662f",
+                "_tpl": "557ffd194bdc2d28148b457f",
+                "parentId": "5fe4977574f15b4ad31b6631",
+                "slotId": "Pockets"
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b66b6",
+                "_tpl": "566abbc34bdc2d92178b4576"
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b6666",
+                "_tpl": "5449016a4bdc2d6f028b456f",
+                "parentId": "5fe4977574f15b4ad31b66b6",
+                "slotId": "hideout",
+                "location": {
+                    "x": 0,
+                    "y": 0,
+                    "r": 0,
+                    "isSearched": true
+                },
+                "upd": {
+                    "StackObjectsCount": 999999999
+                }
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b66b8",
+                "_tpl": "5963866b86f7747bfa1c4462"
+            },
+            {
+                "_id": "5fe4977574f15b4ad31b66b7",
+                "_tpl": "5963866286f7747bf429b572"
+            }
+        ],
+        "equipment": "5fe4977574f15b4ad31b6631",
+        "stash": "5fe4977574f15b4ad31b66b6",
+        "questRaidItems": "5fe4977574f15b4ad31b66b7",
+        "questStashItems": "5fe4977574f15b4ad31b66b8",
+        "fastPanel": {}
+    }

@@ -1,18 +1,15 @@
 {
 	"BackendCounters": {},
-	"Bonuses": [
-		{
+	"Bonuses": [{
 			"templateId": "566abbc34bdc2d92178b4576",
 			"type": "StashSize"
-		},
-		{
+		}, {
 			"value": 6,
 			"passive": true,
 			"production": false,
 			"visible": true,
 			"type": "HealthRegeneration"
-		},
-		{
+		}, {
 			"value": 0,
 			"passive": true,
 			"production": false,
@@ -20,8 +17,7 @@
 			"id": "5d8b89addfc57a648453e89d",
 			"icon": "/files/Hideout/icon_hideout_createitem_meds.png",
 			"type": "TextBonus"
-		},
-		{
+		}, {
 			"value": -10,
 			"passive": true,
 			"production": false,
@@ -189,8 +185,7 @@
 		"UpdateTime": 1626631958
 	},
 	"Hideout": {
-		"Areas": [
-			{
+		"Areas": [{
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -199,8 +194,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 3
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -209,8 +203,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 0
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -219,8 +212,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 1
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -229,8 +221,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 2
-			},
-			{
+			}, {
 				"active": false,
 				"completeTime": 0,
 				"constructing": false,
@@ -239,8 +230,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 4
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -249,8 +239,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 5
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -259,8 +248,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 6
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -269,8 +257,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 7
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -279,8 +266,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 8
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -289,8 +275,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 9
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -299,8 +284,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 10
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -309,8 +293,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 11
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -319,8 +302,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 12
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -329,8 +311,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 13
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -339,8 +320,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 14
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -349,8 +329,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 15
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -359,8 +338,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 16
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -369,8 +347,7 @@
 				"passiveBonusesEnabled": false,
 				"slots": [],
 				"type": 17
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -379,8 +356,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 18
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -389,8 +365,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 19
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -399,8 +374,7 @@
 				"passiveBonusesEnabled": true,
 				"slots": [],
 				"type": 20
-			},
-			{
+			}, {
 				"active": true,
 				"completeTime": 0,
 				"constructing": false,
@@ -444,16 +418,13 @@
 	},
 	"InsuredItems": [],
 	"Inventory": {
-		"items": [
-			{
+		"items": [{
 				"_id": "60de0d80c6b34f52845b4643",
 				"_tpl": "566abbc34bdc2d92178b4576"
-			},
-			{
+			}, {
 				"_id": "60de0d80c6b34f52845b4646",
 				"_tpl": "602543c13fee350cd564d032"
-			},
-			{
+			}, {
 				"_id": "I-58538d5b-1c4f-441c-b08e-c432eb6e6839",
 				"_tpl": "564ca99c4bdc2d16268b4589",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -467,8 +438,7 @@
 				"upd": {
 					"StackObjectsCount": 1
 				}
-			},
-			{
+			}, {
 				"_id": "I-4c1578f4-a557-454f-877a-18dcd1b999ab",
 				"_tpl": "564ca99c4bdc2d16268b4589",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -482,8 +452,7 @@
 				"upd": {
 					"StackObjectsCount": 1
 				}
-			},
-			{
+			}, {
 				"_id": "I-bbe178a1-66f3-44ad-bb7c-e68868e3d494",
 				"_tpl": "564ca99c4bdc2d16268b4589",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -497,8 +466,7 @@
 				"upd": {
 					"StackObjectsCount": 1
 				}
-			},
-			{
+			}, {
 				"_id": "I-f96351c8-59e0-49fb-befd-cd98135052a4",
 				"_tpl": "56dff2ced2720bb4668b4567",
 				"parentId": "I-4c1578f4-a557-454f-877a-18dcd1b999ab",
@@ -507,8 +475,7 @@
 				"upd": {
 					"StackObjectsCount": 30
 				}
-			},
-			{
+			}, {
 				"_id": "I-4e35f5d3-3f0f-43dd-a5ee-94623d7e188a",
 				"_tpl": "56dff2ced2720bb4668b4567",
 				"parentId": "I-bbe178a1-66f3-44ad-bb7c-e68868e3d494",
@@ -517,8 +484,7 @@
 				"upd": {
 					"StackObjectsCount": 30
 				}
-			},
-			{
+			}, {
 				"_id": "I-1296d5ba-d925-4e15-89b3-b7426ab485c4",
 				"_tpl": "56dff2ced2720bb4668b4567",
 				"parentId": "I-58538d5b-1c4f-441c-b08e-c432eb6e6839",
@@ -527,8 +493,7 @@
 				"upd": {
 					"StackObjectsCount": 30
 				}
-			},
-			{
+			}, {
 				"_id": "I-4eb680ec-5e9a-44eb-b1e1-a6a1a16647d9",
 				"_tpl": "5449016a4bdc2d6f028b456f",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -542,20 +507,16 @@
 				"upd": {
 					"StackObjectsCount": 164999
 				}
-			},
-			{
+			}, {
 				"_id": "60de0d80c6b34f52845b45ad",
 				"_tpl": "55d7217a4bdc2d86028b456d"
-			},
-			{
+			}, {
 				"_id": "60de0d80c6b34f52845b4644",
 				"_tpl": "5963866286f7747bf429b572"
-			},
-			{
+			}, {
 				"_id": "60de0d80c6b34f52845b4645",
 				"_tpl": "5963866b86f7747bfa1c4462"
-			},
-			{
+			}, {
 				"_id": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"_tpl": "5644bd2b4bdc2d3b4c8b4572",
 				"parentId": "60de0d80c6b34f52845b45ad",
@@ -569,38 +530,32 @@
 						"FireMode": "single"
 					}
 				}
-			},
-			{
+			}, {
 				"_id": "60de0d80c6b34f52845b45ab",
 				"_tpl": "557ffd194bdc2d28148b457f",
 				"parentId": "60de0d80c6b34f52845b45ad",
 				"slotId": "Pockets"
-			},
-			{
+			}, {
 				"_id": "I-4dc3f84b-9c50-4c4c-b35a-f19d337a42cf",
 				"_tpl": "59c6633186f7740cf0493bb9",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_gas_block"
-			},
-			{
+			}, {
 				"_id": "I-588979cc-a06c-4de5-a9a2-b58d7940fd3a",
 				"_tpl": "5649aa744bdc2ded0b8b457e",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_muzzle"
-			},
-			{
+			}, {
 				"_id": "I-664f3e43-4b76-4873-94ea-ea6b24ac6460",
 				"_tpl": "5649ad3f4bdc2df8348b4585",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_pistol_grip"
-			},
-			{
+			}, {
 				"_id": "I-b5445029-6334-439c-8f4b-9283019c0601",
 				"_tpl": "5649af094bdc2df8348b4586",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_reciever"
-			},
-			{
+			}, {
 				"_id": "I-c751c223-223e-4311-8940-e17ee1a9390a",
 				"_tpl": "5649b0544bdc2d1b2b8b458a",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
@@ -616,20 +571,17 @@
 						"SelectedScope": 0
 					}
 				}
-			},
-			{
+			}, {
 				"_id": "I-9a1878b0-2037-4d00-b08e-c0b98ec0914b",
 				"_tpl": "5649b1c04bdc2d16268b457c",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_stock"
-			},
-			{
+			}, {
 				"_id": "I-93f63fa2-92bc-4b19-a5c7-67fb48aaa43f",
 				"_tpl": "564ca99c4bdc2d16268b4589",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "mod_magazine"
-			},
-			{
+			}, {
 				"_id": "I-9e07b5b4-7bfa-4fbf-9f87-55ae1b489304",
 				"_tpl": "57486e672459770abd687134",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
@@ -645,20 +597,17 @@
 						"SelectedScope": 0
 					}
 				}
-			},
-			{
+			}, {
 				"_id": "I-f8eef537-ecda-4162-b5bf-c984639264f0",
 				"_tpl": "56dfef82d2720bbd668b4567",
 				"parentId": "I-23f306c0-8023-43e9-bb90-a7daff964b2b",
 				"slotId": "patron_in_weapon"
-			},
-			{
+			}, {
 				"_id": "I-92016c24-77b8-4f7f-a950-95ecda101bc6",
 				"_tpl": "5648b0744bdc2d363b8b4578",
 				"parentId": "I-4dc3f84b-9c50-4c4c-b35a-f19d337a42cf",
 				"slotId": "mod_handguard"
-			},
-			{
+			}, {
 				"_id": "I-3afa4f83-0646-4df1-94fe-b580e042ce49",
 				"_tpl": "56dff2ced2720bb4668b4567",
 				"parentId": "I-93f63fa2-92bc-4b19-a5c7-67fb48aaa43f",
@@ -667,8 +616,7 @@
 				"upd": {
 					"StackObjectsCount": 30
 				}
-			},
-			{
+			}, {
 				"_id": "I-82af64a5-3758-41f4-87d6-853cb8aef137",
 				"_tpl": "590a3efd86f77437d351a25b",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -682,8 +630,7 @@
 					"StackObjectsCount": "1",
 					"SpawnedInSession": true
 				}
-			},
-			{
+			}, {
 				"_id": "I-fdc45aad-b144-450b-85d9-073b256ecf24",
 				"_tpl": "590a3efd86f77437d351a25b",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -697,8 +644,7 @@
 					"StackObjectsCount": "1",
 					"SpawnedInSession": true
 				}
-			},
-			{
+			}, {
 				"_id": "I-f3a8f29d-9319-4802-ad9c-b8c21dabefa6",
 				"_tpl": "5449016a4bdc2d6f028b456f",
 				"parentId": "60de0d80c6b34f52845b4643",
@@ -724,64 +670,55 @@
 	"Notes": {
 		"Notes": []
 	},
-	"Quests": [
-		{
+	"Quests": [{
 			"qid": "5a03153686f77442d90e2171",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27d2af86f7744e1115b323",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bb1e86f7741f27621b7e",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27b9de86f77464e5044585",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59c512ad86f7741f0d09de9b",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59675d6c86f7740a842fc482",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27b7a786f774579c3eb376",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59674cd986f7744ab26e32f2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59ca1a6286f774509a270942",
 			"startTime": 0,
 			"completedConditions": [],
@@ -789,57 +726,49 @@
 				"1": 1626560357.268
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "59c50c8886f7745fed3193bf",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a0449d586f77474e66227b7",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59c50a9e86f7745fef66f4ff",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5967725e86f774601a446662",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59ca264786f77445a80ed044",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27ba9586f7741b543d8e85",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a0327ba86f77456b9154236",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5936da9e86f7742d65037edf",
 			"startTime": 0,
 			"completedConditions": [
@@ -849,50 +778,43 @@
 				"1": 1626560357.2689998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a27bc3686f7741c73584026",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59ca29fb86f77445ab465c87",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27ba1c86f77461ea5a3c56",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bc1586f7741f6d40fa2f",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bc6986f7741c7358402b",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59689ee586f7740d1570bbd5",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5967733e86f774602332fc84",
 			"startTime": 1626630725,
 			"completedConditions": [],
@@ -900,50 +822,43 @@
 				"1": 1626560357.27
 			},
 			"status": "Started"
-		},
-		{
+		}, {
 			"qid": "5a27c99a86f7747d2c6bdd8e",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5979f9ba86f7740f6c3fe9f2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5968eb3186f7741dde183a4d",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596a204686f774576d4c95de",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5969f90786f77420d2328015",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596b43fb86f77457ca186186",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596a1e6c86f7741ddc2d3206",
 			"startTime": 0,
 			"completedConditions": [],
@@ -951,57 +866,49 @@
 				"1": 1626560357.27
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a27bb8386f7741c770d2d0a",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596a0e1686f7741ddf17dbee",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bbf886f774333a418eeb",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5969f9e986f7741dde183a50",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5979ed3886f77431307dc512",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a03173786f77451cb427172",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27b87686f77460de0252a8",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "597a171586f77405ba6887d3",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1009,15 +916,13 @@
 				"1": 1626560357.271
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5979eee086f774311955e614",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "597a160786f77477531d39d2",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1025,22 +930,19 @@
 				"1": 1626560357.271
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "597a0e5786f77426d66c0636",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27b7d686f77460d847e6a6",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59c93e8e86f7742a406989c4",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1048,71 +950,61 @@
 				"1": 1626560357.271
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a27bb3d86f77411ea361a21",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59675ea386f77414b32bded2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59689fbd86f7740d137ebfc4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bc8586f7741b543d8ea4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596b455186f77457cb50eccb",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "597a0b2986f77426d66c0633",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27bb5986f7741dfb660900",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a27b80086f774429a5d7e20",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "597a0f5686f774273b74f676",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5936d90786f7742b1420ba5b",
 			"startTime": 0,
 			"completedConditions": [
@@ -1122,15 +1014,13 @@
 				"1": 1626560357.2719998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ac242ab86f77412464f68b4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596a218586f77420d232807c",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1138,22 +1028,19 @@
 				"1": 1626560357.2719998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a27bafb86f7741c73584017",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59c124d686f774189b3c843f",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a68663e86f774501078f78a",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1161,15 +1048,13 @@
 				"1": 1626560357.2719998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a03296886f774569778596a",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a68669a86f774255929b4d4",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1177,29 +1062,25 @@
 				"1": 1626560357.2719998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "59ca2eb686f77445a80ed049",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac2426c86f774138762edfe",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "59674eb386f774539f14813a",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac23c6186f7741247042bad",
 			"startTime": 0,
 			"completedConditions": [
@@ -1209,29 +1090,25 @@
 				"1": 1626560357.273
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5a27b75b86f7742e97191958",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596b36c586f77450d6045ad2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac345dc86f774288030817f",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a68661a86f774500f48afb0",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1239,15 +1116,13 @@
 				"1": 1626560357.273
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ac3467986f7741d6224abc2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a68665c86f774255929b4c7",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1255,22 +1130,19 @@
 				"1": 1626560357.273
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ac244eb86f7741356335af1",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5967530a86f77462ba22226b",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5a68667486f7742607157d28",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1278,120 +1150,103 @@
 				"1": 1626560357.273
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ac3464c86f7741d651d6877",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac3460c86f7742880308185",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b477b6f86f7747290681823",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b478eca86f7744642012254",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac346a886f7744e1b083d67",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae3267986f7742a413592fe",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac3477486f7741d651d6885",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac2428686f77412450b42bf",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac346e886f7741d6118b99b",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b4794cb86f774598100d5d4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b47926a86f7747ccc057c15",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b4795fb86f7745876267770",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b47825886f77468074618d3",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac244c486f77413e12cf945",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae3280386f7742a41359364",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b477f7686f7744d1b23c4d2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae449b386f77446d8741719",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1399,113 +1254,97 @@
 				"1": 1626560357.274
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e2c386f77443e7549029",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae327c886f7745c7b3f2f3f",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac3479086f7742880308199",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae3270f86f77445ba41d4dd",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e2a986f77409dd5cdf2a",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b478d0f86f7744d190d91b5",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae449c386f7744bde357697",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c10f94386f774227172c572",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0bdb5286f774166e38eed4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e4ca86f77409dd5cdf2c",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae4498786f7744bde357695",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0bde0986f77479cf22c2f8",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c12452c86f7744b83469073",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac3462b86f7741d6118b983",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0d190cd09282029f5390d8",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae4496986f774459e77beb6",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1513,50 +1352,43 @@
 				"1": 1626560357.276
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5c0bc91486f7746ab41857a2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae3277186f7745973054106",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e44f86f77443e625e385",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0d1c4cd0928202a02a6f5c",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0d4c12d09282029f539173",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0d0d5086f774363760aef2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae448f286f77448d73c0131",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1564,8 +1396,7 @@
 				"1": 1626560357.276
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae4495c86f7744e87761355",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1573,8 +1404,7 @@
 				"1": 1626560357.276
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae4493d86f7744b8e15aa8f",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1582,15 +1412,13 @@
 				"1": 1626560357.276
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e2b486f77409de05bba0",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae4490786f7744ca822adcc",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1598,57 +1426,49 @@
 				"1": 1626560357.276
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e4d586f77443e625e388",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae4495086f77443c122bc40",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae448a386f7744d3730fff0",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c1141f386f77430ff393792",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e46e86f77409453bce7c",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac3475486f7741d6224abd3",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ac346cf86f7741d63233a02",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae4493486f7744efa289417",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1656,29 +1476,25 @@
 				"1": 1626560357.277
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e4ad86f77443e625e387",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c139eb686f7747878361a6f",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0be5fc86f774467a116593",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5bc4836986f7740c0152911c",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1686,8 +1502,7 @@
 				"1": 1626560357.277
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5b478ff486f7744d184ecbbf",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1695,22 +1510,19 @@
 				"1": 1626560357.277
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5c1128e386f7746565181106",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c0d0f1886f77457b8210226",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5bc4826c86f774106d22d88b",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1718,29 +1530,25 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5b47749f86f7746c5d6a5fd4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b47799d86f7746c5d6a5fd8",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e48186f77443e625e386",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5bc479e586f7747f376c7da3",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1748,36 +1556,31 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5c0bbaa886f7746941031d82",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae449d986f774453a54a7e1",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b478b1886f7744d1b23c57d",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5c112d7e86f7740d6f647486",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5bc47dbf86f7741ee74e93b9",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1785,8 +1588,7 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5bc4776586f774512d07cf05",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1794,8 +1596,7 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae4499a86f77449783815db",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1803,8 +1604,7 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae4497b86f7744cf402ed00",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1812,15 +1612,13 @@
 				"1": 1626560357.2779999
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5c1234c286f77406fa13baeb",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5bc480a686f7741af0342e29",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1828,8 +1626,7 @@
 				"1": 1626560357.279
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae448bf86f7744d733e55ee",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1837,8 +1634,7 @@
 				"1": 1626560357.279
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5ae449a586f7744bde357696",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1846,29 +1642,25 @@
 				"1": 1626560357.279
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d2495a886f77425cd51e403",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25aed386f77442734d25d2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5b47876e86f7744d1c353205",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ae448e586f7744dcf0c2a67",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1876,85 +1668,73 @@
 				"1": 1626560357.279
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5b47891f86f7744d1b23c571",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d24b81486f77439c92d6ba8",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25bfd086f77442734d3007",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25b6be86f77444001e1b89",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e43786f7740a212217fa",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5dc53acb86f77469c740c893",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25c81b86f77443e625dd71",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25cf2686f77443e75488d4",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e2ee86f77443e35162ea",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5e383a6386f77465910ce1f3",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5e4d515e86f77438b2195244",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d6fbc2886f77449d825f9d3",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1962,15 +1742,13 @@
 				"1": 1626560357.28
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e2e286f77444001e2e48",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d6fb2c086f77449da599c24",
 			"startTime": 0,
 			"completedConditions": [],
@@ -1978,92 +1756,79 @@
 				"1": 1626560357.28
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5d25e2d886f77442734d335e",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e29d86f7740a22516326",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25d2c186f77443e35162e5",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e2cc86f77443e47ae019",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5eaaaa7c93afa0558f3b5a1c",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e44386f77409453bce7b",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d4bec3486f7743cac246665",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e48d86f77408251c4bfb",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e4b786f77408251c4bfc",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5d25e45e86f77408251c4bfa",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ede567cfa6dc072ce15d6e3",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5ede55112c95834b583f052a",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5edab4b1218d181e29451435",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2071,22 +1836,19 @@
 				"1": 1626560357.281
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5eda19f0edce541157209cee",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5edab736cc183c769d778bc2",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5edabd13218d181e29451442",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2094,15 +1856,13 @@
 				"1": 1626560357.281
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5f04886a3937dc337a6b8238",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5edac020218d181e29451446",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2110,8 +1870,7 @@
 				"1": 1626560357.281
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5edaba7c0c502106f869bc02",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2119,29 +1878,25 @@
 				"1": 1626560357.281
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5edac34d0bb72a50635c2bfa",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "600302d73b897b11364cd161",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "5fd9fad9c1ce6b1a3b486d00",
 			"startTime": 0,
 			"completedConditions": [],
 			"statusTimers": {},
 			"status": "Locked"
-		},
-		{
+		}, {
 			"qid": "596760e186f7741e11214d58",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2149,8 +1904,7 @@
 				"1": 1626560357.2819998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "596a101f86f7741ddb481582",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2158,8 +1912,7 @@
 				"1": 1626560357.2819998
 			},
 			"status": "AvailableForStart"
-		},
-		{
+		}, {
 			"qid": "5979f8bb86f7743ec214c7a6",
 			"startTime": 0,
 			"completedConditions": [],
@@ -2175,334 +1928,279 @@
 		"rating": 0.2
 	},
 	"Skills": {
-		"Common": [
-			{
+		"Common": [{
 				"Id": "BotReload",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
-			},
-			{
+			}, {
 				"Id": "BotSound",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
-			},
-			{
+			}, {
 				"Id": "Endurance",
 				"Progress": 55.13606,
 				"PointsEarnedDuringSession": 5.513602,
 				"LastAccess": 1626560438
-			},
-			{
+			}, {
 				"Id": "Strength",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Vitality",
 				"Progress": 0.108413704,
 				"PointsEarnedDuringSession": 0.0108413706,
 				"LastAccess": 1626558107
-			},
-			{
+			}, {
 				"Id": "Health",
 				"Progress": 27.0049839,
 				"PointsEarnedDuringSession": 2.700498,
 				"LastAccess": 1626560438
-			},
-			{
+			}, {
 				"Id": "StressResistance",
 				"Progress": 0.8579999,
 				"PointsEarnedDuringSession": 0.08579999,
 				"LastAccess": 1626560448
-			},
-			{
+			}, {
 				"Id": "Metabolism",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Immunity",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Perception",
 				"Progress": 1.87500811,
 				"PointsEarnedDuringSession": 0.1875008,
 				"LastAccess": 1626560448
-			},
-			{
+			}, {
 				"Id": "Intellect",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Attention",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Charisma",
 				"Progress": 0.375001639,
 				"PointsEarnedDuringSession": 0.03750016,
 				"LastAccess": 1626560448
-			},
-			{
+			}, {
 				"Id": "Memory",
 				"Progress": 1.37820292,
 				"PointsEarnedDuringSession": 0.137820318,
 				"LastAccess": 1626560448
-			},
-			{
+			}, {
 				"Id": "Pistol",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Revolver",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "SMG",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Assault",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Shotgun",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Sniper",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "LMG",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "HMG",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Launcher",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "AttachedLauncher",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Throwing",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Melee",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "DMR",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "RecoilControl",
 				"Progress": 5.06376,
 				"PointsEarnedDuringSession": 0.5063759,
 				"LastAccess": 1626558127
-			},
-			{
+			}, {
 				"Id": "AimDrills",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
-			},
-			{
+			}, {
 				"Id": "TroubleShooting",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
-			},
-			{
+			}, {
 				"Id": "Surgery",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": -2147483648
-			},
-			{
+			}, {
 				"Id": "CovertMovement",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Search",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "MagDrills",
 				"Progress": 1.3,
 				"PointsEarnedDuringSession": 0.13,
 				"LastAccess": 1626560401
-			},
-			{
+			}, {
 				"Id": "Sniping",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "ProneMovement",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "FieldMedicine",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "FirstAid",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "LightVests",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "HeavyVests",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "WeaponModding",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "AdvancedModding",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "NightOps",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "SilentOps",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Lockpicking",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "WeaponTreatment",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Freetrading",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Auctions",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Cleanoperations",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Barter",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Shadowconnections",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Taskperformance",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "Crafting",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
-			},
-			{
+			}, {
 				"Id": "HideoutManagement",
 				"Progress": 0,
 				"PointsEarnedDuringSession": 0,
 				"LastAccess": 0
 			}
 		],
-		"Mastering": [
-			{
+		"Mastering": [{
 				"Id": "AK74",
 				"Progress": 0
 			}
@@ -2512,27 +2210,23 @@
 	},
 	"Stats": {
 		"SessionCounters": {
-			"Items": [
-				{
+			"Items": [{
 					"Key": [
 						"Exp",
 						"ExpExitStatus"
 					],
 					"Value": 200
-				},
-				{
+				}, {
 					"Key": [
 						"Pedometer"
 					],
 					"Value": 110
-				},
-				{
+				}, {
 					"Key": [
 						"ExpKill"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"ExpLooting"
 					],
@@ -2541,529 +2235,445 @@
 			]
 		},
 		"OverallCounters": {
-			"Items": [
-				{
+			"Items": [{
 					"Key": [
 						"TriggerVisited",
 						"place_SADOVOD_01_1"
 					],
 					"Value": 2
-				},
-				{
+				}, {
 					"Key": [
 						"Triggers"
 					],
 					"Value": 5
-				},
-				{
+				}, {
 					"Key": [
 						"TriggerVisited",
 						"caseextr"
 					],
 					"Value": 1
-				},
-				{
+				}, {
 					"Key": [
 						"TriggerVisited",
 						"roof01"
 					],
 					"Value": 1
-				},
-				{
+				}, {
 					"Key": [
 						"TriggerVisited",
 						"place_pacemaker_SCOUT_03"
 					],
 					"Value": 5
-				},
-				{
+				}, {
 					"Key": [
 						"TriggerVisited",
 						"exit3zone"
 					],
 					"Value": 5
-				},
-				{
+				}, {
 					"Key": [
 						"CurrentWinStreak",
 						"Pmc"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Sessions",
 						"Pmc"
 					],
 					"Value": 5
-				},
-				{
+				}, {
 					"Key": [
 						"ExitStatus",
 						"Survived",
 						"Pmc"
 					],
 					"Value": 1
-				},
-				{
+				}, {
 					"Key": [
 						"LifeTime",
 						"Pmc"
 					],
 					"Value": 402
-				},
-				{
+				}, {
 					"Key": [
 						"Exp",
 						"ExpHeal"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Exp",
 						"ExpExitStatus"
 					],
 					"Value": 1100
-				},
-				{
+				}, {
 					"Key": [
 						"Kills"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Deaths"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel0010"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel1030"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel3050"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel5070"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel7099"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledLevel100"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledBear"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledUsec"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledSavage"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledPmc"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledBoss"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithKnife"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithPistol"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithSmg"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithShotgun"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithAssaultRifle"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithAssaultCarbine"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithGrenadeLauncher"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithMachineGun"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithMarksmanRifle"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithSniperRifle"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithSpecialWeapon"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"KilledWithThrowWeapon"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"Head"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"Chest"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"Stomach"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"LeftArm"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"RightArm"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"LeftLeg"
 					],
 					"Value": 211
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartDamage",
 						"RightLeg"
 					],
 					"Value": 205
-				},
-				{
+				}, {
 					"Key": [
 						"HeadShots"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BloodLoss"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BodyPartsDestroyed"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Heal"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Fractures"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Contusions"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Dehydrations"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Exhaustions"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Medicines"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"UsedFoods"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"UsedDrinks"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Pedometer"
 					],
 					"Value": 1020
-				},
-				{
+				}, {
 					"Key": [
 						"BodiesLooted"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"SafeLooted"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"LockableContainers"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Weapons"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Ammunitions"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Mods"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"ThrowWeapons"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"SpecialItems"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"FoodDrinks"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Keys"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"BartItems"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"MobContainers"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Equipments"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"CauseBodyDamage"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"CauseArmorDamage"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"HitCount"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"LongShots"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"ExpKill"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"ExpLooting"
 					],
 					"Value": 550
-				},
-				{
+				}, {
 					"Key": [
 						"Money",
 						"RUB"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Money",
 						"EUR"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"Money",
 						"USD"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"AmmoUsed"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"AmmoReached"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"TriggerVisited"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"CombatDamage"
 					],
 					"Value": 0
-				},
-				{
+				}, {
 					"Key": [
 						"LongestWinStreak",
 						"Pmc"
 					],
 					"Value": 1
-				},
-				{
+				}, {
 					"Key": [
 						"ExitStatus",
 						"Runner",

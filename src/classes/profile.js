@@ -86,23 +86,15 @@ class ProfileServer {
 
     createProfile(info, sessionID) {
 		
-        let account = account_f.handler.find(sessionID);
-        let folder = account_f.getPath(account.id);
+        const account = account_f.handler.find(sessionID);
+        const folder = account_f.getPath(account.id);
 
-		let ChoosedSide = info.side.toLowerCase();
-        let ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
+		const ChoosedSide = info.side.toLowerCase();
+        const ChoosedSideCapital = ChoosedSide.charAt(0).toUpperCase() + ChoosedSide.slice(1);
         
-        let DefaultProfile = null
+        let pmcData = fileIO.readParsed(db.profile[account.edition]["character"]);
 
-        if (account.edition == "Developer") {
-            DefaultProfile = fileIO.readParsed(db.profile[account.edition]["character"]);
-        } else {
-            DefaultProfile = fileIO.readParsed(db.profile[account.edition][("character_" + ChoosedSide)]);
-        }
-
-		//let Outfits = fileIO.readParsed(db.profile[account.edition].starting_outfit);
-		
-		let pmcData = DefaultProfile;
+		pmcData.Inventory = fileIO.readParsed(db.profile[account.edition]["inventory_" + ChoosedSide]);
 		
 		// Set choosed side of player
 		pmcData.Info.Side = pmcData.Info.Side.replace("__REPLACEME__", ChoosedSideCapital);
