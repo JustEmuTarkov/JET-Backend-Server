@@ -75,13 +75,67 @@ function processReward(reward) {
 * input: state, the quest status that holds the items (Started, Success, Fail)
 * output: an array of items with the correct maxStack
 */
-function getQuestRewardItems(quest, state) {
+function getQuestRewardItems(quest, state, pmcData) {
     let questRewards = [];
 
     for (let reward of quest.rewards[state]) {
-        if ("Item" === reward.type) {
-            questRewards = questRewards.concat(processReward(reward));
-        }
+		
+		switch(reward.type){
+			case "Item":
+				questRewards = questRewards.concat(processReward(reward));
+			break;
+			case "Experience":
+				pmcData.Info.Experience += reward.value;
+			break;
+			case "TraderStanding":
+				if(typeof pmcData.TradersInfo[reward.target] == "undefined"){
+					pmcData.TradersInfo[reward.target] = {
+						"saleSum": 0,
+						"standing": 0,
+						"unlocked": true
+					};
+				}
+				pmcData.TradersInfo[reward.target].standing += reward.value;
+			break;
+			case "TraderUnlock":
+				if(typeof pmcData.TradersInfo[reward.target] == "undefined"){
+					pmcData.TradersInfo[reward.target] = {
+						"saleSum": 0,
+						"standing": 0,
+						"unlocked": true
+					};
+				}
+				pmcData.TradersInfo[reward.target].unlocked = true;
+			break;
+			case "AssortmentUnlock": /*
+				items -> holds item to unlock in traders
+				traderId -> trader id of the trader you unlock the item to
+				loyaltyLevel -> level of the trader you unlock that item on
+				target -> _id of the item to unlock (main part)
+				*/ break;
+			case "Counter": break;
+			case "Location": /* not used in game (can lock or unlock location suposedly...) */ break;
+			case "Skill":
+				let skills = pmcData.Skills.Common.filter(skill => skill.Id == reward.target);
+				for(const Id in skills) {
+					pmcData.Skills.Common[Id].Progress += reward.value;
+				}
+			/*	if we gonna use masterings increaser then yea ;)
+				let masterings = pmcData.Skills.Mastering.filter(skill => skill.Id == reward.target);
+				for(const Id in masterings) {
+					pmcData.Skills.Common[Id].Progress += reward.value;
+				}
+			
+			{
+				"target": "Sniper",
+				"value": "300",
+				"id": "5d78ce4986f77437f7656bf2",
+				"type": "Skill",
+				"index": 0
+			}
+			*/
+			break;
+		}
     }
 	// Quest items are found in raid !!
 	for(let questItem of questRewards){
@@ -120,7 +174,7 @@ function acceptQuest(pmcData, body, sessionID) {
     let quest = getCachedQuest(body.qid);
     let questLocale = locale_f.handler.getGlobal().quest;
     questLocale = questLocale[body.qid];
-    let questRewards = getQuestRewardItems(quest, state);
+    let questRewards = getQuestRewardItems(quest, state, pmcData);
     let messageContent = {
         "templateId": locale_f.handler.getGlobal().mail[questLocale.startedMessageText],
         "type": dialogue_f.getMessageTypeValue('questStart'),
