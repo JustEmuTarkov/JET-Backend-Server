@@ -14,4 +14,5 @@ rmdir /q /s _Build\user\logs
 mkdir _Build\user\logs
 del /q _Build\user\profiles\*.7z
 del /q _Build\user\profiles\*.zip
+rmdir /q /s coreMinify
 pause
