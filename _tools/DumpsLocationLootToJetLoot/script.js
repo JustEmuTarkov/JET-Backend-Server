@@ -4,12 +4,14 @@ const fs = require('fs');
 function GenerateStaticShort(loot)
 {
 	let shorten = {
-		"id": "",
+		"id": loot.Id,
 		"Position": 0,
 		"Rotation": 0,
 		"Items": []
 	}
-	shorten.id = loot.Id;
+	if(typeof loot.Id == "undefined")
+		shorten.id = loot.id;
+	
 	shorten.Items = loot.Items;
 	if(loot.IsStatic){
 		shorten["IsStatic"] = true;
@@ -54,12 +56,14 @@ function GenerateDynamicShort(loot)
 	}
 	*/
 	let shorten = {
-		"id": "",
+		"id": loot.Id,
 		"Position": 0,
 		"Rotation": 0,
 		"Items": []
 	}
-	shorten.id = loot.Id;
+	if(typeof loot.Id == "undefined")
+		shorten.id = loot.id;
+	
 	let loot_2 = loot;
 	if(typeof loot.data != "undefined")
 		loot_2 = loot.data[0];
@@ -219,7 +223,9 @@ for(let map in maps)
 					found = true;
 			}
 			if (!found){
-				newLoot.dynamic.push(oldLootMaps[maps[map].toLowerCase()].loot.dynamic[_loot]);
+				//if(maps[map].toLowerCase() == "factory4_day")
+				//	console.log(oldLootMaps[maps[map].toLowerCase()].loot.dynamic[_loot]);
+				newLoot.dynamic.push(GenerateDynamicShort(oldLootMaps[maps[map].toLowerCase()].loot.dynamic[_loot]));
 				count++;
 			}
 		}
@@ -238,7 +244,7 @@ for(let map in maps)
 					found = true;
 			}
 			if (!found){
-				newLoot.dynamic.push(oldLootMaps[maps[map].toLowerCase()].loot.dynamic[_loot]);
+				newLoot.static.push(GenerateStaticShort(oldLootMaps[maps[map].toLowerCase()].loot.static[_loot]));
 				count++;
 			}
 		}
