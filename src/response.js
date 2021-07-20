@@ -157,7 +157,6 @@ class Responses {
 		return response_f.getBody(trader_f.handler.getAssort(sessionID, TraderID));
 	}
 	dynClientTradingApiGetUserAssortPriceTrader(url, info, sessionID) {
-		sessionID = "AID8131647517931710690RF";
 		return response_f.getBody(trader_f.handler.getPurchasesData(url.substr(url.lastIndexOf('/') + 1), sessionID));
 	}
 	dynClientTradingCustomization(url, info, sessionID){

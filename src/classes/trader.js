@@ -275,6 +275,7 @@ class TraderServer
     getPurchasesData(traderID, sessionID) {
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
         let trader = global._database.traders[traderID].base;
+        //const traderCategories = global._database.traders[traderID].categories;
         let currency = helper_f.getCurrency(trader.currency);
         let output = {};
 
@@ -287,7 +288,7 @@ class TraderServer
                 || item._id === pmcData.Inventory.questRaidItems
                 || item._id === pmcData.Inventory.questStashItems
                 || helper_f.isNotSellable(item._tpl)
-                || traderFilter(trader.sell_category, item._tpl) === false) {
+                || (trader.sell_category.length > 0 && traderFilter(trader.sell_category, item._tpl) === false)) {
                 continue;
             }
 

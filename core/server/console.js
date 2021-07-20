@@ -1,5 +1,10 @@
+let debugSessionEnabled;
+let debugSession;
+
 class ConsoleResponse {
     constructor(){
+		debugSessionEnabled = false;
+		debugSession = "";
         this.readline = require("readline");
         this.rl = this.readline.createInterface({
             input: process.stdin,
@@ -23,9 +28,26 @@ class ConsoleResponse {
             "info": this.displayInfo,
             "help": this.displayInfo,
             "h": this.displayInfo,
-			"addItem": this.addItem
+			"addItem": this.addItem,
+			"devSession": this.setDebugSession
         }
+        this.commandsInfo = {
+            // add command below !!
+            "restart": "restarting the server softly",
+            "register": "( /register login editionNumber password ) - edition & password not required",
+            "info": "",
+			"addItem": "( /addItem MySession TemplateId Amount)",
+			"devSession": "( /devSession true MySessionToChange ) "
+        }
+		this.commandsInfo["help"] == this.commandsInfo["info"];
+		this.commandsInfo["h"] == this.commandsInfo["info"];
     }
+	getSession(){
+		return debugSession;
+	}
+	getDebugEnabled(){
+		return debugSessionEnabled;
+	}
 	addCommand(commandName, _function)
 	{
 		this.commands[commandName] = _function;
@@ -34,6 +56,13 @@ class ConsoleResponse {
 		delete this.commands[commandName];
 	}
     // commands below !!
+	setDebugSession(commandStructure){
+		let enabled = commandStructure[1];
+		let session = commandStructure[2];
+		debugSessionEnabled = enabled;
+		debugSession = session;
+		console.log(`Dev Session Handler: ${debugSessionEnabled} - ${debugSession}`)
+	}
     addItem(commandStructure){
 		/*
 			1 - sessionID
@@ -51,15 +80,14 @@ class ConsoleResponse {
 		logger.logInfo(`Item added: ${newItemList.items[0].item_id} count:${newItemList.items[0].count} session:${sessionID}`);
 	}
 	resetServer(commandStructure){
-        logger.logRequest("Executing /restart command!")
+        logger.logRequest("Restart Started!")
         server.softRestart();
         logger.logSuccess("Restart Completed")
     }
     displayInfo(){
-        logger.logRequest("/restart -> to soft reset server (reload everything)");
-        logger.logRequest("/register login edition password  -> where login need to be continuous string also with password");
-        logger.logRequest("- edition is (0 -> Standard, 1 -> Prepare To Escape, 2 -> Left Behind, 3 -> Edge Of Darkness)");
-        logger.logRequest("- edition and password can be empty which will create account with given login no password and standard account type");
+		for(const command in this.commandsInfo){
+			logger.logRequest(`${command} -> ${this.commandsInfo[command]}`);
+		}
     }
     registerAccount(commandStructure){
         logger.logRequest("Requesting account creation with data:")
@@ -68,9 +96,9 @@ class ConsoleResponse {
         let password = "";
         if(commandStructure.length >= 3){
             switch(commandStructure[2]){
-                case 1: edition = "Prepare To Escape"; break;
-                case 2: edition = "Left Behind"; break;
-                case 3: edition = "Edge Of Darkness"; break;
+                case "1": edition = "Prepare To Escape"; break;
+                case "2": edition = "Left Behind"; break;
+                case "3": edition = "Edge Of Darkness"; break;
             }
         }
         if(commandStructure.length == 4){

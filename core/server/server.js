@@ -218,7 +218,13 @@ class Server {
 	{
         let IP = req.connection.remoteAddress.replace("::ffff:", "");
 		    IP = ((IP == "127.0.0.1")?"LOCAL":IP);
-        const sessionID = utility.getCookies(req)['PHPSESSID'];
+        
+		let sessionID_test = utility.getCookies(req)['PHPSESSID'];
+		if(consoleResponse.getDebugEnabled()){
+			sessionID_test = consoleResponse.getSession();
+		}
+		const sessionID = sessionID_test;
+		
 		let displaySessID = ((typeof sessionID != "undefined")?`[${sessionID}]`:"");
 		
 		if(req.url.substr(0,6) != "/files" && req.url.substr(0,6) != "/notif" && req.url != "/client/game/keepalive" && req.url != "/player/health/sync" && !req.url.includes(".css") && !req.url.includes(".otf") && !req.url.includes(".ico"))

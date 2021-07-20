@@ -6,5 +6,13 @@
 		"password": "123",
 		"wipe": false,
 		"edition": "Edge Of Darkness"
+	},
+	"AID62018327043696Slvi5HG": {
+		"id": "AID62018327043696Slvi5HG",
+		"nickname": "",
+		"email": "test",
+		"password": "",
+		"wipe": false,
+		"edition": "Edge Of Darkness"
 	}
 }
