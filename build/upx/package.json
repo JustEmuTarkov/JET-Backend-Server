@@ -1,0 +1,59 @@
+{
+  "_from": "upx@^1.0.6",
+  "_id": "upx@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-LRlldlzT/RNXQl442PyQ0imozDTkhjsKnJc6ugchhy+RP+QXICWk5kXyfnhSIVtfz41fZOSNyL2BLup2VSriqA==",
+  "_location": "/upx",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "upx@^1.0.6",
+    "name": "upx",
+    "escapedName": "upx",
+    "rawSpec": "^1.0.6",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.6"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/upx/-/upx-1.0.6.tgz",
+  "_shasum": "274a7991e242d0e08d31fab8eb2294aa1d8b8c68",
+  "_spec": "upx@^1.0.6",
+  "_where": "E:\\MAOCI\\Github\\JET-Backend-Server",
+  "author": {
+    "name": "Rocco Musolino",
+    "url": "roccomuso"
+  },
+  "bugs": {
+    "url": "https://github.com/roccomuso/upx/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
+  "deprecated": false,
+  "description": "Node.js cross-platform wrapper for UPX - the Ultimate Packer for eXecutables",
+  "homepage": "https://github.com/roccomuso/upx#readme",
+  "keywords": [
+    "upx",
+    "packer",
+    "executables",
+    "wrapper",
+    "node",
+    "multiplatform",
+    "js"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "upx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roccomuso/upx.git"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "version": "1.0.6"
+}

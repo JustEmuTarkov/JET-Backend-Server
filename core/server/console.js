@@ -1,6 +1,3 @@
-const { logger } = require("../util/logger");
-const { server } = require("./server");
-
 class ConsoleResponse {
     constructor(){
         this.readline = require("readline");
