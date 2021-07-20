@@ -122,6 +122,21 @@ class TraderServer
         let assorts = this.copyFromBaseAssorts(baseAssorts);
 
         let pmcData = profile_f.handler.getPmcProfile(sessionID);
+		const ProfileSaleSum = (typeof pmcData.TradersInfo[traderID] != "undefined")?pmcData.TradersInfo[traderID].saleSum:0;
+		const ProfileStanding = (typeof pmcData.TradersInfo[traderID] != "undefined")?pmcData.TradersInfo[traderID].standing:0;
+		const ProfileLevel = pmcData.Info.Level;
+		
+		let calcLevel = 0;
+		for(const loyalityObject of global._database.traders[traderID].base.loyaltyLevels){
+			if(
+				ProfileLevel >= loyalityObject.minLevel && 
+				ProfileStanding >= loyalityObject.minStanding &&
+				ProfileSaleSum >= loyalityObject.minSalesSum
+			) {
+				calcLevel++;
+			}
+		}
+		const TraderLevel = calcLevel;
 
         if (traderID !== "ragfair") {
             // 1 is min level, 4 is max level
@@ -139,10 +154,10 @@ class TraderServer
 
             for (let key in baseAssorts.loyal_level_items) {
                 let requiredLevel = baseAssorts.loyal_level_items[key];
-                /*if (requiredLevel > level) {
+                if (requiredLevel > TraderLevel) {
                     assorts = this.removeItemFromAssort(assorts, key);
                     continue;
-                }*/
+                }
 
                 if (key in questassort.started && quest_f.getQuestStatus(pmcData, questassort.started[key]) !== "Started") {
                     assorts = this.removeItemFromAssort(assorts, key);
