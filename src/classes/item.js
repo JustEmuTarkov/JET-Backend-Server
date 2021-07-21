@@ -75,7 +75,6 @@ class ItemServer {
 		return this.output;
 	}
 
-
     getOutput(sessionID) {
         if (this.output === "") {
             this.resetOutput(sessionID);
@@ -88,8 +87,6 @@ class ItemServer {
         this.output = data;
     }
 	
-	
-
     resetOutput(sessionID) {
 		if(sessionID == "" || typeof sessionID == "undefined")
 			return;
