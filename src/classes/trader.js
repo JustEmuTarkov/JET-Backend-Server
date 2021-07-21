@@ -136,6 +136,8 @@ class TraderServer
 				calcLevel++;
 			}
 		}
+		if(calcLevel == 0)
+			calcLevel = 1;
 		const TraderLevel = calcLevel;
 
         if (traderID !== "ragfair") {

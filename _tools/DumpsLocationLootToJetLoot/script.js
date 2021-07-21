@@ -12,7 +12,7 @@ function GenerateStaticShort(loot)
 	if(typeof loot.Id == "undefined")
 		shorten.id = loot.id;
 	
-	shorten.Items = loot.Items;
+	shorten.Items.push(loot.Items[0]);
 	if(loot.IsStatic){
 		shorten["IsStatic"] = true;
 	}
@@ -26,10 +26,10 @@ function GenerateStaticShort(loot)
 		shorten["IsGroupePosition"] = true;
 		shorten["GroupPositions"] = loot.GroupPositions;
 	}
-	if(loot.Position.x != "0" || loot.Position.y != "0" || loot.Position.z != "0"){
+	if((loot.Position.x != "0" && loot.Position.x != 0) || (loot.Position.y != "0" && loot.Position.y != 0) || (loot.Position.z != "0" && loot.Position.z != 0)){
 		shorten.Position = loot.Position;
 	}
-	if(loot.Rotation.x != "0" || loot.Rotation.y != "0" || loot.Rotation.z != "0"){
+	if((loot.Rotation.x != "0" && loot.Rotation.x != 0) || (loot.Rotation.y != "0" && loot.Rotation.y != 0) || (loot.Rotation.z != "0" && loot.Rotation.z != 0)){
 		shorten.Rotation = loot.Rotation;
 	}
 	return shorten;
@@ -61,6 +61,7 @@ function GenerateDynamicShort(loot)
 		"Rotation": 0,
 		"Items": []
 	}
+
 	if(typeof loot.Id == "undefined")
 		shorten.id = loot.id;
 	
@@ -68,7 +69,10 @@ function GenerateDynamicShort(loot)
 	if(typeof loot.data != "undefined")
 		loot_2 = loot.data[0];
 	
-	shorten.Items = loot_2.Items;
+	for(const data in loot.Items){
+		shorten.Items.push(loot.Items[data]._tpl);
+	}
+	//shorten.Items = loot_2.Items;
 	if(loot_2.IsStatic === true){
 		shorten["IsStatic"] = true;
 	}
@@ -82,10 +86,10 @@ function GenerateDynamicShort(loot)
 		shorten["IsGroupePosition"] = true;
 		shorten["GroupPositions"] = loot_2.GroupPositions;
 	}
-	if(loot_2.Position.x != "0" || loot_2.Position.y != "0" || loot_2.Position.z != "0"){
+	if((loot_2.Position.x != "0" && loot_2.Position.x != 0) || (loot_2.Position.y != "0" && loot_2.Position.y != 0) || (loot_2.Position.z != "0" && loot_2.Position.z != 0)){
 		shorten.Position = loot_2.Position;
 	}
-	if(loot_2.Rotation.x != "0" || loot_2.Rotation.y != "0" || loot_2.Rotation.z != "0"){
+	if((loot_2.Rotation.x != "0" && loot_2.Rotation.x != 0) || (loot_2.Rotation.y != "0" && loot_2.Rotation.y != 0) || (loot_2.Rotation.z != "0" && loot_2.Rotation.z != 0)){
 		shorten.Rotation = loot_2.Rotation;
 	}
 	return shorten;
@@ -93,13 +97,17 @@ function GenerateDynamicShort(loot)
 function GenerateForcedShort(loot)
 {
 	let shorten = {
-		"id": "",
+		"id": loot.Id,
 		"Position": 0,
 		"Rotation": 0,
 		"Items": []
 	}
-	shorten.id = loot.id;
-	shorten.Items = loot.Items;
+	if(typeof loot.Id == "undefined")
+		shorten.id = loot.id;
+	//shorten.id = loot.id;
+	for(const data in loot.Items){
+		shorten.Items.push(loot.Items[data]._tpl);
+	}
 	if(loot.IsStatic){
 		shorten["IsStatic"] = true;
 	}
@@ -113,10 +121,10 @@ function GenerateForcedShort(loot)
 		shorten["IsGroupePosition"] = true;
 		shorten["GroupPositions"] = loot.GroupPositions;
 	}
-	if(loot.Position.x != "0" || loot.Position.y != "0" || loot.Position.z != "0"){
+	if((loot.Position.x != "0" && loot.Position.x != 0) || (loot.Position.y != "0" && loot.Position.y != 0) || (loot.Position.z != "0" && loot.Position.z != 0)){
 		shorten.Position = loot.Position;
 	}
-	if(loot.Rotation.x != "0" || loot.Rotation.y != "0" || loot.Rotation.z != "0"){
+	if((loot.Rotation.x != "0" && loot.Rotation.x != 0) || (loot.Rotation.y != "0" && loot.Rotation.y != 0) || (loot.Rotation.z != "0" && loot.Rotation.z != 0)){
 		shorten.Rotation = loot.Rotation;
 	}
 	return shorten;
@@ -180,16 +188,14 @@ for(let map in maps)
 		"dynamic": []
 	}
 	const loadOldMapData = loadParsed(`./oldMaps/${maps[map].toLowerCase()}.json`);
-	for(const id in loadOldMapData.forced)
-	{
-		newLoot.forced.push(GenerateForcedShort(loadOldMapData.forced[id]));
-	}
-	console.log("Forced : " + newLoot.forced.length);
+	//for(const id in loadOldMapData.forced)
+	//{
+	//	newLoot.forced.push(GenerateForcedShort(loadOldMapData.forced[id]));
+	//}
 	for(const id in loadOldMapData.mounted)
 	{
 		newLoot.mounted.push(GenerateMountedShort(loadOldMapData.mounted[id]));
 	}
-	console.log("Mounted : " + newLoot.mounted.length);
 	for(let num = 1; num <= 6; num++)
 	{
 		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.bytes`))?".json":".bytes";
@@ -199,15 +205,26 @@ for(let map in maps)
 		{
 			if(mapDataLoot[loot].IsStatic)
 			{
-				newLoot.static.push(GenerateStaticShort(mapDataLoot[loot]));
+				if(newLoot.static.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+					newLoot.static.push(GenerateStaticShort(mapDataLoot[loot]));
 			} else 
 			{
-				newLoot.dynamic.push(GenerateDynamicShort(mapDataLoot[loot]));
+				if(mapDataLoot[loot].Id.indexOf("quest") != -1){
+					if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+						newLoot.forced.push(GenerateForcedShort(mapDataLoot[loot]))
+				} else {
+					if(newLoot.dynamic.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+						newLoot.dynamic.push(GenerateDynamicShort(mapDataLoot[loot]));
+				}
 			}
 		}
 	}
+	console.log("Forced : " + newLoot.forced.length);
+	console.log("Mounted : " + newLoot.mounted.length);
 	console.log("Static : " + newLoot.static.length);
 	console.log("Dynamic : " + newLoot.dynamic.length);
+	console.log("");
+	/*
 	let count = 0;
 		for(const _loot in oldLootMaps[maps[map].toLowerCase()].loot.dynamic)
 		{
@@ -218,8 +235,8 @@ for(let map in maps)
 					continue;
 				if(_lootData.id == newLoot.dynamic[_new_loot].id || 
 				_lootData.data[0].Position == newLoot.dynamic[_new_loot].Position || 
-				_lootData.data[0].Items[0]._id == newLoot.dynamic[_new_loot].Items[0]._id || 
-				_lootData.data[0].Items[0]._tpl == newLoot.dynamic[_new_loot].Items[0]._tpl)
+				//_lootData.data[0].Items[0]._id == newLoot.dynamic[_new_loot].Items[0]._id || 
+				_lootData.data[0].Items[0]._tpl == newLoot.dynamic[_new_loot].Items[0])
 					found = true;
 			}
 			if (!found){
@@ -249,5 +266,6 @@ for(let map in maps)
 			}
 		}
 		console.log("Old Static Containers Added : " + count);
+		*/
 	fs.writeFileSync(`./${maps[map].toLowerCase()}.json`, JSON.stringify(newLoot));
 }

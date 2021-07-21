@@ -40,7 +40,7 @@
 		"NoFiltersPatch": false,
 		"JetLogger": true
 	},
-	"lootDebug": false,
+	"lootDebug": true,
 	"hideInfoLogs": false,
 	"debugTimer": true,
 	"translations": {

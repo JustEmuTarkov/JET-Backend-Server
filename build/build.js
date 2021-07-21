@@ -3,7 +3,7 @@ const childProcess = require('child_process');
 // LOAD LOCALLY
 const UPX = require('./upx')('better');
 const { compile } = require('./nexe');
-var compressor = require('./node-minify');
+var compressor = require('node-minify');
 
 //to remove that strange console log go to node_modules/node-minify/lib/compressors/gcc.js line 66
 

@@ -14,13 +14,14 @@ function Create_ForcedDynamicStruct(item_data){
 		useGravity = item_data.useGravity;
 	if(typeof item_data.randomRotation != "undefined")
 		randomRotation = item_data.randomRotation;
-	if(item_data.Position != 0)
+
+	if(item_data.Position != 0 && item_data.Position != "0")
 	{
 		position.x = item_data.Position[0];
 		position.y = item_data.Position[1];
 		position.z = item_data.Position[2];
 	}
-	if(item_data.Rotation != 0)
+	if(item_data.Rotation != 0 && item_data.Rotation != "0")
 	{
 		rotation.x = item_data.Rotation[0];
 		rotation.y = item_data.Rotation[1];
@@ -30,22 +31,17 @@ function Create_ForcedDynamicStruct(item_data){
 		IsGroupPosition = item_data.IsGroupPosition;
 		GroupPositions = item_data.GroupPositions;
 	}
+
 	return {
-		"id": item_data.id,
-		"data": [
-			{
-				"Id": item_data.id,
-				"IsStatic": isStatic,
-				"useGravity": useGravity,
-				"randomRotation": randomRotation,
-				"Position": position,
-				"Rotation": rotation,
-				"IsGroupPosition": IsGroupPosition,
-				"GroupPositions": GroupPositions,
-				"Root": item_data.Items[0]._id,
-				"Items": item_data.Items
-			}
-		]
+		"Id": item_data.id,
+		"IsStatic": isStatic,
+		"useGravity": useGravity,
+		"randomRotation": randomRotation,
+		"Position": position,
+		"Rotation": rotation,
+		"IsGroupPosition": IsGroupPosition,
+		"GroupPositions": GroupPositions,
+		"Items": item_data.Items
 	};
 }
 function Create_StaticMountedStruct(item_data){
@@ -63,13 +59,13 @@ function Create_StaticMountedStruct(item_data){
 		useGravity = item_data.useGravity;
 	if(typeof item_data.randomRotation != "undefined")
 		randomRotation = item_data.randomRotation;
-	if(item_data.Position != 0)
+	if(item_data.Position != 0 && item_data.Position != "0")
 	{
 		position.x = item_data.Position[0];
 		position.y = item_data.Position[1];
 		position.z = item_data.Position[2];
 	}
-	if(item_data.Rotation != 0)
+	if(item_data.Rotation != 0 && item_data.Rotation != "0")
 	{
 		rotation.x = item_data.Rotation[0];
 		rotation.y = item_data.Rotation[1];
@@ -88,7 +84,7 @@ function Create_StaticMountedStruct(item_data){
 		"Rotation": rotation,
 		"IsGroupPosition": IsGroupPosition,
 		"GroupPositions": GroupPositions,
-		"Root": item_data.Items[0]._id,
+		"Root": item_data.Items[0]._id, // id of container
 		"Items": item_data.Items
 	};
 }

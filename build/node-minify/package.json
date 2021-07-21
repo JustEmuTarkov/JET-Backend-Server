@@ -1,4 +1,11 @@
 {
+  "_args": [
+    [
+      "node-minify@3.6.0",
+      "J:\\_git\\_JET_REPOS\\JET-Backend-Server"
+    ]
+  ],
+  "_development": true,
   "_from": "node-minify@3.6.0",
   "_id": "node-minify@3.6.0",
   "_inBundle": false,
@@ -29,13 +36,11 @@
     "fetchSpec": "3.6.0"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/node-minify/-/node-minify-3.6.0.tgz",
-  "_shasum": "8dff62f46095f31110098bca23bc55d3a8795d96",
-  "_spec": "node-minify@3.6.0",
-  "_where": "E:\\MAOCI\\Github\\JET-Backend-Server",
+  "_spec": "3.6.0",
+  "_where": "J:\\_git\\_JET_REPOS\\JET-Backend-Server",
   "author": {
     "name": "Rodolphe Stoclin",
     "email": "rodolphe@2clics.net",
@@ -47,7 +52,6 @@
   "bugs": {
     "url": "https://github.com/srod/node-minify/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "babel-core": "6.26.3",
     "babel-preset-minify": "0.5.0",
@@ -71,7 +75,6 @@
     "uglify-js": "3.4.9",
     "update-notifier": "2.5.0"
   },
-  "deprecated": false,
   "description": "Javascript / CSS minifier based on Babel-minify / Butternut / YUI Compressor / Google Closure Compiler / UglifyJS2 / Sqwish / Clean-css / CSSO",
   "devDependencies": {
     "babel-preset-env": "1.7.0",
