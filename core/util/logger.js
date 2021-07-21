@@ -113,7 +113,9 @@ class Logger {
 			this.log(data, text, "cyan", "black");
     }
 
-    logData(data) {
+    logData(data, deep = false) {
+		if(deep)
+			data = internal.util.inspect(data, {showHidden: false, depth: null})
         this.log("LogData", data);
     }
 	

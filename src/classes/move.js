@@ -374,6 +374,8 @@ function transferItem(pmcData, body, sessionID) {
         }
 
         itemTo.upd.StackObjectsCount = stackTo + body.count;
+		if(typeof output.profileChanges[pmcData._id].change == "undefined")
+			output.profileChanges[pmcData._id].change = [];
 		output.profileChanges[pmcData._id].change.push(itemTo);
     }
 
