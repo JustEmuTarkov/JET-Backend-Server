@@ -4,24 +4,19 @@
 		"folder": "AllItemsExamined_1.0.0",
 		"order": 1
 	},
-	"BundleTestMod-1.0.0_TheMaoci": {
-		"isEnabled": true,
-		"folder": "BundleTestMod_1.0.0",
-		"order": 2
-	},
 	"EquipRigsWithArmors-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "EquipRigsWithArmors_1.0.0",
-		"order": 3
+		"order": 2
 	},
 	"LessWeightItems-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "LessWeightItems_1.0.0",
-		"order": 4
+		"order": 3
 	},
 	"NoFallDamage-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "NoFallDamage_1.0.0",
-		"order": 5
+		"order": 4
 	}
 }

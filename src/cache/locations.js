@@ -17,15 +17,15 @@ function Create_ForcedDynamicStruct(item_data){
 
 	if(item_data.Position != 0 && item_data.Position != "0")
 	{
-		position.x = item_data.Position[0];
-		position.y = item_data.Position[1];
-		position.z = item_data.Position[2];
+		position.x = item_data.Position.x;
+		position.y = item_data.Position.y;
+		position.z = item_data.Position.z;
 	}
 	if(item_data.Rotation != 0 && item_data.Rotation != "0")
 	{
-		rotation.x = item_data.Rotation[0];
-		rotation.y = item_data.Rotation[1];
-		rotation.z = item_data.Rotation[2];
+		rotation.x = item_data.Rotation.x;
+		rotation.y = item_data.Rotation.y;
+		rotation.z = item_data.Rotation.z;
 	}
 	if(typeof item_data.IsGroupPosition != "undefined"){
 		IsGroupPosition = item_data.IsGroupPosition;
@@ -61,15 +61,15 @@ function Create_StaticMountedStruct(item_data){
 		randomRotation = item_data.randomRotation;
 	if(item_data.Position != 0 && item_data.Position != "0")
 	{
-		position.x = item_data.Position[0];
-		position.y = item_data.Position[1];
-		position.z = item_data.Position[2];
+		position.x = item_data.Position.x;
+		position.y = item_data.Position.y;
+		position.z = item_data.Position.z;
 	}
 	if(item_data.Rotation != 0 && item_data.Rotation != "0")
 	{
-		rotation.x = item_data.Rotation[0];
-		rotation.y = item_data.Rotation[1];
-		rotation.z = item_data.Rotation[2];
+		rotation.x = item_data.Rotation.x;
+		rotation.y = item_data.Rotation.y;
+		rotation.z = item_data.Rotation.z;
 	}
 	if(typeof item_data.IsGroupPosition != "undefined"){
 		IsGroupPosition = item_data.IsGroupPosition;

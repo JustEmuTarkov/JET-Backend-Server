@@ -133,6 +133,8 @@ function _load_LocationData() {
 		global._database.locations[_location] = _locations[_location];
 	}
 	global._database.core.location_base = fileIO.readParsed(db.base.locations);
+	global._database.locationConfigs = {};
+	global._database.locationConfigs["dynamicLootAutoSpawnDetector"] = fileIO.readParsed(db.locations.dynamicLootAutoSpawnDetector);
 }
 function _load_TradersData() {
 	global._database.traders = {};

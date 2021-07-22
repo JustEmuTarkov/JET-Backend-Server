@@ -104,27 +104,50 @@ function GetItemParents() {
     "5422acb9af1c889c16000029",
   ];
 }
-const dynamicLootSpots = {
-  // get parents there :) id,id,id,id
-  electr: "57864a66245977548f04a81f",
-  food: "5448e8d04bdc2ddf718b4569",
-  med: "5448f39d4bdc2d0a728b4568",
-  meds: "5448f39d4bdc2d0a728b4568,5448f3ac4bdc2dce718b4569,5448f3a64bdc2d60728b456a,5448f3a14bdc2d27728b4569",
-  ammo: "543be5cb4bdc2deb348b4568",
-  lootpoint: "",
-  drink: "5448e8d64bdc2dce718b4568",
-  fuel: "5d650c3e815116009f6201d2",
-  building_items: "57864ada245977548638de91",
-  armor_low: "",
-  UN_armor: "5ab8e4ed86f7742d8e50c7fa",
-  armor_NotHeavy: "6038b4b292ec1c3103795a0b",
-  stash_armor: "",
-  armor_paca: "5648a7494bdc2d9d488b4583",
-  armor_Tarbank: "59e7635f86f7742cbf2c1095",
-  "armor ": "",
-  tools: "57864bb7245977548b3b66c2",
-  household: "57864c322459775490116fbf",
-};
+
+/*
+5cdeb229d7f00c000e7ce174 heavy machine gun
+5d52cc5ba4b9367408500062 automatic grenade launcher
+*/
+
+function detectLootSpawn(lootData) {
+  let containsSpawns = [];
+  if (global._database.gameplayConfig.useDynamicLootFromItemsArray) {
+    for (const spawnTemplate in lootData.Items) {
+      const filteredData = Object.values(global._database.items).filter(
+        (itemTemplate) => itemTemplate._parent == spawnTemplate
+      );
+      // add them to the list
+      if(filteredData.length != 0){
+        for (const itemTemplate in filteredData) {
+          containsSpawns.push(filteredData[itemTemplate]._id);
+        }
+      } else {
+        containsSpawns.push(spawnTemplate);
+      }
+    }
+  } else {
+    for (const key in global._database.locationConfigs.dynamicLootAutoSpawnDetector) {
+      if (lootData.Id.includes(key)) {
+        const parentsToAdd = global._database.locationConfigs.dynamicLootAutoSpawnDetector[key].split(",");
+        for (const parent in parentsToAdd) {
+
+          const filteredData = Object.values(global._database.items).filter(
+            (itemTemplate) => itemTemplate._parent == parentsToAdd[parent]
+          );
+          if(filteredData.length != 0){
+            for (const itemTemplate in filteredData) {
+              containsSpawns.push(filteredData[itemTemplate]._id);
+            }
+          } else {
+            containsSpawns.push(parentsToAdd[parent]);
+          }
+        }
+      }
+    }
+  }
+  return containsSpawns;
+}
 
 function LoadLootContainerNode() {
   // Load loot containers from cache
@@ -144,54 +167,76 @@ function GetLootContainerData(ItemID, LootContainerNode) {
   }
   return null;
 }
-function GenerateLootList(container) {
-  let LootList = {};
-  let SpawnFilter = container._props.SpawnFilter;
-  let ItemParents = GetItemParents();
-  let ParentsToAdd = [];
-  for (let sf_item of SpawnFilter) {
-    for (let item in _database.items) {
-      // check if checked item is an item itself or its a category
-      if (ItemParents.includes(sf_item)) {
-        // its a category so add it to ParentsToAdd for later processing
-        ParentsToAdd.push(sf_item);
-        break;
-      } else {
-        //its an item so lets add it into as item
-        // we can actually break the loop after finding this item
-        if (_database.items[item]._id == sf_item) {
-          LootList[sf_item] = _database.items[item];
-          if (typeof _database.items[item]._props.Chambers != "undefined")
-            LootList[sf_item]["preset"] = FindIfItemIsAPreset(sf_item);
-          else LootList[sf_item]["preset"] = null;
-          break;
+function DeepParentToItemSearch(incomingList){
+  let itemList = [];
+  for(const obj in incomingList){
+    const listOfItems = Object.values(_database.items).filter(item => item._parent == incomingList[obj]._id);
+    for(const itemTemplate in listOfItems){
+      if(typeof listOfItems[itemTemplate]._props.Rarity == "undefined"){
+        let output = DeepParentToItemSearch([listOfItems[itemTemplate]]);
+        for(const data in output)
+        {
+          itemList.push(output[data]);
         }
+      } else {
+        itemList.push(listOfItems[itemTemplate]);
       }
     }
   }
-  while (ParentsToAdd.length > 0) {
-    let newParents = [];
-    for (let parent in ParentsToAdd) {
-      for (let i in _database.items) {
-        var item = _database.items[i];
-        if (item._parent == ParentsToAdd[parent]) {
-          if (ItemParents.includes(item._id)) {
-            newParents.push(item._id);
-          } else {
-            LootList[item._id] = item;
-            if (typeof item._props.Chambers != "undefined")
-              LootList[item._id]["preset"] = FindIfItemIsAPreset(item._id);
-            else LootList[item._id]["preset"] = null;
-          }
-        }
+  return itemList;
+}
+
+function GenerateLootList(container) {
+  let LootList = {};
+  let SpawnFilter = container._props.SpawnFilter;
+  //let ItemParents = GetItemParents();
+  //let ParentsToAdd = [];
+  //let LootTable = [];
+  for (let sf_item of SpawnFilter) {
+    const listOfItems = Object.values(_database.items).filter(item => item._parent == sf_item);
+    if(listOfItems.length == 0){
+      // its item
+      if(typeof _database.items[sf_item] != "undefined"){
+        //LootTable.push(sf_item);
+        LootList[sf_item] = _database.items[sf_item];
+        if (typeof _database.items[sf_item]._props.Chambers != "undefined")
+          LootList[sf_item]["preset"] = FindIfItemIsAPreset(sf_item);
+        else LootList[sf_item]["preset"] = null;
       }
     }
-    ParentsToAdd = newParents;
+    else 
+    {
+      // its parent
+      for(const item in listOfItems){          
+        // this doesnt need a check if item is in the list cause its existing for sure
+        //LootTable.push(item._id);
+        if(typeof listOfItems[item]._props.Rarity == "undefined")
+        {
+          let itemsList = DeepParentToItemSearch([listOfItems[item]]);
+          for (const item in itemsList){
+            LootList[itemsList[item]._id] = itemsList[item];
+            if (typeof itemsList[item]._props.Chambers != "undefined"){
+              LootList[itemsList[item]._id]["preset"] = FindIfItemIsAPreset(itemsList[item]._id);
+            } else {
+              LootList[itemsList[item]._id]["preset"] = null;
+            }
+          }
+        } else {
+          LootList[listOfItems[item]._id] = listOfItems[item];
+          if (typeof listOfItems[item]._props.Chambers != "undefined"){
+            LootList[listOfItems[item]._id]["preset"] = FindIfItemIsAPreset(listOfItems[item]._id);
+          } else {
+            LootList[listOfItems[item]._id]["preset"] = null;
+          }
+        }
+        
+      }
+    }
   }
   // Shuffle LootList for added randomization
   LootList = Object.keys(LootList)
     .map((key) => ({ key, value: LootList[key] }))
-    .sort((a, b) => b.key.localeCompare(a.key))
+    //.sort((a, b) => b.key.localeCompare(a.key))
     .reduce((acc, e) => {
       acc[e.key] = e.value;
       return acc;
@@ -211,14 +256,14 @@ function DeepCopy(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 function GetRarityMultiplier(rarity) {
-  switch (rarity.toLowerCase()) {
-    case "not_exist":
+  switch (rarity) {
+    case "Not_exist":
       return global._database.gameplayConfig.locationloot.containers
         .RarityMultipliers.Not_exist;
-    case "rare":
+    case "Rare":
       return global._database.gameplayConfig.locationloot.containers
         .RarityMultipliers.Rare;
-    case "superrare":
+    case "Superrare":
       return global._database.gameplayConfig.locationloot.containers
         .RarityMultipliers.Superrare;
     default:
@@ -226,14 +271,11 @@ function GetRarityMultiplier(rarity) {
         .RarityMultipliers.Common;
   }
 }
-function _MountedLootPush(typeArray, ids, output) {
+// LOOT CREATION START !!!!!
+function _MountedLootPush(typeArray, output) {
   let count = 0;
   for (let i in typeArray) {
     let data = DeepCopy(typeArray[i]);
-
-    if (data.Id in ids) continue;
-
-    ids[data.Id] = true;
 
     let changedIds = {};
     for (var item of data.Items) {
@@ -250,50 +292,106 @@ function _MountedLootPush(typeArray, ids, output) {
   }
   return count;
 }
-function _ForcedLootPush(typeArray, ids, output) {
+function _ForcedLootPush(typeArray, output) {
   let count = 0;
   for (let i in typeArray) {
     let data = DeepCopy(typeArray[i]);
-
-    //if (data.Id in ids) continue;
-
-    //let changedIds = {};
-    //ids[data.Id] = true;
     let newItemsData = [];
-    // forced loot should be only 1 item...
+    // forced loot should be only contain 1 item... (there shouldnt be any weapon in there...)
     const newId = utility.generateNewItemId();
-    const newItem = {
-      _id: newId,
-      _tpl: data.Items[0],
+
+    let createEndLootData = {
+      Id: data.Id,
+      IsStatic: data.IsStatic,
+      useGravity: data.useGravity,
+      randomRotation: data.randomRotation,
+      Position: data.Position,
+      Rotation: data.Rotation,
+      IsGroupPosition: data.IsGroupPosition,
+      GroupPositions: data.GroupPositions,
+      Root: newId,
+      Items: [{
+        _id: newId,
+        _tpl: data.Items[0],
+      }],
     };
-    data.Root = newId;
-    data.Items = [];
 
-    data.Items.push(newItem);
-
-    output.Loot.push(data);
+    output.Loot.push(createEndLootData);
     count++;
   }
   return count;
 }
-function _StaticsLootPush(typeArray, ids, output) {
+function _StaticsLootPush(typeArray, output) {
+  // TODO: this needs redo ~themaoci
   let count = 0;
+  //let dateNow = Date.now();
   for (let i in typeArray) {
     let data = typeArray[i];
-
-    if (data.Id in ids) continue;
-
-    ids[data.Id] = true;
-
-    if (data.Items.length > 1) data.Items.splice(1);
-
+    //if (data.Items.length > 1) data.Items.splice(1);
+    //logger.logInfo(`Container ${data.Id}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
     _GenerateContainerLoot(data.Items);
+    //logger.logInfo(`Container - END - , TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
     data.Root = data.Items[0]._id;
     output.Loot.push(data);
     count++;
   }
   return count;
 }
+function _DynamicLootPush(typeArray, output, locationLootChanceModifier) {
+  let count = 0;
+  for(let itemLoot in typeArray)
+  {
+    const lootData = typeArray[itemLoot];
+    //loot overlap removed its useless...
+    let detectedItemsToSpawn = detectLootSpawn(lootData); // add this function
+    // should return Array() of strings where they are item ID's
+    // check server settigns if auto detect or use Items strings to detect predefined items
+    if(detectedItemsToSpawn.length == 0){
+      logger.logWarning(`LootSpawn: ${lootData.Id} has not found any loot table for the spawn automatically. Skipping...`)
+      continue;
+    }
+      
+    const generatedItemId = utility.generateNewItemId();
+    let randomChoosedItem =
+      detectedItemsToSpawn[
+        utility.getRandomInt(0, detectedItemsToSpawn.length - 1)
+      ];
+
+    const createdItem = {
+      _id: generatedItemId,
+      _tpl: randomChoosedItem,
+    };
+
+    // item creation
+    let createEndLootData = {
+      Id: lootData.Id,
+      IsStatic: lootData.IsStatic,
+      useGravity: lootData.useGravity,
+      randomRotation: lootData.randomRotation,
+      Position: lootData.Position,
+      Rotation: lootData.Rotation,
+      IsGroupPosition: lootData.IsGroupPosition,
+      GroupPositions: lootData.GroupPositions,
+      Root: generatedItemId,
+      Items: [],
+    };
+    createEndLootData.Items.push(createdItem);
+    // spawn change calculation
+    const num = utility.getRandomInt(0, 10000);
+    const spawnChance =
+      helper_f.getItem(createdItem._tpl)[1]["_props"]["SpawnChance"] * 100;
+    
+    const itemChance = spawnChance * locationLootChanceModifier;
+    if (num >= itemChance) {
+      //lootPositions.push(position);
+      count++;
+      output.Loot.push(createEndLootData);
+    }
+  }
+  return count;
+}
+// LOOT CREATION END !!!!!
+
 function _RollMaxItemsToSpawn(container) {
   let minCount = 0;
   let maxItemsPossibleToSpawn =
@@ -319,26 +417,27 @@ function _RollMaxItemsToSpawn(container) {
   return minCount;
 }
 function _GenerateContainerLoot(_items) {
+  // themaoci: will need to review it again and shorten it !!!
   // we are getting the lootcontainer node and selecting proper loot container
+  // //let dateNow = Date.now();
+ 
   let LootContainerNode = LoadLootContainerNode();
   if (LootContainerNode == null)
     throw "LootContainerNode is null something goes wrong please check db.items[???LootContainer???.json] file";
-
-  let container = GetLootContainerData(_items[0]._tpl, LootContainerNode);
-  if (container == null)
-    throw (
+  let container = Object.values(LootContainerNode).filter(container => container._id == _items[0]._tpl);
+  if(container.length == 0){
+    logger.logWarning(
       "GetLootContainerData is null something goes wrong please check if container template: " +
       _items[0]._tpl +
       " exists"
     );
+    return;
+  }
 
-  // {"chance":50,"minCount":0,"maxCount":2,"width":2,"height":2,"maxProbability":114711,"items":[]}
-  //container._props.Grids[0]._props.cellsH // Width
-  //container._props.Grids[0]._props.cellsV // Height
-  //container._props.SpawnFilter // Array of items/categories to spawn
-  //_database.items[_ID_]._props.SpawnChance // ItemSpawnChance
-
+  container = container[0];
+  // //logger.logInfo(`Container: ${_items[0]._tpl}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
   let LootList = GenerateLootList(container);
+  // //logger.logInfo(`End - ${_items[0]._tpl}, TimeElapsed: ${Date.now() - dateNow}ms ItemsGenerated: ${Object.values(LootList).length}`); dateNow = Date.now();
 
   let parentId = _items[0]._id;
   let idPrefix = parentId.substring(0, parentId.length - 4);
@@ -354,6 +453,8 @@ function _GenerateContainerLoot(_items) {
 
   let totalChance = 0;
   for (let item in LootList) {
+    if(typeof LootList[item]._props.Rarity == "undefined")
+      console.log(LootList[item]._id);
     if (LootList[item]._props.SpawnChance)
       totalChance +=
         LootList[item]._props.SpawnChance *
@@ -499,6 +600,7 @@ function _GenerateContainerLoot(_items) {
     if (cartridges) _items.push(cartridges);
     idSuffix++;
   }
+
   let changedIds = {};
   for (let item of _items) {
     let newId = utility.generateNewItemId();
@@ -508,36 +610,17 @@ function _GenerateContainerLoot(_items) {
     if (!item.parentId) continue;
     item.parentId = changedIds[item.parentId];
   }
+
 }
 
-function detectLootSpawn(lootData) {
-  let containsSpawns = [];
-  if (global._database.gameplayConfig.useDynamicLootFromItemsArray) {
-    for (const spawnTemplate in lootData.Items) {
-      throw "useDynamicLootFromItemsArray not implemented FUCK!!!";
-      //lootData.Items
-    }
-  } else {
-    for (const key in dynamicLootSpots) {
-      if (lootData.Id.indexOf(key) != -1) {
-        let parentsToAdd = dynamicLootSpots[key].split(",");
-        for (const parent in parentsToAdd) {
-          const filteredData = Object.values(global._database.items).filter(
-            (itemTemplate) => itemTemplate._parent == parentsToAdd[parent]
-          );
-          for (const itemTemplate in filteredData) {
-            containsSpawns.push(filteredData[itemTemplate]._id);
-          }
-        }
-      }
-    }
-  }
-  return containsSpawns;
-}
+
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
   /* generates a random location preset to use for local session */
-  generate(name) {
+  generate(name) 
+  {
+    let dateNow = Date.now();
+    let stage = 0;
     // dont read next time ??
     if (typeof global._database.locations[name] == "undefined") {
       logger.logWarning("No Such Location");
@@ -545,7 +628,6 @@ class LocationServer {
     }
     let _location = global._database.locations[name];
 
-    const locationLootChanceModifier = _location.base.GlobalLootChanceModifier;
     let output = _location.base;
     let ids = {};
 
@@ -554,229 +636,58 @@ class LocationServer {
       return output;
     }
 
-    let forced = _location.loot.forced;
-    let mounted = _location.loot.mounted;
-    let statics = _location.loot.static;
     // Deep copy so the variable contents can be edited non-destructively
+    let forced = DeepCopy(_location.loot.forced);
+    let mounted = DeepCopy(_location.loot.mounted);
+    let statics = DeepCopy(_location.loot.static);
     let dynamic = DeepCopy(_location.loot.dynamic);
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
+
     output.Loot = [];
     let count = 0;
     let counters = [];
 
-    count = _MountedLootPush(mounted, ids, output);
+    count = _MountedLootPush(mounted, output);
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
 
     counters.push(count);
     count = 0;
-    count = _ForcedLootPush(forced, ids, output);
+    count = _ForcedLootPush(forced, output);
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
 
     counters.push(count);
     count = 0;
-    count = _StaticsLootPush(statics, ids, output);
+    count = _StaticsLootPush(statics, output);
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${Date.now() - dateNow}ms`); dateNow = Date.now();
 
     counters.push(count);
 
     // dyanmic loot
     count = 0;
+    count = _DynamicLootPush(dynamic, output, _location.base.GlobalLootChanceModifier);
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${Date.now() - dateNow}ms`);  dateNow = Date.now();
+
+    counters.push(count);
 
     // Loot position list for filtering the lootItem in the same position.
-    let lootPositions = [];
-    let maxCount = 0;
-
-    while (maxCount < dynamic.length) {
-      /*
-		dynamic[maxCount] == lootData
-		{
-			id: spawn name,
-			IsStatic: boolean,
-			useGravity: boolean,
-			randomRotation: boolean,
-			Position: x,y,z
-			Rotation: x,y,z
-			IsGroupPosition: boolean,
-			GroupPositions: array propably strings?
-			Items: Array string (supply only tpl's, allow category names too)
-		}
-	*/
-      const lootData = dynamic[maxCount];
-      //loot overlap removed its useless...
-      let detectedItemsToSpawn = detectLootSpawn(lootData); // add this function
-      // should return Array() of strings where they are item ID's
-      // check server settigns if auto detect or use Items strings to detect predefined items
-      const generatedItemId = utility.generateNewItemId();
-      let randomChoosedItem =
-        detectedItemsToSpawn[
-          utility.getRandomInt(0, detectedItemsToSpawn.length - 1)
-        ];
-
-      const createdItem = {
-        _id: generatedItemId,
-        _tpl: randomChoosedItem,
-      };
-
-      /*
-		{
-				"Id": "lootpoint (18)1737100",
-				"IsStatic": false,
-				"useGravity": true,
-				"randomRotation": false,
-				"Position": {
-				"x": 33.142,
-				"y": 2.674,
-				"z": 15.958
-				},
-				"Rotation": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-				},
-				"IsGroupPosition": false,
-				"GroupPositions": [],
-				"Root": "60d981b4b87b420e4c0f4242",
-				"Items": [
-				{
-					"_id": "60d981b4b87b420e4c0f4242",
-					"_tpl": "5d0a3a58d7ad1a669c15ca14"
-				}
-				]
-			}
-		*/
-      let createEndLootData = {
-        Id: lootData.id,
-        IsStatic: lootData.IsStatic,
-        useGravity: lootData.useGravity,
-        randomRotation: lootData.randomRotation,
-        Position: lootData.Position,
-        Rotation: lootData.Rotation,
-        IsGroupPosition: lootData.IsGroupPosition,
-        GroupPositions: lootData.GroupPositions,
-        Root: generatedItemId,
-        Items: [],
-      };
-      createEndLootData.Items.push(createdItem);
-      const num = utility.getRandomInt(0, 10000);
-      const spawnChance =
-        helper_f.getItem(createdItem._tpl)[1]["_props"]["SpawnChance"] * 100;
-
-      const itemChance = spawnChance * locationLootChanceModifier;
-      if (itemChance >= num) {
-        //lootPositions.push(position);
-        count++;
-        output.Loot.push(createEndLootData);
-      }
-      maxCount += 1;
-
-      // properly added then increasing number
-
-      //   let rndLootIndex = utility.getRandomInt(0, dynamic.length - 1);
-      //   let rndLoot = dynamic[rndLootIndex];
-
-      //   if (!rndLoot.data) {
-      //     maxCount -= 1;
-      //     continue;
-      //   }
-
-      //   let rndLootTypeIndex = utility.getRandomInt(0, rndLoot.data.length - 1);
-      //   let data = rndLoot.data[rndLootTypeIndex];
-
-      //   //Check if LootItem is overlapping
-      //   let position =
-      //     data.Position.x + "," + data.Position.y + "," + data.Position.z;
-      //   if (
-      //     !global._database.gameplayConfig.locationloot.allowLootOverlap &&
-      //     lootPositions.includes(position)
-      //   ) {
-      //     //Clear selected loot
-      //     dynamic[rndLootIndex].data.splice(rndLootTypeIndex, 1);
-
-      //     if (dynamic[rndLootIndex].data.length === 0) {
-      //       delete dynamic.splice(rndLootIndex, 1);
-      //     }
-
-      //     continue;
-      //   }
-
-      //random loot Id
-      //TODO: To implement a new random function, use "generateID" instead for now.
-      //data.Id = utility.generateNewItemId();
-
-      //create lootItem list
-      //   let lootItemsHash = {};
-      //   let lootItemsByParentId = {};
-
-      //   for (const i in data.Items) {
-      //     let loot = data.Items[i];
-      //     // Check for the item spawnchance
-      //     lootItemsHash[loot._id] = loot;
-
-      //     if (!("parentId" in loot)) continue;
-
-      //     if (lootItemsByParentId[loot.parentId] === undefined)
-      //       lootItemsByParentId[loot.parentId] = [];
-      //     lootItemsByParentId[loot.parentId].push(loot);
-      //   }
-
-      //   //reset itemId and childrenItemId
-      //   for (const itemId of Object.keys(lootItemsHash)) {
-      //     let newId = utility.generateNewItemId();
-      //     lootItemsHash[itemId]._id = newId;
-
-      //     if (itemId === data.Root) data.Root = newId;
-
-      //     if (lootItemsByParentId[itemId] === undefined) continue;
-
-      //     for (const childrenItem of lootItemsByParentId[itemId]) {
-      //       childrenItem.parentId = newId;
-      //     }
-      //   }
-
-      //   const num = utility.getRandomInt(0, 10000);
-      //   const spawnChance =
-      //     helper_f.getItem(data.Items[0]._tpl)[1]["_props"]["SpawnChance"] * 100;
-      //   const itemChance = 0; //spawnChance * locationLootChanceModifier;
-      //   if (itemChance >= num) {
-      //     count += 1;
-      //     lootPositions.push(position);
-      //     output.Loot.push(data);
-      //   } else {
-      //     continue;
-      //   }
-    }
+    
 
     // print all item spawns with names for debugging purposes if enabled.
+    logger.logInfo(`State ${stage++}, TimeElapsed: ${dateNow - Date.now()}ms`)
     if (global.serverConfig.lootDebug) {
       //require("util").inspect.defaultOptions.maxArrayLength = null;
       logger.logSuccess(
-        `Generated location ${name} with [mounted: ${counters[0]} | forcedLoot: ${counters[1]} | statics: ${counters[2]} | dynamic: ${count}]`
+        `Generated location ${name} with [mounted: ${counters[0]}/${mounted.length} | forcedLoot: ${counters[1]}/${forced.length} | statics: ${counters[2]}/${statics.length} | dynamic: ${counters[3]}/${dynamic.length}]`
       );
-
-      /*let locale = fileIO.readParsed(db.locales["en"].templates)
-			let spawns = {}
-
-			for (let k in output.Loot) {
-				for (let item of output.Loot[k].Items) {
-					spawns[item._tpl] ? spawns[item._tpl] += 1 : spawns[item._tpl] = 1
-				}
-			}
-
-			let spawnarr = []
-			
-			for (let tpl in spawns) {
-				let localized = (locale[tpl].Name).toString()
-
-				spawnarr.push({[localized]: spawns[tpl]})
-			}
-
-			logger.logSuccess("Location item spawns:")
-			spawnarr.forEach((el) => {
-				logger.logDebug(`${Object.values(el)[0]}x - ${Object.keys(el)[0]}`)
-			})*/
     }
 
     // done generating
     counters = null;
     return output;
   }
-  getStaticLoot(_tpl) {
+
+  getStaticLoot(_tpl) 
+  {
     for (let obj of this.location.loot.static) {
       if (obj.Items[0]._tpl == _tpl) return obj;
     }
@@ -784,13 +695,15 @@ class LocationServer {
   // TODO: rework required - weard functions to replace later on ;)
 
   /* get a location with generated loot data */
-  get(Location) {
+  get(Location) 
+  {
     let name = Location.toLowerCase().replace(" ", "");
     return this.generate(name);
   }
 
   /* get all locations without loot data */
-  generateAll() {
+  generateAll() 
+  {
     // lets try to read from cache
     if (!utility.isUndefined(db.user.cache.locations)) {
       let base = global._database.core.location_base;
