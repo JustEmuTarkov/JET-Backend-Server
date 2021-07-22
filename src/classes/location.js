@@ -388,12 +388,13 @@ function _DynamicLootPush(typeArray, output, locationLootChanceModifier) {
       global._database.items[createEndLootData.Items[0]._tpl]._parent ==
       "543be5cb4bdc2deb348b4568"
     ) {
-      // found cartriges
       createEndLootData.Items.push({
         _id: utility.generateNewItemId(),
         _tpl: global._database.items[createEndLootData.Items[0]._tpl]._props
           .StackSlots[0]._props.filters[0].Filter[0],
         parentId: createEndLootData.Items[0]._id,
+        slotId: "cartridges",
+        location: 0,
         upd: {
           StackObjectsCount: utility.getRandomInt(
             global._database.items[createEndLootData.Items[0]._tpl]._props
@@ -781,7 +782,8 @@ class LocationServer {
       let newData = {};
       for (let location in global._database.locations) {
         newData[global._database.locations[location].base._Id] =
-          global._database.locations[location].base;
+          utility.wipeDepend(global._database.locations[location].base);
+        newData[global._database.locations[location].base._Id].Loot = [];
       }
       base.locations = newData;
       return base;
