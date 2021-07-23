@@ -126,10 +126,6 @@ class TraderServer {
       // Current time in seconds
       let current_time = Math.floor(new Date().getTime() / 1000);
 
-      //console.log(fence_assort_lifetime);
-      //console.log(this.fence_generated_at + fence_assort_lifetime);
-      //console.log(current_time);
-
       // Initial Fence generation pass.
       if (this.fence_generated_at === 0 || !this.fence_generated_at) {
         this.fence_generated_at = current_time;

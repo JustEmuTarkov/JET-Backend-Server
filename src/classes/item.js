@@ -64,8 +64,6 @@ class ItemServer {
   handleRoutes(info, sessionID) {
     this.resetOutput(sessionID);
     for (let body of info.data) {
-      console.log(body.Action);
-
       let pmcData = profile_f.handler.getPmcProfile(sessionID);
       if (body.Action in this.routes) {
         this.routes[body.Action](pmcData, body, sessionID);

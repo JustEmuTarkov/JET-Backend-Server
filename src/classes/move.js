@@ -15,10 +15,7 @@ function getOwnerInventoryItems(body, sessionID) {
       fromInventoryItems = scavData.Inventory.items;
       fromType = "scav";
     } else if (body.fromOwner.type === "Mail") {
-      fromInventoryItems = dialogue_f.handler.getMessageItemContents(
-        body.fromOwner.id,
-        sessionID
-      );
+      fromInventoryItems = dialogue_f.handler.getMessageItemContents(body.fromOwner.id, sessionID);
       fromType = "mail";
     }
   }
@@ -76,19 +73,12 @@ function moveItem(pmcData, body, sessionID) {
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
   const output = item_f.handler.getOutput(sessionID);
 
-  if (
-    Symbol.iterator in Object(body.changedItems) &&
-    body.changedItems !== null
-  ) {
+  if (Symbol.iterator in Object(body.changedItems) && body.changedItems !== null) {
     for (const changed_item of body.changedItems) {
       for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
         if (item._id === changed_item._id) {
           pmcData.Inventory.items[key] = changed_item;
-          if (
-            typeof output.profileChanges[pmcData._id].items.change ==
-            "undefined"
-          )
-            output.profileChanges[pmcData._id].items.change = [];
+          if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
 
           output.profileChanges[pmcData._id].items.change.push(changed_item);
           break;
@@ -96,18 +86,12 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
       }
     }
   }
-  if (
-    Symbol.iterator in Object(body.deletedItems) &&
-    body.deletedItems !== null
-  ) {
+  if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
     for (const deleted_item of body.deletedItems) {
       for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
         if (item._id === deleted_item._id) {
           pmcData.Inventory.items.splice(key);
-          if (
-            typeof output.profileChanges[pmcData._id].items.del == "undefined"
-          )
-            output.profileChanges[pmcData._id].items.del = [];
+          if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
           output.profileChanges[pmcData._id].items.del.push(deleted_item);
           break;
         }
@@ -200,14 +184,18 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
 
   //remove one by one all related items and itself
+  const toRemoveLast = ids_toremove[ids_toremove.length - 1];
+  for (let a in pmcData.Inventory.items) {
+    if (pmcData.Inventory.items[a]._id === toRemoveLast) {
+      if (typeof output.profileChanges != "undefined" && output != "") {
+        if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
+        output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
+      }
+    }
+  }
   for (let i in ids_toremove) {
     for (let a in pmcData.Inventory.items) {
       if (pmcData.Inventory.items[a]._id === ids_toremove[i]) {
-        if (typeof output.profileChanges != "undefined" && output != "") {
-          output.profileChanges[pmcData._id].items.del.push(
-            pmcData.Inventory.items[a]
-          );
-        }
         pmcData.Inventory.items.splice(a, 1);
       }
     }
@@ -233,12 +221,7 @@ function removeItem(profileData, body, output, sessionID) {
 
 function discardItem(pmcData, body, sessionID) {
   insurance_f.handler.remove(pmcData, body.item, sessionID);
-  return removeItem(
-    pmcData,
-    body.item,
-    item_f.handler.getOutput(sessionID),
-    sessionID
-  );
+  return removeItem(pmcData, body.item, item_f.handler.getOutput(sessionID), sessionID);
 }
 
 /* Split Item
@@ -249,10 +232,7 @@ function splitItem(pmcData, body, sessionID) {
   let location = body.container.location;
   let inventoryItems = getOwnerInventoryItems(body, sessionID);
   logger.logData(body, true);
-  if (
-    !("location" in body.container) &&
-    body.container.container === "cartridges"
-  ) {
+  if (!("location" in body.container) && body.container.container === "cartridges") {
     let tmp_counter = 0;
     let AlreadyLoaded = 0;
     let MagazineTemplate = "";
@@ -261,21 +241,12 @@ function splitItem(pmcData, body, sessionID) {
         AlreadyLoaded += inventoryItems.to[item_ammo].upd.StackObjectsCount;
         tmp_counter++;
       }
-      if (inventoryItems.to[item_ammo]._id == body.container.id)
-        MagazineTemplate = inventoryItems.to[item_ammo]._tpl;
+      if (inventoryItems.to[item_ammo]._id == body.container.id) MagazineTemplate = inventoryItems.to[item_ammo]._tpl;
     }
     // make sure you wont overclip the magazine
     if (MagazineTemplate != "")
-      if (
-        typeof global._database.items[MagazineTemplate]._props.Cartridges !=
-        "undefined"
-      )
-        if (
-          AlreadyLoaded >
-          global._database.items[MagazineTemplate]._props.Cartridges[0]
-            ._max_count
-        )
-          return output;
+      if (typeof global._database.items[MagazineTemplate]._props.Cartridges != "undefined")
+        if (AlreadyLoaded > global._database.items[MagazineTemplate]._props.Cartridges[0]._max_count) return output;
     location = tmp_counter; //wrong location for first cartrige
   }
 
@@ -293,8 +264,7 @@ function splitItem(pmcData, body, sessionID) {
 
       //output.profileChanges[pmcData._id].items.change.push(item);
 
-      if (typeof output.profileChanges[pmcData._id].items.new == "undefined")
-        output.profileChanges[pmcData._id].items.new = [];
+      if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
       output.profileChanges[pmcData._id].items.new.push({
         _id: newItem,
         _tpl: item._tpl,
@@ -330,26 +300,13 @@ function mergeItem(pmcData, body, sessionID) {
   for (let key in inventoryItems.to) {
     if (inventoryItems.to[key]._id === body.with) {
       for (let key2 in inventoryItems.from) {
-        if (
-          inventoryItems.from[key2]._id &&
-          inventoryItems.from[key2]._id === body.item
-        ) {
+        if (inventoryItems.from[key2]._id && inventoryItems.from[key2]._id === body.item) {
           let stackItem0 = 1;
           let stackItem1 = 1;
 
-          if (
-            !(
-              inventoryItems.to[key].upd &&
-              inventoryItems.to[key].upd.StackObjectsCount
-            )
-          ) {
+          if (!(inventoryItems.to[key].upd && inventoryItems.to[key].upd.StackObjectsCount)) {
             inventoryItems.to[key].upd = { StackObjectsCount: 1 };
-          } else if (
-            !(
-              inventoryItems.to[key2].upd &&
-              inventoryItems.to[key2].upd.StackObjectsCount
-            )
-          ) {
+          } else if (!(inventoryItems.to[key2].upd && inventoryItems.to[key2].upd.StackObjectsCount)) {
             inventoryItems.from[key2].upd = { StackObjectsCount: 1 };
           }
 
@@ -367,22 +324,12 @@ function mergeItem(pmcData, body, sessionID) {
             });
           }
 
-          inventoryItems.to[key].upd.StackObjectsCount =
-            stackItem0 + stackItem1;
+          inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
 
-          if (
-            typeof output.profileChanges[pmcData._id].items.change ==
-            "undefined"
-          )
-            output.profileChanges[pmcData._id].items.change = [];
-          output.profileChanges[pmcData._id].items.change.push(
-            inventoryItems.to[key]
-          );
+          if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
+          output.profileChanges[pmcData._id].items.change.push(inventoryItems.to[key]);
 
-          if (
-            typeof output.profileChanges[pmcData._id].items.del == "undefined"
-          )
-            output.profileChanges[pmcData._id].items.del = [];
+          if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
           output.profileChanges[pmcData._id].items.del.push({
             _id: inventoryItems.from[key2]._id,
           });
@@ -441,11 +388,9 @@ function transferItem(pmcData, body, sessionID) {
     }
 
     itemTo.upd.StackObjectsCount = stackTo + body.count;
-    if (typeof output.profileChanges[pmcData._id].change == "undefined")
-      output.profileChanges[pmcData._id].change = [];
+    if (typeof output.profileChanges[pmcData._id].change == "undefined") output.profileChanges[pmcData._id].change = [];
     output.profileChanges[pmcData._id].change.push(itemTo);
   }
-  console.log(output.profileChanges[pmcData._id].change);
   return output;
 }
 
@@ -477,7 +422,8 @@ function swapItem(pmcData, body, sessionID) {
 /* Give Item
  * its used for "add" item like gifts etc.
  * */
-function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
+function addItem(pmcData, body, sessionID, foundInRaid = false) {
+  let output = item_f.handler.getOutput(sessionID);
   // const fenceID = "579dc571d53a0658a154fbec";
   let itemLib = [];
   let itemsToAdd = [];
@@ -487,9 +433,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
 
   for (let baseItem of body.items) {
     if (baseItem.item_id in global._database.globals.ItemPresets) {
-      const presetItems = helper_f.clone(
-        global._database.globals.ItemPresets[baseItem.item_id]._items
-      );
+      const presetItems = helper_f.clone(global._database.globals.ItemPresets[baseItem.item_id]._items);
       itemLib.push(...presetItems);
       baseItem.isPreset = true;
       baseItem.item_id = presetItems[0]._id;
@@ -502,18 +446,9 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
       let isBuyingFromFence = false;
       if (body.tid === "579dc571d53a0658a154fbec") isBuyingFromFence = true;
 
-      const traderItems = trader_f.handler.getAssort(
-        sessionID,
-        body.tid,
-        isBuyingFromFence
-      ).items;
-      const relevantItems = helper_f.findAndReturnChildrenAsItems(
-        traderItems,
-        baseItem.item_id
-      );
-      const toAdd = relevantItems.filter(
-        (traderItem) => !itemLib.some((item) => traderItem._id === item._id)
-      );
+      const traderItems = trader_f.handler.getAssort(sessionID, body.tid, isBuyingFromFence).items;
+      const relevantItems = helper_f.findAndReturnChildrenAsItems(traderItems, baseItem.item_id);
+      const toAdd = relevantItems.filter((traderItem) => !itemLib.some((item) => traderItem._id === item._id));
       itemLib.push(...toAdd);
     }
 
@@ -530,15 +465,9 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
         // split stacks if the size is higher than allowed by StackMaxSize
         if (baseItem.count > tmpItem._props.StackMaxSize) {
           let count = baseItem.count;
-          let calc =
-            baseItem.count -
-            Math.floor(baseItem.count / tmpItem._props.StackMaxSize) *
-              tmpItem._props.StackMaxSize;
+          let calc = baseItem.count - Math.floor(baseItem.count / tmpItem._props.StackMaxSize) * tmpItem._props.StackMaxSize;
 
-          MaxStacks =
-            calc > 0
-              ? MaxStacks + Math.floor(count / tmpItem._props.StackMaxSize)
-              : Math.floor(count / tmpItem._props.StackMaxSize);
+          MaxStacks = calc > 0 ? MaxStacks + Math.floor(count / tmpItem._props.StackMaxSize) : Math.floor(count / tmpItem._props.StackMaxSize);
 
           for (let sv = 0; sv < MaxStacks; sv++) {
             if (count > 0) {
@@ -563,16 +492,8 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
   // Find an empty slot in stash for each of the items being added
   let StashFS_2D = helper_f.getPlayerStashSlotMap(sessionID, pmcData);
   for (let itemToAdd of itemsToAdd) {
-    let itemSize = helper_f.getItemSize(
-      itemToAdd.itemRef._tpl,
-      itemToAdd.itemRef._id,
-      itemLib
-    );
-    let findSlotResult = helper_f.findSlotForItem(
-      StashFS_2D,
-      itemSize[0],
-      itemSize[1]
-    );
+    let itemSize = helper_f.getItemSize(itemToAdd.itemRef._tpl, itemToAdd.itemRef._id, itemLib);
+    let findSlotResult = helper_f.findSlotForItem(StashFS_2D, itemSize[0], itemSize[1]);
 
     if (findSlotResult.success) {
       /* Fill in the StashFS_2D with an imaginary item, to simulate it already being added
@@ -581,20 +502,9 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
       let itemSizeY = findSlotResult.rotation ? itemSize[0] : itemSize[1];
 
       try {
-        StashFS_2D = helper_f.fillContainerMapWithItem(
-          StashFS_2D,
-          findSlotResult.x,
-          findSlotResult.y,
-          itemSizeX,
-          itemSizeY
-        );
+        StashFS_2D = helper_f.fillContainerMapWithItem(StashFS_2D, findSlotResult.x, findSlotResult.y, itemSizeX, itemSizeY);
       } catch (err) {
-        logger.logError(
-          "fillContainerMapWithItem returned with an error" + typeof err ===
-            "string"
-            ? ` -> ${err}`
-            : ""
-        );
+        logger.logError("fillContainerMapWithItem returned with an error" + typeof err === "string" ? ` -> ${err}` : "");
         return helper_f.appendErrorToOutput(output, "Not enough stash space");
       }
 
@@ -640,8 +550,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
       upd["SpawnedInSession"] = true;
     }
 
-    if (typeof output.profileChanges[pmcData._id].items.new == "undefined")
-      output.profileChanges[pmcData._id].items.new = [];
+    if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
     output.profileChanges[pmcData._id].items.new.push({
       _id: newItem,
       _tpl: itemToAdd.itemRef._tpl,
@@ -676,14 +585,12 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
       // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
       let maxCount = ammoBoxInfo[0]._max_count;
       let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
-      let ammoStackMaxSize =
-        helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
+      let ammoStackMaxSize = helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
       let ammos = [];
       let location = 0;
 
       while (maxCount > 0) {
-        let ammoStackSize =
-          maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
+        let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
         ammos.push({
           _id: utility.generateNewItemId(),
           _tpl: ammoTmplId,
@@ -696,21 +603,14 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
         location++;
         maxCount -= ammoStackMaxSize;
       }
-      if (typeof output.profileChanges[pmcData._id].items.new == "undefined")
-        output.profileChanges[pmcData._id].items.new = [];
+      if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
 
-      [
-        output.profileChanges[pmcData._id].items.new,
-        pmcData.Inventory.items,
-      ].forEach((x) => x.push.apply(x, ammos));
+      [output.profileChanges[pmcData._id].items.new, pmcData.Inventory.items].forEach((x) => x.push.apply(x, ammos));
     }
 
     while (toDo.length > 0) {
       for (let tmpKey in itemLib) {
-        if (
-          itemLib[tmpKey].parentId &&
-          itemLib[tmpKey].parentId === toDo[0][0]
-        ) {
+        if (itemLib[tmpKey].parentId && itemLib[tmpKey].parentId === toDo[0][0]) {
           newItem = utility.generateNewItemId();
 
           let SlotID = itemLib[tmpKey].slotId;
@@ -724,10 +624,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
           }
 
           if (SlotID === "hideout") {
-            if (
-              typeof output.profileChanges[pmcData._id].items.new == "undefined"
-            )
-              output.profileChanges[pmcData._id].items.new = [];
+            if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
             output.profileChanges[pmcData._id].items.new.push({
               _id: newItem,
               _tpl: itemLib[tmpKey]._tpl,
@@ -754,10 +651,7 @@ function addItem(pmcData, body, output, sessionID, foundInRaid = false) {
               upd: upd,
             });
           } else {
-            if (
-              typeof output.profileChanges[pmcData._id].items.new == "undefined"
-            )
-              output.profileChanges[pmcData._id].items.new = [];
+            if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
             output.profileChanges[pmcData._id].items.new.push({
               _id: newItem,
               _tpl: itemLib[tmpKey]._tpl,
