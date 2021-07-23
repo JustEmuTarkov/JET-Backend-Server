@@ -702,7 +702,7 @@ class LocationServer {
     let _location = global._database.locations[name];
 
     if(global._database.gameplayConfig.locationloot.useDynamicLootMultiplier){
-      if(sessionID != ""){
+      if(sessionID != "" && typeof sessionID != "undefined"){
         let exfilData = profile_f.handler.getProfileExfilsById(sessionID);
 
         let sumExfils = 0;
