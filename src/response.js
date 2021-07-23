@@ -127,7 +127,7 @@ class Responses {
 //dynamic
 	dynApiLocation(url, info, sessionID){
 		// if (url.includes("factory4_day")) { return response_f.noBody(fileIO.readParsed(db.locations_test.factory4_day1).Location); }
-		return response_f.noBody(location_f.handler.get(url.replace("/api/location/", "")))
+		return response_f.noBody(location_f.handler.get(url.replace("/api/location/", ""), sessionID))
 	}
 	dynClientLocale(url, info, sessionID){
 		return response_f.getBody(locale_f.handler.getGlobal(url.replace("/client/locale/", '')));

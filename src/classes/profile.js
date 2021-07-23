@@ -59,6 +59,12 @@ class ProfileServer {
 	getProfileById(ID, type) {
         return fileIO.readParsed(`user/profiles/${ID}/character.json`);
     }
+	getProfileExfilsById(ID) {
+        return fileIO.readParsed(`user/profiles/${ID}/exfiltrations.json`);
+    }
+	setProfileExfilsById(ID, data) {
+        return fileIO.write(`user/profiles/${ID}/exfiltrations.json`, data);
+    }
 
     getPmcProfile(sessionID) {
         return this.getProfile(sessionID, 'pmc');
@@ -128,6 +134,7 @@ class ProfileServer {
         fileIO.write(`${folder}storage.json`, storage);
         fileIO.write(`${folder}userbuilds.json`, {});
         fileIO.write(`${folder}dialogue.json`, {});
+        fileIO.write(`${folder}extractions.json`, {"bigmap": 0,"factory4_day": 0,"factory4_night": 0,"interchange": 0,"laboratory": 0,"rezervbase": 0,"shoreline": 0,"woods": 0})
 
         // load to memory
         let profile = this.getProfile(account.id, 'pmc');

@@ -84,7 +84,8 @@
 				"Superrare": 0.4
 			}
 		},
-		"useDynamicLootFromItemsArray": false
+		"useDynamicLootFromItemsArray": false,
+		"useDynamicLootMultiplier": true
 	},
 	"match": {
 		"enabled": true

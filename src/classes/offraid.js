@@ -355,7 +355,12 @@ function saveProgress(offraidData, sessionID) {
     if (insuranceEnabled) {
         insurance_f.handler.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
     }
-
+    if(offraidData.exit === "survived")
+    {
+        let exfils = profile_f.handler.getProfileExfilsById(sessionID);
+        exfils[systemMapName] = exfils[systemMapName] + 1;
+        profile_f.handler.setProfileExfilsById(sessionID, exfils);
+    }
     if ((offraidData.exit !== "survived" && offraidData.exit !== "runner")) {
         if (insuranceEnabled) {
             insurance_f.handler.storeDeadGear(pmcData, offraidData, preRaidGear, sessionID);

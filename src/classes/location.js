@@ -691,7 +691,7 @@ function _GenerateContainerLoot(_items) {
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
   /* generates a random location preset to use for local session */
-  generate(name) {
+  generate(name, sessionID) {
     let dateNow = Date.now();
     let stage = 0;
     // dont read next time ??
@@ -700,6 +700,22 @@ class LocationServer {
       return;
     }
     let _location = global._database.locations[name];
+
+    if(global._database.gameplayConfig.locationloot.useDynamicLootMultiplier){
+      if(sessionID != ""){
+        let exfilData = profile_f.handler.getProfileExfilsById(sessionID);
+
+        let sumExfils = 0;
+        for(const key in exfilData){
+          sumExfils += exfilData[key];
+        }
+        if(sumExfils != 0){
+          _location.base.GlobalLootChanceModifier = (sumExfils/(sumExfils+exfilData[name]))
+        } else {
+          _location.base.GlobalLootChanceModifier = 1;
+        }
+      }
+    }
 
     let output = _location.base;
     let ids = {};
@@ -758,6 +774,7 @@ class LocationServer {
       );
     }
     counters = null;
+
     return output;
   }
 
@@ -769,9 +786,9 @@ class LocationServer {
   // TODO: rework required - weard functions to replace later on ;)
 
   /* get a location with generated loot data */
-  get(Location) {
+  get(Location, sessionID) {
     let name = Location.toLowerCase().replace(" ", "");
-    return this.generate(name);
+    return this.generate(name, sessionID);
   }
 
   /* get all locations without loot data */
