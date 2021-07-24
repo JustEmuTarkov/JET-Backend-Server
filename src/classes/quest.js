@@ -242,42 +242,6 @@ function completeQuest(pmcData, body, sessionID) {
 
   let questRewards = getQuestRewards(quest, state, pmcData);
 
-  //   for (let reward of quest.rewards.Success) {
-  //     switch (reward.type) {
-  //       case "Skill":
-  //         pmcData = profile_f.handler.getPmcProfile(sessionID);
-
-  //         for (let skill of pmcData.Skills.Common) {
-  //           if (skill.Id === reward.target) {
-  //             skill.Progress += parseInt(reward.value);
-  //             break;
-  //           }
-  //         }
-  //         break;
-
-  //       case "Experience":
-  //         pmcData = profile_f.handler.getPmcProfile(sessionID);
-  //         pmcData.Info.Experience += parseInt(reward.value);
-  //         break;
-
-  //       case "TraderStanding":
-  //         pmcData = profile_f.handler.getPmcProfile(sessionID);
-  //         pmcData.TradersInfo[reward.target].standing += parseFloat(reward.value);
-
-  //         // Prevent negative trader rep. Seems to still have a visual bug.
-  //         if (pmcData.TradersInfo[reward.target].standing < 0) {
-  //           pmcData.TradersInfo[reward.target].standing = 0;
-  //         }
-
-  //         //trader_f.handler.lvlUp(reward.target, sessionID);
-  //         break;
-
-  //       case "TraderUnlock":
-  //         trader_f.handler.changeTraderDisplay(reward.target, true, sessionID);
-  //         break;
-  //     }
-  //   }
-
   // Create a dialog message for completing the quest.
   let questDb = getCachedQuest(body.qid);
   let questLocale = global._database.locales.global["en"].quest;

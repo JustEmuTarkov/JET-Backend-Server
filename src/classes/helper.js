@@ -401,9 +401,6 @@ function getMoney(pmcData, amount, body, output, sessionID) {
   }
   pmcData.TradersInfo[body.tid].saleSum += amount;
 
-  //trader_f.handler.lvlUp(body.tid, sessionID);
-  //output.currentSalesSums[body.tid] = saleSum;
-
   return output;
 }
 

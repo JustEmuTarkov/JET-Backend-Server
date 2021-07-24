@@ -8,11 +8,11 @@ function main(sessionID) {
 }
 
 function updateTraders(sessionID) {
-  // update each hour
   let update_per = 3600;
   let timeNow = Math.floor(Date.now() / 1000);
   dialogue_f.handler.removeExpiredItems(sessionID);
 
+  // update each hour
   let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID, true);
   for (let i = 0; i < tradersToUpdateList.length; i++) {
     if (tradersToUpdateList[i]._id == "ragfair") continue;
