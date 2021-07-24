@@ -13,20 +13,16 @@ function updateTraders(sessionID) {
   let timeNow = Math.floor(Date.now() / 1000);
   dialogue_f.handler.removeExpiredItems(sessionID);
 
-  let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID);
+  let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID, true);
   for (let i = 0; i < tradersToUpdateList.length; i++) {
     if (tradersToUpdateList[i]._id == "ragfair") continue;
-    if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") {
-      update_per = global._database.gameplayConfig.trading.fenceRefreshInterval;
-    } else {
-      update_per = global._database.gameplayConfig.trading.traderSupply[tradersToUpdateList[i]._id];
-    }
 
-    if (tradersToUpdateList[i].nextResupply + update_per > timeNow) {
+    update_per = global._database.gameplayConfig.trading.traderSupply[tradersToUpdateList[i]._id];
+    if (tradersToUpdateList[i].nextResupply > timeNow) {
       continue;
     }
-
     tradersToUpdateList[i].nextResupply = timeNow + update_per;
+    logger.logInfo(`Updating trader[${tradersToUpdateList[i]._id}] supply time data to ${tradersToUpdateList[i].nextResupply}`);
     trader_f.handler.setTraderBase(tradersToUpdateList[i]);
     if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") continue;
 
@@ -297,3 +293,4 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
 }
 
 module.exports.main = main;
+module.exports.updateTraders = updateTraders;

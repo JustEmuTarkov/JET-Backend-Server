@@ -36,20 +36,9 @@ class TraderServer {
     global._database.traders[base._id].base = base;
     fileIO.write(db.traders[base._id].base, base, true, false);
   }
-  changeTraderDisplay(traderID, status, sessionID) {
-    let pmdData = profile_f.handler.getPmcProfile(sessionID);
-    if (typeof pmcData.TradersInfo[traderID] == "undefined") {
-      pmcData.TradersInfo[traderID] = {
-        saleSum: 0,
-        standing: 0,
-        unlocked: true,
-      };
-    } else {
-      pmcData.TradersInfo[traderID].unlocked = true;
-    }
-  }
 
-  getAllTraders(sessionID) {
+  getAllTraders(sessionID, keepalive = false) {
+    if (!keepalive) keepalive_f.updateTraders(sessionID);
     let Traders = [];
     for (const traderID in global._database.traders) {
       if (traderID === "ragfair") {
@@ -121,7 +110,7 @@ class TraderServer {
     if (traderID === "579dc571d53a0658a154fbec" && !isBuyingFromFence) {
       // Fence
       // Lifetime in seconds
-      let fence_assort_lifetime = global._database.gameplayConfig.trading.fenceRefreshInterval;
+      let fence_assort_lifetime = global._database.gameplayConfig.trading.traderSupply[traderID];
 
       // Current time in seconds
       let current_time = Math.floor(new Date().getTime() / 1000);

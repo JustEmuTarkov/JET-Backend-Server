@@ -64,15 +64,14 @@
     "insureMultiplier": 0.1,
     "insureReturnChance": 75,
     "fenceAssortSize": 60,
-    "fenceRefreshInterval": 600,
-    "buyItemsMarkedFound": false,
+    "buyItemsMarkedFound": true,
     "traderSupply": {
       "5a7c2eca46aef81a7ca2145d": 3600,
       "5ac3b934156ae10c4430e83c": 3600,
       "5c0647fdd443bc2504c2d371": 3600,
       "54cb50c76803fa8b248b4571": 3600,
       "54cb57776803fa99248b456e": 3600,
-      "579dc571d53a0658a154fbec": 3600,
+      "579dc571d53a0658a154fbec": 600,
       "5935c25fb3acc3127c3d8cd9": 3600,
       "58330581ace78e27b8b10cee": 3600
     }
