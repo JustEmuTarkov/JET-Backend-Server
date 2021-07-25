@@ -372,7 +372,7 @@ function _DynamicLootPush(typeArray, output, locationLootChanceModifier, MapName
     // Preset weapon
     const PresetData = FindIfItemIsAPreset(createEndLootData.Items[0]._tpl);
     if (PresetData != null) {
-      let preset = utility.getRandomInt(0, PresetData.length);
+      let preset = PresetData[utility.getRandomInt(0, PresetData.length)];
       if (preset == null) continue;
 
       let oldBaseItem = preset._items[0];
