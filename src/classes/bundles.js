@@ -1,8 +1,5 @@
 "use strict";
 
-const { Logger } = require("nexe/lib/logger");
-const path = require("path");
-
 class BundlesServer {
   constructor() {
     this.bundles = [];

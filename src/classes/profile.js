@@ -136,7 +136,7 @@ class ProfileServer {
     fileIO.write(`${folder}storage.json`, storage);
     fileIO.write(`${folder}userbuilds.json`, {});
     fileIO.write(`${folder}dialogue.json`, {});
-    fileIO.write(`${folder}extractions.json`, { bigmap: 0, factory4_day: 0, factory4_night: 0, interchange: 0, laboratory: 0, rezervbase: 0, shoreline: 0, woods: 0 });
+    fileIO.write(`${folder}exfiltrations.json`, { bigmap: 0, factory4_day: 0, factory4_night: 0, interchange: 0, laboratory: 0, rezervbase: 0, shoreline: 0, woods: 0 });
 
     // load to memory
     let profile = this.getProfile(account.id, "pmc");

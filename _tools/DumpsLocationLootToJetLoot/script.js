@@ -1,6 +1,8 @@
 
 const fs = require('fs');
 
+
+	
 function GenerateStaticShort(loot)
 {
 	let shorten = {
@@ -177,6 +179,35 @@ const maps = [
 	"Shoreline",
 	"Woods"
 ];
+const questItems = [
+  "(no phis)mil_reciv",
+  "008_5_key",
+  "009_1_nout",
+  "009_2_doc",
+  "010_4_flash",
+  "010_5_drive",
+  "206_water_06",
+  "controller1_forest_crate",
+  "controller_comp_room",
+  "controller_wood_car",
+  "diagset_Sanitar",
+  "case_0060  [1] (3)",
+  "case_0060  [1] (2)",
+  "book_osnovu",
+  "book_venskiy",
+  "sas1",
+  "sas2",
+  "giroscope21",
+  "giroscope23",
+  "huntsman_001_message",
+  "shop_goshan_vedodmost",
+  "shop_idea_vedodmost",
+  "shop_oli_vedodmost2",
+  "shop_oli_vedodmost_part",
+  "surgical_kit_Sanitar",
+  "blood_probe",
+  "quest"
+]
 
 for(let map in maps)
 {
@@ -209,7 +240,14 @@ for(let map in maps)
 					newLoot.static.push(GenerateStaticShort(mapDataLoot[loot]));
 			} else 
 			{
-				if(mapDataLoot[loot].Id.indexOf("quest") != -1){
+				let isQuest = false;
+				for(let id in questItems){
+					if(mapDataLoot[loot].Id.indexOf(questItems[id]) != -1){
+						isQuest = true;
+						break;
+					}
+				}
+				if(isQuest){
 					if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
 						newLoot.forced.push(GenerateForcedShort(mapDataLoot[loot]))
 				} else {

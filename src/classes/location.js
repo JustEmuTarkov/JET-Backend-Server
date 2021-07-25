@@ -113,7 +113,7 @@ function GetItemParents() {
 5d52cc5ba4b9367408500062 automatic grenade launcher
 */
 
-function detectLootSpawn(lootData) {
+function detectLootSpawn(lootData, mapName) {
   let containsSpawns = [];
   if (global._database.gameplayConfig.useDynamicLootFromItemsArray) {
     for (const spawnTemplate in lootData.Items) {
@@ -128,9 +128,9 @@ function detectLootSpawn(lootData) {
       }
     }
   } else {
-    for (const key in global._database.locationConfigs.dynamicLootAutoSpawnDetector) {
+    for (const key in global._database.locationConfigs.dynamicLootAutoSpawnDetector[mapName]) {
       if (lootData.Id.includes(key)) {
-        const parentsToAdd = global._database.locationConfigs.dynamicLootAutoSpawnDetector[key].split(",");
+        const parentsToAdd = global._database.locationConfigs.dynamicLootAutoSpawnDetector[mapName][key].split(",");
         for (const parent in parentsToAdd) {
           const filteredData = Object.values(global._database.items).filter((itemTemplate) => itemTemplate._parent == parentsToAdd[parent]);
           if (filteredData.length != 0) {
@@ -316,12 +316,12 @@ function _StaticsLootPush(typeArray, output) {
   }
   return count;
 }
-function _DynamicLootPush(typeArray, output, locationLootChanceModifier) {
+function _DynamicLootPush(typeArray, output, locationLootChanceModifier, MapName) {
   let count = 0;
   for (let itemLoot in typeArray) {
     const lootData = typeArray[itemLoot];
     //loot overlap removed its useless...
-    let detectedItemsToSpawn = detectLootSpawn(lootData); // add this function
+    let detectedItemsToSpawn = detectLootSpawn(lootData, MapName); // add this function
     // should return Array() of strings where they are item ID's
     // check server settigns if auto detect or use Items strings to detect predefined items
     if (detectedItemsToSpawn.length == 0) {
@@ -680,7 +680,7 @@ class LocationServer {
 
     // dyanmic loot
     count = 0;
-    count = _DynamicLootPush(dynamic, output, _location.base.GlobalLootChanceModifier);
+    count = _DynamicLootPush(dynamic, output, _location.base.GlobalLootChanceModifier, name);
     logger.logInfo(`State Dynamic, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
 
