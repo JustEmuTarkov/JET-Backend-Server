@@ -1,5 +1,7 @@
 "use strict";
 
+const { logger } = require("../../core/util/logger");
+
 class InraidServer {
   constructor() {
     // this needs to be saved on drive so if player closes server it can keep it going after restart
@@ -131,8 +133,14 @@ function setInventory(pmcData, profile) {
   }
   pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
+  // Don't count important stash IDs as errors.
+  const stashIDs = ['60de0d80c6b34f52845b4646']
+  duplicates = duplicates.filter(x => !(stashIDs.includes(x)))
+
   if (duplicates.length > 0) {
     logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`);
+    logger.logWarning(`Duplicates: `)
+    console.log(duplicates)
   }
 
   return pmcData;
