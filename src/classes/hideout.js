@@ -271,8 +271,6 @@ function handleBitcoinReproduction(pmcData, sessionID) {
 }
 
 function takeProduction(pmcData, body, sessionID) {
-  let output = item_f.handler.getOutput(sessionID);
-
   if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
     return handleBitcoinReproduction(pmcData, sessionID);
   }
@@ -307,7 +305,7 @@ function takeProduction(pmcData, body, sessionID) {
       tid: "ragfair",
     };
 
-    return move_f.addItem(pmcData, newReq, output, sessionID, true);
+    return move_f.addItem(pmcData, newReq, sessionID, true);
   }
 
   for (let recipe in scavcase.data) {
