@@ -77,27 +77,28 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
     for (const changed_item of body.changedItems) {
       for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
         if (item._id === changed_item._id) {
-          pmcData.Inventory.items[key] = changed_item;
-          if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
-
-          output.profileChanges[pmcData._id].items.change.push(changed_item);
+          pmcData.Inventory.items[key].parentId = changed_item.parentId;
+          pmcData.Inventory.items[key].slotId = changed_item.slotId;
+          pmcData.Inventory.items[key].location = changed_item.location;
+          //if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
+          //output.profileChanges[pmcData._id].items.change.push(changed_item);
           break;
         }
       }
     }
   }
-  if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
-    for (const deleted_item of body.deletedItems) {
-      for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
-        if (item._id === deleted_item._id) {
-          pmcData.Inventory.items.splice(key);
-          if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
-          output.profileChanges[pmcData._id].items.del.push(deleted_item);
-          break;
-        }
-      }
-    }
-  }
+  // if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
+  //   for (const deleted_item of body.deletedItems) {
+  //     for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
+  //       if (item._id === deleted_item._id) {
+  //         pmcData.Inventory.items.splice(key);
+  //         //if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
+  //         //output.profileChanges[pmcData._id].items.del.push(deleted_item);
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
 };
 
 /* Internal helper function to transfer an item from one profile to another.
