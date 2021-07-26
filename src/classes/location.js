@@ -627,9 +627,7 @@ class LocationServer {
     // Turn loot IDs lowercase
     for (let type in _location.loot) {
       _location.loot[type].forEach((obj) => {
-        console.log(`BEFORE: ${obj["Id"]}`)
         obj["Id"] = obj["Id"].toLowerCase()
-        console.log(`AFTER: ${obj["Id"]}`)
       })
     }
 
