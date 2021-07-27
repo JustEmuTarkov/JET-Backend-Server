@@ -2,7 +2,7 @@
   "autosave": {
     "saveOnReceive": true,
     "saveOnExit": true,
-    "saveIntervalSec": 9999
+    "saveIntervalSec": 60
   },
   "inraid": {
     "saveLootEnabled": true,

@@ -1,5 +1,7 @@
 "use strict";
 
+const { logger } = require("../../core/util/logger");
+
 /**
 * AccountServer class maintains list of accounts in memory. All account information should be 
 * loaded during server init.
@@ -10,11 +12,25 @@ class AccountServer {
     }
 
     initialize() {
-        this.accounts = fileIO.readParsed(db.user.configs.accounts);
+        const profileIDs = fileIO.readDir("./user/profiles");
+        let accountsData = {};
+        for(let id in profileIDs){
+            accountsData[profileIDs[id]] = fileIO.readParsed(`./user/profiles/${profileIDs[id]}/account.json`);
+        }
+        this.accounts = accountsData;
     }
 
-    saveToDisk() {
-        fileIO.write(db.user.configs.accounts, this.accounts);
+    saveToDisk(toSaveId = 0) {
+        if(toSaveId == 0){
+            for(let id in this.accounts){
+                fileIO.write(`./user/profiles/${id}/account.json`, this.accounts[id]);
+            }
+            logger.logInfo(`Saved all account data`);
+        } else {
+            fileIO.write(`./user/profiles/${toSaveId}/account.json`, this.accounts[toSaveId]);
+            logger.logInfo(`Saved account data for: ${toSaveId}`);
+        }
+        
     }
 
     find(sessionID) {
@@ -60,14 +76,13 @@ class AccountServer {
 
         this.accounts[accountID] = {
             "id": accountID,
-            "nickname": "",
             "email": info.email,
             "password": info.password,
             "wipe": true,
             "edition": info.edition
         }
         
-        this.saveToDisk();
+        this.saveToDisk(accountID);
         return "";
     }
     
@@ -77,7 +92,7 @@ class AccountServer {
         if (accountID !== "") {
             delete this.accounts[accountID];
             utility.removeDir(`user/profiles/${accountID}/`);
-            this.saveToDisk();
+            //this.saveToDisk();
         }
 
         return accountID;
@@ -88,7 +103,7 @@ class AccountServer {
 
         if (accountID !== "") {
             this.accounts[accountID].email = info.change;
-            this.saveToDisk();
+            this.saveToDisk(accountID);
         }
 
         return accountID;
@@ -99,7 +114,7 @@ class AccountServer {
 
         if (accountID !== "") {
             this.accounts[accountID].password = info.change;
-            this.saveToDisk();
+            this.saveToDisk(accountID);
         }
 
         return accountID;
@@ -111,7 +126,7 @@ class AccountServer {
         if (accountID !== "") {
             this.accounts[accountID].edition = info.edition;
             this.setWipe(accountID, true);
-            this.saveToDisk();
+            this.saveToDisk(accountID);
         }
 
         return accountID;
