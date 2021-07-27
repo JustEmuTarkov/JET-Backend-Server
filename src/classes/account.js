@@ -19,6 +19,10 @@ class AccountServer {
         }
         this.accounts = accountsData;
     }
+	
+	getList(){
+		return this.accounts;
+	}
 
     saveToDisk(toSaveId = 0) {
         if(toSaveId == 0){

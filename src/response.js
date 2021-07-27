@@ -360,7 +360,8 @@ class Responses {
     return response_f.nullResponse();
   }
   clientGameStart(url, info, sessionID) {
-    let accounts = fileIO.readParsed(db.user.configs.accounts);
+	  
+    let accounts = account_f.handler.getList();
     for (let account in accounts) {
       if (account == sessionID) {
         if (!fileIO.exist("user/profiles/" + sessionID + "/character.json")) logger.logWarning("New account login!");

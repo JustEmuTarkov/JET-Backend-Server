@@ -1,6 +1,6 @@
 {
   "autosave": {
-    "saveOnReceive": true,
+    "saveOnReceive": false,
     "saveOnExit": true,
     "saveIntervalSec": 60
   },
