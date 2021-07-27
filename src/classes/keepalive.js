@@ -92,9 +92,9 @@ function updatePlayerHideout(sessionID) {
 
     let needGenerator = false;
     if (prod == "14") {
-      let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
+      let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
       if (needGenerator == true && isGeneratorOn == false) {
-        time_elapsed = time_elapsed * 0.2;
+        time_elapsed = Math.floor(time_elapsed * 0.2);
       }
       pmcData.Hideout.Production[prod].Progress += time_elapsed;
       /*
@@ -113,7 +113,7 @@ function updatePlayerHideout(sessionID) {
           //if its btcFarm
           pmcData.Hideout.Production[prod] = updateBitcoinFarm(pmcData.Hideout.Production[prod], recipe, btcFarmCGs, isGeneratorOn, pmcData);
         } else {
-          let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
+          let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
           if (needGenerator == true && isGeneratorOn == false) {
             time_elapsed = time_elapsed * 0.2;
           }
@@ -263,7 +263,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
   }
 
   let production = fileIO.readParsed(db.user.cache.hideout_production).data.find((prodArea) => prodArea.areaType == 20);
-  let time_elapsed = Math.floor(Date.now() / 1000) - btcProd.StartTime;
+  let time_elapsed = Math.floor(Date.now() / 1000) - btcProd.StartTimestamp;
 
   if (isGeneratorOn == true) {
     btcProd.Progress += time_elapsed;
@@ -288,7 +288,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
     }
   }
 
-  btcProd.StartTime = Math.floor(Date.now() / 1000);
+  btcProd.StartTimestamp = Math.floor(Date.now() / 1000);
   return btcProd;
 }
 

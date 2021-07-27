@@ -54,10 +54,7 @@
 				"templateId": "5ab0f32686f7745dd409f56c",
 				"hasRewards": true,
 				"rewardCollected": true,
-				"items": {
-					"stash": "I-3e88d1b5-8f94-48e8-949f-e0392c0ce64b",
-					"data": []
-				},
+				"items": {},
 				"maxStorageTime": 172800
 			},
 			{
@@ -79,10 +76,7 @@
 				"templateId": "5ab0f32686f7745dd409f576",
 				"hasRewards": true,
 				"rewardCollected": true,
-				"items": {
-					"stash": "I-442d9b9c-a9a3-46f2-b637-a3818aba56f5",
-					"data": []
-				},
+				"items": {},
 				"maxStorageTime": 172800
 			},
 			{
@@ -104,10 +98,7 @@
 				"templateId": "5ab0f32686f7745dd409f56f",
 				"hasRewards": true,
 				"rewardCollected": true,
-				"items": {
-					"stash": "I-e6dec21f-ab8f-436d-b7cc-2627fac3e209",
-					"data": []
-				},
+				"items": {},
 				"maxStorageTime": 172800
 			},
 			{
@@ -134,7 +125,7 @@
 			}
 		],
 		"pinned": false,
-		"new": 2,
+		"new": 0,
 		"attachmentsNew": 0
 	}
 }

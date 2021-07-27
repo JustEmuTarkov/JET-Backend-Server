@@ -25,7 +25,7 @@ function handleBitcoinReproduction(pmcData, sessionID) {
 }
 
 function registerProduction(pmcData, body, sessionID) {
-  const databaseHideoutProduction = _database.hideout.production.find(production => production._id === body.recipeId);
+  const databaseHideoutProduction = _database.hideout.production.find((production) => production._id === body.recipeId);
   try {
     pmcData.Hideout.Production[databaseHideoutProduction._id] = {
       Progress: 0,
@@ -33,8 +33,8 @@ function registerProduction(pmcData, body, sessionID) {
       RecipeId: body.recipeId,
       Products: [],
       SkipTime: 0,
-      ProductionTime: databaseHideoutProduction.productionTime,
-      StartTimestamp: utility.getTimestamp()
+      ProductionTime: parseInt(databaseHideoutProduction.productionTime),
+      StartTimestamp: utility.getTimestamp(),
     };
   } catch (e) {
     logger.logError(`Attempted to register production of ${body.recipeId}, but no production was found in the profile.`);
@@ -44,7 +44,7 @@ function registerProduction(pmcData, body, sessionID) {
 function applyPlayerUpgradesBonuses(pmcData, bonus) {
   switch (bonus.type) {
     case "StashSize":
-      let ProfileStash = pmcData.Inventory.items.find(item => item._id == pmcData.Inventory.stash);
+      let ProfileStash = pmcData.Inventory.items.find((item) => item._id == pmcData.Inventory.stash);
       ProfileStash._tpl = bonus.templateId;
       break;
 
@@ -73,47 +73,44 @@ function applyPlayerUpgradesBonuses(pmcData, bonus) {
 }
 
 module.exports.upgrade = (pmcData, body, sessionID) => {
+  let foundHideoutArea = pmcData.Hideout.Areas.find((area) => area.type == body.areaType);
+  let databaseHideoutArea = _database.hideout.areas.find((area) => area.type == body.areaType);
 
-  let foundHideoutArea = pmcData.Hideout.Areas.find(area => area.type == body.areaType);
-  let databaseHideoutArea = _database.hideout.areas.find(area => area.type == body.areaType);
-  
   // check if they are properly obrained
-  if(!foundHideoutArea){
-	  logger.logWarning("Unable to find area in player data by AreaType: " + body.areaType);
-	  return;
+  if (!foundHideoutArea) {
+    logger.logWarning("Unable to find area in player data by AreaType: " + body.areaType);
+    return;
   }
-  if(!databaseHideoutArea){
-	  logger.logWarning("Unable to find area in database by AreaType: " + body.areaType);
-	  return;
+  if (!databaseHideoutArea) {
+    logger.logWarning("Unable to find area in database by AreaType: " + body.areaType);
+    return;
   }
   const constructionLevel = foundHideoutArea.level + 1;
-	if(constructionLevel >= databaseHideoutArea.stages.length)
-  {
+  if (constructionLevel >= databaseHideoutArea.stages.length) {
     // unable to upgrade cause max level reached
-	  logger.logWarning(`Unable to upgrade area cause level reached maximum(${constructionLevel}) for area: ${body.areaType}`);
-	  return;
+    logger.logWarning(`Unable to upgrade area cause level reached maximum(${constructionLevel}) for area: ${body.areaType}`);
+    return;
   }
   // everything seems correct now lets update data and then remove items !!!
-	let ctime = databaseHideoutArea.stages[constructionLevel].constructionTime;
+  let ctime = databaseHideoutArea.stages[constructionLevel].constructionTime;
 
-	if (ctime > 0) {
-	  const timestamp = Math.floor(Date.now() / 1000);
+  if (ctime > 0) {
+    const timestamp = Math.floor(Date.now() / 1000);
 
-	  pmcData.Hideout.Areas[hideoutArea].completeTime = timestamp + ctime;
-	  pmcData.Hideout.Areas[hideoutArea].constructing = true;
-	}
+    pmcData.Hideout.Areas[hideoutArea].completeTime = timestamp + ctime;
+    pmcData.Hideout.Areas[hideoutArea].constructing = true;
+  }
 
   for (let itemToPay of body.items) {
-    let itemFromInventory = pmcData.Inventory.items.find(item => item._id == itemToPay.id);
-    if(!itemFromInventory){
+    let itemFromInventory = pmcData.Inventory.items.find((item) => item._id == itemToPay.id);
+    if (!itemFromInventory) {
       logger.logWarning("Unable to find items to pay: " + itemToPay.id);
       return;
     }
     // check if item has StackObjectsCount property
-    if(itemFromInventory.upd.hasOwnProperty('StackObjectsCount'))
-    {
+    if (itemFromInventory.upd.hasOwnProperty("StackObjectsCount")) {
       // now check if we should substract the amount or just delete the item...
-      if(itemFromInventory.upd.StackObjectsCount > itemToPay.count){
+      if (itemFromInventory.upd.StackObjectsCount > itemToPay.count) {
         itemFromInventory.upd.StackObjectsCount -= itemToPay.count;
       } else {
         move_f.removeItem(pmcData, itemFromInventory._id, sessionID);
@@ -124,16 +121,16 @@ module.exports.upgrade = (pmcData, body, sessionID) => {
     }
   }
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.upgradeComplete = (pmcData, body, sessionID) => {
-  let profileHideoutArea = pmcData.Hideout.Areas.find(area => area.type == body.areaType);
-  const databaseHideoutArea = global._database.hideout.areas.find(area => area.type == body.areaType);
-  if(!profileHideoutArea){
+  let profileHideoutArea = pmcData.Hideout.Areas.find((area) => area.type == body.areaType);
+  const databaseHideoutArea = global._database.hideout.areas.find((area) => area.type == body.areaType);
+  if (!profileHideoutArea) {
     logger.logWarning(`Unable to find specified area type ${body.areaType} in profile`);
     return;
   }
-  if(!databaseHideoutArea){
+  if (!databaseHideoutArea) {
     logger.logWarning(`Unable to find specified area type ${body.areaType} in database`);
     return;
   }
@@ -149,7 +146,7 @@ module.exports.upgradeComplete = (pmcData, body, sessionID) => {
   }
 
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.putItemsInAreaSlots = (pmcData, body, sessionID) => {
   for (let itemToMove in body.items) {
@@ -186,13 +183,13 @@ module.exports.putItemsInAreaSlots = (pmcData, body, sessionID) => {
   }
 
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.takeItemsFromAreaSlots = (pmcData, body, sessionID) => {
   let output = item_f.handler.getOutput(sessionID);
 
-  let profileHideoutArea = pmcData.Hideout.Areas.find(area => area.type == body.areaType);
-  if(!profileHideoutArea){
+  let profileHideoutArea = pmcData.Hideout.Areas.find((area) => area.type == body.areaType);
+  if (!profileHideoutArea) {
     logger.logWarning(`Unable to find hideout area type ${body.areaType} in profile`);
     return;
   }
@@ -228,20 +225,19 @@ module.exports.takeItemsFromAreaSlots = (pmcData, body, sessionID) => {
     pmcData = profile_f.handler.getPmcProfile(sessionID);
     profileHideoutArea.slots.splice(0, 1);
   }
-  
 
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.toggleArea = (pmcData, body, sessionID) => {
-  let profileHideoutArea = pmcData.Hideout.Areas.find(area => area.type == body.areaType);
-  if(!profileHideoutArea){
+  let profileHideoutArea = pmcData.Hideout.Areas.find((area) => area.type == body.areaType);
+  if (!profileHideoutArea) {
     logger.logWarning(`Unable to find hideout area type ${body.areaType} in profile`);
     return;
   }
   profileHideoutArea.active = body.enabled;
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.singleProductionStart = (pmcData, body, sessionID) => {
   registerProduction(pmcData, body, sessionID);
@@ -253,27 +249,24 @@ module.exports.singleProductionStart = (pmcData, body, sessionID) => {
   }
 
   return output;
-}
-
+};
 
 module.exports.continuousProductionStart = (pmcData, body, sessionID) => {
   registerProduction(pmcData, body, sessionID);
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
-
   for (let itemToPay of body.items) {
-    let itemFromInventory = pmcData.Inventory.items.find(item => item._id == itemToPay.id);
-    if(!itemFromInventory){
+    let itemFromInventory = pmcData.Inventory.items.find((item) => item._id == itemToPay.id);
+    if (!itemFromInventory) {
       logger.logWarning("Unable to find items to pay: " + itemToPay.id);
       return;
     }
     // check if item has StackObjectsCount property
-    if(itemFromInventory.upd.hasOwnProperty('StackObjectsCount'))
-    {
+    if (itemFromInventory.upd.hasOwnProperty("StackObjectsCount")) {
       // now check if we should substract the amount or just delete the item...
-      if(itemFromInventory.upd.StackObjectsCount > itemToPay.count){
+      if (itemFromInventory.upd.StackObjectsCount > itemToPay.count) {
         itemFromInventory.upd.StackObjectsCount -= itemToPay.count;
       } else {
         move_f.removeItem(pmcData, itemFromInventory._id, sessionID);
@@ -284,9 +277,9 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
     }
   }
 
-  const databaseHideoutScavcase = _database.hideout.scavcase.find(scavcase => scavcase._id == body.recipeId);
+  const databaseHideoutScavcase = _database.hideout.scavcase.find((scavcase) => scavcase._id == body.recipeId);
 
-  if(!databaseHideoutScavcase){
+  if (!databaseHideoutScavcase) {
     logger.logWarning(`Unable to find hideout scavcase ${body.recipeId} in database`);
     return;
   }
@@ -294,25 +287,25 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
   let rarityItemCounter = {};
   let products = [];
 
-  const filterEndProducts = databaseHideoutScavcase.EndProducts.filter(product => product.max > 0);
-  if(Object.keys(filterEndProducts).length == 0)
-  {
+  const filterEndProducts = databaseHideoutScavcase.EndProducts.filter((product) => product.max > 0);
+  if (Object.keys(filterEndProducts).length == 0) {
     logger.logWarning(`Not found any EndProducts meeting criteria of product.max > 0`);
     return;
   }
-  for(let rarity in filterEndProducts){
+  for (let rarity in filterEndProducts) {
     //rarityItemCounter[rarity] = filterEndProducts[rarity].max;
-    const rollAmountOfRewards = utility.getRandomInt(filterEndProducts[rarity].min, filterEndProducts[rarity].max)
-    for(let i = 0; i < rollAmountOfRewards; i++){
-      const filteredByRarity = global._database.items.filter(item => item._props.Rarity && item._props.Rarity === rarity);
-      if(Object.keys(filteredByRarity).length == 0){
+    const rollAmountOfRewards = utility.getRandomInt(filterEndProducts[rarity].min, filterEndProducts[rarity].max);
+    for (let i = 0; i < rollAmountOfRewards; i++) {
+      const filteredByRarity = global._database.items.filter((item) => item._props.Rarity && item._props.Rarity === rarity);
+      if (Object.keys(filteredByRarity).length == 0) {
         logger.logWarning(`filteredByRarity returned length of 0 which shouldnt be happening!!!`);
         continue;
       }
-      const rolledItem = Object.keys( filteredByRarity )[ utility.getRandomIntEx( Object.keys(filteredByRarity).length ) ];
-      if(!rolledItem){
+      const rolledItem = Object.keys(filteredByRarity)[utility.getRandomIntEx(Object.keys(filteredByRarity).length)];
+      if (!rolledItem) {
         // fallback
-        i--; continue;
+        i--;
+        continue;
       }
       products.push({
         _id: utility.generateNewItemId(),
@@ -329,12 +322,12 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
     RecipeId: body.recipeId,
     Products: [],
     SkipTime: 0,
-    ProductionTime: databaseHideoutScavcase.productionTime,
-    StartTimestamp: utility.getTimestamp()
+    ProductionTime: parseInt(databaseHideoutScavcase.productionTime),
+    StartTimestamp: utility.getTimestamp(),
   };
 
   return item_f.handler.getOutput(sessionID);
-}
+};
 
 module.exports.takeProduction = (pmcData, body, sessionID) => {
   if (body.recipeId === "5d5c205bd582a50d042a3c0e") {
@@ -404,5 +397,4 @@ module.exports.takeProduction = (pmcData, body, sessionID) => {
   }
 
   return "";
-}
-
+};
