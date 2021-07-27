@@ -4737,7 +4737,8 @@
 					"StackObjectsCount": 99999999
 				}
 			}
-		]
+		],
+		"currentStack": null
 	},
 	"57347baf24597738002c6178": {
 		"loyality": 2,
@@ -4829,7 +4830,8 @@
 					"StackObjectsCount": 99999999
 				}
 			}
-		]
+		],
+		"currentStack": null
 	},
 	"57347c77245977448d35f6e2": {
 		"loyality": 2,
@@ -4852,7 +4854,8 @@
 					"StackObjectsCount": 99999999
 				}
 			}
-		]
+		],
+		"currentStack": null
 	},
 	"57347c93245977448d35f6e3": {
 		"loyality": 2,
@@ -33282,7 +33285,8 @@
 					"StackObjectsCount": 99999999
 				}
 			}
-		]
+		],
+		"currentStack": null
 	},
 	"5c165d832e2216398b5a7e36": {
 		"loyality": 2,
@@ -39998,7 +40002,8 @@
 					"StackObjectsCount": 99999999
 				}
 			}
-		]
+		],
+		"currentStack": null
 	},
 	"5d1b317c86f7742523398392": {
 		"loyality": 2,

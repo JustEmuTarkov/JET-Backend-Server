@@ -9,7 +9,7 @@
 		"MemoryManagment": {
 			"GigabytesRequiredToDisableGCDuringRaid": 128,
 			"HeapPreAllocationEnabled": true,
-			"HeapPreAllocationMB": 100,
+			"HeapPreAllocationMB": 1000,
 			"OverrideRamCleanerSettings": true,
 			"RamCleanerEnabled": true
 		},

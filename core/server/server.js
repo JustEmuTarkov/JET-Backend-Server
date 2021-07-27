@@ -230,7 +230,8 @@ class Server {
       req.url != "/player/health/sync" &&
       !req.url.includes(".css") &&
       !req.url.includes(".otf") &&
-      !req.url.includes(".ico")
+      !req.url.includes(".ico") &&
+      !req.url.includes("singleplayer/settings/bot/difficulty")
     )
       logger.logRequest(req.url, `${displaySessID}[${IP}] `);
 

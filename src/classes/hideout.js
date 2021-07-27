@@ -294,6 +294,8 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
   }
   for (let rarity in filterEndProducts) {
     //rarityItemCounter[rarity] = filterEndProducts[rarity].max;
+
+    // TODO: check if line below WORKS !?!?
     const rollAmountOfRewards = utility.getRandomInt(filterEndProducts[rarity].min, filterEndProducts[rarity].max);
     for (let i = 0; i < rollAmountOfRewards; i++) {
       const filteredByRarity = global._database.items.filter((item) => item._props.Rarity && item._props.Rarity === rarity);
@@ -367,8 +369,8 @@ module.exports.takeProduction = (pmcData, body, sessionID) => {
     return move_f.addItem(pmcData, newReq, sessionID, true);
   }
 
-  for (let recipe in scavcase.data) {
-    if (body.recipeId !== scavcase.data[recipe]._id) {
+  for (let recipe in _database.hideout.scavcase.data) {
+    if (body.recipeId !== _database.hideout.scavcase.data[recipe]._id) {
       continue;
     }
 
