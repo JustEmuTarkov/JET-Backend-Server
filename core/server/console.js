@@ -48,11 +48,13 @@ class ConsoleResponse {
   getDebugEnabled() {
     return debugSessionEnabled;
   }
-  addCommand(commandName, _function) {
+  addCommand(commandName, commandDescription, _function) {
     this.commands[commandName] = _function;
+	this.commandsInfo[commandName] = commandDescription;
   }
   removeCommand(commandName) {
     delete this.commands[commandName];
+	delete this.commandsInfo[commandName];
   }
   // commands below !!
   setDebugSession(commandStructure) {

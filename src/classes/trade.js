@@ -45,7 +45,7 @@ exports.sellItem = (pmcData, body, sessionID) => {
 
         // remove item
         insurance_f.handler.remove(pmcData, checkID, sessionID);
-        output = move_f.removeItem(pmcData, checkID, output, sessionID);
+        output = move_f.removeItem(pmcData, checkID, sessionID);
 
         // add money to return to the player
         if (output !== "") {

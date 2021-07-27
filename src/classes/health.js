@@ -55,7 +55,7 @@ class HealthServer {
                 }
     
                 if (item.upd.MedKit.HpResource === 0) {
-                    move_f.removeItem(pmcData, body.item, output, sessionID);
+                    move_f.removeItem(pmcData, body.item, sessionID);
                 }
             }
         }
@@ -86,7 +86,7 @@ class HealthServer {
         }
 
         if (maxResource === 1 || resourceLeft < 1) {
-            output = move_f.removeItem(pmcData, body.item, output, sessionID);
+            output = move_f.removeItem(pmcData, body.item, sessionID);
         }
 
         return output;

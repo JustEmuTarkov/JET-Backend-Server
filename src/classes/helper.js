@@ -169,7 +169,7 @@ function payMoney(pmcData, body, sessionID) {
 
       if (item !== undefined) {
         if (!isMoneyTpl(item._tpl)) {
-          output = move_f.removeItem(pmcData, item._id, output, sessionID);
+          output = move_f.removeItem(pmcData, item._id, sessionID);
           body.scheme_items[index].count = 0;
         } else {
           currencyTpl = item._tpl;
@@ -208,10 +208,10 @@ function payMoney(pmcData, body, sessionID) {
 
     if (leftToPay >= itemAmount) {
       leftToPay -= itemAmount;
-      output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
+      output = move_f.removeItem(pmcData, moneyItem._id, sessionID);
     } else {
       if (!moneyItem.upd) {
-        output = move_f.removeItem(pmcData, moneyItem._id, output, sessionID);
+        output = move_f.removeItem(pmcData, moneyItem._id, sessionID);
       } else {
         moneyItem.upd.StackObjectsCount -= leftToPay;
         if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];

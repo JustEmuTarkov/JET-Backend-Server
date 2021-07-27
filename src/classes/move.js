@@ -208,7 +208,7 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
  * Remove Item
  * Deep tree item deletion / Delets main item and all sub items with sub items ... and so on.
  */
-function removeItem(profileData, body, output, sessionID) {
+function removeItem(profileData, body, sessionID) {
   let toDo = [body];
   //Find the item and all of it's relates
   if (toDo[0] === undefined || toDo[0] === null || toDo[0] === "undefined") {
@@ -222,7 +222,7 @@ function removeItem(profileData, body, output, sessionID) {
 
 function discardItem(pmcData, body, sessionID) {
   insurance_f.handler.remove(pmcData, body.item, sessionID);
-  return removeItem(pmcData, body.item, item_f.handler.getOutput(sessionID), sessionID);
+  return removeItem(pmcData, body.item, sessionID);
 }
 
 /* Split Item
@@ -677,6 +677,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
       toDo.splice(0, 1);
     }
   }
+  item_f.handler.setOutput(output);
   return output;
 }
 
