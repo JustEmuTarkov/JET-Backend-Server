@@ -150,6 +150,93 @@ class HealthServer {
         this.healths[sessionID] = node;
     }
     
+    healOverTime(pmcData, info, sessionID){
+        // without hideout how much you regenerate ? 
+        const LastUpdate = pmcData.Health.UpdateTime;
+        const NewUpdate = utility.getTimestamp();
+        const TimeElapsedFactor = (LastUpdate - NewUpdate) / 3600;
+
+        function GetNumberOfBodyPartsToUpdate(pmcData){
+            let countBodyPartsToUpdate = 0;
+            if(pmcData.Health.BodyParts.Chest.Health.Current < pmcData.Health.BodyParts.Chest.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            if(pmcData.Health.BodyParts.Head.Health.Current < pmcData.Health.BodyParts.Head.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            if(pmcData.Health.BodyParts.LeftArm.Health.Current < pmcData.Health.BodyParts.LeftArm.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            if(pmcData.Health.BodyParts.RightArm.Health.Current < pmcData.Health.BodyParts.RightArm.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            if(pmcData.Health.BodyParts.RightLeg.Health.Current < pmcData.Health.BodyParts.RightLeg.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            if(pmcData.Health.BodyParts.Stomach.Health.Current < pmcData.Health.BodyParts.Stomach.Health.Maximum){
+                countBodyPartsToUpdate++;
+            }
+            return countBodyPartsToUpdate;
+        }
+        const healthRegenBonuses = pmcData.Bonuses.filter(bonus => bonus.type === "HealthRegeneration");
+        let healthRegen = 0;
+        healthRegenBonuses.forEach((bonus) => { healthRegen += (bonus.value / 2 * 9) });
+        healthRegen *= TimeElapsedFactor;
+
+        const energyRegenBonuses = pmcData.Bonuses.filter(bonus => bonus.type === "EnergyRegeneration");
+        let energyRegen = 0;
+        energyRegenBonuses.forEach((bonus) => { energyRegen += (bonus.value / 2) });
+        energyRegen *= TimeElapsedFactor;
+
+        const hydrationRegenBonuses = pmcData.Bonuses.filter(bonus => bonus.type === "HydrationRegeneration");
+        let hydrationRegen = 0;
+        hydrationRegenBonuses.forEach((bonus) => { hydrationRegen += (bonus.value / 2) });
+        hydrationRegen *= TimeElapsedFactor;
+        
+        if(healthRegen != 0){
+            const updateBodyPartPer = healthRegen / GetNumberOfBodyPartsToUpdate();
+            const GetBodyParts = Object.keys(pmcData.Health.BodyParts)
+            for(const bodyPart in GetBodyParts){
+                if(pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Current < pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Maximum){
+                    pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Current += updateBodyPartPer;
+                    if(pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Current > pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Maximum)
+                    {
+                        pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Current = pmcData.Health.BodyParts[GetBodyParts[bodyPart]].Health.Maximum;
+                    }
+                }
+            }
+        }
+        if(energyRegen != 0){
+            if(pmcData.Health.Energy.Current < pmcData.Health.Energy.Maximum){
+                pmcData.Health.Energy.Current += energyRegen;
+                if(pmcData.Health.Energy.Current > pmcData.Health.Energy.Maximum)
+                {
+                    pmcData.Health.Energy.Current = pmcData.Health.Energy.Maximum;
+                }
+            }
+        }
+        if(hydrationRegen != 0){
+            if(pmcData.Health.Hydration.Current < pmcData.Health.Hydration.Maximum){
+                pmcData.Health.Hydration.Current += hydrationRegen;
+                if(pmcData.Health.Hydration.Current > pmcData.Health.Hydration.Maximum)
+                {
+                    pmcData.Health.Hydration.Current = pmcData.Health.Hydration.Maximum;
+                }
+            }
+        }
+        /*/
+        pmcData.Health.BodyParts.Chest.Health.Current
+        pmcData.Health.BodyParts.Head.Health.Current
+        pmcData.Health.BodyParts.LeftArm.Health.Current
+        pmcData.Health.BodyParts.LeftLeg.Health.Current
+        pmcData.Health.BodyParts.RightArm.Health.Current
+        pmcData.Health.BodyParts.RightLeg.Health.Current
+        pmcData.Health.BodyParts.Stomach.Health.Current
+        pmcData.Health.Energy.Current
+        pmcData.Health.Hydration.Current
+        pmcData.Health.UpdateTime = utility.getTimestamp();
+        /*/
+    }
     healthTreatment(pmcData, info, sessionID) {
         let body = {
             "Action": "RestoreHealth",
@@ -213,6 +300,7 @@ class HealthServer {
         if (this.isEmpty(bodyPart.Effects))
             delete bodyPart.Effects;
     }
+
 
     /* apply the health changes to the profile */
     applyHealth(pmcData, sessionID) {

@@ -16,10 +16,14 @@ class Responses {
       "/client/game/profile/create": this.clientGameProfileCreate,
       "/client/game/profile/items/moving": this.clientGameProfileItemsMoving,
       "/client/game/profile/list": this.clientGameProfileList,
-      "/client/game/profile/nickname/change": this.clientGameProfileNicknameChange,
-      "/client/game/profile/nickname/reserved": this.clientGameProfileNicknameReserved,
-      "/client/game/profile/nickname/validate": this.clientGameProfileNicknameValidate,
-      "/client/game/profile/savage/regenerate": this.clientGameProfileSavageRegenerate,
+      "/client/game/profile/nickname/change":
+        this.clientGameProfileNicknameChange,
+      "/client/game/profile/nickname/reserved":
+        this.clientGameProfileNicknameReserved,
+      "/client/game/profile/nickname/validate":
+        this.clientGameProfileNicknameValidate,
+      "/client/game/profile/savage/regenerate":
+        this.clientGameProfileSavageRegenerate,
       "/client/game/profile/search": this.clientGameProfileSearch,
       "/client/game/profile/select": this.clientGameProfileSelect,
       "/client/game/profile/voice/change": this.clientGameProfileVoiceChange,
@@ -31,14 +35,16 @@ class Responses {
       "/client/handbook/templates": this.clientHandbookTemplates,
       "/client/hideout/areas": this.clientHideoutAreas,
       "/client/hideout/production/recipes": this.clientHideoutProductionRecipes,
-      "/client/hideout/production/scavcase/recipes": this.clientHideoutProductionScavcaseRecipes,
+      "/client/hideout/production/scavcase/recipes":
+        this.clientHideoutProductionScavcaseRecipes,
       "/client/hideout/settings": this.clientHideoutSettings,
       "/client/insurance/items/list/cost": this.clientInsuranceItemsListCost,
       "/client/items": this.clientItems,
       "/client/items/prices": this.clientItemsPrices,
       "/client/languages": this.clientLanguages,
       "/client/locations": this.clientLocations,
-      "/client/mail/dialog/getAllAttachments": this.clientMailDialogGetAllAttachments,
+      "/client/mail/dialog/getAllAttachments":
+        this.clientMailDialogGetAllAttachments,
       "/client/mail/dialog/info": this.clientMailDialogInfo,
       "/client/mail/dialog/list": this.clientMailDialogList,
       "/client/mail/dialog/pin": this.clientMailDialogPin,
@@ -73,7 +79,8 @@ class Responses {
       "/client/settings": this.clientSettings,
       "/client/trading/api/getTradersList": this.clientTradingApiGetTradersList,
       "/client/trading/api/traderSettings": this.clientTradingApiTraderSettings,
-      "/client/trading/customization/storage": this.clientTradingCustomizationStorage,
+      "/client/trading/customization/storage":
+        this.clientTradingCustomizationStorage,
       "/client/weather": this.clientWeather,
       "/launcher/profile/change/email": this.launcherProfileChangeEmail,
       "/launcher/profile/change/password": this.launcherProfileChangePassword,
@@ -96,23 +103,30 @@ class Responses {
       "/server/config/server": this.serverConfigServer,
       "/server/softreset": this.serverSoftReset,
       "/singleplayer/bundles": this.singleplayerBundles,
-      "/singleplayer/settings/raid/endstate": this.singleplayerSettingsRaidEndstate,
+      "/singleplayer/settings/raid/endstate":
+        this.singleplayerSettingsRaidEndstate,
       "/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu,
-      "/singleplayer/settings/bot/difficulty": this.singleplayerSettingsBotDifficulty,
+      "/singleplayer/settings/bot/difficulty":
+        this.singleplayerSettingsBotDifficulty,
     };
     this.dynamicResponses = {
       "/client/locale": this.dynClientLocale,
       "/client/menu/locale": this.dynClientMenuLocale,
       "/client/location/getLocalloot": this.dynClientLocationGetLocalloot,
-      "/client/trading/api/getUserAssortPrice/trader": this.dynClientTradingApiGetUserAssortPriceTrader,
-      "/client/trading/api/getTraderAssort": this.dynClientTradingApiGetTraderAssort,
+      "/client/trading/api/getUserAssortPrice/trader":
+        this.dynClientTradingApiGetUserAssortPriceTrader,
+      "/client/trading/api/getTraderAssort":
+        this.dynClientTradingApiGetTraderAssort,
       "/client/trading/api/getTrader": this.dynClientTradingApiGetTrader,
       "/client/trading/customization": this.dynClientTradingCustomization,
       "server/profile": this.dynServerProfile,
-      "singleplayer/settings/bot/difficulty": this.dynSingleplayerSettingsBotDifficulty,
+      "singleplayer/settings/bot/difficulty":
+        this.dynSingleplayerSettingsBotDifficulty,
       "singleplayer/settings/bot/limit": this.dynSingleplayerSettingsBotLimit,
-      "singleplayer/settings/defaultRaidSettings": this.dynSingleplayerSettingsDefaultRaidSettings,
-      "singleplayer/settings/weapon/durability": this.dynSingleplayerSettingsWeaponDurability,
+      "singleplayer/settings/defaultRaidSettings":
+        this.dynSingleplayerSettingsDefaultRaidSettings,
+      "singleplayer/settings/weapon/durability":
+        this.dynSingleplayerSettingsWeaponDurability,
       "push/notifier/get": this.dynPushNotifierGet,
       notifierBase: this.dynNotifierBase,
       notifierServer: this.dynNotifierServer,
@@ -126,10 +140,14 @@ class Responses {
   //dynamic
   dynApiLocation(url, info, sessionID) {
     // if (url.includes("factory4_day")) { return response_f.noBody(fileIO.readParsed(db.locations_test.factory4_day1).Location); }
-    return response_f.noBody(location_f.handler.get(url.replace("/api/location/", ""), sessionID));
+    return response_f.noBody(
+      location_f.handler.get(url.replace("/api/location/", ""), sessionID)
+    );
   }
   dynClientLocale(url, info, sessionID) {
-    return response_f.getBody(locale_f.handler.getGlobal(url.replace("/client/locale/", "")));
+    return response_f.getBody(
+      locale_f.handler.getGlobal(url.replace("/client/locale/", ""))
+    );
   }
   dynClientLocationGetLocalloot(url, info, sessionID) {
     let location_name = "";
@@ -143,7 +161,9 @@ class Responses {
     return response_f.getBody(location_f.handler.get(location_name));
   }
   dynClientMenuLocale(url, info, sessionID) {
-    return response_f.getBody(locale_f.handler.getMenu(url.replace("/client/menu/locale/", "")));
+    return response_f.getBody(
+      locale_f.handler.getMenu(url.replace("/client/menu/locale/", ""))
+    );
   }
   dynClientTradingApiGetTrader(url, info, sessionID) {
     let TraderID = url.split("/");
@@ -156,12 +176,19 @@ class Responses {
     return response_f.getBody(trader_f.handler.getAssort(sessionID, TraderID));
   }
   dynClientTradingApiGetUserAssortPriceTrader(url, info, sessionID) {
-    return response_f.getBody(trader_f.handler.getPurchasesData(url.substr(url.lastIndexOf("/") + 1), sessionID));
+    return response_f.getBody(
+      trader_f.handler.getPurchasesData(
+        url.substr(url.lastIndexOf("/") + 1),
+        sessionID
+      )
+    );
   }
   dynClientTradingCustomization(url, info, sessionID) {
     let splittedUrl = url.split("/");
     let traderID = splittedUrl[splittedUrl.length - 2];
-    return response_f.getBody(trader_f.handler.getCustomization(traderID, sessionID));
+    return response_f.getBody(
+      trader_f.handler.getCustomization(traderID, sessionID)
+    );
   }
   dynBundle() {
     return "BUNDLE";
@@ -185,7 +212,9 @@ class Responses {
     return response_f.emptyArrayResponse();
   }
   dynServerProfile(url, info, sessionID) {
-    let myID = url.replace("/server/profile/pmc", "").replace("/server/profile/scav", "");
+    let myID = url
+      .replace("/server/profile/pmc", "")
+      .replace("/server/profile/scav", "");
     return response_f.getBody(profile_f.handler.getProfileById(myID));
   }
   dynSingleplayerSettingsBotDifficulty(url, info, sessionID) {
@@ -201,10 +230,14 @@ class Responses {
     return response_f.noBody(bots_f.getBotLimit(type));
   }
   dynSingleplayerSettingsDefaultRaidSettings(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.defaultRaidSettings);
+    return response_f.noBody(
+      global._database.gameplayConfig.defaultRaidSettings
+    );
   }
   dynSingleplayerSettingsWeaponDurability(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.inraid.saveWeaponDurability);
+    return response_f.noBody(
+      global._database.gameplayConfig.inraid.saveWeaponDurability
+    );
   }
 
   //static
@@ -242,7 +275,11 @@ class Responses {
     return response_f.emptyArrayResponse();
   }
   clientFriendRequestSend(url, info, sessionID) {
-    return response_f.noBody({ requestId: "¯_(ツ)_/¯", retryAfter: 0, status: 0 });
+    return response_f.noBody({
+      requestId: "¯_(ツ)_/¯",
+      retryAfter: 0,
+      status: 0,
+    });
   }
   clientGameBotGenerate(url, info, sessionID) {
     return response_f.getBody(bots_f.generate(info));
@@ -278,7 +315,11 @@ class Responses {
     return response_f.getBody(obj);
   }
   clientGameKeepalive(url, info, sessionID) {
-    if (typeof sessionID == "undefined") return response_f.getBody({ msg: "No Session", utc_time: utility.getTimestamp() });
+    if (typeof sessionID == "undefined")
+      return response_f.getBody({
+        msg: "No Session",
+        utc_time: utility.getTimestamp(),
+      });
     keepalive_f.main(sessionID);
     return response_f.getBody({ msg: "OK", utc_time: utility.getTimestamp() });
   }
@@ -294,20 +335,33 @@ class Responses {
     return response_f.getBody(data);
   }
   clientGameProfileList(url, info, sessionID) {
+    health_f.handler.healOverTime(
+      profile_f.handler.getPmcProfile(sessionID),
+      info,
+      sessionID
+    );
+
     return response_f.getBody(profile_f.handler.getCompleteProfile(sessionID));
   }
   clientGameProfileNicknameChange(url, info, sessionID) {
     let output = profile_f.handler.changeNickname(info, sessionID);
 
     if (output == "taken") {
-      return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse);
+      return response_f.getBody(
+        null,
+        255,
+        serverConfig.translations.alreadyInUse
+      );
     }
 
     if (output == "tooshort") {
       return response_f.getBody(null, 256, serverConfig.translations.tooShort);
     }
 
-    return response_f.getBody({ status: 0, nicknamechangedate: Math.floor(new Date() / 1000) });
+    return response_f.getBody({
+      status: 0,
+      nicknamechangedate: Math.floor(new Date() / 1000),
+    });
   }
   clientGameProfileNicknameReserved(url, info, sessionID) {
     return response_f.getBody(account_f.handler.getReservedNickname(sessionID));
@@ -316,7 +370,11 @@ class Responses {
     let output = profile_f.handler.validateNickname(info, sessionID);
 
     if (output == "taken") {
-      return response_f.getBody(null, 255, serverConfig.translations.alreadyInUse);
+      return response_f.getBody(
+        null,
+        255,
+        serverConfig.translations.alreadyInUse
+      );
     }
 
     if (output == "tooshort") {
@@ -329,13 +387,21 @@ class Responses {
     return response_f.getBody([profile_f.handler.generateScav(sessionID)]);
   }
   clientGameProfileSearch(url, info, sessionID) {
-    let ids = Object.keys(account_f.handler.accounts).filter((x) => x != sessionID);
+    let ids = Object.keys(account_f.handler.accounts).filter(
+      (x) => x != sessionID
+    );
     let users = [];
     for (let i in ids) {
       let id = ids[i];
       if (!fileIO.exist(`user/profiles/${id}/character.json`)) continue;
       let character = fileIO.readParsed(`user/profiles/${id}/character.json`);
-      if (!character.Info.Nickname || !character.Info.Nickname.toLowerCase().includes(info.nickname.toLowerCase())) continue;
+      if (
+        !character.Info.Nickname ||
+        !character.Info.Nickname.toLowerCase().includes(
+          info.nickname.toLowerCase()
+        )
+      )
+        continue;
       let obj = { Info: {} };
       obj._id = character.aid;
       obj.Info.Nickname = character.Info.Nickname;
@@ -352,7 +418,13 @@ class Responses {
   clientGameProfileSelect(url, info, sessionID) {
     return response_f.getBody({
       status: "ok",
-      notifier: { server: server.getBackendUrl() + "/", channel_id: "testChannel", url: "", notifierServer: "", ws: "" },
+      notifier: {
+        server: server.getBackendUrl() + "/",
+        channel_id: "testChannel",
+        url: "",
+        notifierServer: "",
+        ws: "",
+      },
       notifierServer: "",
     });
   }
@@ -364,7 +436,8 @@ class Responses {
     let accounts = account_f.handler.getList();
     for (let account in accounts) {
       if (account == sessionID) {
-        if (!fileIO.exist("user/profiles/" + sessionID + "/character.json")) logger.logWarning("New account login!");
+        if (!fileIO.exist("user/profiles/" + sessionID + "/character.json"))
+          logger.logWarning("New account login!");
         return response_f.getBody(null, 0, null);
       }
     }
@@ -416,10 +489,14 @@ class Responses {
     return response_f.getBody(location_f.handler.generateAll());
   }
   clientMailDialogGetAllAttachments(url, info, sessionID) {
-    return response_f.getBody(dialogue_f.handler.getAllAttachments(info.dialogId, sessionID));
+    return response_f.getBody(
+      dialogue_f.handler.getAllAttachments(info.dialogId, sessionID)
+    );
   }
   clientMailDialogInfo(url, info, sessionID) {
-    return response_f.getBody(dialogue_f.handler.getDialogueInfo(info.dialogId, sessionID));
+    return response_f.getBody(
+      dialogue_f.handler.getDialogueInfo(info.dialogId, sessionID)
+    );
   }
   clientMailDialogList(url, info, sessionID) {
     return dialogue_f.handler.generateDialogueList(sessionID);
@@ -447,7 +524,11 @@ class Responses {
     let output = match_f.handler.getEnabled();
 
     if (output === false) {
-      return response_f.getBody(null, 999, "Offline mode enabled, if you are a server owner please change that in gameplay settings");
+      return response_f.getBody(
+        null,
+        999,
+        "Offline mode enabled, if you are a server owner please change that in gameplay settings"
+      );
     }
 
     return response_f.getBody(output);
@@ -507,7 +588,10 @@ class Responses {
 			  }
 			}
 		*/
-    offraid_f.handler.addPlayer(sessionID, { Location: info.locationName, Time: info.dateTime });
+    offraid_f.handler.addPlayer(sessionID, {
+      Location: info.locationName,
+      Time: info.dateTime,
+    });
     return response_f.getBody(null);
   }
   clientMatchOfflineEnd(url, info, sessionID) {
@@ -563,7 +647,9 @@ class Responses {
     return response_f.getBody([{ ip: server.getIp(), port: server.getPort() }]);
   }
   clientSettings(url, info, sessionID) {
-    return response_f.getBody(fileIO.readParsed("./db/base/client.settings.json"));
+    return response_f.getBody(
+      fileIO.readParsed("./db/base/client.settings.json")
+    );
   }
   clientTradingApiGetTradersList(url, info, sessionID) {
     return response_f.getBody(trader_f.handler.getAllTraders(sessionID));
@@ -647,7 +733,10 @@ class Responses {
     return home_f.RenderGameplayConfigPage("/server/config/gameplay");
   }
   serverConfigMods(url, body, sessionID) {
-    home_f.processSaveModData(body, global.internal.resolve("user/configs/mods.json"));
+    home_f.processSaveModData(
+      body,
+      global.internal.resolve("user/configs/mods.json")
+    );
     return home_f.RenderModsConfigPage("/server/config/mods");
   }
   serverConfigProfiles(url, body, sessionID) {
@@ -671,17 +760,24 @@ class Responses {
     return response_f.noBody(bundles_f.handler.getBundles(local));
   }
   singleplayerSettingsRaidEndstate(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.inraid.miaOnTimerEnd);
+    return response_f.noBody(
+      global._database.gameplayConfig.inraid.miaOnTimerEnd
+    );
   }
   singleplayerSettingsRaidMenu(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.defaultRaidSettings);
+    return response_f.noBody(
+      global._database.gameplayConfig.defaultRaidSettings
+    );
   }
   singleplayerSettingsBotDifficulty(url, info, sessionID) {
     let data = [];
     for (const botType in global._database.bots) {
       for (const difficulty in global._database.bots[botType].difficulty) {
         const key = `${difficulty}.${botType}`;
-        data.push({ Key: key, Value: global._database.bots[botType].difficulty[difficulty] });
+        data.push({
+          Key: key,
+          Value: global._database.bots[botType].difficulty[difficulty],
+        });
       }
     }
     return response_f.noBody(data);
