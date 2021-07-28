@@ -175,7 +175,10 @@ function GenerateLootList(container) {
 
   for (const item in ItemList) {
     LootList[ItemList[item]] = _database.items[ItemList[item]];
-    LootList[ItemList[item]]["preset"] = FindIfItemIsAPreset();
+    if (!LootList[ItemList[item]]) {
+      delete LootList[ItemList[item]];
+      continue;
+    } else LootList[ItemList[item]]["preset"] = FindIfItemIsAPreset();
   }
 
   // Shuffle LootList for added randomization -300 ms for customs ~1000 things to calculate
