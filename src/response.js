@@ -335,6 +335,7 @@ class Responses {
     return response_f.getBody(data);
   }
   clientGameProfileList(url, info, sessionID) {
+    // the best place to update health because its where profile is updating in client also!!!
     health_f.handler.healOverTime(
       profile_f.handler.getPmcProfile(sessionID),
       info,
