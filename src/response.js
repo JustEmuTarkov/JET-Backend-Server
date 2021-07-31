@@ -445,7 +445,7 @@ class Responses {
     return response_f.getBody(null, 999, "Profile Not Found!!");
   }
   clientGameVersionValidate(url, info, sessionID) {
-    logger.logInfo("User connected from client version:" + info.version.major);
+    logger.logInfo("User connected from client version: " + info.version.major);
     return response_f.nullResponse();
   }
   clientGetMetricsConfig(url, info, sessionID) {
