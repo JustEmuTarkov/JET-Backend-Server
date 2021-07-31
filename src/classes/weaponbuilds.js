@@ -31,6 +31,8 @@ function SaveBuild(pmcData, body, sessionID) {
 
 	savedBuilds[body.name] = body;
 	fileIO.write(getPath(sessionID), savedBuilds);
+	if(!output.builds)
+		output.builds = [];
 	output.builds.push(body);
     return output;
 }
