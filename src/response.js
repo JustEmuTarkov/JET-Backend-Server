@@ -336,7 +336,7 @@ class Responses {
   }
   clientGameProfileList(url, info, sessionID) {
     // the best place to update health because its where profile is updating in client also!!!
-	if(!account_f.handler.isWiped){
+	if(!account_f.handler.isWiped(sessionID)){
 		health_f.handler.healOverTime(
 		  profile_f.handler.getPmcProfile(sessionID),
 		  info,
