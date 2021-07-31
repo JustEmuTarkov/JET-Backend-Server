@@ -83,6 +83,7 @@ class AccountServer {
         this.accounts[accountID] = {
             "id": accountID,
             "email": info.email,
+			"nickname": "",
             "password": info.password,
             "wipe": true,
             "edition": info.edition

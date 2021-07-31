@@ -336,11 +336,13 @@ class Responses {
   }
   clientGameProfileList(url, info, sessionID) {
     // the best place to update health because its where profile is updating in client also!!!
-    health_f.handler.healOverTime(
-      profile_f.handler.getPmcProfile(sessionID),
-      info,
-      sessionID
-    );
+	if(!account_f.handler.isWiped){
+		health_f.handler.healOverTime(
+		  profile_f.handler.getPmcProfile(sessionID),
+		  info,
+		  sessionID
+		);
+	}
 
     return response_f.getBody(profile_f.handler.getCompleteProfile(sessionID));
   }
@@ -445,7 +447,7 @@ class Responses {
     return response_f.getBody(null, 999, "Profile Not Found!!");
   }
   clientGameVersionValidate(url, info, sessionID) {
-    logger.logInfo("User connected from client version: " + info.version.major);
+    logger.logInfo("User connected with client version " + info.version.major);
     return response_f.nullResponse();
   }
   clientGetMetricsConfig(url, info, sessionID) {
