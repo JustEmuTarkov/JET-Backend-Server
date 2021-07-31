@@ -287,7 +287,7 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
   let rarityItemCounter = {};
   let products = [];
 
-  const filterEndProducts = databaseHideoutScavcase.EndProducts.filter((product) => product.max > 0);
+  const filterEndProducts = databaseHideoutScavcase.EndProducts.filter((product) => product.min > 0 && product.max > 0);
   if (Object.keys(filterEndProducts).length == 0) {
     logger.logWarning(`Not found any EndProducts meeting criteria of product.max > 0`);
     return;
