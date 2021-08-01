@@ -130,7 +130,7 @@ module.exports.upgradeComplete = (pmcData, body, sessionID) => {
   profileHideoutArea.constructing = false;
 
   const bonuses = databaseHideoutArea.stages[profileHideoutArea.level].bonuses;
-  if (bonuses.length > 0) {
+  if (bonuses && bonuses.length > 0) {
     for (let bonus of bonuses) {
       applyPlayerUpgradesBonuses(pmcData, bonus);
     }
