@@ -88,8 +88,8 @@ module.exports.upgrade = (pmcData, body, sessionID) => {
   if (ctime > 0) {
     const timestamp = Math.floor(Date.now() / 1000);
 
-    pmcData.Hideout.Areas[foundHideoutArea].completeTime = timestamp + ctime;
-    pmcData.Hideout.Areas[foundHideoutArea].constructing = true;
+    foundHideoutArea.completeTime = timestamp + ctime;
+    foundHideoutArea.constructing = true;
   }
 
   for (let itemToPay of body.items) {
