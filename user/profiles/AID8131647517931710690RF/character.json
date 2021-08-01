@@ -255,18 +255,18 @@
 			}
 		},
 		"Energy": {
-			"Current": 88.3999939,
+			"Current": 100,
 			"Maximum": 100
 		},
 		"Hydration": {
-			"Current": 90.3999939,
+			"Current": 100,
 			"Maximum": 100
 		},
 		"Temperature": {
 			"Current": 36.6,
 			"Maximum": 40
 		},
-		"UpdateTime": 1627420987
+		"UpdateTime": 1627772904
 	},
 	"Hideout": {
 		"Areas": [

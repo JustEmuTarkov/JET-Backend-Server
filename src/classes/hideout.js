@@ -42,10 +42,24 @@ function registerProduction(pmcData, body, sessionID) {
 }
 
 function applyPlayerUpgradesBonuses(pmcData, bonus) {
-  if (bonus.type === "MaximumEnergyReserve")
-  {
-      pmcData.Health.Energy.Maximum += bonus.value;
+  if (bonus.type === "MaximumEnergyReserve") {
+    pmcData.Health.Energy.Maximum += bonus.value;
   }
+  // other bonuses keept as refference
+  // case "EnergyRegeneration":
+  // case "HydrationRegeneration":
+  // case "HealthRegeneration":
+  // case "DebuffEndDelay":
+  // case "ScavCooldownTimer": // Implemented.
+  // case "QuestMoneyReward":
+  // case "InsuranceReturnTime":
+  // case "ExperienceRate":
+  // case "SkillGroupLevelingBoost":
+  // case "RagfairCommission":
+  // case "AdditionalSlots":
+  // case "UnlockWeaponModification":
+  // case "TextBonus":
+  // case "FuelConsumption":
   pmcData.Bonuses.push(bonus);
 }
 

@@ -230,21 +230,20 @@ class TraderServer {
     // Build what we're going to return.
     let assorts = copyFromBaseAssorts(baseAssorts);
 
-    let pmcData = profile_f.handler.getPmcProfile(sessionID);
-    const ProfileSaleSum = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].saleSum : 0;
-    const ProfileStanding = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].standing : 0;
-    const ProfileLevel = pmcData.Info.Level;
-
-    let calcLevel = 0;
-    for (const loyalityObject of global._database.traders[traderID].base.loyaltyLevels) {
-      if (ProfileLevel >= loyalityObject.minLevel && ProfileStanding >= loyalityObject.minStanding && ProfileSaleSum >= loyalityObject.minSalesSum) {
-        calcLevel++;
-      }
-    }
-    if (calcLevel == 0) calcLevel = 1;
-    const TraderLevel = calcLevel;
-
     if (traderID !== "ragfair") {
+      let pmcData = profile_f.handler.getPmcProfile(sessionID);
+      const ProfileSaleSum = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].saleSum : 0;
+      const ProfileStanding = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].standing : 0;
+      const ProfileLevel = pmcData.Info.Level;
+      let calcLevel = 0;
+      for (const loyalityObject of global._database.traders[traderID].base.loyaltyLevels) {
+        if (ProfileLevel >= loyalityObject.minLevel && ProfileStanding >= loyalityObject.minStanding && ProfileSaleSum >= loyalityObject.minSalesSum) {
+          calcLevel++;
+        }
+      }
+      if (calcLevel == 0) calcLevel = 1;
+      const TraderLevel = calcLevel;
+
       // 1 is min level, 4 is max level
       let questassort = {};
       if (typeof db.traders[traderID].questassort == "undefined") {
@@ -276,6 +275,7 @@ class TraderServer {
           assorts = removeItemFromAssort(assorts, key);
         }
       }
+    } else {
     }
     return assorts;
   }
