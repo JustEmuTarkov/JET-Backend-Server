@@ -155,6 +155,7 @@ class HealthServer {
     const LastUpdate = pmcData.Health.UpdateTime;
     const NewUpdate = utility.getTimestamp();
     const TimeElapsedFactor = (NewUpdate - LastUpdate) / 60;
+    if (TimeElapsedFactor < 1) return;
     /*
             INFO: values saved in Bonuses are smaller then actual values they need to be divided by 2 (and then multiplied by 9 if its health)
         */

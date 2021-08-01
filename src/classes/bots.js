@@ -1,8 +1,8 @@
 "use strict";
 
 class Controller {
-  generatePlayerScav() {
-    let scavData = bots_f.botHandler.generate({ conditions: [{ Role: "playerScav", Limit: 1, Difficulty: "normal" }] });
+  generatePlayerScav(sessionID) {
+    let scavData = bots_f.botHandler.generate({ conditions: [{ Role: "playerScav", Limit: 1, Difficulty: "normal" }] }, sessionID);
     let scavItems = scavData[0].Inventory.items;
 
     // Remove secured container

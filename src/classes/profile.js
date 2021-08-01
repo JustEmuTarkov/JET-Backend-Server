@@ -1,7 +1,5 @@
 ﻿"use strict";
 
-const { logger } = require("../../core/util/logger");
-
 /*
  * ProfileServer class maintains list of active profiles for each sessionID in memory. All first-time loads and save
  * operations also write to disk.*
@@ -28,7 +26,9 @@ class ProfileServer {
         );
       } else {
         logger.logData(sessionID);
-        return logger.logError(`There was an issue loading the user profile with session ID ${sessionID}. Call stack: \n${e.stack}`);
+        logger.logError(`There was an issue loading the user profile with session ID ${sessionID}. Call stack:`);
+        logger.logData(e);
+        return;
       }
     }
     logger.logSuccess(`Loaded profile for AID ${sessionID} successfully.`);
@@ -59,7 +59,9 @@ class ProfileServer {
 
     return this.profiles[sessionID][type];
   }
-
+  profileAlreadyCreated(ID) {
+    return fileIO.exist(`user/profiles/${ID}/character.json`);
+  }
   getProfileById(ID, type) {
     return fileIO.readParsed(`user/profiles/${ID}/character.json`);
   }
@@ -71,7 +73,7 @@ class ProfileServer {
   }
 
   getPmcProfile(sessionID) {
-	return this.getProfile(sessionID, "pmc");
+    return this.getProfile(sessionID, "pmc");
   }
 
   getScavProfile(sessionID) {
@@ -148,11 +150,12 @@ class ProfileServer {
 
     // don't wipe profile again
     account_f.handler.setWipe(account.id, false);
+    this.initializeProfile(sessionID);
   }
 
   generateScav(sessionID) {
     let pmcData = this.getPmcProfile(sessionID);
-    let scavData = bots_f.generatePlayerScav();
+    let scavData = bots_f.generatePlayerScav(sessionID);
 
     scavData._id = pmcData.savage;
     scavData.aid = sessionID;

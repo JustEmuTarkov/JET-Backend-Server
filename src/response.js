@@ -243,7 +243,7 @@ class Responses {
   }
   clientFriendRequestSend(url, info, sessionID) {
     return response_f.noBody({
-      requestId: "¯_(ツ)_/¯",
+      requestId: "¯\\_(ツ)_/¯",
       retryAfter: 0,
       status: 0,
     });
@@ -303,7 +303,7 @@ class Responses {
   }
   clientGameProfileList(url, info, sessionID) {
     // the best place to update health because its where profile is updating in client also!!!
-    if (!account_f.handler.isWiped(sessionID)) {
+    if (!account_f.handler.isWiped(sessionID) && profile_f.handler.profileAlreadyCreated(sessionID)) {
       health_f.handler.healOverTime(profile_f.handler.getPmcProfile(sessionID), info, sessionID);
     }
 

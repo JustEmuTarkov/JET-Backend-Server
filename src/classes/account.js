@@ -81,7 +81,7 @@ class AccountServer {
     this.accounts[accountID] = {
       id: accountID,
       email: info.email,
-	  nickname: "",
+	  //nickname: "",
       password: info.password,
       wipe: true,
       edition: info.edition,
@@ -138,15 +138,15 @@ class AccountServer {
   }
 
   getReservedNickname(sessionID) {
-    return this.accounts[sessionID].nickname;
+    return "";
   }
 
   nicknameTaken(info) {
-    for (let accountID in this.accounts) {
-      if (info.nickname.toLowerCase() === this.accounts[accountID].nickname.toLowerCase()) {
-        return true;
-      }
-    }
+    // for (let accountID in this.accounts) {
+      // if (info.nickname.toLowerCase() === this.accounts[accountID].nickname.toLowerCase()) {
+        // return true;
+      // }
+    // }
 
     return false;
   }
