@@ -42,33 +42,10 @@ function registerProduction(pmcData, body, sessionID) {
 }
 
 function applyPlayerUpgradesBonuses(pmcData, bonus) {
-  switch (bonus.type) {
-    case "StashSize":
-      let ProfileStash = pmcData.Inventory.items.find((item) => item._id == pmcData.Inventory.stash);
-      ProfileStash._tpl = bonus.templateId;
-      break;
-
-    case "MaximumEnergyReserve":
-      pmcData.Health.Energy.Maximum = 110;
-      break;
-
-    case "EnergyRegeneration":
-    case "HydrationRegeneration":
-    case "HealthRegeneration":
-    case "DebuffEndDelay":
-    case "ScavCooldownTimer": // Implemented.
-    case "QuestMoneyReward":
-    case "InsuranceReturnTime":
-    case "ExperienceRate":
-    case "SkillGroupLevelingBoost":
-    case "RagfairCommission":
-    case "AdditionalSlots":
-    case "UnlockWeaponModification":
-    case "TextBonus":
-    case "FuelConsumption":
-      break;
+  if (bonus.type === "MaximumEnergyReserve")
+  {
+      pmcData.Health.Energy.Maximum += bonus.value;
   }
-
   pmcData.Bonuses.push(bonus);
 }
 
