@@ -15,7 +15,7 @@ class AccountServer {
     const profileIDs = fileIO.readDir("./user/profiles");
     let accountsData = {};
     for (let id in profileIDs) {
-      if (!fileIO.exist(`./user/profiles/${profileIDs[id]}/account.json`)) continue;
+	if(!fileIO.exist(`./user/profiles/${profileIDs[id]}/account.json`)) continue;
       accountsData[profileIDs[id]] = fileIO.readParsed(`./user/profiles/${profileIDs[id]}/account.json`);
     }
     this.accounts = accountsData;
@@ -81,6 +81,7 @@ class AccountServer {
     this.accounts[accountID] = {
       id: accountID,
       email: info.email,
+	  nickname: "",
       password: info.password,
       wipe: true,
       edition: info.edition,
