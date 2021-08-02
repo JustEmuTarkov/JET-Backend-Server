@@ -18,5 +18,5 @@ del /q _Build\user\mods\*.*
 del /q _Build\user\profiles\*.7z
 del /q _Build\user\profiles\*.zip
 
-rmdir /q /s build/minified
+rmdir /q /s build\minified
 pause

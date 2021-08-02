@@ -8,6 +8,7 @@
     "start": "node core/main.js"
   },
   "dependencies": {
+    "crypto": "^1.0.1",
     "ps-list": "7.2.0",
     "selfsigned": "1.10.7",
     "uuid": "^8.3.2",
