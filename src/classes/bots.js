@@ -571,7 +571,7 @@ class Generator {
     const currentInventoryCheck = itemTemplates.some((item) => item._props[`Blocks${equipmentSlot}`] || item._props.ConflictingItems.includes(tplToCheck));
     // Check if the incoming item has any inventory items defined as incompatible
     const itemCheck = items.some(
-      (item) => typeof templateToCheck._props != "undefined" && (templateToCheck._props[`Blocks${item.slotId}`] || templateToCheck._props.ConflictingItems.includes(item._tpl))
+      (item) => templateToCheck && templateToCheck._props && (templateToCheck._props[`Blocks${item.slotId}`] || templateToCheck._props.ConflictingItems.includes(item._tpl))
     );
 
     return currentInventoryCheck || itemCheck;

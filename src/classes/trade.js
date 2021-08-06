@@ -16,8 +16,10 @@ exports.buyItem = (pmcData, body, sessionID) => {
   };
 
   let tAssort = fileIO.readParsed(db.traders[body.tid].assort);
-  tAssort[body.item_id].currentStack -= body.count;
-  fileIO.write(db.traders[body.tid].assort, tAssort);
+  if (tAssort[body.item_id].currentStack) {
+    tAssort[body.item_id].currentStack -= body.count;
+    fileIO.write(db.traders[body.tid].assort, tAssort);
+  }
 
   item_f.handler.setOutput(move_f.addItem(pmcData, newReq, sessionID));
   logger.logSuccess(`Bought item: ${body.item_id}`);
