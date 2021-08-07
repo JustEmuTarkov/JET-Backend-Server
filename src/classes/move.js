@@ -404,6 +404,7 @@ function swapItem(pmcData, body, sessionID) {
       iterItem.parentId = body.to.id; // parentId
       iterItem.slotId = body.to.container; // slotId
       iterItem.location = body.to.location; // location
+      if (!output.profileChanges[pmcData._id].change) output.profileChanges[pmcData._id].change = [];
       output.profileChanges[pmcData._id].change.push(iterItem);
     }
 

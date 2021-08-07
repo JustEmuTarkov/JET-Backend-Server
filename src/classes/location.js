@@ -322,18 +322,27 @@ function _DynamicLootPush(typeArray, output, locationLootChanceModifier, MapName
 
     // AMMO BOXES !!!
     if (global._database.items[createEndLootData.Items[0]._tpl]._parent == "543be5cb4bdc2deb348b4568") {
-      createEndLootData.Items.push({
-        _id: utility.generateNewItemId(),
-        _tpl: global._database.items[createEndLootData.Items[0]._tpl]._props.StackSlots[0]._props.filters[0].Filter[0],
-        parentId: createEndLootData.Items[0]._id,
-        slotId: "cartridges",
-        upd: {
-          StackObjectsCount: utility.getRandomInt(
-            global._database.items[createEndLootData.Items[0]._tpl]._props.StackMinRandom,
-            global._database.items[createEndLootData.Items[0]._tpl]._props.StackMaxRandom
-          ),
-        },
-      });
+      const ammoTemplate = global._database.items[createEndLootData.Items[0]._tpl]._props.StackSlots[0]._props.filters[0].Filter[0];
+      const ammoMaxStack = global._database.items[ammoTemplate]._props.StackMaxSize;
+      const randomizedBulletsCount = utility.getRandomInt(
+        global._database.items[createEndLootData.Items[0]._tpl]._props.StackMinRandom,
+        global._database.items[createEndLootData.Items[0]._tpl]._props.StackMaxRandom
+      );
+      let locationCount = 0;
+      for (let i = 0; i < randomizedBulletsCount; i += ammoMaxStack) {
+        const currentStack = i + ammoMaxStack > randomizedBulletsCount ? randomizedBulletsCount - i : ammoMaxStack;
+        createEndLootData.Items.push({
+          _id: utility.generateNewItemId(),
+          _tpl: ammoTemplate,
+          parentId: createEndLootData.Items[0]._id,
+          slotId: "cartridges",
+          location: locationCount,
+          upd: {
+            StackObjectsCount: currentStack,
+          },
+        });
+        locationCount++;
+      }
     }
     // Preset weapon
     const PresetData = FindIfItemIsAPreset(createEndLootData.Items[0]._tpl);
@@ -368,22 +377,6 @@ function _DynamicLootPush(typeArray, output, locationLootChanceModifier, MapName
           idSuffix++;
         }
       }
-      /*
-      {
-				"_changeWeaponName": false,
-				"_encyclopedia": "5644bd2b4bdc2d3b4c8b4572",
-				"_id": "5841474424597759ba49be91",
-				"_items": [
-					{
-						"_id": "59c68b1c86f77452a35a8017",
-						"_tpl": "5644bd2b4bdc2d3b4c8b4572"
-					}
-				],
-				"_name": "AK-74N",
-				"_parent": "59c68b1c86f77452a35a8017",
-				"_type": "Preset"
-			}
-      */
     }
     // spawn change calculation
     const num = utility.getRandomInt(0, 10000);
