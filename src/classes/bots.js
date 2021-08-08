@@ -498,19 +498,19 @@ class Generator {
 
       if (!found || !modTpl) {
         if (itemSlot._required) {
-          logger.logError(`Could not locate any compatible items to fill '${modSlot}' for ${parentTemplate._id}`);
+          logger.logWarning(`Could not locate any compatible items to fill '${modSlot}' for ${parentTemplate._id}`);
         }
         continue;
       }
 
       if (!itemSlot._props.filters[0].Filter.includes(modTpl)) {
-        logger.logError(`Mod ${modTpl} is not compatible with slot '${modSlot}' for item ${parentTemplate._id}`);
+        logger.logWarning(`Mod ${modTpl} is not compatible with slot '${modSlot}' for item ${parentTemplate._id}`);
         continue;
       }
 
       const modTemplate = global._database.items[modTpl];
       if (!modTemplate) {
-        logger.logError(`Could not find mod item template with tpl ${modTpl}`);
+        logger.logWarning(`Could not find mod item template with tpl ${modTpl}`);
         logger.logInfo(`Item -> ${parentTemplate._id}; Slot -> ${modSlot}`);
         continue;
       }
