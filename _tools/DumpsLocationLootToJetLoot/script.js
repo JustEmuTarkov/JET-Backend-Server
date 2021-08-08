@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 
-
+const questItemID = ["5b4c72c686f77462ac37e907","5b4c72b386f7745b453af9c0","5af04c0b86f774138708f78e","5b4c72fb86f7745cef1cffc5","5af04e0a86f7743a532b79e2","5a29284f86f77463ef3db363","5a29276886f77435ed1b117c","609267a2bb3f46069c3e6c7d","60c080eb991ac167ad1c3ad4","5939e9b286f77462a709572c","590c62a386f77412b0130255","591092ef86f7747bb8703422","5a29357286f77409c705e025","5939e5a786f77461f11c0098","591093bb86f7747caa7bb2ee","5a294d8486f774068638cd93","5c12301c86f77419522ba7e4","5ac620eb86f7743a8e6e0da0","5ae9a1b886f77404c8537c62","5a294d7c86f7740651337cf9","5ae9a18586f7746e381e16a3","5ae9a3f586f7740aab00e4e6","5a6860d886f77411cd3a9e47","5ae9a0dd86f7742e5f454a05","593965cf86f774087a77e1b6","5ae9a4fc86f7746e381e1753","5938188786f77474f723e87f","5d357d6b86f7745b606e3508","5d3ec50586f774183a607442","5938878586f7741b797c562f","5ae9a25386f7746dd946e6d9","5eff135be0d3331e9d282b7b","5efdaf6de6a30218ed211a48","5efdafc1e70b5e33f86de058","608c22a003292f4ba43f8a1a","60a3b5b05f84d429b732e934","60915994c49cf53e4772cc38","60a3b6359c427533db36cf84","60a3b65c27adf161da7b6e14","5937fd0086f7742bf33fc198","5a0448bc86f774736f14efa8","590dde5786f77405e71908b2","5910922b86f7747d96753483","5939a00786f7742fe8132936","5a687e7886f7740c4a5133fb","5b4c81a086f77417d26be63f","5b43237186f7742f3a4ab252","593a87af86f774122f54a951","5b4c81bd86f77418a75ae159"];
 	
 function GenerateStaticShort(loot)
 {
@@ -247,9 +247,14 @@ for(let map in maps)
 						break;
 					}
 				}
+				if(questItemID.indexOf(mapDataLoot[loot].Items[0]._tpl) != -1){
+					isQuest = true;
+				}
 				if(isQuest){
-					if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+					if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0){
+						console.log("QUEST SPAWN: " + mapDataLoot[loot].Id)
 						newLoot.forced.push(GenerateForcedShort(mapDataLoot[loot]))
+					}
 				} else {
 					if(newLoot.dynamic.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
 						newLoot.dynamic.push(GenerateDynamicShort(mapDataLoot[loot]));
