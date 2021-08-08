@@ -143,8 +143,8 @@ function _load_TradersData() {
   for (let traderID in db.traders) {
     global._database.traders[traderID] = { base: {}, assort: {}, categories: {} };
     global._database.traders[traderID].base = fileIO.readParsed(db.traders[traderID].base);
-    //global._database.traders[traderID].base.sell_category = fileIO.readParsed(db.traders[traderID].categories);
     global._database.traders[traderID].categories = fileIO.readParsed(db.traders[traderID].categories);
+    global._database.traders[traderID].base.sell_category = global._database.traders[traderID].categories; // override trader categories
     global._database.traders[traderID].assort = fileIO.readParsed(db.user.cache["assort_" + traderID]);
     if (typeof global._database.traders[traderID].assort.data != "undefined") global._database.traders[traderID].assort = global._database.traders[traderID].assort.data;
     if (global._database.traders[traderID].base.repair.price_rate === 0) {
