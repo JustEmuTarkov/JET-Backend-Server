@@ -180,18 +180,20 @@ function handleCartridges(items, body) {
 function removeItemFromProfile(pmcData, itemId, sessionID) {
   // get items to remove
   let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
-  let output = item_f.handler.getOutput(sessionID);
-
+  let output;
+  if (sessionID) output = item_f.handler.getOutput(sessionID);
+  if (typeof output.profileChanges[pmcData._id].items == "undefined") output.profileChanges[pmcData._id].items = {};
   //remove one by one all related items and itself
   const toRemoveLast = ids_toremove[ids_toremove.length - 1];
-  for (let a in pmcData.Inventory.items) {
-    if (pmcData.Inventory.items[a]._id === toRemoveLast) {
-      if (typeof output.profileChanges != "undefined" && output != "") {
-        if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
-        output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
+  if (sessionID)
+    for (let a in pmcData.Inventory.items) {
+      if (pmcData.Inventory.items[a]._id === toRemoveLast) {
+        if (typeof output.profileChanges != "undefined" && output != "") {
+          if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
+          output.profileChanges[pmcData._id].items.del.push(pmcData.Inventory.items[a]);
+        }
       }
     }
-  }
   for (let i in ids_toremove) {
     for (let a in pmcData.Inventory.items) {
       if (pmcData.Inventory.items[a]._id === ids_toremove[i]) {
@@ -199,7 +201,7 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
       }
     }
   }
-  item_f.handler.setOutput(output);
+  if (sessionID) item_f.handler.setOutput(output);
 }
 
 /*
