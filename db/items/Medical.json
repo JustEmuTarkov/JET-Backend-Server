@@ -562,7 +562,7 @@
 			"Height": 11,
 			"StackMaxSize": 1,
 			"Rarity": "Not_exist",
-			"SpawnChance": 4,
+			"SpawnChance": 0,
 			"CreditsPrice": 22500,
 			"ItemSound": "med_medkit",
 			"Prefab": {
