@@ -1,0 +1,12 @@
+{
+  cloud: { min: -0.99, max: 2 },
+  wind_speed: { min: 0, max: 3 },
+  wind_direction: { min: 0, max: 3 },
+  wind_gustiness: { min: 0, max: 0.19 },
+  rain: { min: 0, max: 4 },
+  rain_intensity: { min: 0, max: 0.56 },
+  fog: { min: 0, max: 0.15 },
+  temp: { min: 0, max: 18 },
+  pressure: { min: 0, max: 767 },
+  acceleration: { min: 0, max: 7 }
+}
