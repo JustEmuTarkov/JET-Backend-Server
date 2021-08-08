@@ -317,7 +317,7 @@
       ],
       "mod_stock": ["5d120a10d7ad1a4e1026ba85", "5b0800175acfc400153aebd4", "5649be884bdc2d79388b4577"],
       "mod_barrel": ["5a34f7f1c4a2826c6e06d75d", "5a34fae7c4a2826c6e06d760"],
-      "mod_handguard": ["5d00ede1d7ad1a0940739a76", "5d00ef6dd7ad1a0940739b16", "5a329052c4a28200741e22d3"]
+      "mod_handguard": ["5d00ef6dd7ad1a0940739b16", "5a329052c4a28200741e22d3"]
     },
     "5a34fae7c4a2826c6e06d760": {
       "mod_muzzle": ["5c878e9d2e2216000f201903", "5d026791d7ad1a04a067ea63", "5dfa3cd1b33c0951220c079b"],
@@ -879,10 +879,10 @@
       "mod_scope": ["5b3b99475acfc432ff4dcbee", "57c5ac0824597754771e88a9", "5b2388675acfc4771e1be0be"]
     },
     "5f60c74e3b85f6263c145586": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5c0919b50db834001b7ce3b9"]
     },
     "5aa7e276e5b5b000171d0647": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5aa7e373e5b5b000137b76f0"]
     },
     "5ca20ee186f774799474abc2": {
       "mod_equipment": ["5ca2113f86f7740b2547e1d2"]

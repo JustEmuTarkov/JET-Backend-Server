@@ -449,9 +449,8 @@
     "5cf50fc5d7f00c056c53f83c": {
       "mod_stock": ["5d44069ca4b9361ebd26fc37", "5fc2369685fd526b824a5713", "5c87a07c2e2216001219d4a2", "5d135e83d7ad1a21b83f42d8"]
     },
-
     "5ac78eaf5acfc4001926317a": {
-      "mod_stock": ["5b222d405acfc400153af4fe", "59ecc3dd86f7746dc827481c", "5b0e794b5acfc47a877359b2", "5b04473a5acfc40018632f70", "5e217ba4c1434648c13568cd"]
+      "mod_stock": ["5b222d405acfc400153af4fe", "59ecc3dd86f7746dc827481c"]
     },
     "5d2c772c48f0355d95672c25": {
       "mod_scope": [
@@ -543,16 +542,16 @@
       "mod_equipment": ["5ca2113f86f7740b2547e1d2"]
     },
     "5aa7e276e5b5b000171d0647": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5aa7e373e5b5b000137b76f0"]
     },
     "5f60c74e3b85f6263c145586": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5c0919b50db834001b7ce3b9"]
     },
     "5c0e874186f7745dc7616606": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5f60c85b58eff926626a60f7", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5f60c85b58eff926626a60f7", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
     },
     "5c091a4e0db834001d5addc8": {
-      "mod_equipment": ["5aa7e373e5b5b000137b76f0", "5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
+      "mod_equipment": ["5aa7e3abe5b5b000171d064d", "5c0919b50db834001b7ce3b9", "5c0e842486f77443a74d2976"]
     }
   },
   "items": {
