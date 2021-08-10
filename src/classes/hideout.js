@@ -287,7 +287,9 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
     //rarityItemCounter[rarity] = filterEndProducts[rarity].max;
 
     // TODO: check if line below WORKS !?!?
+
     const rollAmountOfRewards = utility.getRandomInt(filterEndProducts[rarity].min, filterEndProducts[rarity].max);
+    logger.logInfo(`ScavCase[${rarity}]: ${rollAmountOfRewards} [min:${filterEndProducts[rarity].min},max:${filterEndProducts[rarity].max}]`)
     for (let i = 0; i < rollAmountOfRewards; i++) {
       const filteredByRarity = global._database.items.filter((item) => item._props.Rarity && item._props.Rarity === rarity);
       if (Object.keys(filteredByRarity).length == 0) {
