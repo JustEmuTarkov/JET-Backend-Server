@@ -360,8 +360,8 @@ module.exports.takeProduction = (pmcData, body, sessionID) => {
     return move_f.addItem(pmcData, newReq, sessionID, true);
   }
 
-  for (let recipe in _database.hideout.scavcase.data) {
-    if (body.recipeId !== _database.hideout.scavcase.data[recipe]._id) {
+  for (let recipe in _database.hideout.scavcase) {
+    if (body.recipeId !== _database.hideout.scavcase[recipe]._id) {
       continue;
     }
 

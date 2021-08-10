@@ -91,26 +91,24 @@ function updatePlayerHideout(sessionID) {
     }
 
     let needGenerator = false;
-    if (prod == "14") {
-      let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
-      if (needGenerator == true && isGeneratorOn == false) {
-        time_elapsed = Math.floor(time_elapsed * 0.2);
-      }
-      pmcData.Hideout.Production[prod].Progress += time_elapsed;
-      /*
-            if(pmcData.Hideout.Production[prod].Progress > recipe.productionTime)
-            {
-                pmcData.Hideout.Production[prod].inProgress = false;
-            }*/
+    // Scav Case
+    if (prod == "5d78d563c3024e58357e0f84" || 
+        prod == "5d8381ecade7391cc1066d5e" || 
+        prod == "5d83822aade7391cc1066d61" || 
+        prod == "5dd129295a9ae32efe41a367" || 
+        prod == "5e074e5e2108b14e1c62f2a7" ) 
+    {
+        let time_elapsed = (Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime) - pmcData.Hideout.Production[prod].Progress;
+        pmcData.Hideout.Production[prod].Progress += time_elapsed;
     }
+
     for (let recipe of recipes.data) {
       if (recipe._id == pmcData.Hideout.Production[prod].RecipeId) {
         if (recipe.continuous == true) {
           needGenerator = true;
         }
-
+        // Bitcoin Farm
         if (pmcData.Hideout.Production[prod].RecipeId == "5d5c205bd582a50d042a3c0e") {
-          //if its btcFarm
           pmcData.Hideout.Production[prod] = updateBitcoinFarm(pmcData.Hideout.Production[prod], recipe, btcFarmCGs, isGeneratorOn, pmcData);
         } else {
           let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
@@ -118,14 +116,10 @@ function updatePlayerHideout(sessionID) {
             time_elapsed = time_elapsed * 0.2;
           }
           pmcData.Hideout.Production[prod].Progress += time_elapsed;
-          if (prod == "14") {
-            logger.logSuccess("I can see 14. will change progress.");
-          }
-          /*
-                    if(pmcData.Hideout.Production[prod].Progress > recipe.productionTime)
-                    {
-                        pmcData.Hideout.Production[prod].inProgress = false;
-                    }*/
+          // scavcase
+          //if (prod == "14") {
+          //  logger.logSuccess("I can see 14. will change progress.");
+          //}
         }
         break;
       }
