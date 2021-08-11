@@ -184,7 +184,7 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
   let output;
 
-  if (typeof sessionID != undefined) {
+  if (typeof sessionID != "undefined") {
     output = item_f.handler.getOutput(sessionID);
 
     if (typeof output.profileChanges[pmcData._id].items == "undefined") { 
@@ -212,7 +212,7 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   }
 
   // set output if necessary.
-  if (typeof sessionID != undefined && output.profileChanges) { item_f.handler.setOutput(output) };
+  if (typeof sessionID != "undefined" && output.hasOwnProperty("profileChanges")) { item_f.handler.setOutput(output) };
 }
 
 /*

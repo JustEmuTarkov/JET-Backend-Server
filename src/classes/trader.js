@@ -188,14 +188,14 @@ class TraderServer {
 
     if (pmcData.TradersInfo[traderID] == undefined)
       pmcData.TradersInfo[traderID] = {
-        saleSum: 0,
+        salesSum: 0,
         standing: 0,
         unlocked: global._database.traders[traderID].base.unlockedByDefault,
       };
 
     if (traderID == "5c0647fdd443bc2504c2d371") pmcData.TradersInfo[traderID].unlocked = false;
 
-    pmcData.TradersInfo[traderID].saleSum = traderWipe.initialSalesSum;
+    pmcData.TradersInfo[traderID].salesSum = traderWipe.initialSalesSum;
     pmcData.TradersInfo[traderID].standing = traderWipe.initialStanding;
   }
   getAssort(sessionID, traderID, isBuyingFromFence = false) {
@@ -232,7 +232,7 @@ class TraderServer {
 
     if (traderID !== "ragfair") {
       let pmcData = profile_f.handler.getPmcProfile(sessionID);
-      const ProfileSaleSum = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].saleSum : 0;
+      const ProfileSaleSum = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].salesSum : 0;
       const ProfileStanding = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].standing : 0;
       const ProfileLevel = pmcData.Info.Level;
       let calcLevel = 0;

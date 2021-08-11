@@ -226,13 +226,14 @@ function payMoney(pmcData, body, sessionID) {
   }
   if (typeof pmcData.TradersInfo[body.tid] == "undefined") {
     pmcData.TradersInfo[body.tid] = {
-      saleSum: 0,
+      salesSum: 0,
       standing: 0,
       unlocked: true,
     };
   }
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
   // set current sale sum -- convert barterPrice itemTpl into RUB then convert RUB into trader currency
-  pmcData.TradersInfo[body.tid].saleSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
+  pmcData.TradersInfo[body.tid].salesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 
   // save changes
   logger.logInfo("Items taken. Status OK.");
@@ -394,12 +395,13 @@ function getMoney(pmcData, amount, body, output, sessionID) {
   // set current sale sum
   if (typeof pmcData.TradersInfo[body.tid] == "undefined") {
     pmcData.TradersInfo[body.tid] = {
-      saleSum: 0,
+      salesSum: 0,
       standing: 0,
       unlocked: true,
     };
   }
-  pmcData.TradersInfo[body.tid].saleSum += amount;
+  pmcData.TradersInfo[body.tid].salesSum += amount;
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
 
   return output;
 }
