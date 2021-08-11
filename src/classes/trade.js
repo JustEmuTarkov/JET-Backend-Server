@@ -16,7 +16,7 @@ exports.buyItem = (pmcData, body, sessionID) => {
   };
 
   let tAssort = fileIO.readParsed(db.traders[body.tid].assort);
-  if (tAssort[body.item_id].currentStack) {
+  if (typeof tAssort[body.item_id] != "undefined" && tAssort[body.item_id].currentStack) {
     tAssort[body.item_id].currentStack -= body.count;
     fileIO.write(db.traders[body.tid].assort, tAssort);
   }
