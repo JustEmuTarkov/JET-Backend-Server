@@ -113,26 +113,26 @@ function LoadLootContainerNode() {
   if (_LootContainerNode.length == 0) _LootContainerNode = Object.values(global._database.items).filter((item) => item._parent === "566965d44bdc2d814c8b4571");
   return _LootContainerNode;
 }
-function GetLootContainerData(ItemID, lootContainerNode) {
-  const LootContainerNodeList = Object.values(lootContainerNode).filter((node) => node._id == ItemID);
-  if (LootContainerNodeList == 0) return null;
-  return LootContainerNodeList[0];
-}
-function DeepParentToItemSearch(incomingList) {
-  let itemList = [];
-  for (const obj in incomingList) {
-    if (ItemParentsList.includes(incomingList[obj])) {
-      const listOfItems = Object.keys(_database.items).filter((item) => _database.items[item]._parent == incomingList[obj]);
-      let output = DeepParentToItemSearch(listOfItems);
-      for (const data in output) {
-        itemList.push(output[data]);
-      }
-      continue;
-    }
-    itemList.push(incomingList[obj]);
-  }
-  return itemList;
-}
+// function GetLootContainerData(ItemID, lootContainerNode) {
+//   const LootContainerNodeList = Object.values(lootContainerNode).filter((node) => node._id == ItemID);
+//   if (LootContainerNodeList == 0) return null;
+//   return LootContainerNodeList[0];
+// }
+// function DeepParentToItemSearch(incomingList) {
+//   let itemList = [];
+//   for (const obj in incomingList) {
+//     if (ItemParentsList.includes(incomingList[obj])) {
+//       const listOfItems = Object.keys(_database.items).filter((item) => _database.items[item]._parent == incomingList[obj]);
+//       let output = DeepParentToItemSearch(listOfItems);
+//       for (const data in output) {
+//         itemList.push(output[data]);
+//       }
+//       continue;
+//     }
+//     itemList.push(incomingList[obj]);
+//   }
+//   return itemList;
+// }
 
 function detectLootSpawn(lootData, mapName) {
   let containsSpawns = [];
@@ -149,16 +149,16 @@ function detectLootSpawn(lootData, mapName) {
       }
     }
   } else {
-    for (const key in global._database.locationConfigs.dynamicLootAutoSpawnDetector[mapName]) {
+    for (const key of Object.keys(global._database.locationConfigs.DynamicLootTable[mapName])) {
       const match = lootData.Id.toLowerCase();
+
       if (match.includes(key)) {
-        const parentsToAdd = global._database.locationConfigs.dynamicLootAutoSpawnDetector[mapName][key].split(",");
-        const lootList = DeepParentToItemSearch(parentsToAdd);
-        if (lootList.length == 0) {
-          console.log(parentsToAdd);
-          logger.logWarning("wacky fucky... DeepParentToItemSearch returned empty array...");
-        }
+        const lootList = global._database.locationConfigs.DynamicLootTable[mapName][key].SpawnList;
         for (const loot in lootList) {
+          if (ItemParentsList.includes(lootList[loot])) {
+            logger.logWarning(`In Map ${mapName}: there is dynamic loot ${lootList[loot]} as prohibited ParentId... skipping`);
+            continue;
+          }
           containsSpawns.push(global._database.items[lootList[loot]]);
         }
       }
@@ -168,12 +168,16 @@ function detectLootSpawn(lootData, mapName) {
 }
 function GenerateLootList(container) {
   let LootList = {};
-  const SpawnFilter = container._props.SpawnFilter;
-  let ItemList = [];
+  //const SpawnFilter = container._props.SpawnFilter;
+  let ItemList = global._database.locationConfigs.StaticLootTable[container._id];
 
-  ItemList = DeepParentToItemSearch(SpawnFilter);
+  //ItemList = DeepParentToItemSearch(SpawnFilter);
 
   for (const item in ItemList) {
+    if (ItemParentsList.includes(ItemList[item])) {
+      logger.logWarning(`In Container ${container._id}: there is static loot ${ItemList[item]} as prohibited ParentId... skipping`);
+      continue;
+    }
     LootList[ItemList[item]] = _database.items[ItemList[item]];
     if (!LootList[ItemList[item]]) {
       delete LootList[ItemList[item]];
@@ -413,6 +417,8 @@ function _GenerateContainerLoot(_items) {
   const LootContainerNode = LoadLootContainerNode();
   if (LootContainerNode == null) throw "LootContainerNode is null something goes wrong please check db.items[???LootContainer???.json] file";
   let container = Object.values(LootContainerNode).filter((container) => container._id == _items[0]._tpl);
+
+  // check if stationary gun :)
   if (container.length == 0) {
     if (_items[0]._tpl != "5cdeb229d7f00c000e7ce174" && _items[0]._tpl != "5d52cc5ba4b9367408500062") {
       logger.logWarning("GetLootContainerData is null something goes wrong please check if container template: " + _items[0]._tpl + " exists");
@@ -471,7 +477,7 @@ function _GenerateContainerLoot(_items) {
       return;
     }
   }
-
+  // its default container proceed
   container = container[0];
   const LootList = GenerateLootList(container);
 
