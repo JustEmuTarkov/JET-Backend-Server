@@ -231,6 +231,7 @@ function payMoney(pmcData, body, sessionID) {
       unlocked: true,
     };
   }
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
   // set current sale sum -- convert barterPrice itemTpl into RUB then convert RUB into trader currency
   pmcData.TradersInfo[body.tid].saleSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 
@@ -400,6 +401,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     };
   }
   pmcData.TradersInfo[body.tid].saleSum += amount;
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
 
   return output;
 }
