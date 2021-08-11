@@ -588,7 +588,7 @@ class Responses {
     return response_f.getBody([{ ip: server.getIp(), port: server.getPort() }]);
   }
   clientSettings(url, info, sessionID) {
-    return response_f.getBody(fileIO.readParsed(db.user.configs.client));
+    return response_f.getBody(fileIO.readParsed("./db/base/client.settings.json"));
   }
   clientTradingApiGetTradersList(url, info, sessionID) {
     return response_f.getBody(trader_f.handler.getAllTraders(sessionID));
