@@ -89,7 +89,7 @@ function getQuestRewards(quest, state, pmcData, sessionID) {
       case "TraderStanding":
         if (typeof pmcData.TradersInfo[reward.target] == "undefined") {
           pmcData.TradersInfo[reward.target] = {
-            saleSum: 0,
+            salesSum: 0,
             standing: 0,
             unlocked: true,
           };
@@ -99,7 +99,7 @@ function getQuestRewards(quest, state, pmcData, sessionID) {
       case "TraderUnlock":
         if (typeof pmcData.TradersInfo[reward.target] == "undefined") {
           pmcData.TradersInfo[reward.target] = {
-            saleSum: 0,
+            salesSum: 0,
             standing: 0,
             unlocked: true,
           };

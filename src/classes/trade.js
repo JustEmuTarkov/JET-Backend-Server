@@ -22,6 +22,8 @@ exports.buyItem = (pmcData, body, sessionID) => {
   }
 
   item_f.handler.setOutput(move_f.addItem(pmcData, newReq, sessionID));
+  let output = item_f.handler.getOutput(sessionID)
+  output.profileChanges[pmcData._id].traderRelations = { [body.tid]: pmcData.TradersInfo[body.tid] }
   logger.logSuccess(`Bought item: ${body.item_id}`);
 };
 
