@@ -93,7 +93,7 @@ function getQuestRewards(quest, state, pmcData) {
             unlocked: true,
           };
         }
-        pmcData.TradersInfo[reward.target].standing += parseInt(reward.value);
+        pmcData.TradersInfo[reward.target].standing += parseFloat(reward.value);
         break;
       case "TraderUnlock":
         if (typeof pmcData.TradersInfo[reward.target] == "undefined") {
