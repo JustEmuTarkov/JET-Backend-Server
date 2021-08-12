@@ -70,7 +70,7 @@ class Server {
   }
 
   createCallback() {
-    const callbacks = require("../../src/callbacks.js").callbacks;
+    const callbacks = require(executedDir + "/src/functions/callbacks.js").callbacks;
 
     this.receiveCallback = callbacks.getReceiveCallbacks();
     this.respondCallback = callbacks.getRespondCallbacks();
@@ -325,7 +325,8 @@ class Server {
   softRestart() {
     logger.logInfo("[SoftRestart]: Reloading Database");
     global.mods_f.ResModLoad();
-    require("../../src/database.js").execute;
+    const databasePath = "/src/functions/database.js";
+    require(executedDir + databasePath).load();
     // will not be required if all data is loaded into memory
     logger.logInfo("[SoftRestart]: Re-initializing");
     account_f.handler.initialize();
@@ -348,7 +349,8 @@ class Server {
     global.mods_f.ResModLoad(); // load Res Mods
 
     logger.logInfo("[Warmup]: Loading Database");
-    global.database_f.load();
+    const databasePath = "/src/functions/database.js";
+    require(executedDir + databasePath).load();
 
     // will not be required if all data is loaded into memory
     account_f.handler.initialize();
