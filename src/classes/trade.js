@@ -16,12 +16,14 @@ exports.buyItem = (pmcData, body, sessionID) => {
   };
 
   let tAssort = fileIO.readParsed(db.traders[body.tid].assort);
-  if (tAssort[body.item_id].currentStack) {
+  if (typeof tAssort[body.item_id] != "undefined" && tAssort[body.item_id].currentStack) {
     tAssort[body.item_id].currentStack -= body.count;
     fileIO.write(db.traders[body.tid].assort, tAssort);
   }
 
   item_f.handler.setOutput(move_f.addItem(pmcData, newReq, sessionID));
+  let output = item_f.handler.getOutput(sessionID)
+  output.profileChanges[pmcData._id].traderRelations = { [body.tid]: pmcData.TradersInfo[body.tid] }
   logger.logSuccess(`Bought item: ${body.item_id}`);
 };
 

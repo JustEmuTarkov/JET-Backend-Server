@@ -74,8 +74,9 @@ function processReward(reward) {
  * input: state, the quest status that holds the items (Started, Success, Fail)
  * output: an array of items with the correct maxStack
  */
-function getQuestRewards(quest, state, pmcData) {
+function getQuestRewards(quest, state, pmcData, sessionID) {
   let questRewards = [];
+  let output = item_f.handler.getOutput(sessionID)
 
   for (let reward of quest.rewards[state]) {
     switch (reward.type) {
@@ -88,17 +89,17 @@ function getQuestRewards(quest, state, pmcData) {
       case "TraderStanding":
         if (typeof pmcData.TradersInfo[reward.target] == "undefined") {
           pmcData.TradersInfo[reward.target] = {
-            saleSum: 0,
+            salesSum: 0,
             standing: 0,
             unlocked: true,
           };
         }
-        pmcData.TradersInfo[reward.target].standing += parseInt(reward.value);
+        pmcData.TradersInfo[reward.target].standing += parseFloat(reward.value);
         break;
       case "TraderUnlock":
         if (typeof pmcData.TradersInfo[reward.target] == "undefined") {
           pmcData.TradersInfo[reward.target] = {
-            saleSum: 0,
+            salesSum: 0,
             standing: 0,
             unlocked: true,
           };
@@ -139,6 +140,10 @@ function getQuestRewards(quest, state, pmcData) {
         break;
     }
   }
+
+  output.profileChanges[pmcData._id].experience = pmcData.Info.Experience
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
+
   // Quest items are found in raid !!
   for (let questItem of questRewards) {
     if (typeof questItem.upd == "undefined") questItem.upd = {};
@@ -175,7 +180,7 @@ function acceptQuest(pmcData, body, sessionID) {
   let quest = getCachedQuest(body.qid);
   let questLocale = locale_f.handler.getGlobal().quest;
   questLocale = questLocale[body.qid];
-  let questRewards = getQuestRewards(quest, state, pmcData);
+  let questRewards = getQuestRewards(quest, state, pmcData, sessionID);
   let messageContent = {
     templateId: locale_f.handler.getGlobal().mail[questLocale.startedMessageText],
     type: dialogue_f.getMessageTypeValue("questStart"),
@@ -240,7 +245,7 @@ function completeQuest(pmcData, body, sessionID) {
     quest = applyMoneyBoost(quest, intelCenterBonus); //money = money + (money*intelCenterBonus/100)
   }
 
-  let questRewards = getQuestRewards(quest, state, pmcData);
+  let questRewards = getQuestRewards(quest, state, pmcData, sessionID);
 
   // Create a dialog message for completing the quest.
   let questDb = getCachedQuest(body.qid);
