@@ -161,7 +161,12 @@ for (const index in LootContainers) {
   let ItemList = [];
   for (let objectId in SpawnableObjects) {
     const deepSearchedItems = DeepParentToItemSearch([SpawnableObjects[objectId]]);
-    for (let itemTemplateId of deepSearchedItems) ItemList.push(itemTemplateId);
+    for (let itemTemplateId of deepSearchedItems){ 
+	//console.log(itemTemplateId);
+		if(typeof items[itemTemplateId] == "undefined") continue;
+		if(items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571")
+			ItemList.push(itemTemplateId);
+	}
   }
   console.log(`id: ${ID} of ${Translation}, generated ${ItemList.length} of items to spawn there.`);
   LootTable[ID] = {

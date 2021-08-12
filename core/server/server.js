@@ -52,7 +52,7 @@ class Server {
     this.backendUrl = "https://" + this.ip + ":" + this.port;
     this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
 
-    this.version = "1.2.0 v12";
+    this.version = "1.2.0 v13";
 
     this.createCache();
     this.createCallback();
@@ -99,7 +99,6 @@ class Server {
   getFromBuffer(sessionID) {
     return this.buffers[sessionID].buffer;
   }
-
   getName() {
     return this.name;
   }
@@ -326,7 +325,7 @@ class Server {
   softRestart() {
     logger.logInfo("[SoftRestart]: Reloading Database");
     global.mods_f.ResModLoad();
-    require("../../src/database.js").execute();
+    require("../../src/database.js").execute;
     // will not be required if all data is loaded into memory
     logger.logInfo("[SoftRestart]: Re-initializing");
     account_f.handler.initialize();
@@ -349,7 +348,7 @@ class Server {
     global.mods_f.ResModLoad(); // load Res Mods
 
     logger.logInfo("[Warmup]: Loading Database");
-    require("../../src/database.js").execute();
+    global.database_f.load();
 
     // will not be required if all data is loaded into memory
     account_f.handler.initialize();

@@ -50,6 +50,8 @@ class Initializer
         global.mods_f = require('./server/mods.js');
         global.mods_f.load();
 
+		global.database_f = require("../src/database.js").constructor;
+
         /* core logic */
         global.router = (require('./server/router.js').router);
         global.events = require('./server/events.js');

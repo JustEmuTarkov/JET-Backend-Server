@@ -131,22 +131,6 @@ function fromRUB(value, currency) {
   return Math.round(value / getTemplatePrice(currency));
 }
 
-/* Generate a payment body based off of a scheme_items */
-function createPaymentBody(body, stacks) {
-  let retval = body;
-  x: for (let k in body.scheme_items) {
-    let count = body.scheme_items[k].count;
-    for (let item in stacks) {
-      if (stacks[item].upd.StackObjectsCount >= count) {
-        retval.scheme_items[k].id = stacks[item]._id;
-        stacks[item].upd.StackObjectsCount - count;
-        continue x;
-      }
-    }
-  }
-  return retval;
-}
-
 /* take money and insert items into return to server request
  * input:
  * output: boolean
