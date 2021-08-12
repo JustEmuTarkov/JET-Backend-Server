@@ -6,6 +6,8 @@ function scanRecursiveMod(filepath, baseNode, modNode)
         baseNode = filepath + modNode;
     }
 
+	if(Array.isArray(modNode))
+		return baseNode; // For skipping bundles sections
     if (typeof modNode === "object") {
         for (let node in modNode) {
             if (!(node in baseNode)) {
@@ -104,30 +106,27 @@ function loadMod(loadType)
         const modFolder = global.mods.toLoad[element].folder;
         const mod = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
 		if(loadType == "ResModLoad"){
-			if(typeof mod.res != "undefined")
+			if(typeof mod.res != "undefined"){
 				res = scanRecursiveMod(`user/mods/${modFolder}/`, res, mod.res);
-		} else {
-			for(const srcToExecute in mod.src)
-			{
-				if(mod.src[srcToExecute] == loadType)
-				{
-					// Add items to res.bundles
-					if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
-						if(mod.res.bundles.folders)
-						{
-							let fullPaths = mod.res.bundles.folders.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
-							res.bundles.folders = res.bundles.folders.concat(fullPaths);
-						}
-						if(mod.res.bundles.files){
-							let fullPaths = mod.res.bundles.files.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
-							res.bundles.files = res.bundles.files.contcat(fullPaths);
-						}
-						mod.res.bundles.loaded = true;
-					}
 
-					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
+				// Add items to res.bundles
+				if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
+					if(mod.res.bundles.folders)
+					{
+						let fullPaths = mod.res.bundles.folders.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
+						res.bundles.folders = res.bundles.folders.concat(fullPaths);
+					}
+					if(mod.res.bundles.files){
+						let fullPaths = mod.res.bundles.files.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
+						res.bundles.files = res.bundles.files.contcat(fullPaths);
+					}
+					mod.res.bundles.loaded = true;
 				}
 			}
+		} else {
+			for(const srcToExecute in mod.src)
+				if(mod.src[srcToExecute] == loadType)
+					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 		}
     }
 }
@@ -144,7 +143,6 @@ exports.ResModLoad = () =>
 
 exports.TamperModLoad = () => 
 { // Loading mods flagged as load after "server is ready to start"
-
 	loadMod("TamperModLoad");
 }
 
