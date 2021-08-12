@@ -87,11 +87,11 @@
       "ChanceToSpawnNextItem": 35,
       "AttemptsToPlaceLoot": 1
     },
-	"RarityMultipliers": {
-        "Not_exist": 0,
-        "Common": 1.25,
-        "Rare": 0.85,
-		"Superrare": 0.4
+    "RarityMultipliers": {
+      "Not_exist": 0,
+      "Common": 1.25,
+      "Rare": 0.85,
+      "Superrare": 0.4
     },
 	"noDuplicatesTill": 2,
     "useDynamicLootFromItemsArray": false,
