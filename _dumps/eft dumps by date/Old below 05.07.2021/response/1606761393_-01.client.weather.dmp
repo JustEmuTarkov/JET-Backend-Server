@@ -1,0 +1,1 @@
+{"err":0,"errmsg":null,"data":{"weather":{"timestamp":1606761002,"cloud":-0.677,"wind_speed":1,"wind_direction":7,"wind_gustiness":0.105,"rain":1,"rain_intensity":0,"fog":0.008,"temp":22,"pressure":762,"date":"2020-11-30","time":"2020-11-30 21:30:02"},"date":"2020-11-30","time":"13:15:51","acceleration":7}}
