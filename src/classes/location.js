@@ -149,7 +149,6 @@ function GenerateLootList(containerId) {
   // get static container loot pools
   let ItemList = global._database.locationConfigs.StaticLootTable[containerId];
 
-  //console.log(global._database.locationConfigs.StaticLootTable[containerId]);
   for (const item of ItemList.SpawnList) {
     if (ItemParentsList.includes(item)) {
       logger.logWarning(`In Container ${containerId}: there is static loot ${item} as prohibited ParentId... skipping`);

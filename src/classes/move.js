@@ -179,7 +179,6 @@ function handleCartridges(items, body) {
 /* Remove item of itemId and all of its descendants from profile. */
 /* if `sessionID` is passed, this should set an output */
 function removeItemFromProfile(pmcData, itemId, sessionID) {
-
   // get items to remove
   let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
   let output;
@@ -187,10 +186,10 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   if (typeof sessionID != "undefined") {
     output = item_f.handler.getOutput(sessionID);
 
-    if (typeof output.profileChanges[pmcData._id].items == "undefined") { 
-      output.profileChanges[pmcData._id].items = {} 
-    };
-  
+    if (typeof output.profileChanges[pmcData._id].items == "undefined") {
+      output.profileChanges[pmcData._id].items = {};
+    }
+
     //remove one by one all related items and itself
     const toRemoveLast = ids_toremove[ids_toremove.length - 1];
     for (let a in pmcData.Inventory.items) {
@@ -212,7 +211,9 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   }
 
   // set output if necessary.
-  if (typeof sessionID != "undefined" && output.hasOwnProperty("profileChanges")) { item_f.handler.setOutput(output) };
+  if (typeof sessionID != "undefined" && output.hasOwnProperty("profileChanges")) {
+    item_f.handler.setOutput(output);
+  }
 }
 
 /*
@@ -241,9 +242,9 @@ function discardItem(pmcData, body, sessionID) {
  * */
 function splitItem(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
+  logger.logInfo(body, true);
   let location = body.container.location;
   let inventoryItems = getOwnerInventoryItems(body, sessionID);
-  logger.logData(body, true);
   if (!("location" in body.container) && body.container.container === "cartridges") {
     let tmp_counter = 0;
     let AlreadyLoaded = 0;
@@ -270,9 +271,8 @@ function splitItem(pmcData, body, sessionID) {
 
       let newItem = utility.generateNewItemId();
 
-      //if (typeof output.profileChanges[pmcData._id].items.change == "undefined")
-      //  output.profileChanges[pmcData._id].items.change = [];
-      //output.profileChanges[pmcData._id].items.change.push(item);
+      if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
+      output.profileChanges[pmcData._id].items.change.push(item);
 
       //output.profileChanges[pmcData._id].items.change.push(item);
 
@@ -280,9 +280,9 @@ function splitItem(pmcData, body, sessionID) {
       output.profileChanges[pmcData._id].items.new.push({
         _id: newItem,
         _tpl: item._tpl,
-        //parentId: body.container.id,
-        //slotId: body.container.container,
-        //location: location,
+        parentId: body.container.id,
+        slotId: body.container.container,
+        location: location,
         upd: { StackObjectsCount: body.count },
       });
 
@@ -308,7 +308,6 @@ function splitItem(pmcData, body, sessionID) {
 function mergeItem(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
   let inventoryItems = getOwnerInventoryItems(body, sessionID);
-
   for (let key in inventoryItems.to) {
     if (inventoryItems.to[key]._id === body.with) {
       for (let key2 in inventoryItems.from) {
