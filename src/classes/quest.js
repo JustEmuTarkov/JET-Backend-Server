@@ -254,9 +254,18 @@ function completeQuest(pmcData, body, sessionID) {
     type: dialogue_f.getMessageTypeValue("questSuccess"),
     maxStorageTime: global._database.gameplayConfig.other.RedeemTime * 3600,
   };
+  let output = item_f.handler.getOutput(sessionID);
+  if (typeof output.profileChanges[pmcData._id].quests == "undefined") output.profileChanges[pmcData._id].quests = [];
+  let questForPlayerToUpdate = utility.wipeDepend(questDb);
+  questForPlayerToUpdate.conditions.AvailableForStart = [];
+  questForPlayerToUpdate.conditions.AvailableForFinish = [];
+  questForPlayerToUpdate.conditions.Fail = [];
+  output.profileChanges[pmcData._id].quests.push(questForPlayerToUpdate);
 
+  //output.profileChanges[pmcData._id].quests[0]["status"] = "Success"; // there is no other way to finish quest for now (if there will be then it need ot be changed to proper status)
+  item_f.handler.setOutput(output);
   dialogue_f.handler.addDialogueMessage(questDb.traderId, messageContent, sessionID, questRewards);
-  return item_f.handler.getOutput(sessionID);
+  return output;
 }
 
 function handoverQuest(pmcData, body, sessionID) {

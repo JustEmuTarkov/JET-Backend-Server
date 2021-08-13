@@ -423,10 +423,6 @@
     "5e81c4ca763d9f754677befa": {
       "cartridges": ["5e81f423763d9f754677bf2e", "5efb0cabfb3e451d70735af5", "5efb0fc6aeb21837e749c801", "5efb0d4f4bc50b58e81710f3", "5ea2a8e200685063ec28c05a"]
     },
-    "1911_nickel_slide": {
-      "mod_sight_rear": ["5e81ee4dcb2b95385c177582"],
-      "mod_sight_front": ["5e81ee213397a21db957f6a6"]
-    },
     "5f3e7823ddc4f03b010e2045": {
       "mod_sight_rear": ["5f3e7897ddc4f03b010e204a"],
       "mod_sight_front": ["5f3e78a7fbf956000b716b8e"]
