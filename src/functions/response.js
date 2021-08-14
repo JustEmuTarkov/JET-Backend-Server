@@ -636,7 +636,7 @@ class Responses {
     return fileIO.stringify({
       backendUrl: server.getBackendUrl(),
       name: server.getName(),
-      editions: Object.keys(db.profile),
+      editions: Object.keys(db.profile).filter(key => { return db.profile[key] instanceof Object }),
     });
   }
 

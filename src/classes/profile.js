@@ -109,7 +109,6 @@ class ProfileServer {
     // Set choosed side of player
     pmcData.Info.Side = pmcData.Info.Side.replace("__REPLACEME__", ChoosedSideCapital);
     pmcData.Info.Voice = pmcData.Info.Voice.replace("__REPLACEME__", ChoosedSideCapital);
-    //pmcData.Customization = Outfits[ChoosedSide];
     let storage = { _id: "", suites: [] };
 
     // delete existing profile
@@ -125,6 +124,7 @@ class ProfileServer {
     pmcData.Info.Nickname = info.nickname;
     pmcData.Info.LowerNickname = info.nickname.toLowerCase();
     pmcData.Info.Voice = customization_f.getCustomization()[info.voiceId]._name;
+    pmcData.Customization = fileIO.readParsed(db.profile.defaultCustomization)[ChoosedSideCapital]
     pmcData.Customization.Head = info.headId;
     pmcData.Info.RegistrationDate = Math.floor(new Date() / 1000);
     pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
