@@ -658,10 +658,6 @@
     "5cadc2e0ae9215051e1c21e7": {
       "cartridges": ["58864a4f2459770fcc257101", "5c3df7d588a4501f290594e5", "56d59d3ad2720bdb418b4577"]
     },
-    "b93r_upper": {
-      "mod_sight_rear": ["5cadd940ae9215051e1c2316", "5cadd954ae921500103bb3c2"],
-      "mod_sight_front": ["5cadd919ae921500126a77f3"]
-    },
     "5cadc55cae921500103bb3be": {
       "mod_sight_rear": ["5cadd940ae9215051e1c2316", "5cadd954ae921500103bb3c2"],
       "mod_sight_front": ["5cadd919ae921500126a77f3"]
