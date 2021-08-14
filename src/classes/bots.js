@@ -107,6 +107,7 @@ class Controller {
 
         bot = bots_f.botHandler.generateBot(bot, role, pmcData);
 
+        logger.logInfo(`Generated: Nickname:${bot.Info.Nickname}, Side:${bot.Info.Side}, Role:${bot.Info.Settings.Role}, Difficulty:${bot.Info.Settings.BotDifficulty}`);
         output.unshift(bot);
       }
     }

@@ -121,31 +121,36 @@ function DeepParentToItemSearch(incomingList) {
 }
 
 ////////// DYNAMIC LOOT CONVERTED COMEMNTED OUT
-/*const dynamicLoot = require("./dynamicLootAutoSpawnDetector.json");
+const dynamicLoot = require("./dynamicLootAutoSpawnDetector.json");
 
-let DynamicLootTable = {}
-for(let mapName in dynamicLoot){
-	for(let lootRegex in dynamicLoot[mapName]){
-		if(typeof DynamicLootTable[mapName] == "undefined")
-			DynamicLootTable[mapName] = {};
-		
-		let dynOldLootList = dynamicLoot[mapName][lootRegex].split(',');
-		let ItemList = [];
-		for (let objectId in dynOldLootList) {
-			const deepSearchedItems = DeepParentToItemSearch([dynOldLootList[objectId]]);
-			for (let itemTemplateId of deepSearchedItems) ItemList.push(itemTemplateId);
-		}
-		console.log(`[${mapName}] regex: ${lootRegex}, generated ${ItemList.length} of items to spawn there.`);
-		DynamicLootTable[mapName][lootRegex] = {
-			Name: lootRegex,
-			SpawnList: ItemList,
-		};
+let DynamicLootTable = {};
+for (let mapName in dynamicLoot) {
+  for (let lootRegex in dynamicLoot[mapName]) {
+    if (typeof DynamicLootTable[mapName] == "undefined") DynamicLootTable[mapName] = {};
 
-	}
-	
+    let dynOldLootList = dynamicLoot[mapName][lootRegex].split(",");
+    let ItemList = [];
+    for (let objectId in dynOldLootList) {
+      const deepSearchedItems = DeepParentToItemSearch([dynOldLootList[objectId]]);
+      for (let itemTemplateId of deepSearchedItems) {
+        if (
+          items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571" &&
+          typeof items[itemTemplateId]._props.Rarity != "undefined" &&
+          items[itemTemplateId]._props.Rarity != "Not_exist"
+        ) {
+          ItemList.push(itemTemplateId);
+        }
+      }
+    }
+    console.log(`[${mapName}] regex: ${lootRegex}, generated ${ItemList.length} of items to spawn there.`);
+    DynamicLootTable[mapName][lootRegex] = {
+      Name: lootRegex,
+      SpawnList: ItemList,
+    };
+  }
 }
 fs.writeFileSync("./DynamicLootTable.json", JSON.stringify(DynamicLootTable, null, "\t"));
-return;*/
+//return;
 /////////
 
 const LootContainers = Object.values(items).filter((item) => item._parent == "566965d44bdc2d814c8b4571");
@@ -161,12 +166,16 @@ for (const index in LootContainers) {
   let ItemList = [];
   for (let objectId in SpawnableObjects) {
     const deepSearchedItems = DeepParentToItemSearch([SpawnableObjects[objectId]]);
-    for (let itemTemplateId of deepSearchedItems){ 
-	//console.log(itemTemplateId);
-		if(typeof items[itemTemplateId] == "undefined") continue;
-		if(items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571")
-			ItemList.push(itemTemplateId);
-	}
+    for (let itemTemplateId of deepSearchedItems) {
+      //console.log(itemTemplateId);
+      if (typeof items[itemTemplateId] == "undefined") continue;
+      if (
+        items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571" &&
+        typeof items[itemTemplateId]._props.Rarity != "undefined" &&
+        items[itemTemplateId]._props.Rarity != "Not_exist"
+      )
+        ItemList.push(itemTemplateId);
+    }
   }
   console.log(`id: ${ID} of ${Translation}, generated ${ItemList.length} of items to spawn there.`);
   LootTable[ID] = {
