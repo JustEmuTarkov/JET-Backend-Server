@@ -330,13 +330,9 @@
     },
     "5cadc190ae921500103bb3b6": {
       "mod_barrel": ["5cadc1c6ae9215000f2775a4"],
-      "mod_pistol_grip": ["5cadc431ae921500113bb8d5", "b93r_pgrip"],
-      "mod_reciever": ["5cadc55cae921500103bb3be", "b93r_upper"],
+      "mod_pistol_grip": ["5cadc431ae921500113bb8d5"],
+      "mod_reciever": ["5cadc55cae921500103bb3be"],
       "mod_magazine": ["5cadc2e0ae9215051e1c21e7"]
-    },
-    "b93r_upper": {
-      "mod_sight_rear": ["5cadd940ae9215051e1c2316"],
-      "mod_sight_front": ["5cadd919ae921500126a77f3"]
     },
     "5cadc55cae921500103bb3be": {
       "mod_sight_rear": ["5cadd940ae9215051e1c2316"],
