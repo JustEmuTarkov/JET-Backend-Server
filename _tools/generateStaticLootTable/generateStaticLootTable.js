@@ -136,7 +136,9 @@ for (let mapName in dynamicLoot) {
         if (
           items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571" &&
           typeof items[itemTemplateId]._props.Rarity != "undefined" &&
-          items[itemTemplateId]._props.Rarity != "Not_exist"
+          items[itemTemplateId]._props.Rarity != "Not_exist" &&
+          typeof items[itemTemplateId]._props.QuestItem != "undefined" &&
+          items[itemTemplateId]._props.QuestItem == false
         ) {
           ItemList.push(itemTemplateId);
         }
@@ -172,7 +174,9 @@ for (const index in LootContainers) {
       if (
         items[itemTemplateId]._parent != "566965d44bdc2d814c8b4571" &&
         typeof items[itemTemplateId]._props.Rarity != "undefined" &&
-        items[itemTemplateId]._props.Rarity != "Not_exist"
+        items[itemTemplateId]._props.Rarity != "Not_exist" &&
+          typeof items[itemTemplateId]._props.QuestItem != "undefined" &&
+          items[itemTemplateId]._props.QuestItem == false
       )
         ItemList.push(itemTemplateId);
     }
