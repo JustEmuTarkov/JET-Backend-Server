@@ -26,6 +26,7 @@ function updateTraders(sessionID) {
     trader_f.handler.setTraderBase(tradersToUpdateList[i]);
     if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") continue;
 
+    if (typeof db.traders[tradersToUpdateList[i]._id] == "undefined") return;
     let assort = fileIO.readParsed(db.traders[tradersToUpdateList[i]._id].assort);
 
     for (let assortItem in assort) {
@@ -92,14 +93,15 @@ function updatePlayerHideout(sessionID) {
 
     let needGenerator = false;
     // Scav Case
-    if (prod == "5d78d563c3024e58357e0f84" || 
-        prod == "5d8381ecade7391cc1066d5e" || 
-        prod == "5d83822aade7391cc1066d61" || 
-        prod == "5dd129295a9ae32efe41a367" || 
-        prod == "5e074e5e2108b14e1c62f2a7" ) 
-    {
-        let time_elapsed = (Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime) - pmcData.Hideout.Production[prod].Progress;
-        pmcData.Hideout.Production[prod].Progress += time_elapsed;
+    if (
+      prod == "5d78d563c3024e58357e0f84" ||
+      prod == "5d8381ecade7391cc1066d5e" ||
+      prod == "5d83822aade7391cc1066d61" ||
+      prod == "5dd129295a9ae32efe41a367" ||
+      prod == "5e074e5e2108b14e1c62f2a7"
+    ) {
+      let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
+      pmcData.Hideout.Production[prod].Progress += time_elapsed;
     }
 
     for (let recipe of recipes.data) {

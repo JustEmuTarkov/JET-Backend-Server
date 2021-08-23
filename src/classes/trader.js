@@ -167,7 +167,7 @@ class TraderServer {
   }
   setTraderBase(base) {
     global._database.traders[base._id].base = base;
-    fileIO.write(db.traders[base._id].base, base, true, false);
+    if (typeof db.traders[base._id] != "undefined") fileIO.write(db.traders[base._id].base, base, true, false);
   }
   getAllTraders(sessionID, keepalive = false) {
     //if (!keepalive) keepalive_f.updateTraders(sessionID);
@@ -245,13 +245,13 @@ class TraderServer {
       const TraderLevel = calcLevel;
 
       // 1 is min level, 4 is max level
-      let questassort = {};
-      if (typeof db.traders[traderID].questassort == "undefined") {
-        questassort = { started: {}, success: {}, fail: {} };
-      } else if (fileIO.exist(db.traders[traderID].questassort)) {
-        questassort = fileIO.readParsed(db.traders[traderID].questassort);
-      } else {
-        questassort = { started: {}, success: {}, fail: {} };
+      let questassort = { started: {}, success: {}, fail: {} };
+      if (typeof db.traders[traderID] != "undefined") {
+        if (typeof db.traders[traderID].questassort == "undefined") {
+          questassort = { started: {}, success: {}, fail: {} };
+        } else if (fileIO.exist(db.traders[traderID].questassort)) {
+          questassort = fileIO.readParsed(db.traders[traderID].questassort);
+        }
       }
 
       for (let key in baseAssorts.loyal_level_items) {
