@@ -331,11 +331,13 @@ function createOffer(template, onlyFunc, usePresets = true) {
     logger.logWarning(`Item ${template} does not exist`);
     return [];
   }
-  // Remove items that doesnt exist in assortiment
-  if (!(template in Object.keys(global._database.trader.ragfair.assort.loyal_level_items))) {
-    logger.logWarning(`Item ${template} does not exist in ragfair assort`);
+
+  // Remove items that don't exist in assort
+  if (!(template in Object.keys(global._database.traders.ragfair.assort.loyal_level_items))) {
+    logger.logWarning(`Item ${template} does not exist in ragfair assort, ignoring...`);
     return [];
   }
+
   let offerBase = fileIO.readParsed(db.base.fleaOffer);
   let offers = [];
 
