@@ -1,11 +1,11 @@
 @echo off
 
-node build/build.js
+node build/build_linux.js
 echo BUild completed Press key to continue with creatign build for release
 pause
 rmdir /q /s _Build
 mkdir _Build
-copy build\Server.exe _Build\
+copy build\Server _Build\
 xcopy db _Build\db /E /I
 xcopy res _Build\res /E /I
 xcopy src _Build\src /E /I
