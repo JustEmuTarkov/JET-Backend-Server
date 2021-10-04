@@ -215,7 +215,7 @@ function payMoney(pmcData, body, sessionID) {
       unlocked: true,
     };
   }
-  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo;
   // set current sale sum -- convert barterPrice itemTpl into RUB then convert RUB into trader currency
   pmcData.TradersInfo[body.tid].salesSum += fromRUB(inRUB(barterPrice, currencyTpl), getCurrency(trader.currency));
 
@@ -385,7 +385,7 @@ function getMoney(pmcData, amount, body, output, sessionID) {
     };
   }
   pmcData.TradersInfo[body.tid].salesSum += amount;
-  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo
+  output.profileChanges[pmcData._id].traderRelations = pmcData.TradersInfo;
 
   return output;
 }
@@ -441,7 +441,7 @@ note from 2027: there IS a thing i didn't explore and that is Merges With Childr
 note from Maoci: you can merge and split items from parent-childrens
 -> Prepares item Width and height returns [sizeX, sizeY]
 */
-function getSizeByInventoryItemHash(itemtpl, itemID, inventoryItemHash) {
+module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash) => {
   let toDo = [itemID];
   let tmpItem = getItem(itemtpl)[1];
   let rootItem = inventoryItemHash.byItemId[itemID];
@@ -512,7 +512,7 @@ function getSizeByInventoryItemHash(itemtpl, itemID, inventoryItemHash) {
   }
 
   return [outX + SizeLeft + SizeRight + ForcedLeft + ForcedRight, outY + SizeUp + SizeDown + ForcedUp + ForcedDown];
-}
+};
 
 /* Find And Return Children (TRegular)
  * input: PlayerData, InitialItem._id
@@ -901,7 +901,8 @@ module.exports.getPlayerStashSlotMap = (sessionID, pmcData) => {
 };
 // note from 2027: there IS a thing i didn't explore and that is Merges With Children
 // -> Prepares item Width and height returns [sizeX, sizeY]
-module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash) => {
+// check if this new one works and remove this one if it does
+module.exports.getSizeByInventoryItemHash_old = (itemtpl, itemID, inventoryItemHash) => {
   let toDo = [itemID];
   let tmpItem = helper_f.getItem(itemtpl)[1];
 
