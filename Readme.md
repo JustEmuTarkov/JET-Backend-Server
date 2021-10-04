@@ -22,3 +22,5 @@ _Let me know if its missing something in the instalation/run_
 
 ## Thanks
 _All thanks to great community and JET dev team_
+
+More information at: JustEmuTarkov Discord
