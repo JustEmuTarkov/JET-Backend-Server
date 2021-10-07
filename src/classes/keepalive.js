@@ -7,6 +7,8 @@ function main(sessionID) {
   }
 }
 
+
+
 function updateTraders(sessionID) {
   let update_per = 3600;
   let timeNow = Math.floor(Date.now() / 1000);
@@ -61,7 +63,7 @@ function updatePlayerHideout(sessionID) {
       case 4:
         isGeneratorOn = pmcData.Hideout.Areas[area].active;
         if (isGeneratorOn == true) {
-          pmcData.Hideout.Areas[area] = updateFuel(pmcData.Hideout.Areas[area], solarPowerLevel); //i know solapower is always false but let me find a workaround later
+          pmcData.Hideout.Areas[area] = updateFuel(pmcData, solarPowerLevel); //i know solapower is always false but let me find a workaround later
         }
         break;
       case 6:
@@ -160,13 +162,17 @@ function updateWaterFilters(waterFilterArea) {
   }
   return waterFilterArea;
 }
-function updateFuel(generatorArea, solarPower) {
+function updateFuel(pmcData, solarPower) {
+  let generatorArea = pmcData.Hideout.Areas[area];
   let noFuelAtAll = true;
   let decreaseFuel = 0.0665;
 
   if (solarPower == 1) {
     decreaseFuel = 0.0332;
   }
+  // Decrease fuel depleting number by percent from hideout skill
+  // function return 1 if skill is 0 and 0.75 if skill is maxed out
+  //decreaseFuel *= getHideoutSkillDecreasedConsumptionBy(pmcData); not implemented yet
 
   for (let i = 0; i < generatorArea.slots.length; i++) {
     if (generatorArea.slots[i].item == null || generatorArea.slots[i].item === undefined) {

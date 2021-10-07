@@ -63,6 +63,92 @@ function applyPlayerUpgradesBonuses(pmcData, bonus) {
   pmcData.Bonuses.push(bonus);
 }
 
+// returns HideoutManagement skill level
+function getPlayerHideoutSkill(pmcData) {
+  for (let skill of pmcData.Skills.Common) {
+    if (skill.Id == "HideoutManagement") {
+      let calculatedLevel = skill.Progress % 100; // always return full level
+      return calculatedLevel;
+    }
+  }
+  return 0;
+}
+
+function isHideoutManagementElite(pmcData) {
+  return getPlayerHideoutSkill(pmcData) == 51;
+}
+
+function getHideoutManagDecreasedConsumption(pmcData) {
+  let hideoutManagementLevel = getPlayerHideoutSkill(pmcData);
+  let decreasingBonus = 0.5 * hideoutManagementLevel;
+  if (decreasingBonus >= 25) {
+    decreasingBonus = 25; // for elite
+  }
+  return 1 - decreasingBonus / 100;
+}
+module.exports.checkPlayerHideoutBuffsFromSkills = (url, info, sessionID) => {
+  let pmcData = profile_f.getPmcProfile(sessionID);
+  let countBonusesFuel = 0,
+    countBonusesAirFilter = 0,
+    countBonusesWaterFilter = 0;
+
+  let isEliteHideoutManagement = isHideoutManagementElite(pmcData);
+  if (isEliteHideoutManagement) {
+    for (let bonus of pmcData.Bonuses) {
+      // fuel tanks
+      if (bonus.type == "AdditionalSlots" && bonus.value == 2) {
+        if (bonus.icon == "/files/Hideout/icon_hideout_fuelslots.png") {
+          // thats just less performance hungry compared to includes or indexof
+          countBonusesFuel++;
+        }
+      }
+      // air filters
+      if (bonus.type == "AdditionalSlots" && bonus.value == 2) {
+        if (bonus.icon == "/files/Hideout/icon_hideout_airslots.png") {
+          // thats just less performance hungry compared to includes or indexof
+          countBonusesAirFilter++;
+        }
+      }
+      // water filters
+      if (bonus.type == "AdditionalSlots" && bonus.value == 2) {
+        if (bonus.icon == "/files/Hideout/icon_hideout_waterslots.png") {
+          // thats just less performance hungry compared to includes or indexof
+          countBonusesWaterFilter++;
+        }
+      }
+    }
+    let fuelAreaLevel = pmcData.Hideout.Areas.filter((area) => area.type == 3);
+    let AirFilterAreaLevel = pmcData.Hideout.Areas.filter((area) => area.type == 17);
+    let WaterFilterAreaLevel = pmcData.Hideout.Areas.filter((area) => area.type == 6);
+    if (typeof fuelAreaLevel != "undefined") {
+      fuelAreaLevel = fuelAreaLevel.level;
+    } else {
+      fuelAreaLevel = 0;
+    }
+    if (typeof AirFilterAreaLevel != "undefined") {
+      AirFilterAreaLevel = AirFilterAreaLevel.level;
+    } else {
+      AirFilterAreaLevel = 0;
+    }
+    if (typeof WaterFilterAreaLevel != "undefined") {
+      WaterFilterAreaLevel = WaterFilterAreaLevel.level;
+    } else {
+      WaterFilterAreaLevel = 0;
+    }
+    if (countBonusesFuel == fuelAreaLevel) {
+      // add bonus cause there is less then it should be
+    }
+    if (countBonusesAirFilter == AirFilterAreaLevel) {
+      // count should be equal to level
+      // add bonus cause there is less then it should be
+    }
+    if (countBonusesWaterFilter == WaterFilterAreaLevel) {
+      // count should be equal to level
+      // add bonus cause there is less then it should be
+    }
+  }
+};
+
 module.exports.upgrade = (pmcData, body, sessionID) => {
   let foundHideoutArea = pmcData.Hideout.Areas.find((area) => area.type == body.areaType);
   let databaseHideoutArea = _database.hideout.areas.find((area) => area.type == body.areaType);
@@ -289,7 +375,7 @@ module.exports.scavCaseProductionStart = (pmcData, body, sessionID) => {
     // TODO: check if line below WORKS !?!?
 
     const rollAmountOfRewards = utility.getRandomInt(filterEndProducts[rarity].min, filterEndProducts[rarity].max);
-    logger.logInfo(`ScavCase[${rarity}]: ${rollAmountOfRewards} [min:${filterEndProducts[rarity].min},max:${filterEndProducts[rarity].max}]`)
+    logger.logInfo(`ScavCase[${rarity}]: ${rollAmountOfRewards} [min:${filterEndProducts[rarity].min},max:${filterEndProducts[rarity].max}]`);
     for (let i = 0; i < rollAmountOfRewards; i++) {
       const filteredByRarity = global._database.items.filter((item) => item._props.Rarity && item._props.Rarity === rarity);
       if (Object.keys(filteredByRarity).length == 0) {

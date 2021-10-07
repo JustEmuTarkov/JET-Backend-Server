@@ -333,7 +333,7 @@ function createOffer(template, onlyFunc, usePresets = true) {
   }
 
   // Remove items that don't exist in assort
-  if (!(template in Object.keys(global._database.traders.ragfair.assort.loyal_level_items))) {
+  if (Object.values(global._database.traders.ragfair.assort.items).filter(tItem => tItem._tpl == template || tItem._id == template).length == 0) {
     logger.logWarning(`Item ${template} does not exist in ragfair assort, ignoring...`);
     return [];
   }
