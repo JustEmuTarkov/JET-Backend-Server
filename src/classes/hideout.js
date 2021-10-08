@@ -78,14 +78,14 @@ function isHideoutManagementElite(pmcData) {
   return getPlayerHideoutSkill(pmcData) == 51;
 }
 
-function getHideoutManagDecreasedConsumption(pmcData) {
+module.exports.getHideoutSkillDecreasedConsumption = (pmcData) => {
   let hideoutManagementLevel = getPlayerHideoutSkill(pmcData);
   let decreasingBonus = 0.5 * hideoutManagementLevel;
   if (decreasingBonus >= 25) {
     decreasingBonus = 25; // for elite
   }
   return 1 - decreasingBonus / 100;
-}
+};
 module.exports.checkPlayerHideoutBuffsFromSkills = (url, info, sessionID) => {
   let pmcData = profile_f.getPmcProfile(sessionID);
   let countBonusesFuel = 0,

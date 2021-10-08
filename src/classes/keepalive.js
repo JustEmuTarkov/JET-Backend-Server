@@ -66,12 +66,12 @@ function updatePlayerHideout(sessionID) {
         break;
       case 6:
         if (isGeneratorOn) {
-          pmcData.Hideout.Areas[area] = updateWaterFilters(pmcData.Hideout.Areas[area]);
+          pmcData.Hideout.Areas[area] = updateWaterFilters(pmcData, area);
         }
         break;
       case 17:
         if (isGeneratorOn) {
-          pmcData.Hideout.Areas[area] = updateAirFilters(pmcData.Hideout.Areas[area]);
+          pmcData.Hideout.Areas[area] = updateAirFilters(pmcData, area);
         }
         break;
 
@@ -128,9 +128,11 @@ function updatePlayerHideout(sessionID) {
     }
   }
 }
-function updateWaterFilters(waterFilterArea) {
+function updateWaterFilters(pmcData, area) {
+  let waterFilterArea = pmcData.Hideout.Areas[area];
   // thanks to Alexter161
   let decreaseValue = 0.00333;
+  decreaseValue *= hideout_f.getHideoutSkillDecreasedConsumption(pmcData); //
 
   for (let i = 0; i < waterFilterArea.slots.length; i++) {
     if (waterFilterArea.slots[i].item == null || waterFilterArea.slots[i].item === undefined) {
@@ -170,7 +172,7 @@ function updateFuel(pmcData, solarPower, area) {
   }
   // Decrease fuel depleting number by percent from hideout skill
   // function return 1 if skill is 0 and 0.75 if skill is maxed out
-  //decreaseFuel *= getHideoutSkillDecreasedConsumptionBy(pmcData); not implemented yet
+  decreaseFuel *= hideout_f.getHideoutSkillDecreasedConsumption(pmcData); //
 
   for (let i = 0; i < generatorArea.slots.length; i++) {
     if (generatorArea.slots[i].item == null || generatorArea.slots[i].item === undefined) {
@@ -215,8 +217,10 @@ function updateFuel(pmcData, solarPower, area) {
   return generatorArea;
 }
 
-function updateAirFilters(airFilterArea) {
+function updateAirFilters(pmcData, area) {
+  let airFilterArea = pmcData.Hideout.Areas[area];
   let decreaseValue = 0.00417;
+  decreaseValue *= hideout_f.getHideoutSkillDecreasedConsumption(pmcData); //
 
   for (let i = 0; i < airFilterArea.slots.length; i++) {
     if (airFilterArea.slots[i].item == null || airFilterArea.slots[i].item === undefined) {
