@@ -167,7 +167,7 @@ function GenerateMountedShort(loot)
 function loadParsed(file){
 	return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
-const oldLootMaps = loadParsed('./locations_old.json');
+//const oldLootMaps = loadParsed('./locations_old.json');
 const maps = [
 	"bigmap",
 	"develop",
@@ -229,7 +229,7 @@ for(let map in maps)
 	}
 	for(let num = 1; num <= 6; num++)
 	{
-		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.bytes`))?".json":".bytes";
+		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.txt`))?".json":".txt";
 		const mapDataLoot = loadParsed(`./maps/${maps[map]}${num}${fileType}`).Location.Loot;
 
 		for(const loot in mapDataLoot)
@@ -310,5 +310,5 @@ for(let map in maps)
 		}
 		console.log("Old Static Containers Added : " + count);
 		*/
-	fs.writeFileSync(`./${maps[map].toLowerCase()}.json`, JSON.stringify(newLoot));
+	fs.writeFileSync(`./new/${maps[map].toLowerCase()}.json`, JSON.stringify(newLoot));
 }
