@@ -86,7 +86,8 @@ module.exports.getHideoutSkillDecreasedConsumption = (pmcData) => {
   }
   return 1 - decreasingBonus / 100;
 };
-module.exports.checkPlayerHideoutBuffsFromSkills = (url, info, sessionID) => {
+module.exports.checkPlayerHideoutBuffsFromSkills = (sessionID) => {
+  // requires data t obe finished now is not called anywhere
   let pmcData = profile_f.getPmcProfile(sessionID);
   let countBonusesFuel = 0,
     countBonusesAirFilter = 0,

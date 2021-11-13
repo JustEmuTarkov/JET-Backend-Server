@@ -48,6 +48,15 @@ class AccountServer {
 
     return undefined;
   }
+  
+  getAccountLang(sessionID) {
+    let account = this.find(sessionID);
+    if(typeof account.lang == "undefined"){
+      account.lang = "en";
+      this.saveToDisk(sessionID);
+    }
+    return account.lang;
+  }
 
   isWiped(sessionID) {
     return this.accounts[sessionID].wipe;
