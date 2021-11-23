@@ -170,7 +170,7 @@ function loadParsed(file){
 //const oldLootMaps = loadParsed('./locations_old.json');
 const maps = [
 	"bigmap",
-	"develop",
+	//"develop",
 	"factory4_day",
 	"factory4_night",
 	"Interchange",
@@ -227,10 +227,11 @@ for(let map in maps)
 	{
 		newLoot.mounted.push(GenerateMountedShort(loadOldMapData.mounted[id]));
 	}
-	for(let num = 1; num <= 6; num++)
+	for(let num = 1; num <= 10; num++)
 	{
 		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.txt`))?".json":".txt";
-		const mapDataLoot = loadParsed(`./maps/${maps[map]}${num}${fileType}`).Location.Loot;
+		//const mapDataLoot = loadParsed(`./maps/${maps[map]}${num}${fileType}`).Location.Loot; // old txt or bytes!!!!!
+		const mapDataLoot = loadParsed(`./maps/${maps[map]}_${num}${fileType}`).data.Loot; // from bsg dumps!!!!!
 
 		for(const loot in mapDataLoot)
 		{
