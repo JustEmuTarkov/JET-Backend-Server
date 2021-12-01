@@ -1,6 +1,9 @@
 class Responses {
   constructor() {
     this.staticResponses = {
+      // NEW REQUESTS
+      "/client/repeatalbeQuests/activityPeriods": this.clientRepeatableQuestsActivityPeriods,
+      // CORE REQUESTS
       "/client/account/customization": this.clientAccountCustomization,
       "/client/chatServer/list": this.clientChatServerList,
       "/client/checkVersion": this.clientCheckVersion,
@@ -210,6 +213,12 @@ class Responses {
   }
 
   //static
+  clientRepeatableQuestsActivityPeriods(url, info, sessionID) {
+    // TODO: requires data from endgame account or at last one that have some of those quests so we can return them here
+    // TODO 2: require whole new system to generate the data for repeatable quests, which, where and when 
+    return response_f.getBody([]);
+  }
+  
   clientAccountCustomization(url, info, sessionID) {
     return response_f.getBody(customization_f.getAccountCustomization());
   }
@@ -638,7 +647,9 @@ class Responses {
     return fileIO.stringify({
       backendUrl: server.getBackendUrl(),
       name: server.getName(),
-      editions: Object.keys(db.profile).filter(key => { return db.profile[key] instanceof Object }),
+      editions: Object.keys(db.profile).filter((key) => {
+        return db.profile[key] instanceof Object;
+      }),
     });
   }
 
