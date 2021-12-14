@@ -169,6 +169,7 @@ function loadParsed(file){
 }
 //const oldLootMaps = loadParsed('./locations_old.json');
 const maps = [
+  "Lighthouse",
 	"bigmap",
 	//"develop",
 	"factory4_day",
@@ -218,7 +219,8 @@ for(let map in maps)
 		"static": [],
 		"dynamic": []
 	}
-	const loadOldMapData = loadParsed(`./oldMaps/${maps[map].toLowerCase()}.json`);
+  // THIS PART ADDS OLD LOOT LOCATIONS - so if new dumps doesnt have them you can add them like this
+	/*const loadOldMapData = loadParsed(`./oldMaps/${maps[map].toLowerCase()}.json`);
 	//for(const id in loadOldMapData.forced)
 	//{
 	//	newLoot.forced.push(GenerateForcedShort(loadOldMapData.forced[id]));
@@ -226,42 +228,49 @@ for(let map in maps)
 	for(const id in loadOldMapData.mounted)
 	{
 		newLoot.mounted.push(GenerateMountedShort(loadOldMapData.mounted[id]));
-	}
+	}*/
 	for(let num = 1; num <= 10; num++)
 	{
 		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.txt`))?".json":".txt";
 		//const mapDataLoot = loadParsed(`./maps/${maps[map]}${num}${fileType}`).Location.Loot; // old txt or bytes!!!!!
-		const mapDataLoot = loadParsed(`./maps/${maps[map]}_${num}${fileType}`).data.Loot; // from bsg dumps!!!!!
-
-		for(const loot in mapDataLoot)
-		{
-			if(mapDataLoot[loot].IsStatic)
-			{
-				if(newLoot.static.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
-					newLoot.static.push(GenerateStaticShort(mapDataLoot[loot]));
-			} else 
-			{
-				let isQuest = false;
-				for(let id in questItems){
-					if(mapDataLoot[loot].Id.indexOf(questItems[id]) != -1){
-						isQuest = true;
-						break;
-					}
-				}
-				if(questItemID.indexOf(mapDataLoot[loot].Items[0]._tpl) != -1){
-					isQuest = true;
-				}
-				if(isQuest){
-					if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0){
-						console.log("QUEST SPAWN: " + mapDataLoot[loot].Id)
-						newLoot.forced.push(GenerateForcedShort(mapDataLoot[loot]))
-					}
-				} else {
-					if(newLoot.dynamic.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
-						newLoot.dynamic.push(GenerateDynamicShort(mapDataLoot[loot]));
-				}
-			}
-		}
+    if(fs.existsSync(`./maps/${maps[map]}_${num}${fileType}`)) {
+      let mapDataLoot = loadParsed(`./maps/${maps[map]}_${num}${fileType}`); // from dumps of ingame assets
+      if(typeof mapDataLoot.data != "undefined"){
+        mapDataLoot = mapDataLoot.data.Loot;
+      } else {
+        mapDataLoot = mapDataLoot.Loot;
+      }
+      
+      for(const loot in mapDataLoot)
+      {
+        if(mapDataLoot[loot].IsStatic)
+        {
+          if(newLoot.static.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+            newLoot.static.push(GenerateStaticShort(mapDataLoot[loot]));
+        } else 
+        {
+          let isQuest = false;
+          for(let id in questItems){
+            if(mapDataLoot[loot].Id.indexOf(questItems[id]) != -1){
+              isQuest = true;
+              break;
+            }
+          }
+          if(questItemID.indexOf(mapDataLoot[loot].Items[0]._tpl) != -1){
+            isQuest = true;
+          }
+          if(isQuest){
+            if(newLoot.forced.filter(item => item.id == mapDataLoot[loot].Id).length == 0){
+              console.log("QUEST SPAWN: " + mapDataLoot[loot].Id)
+              newLoot.forced.push(GenerateForcedShort(mapDataLoot[loot]))
+            }
+          } else {
+            if(newLoot.dynamic.filter(item => item.id == mapDataLoot[loot].Id).length == 0)
+              newLoot.dynamic.push(GenerateDynamicShort(mapDataLoot[loot]));
+          }
+        }
+      }
+    }
 	}
 	console.log("Forced : " + newLoot.forced.length);
 	console.log("Mounted : " + newLoot.mounted.length);
