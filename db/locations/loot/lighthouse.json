@@ -243,6 +243,418 @@
 			"id": "mods_all (2)3390588",
 			"randomRotation": true,
 			"useGravity": true
+		},
+		{
+			"Items": ["57372e4a24597768553071c2", "56dff338d2720bbd668b4569"],
+			"Position":
+			{
+				"x": 34.618,
+				"y": 10.962,
+				"z": -880.236
+			},
+			"Rotation": 0,
+			"id": "ammo_all (4)3387046",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372ee1245977685d4159b5", "56dff4a2d2720bbd668b456a", "56dff4a2d2720bbd668b456a"],
+			"Position":
+			{
+				"x": -104.849,
+				"y": 10.816,
+				"z": -949.227
+			},
+			"Rotation": 0,
+			"id": "ammo_all (13)3387204",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737260b24597761224311f2", "57371e4124597760ff7b25f1"],
+			"Position":
+			{
+				"x": -92.747,
+				"y": 11.096,
+				"z": -795.208
+			},
+			"Rotation": 0,
+			"id": "ammo_all (25)3387372",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372ee1245977685d4159b5", "56dff4a2d2720bbd668b456a", "56dff4a2d2720bbd668b456a"],
+			"Position":
+			{
+				"x": 32.879,
+				"y": 11.39,
+				"z": -809.637
+			},
+			"Rotation": 0,
+			"id": "ammo_all (11)3387458",
+			"useGravity": true
+		},
+		{
+			"Items": ["5734773724597737fd047c14"],
+			"Position":
+			{
+				"x": -94.681,
+				"y": 10.784,
+				"z": -794.47
+			},
+			"Rotation": 0,
+			"id": "food_varios_mix (5)3387474",
+			"useGravity": true
+		},
+		{
+			"Items": ["5649ed104bdc2d3d1c8b458b", "5656d7c34bdc2d9d198b4587"],
+			"Position":
+			{
+				"x": 33.205,
+				"y": 11.552,
+				"z": -811.127
+			},
+			"Rotation": 0,
+			"id": "ammo_all (10)3388110",
+			"useGravity": true
+		},
+		{
+			"Items": ["5649ed104bdc2d3d1c8b458b", "5656d7c34bdc2d9d198b4587"],
+			"Position":
+			{
+				"x": -99.881,
+				"y": 11.035,
+				"z": -795.233
+			},
+			"Rotation": 0,
+			"id": "ammo_all (23)3388170",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372ac324597767001bc261", "56dfef82d2720bbd668b4567"],
+			"Position":
+			{
+				"x": 35.402,
+				"y": 11.774,
+				"z": -882.591
+			},
+			"Rotation": 0,
+			"id": "ammo_all (1)3388384",
+			"useGravity": true
+		},
+		{
+			"Items": ["573474f924597738002c6174"],
+			"Position":
+			{
+				"x": 89.586,
+				"y": 1.273,
+				"z": 457.964
+			},
+			"Rotation": 0,
+			"id": "Jeverly&food (2)3388680",
+			"useGravity": true
+		},
+		{
+			"Items": ["573727c624597765cc785b5b", "5737201124597760fc4431f1"],
+			"Position":
+			{
+				"x": -16.815,
+				"y": 13.477,
+				"z": -892.7
+			},
+			"Rotation": 0,
+			"id": "ammo_all (28)3389182",
+			"useGravity": true
+		},
+		{
+			"Items": ["573727c624597765cc785b5b", "5737201124597760fc4431f1"],
+			"Position":
+			{
+				"x": 34.987,
+				"y": 11.774,
+				"z": -882.113
+			},
+			"Rotation": 0,
+			"id": "ammo_all3389306",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737256c2459776125652acd", "57371aab2459775a77142f22"],
+			"Position":
+			{
+				"x": 35.582,
+				"y": 11.851,
+				"z": -882.849
+			},
+			"Rotation": 0,
+			"id": "ammo_all (2)3389416",
+			"useGravity": true
+		},
+		{
+			"Items": ["560d75f54bdc2da74d8b4573", "560d61e84bdc2da74d8b4571"],
+			"Position":
+			{
+				"x": 52.291,
+				"y": 11.47,
+				"z": -809.299
+			},
+			"Rotation": 0,
+			"id": "ammo_all (7)3389432",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372f5c24597769917c0131", "56dff4a2d2720bbd668b456a"],
+			"Position":
+			{
+				"x": -100.834,
+				"y": 11.403,
+				"z": -795.011
+			},
+			"Rotation": 0,
+			"id": "ammo_all (18)3389654",
+			"useGravity": true
+		},
+		{
+			"Items": ["57513f07245977207e26a311"],
+			"Position":
+			{
+				"x": 90.695,
+				"y": 1.273,
+				"z": 457.86
+			},
+			"Rotation": 0,
+			"id": "Jeverly&food (1)3390348",
+			"useGravity": true
+		},
+		{
+			"Items": ["573474f924597738002c6174"],
+			"Position":
+			{
+				"x": 90.132,
+				"y": 1.273,
+				"z": 456.971
+			},
+			"Rotation": 0,
+			"id": "Jeverly&food3390402",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737250c2459776125652acc", "573719df2459775a626ccbc2"],
+			"Position":
+			{
+				"x": 52.166,
+				"y": 11.539,
+				"z": -808.893
+			},
+			"Rotation": 0,
+			"id": "ammo_all (5)3390800",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372e73245977685d4159b4", "56dff3afd2720bba668b4567", "56dff3afd2720bba668b4567"],
+			"Position":
+			{
+				"x": -101.187,
+				"y": 11.41,
+				"z": -794.412
+			},
+			"Rotation": 0,
+			"id": "ammo_all (22)3387730",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737260b24597761224311f2", "57371e4124597760ff7b25f1"],
+			"Position":
+			{
+				"x": 52.708,
+				"y": 11.47,
+				"z": -809.262
+			},
+			"Rotation": 0,
+			"id": "ammo_all (6)3387992",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372deb245977685d4159b3", "56dff338d2720bbd668b4569", "56dff338d2720bbd668b4569"],
+			"Position":
+			{
+				"x": -101.325,
+				"y": 11.025,
+				"z": -796.027
+			},
+			"Rotation": 0,
+			"id": "ammo_all (17)3388280",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372deb245977685d4159b3", "56dff338d2720bbd668b4569", "56dff338d2720bbd668b4569"],
+			"Position":
+			{
+				"x": -16.086,
+				"y": 13.182,
+				"z": -900.154
+			},
+			"Rotation": 0,
+			"id": "ammo_all (27)3388356",
+			"useGravity": true
+		},
+		{
+			"Items": ["5fb653962b1b027b1f50bd03"],
+			"Position":
+			{
+				"x": -23.508,
+				"y": 13.236,
+				"z": -881.691
+			},
+			"Rotation": 0,
+			"id": "mods_all (6)3388364",
+			"randomRotation": true,
+			"useGravity": true
+		},
+		{
+			"Items": ["5bc9c29cd4351e003562b8a3"],
+			"Position":
+			{
+				"x": 90.127,
+				"y": 1.874,
+				"z": 456.108
+			},
+			"Rotation": 0,
+			"id": "food_varios_mix3390028",
+			"useGravity": true
+		},
+		{
+			"Items": ["57347b8b24597737dd42e192"],
+			"Position":
+			{
+				"x": -167.428879,
+				"y": 5.3555336,
+				"z": -437.282043
+			},
+			"Rotation":
+			{
+				"x": -0.000120275363,
+				"y": 36.6871948,
+				"z": 183.296112
+			},
+			"id": "Loot_jigul_garbage (1)-13245752",
+			"useGravity": true
+		},
+		{
+			"Items": ["57372e4a24597768553071c2", "56dff338d2720bbd668b4569"],
+			"Position":
+			{
+				"x": 53.933,
+				"y": 11.065,
+				"z": -809.005
+			},
+			"Rotation": 0,
+			"id": "ammo_all (8)3386526",
+			"useGravity": true
+		},
+		{
+			"Items": ["5bc9c29cd4351e003562b8a3"],
+			"Position":
+			{
+				"x": -95.158,
+				"y": 10.886,
+				"z": -795.125
+			},
+			"Rotation": 0,
+			"id": "food_varios_mix (4)3389672",
+			"useGravity": true
+		},
+		{
+			"Items": ["5734773724597737fd047c14"],
+			"Position":
+			{
+				"x": 87,
+				"y": 1.387,
+				"z": 463.868
+			},
+			"Rotation": 0,
+			"id": "Jeverly&food (4)3390656",
+			"useGravity": true
+		},
+		{
+			"Items": ["590c5d4b86f774784e1b9c45"],
+			"Position":
+			{
+				"x": 43.76381,
+				"y": 5.159001,
+				"z": -415.79953
+			},
+			"Rotation":
+			{
+				"x": 0.00001014853,
+				"y": 195.760971,
+				"z": 0.000001404702
+			},
+			"id": "LootGarbage (35)-12306864",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737273924597765dd374461", "57371f8d24597761006c6a81"],
+			"Position":
+			{
+				"x": -101.904,
+				"y": 11.025,
+				"z": -796.038
+			},
+			"Rotation": 0,
+			"id": "ammo_all (16)3386624",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737339e2459776af261abeb", "56dff216d2720bbd668b4568"],
+			"Position":
+			{
+				"x": 54.022,
+				"y": 11.068,
+				"z": -808.657
+			},
+			"Rotation": 0,
+			"id": "ammo_all (9)3386726",
+			"useGravity": true
+		},
+		{
+			"Items": ["5737339e2459776af261abeb", "56dff216d2720bbd668b4568"],
+			"Position":
+			{
+				"x": -102.411,
+				"y": 11.202,
+				"z": -794.663
+			},
+			"Rotation": 0,
+			"id": "ammo_all (20)3388304",
+			"useGravity": true
+		},
+		{
+			"Items": ["57347c5b245977448d35f6e1"],
+			"Position":
+			{
+				"x": -128.85762,
+				"y": 6.6174,
+				"z": 476.0996
+			},
+			"Rotation":
+			{
+				"x": -0.0001199552,
+				"y": 271.728821,
+				"z": 183.296158
+			},
+			"id": "Loot_jigul_garbage-12373524",
+			"useGravity": true
+		},
+		{
+			"Items": ["5e8f3423fd7471236e6e3b64"],
+			"Position":
+			{
+				"x": -96.192,
+				"y": 10.866,
+				"z": -794.36
+			},
+			"Rotation": 0,
+			"id": "food_varios_mix (3)3387134",
+			"useGravity": true
 		}
 	],
 	"forced": [],
