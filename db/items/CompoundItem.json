@@ -1,38 +1,5 @@
 [
 	{
-		"_id": "5448fe124bdc2da5018b4567",
-		"_name": "Mod",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"Durability": 100,
-			"Accuracy": 0,
-			"Recoil": 0,
-			"Loudness": 0,
-			"EffectiveDistance": 0,
-			"Ergonomics": 0,
-			"Velocity": 0,
-			"RaidModdable": false,
-			"ToolModdable": false,
-			"BlocksFolding": false,
-			"BlocksCollapsible": false,
-			"IsAnimated": false,
-			"MergesWithChildren": true,
-			"HasShoulderContact": false,
-			"SightingRange": 0
-		}
-	},
-	{
-		"_id": "566168634bdc2d144c8b456c",
-		"_name": "SearchableItem",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"SearchSound": "cashregister_looting",
-			"BlocksArmorVest": false
-		}
-	},
-	{
 		"_id": "5671435f4bdc2d96058b4569",
 		"_name": "LockableContainer",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -44,30 +11,6 @@
 			"TagColor": 0,
 			"TagName": ""
 		}
-	},
-	{
-		"_id": "5795f317245977243854e041",
-		"_name": "SimpleContainer",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"TagColor": 0,
-			"TagName": ""
-		}
-	},
-	{
-		"_id": "567583764bdc2d98058b456e",
-		"_name": "StationaryContainer",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
-		"_id": "55d720f24bdc2d88028b456d",
-		"_name": "Inventory",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
 	},
 	{
 		"_id": "543be5f84bdc2dd4348b456a",
@@ -82,8 +25,8 @@
 		}
 	},
 	{
-		"_id": "566abbb64bdc2d144c8b457d",
-		"_name": "Stash",
+		"_id": "567583764bdc2d98058b456e",
+		"_name": "StationaryContainer",
 		"_parent": "566162e44bdc2d3f298b4573",
 		"_type": "Node",
 		"_props": {}
@@ -110,6 +53,8 @@
 			"RecoilAngle": 90,
 			"weapFireType": [],
 			"RecolDispersion": 0,
+			"SingleFireRate": 720,
+			"CanQueueSecondShot": true,
 			"bFirerate": 900,
 			"Ergonomics": 10,
 			"Velocity": 0,
@@ -176,9 +121,71 @@
 			"AllowMisfire": false,
 			"AllowSlide": false,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 0,
-			"CoolFactor": 0,
-			"AllowOverheat": false
+			"HeatFactorGun": 1,
+			"CoolFactorGun": 1,
+			"CoolFactorGunMods": 1,
+			"HeatFactorByShot": 1,
+			"AllowOverheat": false,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		}
+	},
+	{
+		"_id": "55d720f24bdc2d88028b456d",
+		"_name": "Inventory",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
+	},
+	{
+		"_id": "5448fe124bdc2da5018b4567",
+		"_name": "Mod",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"Durability": 100,
+			"Accuracy": 0,
+			"Recoil": 0,
+			"Loudness": 0,
+			"EffectiveDistance": 0,
+			"Ergonomics": 0,
+			"Velocity": 0,
+			"RaidModdable": false,
+			"ToolModdable": false,
+			"BlocksFolding": false,
+			"BlocksCollapsible": false,
+			"IsAnimated": false,
+			"MergesWithChildren": true,
+			"HasShoulderContact": false,
+			"SightingRange": 0,
+			"DoubleActionAccuracyPenaltyMult": 1
+		}
+	},
+	{
+		"_id": "566168634bdc2d144c8b456c",
+		"_name": "SearchableItem",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"SearchSound": "cashregister_looting",
+			"BlocksArmorVest": false
+		}
+	},
+	{
+		"_id": "5795f317245977243854e041",
+		"_name": "SimpleContainer",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"TagColor": 0,
+			"TagName": ""
+		}
+	},
+	{
+		"_id": "566abbb64bdc2d144c8b457d",
+		"_name": "Stash",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
 	}
 ]

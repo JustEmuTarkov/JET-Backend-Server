@@ -10,24 +10,16 @@
 		}
 	},
 	{
-		"_id": "543be5dd4bdc2deb348b4569",
-		"_name": "Money",
-		"_parent": "5661632d4bdc2d903d8b456b",
-		"_type": "Node",
-		"_props": {
-			"type": "RUB",
-			"eqMin": 0,
-			"eqMax": 0,
-			"rate": 1
-		}
-	},
-	{
 		"_id": "5485a8684bdc2da71d8b4567",
 		"_name": "Ammo",
 		"_parent": "5661632d4bdc2d903d8b456b",
 		"_type": "Node",
 		"_props": {
 			"ammoType": "bullet",
+			"InitialSpeed": 0,
+			"BallisticCoeficient": 1,
+			"BulletMassGram": 0,
+			"BulletDiameterMilimeters": 0,
 			"Damage": 0,
 			"ammoAccr": 0,
 			"ammoRec": 0,
@@ -46,11 +38,9 @@
 			"casingMass": 0,
 			"casingSounds": "pistol_small",
 			"ProjectileCount": 1,
-			"InitialSpeed": 0,
 			"PenetrationChance": 0,
 			"RicochetChance": 0,
 			"FragmentationChance": 0,
-			"BallisticCoeficient": 1,
 			"Deterioration": 1,
 			"SpeedRetardation": 0,
 			"Tracer": false,
@@ -91,9 +81,22 @@
 			"LightAndSoundShotAngle": 0,
 			"LightAndSoundShotSelfContusionTime": 0,
 			"LightAndSoundShotSelfContusionStrength": 0,
-			"MalfunctionChance": 0,
+			"MalfMisfireChance": 0,
 			"DurabilityBurnModificator": 1,
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"MalfFeedChance": 0
+		}
+	},
+	{
+		"_id": "543be5dd4bdc2deb348b4569",
+		"_name": "Money",
+		"_parent": "5661632d4bdc2d903d8b456b",
+		"_type": "Node",
+		"_props": {
+			"type": "RUB",
+			"eqMin": 0,
+			"eqMax": 0,
+			"rate": 1
 		}
 	}
 ]

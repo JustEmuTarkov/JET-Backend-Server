@@ -110,6 +110,7 @@
 							{
 								"AnimationIndex": -1,
 								"Filter": [
+									"61695095d92c473c7702147a",
 									"5c5970672e221602b21d7855",
 									"587df583245977373c4f1129",
 									"587df3a12459772c28142567"
@@ -173,12 +174,14 @@
 			"isFastReload": false,
 			"RecoilForceUp": 182,
 			"RecoilForceBack": 400,
-			"Convergence": 1.5,
+			"Convergence": 1.3,
 			"RecoilAngle": 90,
 			"weapFireType": [
 				"single"
 			],
 			"RecolDispersion": 15,
+			"SingleFireRate": 450,
+			"CanQueueSecondShot": true,
 			"bFirerate": 40,
 			"Ergonomics": 40,
 			"Velocity": 0,
@@ -216,12 +219,12 @@
 				}
 			],
 			"CameraRecoil": 0.18,
-			"CameraSnap": 3.5,
+			"CameraSnap": 2.5,
 			"ReloadMode": "InternalMagazine",
 			"CenterOfImpact": 0.07,
 			"AimPlane": 0.25,
-			"DeviationCurve": 6,
-			"DeviationMax": 35,
+			"DeviationCurve": 1.4,
+			"DeviationMax": 22,
 			"Foldable": false,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -261,15 +264,19 @@
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
 			"BurstShotsCount": 3,
-			"BaseMalfunctionChance": 0.14,
-			"AllowJam": false,
-			"AllowFeed": false,
+			"BaseMalfunctionChance": 0.16,
+			"AllowJam": true,
+			"AllowFeed": true,
 			"AllowMisfire": true,
-			"AllowSlide": false,
+			"AllowSlide": true,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 1,
-			"CoolFactor": 1,
-			"AllowOverheat": false
+			"HeatFactorGun": 0.8865,
+			"CoolFactorGun": 5.5,
+			"CoolFactorGunMods": 0.9338,
+			"HeatFactorByShot": 1.59,
+			"AllowOverheat": true,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		},
 		"_proto": "574d967124597745970e7c94"
 	},
@@ -439,7 +446,9 @@
 								"Shift": 0,
 								"Filter": [
 									"5947db3f86f77447880cf76f",
+									"6113d6c3290d254f5e6b27db",
 									"57486e672459770abd687134",
+									"618a5d5852ecee1505530b2a",
 									"5c82342f2e221644f31c060e",
 									"576fd4ec2459777f0b518431",
 									"5c82343a2e221644f31c0611",
@@ -448,6 +457,7 @@
 									"591ee00d86f774592f7b841e",
 									"609a4b4fe2ff132951242d04",
 									"5d0a29ead7ad1a0026013f27",
+									"618a75c9a3884f56c957ca1b",
 									"57acb6222459771ec34b5cb0",
 									"5dff8db859400025ea5150d4",
 									"5c61a40d2e2216001403158d",
@@ -491,7 +501,7 @@
 			"durabSpawnMin": 15,
 			"durabSpawnMax": 65,
 			"isFastReload": true,
-			"RecoilForceUp": 400,
+			"RecoilForceUp": 600,
 			"RecoilForceBack": 650,
 			"Convergence": 1.5,
 			"RecoilAngle": 85,
@@ -499,6 +509,8 @@
 				"single"
 			],
 			"RecolDispersion": 25,
+			"SingleFireRate": 450,
+			"CanQueueSecondShot": true,
 			"bFirerate": 600,
 			"Ergonomics": 29,
 			"Velocity": 1.8,
@@ -541,8 +553,8 @@
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.065,
 			"AimPlane": 0.19,
-			"DeviationCurve": 6,
-			"DeviationMax": 35,
+			"DeviationCurve": 1.35,
+			"DeviationMax": 23,
 			"Foldable": false,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -582,15 +594,19 @@
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
 			"BurstShotsCount": 3,
-			"BaseMalfunctionChance": 0.14,
-			"AllowJam": false,
-			"AllowFeed": false,
+			"BaseMalfunctionChance": 0.175,
+			"AllowJam": true,
+			"AllowFeed": true,
 			"AllowMisfire": true,
-			"AllowSlide": false,
+			"AllowSlide": true,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 1,
-			"CoolFactor": 1,
-			"AllowOverheat": false
+			"HeatFactorGun": 0.8712,
+			"CoolFactorGun": 5.5,
+			"CoolFactorGunMods": 0.92,
+			"HeatFactorByShot": 3.93,
+			"AllowOverheat": true,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		},
 		"_proto": "5447a9cd4bdc2dbd208b4567"
 	},
@@ -761,6 +777,7 @@
 							{
 								"Shift": 0,
 								"Filter": [
+									"6130ca3fd92c473c77020dbd",
 									"5648ac824bdc2ded0b8b457d"
 								]
 							}
@@ -780,12 +797,15 @@
 								"Shift": 0,
 								"Filter": [
 									"5947db3f86f77447880cf76f",
+									"6113d6c3290d254f5e6b27db",
 									"57486e672459770abd687134",
+									"618a5d5852ecee1505530b2a",
 									"5cf638cbd7f00c06595bc936",
 									"5a7c74b3e899ef0014332c29",
 									"591ee00d86f774592f7b841e",
 									"5e569a2e56edd02abe09f280",
 									"5d0a29ead7ad1a0026013f27",
+									"618a75c9a3884f56c957ca1b",
 									"57acb6222459771ec34b5cb0",
 									"5c61a40d2e2216001403158d",
 									"5c90c3622e221601da359851"
@@ -831,15 +851,17 @@
 			"durabSpawnMin": 25,
 			"durabSpawnMax": 75,
 			"isFastReload": true,
-			"RecoilForceUp": 150,
-			"RecoilForceBack": 310,
-			"Convergence": 2.5,
+			"RecoilForceUp": 140,
+			"RecoilForceBack": 300,
+			"Convergence": 1.7,
 			"RecoilAngle": 90,
 			"weapFireType": [
 				"single",
 				"fullauto"
 			],
 			"RecolDispersion": 25,
+			"SingleFireRate": 450,
+			"CanQueueSecondShot": true,
 			"bFirerate": 900,
 			"Ergonomics": 46,
 			"Velocity": 0,
@@ -862,6 +884,7 @@
 							{
 								"Filter": [
 									"5c0d688c86f77413ae3407b2",
+									"61962d879bb3d20b0946d385",
 									"57a0dfb82459774d3078b56c",
 									"57a0e5022459774d1673f889",
 									"5c0d668f86f7747ccb7f13b2"
@@ -876,12 +899,12 @@
 				}
 			],
 			"CameraRecoil": 0.16,
-			"CameraSnap": 3.5,
+			"CameraSnap": 2.2,
 			"ReloadMode": "ExternalMagazine",
 			"CenterOfImpact": 0.1,
 			"AimPlane": 0.2,
-			"DeviationCurve": 6,
-			"DeviationMax": 35,
+			"DeviationCurve": 1.9,
+			"DeviationMax": 15.5,
 			"Foldable": true,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -922,14 +945,18 @@
 			"AimSensitivity": 0.65,
 			"BurstShotsCount": 3,
 			"BaseMalfunctionChance": 0.14,
-			"AllowJam": false,
-			"AllowFeed": false,
+			"AllowJam": true,
+			"AllowFeed": true,
 			"AllowMisfire": true,
-			"AllowSlide": false,
+			"AllowSlide": true,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 1,
-			"CoolFactor": 1,
-			"AllowOverheat": false
+			"HeatFactorGun": 0.98,
+			"CoolFactorGun": 4.5,
+			"CoolFactorGunMods": 1.02,
+			"HeatFactorByShot": 2.17,
+			"AllowOverheat": true,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		},
 		"_proto": "57838ad32459774a17445cd2"
 	},
@@ -1044,6 +1071,7 @@
 							{
 								"AnimationIndex": -1,
 								"Filter": [
+									"61695095d92c473c7702147a",
 									"5c5970672e221602b21d7855",
 									"587df583245977373c4f1129",
 									"587df3a12459772c28142567"
@@ -1089,12 +1117,14 @@
 			"isFastReload": false,
 			"RecoilForceUp": 182,
 			"RecoilForceBack": 400,
-			"Convergence": 1.5,
+			"Convergence": 1.3,
 			"RecoilAngle": 90,
 			"weapFireType": [
 				"single"
 			],
 			"RecolDispersion": 10,
+			"SingleFireRate": 450,
+			"CanQueueSecondShot": true,
 			"bFirerate": 40,
 			"Ergonomics": 40,
 			"Velocity": 0,
@@ -1132,12 +1162,12 @@
 				}
 			],
 			"CameraRecoil": 0.18,
-			"CameraSnap": 3.5,
+			"CameraSnap": 2.5,
 			"ReloadMode": "InternalMagazine",
 			"CenterOfImpact": 0.05,
 			"AimPlane": 0.25,
-			"DeviationCurve": 6,
-			"DeviationMax": 35,
+			"DeviationCurve": 1.35,
+			"DeviationMax": 23,
 			"Foldable": false,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -1177,15 +1207,19 @@
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
 			"BurstShotsCount": 3,
-			"BaseMalfunctionChance": 0.14,
-			"AllowJam": false,
-			"AllowFeed": false,
+			"BaseMalfunctionChance": 0.16,
+			"AllowJam": true,
+			"AllowFeed": true,
 			"AllowMisfire": true,
-			"AllowSlide": false,
+			"AllowSlide": true,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 1,
-			"CoolFactor": 1,
-			"AllowOverheat": false
+			"HeatFactorGun": 0.8865,
+			"CoolFactorGun": 5.5,
+			"CoolFactorGunMods": 0.9338,
+			"HeatFactorByShot": 1.59,
+			"AllowOverheat": true,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		}
 	}
 ]

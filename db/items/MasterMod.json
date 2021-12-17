@@ -1,5 +1,16 @@
 [
 	{
+		"_id": "55818a304bdc2db5418b457d",
+		"_name": "Receiver",
+		"_parent": "55802f4a4bdc2ddb688b4569",
+		"_type": "Node",
+		"_props": {
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1,
+			"CoolFactor": 1
+		}
+	},
+	{
 		"_id": "55818a684bdc2ddd698b456d",
 		"_name": "PistolGrip",
 		"_parent": "55802f4a4bdc2ddb688b4569",
@@ -16,7 +27,10 @@
 			"ShotgunDispersion": 1,
 			"IsSilencer": false,
 			"DurabilityBurnModificator": 1,
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"CoolFactor": 1,
+			"DeviationCurve": 1,
+			"DeviationMax": 100
 		}
 	},
 	{
@@ -25,17 +39,8 @@
 		"_parent": "55802f4a4bdc2ddb688b4569",
 		"_type": "Node",
 		"_props": {
-			"HeatFactor": 1
-		}
-	},
-	{
-		"_id": "55818a304bdc2db5418b457d",
-		"_name": "Receiver",
-		"_parent": "55802f4a4bdc2ddb688b4569",
-		"_type": "Node",
-		"_props": {
-			"DurabilityBurnModificator": 1,
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"CoolFactor": 1
 		}
 	}
 ]

@@ -1,24 +1,24 @@
 [
 	{
-		"_id": "5449016a4bdc2d6f028b456f",
-		"_name": "Рубли",
+		"_id": "569668774bdc2da2298b4568",
+		"_name": "Евро",
 		"_parent": "543be5dd4bdc2deb348b4569",
 		"_type": "Item",
 		"_props": {
-			"Name": "Рубли",
-			"ShortName": "Roubles",
+			"Name": "Euros",
+			"ShortName": "Euros",
 			"Description": "Несколько банкнот пока еще котирующихся российских рублей",
 			"Weight": 0,
 			"BackgroundColor": "green",
 			"Width": 1,
 			"Height": 1,
-			"StackMaxSize": 500000,
-			"Rarity": "Common",
-			"SpawnChance": 50,
+			"StackMaxSize": 50000,
+			"Rarity": "Superrare",
+			"SpawnChance": 10,
 			"CreditsPrice": 0,
 			"ItemSound": "item_money",
 			"Prefab": {
-				"path": "assets/content/items/money/item_money_ruble_small.bundle",
+				"path": "assets/content/items/money/item_money_euro_small.bundle",
 				"rcid": ""
 			},
 			"UsePrefab": {
@@ -60,13 +60,14 @@
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
 			"IsAlwaysAvailableForInsurance": false,
-			"StackMinRandom": 560,
-			"StackMaxRandom": 1150,
-			"type": "RUB",
-			"eqMin": 275,
-			"eqMax": 555,
+			"StackMinRandom": 35,
+			"StackMaxRandom": 90,
+			"type": "EUR",
+			"eqMin": 35,
+			"eqMax": 90,
 			"rate": 1
-		}
+		},
+		"_proto": "5696686a4bdc2da3298b456a"
 	},
 	{
 		"_id": "5696686a4bdc2da3298b456a",
@@ -139,25 +140,25 @@
 		"_proto": "5449016a4bdc2d6f028b456f"
 	},
 	{
-		"_id": "569668774bdc2da2298b4568",
-		"_name": "Евро",
+		"_id": "5449016a4bdc2d6f028b456f",
+		"_name": "Рубли",
 		"_parent": "543be5dd4bdc2deb348b4569",
 		"_type": "Item",
 		"_props": {
-			"Name": "Euros",
-			"ShortName": "Euros",
+			"Name": "Рубли",
+			"ShortName": "Roubles",
 			"Description": "Несколько банкнот пока еще котирующихся российских рублей",
 			"Weight": 0,
 			"BackgroundColor": "green",
 			"Width": 1,
 			"Height": 1,
-			"StackMaxSize": 50000,
-			"Rarity": "Superrare",
-			"SpawnChance": 10,
+			"StackMaxSize": 500000,
+			"Rarity": "Common",
+			"SpawnChance": 50,
 			"CreditsPrice": 0,
 			"ItemSound": "item_money",
 			"Prefab": {
-				"path": "assets/content/items/money/item_money_euro_small.bundle",
+				"path": "assets/content/items/money/item_money_ruble_small.bundle",
 				"rcid": ""
 			},
 			"UsePrefab": {
@@ -199,13 +200,12 @@
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
 			"IsAlwaysAvailableForInsurance": false,
-			"StackMinRandom": 35,
-			"StackMaxRandom": 90,
-			"type": "EUR",
-			"eqMin": 35,
-			"eqMax": 90,
+			"StackMinRandom": 560,
+			"StackMaxRandom": 1150,
+			"type": "RUB",
+			"eqMin": 275,
+			"eqMax": 555,
 			"rate": 1
-		},
-		"_proto": "5696686a4bdc2da3298b456a"
+		}
 	}
 ]
