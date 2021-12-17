@@ -72462,5 +72462,229 @@
 				}
 			}
 		]
+	},
+	"618b9671d14d6d5ab879c5ea": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 1500,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "618b9671d14d6d5ab879c5ea",
+				"_tpl": "618b9671d14d6d5ab879c5ea",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"618ba91477b82356f91ae0e8": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 1700,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "618ba91477b82356f91ae0e8",
+				"_tpl": "618ba91477b82356f91ae0e8",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"618b9682a3884f56c957ca78": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 2000,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "618b9682a3884f56c957ca78",
+				"_tpl": "618b9682a3884f56c957ca78",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"618ba92152ecee1505530bd3": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 2000,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "618ba92152ecee1505530bd3",
+				"_tpl": "618ba92152ecee1505530bd3",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"612e0e55a112697a4b3a66e7": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 10500,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "612e0e55a112697a4b3a66e7",
+				"_tpl": "612e0e55a112697a4b3a66e7",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"615d8e2f1cb55961fa0fd9a4": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 9300,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "615d8e2f1cb55961fa0fd9a4",
+				"_tpl": "615d8e2f1cb55961fa0fd9a4",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"618407a850224f204c1da549": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 3500,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "618407a850224f204c1da549",
+				"_tpl": "618407a850224f204c1da549",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
+	},
+	"607ffb988900dc2d9a55b6e4": {
+		"default": {
+			"unlimited": true,
+			"stack": 999999999
+		},
+		"currentStack": 999999999,
+		"loyality": 1,
+		"barter_scheme": [
+			[
+				{
+					"count": 13000,
+					"_tpl": "5449016a4bdc2d6f028b456f"
+				}
+			]
+		],
+		"items": [
+			{
+				"_id": "607ffb988900dc2d9a55b6e4",
+				"_tpl": "607ffb988900dc2d9a55b6e4",
+				"parentId": "hideout",
+				"slotId": "hideout",
+				"upd": {
+					"UnlimitedCount": true,
+					"StackObjectsCount": 99999999
+				}
+			}
+		]
 	}
 }
