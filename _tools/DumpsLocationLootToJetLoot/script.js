@@ -233,13 +233,17 @@ for(let map in maps)
 	{
 		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.txt`))?".json":".txt";
 		//const mapDataLoot = loadParsed(`./maps/${maps[map]}${num}${fileType}`).Location.Loot; // old txt or bytes!!!!!
-    if(fs.existsSync(`./maps/${maps[map]}_${num}${fileType}`)) {
-      let mapDataLoot = loadParsed(`./maps/${maps[map]}_${num}${fileType}`); // from dumps of ingame assets
+    if((fileType == ".txt" && fs.existsSync(`./maps/${maps[map]}${num}${fileType}`)) || fs.existsSync(`./maps/${maps[map]}_${num}${fileType}`)) {
+      
+      let mapDataLoot = (fileType == ".txt")?(loadParsed(`./maps/${maps[map]}${num}${fileType}`)):(loadParsed(`./maps/${maps[map]}_${num}${fileType}`)); // from dumps of ingame assets
+      
       if(typeof mapDataLoot.data != "undefined"){
-        mapDataLoot = mapDataLoot.data.Loot;
-      } else {
-        mapDataLoot = mapDataLoot.Loot;
+        mapDataLoot = mapDataLoot.data;
       }
+      if(typeof mapDataLoot.Location != "undefined"){
+        mapDataLoot = mapDataLoot.Location;
+      }
+      mapDataLoot = mapDataLoot.Loot;
       
       for(const loot in mapDataLoot)
       {
