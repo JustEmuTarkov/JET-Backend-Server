@@ -229,6 +229,7 @@ for(let map in maps)
 	{
 		newLoot.mounted.push(GenerateMountedShort(loadOldMapData.mounted[id]));
 	}*/
+  let LocationBase = {};
 	for(let num = 1; num <= 10; num++)
 	{
 		fileType = (!fs.existsSync(`./maps/${maps[map]}${num}.txt`))?".json":".txt";
@@ -243,7 +244,9 @@ for(let map in maps)
       if(typeof mapDataLoot.Location != "undefined"){
         mapDataLoot = mapDataLoot.Location;
       }
+      LocationBase = mapDataLoot;
       mapDataLoot = mapDataLoot.Loot;
+      LocationBase.Loot = [];
       
       for(const loot in mapDataLoot)
       {
@@ -276,6 +279,7 @@ for(let map in maps)
       }
     }
 	}
+  
 	console.log("Forced : " + newLoot.forced.length);
 	console.log("Mounted : " + newLoot.mounted.length);
 	console.log("Static : " + newLoot.static.length);
@@ -324,5 +328,6 @@ for(let map in maps)
 		}
 		console.log("Old Static Containers Added : " + count);
 		*/
+	fs.writeFileSync(`./newBase/${maps[map].toLowerCase()}.json`, JSON.stringify(LocationBase));
 	fs.writeFileSync(`./new/${maps[map].toLowerCase()}.json`, JSON.stringify(newLoot));
 }
