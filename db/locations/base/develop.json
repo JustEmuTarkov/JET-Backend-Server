@@ -52,7 +52,7 @@
 				"Description": "A makeshift arena for gladiator fights, redesigned by remaining locals out of Equator-2 shopping mall.",
 				"DisabledForScav": false,
 				"DisabledScavExits": "",
-				"Enabled": false,
+				"Enabled": true,
 				"GlobalLootChanceModifier": 1,
 				"IconX": 156,
 				"IconY": 551,
@@ -62,9 +62,9 @@
 				"Locked": false,
 				"Loot": [],
 				"MaxBotPerZone": 0,
-				"MaxDistToFreePoint": 900,
+				"MaxDistToFreePoint": 2000,
 				"MaxPlayers": 10,
-				"MinDistToExitPoint": 30,
+				"MinDistToExitPoint": 2000,
 				"MinDistToFreePoint": 10,
 				"MinMaxBots": [],
 				"MinPlayers": 1,
@@ -81,8 +81,8 @@
 				"Rules": "Normal",
 				"SafeLocation": false,
 				"Scene": {
-					"path": "maps/arena_preset.bundle",
-					"rcid": "arena.scenespreset.asset"
+					"path": "maps/develop_preset.bundle",
+					"rcid": "develop.scenespreset.asset"
 				},
 				"SpawnPointParams": [{
 						"BotZoneName": "",

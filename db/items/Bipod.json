@@ -77,7 +77,8 @@
 			"BlocksCollapsible": false,
 			"IsAnimated": false,
 			"HasShoulderContact": false,
-			"SightingRange": 0
+			"SightingRange": 0,
+			"DoubleActionAccuracyPenaltyMult": 1
 		}
 	},
 	{
@@ -158,7 +159,8 @@
 			"BlocksCollapsible": false,
 			"IsAnimated": false,
 			"HasShoulderContact": false,
-			"SightingRange": 0
+			"SightingRange": 0,
+			"DoubleActionAccuracyPenaltyMult": 1
 		},
 		"_proto": "56ea8222d2720b69698b4567"
 	}

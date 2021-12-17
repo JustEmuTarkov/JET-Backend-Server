@@ -78,6 +78,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 0,
+			"DoubleActionAccuracyPenaltyMult": 1,
 			"ModesCount": 2
 		}
 	},
@@ -160,6 +161,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 0,
+			"DoubleActionAccuracyPenaltyMult": 1,
 			"ModesCount": 2
 		},
 		"_proto": "57d17c5e2459775a5c57d17d"
