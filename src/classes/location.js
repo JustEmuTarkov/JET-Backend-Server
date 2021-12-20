@@ -337,7 +337,7 @@ function _GenerateContainerLoot(_items) {
         if (rolledRandomItemToPlace.preset != null) {
           // Prevent the same preset from spawning twice (it makes the client mad)
           if (addedPresets.includes(rolledRandomItemToPlace.preset._id)) {
-            i--;
+            maxAttempts--;
             continue;
           }
           addedPresets.push(rolledRandomItemToPlace.preset._id);
