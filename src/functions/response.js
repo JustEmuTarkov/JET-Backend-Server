@@ -86,7 +86,8 @@ class Responses {
       "/launcher/profile/register": this.launcherProfileRegister,
       "/launcher/profile/remove": this.launcherProfileRemove,
       "/launcher/server/connect": this.launcherServerConnect,
-      "/mode/offline": this.modeOffline,
+      "/mode/offline": this.modeOfflinePatches,
+      "/mode/offlineNodes": this.modeOfflinePatchNodes,
       "/player/health/events": this.playerHealthEvents,
       "/player/health/sync": this.playerHealthSync,
       "/raid/map/name": this.raidMapName,
@@ -653,8 +654,11 @@ class Responses {
     });
   }
 
-  modeOffline(url, info, sessionID) {
-    return response_f.noBody(serverConfig.offline);
+  modeOfflinePatches(url, info, sessionID) {
+    return response_f.noBody(serverConfig.Patches);
+  }
+  modeOfflinePatchNodes(url, info, sessionID) {
+    return response_f.noBody(serverConfig.PatchNodes);
   }
   playerHealthEvents(url, info, sessionID) {
     health_f.handler.updateHealth(info, sessionID);
