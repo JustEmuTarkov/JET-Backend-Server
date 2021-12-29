@@ -135,7 +135,7 @@ function updateWaterFilters(pmcData, area) {
   decreaseValue *= hideout_f.getHideoutSkillDecreasedConsumption(pmcData); //
 
   for (let i = 0; i < waterFilterArea.slots.length; i++) {
-    if (waterFilterArea.slots[i].item == null || waterFilterArea.slots[i].item === undefined) {
+    if (waterFilterArea.slots[i].item.upd === null || waterFilterArea.slots[i].item.upd === undefined) {
       continue;
     } else {
       let resourceValue = waterFilterArea.slots[i].item[0].upd && waterFilterArea.slots[i].item[0].upd.Resource ? waterFilterArea.slots[i].item[0].upd.Resource.Value : null;
