@@ -5,7 +5,7 @@
     "FaceCover": [],
     "ArmorVest": [],
     "Eyewear": [],
-    "ArmBand": [],
+    "ArmBand": ["619bc61e86e01e16f839a999"],
     "TacticalVest": [],
     "Pockets": ["5af99e9186f7747c447120b8"],
     "Backpack": ["56e335e4d2720b6c058b456d", "5ca20d5986f774331e7c9602", "5c0e805e86f774683f3dd637"],
