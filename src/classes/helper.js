@@ -1,6 +1,10 @@
 "use strict";
 
-/* A reverse lookup for templates */
+/**
+ * Returns the entire template lookup table.
+ * @private
+ * @returns {object} All templates.
+ */
 function tplLookup() {
   if (tplLookup.lookup === undefined) {
     const lookup = {
@@ -35,27 +39,48 @@ function tplLookup() {
   return tplLookup.lookup;
 }
 
+/**
+ * Returns the price of a template item given a template ID.
+ * @param {string} x A template ID.
+ * @returns {object} A singular template.
+ */
 function getTemplatePrice(x) {
   return x in tplLookup().items.byId ? tplLookup().items.byId[x] : 1;
 }
 
-/* all items in template with the given parent category */
+/**
+ * Returns all items in template with a given parent category.
+ * @param {string} x A template category.
+ * @returns {Array.<Object>} A list of templates.
+ */
 function templatesWithParent(x) {
   return x in tplLookup().items.byParent ? tplLookup().items.byParent[x] : [];
 }
 
+/**
+ * Checks if a category exists in the lookup table.
+ * @param {string} x A template category. 
+ * @returns {boolean} 
+ */
 function isCategory(x) {
   return x in tplLookup().categories.byId;
 }
 
+/**
+ * Returns all children categories of a given category.
+ * @param {string} x A template category.
+ * @returns {Array.<Object>} A list of categories.
+ */
 function childrenCategories(x) {
   return x in tplLookup().categories.byParent ? tplLookup().categories.byParent[x] : [];
 }
 
-/* Made a 2d array table with 0 - free slot and 1 - used slot
- * input: PlayerData
- * output: table[y][x]
- * */
+/**
+ * Returns the 2D inventory grid.
+ * @param {object} pmcData 
+ * @param {string} sessionID 
+ * @returns {Array.<Array.<number>>}
+ */
 function recheckInventoryFreeSpace(pmcData, sessionID) {
   // recalculate stash taken place
   let PlayerStash = getPlayerStash(sessionID);
@@ -95,6 +120,11 @@ function recheckInventoryFreeSpace(pmcData, sessionID) {
   return Stash2D;
 }
 
+/**
+ * Checks if a given template ID is a money item.
+ * @param {string} tpl A template ID. 
+ * @returns {boolean} 
+ */
 function isMoneyTpl(tpl) {
   const moneyTplArray = ["569668774bdc2da2298b4568", "5696686a4bdc2da3298b456a", "5449016a4bdc2d6f028b456f"];
   return moneyTplArray.findIndex((moneyTlp) => moneyTlp === tpl) > -1;
@@ -104,6 +134,12 @@ function isMoneyTpl(tpl) {
  * input: currency(tag)
  * output: template ID
  * */
+
+/**
+ * Returns the currency ID from money enum.
+ * @param {enum} currency Either "EUR", "USD", or "RUB".
+ * @returns {string} The template ID.
+ */
 function getCurrency(currency) {
   switch (currency) {
     case "EUR":
@@ -115,9 +151,11 @@ function getCurrency(currency) {
   }
 }
 
-/* Gets Currency to Ruble conversion Value
- * input:  value, currency tpl
- * output: value after conversion
+/**
+ * Converts from either USD or EUR to RUB.
+ * @param {number} value Value in initial currency.
+ * @param {string} currency The currency ID that value is using.
+ * @returns {number} The result in RUB.
  */
 function inRUB(value, currency) {
   return Math.round(value * getTemplatePrice(currency));
@@ -127,6 +165,13 @@ function inRUB(value, currency) {
  * input: value, currency tpl
  * output: value after conversion
  * */
+
+/**
+ * Converts from RUB to either USD or RUB.
+ * @param {number} value Value in RUB.
+ * @param {string} currency Currency ID to convert to.
+ * @returns {number} The result in the given currency.
+ */
 function fromRUB(value, currency) {
   return Math.round(value / getTemplatePrice(currency));
 }
@@ -135,6 +180,15 @@ function fromRUB(value, currency) {
  * input:
  * output: boolean
  * */
+
+/**
+ * Takes money for a transaction and sets the response output.
+ * @private
+ * @param {*} pmcData 
+ * @param {object} body The request body.
+ * @param {string} sessionID 
+ * @returns {boolean} Whether or not there is enough money to complete the transaction.
+ */
 function payMoney(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
   let trader = trader_f.handler.getTrader(body.tid, sessionID);
@@ -229,6 +283,14 @@ function payMoney(pmcData, body, sessionID) {
  * input: object of player data, string BarteredItem ID
  * output: array of Item from inventory
  * */
+
+/**
+ * Returns an array of acceptable items in the player's inventory that can be used in a purchase.
+ * @param {"tpl"|string} by Whether we should search by template or item ID.
+ * @param {object} pmcData 
+ * @param {string} barter_itemID The currency ID or barter ID to search for. Should be a template ID if "tpl" was passed to `by` parameter.
+ * @returns {array} A list of currency items or barter items in the player's inventory.
+ */
 function findMoney(by, pmcData, barter_itemID) {
   // find required items to take after buying (handles multiple items)
   const barterIDs = typeof barter_itemID === "string" ? [barter_itemID] : barter_itemID;
@@ -245,8 +307,11 @@ function findMoney(by, pmcData, barter_itemID) {
   return itemsArray;
 }
 
-/*
- * Finds an item given its id using linear search
+/**
+ * Finds an item given an ID using a linear search algorithm.
+ * @param {array} items An array of items.
+ * @param {string} id The item ID to search for.
+ * @returns {object|false} The item object or false if no item was found.
  */
 function findItemById(items, id) {
   for (let item of items) {
@@ -258,10 +323,11 @@ function findItemById(items, id) {
   return false;
 }
 
-/*
- * Find in the player profile the template of an given id
- * input : character data, item id from inventory
- * output : the whole item object, false if not found
+/**
+ * Finds an item given an ID using a linear search algorithm in the player's inventory.
+ * @param {object} pmcData 
+ * @param {string} idToFind The item ID to search for. 
+ * @returns {object|false} The item object or false if no item was found.
  */
 function findInventoryItemById(pmcData, idToFind) {
   for (let item of pmcData.Inventory.items) {
@@ -272,9 +338,11 @@ function findInventoryItemById(pmcData, idToFind) {
   return false;
 }
 
-/* Recursively checks if the given item is
- * inside the stash, that is it has the stash as
- * ancestor with slotId=hideout
+/**
+ * Recursively checks if an item is inside the stash, and has the stash item as a parent (s.t. `slotId == hideout` is true.).
+ * @param {object} pmcData 
+ * @param {object} item An item object..
+ * @returns {boolean} Whether or not the item is inside the stash.
  */
 function isItemInStash(pmcData, item) {
   let container = item;
@@ -294,10 +362,16 @@ function isItemInStash(pmcData, item) {
   return false;
 }
 
-/* receive money back after selling
- * input: pmcData, numberToReturn, request.body,
- * output: none (output is sended to item.js, and profile is saved to file)
- * */
+/**
+ * Calculate item stacks and return money to player after selling an item.
+ * @private
+ * @param {object} pmcData 
+ * @param {number} amount Amount to return to player.
+ * @param {unknown} body The request body.
+ * @param {object} output The current response output.
+ * @param {string} sessionID 
+ * @returns {object} The response output object sent to the item handler.
+ */
 function getMoney(pmcData, amount, body, output, sessionID) {
   let trader = trader_f.handler.getTrader(body.tid, sessionID);
   let currency = getCurrency(trader.currency);
@@ -390,10 +464,11 @@ function getMoney(pmcData, amount, body, output, sessionID) {
   return output;
 }
 
-/* Get Player Stash Proper Size
- * input: null
- * output: [stashSizeWidth, stashSizeHeight]
- * */
+/**
+ * Return the player's proper stash size.
+ * @param {string} sessionID 
+ * @returns {Array.<number>} Stash size in (X, Y).
+ */
 function getPlayerStash(sessionID) {
   //this sets automaticly a stash size from items.json (its not added anywhere yet cause we still use base stash)
   let stashTPL = profile_f.getStashType(sessionID);
@@ -402,10 +477,11 @@ function getPlayerStash(sessionID) {
   return [stashX, stashY];
 }
 
-/* Gets item data from items.json
- * input: Item Template ID
- * output: [ItemFound?(true,false), itemData]
- * */
+/**
+ * Returns a template in the database given a template ID.
+ * @param {string} template The template ID to search for.
+ * @returns {Array.<boolean|object>} Whether the template object was found or not, and the template object.
+ */
 function getItem(template) {
   // -> Gets item from <input: _tpl>
   if (template in global._database.items) {
@@ -415,6 +491,11 @@ function getItem(template) {
   return [false, {}];
 }
 
+/**
+ * Returns the item hash for an item.
+ * @param {object} InventoryItem The item object.
+ * @returns {unknown} The item hash.
+ */
 function getInventoryItemHash(InventoryItem) {
   let inventoryItemHash = {
     byItemId: {},
@@ -436,11 +517,14 @@ function getInventoryItemHash(InventoryItem) {
   return inventoryItemHash;
 }
 
-/* 
-note from 2027: there IS a thing i didn't explore and that is Merges With Children
-note from Maoci: you can merge and split items from parent-childrens
--> Prepares item Width and height returns [sizeX, sizeY]
-*/
+/**
+ * Prepares the item width and height and returns the size in a grid-based inventory.
+ * @private
+ * @param {string} itemtpl The item template ID.
+ * @param {string} itemID The item ID in the stash.
+ * @param {unknown} inventoryItemHash The item hash.
+ * @returns {Array.<number>} The item size in (X, Y).
+ */
 module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash) => {
   let toDo = [itemID];
   let tmpItem = getItem(itemtpl)[1];
@@ -514,16 +598,22 @@ module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash)
   return [outX + SizeLeft + SizeRight + ForcedLeft + ForcedRight, outY + SizeUp + SizeDown + ForcedUp + ForcedDown];
 };
 
-/* Find And Return Children (TRegular)
- * input: PlayerData, InitialItem._id
- * output: list of item._id
- * List is backward first item is the furthest child and last item is main item
- * returns all child items ids in array, includes itself and children
- * */
+/**
+ * Find and return the children IDs of a given item ID in the player's stash.
+ * @param {object} pmcData 
+ * @param {string} itemID The parent item ID.
+ * @returns {Array.<string>} A list of children IDs. This also includes the parent ID.
+ */
 function findAndReturnChildren(pmcData, itemID) {
   return findAndReturnChildrenByItems(pmcData.Inventory.items, itemID);
 }
 
+/**
+ * Find and return the children IDs of a given item ID in a given items object.
+ * @param {object} items The object of items to search in.
+ * @param {string} itemID The parent item ID.
+ * @returns {Array.<string>} A list of children IDs. This also includes the parent ID.
+ */
 function findAndReturnChildrenByItems(items, itemID) {
   let list = [];
 
@@ -537,10 +627,11 @@ function findAndReturnChildrenByItems(items, itemID) {
   return list;
 }
 
-/*
- * A variant of findAndReturnChildren where the output is list of item objects instead of their ids.
- * Input: Array of item objects, root item ID.
- * Output: Array of item objects containing root item and its children.
+/**
+ * Find and return the children item objects of a given item ID in a given items object.
+ * @param {object} items The object of items to search in.
+ * @param {string} itemID The parent item ID.
+ * @returns {Array.<object>} A list of children item objects. This also includes the parent item object.
  */
 function findAndReturnChildrenAsItems(items, itemID) {
   let list = [];
@@ -559,21 +650,29 @@ function findAndReturnChildrenAsItems(items, itemID) {
   return list;
 }
 
-/* Is Dogtag
- * input: itemId
- * output: bool
- * Checks if an item is a dogtag. Used under profile_f.js to modify preparePrice based
- * on the level of the dogtag
+/**
+ * Checks if an item ID is a dogtag.
+ * @param {string} itemId An item ID.
+ * @returns {boolean} Whether or not the item is a dogtag.
  */
 function isDogtag(itemId) {
   return itemId === "59f32bb586f774757e1e8442" || itemId === "59f32c3b86f77472a31742f0";
 }
 
+/**
+ * Checks if an item is globally sellable.
+ * @param {string} itemid An item ID.
+ * @returns {boolean} Whether or not the item is globally sellable.
+ */
 function isNotSellable(itemid) {
   return "544901bf4bdc2ddf018b456d" === itemid || "5449016a4bdc2d6f028b456f" === itemid || "569668774bdc2da2298b4568" === itemid || "5696686a4bdc2da3298b456a" === itemid;
 }
 
-/* Gets the identifier for a child using slotId, locationX and locationY. */
+/**
+ * Returns the identifier for a child using `slotId`, `locationX` and `locationY`.
+ * @param {object} item The item object
+ * @returns {string} The identifier.
+ */
 function getChildId(item) {
   if (!("location" in item)) {
     return item.slotId;
@@ -581,6 +680,13 @@ function getChildId(item) {
   return item.slotId + "," + item.location.x + "," + item.location.y;
 }
 
+/**
+ * Recursively replaces the IDs of a given items object with UUIDs if they collide with the player stash.
+ * @param {object} pmcData 
+ * @param {object} items The items object to check for duplicates.
+ * @param {boolean} fastPanel
+ * @returns {object} The items object with regenerated IDs.
+ */
 function replaceIDs(pmcData, items, fastPanel = null) {
   // replace bsg shit long ID with proper one
   let string_inventory = fileIO.stringify(items);
@@ -671,9 +777,10 @@ function replaceIDs(pmcData, items, fastPanel = null) {
   return items;
 }
 
-/* split item stack if it exceeds StackMaxSize
- *  input: an item
- *  output: an array of these items with StackObjectsCount <= StackMaxSize
+/**
+ * Splits an item stack if it exceeds the max stack size.
+ * @param {object} item The item object.
+ * @returns {Array.<object>} An array of item stacks.
  */
 function splitStack(item) {
   if (!("upd" in item) || !("StackObjectsCount" in item.upd)) {
@@ -696,15 +803,32 @@ function splitStack(item) {
   return stacks;
 }
 
+/**
+ * Deep-clones an object. Do not use if the object value is a function.
+ * @param {object} x An object.
+ * @returns {object} A deep-clone of the object.
+ */
 function clone(x) {
   return fileIO.parse(fileIO.stringify(x));
 }
 
+/**
+ * Set intersects two arrays.
+ * @param {array} a 
+ * @param {array} b 
+ * @returns {array} The intersection of `a` and `b`.
+ */
 function arrayIntersect(a, b) {
   return a.filter((x) => b.includes(x));
 }
 
 // Searching for first item template ID and for preset ID
+
+/**
+ * Returns the preset for an item.
+ * @param {string} id An item ID.
+ * @returns {object|null} The preset object or `null` if no preset was found.
+ */
 function getPreset(id) {
   let itmPreset = global._database.globals.ItemPresets[id];
   if (typeof itmPreset == "undefined") {
@@ -723,6 +847,14 @@ function getPreset(id) {
   return itmPreset;
 }
 
+/**
+ * [undocumented]
+ * @param {*} containerW 
+ * @param {*} containerH 
+ * @param {*} itemList 
+ * @param {*} containerId 
+ * @returns {unknown}
+ */
 module.exports.getContainerMap = (containerW, containerH, itemList, containerId) => {
   const container2D = Array(containerH)
     .fill(0)
@@ -759,6 +891,17 @@ module.exports.getContainerMap = (containerW, containerH, itemList, containerId)
   return container2D;
 };
 // TODO: REWORK EVERYTHING ABOVE ~Maoci
+
+/**
+ * [undocumented]
+ * @param {*} container2D 
+ * @param {*} x 
+ * @param {*} y 
+ * @param {*} itemW 
+ * @param {*} itemH 
+ * @param {*} rotate 
+ * @returns {unknown}
+ */
 module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rotate) => {
   let itemWidth = rotate ? itemH : itemW;
   let itemHeight = rotate ? itemW : itemH;
@@ -774,6 +917,14 @@ module.exports.fillContainerMapWithItem = (container2D, x, y, itemW, itemH, rota
   }
   return container2D;
 };
+
+/**
+ * Finds and returns an empty slot for an item if one is found in a container.
+ * @param {unknown} container2D The 2D container object to search in.
+ * @param {number} itemWidth The width of the item.
+ * @param {number} itemHeight The height of the item.
+ * @returns {object} The result object with a slot if one was found.
+ */
 module.exports.findSlotForItem = (container2D, itemWidth, itemHeight) => {
   let rotation = false;
   let minVolume = (itemWidth < itemHeight ? itemWidth : itemHeight) - 1;
@@ -828,6 +979,14 @@ module.exports.findSlotForItem = (container2D, itemWidth, itemHeight) => {
 
   return { success: false, x: null, y: null, rotation: false };
 };
+
+/**
+ * Appends an error to the output object and returns the object.
+ * @param {object} output The output object.
+ * @param {string} message The error message to append.
+ * @param {string} title The error title to append.
+ * @returns {object} The output object.
+ */
 module.exports.appendErrorToOutput = (output, message = "An unknown error occurred", title = "Error") => {
   output.warnings = [
     {
@@ -840,11 +999,24 @@ module.exports.appendErrorToOutput = (output, message = "An unknown error occurr
   return output;
 };
 
+/**
+ * [undocumented]
+ * Prepares item width and height returns 2D size.
+ * @param {string} itemtpl The template ID.
+ * @param {string} itemID The item ID.
+ * @param {object} InventoryItem The item object.
+ * @returns {unknown}
+ */
 module.exports.getItemSize = (itemtpl, itemID, InventoryItem) => {
   // -> Prepares item Width and height returns [sizeX, sizeY]
   return helper_f.getSizeByInventoryItemHash(itemtpl, itemID, this.getInventoryItemHash(InventoryItem));
 };
 
+/**
+ * [duplicate function] Returns the item hash for an item.
+ * @param {object} InventoryItem The item object.
+ * @returns {unknown} The item hash.
+ */
 module.exports.getInventoryItemHash = (InventoryItem) => {
   let inventoryItemHash = {
     byItemId: {},
@@ -867,6 +1039,12 @@ module.exports.getInventoryItemHash = (InventoryItem) => {
   return inventoryItemHash;
 };
 
+/**
+ * Returns the 2D stash map for a player's inventory.
+ * @param {string} sessionID 
+ * @param {object} pmcData 
+ * @returns {unknown} The stash map.
+ */
 module.exports.getPlayerStashSlotMap = (sessionID, pmcData) => {
   // recalculate stach taken place
   let PlayerStashSize = getPlayerStash(sessionID);
@@ -902,6 +1080,10 @@ module.exports.getPlayerStashSlotMap = (sessionID, pmcData) => {
 // note from 2027: there IS a thing i didn't explore and that is Merges With Children
 // -> Prepares item Width and height returns [sizeX, sizeY]
 // check if this new one works and remove this one if it does
+
+/**
+ * @deprecated
+ */
 module.exports.getSizeByInventoryItemHash_old = (itemtpl, itemID, inventoryItemHash) => {
   let toDo = [itemID];
   let tmpItem = helper_f.getItem(itemtpl)[1];
