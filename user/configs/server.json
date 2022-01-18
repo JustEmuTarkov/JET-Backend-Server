@@ -14,7 +14,7 @@
     "BringBackInsuranceScreen": true,
     "DisableReadyButtonOnFirstScreen": true,
     "DisableReadyButtonOnSelectLocation": true,
-    "NoFilters": true,
+    "NoFilters": false,
     "OldStreamerMode": false,
     "UnlockItem24CharId": true,
     "EndByTimer": true,
