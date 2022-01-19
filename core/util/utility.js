@@ -4,6 +4,9 @@ exports.wipeDepend = (data) => {
 	return JSON.parse(JSON.stringify(data));
 }
 
+exports.valueBetween = (value, minInput, maxInput, minOutput, maxOutput) => {
+	return (maxOutput - minOutput) * ((value - minInput) / (maxInput - minInput)) + minOutput
+}
 // getCookies
 exports.getCookies = (req) => {
     let found = {};

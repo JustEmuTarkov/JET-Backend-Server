@@ -13,9 +13,6 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 0,
-			"CreditsPrice": 0,
 			"ItemSound": "generic",
 			"Prefab": {
 				"path": "",
@@ -49,13 +46,9 @@
 			"CanSellOnRagfair": true,
 			"CanRequireOnRagfair": true,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -212,6 +205,7 @@
 									"60bf74184a63fc79b60c57f6",
 									"5d96141523f0ea1b7f2aacab",
 									"5bd073c986f7747f627e796c",
+									"61c18db6dfd64163ea78fbb4",
 									"603618feffd42c541047f771",
 									"603619720ca681766b6a0fc4",
 									"6040de02647ad86262233012",
@@ -237,6 +231,7 @@
 									"5d6d3716a4b9361bc8618872",
 									"5c091a4e0db834001d5addc8",
 									"5c0e874186f7745dc7616606",
+									"61bca7cda0eae612383adf57",
 									"5c0d2727d174af02a012cf58",
 									"5f60c74e3b85f6263c145586",
 									"5c08f87c0db8340019124324",
@@ -403,6 +398,7 @@
 									"5c1a1cc52e221602b3136e3d",
 									"603409c80ca681766b6a0fb2",
 									"5c0d32fcd174af02a1659c75",
+									"61c18d83b00456371a66814b",
 									"59e770b986f7742cbd762754"
 								]
 							}

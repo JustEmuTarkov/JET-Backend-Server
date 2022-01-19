@@ -32,13 +32,14 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "590c311186f77424d1667482",
-			"count": 1,
+			"templateId": "61bf7b6302b3924be92fa8c3",
+			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
 		}
 	],
 	"productionTime": 60000,
+	"boosters": null,
 	"endProduct": "5e2af55f86f7746d4159f07c",
 	"continuous": false,
 	"count": 1,

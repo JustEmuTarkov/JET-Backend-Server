@@ -33,8 +33,7 @@
 		"_parent": "566168634bdc2d144c8b456c",
 		"_type": "Node",
 		"_props": {
-			"SpawnFilter": [],
-			"SpawnExcludedFilter": []
+			"SpawnFilter": []
 		}
 	},
 	{

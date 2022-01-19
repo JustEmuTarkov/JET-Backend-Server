@@ -100,7 +100,7 @@
 				},
 				{
 					"templateId": "5e2af29386f7746d4159f077",
-					"count": 1,
+					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
 				}
@@ -122,7 +122,7 @@
 			"requirements": [
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 125000,
+					"count": 20000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -157,6 +157,12 @@
 					"areaType": 5,
 					"requiredLevel": 3,
 					"type": "Area"
+				},
+				{
+					"templateId": "60391afc25aff57af81f7085",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
@@ -175,6 +181,7 @@
 					"filter": [
 						"5d1b385e86f774252167b98a"
 					],
+					"icon": null,
 					"type": "AdditionalSlots"
 				},
 				{

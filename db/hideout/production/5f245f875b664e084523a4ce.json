@@ -18,9 +18,16 @@
 			"count": 100,
 			"isFunctional": false,
 			"type": "Item"
+		},
+		{
+			"templateId": "590c5a7286f7747884343aea",
+			"count": 1,
+			"isFunctional": false,
+			"type": "Item"
 		}
 	],
-	"productionTime": 9200,
+	"productionTime": 25200,
+	"boosters": null,
 	"endProduct": "5f0596629e22f464da6bbdd9",
 	"continuous": false,
 	"count": 100,

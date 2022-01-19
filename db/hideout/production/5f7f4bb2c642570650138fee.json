@@ -20,8 +20,8 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "56d59d3ad2720bdb418b4577",
-			"count": 300,
+			"templateId": "60391a8b3364dc22b04d0ce5",
+			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -32,9 +32,10 @@
 			"type": "Item"
 		}
 	],
-	"productionTime": 27100,
+	"productionTime": 43100,
+	"boosters": null,
 	"endProduct": "5efb0da7a29a85116f6ea05f",
 	"continuous": false,
-	"count": 300,
+	"count": 200,
 	"productionLimitCount": 0
 }

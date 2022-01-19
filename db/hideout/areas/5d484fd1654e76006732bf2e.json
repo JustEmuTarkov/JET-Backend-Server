@@ -31,6 +31,12 @@
 					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "59e36c6f86f774176c10a2a7",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

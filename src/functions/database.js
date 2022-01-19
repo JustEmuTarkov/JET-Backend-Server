@@ -56,6 +56,14 @@ function _load_ItemsData() {
   if (typeof _database.items.data != "undefined") _database.items = _database.items.data;
   _database.templates = fileIO.readParsed("./" + db.user.cache.templates);
   if (typeof _database.templates.data != "undefined") _database.templates = _database.templates.data;
+
+  let itemHandbook = fileIO.readParsed("./" + db.templates.items)
+  _database.itemPriceTable = {};
+  for(let item in itemHandbook)
+  {
+    _database.itemPriceTable[item.Id] = item.Price;
+  }
+
 }
 function _load_HideoutData() {
   if (!_database.hideout) _database.hideout = {};

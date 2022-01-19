@@ -20,6 +20,12 @@
 					"count": 20000,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "590c2c9c86f774245b1f03f2",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],
@@ -49,6 +55,24 @@
 					"areaType": 1,
 					"requiredLevel": 1,
 					"type": "Area"
+				},
+				{
+					"templateId": "5af04b6486f774195a3ebb49",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590c5bbd86f774785762df04",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "60391b0fb847c71012789415",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],

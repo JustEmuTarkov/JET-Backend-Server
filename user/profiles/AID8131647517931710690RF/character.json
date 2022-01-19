@@ -266,7 +266,7 @@
 			"Current": 36.6,
 			"Maximum": 40
 		},
-		"UpdateTime": 1630923739
+		"UpdateTime": 1642502702
 	},
 	"Hideout": {
 		"Areas": [
@@ -578,7 +578,7 @@
 					"isSearched": true
 				},
 				"upd": {
-					"StackObjectsCount": 493600,
+					"StackObjectsCount": 262813,
 					"SpawnedInSession": true
 				}
 			},
@@ -824,14 +824,8 @@
 			{
 				"_id": "I-95bd5121-68fe-458a-96ed-9128b8dbd3b8",
 				"_tpl": "5e4abc1f86f774069619fbaa",
-				"parentId": "60de0d80c6b34f52845b4643",
-				"slotId": "hideout",
-				"location": {
-					"x": 4,
-					"y": 9,
-					"r": "Horizontal",
-					"isSearched": true
-				}
+				"parentId": "60de0d80c6b34f52845b45ad",
+				"slotId": "TacticalVest"
 			},
 			{
 				"_id": "I-93ec36d5-0ebf-4f9a-9940-5be6eca685fc",
@@ -1343,6 +1337,130 @@
 				"upd": {
 					"StackObjectsCount": 1,
 					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"_tpl": "5a0ec13bfcdbcb00165aa685",
+				"parentId": "60de0d80c6b34f52845b45ad",
+				"slotId": "FirstPrimaryWeapon",
+				"upd": {
+					"StackObjectsCount": 1,
+					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-c89f5454-1516-491a-a283-1838c26e0576",
+				"_tpl": "59d64ec286f774171d1e0a42",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_gas_block",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-cae3a9f3-8421-4259-8748-b74312d35684",
+				"_tpl": "59d64fc686f774171b243fe2",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_muzzle",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-e9368dab-e39a-4006-9533-8abba67ec405",
+				"_tpl": "59e62cc886f77440d40b52a1",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_pistol_grip",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-88c09b0e-44ee-4fe4-8f0f-730db1f816f8",
+				"_tpl": "59d6507c86f7741b846413a2",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_reciever",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-79938c17-045c-4459-bde4-0b87ceb7d880",
+				"_tpl": "59d650cf86f7741b846413a4",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_sight_rear",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-47e7f53b-4b72-4fa0-b929-542d9a0664cd",
+				"_tpl": "59d6514b86f774171a068a08",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_stock",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-0f26e2b0-d17b-4c7d-b981-803271c2bed9",
+				"_tpl": "5a01c29586f77474660c694c",
+				"parentId": "I-df107f1a-3406-4cba-8889-762ef8fded57",
+				"slotId": "mod_magazine",
+				"upd": {
+					"StackObjectsCount": 1
+				}
+			},
+			{
+				"_id": "I-a9581172-338f-45b7-9f61-da9aa145e5ad",
+				"_tpl": "59d64f2f86f77417193ef8b3",
+				"parentId": "60de0d80c6b34f52845b4643",
+				"slotId": "hideout",
+				"upd": {
+					"StackObjectsCount": 1
+				},
+				"location": {
+					"x": 6,
+					"y": 8,
+					"r": "Horizontal",
+					"isSearched": true
+				}
+			},
+			{
+				"_id": "I-f35e0e48-d0ff-4e17-9889-f665f9539a99",
+				"_tpl": "5649a2464bdc2d91118b45a8",
+				"parentId": "I-e215d488-222b-4501-afec-20f5bb344d87",
+				"slotId": "mod_scope",
+				"upd": {
+					"StackObjectsCount": 1,
+					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-e215d488-222b-4501-afec-20f5bb344d87",
+				"_tpl": "5648ae314bdc2d3d1c8b457f",
+				"parentId": "I-c89f5454-1516-491a-a283-1838c26e0576",
+				"slotId": "mod_handguard",
+				"upd": {
+					"StackObjectsCount": 1,
+					"SpawnedInSession": true
+				}
+			},
+			{
+				"_id": "I-30289988-cd29-487a-8a16-82e2a41e14e2",
+				"_tpl": "57ae0171245977343c27bfcf",
+				"parentId": "I-95bd5121-68fe-458a-96ed-9128b8dbd3b8",
+				"slotId": "1",
+				"upd": {
+					"StackObjectsCount": 1,
+					"SpawnedInSession": true
+				},
+				"location": {
+					"x": 0,
+					"y": 1,
+					"r": "Horizontal",
+					"isSearched": true
 				}
 			}
 		],
@@ -4101,7 +4219,7 @@
 			"unlocked": true
 		},
 		"ragfair": {
-			"salesSum": 1898134,
+			"salesSum": 2128921,
 			"standing": 0,
 			"unlocked": true
 		},

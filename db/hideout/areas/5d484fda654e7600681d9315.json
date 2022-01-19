@@ -90,6 +90,12 @@
 					"areaType": 10,
 					"requiredLevel": 1,
 					"type": "Area"
+				},
+				{
+					"templateId": "5d1c819a86f774771b0acd6c",
+					"count": 3,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],
@@ -111,7 +117,7 @@
 				},
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 195000,
+					"count": 395000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -134,6 +140,12 @@
 				{
 					"templateId": "5bc9b355d4351e6d1509862a",
 					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "60391a8b3364dc22b04d0ce5",
+					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
 				}

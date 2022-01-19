@@ -42,6 +42,24 @@
 					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "590c639286f774151567fa95",
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590c645c86f77412b01304d9",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590c651286f7741e566b6461",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
@@ -62,7 +80,7 @@
 				}
 			],
 			"slots": 0,
-			"constructionTime": 136800,
+			"constructionTime": 194400,
 			"description": ""
 		}
 	}

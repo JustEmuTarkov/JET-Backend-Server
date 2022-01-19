@@ -159,7 +159,8 @@ function GenerateLootList(containerId) {
       logger.logWarning(`itemTemplate._props.Rarity == "undefined" for ${itemTemplate._id}`);
     }
     const rollSpawnChance = utility.getRandomInt(0, 10000);
-    if (itemTemplate._props.SpawnChance * 100 * GetRarityMultiplier(itemTemplate._props.Rarity) < rollSpawnChance) {
+    const itemSpawnChance = utility.valueBetween(itemTemplate._props.LootExperience, 0, 250, 0, 100)
+    if (itemSpawnChance < rollSpawnChance) {
       //logger.logInfo(`SpawnItemInContainer: ${itemTemplate._id} ==> ${rollSpawnChance} < ${itemTemplate._props.SpawnChance*100} * ${GetRarityMultiplier(itemTemplate._props.Rarity)}`)
       LootList[item] = global._database.items[item];
       if (typeof LootList[item] == "undefined") {
@@ -607,9 +608,9 @@ class Generator {
       }
       // spawn change calculation
       const num = utility.getRandomInt(0, 10000);
-      const spawnChance = helper_f.getItem(createdItem._tpl)[1]["_props"]["SpawnChance"] * 100;
+      const itemSpawnChance = utility.valueBetween(helper_f.getItem(createdItem._tpl)[1]["_props"]["LootExperience"], 0, 250, 0, 100)
 
-      const itemChance = spawnChance * locationLootChanceModifier;
+      const itemChance = itemSpawnChance * locationLootChanceModifier;
       if (num >= itemChance) {
         //lootPositions.push(position);
         count++;

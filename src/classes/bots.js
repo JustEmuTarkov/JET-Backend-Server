@@ -949,16 +949,20 @@ class Generator {
   /** Compares two item templates by their price to spawn chance ratio */
   compareByValue(a, b) {
     // If an item has no price or spawn chance, it should be moved to the back when sorting
-    if (!a._props.CreditsPrice || !a._props.SpawnChance) {
+    const priceA = _database.itemPriceTable[a._id];
+    if (!priceA || !a._props.LootExperience) {
       return 1;
     }
 
-    if (!b._props.CreditsPrice || !b._props.SpawnChance) {
+    const priceB = _database.itemPriceTable[b._id];
+    if (!priceB || !b._props.LootExperience) {
       return -1;
     }
-
-    const worthA = a._props.CreditsPrice / a._props.SpawnChance;
-    const worthB = b._props.CreditsPrice / b._props.SpawnChance;
+    const spawnChanceA = utility.valueBetween(a._props.LootExperience, 0, 250, 0, 100)
+    const spawnChanceB = utility.valueBetween(b._props.LootExperience, 0, 250, 0, 100)
+    
+    const worthA = priceA / spawnChanceA;
+    const worthB = priceB / spawnChanceB;
 
     if (worthA < worthB) {
       return -1;

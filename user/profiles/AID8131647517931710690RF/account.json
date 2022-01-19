@@ -4,5 +4,6 @@
 	"nickname": "",
 	"password": "123",
 	"wipe": false,
-	"edition": "Edge Of Darkness"
+	"edition": "Edge Of Darkness",
+	"lang": "en"
 }

@@ -20,6 +20,12 @@
 					"count": 10000,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "56742c284bdc2d98058b456d",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],
@@ -94,6 +100,12 @@
 				{
 					"templateId": "5c06779c86f77426e00dd782",
 					"count": 6,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "590a3cd386f77436f20848cb",
+					"count": 12,
 					"isFunctional": false,
 					"type": "Item"
 				}

@@ -1,4 +1,4 @@
 {
-    "initialStanding": 0.20,
-    "initialSalesSum": 0
+    "initialStanding": 10,
+    "initialSalesSum": 10000000
 }

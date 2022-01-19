@@ -53,6 +53,12 @@
 					"count": 10,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "5d1b304286f774253763a528",
+					"count": 3,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

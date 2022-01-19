@@ -51,6 +51,12 @@
 					"count": 3,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "61bf7b6302b3924be92fa8c3",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],
@@ -98,6 +104,12 @@
 					"areaType": 0,
 					"requiredLevel": 2,
 					"type": "Area"
+				},
+				{
+					"templateId": "61bf7b6302b3924be92fa8c3",
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [],

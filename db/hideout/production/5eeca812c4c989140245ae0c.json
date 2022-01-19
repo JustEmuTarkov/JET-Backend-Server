@@ -4,7 +4,7 @@
 	"requirements": [
 		{
 			"areaType": 11,
-			"requiredLevel": 2,
+			"requiredLevel": 3,
 			"type": "Area"
 		},
 		{
@@ -39,6 +39,7 @@
 		}
 	],
 	"productionTime": 349000,
+	"boosters": null,
 	"endProduct": "57347ca924597744596b4e71",
 	"continuous": false,
 	"count": 1,
