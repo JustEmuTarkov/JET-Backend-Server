@@ -13,9 +13,6 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Common",
-			"SpawnChance": 50,
-			"CreditsPrice": 100,
 			"ItemSound": "generic",
 			"Prefab": {
 				"path": "",
@@ -49,62 +46,14 @@
 			"CanSellOnRagfair": true,
 			"CanRequireOnRagfair": true,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
 			"IsAlwaysAvailableForInsurance": false
 		}
-	},
-	{
-		"_id": "543be5664bdc2dd4348b4569",
-		"_name": "Meds",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"medUseTime": 0,
-			"medEffectType": "duringUse",
-			"MaxHpResource": 0,
-			"hpResourceRate": 0,
-			"StimulatorBuffs": ""
-		}
-	},
-	{
-		"_id": "567849dd4bdc2d150f8b456e",
-		"_name": "Map",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"ConfigPathStr": "",
-			"MaxMarkersCount": 0,
-			"scaleMin": 0,
-			"scaleMax": 0
-		}
-	},
-	{
-		"_id": "543be6674bdc2df1348b4569",
-		"_name": "FoodDrink",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"foodUseTime": 0,
-			"foodEffectType": "duringUse",
-			"MaxResource": 0,
-			"StimulatorBuffs": ""
-		}
-	},
-	{
-		"_id": "5448ecbe4bdc2d60728b4568",
-		"_name": "Info",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {}
 	},
 	{
 		"_id": "5448eb774bdc2d0a728b4567",
@@ -138,58 +87,15 @@
 		}
 	},
 	{
-		"_id": "5661632d4bdc2d903d8b456b",
-		"_name": "StackableItem",
+		"_id": "543be6674bdc2df1348b4569",
+		"_name": "FoodDrink",
 		"_parent": "54009119af1c881c07000029",
 		"_type": "Node",
 		"_props": {
-			"StackMinRandom": 0,
-			"StackMaxRandom": 0
-		}
-	},
-	{
-		"_id": "5447e0e74bdc2d3c308b4567",
-		"_name": "SpecItem",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"apResource": 0,
-			"krResource": 0
-		}
-	},
-	{
-		"_id": "543be6564bdc2df4348b4568",
-		"_name": "ThrowWeap",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"ThrowType": "frag_grenade",
-			"ExplDelay": 5,
-			"MinExplosionDistance": 1.5,
-			"MaxExplosionDistance": 4,
-			"FragmentsCount": 20,
-			"FragmentType": "5485a8684bdc2da71d8b4567",
-			"Strength": 45,
-			"ContusionDistance": 5,
-			"throwDamMax": 0,
-			"explDelay": 0,
-			"Blindness": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"Contusion": {
-				"x": 1.5,
-				"y": 4,
-				"z": 9
-			},
-			"ArmorDistanceDistanceDamage": {
-				"x": 0,
-				"y": 0,
-				"z": 0
-			},
-			"EmitTime": 30,
-			"CanBeHiddenDuringThrow": true
+			"foodUseTime": 0,
+			"foodEffectType": "duringUse",
+			"MaxResource": 0,
+			"StimulatorBuffs": ""
 		}
 	},
 	{
@@ -206,9 +112,6 @@
 			"Width": 1,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Common",
-			"SpawnChance": 50,
-			"CreditsPrice": 100,
 			"ItemSound": "generic",
 			"Prefab": {
 				"path": "",
@@ -242,16 +145,12 @@
 			"CanSellOnRagfair": true,
 			"CanRequireOnRagfair": true,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": true,
 			"UnlootableFromSlot": "Scabbard",
 			"UnlootableFromSide": [
 				"Bear",
 				"Usec"
 			],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -294,6 +193,95 @@
 				"y": 1,
 				"z": 1
 			}
+		}
+	},
+	{
+		"_id": "567849dd4bdc2d150f8b456e",
+		"_name": "Map",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"ConfigPathStr": "",
+			"MaxMarkersCount": 0,
+			"scaleMin": 0,
+			"scaleMax": 0
+		}
+	},
+	{
+		"_id": "5447e0e74bdc2d3c308b4567",
+		"_name": "SpecItem",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"apResource": 0,
+			"krResource": 0
+		}
+	},
+	{
+		"_id": "5661632d4bdc2d903d8b456b",
+		"_name": "StackableItem",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"StackMinRandom": 0,
+			"StackMaxRandom": 0
+		}
+	},
+	{
+		"_id": "543be6564bdc2df4348b4568",
+		"_name": "ThrowWeap",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"ThrowType": "frag_grenade",
+			"ExplDelay": 5,
+			"MinExplosionDistance": 1.5,
+			"MaxExplosionDistance": 4,
+			"FragmentsCount": 20,
+			"FragmentType": "5485a8684bdc2da71d8b4567",
+			"Strength": 45,
+			"ContusionDistance": 5,
+			"throwDamMax": 0,
+			"explDelay": 0,
+			"Blindness": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"Contusion": {
+				"x": 1.5,
+				"y": 4,
+				"z": 9
+			},
+			"ArmorDistanceDistanceDamage": {
+				"x": 0,
+				"y": 0,
+				"z": 0
+			},
+			"EmitTime": 30,
+			"CanBeHiddenDuringThrow": true,
+			"MinTimeToContactExplode": -1,
+			"ExplosionEffectType": "Grenade_indoor"
+		}
+	},
+	{
+		"_id": "5448ecbe4bdc2d60728b4568",
+		"_name": "Info",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {}
+	},
+	{
+		"_id": "543be5664bdc2dd4348b4569",
+		"_name": "Meds",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"medUseTime": 0,
+			"medEffectType": "duringUse",
+			"MaxHpResource": 0,
+			"hpResourceRate": 0,
+			"StimulatorBuffs": ""
 		}
 	}
 ]

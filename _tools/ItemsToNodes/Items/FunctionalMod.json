@@ -1,21 +1,5 @@
 [
 	{
-		"_id": "55818b0e4bdc2dde698b456e",
-		"_name": "LightLaser",
-		"_parent": "550aa4154bdc2dd8348b456b",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
-		"_id": "55818b164bdc2ddc698b456c",
-		"_name": "TacticalCombo",
-		"_parent": "550aa4154bdc2dd8348b456b",
-		"_type": "Node",
-		"_props": {
-			"ModesCount": 0
-		}
-	},
-	{
 		"_id": "55818afb4bdc2dde698b456d",
 		"_name": "Bipod",
 		"_parent": "550aa4154bdc2dd8348b456b",
@@ -39,19 +23,15 @@
 		"_props": {}
 	},
 	{
-		"_id": "55818b1d4bdc2d5b648b4572",
-		"_name": "RailCovers",
-		"_parent": "550aa4154bdc2dd8348b456b",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "5a74651486f7744e73386dd1",
 		"_name": "AuxiliaryMod",
 		"_parent": "550aa4154bdc2dd8348b456b",
 		"_type": "Node",
 		"_props": {
-			"ShiftsAimCamera": 0
+			"ShiftsAimCamera": 0,
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1,
+			"CoolFactor": 1
 		}
 	},
 	{
@@ -61,19 +41,23 @@
 		"_type": "Node",
 		"_props": {
 			"DurabilityBurnModificator": 1,
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"CoolFactor": 1
 		}
 	},
 	{
-		"_id": "5448fe394bdc2d0d028b456c",
-		"_name": "Muzzle",
+		"_id": "55818b0e4bdc2dde698b456e",
+		"_name": "LightLaser",
 		"_parent": "550aa4154bdc2dd8348b456b",
 		"_type": "Node",
-		"_props": {
-			"muzzleModType": "silencer",
-			"DurabilityBurnModificator": 1,
-			"HeatFactor": 1
-		}
+		"_props": {}
+	},
+	{
+		"_id": "55818b1d4bdc2d5b648b4572",
+		"_name": "RailCovers",
+		"_parent": "550aa4154bdc2dd8348b456b",
+		"_type": "Node",
+		"_props": {}
 	},
 	{
 		"_id": "5448fe7a4bdc2d6f028b456b",
@@ -114,6 +98,27 @@
 					200
 				]
 			]
+		}
+	},
+	{
+		"_id": "55818b164bdc2ddc698b456c",
+		"_name": "TacticalCombo",
+		"_parent": "550aa4154bdc2dd8348b456b",
+		"_type": "Node",
+		"_props": {
+			"ModesCount": 0
+		}
+	},
+	{
+		"_id": "5448fe394bdc2d0d028b456c",
+		"_name": "Muzzle",
+		"_parent": "550aa4154bdc2dd8348b456b",
+		"_type": "Node",
+		"_props": {
+			"muzzleModType": "silencer",
+			"DurabilityBurnModificator": 1,
+			"HeatFactor": 1,
+			"CoolFactor": 1
 		}
 	}
 ]

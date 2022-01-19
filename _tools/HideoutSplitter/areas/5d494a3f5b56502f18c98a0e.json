@@ -48,6 +48,24 @@
 					"count": 5,
 					"isFunctional": false,
 					"type": "Item"
+				},
+				{
+					"templateId": "619cbfccbedcde2f5b3f7bdd",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "5d1c774f86f7746d6620f8db",
+					"count": 3,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "61bf7b6302b3924be92fa8c3",
+					"count": 2,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

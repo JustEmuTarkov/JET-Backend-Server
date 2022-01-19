@@ -85,6 +85,12 @@
 					"areaType": 4,
 					"requiredLevel": 1,
 					"type": "Area"
+				},
+				{
+					"templateId": "619cbfeb6b8a1b37a54eebfa",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
@@ -150,6 +156,12 @@
 					"areaType": 4,
 					"requiredLevel": 2,
 					"type": "Area"
+				},
+				{
+					"templateId": "61bf7b6302b3924be92fa8c3",
+					"count": 7,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [

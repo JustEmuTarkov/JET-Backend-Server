@@ -1,5 +1,52 @@
 [
 	{
+		"_id": "5a2c3a9486f774688b05e574",
+		"_name": "NightVision",
+		"_parent": "55818aeb4bdc2ddc698b456a",
+		"_type": "Node",
+		"_props": {
+			"Intensity": 2.27,
+			"Mask": "Thermal",
+			"MaskSize": 1.5,
+			"NoiseIntensity": 0.02,
+			"NoiseScale": 5,
+			"Color": {
+				"r": 121,
+				"g": 233,
+				"b": 121,
+				"a": 254
+			},
+			"DiffuseIntensity": 0,
+			"HasHinge": true
+		}
+	},
+	{
+		"_id": "5d21f59b6dbe99052b54ef83",
+		"_name": "ThermalVision",
+		"_parent": "55818aeb4bdc2ddc698b456a",
+		"_type": "Node",
+		"_props": {
+			"RampPalette": "Fusion",
+			"DepthFade": 0.03,
+			"RoughnessCoef": 0.04,
+			"SpecularCoef": 0.01,
+			"MainTexColorCoef": 0.2,
+			"MinimumTemperatureValue": 0.25,
+			"RampShift": 0.061,
+			"HeatMin": 0.7,
+			"ColdMax": 0.462,
+			"IsNoisy": true,
+			"NoiseIntensity": 0.02,
+			"IsFpsStuck": false,
+			"IsGlitch": false,
+			"IsMotionBlurred": true,
+			"Mask": "Thermal",
+			"MaskSize": 1.2,
+			"IsPixelated": false,
+			"PixelationBlockCount": 256
+		}
+	},
+	{
 		"_id": "5d1b5e94d7ad1a2b865a96b0",
 		"_name": "scope_all_flir_rs32_225_9x_35_60hz",
 		"_parent": "55818aeb4bdc2ddc698b456a",
@@ -13,9 +60,6 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 1,
-			"CreditsPrice": 144794,
 			"ItemSound": "mod",
 			"Prefab": {
 				"path": "assets/content/items/mods/scopes/scope_all_flir_rs32_225_9x_35_60hz.bundle",
@@ -46,16 +90,12 @@
 			"ExtraSizeDown": 0,
 			"ExtraSizeForceAdd": false,
 			"MergesWithChildren": true,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -95,6 +135,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 500,
+			"DoubleActionAccuracyPenaltyMult": 1,
 			"CustomAimPlane": "",
 			"sightModType": "hybrid",
 			"aimingSensitivity": 0.3,
@@ -133,6 +174,346 @@
 		"_proto": "5a1eaa87fcdbcb001865f75e"
 	},
 	{
+		"_id": "609bab8b455afd752b2e6138",
+		"_name": "scope_all_torrey_pines_logic_t12_w_30hz",
+		"_parent": "55818aeb4bdc2ddc698b456a",
+		"_type": "Item",
+		"_props": {
+			"Name": "scope_all_torrey_pines_logic_t12_w_30hz",
+			"ShortName": "scope_all_torrey_pines_logic_t12_w_30hz",
+			"Description": "scope_all_torrey_pines_logic_t12_w_30hz",
+			"Weight": 0.063,
+			"BackgroundColor": "blue",
+			"Width": 1,
+			"Height": 1,
+			"StackMaxSize": 1,
+			"ItemSound": "mod",
+			"Prefab": {
+				"path": "assets/content/items/mods/scopes/scope_all_torrey_pines_logic_t12_w_30hz.bundle",
+				"rcid": ""
+			},
+			"UsePrefab": {
+				"path": "",
+				"rcid": ""
+			},
+			"StackObjectsCount": 1,
+			"NotShownInSlot": false,
+			"ExaminedByDefault": false,
+			"ExamineTime": 1,
+			"IsUndiscardable": false,
+			"IsUnsaleable": false,
+			"IsUnbuyable": false,
+			"IsUngivable": false,
+			"IsLockedafterEquip": false,
+			"QuestItem": false,
+			"LootExperience": 20,
+			"ExamineExperience": 10,
+			"HideEntrails": false,
+			"RepairCost": 0,
+			"RepairSpeed": 0,
+			"ExtraSizeLeft": 0,
+			"ExtraSizeRight": 0,
+			"ExtraSizeUp": 0,
+			"ExtraSizeDown": 0,
+			"ExtraSizeForceAdd": false,
+			"MergesWithChildren": true,
+			"CanSellOnRagfair": true,
+			"CanRequireOnRagfair": true,
+			"ConflictingItems": [],
+			"Unlootable": false,
+			"UnlootableFromSlot": "FirstPrimaryWeapon",
+			"UnlootableFromSide": [],
+			"AnimationVariantsNumber": 0,
+			"DiscardingBlock": false,
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
+			"Grids": [],
+			"Slots": [],
+			"CanPutIntoDuringTheRaid": true,
+			"CantRemoveFromSlotsDuringRaid": [],
+			"Durability": 100,
+			"Accuracy": 0,
+			"Recoil": 0,
+			"Loudness": 0,
+			"EffectiveDistance": 0,
+			"Ergonomics": -1,
+			"Velocity": 0,
+			"RaidModdable": true,
+			"ToolModdable": true,
+			"BlocksFolding": false,
+			"BlocksCollapsible": false,
+			"IsAnimated": false,
+			"HasShoulderContact": false,
+			"SightingRange": 500,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"CustomAimPlane": "default",
+			"sightModType": "hybrid",
+			"aimingSensitivity": 0.3,
+			"SightModesCount": 2,
+			"OpticCalibrationDistances": [
+				50,
+				100,
+				150,
+				200
+			],
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.7
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"CalibrationDistances": [
+				[
+					25,
+					50
+				]
+			]
+		},
+		"_proto": "5a1eaa87fcdbcb001865f75e"
+	},
+	{
+		"_id": "5a1eaa87fcdbcb001865f75e",
+		"_name": "scope_base_trijicon_reap-ir",
+		"_parent": "55818aeb4bdc2ddc698b456a",
+		"_type": "Item",
+		"_props": {
+			"Name": "scope_base_trijicon_reap-ir",
+			"ShortName": "scope_base_trijicon_reap-ir",
+			"Description": "scope_base_trijicon_reap-ir",
+			"Weight": 0.58,
+			"BackgroundColor": "blue",
+			"Width": 2,
+			"Height": 1,
+			"StackMaxSize": 1,
+			"ItemSound": "mod",
+			"Prefab": {
+				"path": "assets/content/items/mods/scopes/scope_base_trijicon_reap-ir.bundle",
+				"rcid": ""
+			},
+			"UsePrefab": {
+				"path": "",
+				"rcid": ""
+			},
+			"StackObjectsCount": 1,
+			"NotShownInSlot": false,
+			"ExaminedByDefault": false,
+			"ExamineTime": 1,
+			"IsUndiscardable": false,
+			"IsUnsaleable": false,
+			"IsUnbuyable": false,
+			"IsUngivable": false,
+			"IsLockedafterEquip": false,
+			"QuestItem": false,
+			"LootExperience": 20,
+			"ExamineExperience": 10,
+			"HideEntrails": false,
+			"RepairCost": 0,
+			"RepairSpeed": 0,
+			"ExtraSizeLeft": 0,
+			"ExtraSizeRight": 0,
+			"ExtraSizeUp": 0,
+			"ExtraSizeDown": 0,
+			"ExtraSizeForceAdd": false,
+			"MergesWithChildren": true,
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
+			"ConflictingItems": [],
+			"Unlootable": false,
+			"UnlootableFromSlot": "FirstPrimaryWeapon",
+			"UnlootableFromSide": [],
+			"AnimationVariantsNumber": 0,
+			"DiscardingBlock": false,
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
+			"Grids": [],
+			"Slots": [
+				{
+					"_name": "mod_tactical",
+					"_id": "5a1eac63fcdbcb001a3b0108",
+					"_parent": "5a1eaa87fcdbcb001865f75e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a1eacb3fcdbcb09800872be"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			],
+			"CanPutIntoDuringTheRaid": true,
+			"CantRemoveFromSlotsDuringRaid": [],
+			"Durability": 100,
+			"Accuracy": 0,
+			"Recoil": 0,
+			"Loudness": 0,
+			"EffectiveDistance": 0,
+			"Ergonomics": -13,
+			"Velocity": 0,
+			"RaidModdable": true,
+			"ToolModdable": true,
+			"BlocksFolding": false,
+			"BlocksCollapsible": false,
+			"IsAnimated": false,
+			"HasShoulderContact": false,
+			"SightingRange": 500,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"CustomAimPlane": "",
+			"sightModType": "hybrid",
+			"aimingSensitivity": 0.45,
+			"SightModesCount": 2,
+			"OpticCalibrationDistances": [
+				50,
+				100,
+				150,
+				200
+			],
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.28,
+					0.28
+				]
+			],
+			"ModesCount": [
+				2
+			],
+			"Zooms": [
+				[
+					2.5,
+					2.5
+				]
+			],
+			"CalibrationDistances": [
+				[
+					50,
+					100,
+					150,
+					200
+				]
+			]
+		}
+	},
+	{
+		"_id": "606f2696f2cb2e02a42aceb1",
+		"_name": "tactical_mp155_kalashnikov_ultima_camera",
+		"_parent": "55818aeb4bdc2ddc698b456a",
+		"_type": "Item",
+		"_props": {
+			"Name": "Тактический блок AN/PEQ-15",
+			"ShortName": "AN/PEQ-15",
+			"Description": "ATPIAL (Advanced Target Pointer Illuminator Aiming Laser) AN/PEQ-15 производства L3 Insight Technologies. Тактический блок. Совмещающий в себе лазерные целеуказатели в видимом и невидимом (ИК) диапазоне а также инфракрасный осветитель.",
+			"Weight": 0.21,
+			"BackgroundColor": "blue",
+			"Width": 1,
+			"Height": 1,
+			"StackMaxSize": 1,
+			"ItemSound": "mod",
+			"Prefab": {
+				"path": "assets/content/items/mods/tactical/tactical_mp155_kalashnikov_ultima_camera_thermal.bundle",
+				"rcid": ""
+			},
+			"UsePrefab": {
+				"path": "",
+				"rcid": ""
+			},
+			"StackObjectsCount": 1,
+			"NotShownInSlot": false,
+			"ExaminedByDefault": false,
+			"ExamineTime": 1,
+			"IsUndiscardable": false,
+			"IsUnsaleable": false,
+			"IsUnbuyable": false,
+			"IsUngivable": false,
+			"IsLockedafterEquip": false,
+			"QuestItem": false,
+			"LootExperience": 30,
+			"ExamineExperience": 10,
+			"HideEntrails": false,
+			"RepairCost": 0,
+			"RepairSpeed": 0,
+			"ExtraSizeLeft": 0,
+			"ExtraSizeRight": 0,
+			"ExtraSizeUp": 0,
+			"ExtraSizeDown": 0,
+			"ExtraSizeForceAdd": false,
+			"MergesWithChildren": true,
+			"CanSellOnRagfair": true,
+			"CanRequireOnRagfair": true,
+			"ConflictingItems": [],
+			"Unlootable": false,
+			"UnlootableFromSlot": "FirstPrimaryWeapon",
+			"UnlootableFromSide": [],
+			"AnimationVariantsNumber": 0,
+			"DiscardingBlock": false,
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
+			"Grids": [],
+			"Slots": [],
+			"CanPutIntoDuringTheRaid": true,
+			"CantRemoveFromSlotsDuringRaid": [],
+			"Durability": 100,
+			"Accuracy": 0,
+			"Recoil": 0,
+			"Loudness": 0,
+			"EffectiveDistance": 0,
+			"Ergonomics": -3,
+			"Velocity": 0,
+			"RaidModdable": true,
+			"ToolModdable": true,
+			"BlocksFolding": false,
+			"BlocksCollapsible": false,
+			"IsAnimated": false,
+			"HasShoulderContact": false,
+			"SightingRange": 300,
+			"DoubleActionAccuracyPenaltyMult": 1,
+			"CustomAimPlane": "ak_thermal",
+			"sightModType": "optic",
+			"aimingSensitivity": 0.2,
+			"SightModesCount": 1,
+			"OpticCalibrationDistances": [
+				50,
+				100,
+				150,
+				200
+			],
+			"ScopesCount": 1,
+			"AimSensitivity": [
+				[
+					0.5
+				]
+			],
+			"ModesCount": [
+				1
+			],
+			"Zooms": [
+				[
+					1
+				]
+			],
+			"CalibrationDistances": [
+				[
+					50,
+					100
+				]
+			]
+		},
+		"_proto": "544909bb4bdc2d6f028b4577"
+	},
+	{
 		"_id": "5b3b6e495acfc4330140bd88",
 		"_name": "scope_base_armasight_vulcan_gen3_bravo_mg_3,5x",
 		"_parent": "55818aeb4bdc2ddc698b456a",
@@ -146,9 +527,6 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Superrare",
-			"SpawnChance": 2,
-			"CreditsPrice": 46950,
 			"ItemSound": "mod",
 			"Prefab": {
 				"path": "assets/content/items/mods/scopes/scope_base_armasight_vulcan_gen3_bravo_mg_3,5x.bundle",
@@ -182,13 +560,9 @@
 			"CanSellOnRagfair": true,
 			"CanRequireOnRagfair": true,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -252,6 +626,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 500,
+			"DoubleActionAccuracyPenaltyMult": 1,
 			"CustomAimPlane": "",
 			"sightModType": "optic",
 			"aimingSensitivity": 0.45,
@@ -288,299 +663,6 @@
 		"_proto": "5a1eaa87fcdbcb001865f75e"
 	},
 	{
-		"_id": "5d21f59b6dbe99052b54ef83",
-		"_name": "ThermalVision",
-		"_parent": "55818aeb4bdc2ddc698b456a",
-		"_type": "Node",
-		"_props": {
-			"RampPalette": "Fusion",
-			"DepthFade": 0.03,
-			"RoughnessCoef": 0.04,
-			"SpecularCoef": 0.01,
-			"MainTexColorCoef": 0.2,
-			"MinimumTemperatureValue": 0.25,
-			"RampShift": 0.061,
-			"HeatMin": 0.7,
-			"ColdMax": 0.462,
-			"IsNoisy": true,
-			"NoiseIntensity": 0.02,
-			"IsFpsStuck": false,
-			"IsGlitch": false,
-			"IsMotionBlurred": true,
-			"Mask": "Thermal",
-			"MaskSize": 1.2,
-			"IsPixelated": false,
-			"PixelationBlockCount": 256
-		}
-	},
-	{
-		"_id": "5a2c3a9486f774688b05e574",
-		"_name": "NightVision",
-		"_parent": "55818aeb4bdc2ddc698b456a",
-		"_type": "Node",
-		"_props": {
-			"Intensity": 2.27,
-			"Mask": "Thermal",
-			"MaskSize": 1.5,
-			"NoiseIntensity": 0.02,
-			"NoiseScale": 5,
-			"Color": {
-				"r": 121,
-				"g": 233,
-				"b": 121,
-				"a": 254
-			},
-			"DiffuseIntensity": 0,
-			"HasHinge": true
-		}
-	},
-	{
-		"_id": "5a1eaa87fcdbcb001865f75e",
-		"_name": "scope_base_trijicon_reap-ir",
-		"_parent": "55818aeb4bdc2ddc698b456a",
-		"_type": "Item",
-		"_props": {
-			"Name": "scope_base_trijicon_reap-ir",
-			"ShortName": "scope_base_trijicon_reap-ir",
-			"Description": "scope_base_trijicon_reap-ir",
-			"Weight": 0.58,
-			"BackgroundColor": "blue",
-			"Width": 2,
-			"Height": 1,
-			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 0.3,
-			"CreditsPrice": 355794,
-			"ItemSound": "mod",
-			"Prefab": {
-				"path": "assets/content/items/mods/scopes/scope_base_trijicon_reap-ir.bundle",
-				"rcid": ""
-			},
-			"UsePrefab": {
-				"path": "",
-				"rcid": ""
-			},
-			"StackObjectsCount": 1,
-			"NotShownInSlot": false,
-			"ExaminedByDefault": false,
-			"ExamineTime": 1,
-			"IsUndiscardable": false,
-			"IsUnsaleable": false,
-			"IsUnbuyable": false,
-			"IsUngivable": false,
-			"IsLockedafterEquip": false,
-			"QuestItem": false,
-			"LootExperience": 20,
-			"ExamineExperience": 10,
-			"HideEntrails": false,
-			"RepairCost": 0,
-			"RepairSpeed": 0,
-			"ExtraSizeLeft": 0,
-			"ExtraSizeRight": 0,
-			"ExtraSizeUp": 0,
-			"ExtraSizeDown": 0,
-			"ExtraSizeForceAdd": false,
-			"MergesWithChildren": true,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
-			"ConflictingItems": [],
-			"FixedPrice": false,
-			"Unlootable": false,
-			"UnlootableFromSlot": "FirstPrimaryWeapon",
-			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
-			"AnimationVariantsNumber": 0,
-			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1,
-			"IsAlwaysAvailableForInsurance": false,
-			"Grids": [],
-			"Slots": [
-				{
-					"_name": "mod_tactical",
-					"_id": "5a1eac63fcdbcb001a3b0108",
-					"_parent": "5a1eaa87fcdbcb001865f75e",
-					"_props": {
-						"filters": [
-							{
-								"Shift": 0,
-								"Filter": [
-									"5a1eacb3fcdbcb09800872be"
-								]
-							}
-						]
-					},
-					"_required": false,
-					"_mergeSlotWithChildren": false,
-					"_proto": "55d30c4c4bdc2db4468b457e"
-				}
-			],
-			"CanPutIntoDuringTheRaid": true,
-			"CantRemoveFromSlotsDuringRaid": [],
-			"Durability": 100,
-			"Accuracy": 0,
-			"Recoil": 0,
-			"Loudness": 0,
-			"EffectiveDistance": 0,
-			"Ergonomics": -13,
-			"Velocity": 0,
-			"RaidModdable": true,
-			"ToolModdable": true,
-			"BlocksFolding": false,
-			"BlocksCollapsible": false,
-			"IsAnimated": false,
-			"HasShoulderContact": false,
-			"SightingRange": 500,
-			"CustomAimPlane": "",
-			"sightModType": "hybrid",
-			"aimingSensitivity": 0.45,
-			"SightModesCount": 2,
-			"OpticCalibrationDistances": [
-				50,
-				100,
-				150,
-				200
-			],
-			"ScopesCount": 1,
-			"AimSensitivity": [
-				[
-					0.28,
-					0.28
-				]
-			],
-			"ModesCount": [
-				2
-			],
-			"Zooms": [
-				[
-					2.5,
-					2.5
-				]
-			],
-			"CalibrationDistances": [
-				[
-					50,
-					100,
-					150,
-					200
-				]
-			]
-		}
-	},
-	{
-		"_id": "609bab8b455afd752b2e6138",
-		"_name": "scope_all_torrey_pines_logic_t12_w_30hz",
-		"_parent": "55818aeb4bdc2ddc698b456a",
-		"_type": "Item",
-		"_props": {
-			"Name": "scope_all_torrey_pines_logic_t12_w_30hz",
-			"ShortName": "scope_all_torrey_pines_logic_t12_w_30hz",
-			"Description": "scope_all_torrey_pines_logic_t12_w_30hz",
-			"Weight": 0.063,
-			"BackgroundColor": "blue",
-			"Width": 1,
-			"Height": 1,
-			"StackMaxSize": 1,
-			"Rarity": "Superrare",
-			"SpawnChance": 0.7,
-			"CreditsPrice": 75794,
-			"ItemSound": "mod",
-			"Prefab": {
-				"path": "assets/content/items/mods/scopes/scope_all_torrey_pines_logic_t12_w_30hz.bundle",
-				"rcid": ""
-			},
-			"UsePrefab": {
-				"path": "",
-				"rcid": ""
-			},
-			"StackObjectsCount": 1,
-			"NotShownInSlot": false,
-			"ExaminedByDefault": false,
-			"ExamineTime": 1,
-			"IsUndiscardable": false,
-			"IsUnsaleable": false,
-			"IsUnbuyable": false,
-			"IsUngivable": false,
-			"IsLockedafterEquip": false,
-			"QuestItem": false,
-			"LootExperience": 20,
-			"ExamineExperience": 10,
-			"HideEntrails": false,
-			"RepairCost": 0,
-			"RepairSpeed": 0,
-			"ExtraSizeLeft": 0,
-			"ExtraSizeRight": 0,
-			"ExtraSizeUp": 0,
-			"ExtraSizeDown": 0,
-			"ExtraSizeForceAdd": false,
-			"MergesWithChildren": true,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
-			"ConflictingItems": [],
-			"FixedPrice": false,
-			"Unlootable": false,
-			"UnlootableFromSlot": "FirstPrimaryWeapon",
-			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
-			"AnimationVariantsNumber": 0,
-			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1,
-			"IsAlwaysAvailableForInsurance": false,
-			"Grids": [],
-			"Slots": [],
-			"CanPutIntoDuringTheRaid": true,
-			"CantRemoveFromSlotsDuringRaid": [],
-			"Durability": 100,
-			"Accuracy": 0,
-			"Recoil": 0,
-			"Loudness": 0,
-			"EffectiveDistance": 0,
-			"Ergonomics": -1,
-			"Velocity": 0,
-			"RaidModdable": true,
-			"ToolModdable": true,
-			"BlocksFolding": false,
-			"BlocksCollapsible": false,
-			"IsAnimated": false,
-			"HasShoulderContact": false,
-			"SightingRange": 500,
-			"CustomAimPlane": "default",
-			"sightModType": "hybrid",
-			"aimingSensitivity": 0.3,
-			"SightModesCount": 2,
-			"OpticCalibrationDistances": [
-				50,
-				100,
-				150,
-				200
-			],
-			"ScopesCount": 1,
-			"AimSensitivity": [
-				[
-					0.7
-				]
-			],
-			"ModesCount": [
-				1
-			],
-			"Zooms": [
-				[
-					1
-				]
-			],
-			"CalibrationDistances": [
-				[
-					25,
-					50
-				]
-			]
-		},
-		"_proto": "5a1eaa87fcdbcb001865f75e"
-	},
-	{
 		"_id": "5a7c74b3e899ef0014332c29",
 		"_name": "scope_dovetail_npz_nspum_3,5x",
 		"_parent": "55818aeb4bdc2ddc698b456a",
@@ -594,9 +676,6 @@
 			"Width": 2,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Rare",
-			"SpawnChance": 7,
-			"CreditsPrice": 13732,
 			"ItemSound": "mod",
 			"Prefab": {
 				"path": "assets/content/items/mods/scopes/scope_dovetail_npz_nspum_3,5x.bundle",
@@ -670,13 +749,9 @@
 				"5649af884bdc2d1b2b8b4589",
 				"59985a6c86f77414ec448d17"
 			],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -718,6 +793,7 @@
 			"IsAnimated": false,
 			"HasShoulderContact": false,
 			"SightingRange": 300,
+			"DoubleActionAccuracyPenaltyMult": 1,
 			"CustomAimPlane": "",
 			"sightModType": "hybrid",
 			"aimingSensitivity": 0.45,
@@ -752,117 +828,5 @@
 			]
 		},
 		"_proto": "5a1eaa87fcdbcb001865f75e"
-	},
-	{
-		"_id": "606f2696f2cb2e02a42aceb1",
-		"_name": "tactical_mp155_kalashnikov_ultima_camera",
-		"_parent": "55818aeb4bdc2ddc698b456a",
-		"_type": "Item",
-		"_props": {
-			"Name": "Тактический блок AN/PEQ-15",
-			"ShortName": "AN/PEQ-15",
-			"Description": "ATPIAL (Advanced Target Pointer Illuminator Aiming Laser) AN/PEQ-15 производства L3 Insight Technologies. Тактический блок. Совмещающий в себе лазерные целеуказатели в видимом и невидимом (ИК) диапазоне а также инфракрасный осветитель.",
-			"Weight": 0.21,
-			"BackgroundColor": "blue",
-			"Width": 1,
-			"Height": 1,
-			"StackMaxSize": 1,
-			"Rarity": "Superrare",
-			"SpawnChance": 2,
-			"CreditsPrice": 49137,
-			"ItemSound": "mod",
-			"Prefab": {
-				"path": "assets/content/items/mods/tactical/tactical_mp155_kalashnikov_ultima_camera_thermal.bundle",
-				"rcid": ""
-			},
-			"UsePrefab": {
-				"path": "",
-				"rcid": ""
-			},
-			"StackObjectsCount": 1,
-			"NotShownInSlot": false,
-			"ExaminedByDefault": false,
-			"ExamineTime": 1,
-			"IsUndiscardable": false,
-			"IsUnsaleable": false,
-			"IsUnbuyable": false,
-			"IsUngivable": false,
-			"IsLockedafterEquip": false,
-			"QuestItem": false,
-			"LootExperience": 30,
-			"ExamineExperience": 10,
-			"HideEntrails": false,
-			"RepairCost": 0,
-			"RepairSpeed": 0,
-			"ExtraSizeLeft": 0,
-			"ExtraSizeRight": 0,
-			"ExtraSizeUp": 0,
-			"ExtraSizeDown": 0,
-			"ExtraSizeForceAdd": false,
-			"MergesWithChildren": true,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
-			"ConflictingItems": [],
-			"FixedPrice": false,
-			"Unlootable": false,
-			"UnlootableFromSlot": "FirstPrimaryWeapon",
-			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
-			"AnimationVariantsNumber": 0,
-			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1,
-			"IsAlwaysAvailableForInsurance": false,
-			"Grids": [],
-			"Slots": [],
-			"CanPutIntoDuringTheRaid": true,
-			"CantRemoveFromSlotsDuringRaid": [],
-			"Durability": 100,
-			"Accuracy": 0,
-			"Recoil": 0,
-			"Loudness": 0,
-			"EffectiveDistance": 0,
-			"Ergonomics": -3,
-			"Velocity": 0,
-			"RaidModdable": true,
-			"ToolModdable": true,
-			"BlocksFolding": false,
-			"BlocksCollapsible": false,
-			"IsAnimated": false,
-			"HasShoulderContact": false,
-			"SightingRange": 300,
-			"CustomAimPlane": "ak_thermal",
-			"sightModType": "optic",
-			"aimingSensitivity": 0.2,
-			"SightModesCount": 1,
-			"OpticCalibrationDistances": [
-				50,
-				100,
-				150,
-				200
-			],
-			"ScopesCount": 1,
-			"AimSensitivity": [
-				[
-					0.5
-				]
-			],
-			"ModesCount": [
-				1
-			],
-			"Zooms": [
-				[
-					1
-				]
-			],
-			"CalibrationDistances": [
-				[
-					50,
-					100
-				]
-			]
-		},
-		"_proto": "544909bb4bdc2d6f028b4577"
 	}
 ]

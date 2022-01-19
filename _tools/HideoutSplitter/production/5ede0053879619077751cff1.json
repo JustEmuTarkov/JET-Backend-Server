@@ -14,8 +14,8 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "590c2e1186f77425357b6124",
-			"count": 1,
+			"templateId": "619cc01e0a7c3a1a2731940c",
+			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -27,6 +27,7 @@
 		}
 	],
 	"productionTime": 4600,
+	"boosters": null,
 	"endProduct": "5d02797c86f774203f38e30a",
 	"continuous": false,
 	"count": 2,

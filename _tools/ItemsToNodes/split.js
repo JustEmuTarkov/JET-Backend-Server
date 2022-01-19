@@ -24,7 +24,6 @@ function _write(file, data) {
 		_checkDir(file); // if exist then there is a path to check
     fs.writeFileSync(file, _stringify(data), 'utf8');
 }
-
 var GlobalItems = _parse(_read("items.json"));
 if(typeof GlobalItems['data'] != "undefined")
 	GlobalItems = GlobalItems['data'];

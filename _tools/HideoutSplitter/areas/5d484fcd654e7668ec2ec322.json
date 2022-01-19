@@ -17,7 +17,25 @@
 			"requirements": [
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 20000,
+					"count": 50000,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "5d1b3f2d86f774253763b735",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "5d1b3a5d86f774252167ba22",
+					"count": 1,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "544fb25a4bdc2dfb738b4567",
+					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
 				}
@@ -53,7 +71,7 @@
 				},
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 50000,
+					"count": 150000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -86,7 +104,13 @@
 				},
 				{
 					"templateId": "5e831507ea0a7c419c2f9bd9",
-					"count": 2,
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "619cc01e0a7c3a1a2731940c",
+					"count": 3,
 					"isFunctional": false,
 					"type": "Item"
 				}
@@ -108,7 +132,7 @@
 			"requirements": [
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 150000,
+					"count": 500000,
 					"isFunctional": false,
 					"type": "Item"
 				},

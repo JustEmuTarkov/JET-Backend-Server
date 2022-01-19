@@ -5,9 +5,12 @@
 const dump = require('./dump.json')
 const fs = require('fs')
 
-for (let k in dump.data) {
+if(typeof dump.data != "undefined")
+  dump = dump.data
+
+for (let k in dump) {
     if (!fs.existsSync("./output")) { fs.mkdirSync("./output")}
-    fs.writeFile(__dirname + `/output/${k}.json`, JSON.stringify(dump.data[k]), (err, res) => {
+    fs.writeFile(__dirname + `/output/${k}.json`, JSON.stringify(dump[k]), (err, res) => {
         if (err) return console.error(err)
         else console.log(`Wrote ${k}.json.`)
     })

@@ -21,18 +21,19 @@
 		},
 		{
 			"templateId": "5e2af4a786f7746d3f3c3400",
-			"count": 2,
+			"count": 4,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
-			"templateId": "544fb5454bdc2df8738b456a",
-			"count": 1,
+			"templateId": "61bf83814088ec1a363d7097",
+			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
 		}
 	],
-	"productionTime": 8000,
+	"productionTime": 19000,
+	"boosters": null,
 	"endProduct": "5df8a4d786f77412672a1e3b",
 	"continuous": false,
 	"count": 1,

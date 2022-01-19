@@ -9,7 +9,7 @@
 		},
 		{
 			"templateId": "56d59d3ad2720bdb418b4577",
-			"count": 200,
+			"count": 400,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -20,9 +20,10 @@
 			"type": "Item"
 		}
 	],
-	"productionTime": 13500,
+	"productionTime": 34500,
+	"boosters": null,
 	"endProduct": "5c925fa22e221601da359b7b",
 	"continuous": false,
-	"count": 200,
+	"count": 150,
 	"productionLimitCount": 0
 }

@@ -56,7 +56,7 @@
 				},
 				{
 					"templateId": "5449016a4bdc2d6f028b456f",
-					"count": 3500000,
+					"count": 2500000,
 					"isFunctional": false,
 					"type": "Item"
 				},
@@ -130,6 +130,12 @@
 					"traderId": "5ac3b934156ae10c4430e83c",
 					"loyaltyLevel": 3,
 					"type": "TraderLoyalty"
+				},
+				{
+					"templateId": "590c31c586f774245e3141b2",
+					"count": 7,
+					"isFunctional": false,
+					"type": "Item"
 				}
 			],
 			"bonuses": [
@@ -203,7 +209,13 @@
 				},
 				{
 					"templateId": "590c35a486f774273531c822",
-					"count": 7,
+					"count": 5,
+					"isFunctional": false,
+					"type": "Item"
+				},
+				{
+					"templateId": "60391afc25aff57af81f7085",
+					"count": 2,
 					"isFunctional": false,
 					"type": "Item"
 				}

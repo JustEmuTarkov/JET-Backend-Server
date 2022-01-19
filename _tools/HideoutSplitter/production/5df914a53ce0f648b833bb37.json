@@ -27,6 +27,7 @@
 		}
 	],
 	"productionTime": 123200,
+	"boosters": null,
 	"endProduct": "590c621186f774138d11ea29",
 	"continuous": false,
 	"count": 3,

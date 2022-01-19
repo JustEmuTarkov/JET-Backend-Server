@@ -13,9 +13,6 @@
 			"Width": 3,
 			"Height": 1,
 			"StackMaxSize": 1,
-			"Rarity": "Not_exist",
-			"SpawnChance": 0.01,
-			"CreditsPrice": 110000,
 			"ItemSound": "weap_dmr",
 			"Prefab": {
 				"path": "assets/content/weapons/fn40gl/weapon_fn_40gl_s_container.bundle",
@@ -46,16 +43,12 @@
 			"ExtraSizeDown": 0,
 			"ExtraSizeForceAdd": false,
 			"MergesWithChildren": true,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
+			"CanSellOnRagfair": false,
+			"CanRequireOnRagfair": false,
 			"ConflictingItems": [],
-			"FixedPrice": false,
 			"Unlootable": false,
 			"UnlootableFromSlot": "FirstPrimaryWeapon",
 			"UnlootableFromSide": [],
-			"ChangePriceCoef": 1,
-			"AllowSpawnOnLocations": [],
-			"SendToClient": false,
 			"AnimationVariantsNumber": 0,
 			"DiscardingBlock": false,
 			"RagFairCommissionModifier": 1,
@@ -73,6 +66,9 @@
 								"Filter": [
 									"55d4b9964bdc2d1d4e8b456e",
 									"571659bb2459771fb2755a12",
+									"6113c3586c780c1e710c90bc",
+									"6113cc78d3a39d50044c065a",
+									"6113cce3d92c473c770200c7",
 									"5bb20e18d4351e00320205d5",
 									"57c55efc2459772d2c6271e7",
 									"57af48872459771f0b2ebf11",
@@ -80,6 +76,7 @@
 									"57c55f112459772d28133310",
 									"57c55f172459772d27602381",
 									"5a339805c4a2826c6e06d73d",
+									"615d8faecabb9b7ad90f4d5d",
 									"5b07db875acfc40dc528a5f6"
 								]
 							}
@@ -282,8 +279,10 @@
 				"single"
 			],
 			"RecolDispersion": 35,
+			"SingleFireRate": 450,
+			"CanQueueSecondShot": false,
 			"bFirerate": 30,
-			"Ergonomics": 120,
+			"Ergonomics": 51,
 			"Velocity": 0,
 			"bEffDist": 50,
 			"bHearDist": 80,
@@ -320,13 +319,13 @@
 					"_proto": "55d4af244bdc2d962f8b4571"
 				}
 			],
-			"CameraRecoil": 0.05,
+			"CameraRecoil": 0.04,
 			"CameraSnap": 3.5,
 			"ReloadMode": "OnlyBarrel",
 			"CenterOfImpact": 0.7,
 			"AimPlane": 0.026,
-			"DeviationCurve": 8,
-			"DeviationMax": 20,
+			"DeviationCurve": 1.9,
+			"DeviationMax": 15,
 			"Foldable": true,
 			"Retractable": false,
 			"TacticalReloadStiffnes": {
@@ -366,15 +365,19 @@
 			"ManualBoltCatch": false,
 			"AimSensitivity": 0.65,
 			"BurstShotsCount": 3,
-			"BaseMalfunctionChance": 0.14,
+			"BaseMalfunctionChance": 0.154,
 			"AllowJam": false,
 			"AllowFeed": false,
 			"AllowMisfire": false,
 			"AllowSlide": false,
 			"DurabilityBurnRatio": 1,
-			"HeatFactor": 1,
-			"CoolFactor": 1,
-			"AllowOverheat": false
+			"HeatFactorGun": 1,
+			"CoolFactorGun": 0.72,
+			"CoolFactorGunMods": 1,
+			"HeatFactorByShot": 1,
+			"AllowOverheat": false,
+			"DoubleActionAccuracyPenalty": 1.5,
+			"RecoilPosZMult": 1
 		},
 		"_proto": "5448bd6b4bdc2dfc2f8b4569"
 	}

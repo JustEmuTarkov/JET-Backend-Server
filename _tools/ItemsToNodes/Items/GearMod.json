@@ -1,12 +1,5 @@
 [
 	{
-		"_id": "55818a6f4bdc2db9688b456b",
-		"_name": "Charge",
-		"_parent": "55802f3e4bdc2de7118b4584",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
 		"_id": "55818a604bdc2db5418b457e",
 		"_name": "Shaft",
 		"_parent": "55802f3e4bdc2de7118b4584",
@@ -14,11 +7,13 @@
 		"_props": {}
 	},
 	{
-		"_id": "55818b014bdc2ddc698b456b",
-		"_name": "Launcher",
+		"_id": "55818a6f4bdc2db9688b456b",
+		"_name": "Charge",
 		"_parent": "55802f3e4bdc2de7118b4584",
 		"_type": "Node",
-		"_props": {}
+		"_props": {
+			"DurabilityBurnModificator": 1
+		}
 	},
 	{
 		"_id": "5448bc234bdc2d3c308b4569",
@@ -36,7 +31,9 @@
 			"CheckOverride": 0,
 			"ReloadMagType": "ExternalMagazine",
 			"VisibleAmmoRangesString": "1-3",
-			"MalfunctionChance": 0
+			"MalfunctionChance": 0,
+			"TagColor": 0,
+			"TagName": ""
 		}
 	},
 	{
@@ -45,8 +42,16 @@
 		"_parent": "55802f3e4bdc2de7118b4584",
 		"_type": "Node",
 		"_props": {
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"CoolFactor": 1
 		}
+	},
+	{
+		"_id": "55818b014bdc2ddc698b456b",
+		"_name": "Launcher",
+		"_parent": "55802f3e4bdc2de7118b4584",
+		"_type": "Node",
+		"_props": {}
 	},
 	{
 		"_id": "55818a594bdc2db9688b456a",
@@ -58,7 +63,9 @@
 			"Foldable": false,
 			"Retractable": false,
 			"SizeReduceRight": 0,
-			"HeatFactor": 1
+			"HeatFactor": 1,
+			"CoolFactor": 1,
+			"DurabilityBurnModificator": 1
 		}
 	}
 ]
