@@ -155,8 +155,8 @@ function GenerateLootList(containerId) {
       continue;
     }
     const itemTemplate = global._database.items[item];
-    if (typeof itemTemplate._props.Rarity == "undefined") {
-      logger.logWarning(`itemTemplate._props.Rarity == "undefined" for ${itemTemplate._id}`);
+    if (typeof itemTemplate._props.LootExperience == "undefined") {
+      logger.logWarning(`itemTemplate._props.LootExperience == "undefined" for ${itemTemplate._id}`);
     }
     const rollSpawnChance = utility.getRandomInt(0, 10000);
     const itemSpawnChance = utility.valueBetween(itemTemplate._props.LootExperience, 0, 250, 0, 100)

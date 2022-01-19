@@ -33,10 +33,10 @@
     "SpawnPmc": true,
     "SpawnRandomizationMod": true,
     "TinnitusFix": false,
-    "LoadOfflineRaidScreen": true,
+    "LoadOfflineRaidScreen": false,
     "ScavExfilFix": false,
-    "ScavPrefabLoad": true,
-    "ScavProfileLoad": true,
+    "ScavPrefabLoad": false,
+    "ScavProfileLoad": false,
     "ScavSpawnPoint": false,
     "BarterSchemeAutoFill": true,
     "BarterSchemeAutoFillPersist": true
