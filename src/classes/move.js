@@ -256,7 +256,7 @@ function discardItem(pmcData, body, sessionID) {
  * */
 function splitItem(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
-  logger.logInfo(body, true);
+  //logger.logInfo(body, true);
   let location = body.container.location;
   let inventoryItems = getOwnerInventoryItems(body, sessionID);
   if (
@@ -384,9 +384,9 @@ function mergeItem(pmcData, body, sessionID) {
             "undefined"
           )
             output.profileChanges[pmcData._id].items.change = [];
-          output.profileChanges[pmcData._id].items.change.push(
-            inventoryItems.to[key]
-          );
+          //output.profileChanges[pmcData._id].items.change.push(
+          //  inventoryItems.to[key]
+          //);
 
           if (
             typeof output.profileChanges[pmcData._id].items.del == "undefined"
