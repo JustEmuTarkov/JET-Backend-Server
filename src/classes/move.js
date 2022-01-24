@@ -338,7 +338,7 @@ function mergeItem(pmcData, body, sessionID) {
           inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
 
           if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
-          output.profileChanges[pmcData._id].items.change.push(inventoryItems.to[key]);
+          //output.profileChanges[pmcData._id].items.change.push(inventoryItems.to[key]);
 
           if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
           output.profileChanges[pmcData._id].items.del.push({
