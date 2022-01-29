@@ -14,7 +14,7 @@ class TarkovSend {
   }
   zlibJson(resp, output, sessionID) {
     let Header = {"Content-Type": this.mime["json"], "Set-Cookie": "PHPSESSID=" + sessionID };
-    if(sessionID == null || sessionID == ""){
+    if(typeof sessionID == "undefined"){
       Header["content-encoding"] == "deflate";
     }
     resp.writeHead(200, "OK", Header);

@@ -75,6 +75,9 @@ function Create_StaticMountedStruct(item_data){
 		IsGroupPosition = item_data.IsGroupPosition;
 		GroupPositions = item_data.GroupPositions;
 	}
+  //console.log(typeof item_data.Items[0]);
+  //console.log(item_data.id);
+  let Root = typeof item_data.Items[0] == "string" ? item_data.id : item_data.Items[0]._id;
 	return {
 		"Id": item_data.id,
 		"IsStatic": isStatic,
@@ -84,7 +87,7 @@ function Create_StaticMountedStruct(item_data){
 		"Rotation": rotation,
 		"IsGroupPosition": IsGroupPosition,
 		"GroupPositions": GroupPositions,
-		"Root": item_data.Items[0]._id, // id of container
+		"Root": Root, // id of container
 		"Items": item_data.Items
 	};
 }

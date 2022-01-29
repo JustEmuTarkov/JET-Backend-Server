@@ -143,11 +143,11 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
       }
     }
   } else {
-    mapName = "all";
+    //mapName = "all";
     for (const key of Object.keys(global._database.locationConfigs.DynamicLootTable[mapName])) {
       const match = lootData.Id.toLowerCase();
-
-      if (match.includes(key)) {
+      //const matchKey = key.toLowerCase();
+      if (match.startsWith(key)) {// || match.indexOf(key) != -1) {
         const lootList = global._database.locationConfigs.DynamicLootTable[mapName][key].SpawnList;
         for (const loot in lootList) {
           if (ItemParentsList.includes(lootList[loot])) {
@@ -161,6 +161,7 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
             logger.logWarning(`Loot with _tpl: "${lootList[loot]}" and key: "${key}" in map: "${mapName}" was unable to be found in items database...`);
         }
       }
+      
     }
   }
   return containsSpawns;
@@ -481,9 +482,10 @@ class Generator {
       // its not stationary then its default preset of weapon
         let data = utility.DeepCopy(typeArray[i]);
         let RolledTemplate = data.Items[utility.getRandomInt(0, data.Items.length - 1)]
-
+        //console.log("RolledWeapon " + RolledTemplate);
         // Preset weapon
         const PresetData = FindIfItemIsAPreset(RolledTemplate);
+        //console.log(PresetData);
         if (PresetData != null) {
           const generatedItemId = utility.generateNewItemId();
           const createdItem = {
@@ -505,15 +507,13 @@ class Generator {
             Items: [],
           };
           createEndLootData.Items.push(createdItem);
-          let preset = PresetData[utility.getRandomInt(0, PresetData.length)];
-          if (preset == null) continue;
 
-          let oldBaseItem = preset._items[0];
-          preset._items = preset._items.splice(0, 1);
+          let oldBaseItem = PresetData._items[0];
+          PresetData._items = PresetData._items.splice(0, 1);
           let idSuffix = 0;
           let OldIds = {};
-          for (var p in preset._items) {
-            let currentItem = utility.DeepCopy(preset._items[p]);
+          for (var p in PresetData._items) {
+            let currentItem = utility.DeepCopy(PresetData._items[p]);
             OldIds[currentItem.id] = utility.generateNewItemId();
             if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
             if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
@@ -521,12 +521,12 @@ class Generator {
             currentItem.id = OldIds[currentItem.id];
             createEndLootData.Items.push(currentItem);
 
-            if (preset._items[p].slotId === "mod_magazine") {
-              let mag = helper_f.getItem(preset._items[p]._tpl)[1];
+            if (PresetData._items[p].slotId === "mod_magazine") {
+              let mag = helper_f.getItem(PresetData._items[p]._tpl)[1];
               let cartridges = {
                 _id: currentItem.id + "_" + idSuffix,
                 _tpl: item._props.defAmmo,
-                parentId: preset._items[p]._id,
+                parentId: PresetData._items[p]._id,
                 slotId: "cartridges",
                 upd: { StackObjectsCount: mag._props.Cartridges[0]._max_count },
               };
