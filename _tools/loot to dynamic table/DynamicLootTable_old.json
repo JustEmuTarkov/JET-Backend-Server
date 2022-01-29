@@ -1,0 +1,809 @@
+{
+    "all": {
+     "alarm_pult": {
+      "Name": "alarm_pult",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ammo ": {
+      "Name": "AmmoBox All",
+      "SpawnList": ["5c1262a286f7743f8a69aab2", "57372db0245977685d4159b2", "5737250c2459776125652acc", "57372e4a24597768553071c2", "573725b0245977612125bae2", "5c1127d0d174af29be75cf68", "573727c624597765cc785b5b", "573728cc24597765cc785b5d", "5737256c2459776125652acd", "5447ac644bdc2d6c208b4567", "573728f324597765e5728561", "5649ed104bdc2d3d1c8b458b", "57372c89245977685d4159b1", "57372c21245977670937c6c2", "57372ebf2459776862260582", "560d75f54bdc2da74d8b4573", "57372bd3245977670b7cd243", "5737292724597765e5728562", "573722e82459776104581c21", "5739d41224597779c3645501", "57372deb245977685d4159b3", "5c1260dc86f7746b106e8748", "57372d4c245977685a3da2a1", "5c11279ad174af029d64592b", "57372fc52459776998772ca1", "5c1127bdd174af44217ab8b9", "5c12619186f7743f871c8a32"]
+     },
+     "ammo1": {
+      "Name": "ammo1",
+      "SpawnList": ["5c1262a286f7743f8a69aab2", "57372db0245977685d4159b2", "5737250c2459776125652acc", "57372e4a24597768553071c2", "573725b0245977612125bae2", "5c1127d0d174af29be75cf68", "573727c624597765cc785b5b", "573728cc24597765cc785b5d", "5737256c2459776125652acd", "5447ac644bdc2d6c208b4567", "573728f324597765e5728561", "5649ed104bdc2d3d1c8b458b", "57372c89245977685d4159b1", "57372c21245977670937c6c2", "57372ebf2459776862260582", "560d75f54bdc2da74d8b4573", "57372bd3245977670b7cd243", "5737292724597765e5728562", "573722e82459776104581c21", "5739d41224597779c3645501", "57372deb245977685d4159b3", "5c1260dc86f7746b106e8748", "57372d4c245977685a3da2a1", "5c11279ad174af029d64592b", "57372fc52459776998772ca1", "5c1127bdd174af44217ab8b9", "5c12619186f7743f871c8a32"]
+     },
+     "ammo_": {
+      "Name": "AmmoBox All",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ammo_all": {
+      "Name": "AmmoBox All",
+      "SpawnList": ["5c1262a286f7743f8a69aab2", "57372db0245977685d4159b2", "5737250c2459776125652acc", "57372e4a24597768553071c2", "573725b0245977612125bae2", "5c1127d0d174af29be75cf68", "573727c624597765cc785b5b", "573728cc24597765cc785b5d", "5737256c2459776125652acd", "5447ac644bdc2d6c208b4567", "573728f324597765e5728561", "5649ed104bdc2d3d1c8b458b", "57372c89245977685d4159b1", "57372c21245977670937c6c2", "57372ebf2459776862260582", "560d75f54bdc2da74d8b4573", "57372bd3245977670b7cd243", "5737292724597765e5728562", "573722e82459776104581c21", "5739d41224597779c3645501", "57372deb245977685d4159b3", "5c1260dc86f7746b106e8748", "57372d4c245977685a3da2a1", "5c11279ad174af029d64592b", "57372fc52459776998772ca1", "5c1127bdd174af44217ab8b9", "5c12619186f7743f871c8a32"]
+     },
+     "ammo_nato": {
+      "Name": "AmmoBox NATO",
+      "SpawnList": ["5c11279ad174af029d64592b", "59e68f6f86f7746c9f75e846", "59e690b686f7746c9f75e848", "59e6906286f7746c9f75e847", "54527ac44bdc2d36668b4567", "59e6918f86f7746c9f75e849", "59e6927d86f77411da468256", "5c0d5ae286f7741e46554302"]
+     },
+     "ammobox 5.45x39": {
+      "Name": "AmmoBox 5.45x39",
+      "SpawnList": ["57372f5c24597769917c0131", "5c1262a286f7743f8a69aab2", "57372e4a24597768553071c2", "57372d1b2459776862260581", "57372e73245977685d4159b4", "57372ac324597767001bc261", "5737300424597769942d5a01", "57372c89245977685d4159b1", "57372ebf2459776862260582", "5737330a2459776af32363a1", "57372c21245977670937c6c2", "5737339e2459776af261abeb", "57372bd3245977670b7cd243", "57372f7d245977699b53e301", "57372ee1245977685d4159b5", "57372deb245977685d4159b3", "573733c72459776b0b7b51b0", "57372db0245977685d4159b2", "5737292724597765e5728562", "57372b832459776701014e41", "57372bad245977670b7cd242", "57372f2824597769a270a191", "57372c56245977685e584582", "57372e1924597768553071c1", "57372d4c245977685a3da2a1", "57372e94245977685648d3e1", "57372fc52459776998772ca1"]
+     },
+     "ammobox nato": {
+      "Name": "AmmoBox NATO",
+      "SpawnList": ["5c11279ad174af029d64592b", "59e68f6f86f7746c9f75e846", "59e690b686f7746c9f75e848", "59e6906286f7746c9f75e847", "54527ac44bdc2d36668b4567", "59e6918f86f7746c9f75e849", "59e6927d86f77411da468256", "5c0d5ae286f7741e46554302"]
+     },
+     "ammoboxes": {
+      "Name": "AmmoBox All",
+      "SpawnList": ["5c1262a286f7743f8a69aab2", "57372db0245977685d4159b2", "5737250c2459776125652acc", "57372e4a24597768553071c2", "573725b0245977612125bae2", "5c1127d0d174af29be75cf68", "573727c624597765cc785b5b", "573728cc24597765cc785b5d", "5737256c2459776125652acd", "5447ac644bdc2d6c208b4567", "573728f324597765e5728561", "5649ed104bdc2d3d1c8b458b", "57372c89245977685d4159b1", "57372c21245977670937c6c2", "57372ebf2459776862260582", "560d75f54bdc2da74d8b4573", "57372bd3245977670b7cd243", "5737292724597765e5728562", "573722e82459776104581c21", "5739d41224597779c3645501", "57372deb245977685d4159b3", "5c1260dc86f7746b106e8748", "57372d4c245977685a3da2a1", "5c11279ad174af029d64592b", "57372fc52459776998772ca1", "5c1127bdd174af44217ab8b9", "5c12619186f7743f871c8a32"]
+     },
+     "arm_paca": {
+      "Name": "armor_paca",
+      "SpawnList": ["5648a7494bdc2d9d488b4583"]
+     },
+     "armor ": {
+      "Name": "armor ",
+      "SpawnList": ["5c0e5bab86f77461f55ed1f3", "5c0e5edb86f77461f55ed1f7", "5648a7494bdc2d9d488b4583"]
+     },
+     "armor_3m": {
+      "Name": "armor_3m",
+      "SpawnList": ["59e7635f86f7742cbf2c1095"]
+     },
+     "armor_low": {
+      "Name": "armor_low",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "armor_notheavy": {
+      "Name": "armor_NotHeavy",
+      "SpawnList": ["5c0e5bab86f77461f55ed1f3", "5d5d646386f7742797261fd9", "5648a7494bdc2d9d488b4583"]
+     },
+     "armor_paca": {
+      "Name": "armor_paca",
+      "SpawnList": ["5648a7494bdc2d9d488b4583"]
+     },
+     "armor_tarbank": {
+      "Name": "armor_Tarbank",
+      "SpawnList": ["59e7635f86f7742cbf2c1095"]
+     },
+     "backpack": {
+      "Name": "backpack",
+      "SpawnList": ["56e33634d2720bd8058b456b", "544a5cde4bdc2d39388b456b", "5ab8f04f86f774585f4237d8", "5f5e45cc5021ce62144be7aa"]
+     },
+     "bag_wild": {
+      "Name": "bag_wild",
+      "SpawnList": ["56e33634d2720bd8058b456b", "5ab8f04f86f774585f4237d8"]
+     },
+     "barter": {
+      "Name": "barter",
+      "SpawnList": ["5e54f62086f774219b0f1937", "590a3cd386f77436f20848cb", "5d1b31ce86f7742523398394", "590c2b4386f77425357b6123", "590a3c0a86f774385a33c450", "573478bc24597738002c6175", "5e2af00086f7746d3f3c33f7", "57347c5b245977448d35f6e1", "57347c77245977448d35f6e2", "59e35ef086f7741777737012", "57347d9c245977448b40fa85", "57347cd0245977445a2d6ff1", "575146b724597720a27126d5", "5734773724597737fd047c14", "57347da92459774491567cf5", "59e358a886f7741776641ac3", "590c639286f774151567fa95"]
+     },
+     "battery": {
+      "Name": "battery",
+      "SpawnList": ["5af0561e86f7745f5f3ad6ac", "5733279d245977289b77ec24", "5672cb124bdc2d1a0f8b4568", "5e2aedd986f7746d404f3aa4", "5e2aee0a86f774755a234b62", "5672cb304bdc2dc2088b456a", "590a358486f77429692b2790"]
+     },
+     "baza_dikih": {
+      "Name": "BAZA_DIKIH",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "bilding": {
+      "Name": "bilding",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "bot_zona_mchs": {
+      "Name": "bot_zona_mchs",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "bot_zona_snayper": {
+      "Name": "bot_zona_snayper",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "buhlo": {
+      "Name": "buhlo",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "building": {
+      "Name": "building",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "camping": {
+      "Name": "Camping",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "canned_food_drink": {
+      "Name": "canned_food_drink",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "cigarettes": {
+      "Name": "cigarettes",
+      "SpawnList": ["573476d324597737da2adc13", "573475fb24597737fb1379e1", "573476f124597737e04bf328", "5734770f24597738025ee254"]
+     },
+     "cpu": {
+      "Name": "cpu",
+      "SpawnList": ["573477e124597737dd42e191", "5734779624597737e04bf329"]
+     },
+     "defib": {
+      "Name": "defib",
+      "SpawnList": ["5c052e6986f7746b207bc3c9"]
+     },
+     "defibriliator": {
+      "Name": "defibriliator",
+      "SpawnList": ["5c052e6986f7746b207bc3c9"]
+     },
+     "drell": {
+      "Name": "drell",
+      "SpawnList": ["5d1b317c86f7742523398392", "59e35de086f7741778269d84"]
+     },
+     "drink_only": {
+      "Name": "drink_only",
+      "SpawnList": ["575062b524597720a31c09a1", "5d403f9186f7743cac3f229b", "57513fcc24597720a31c09a6", "5d40407c86f774318526545a", "5d1b376e86f774252519444e", "5d1b33a686f7742523398398", "5448fee04bdc2dbc018b4567", "60b0f93284c20f0feb453da7", "5751496424597720a27126da", "544fb62a4bdc2dfb738b4568", "57514643245977207f2c2d09", "57513f9324597720a7128161", "5e8f3423fd7471236e6e3b64", "57513f07245977207e26a311", "5c0fa877d174af02a012e1cf", "60098b1705871270cd5352a1", "5751435d24597720a27126d1", "575146b724597720a27126d5"]
+     },
+     "el_common": {
+      "Name": "el_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "el_military": {
+      "Name": "el_military",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "el_military_citizen": {
+      "Name": "el_military_citizen",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "el_mill_acum": {
+      "Name": "el_mill_acum",
+      "SpawnList": ["575146b724597720a27126d5"]
+     },
+     "el_scheme": {
+      "Name": "el_scheme ",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "elec": {
+      "Name": "elec",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "elek": {
+      "Name": "elek",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ex_lab_good_med": {
+      "Name": "ex_lab_good_med",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "fast_food": {
+      "Name": "fast_food",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "food_drink": {
+      "Name": "food_drink",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "food_med_ammo": {
+      "Name": "food med ammo",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "food_nato": {
+      "Name": "food_nato",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "food_only": {
+      "Name": "food_only",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "food_varios_mix": {
+      "Name": "food varios mix",
+      "SpawnList": ["5734773724597737fd047c14", "57347d5f245977448b40fa81", "590c5d4b86f774784e1b9c45", "57347da92459774491567cf5", "59e3577886f774176a362503", "57347d7224597744596b4e72", "57347d90245977448f7b7f65", "57505f6224597709a92585a9", "5751487e245977207e26a315", "57347d8724597744596b4e76", "5448ff904bdc2d6f028b456e", "57347d3d245977448f7b7f61", "590c5f0d86f77413997acfab", "57347d692459774491567cf1", "5bc9b156d4351e00367fbce9", "5bc9c29cd4351e003562b8a3", "5673de654bdc2d180f8b456d", "544fb6cc4bdc2d34748b456e", "57347d9c245977448b40fa85", "575062b524597720a31c09a1", "5d403f9186f7743cac3f229b", "57513fcc24597720a31c09a6", "5d40407c86f774318526545a", "5d1b376e86f774252519444e", "5448fee04bdc2dbc018b4567", "60b0f93284c20f0feb453da7", "5751496424597720a27126da", "544fb62a4bdc2dfb738b4568", "57514643245977207f2c2d09", "57513f9324597720a7128161", "5e8f3423fd7471236e6e3b64", "57513f07245977207e26a311", "5c0fa877d174af02a012e1cf", "60098b1705871270cd5352a1", "5751435d24597720a27126d1", "575146b724597720a27126d5"]
+     },
+     "food_zone": {
+      "Name": "food",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "fuel": {
+      "Name": "fuel",
+      "SpawnList": ["5d650c3e815116009f6201d2", "590a373286f774287540368b", "5b43575a86f77424f443fe62", "5d1b371186f774253763a656", "5d1b36a186f7742523398433"]
+     },
+     "garbage": {
+      "Name": "garbage",
+      "SpawnList": ["544fb6cc4bdc2d34748b456e", "5448ff904bdc2d6f028b456e", "5751a25924597722c463c472", "5e831507ea0a7c419c2f9bd9", "57513f07245977207e26a311", "57347d9c245977448b40fa85", "57347d692459774491567cf1", "5739d41224597779c3645501", "56d59d3ad2720bdb418b4577"]
+     },
+     "gasan": {
+      "Name": "gasan",
+      "SpawnList": ["590a3efd86f77437d351a25b"]
+     },
+     "grenade": {
+      "Name": "grenade",
+      "SpawnList": ["5448be9a4bdc2dfd2f8b456a", "58d3db5386f77426186285a0", "5a0c27731526d80618476ac4", "5710c24ad2720bc3458b45a3", "5e340dcdcb6d5863cc5e5efb", "5e32f56fcb6d5863cc5e5ee4", "5a2a57cfc4a2826c6e06d44a"]
+     },
+     "hideout_consum": {
+      "Name": "Under the table",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "house ": {
+      "Name": "house ",
+      "SpawnList": ["60b0f561c4449e4cb624c1d7", "5e2aef7986f7746d3f3c33f5", "5bc9b9ecd4351e3bac122519", "5d40412b86f7743cb332ac3a", "5e2af00086f7746d3f3c33f7", "5c13cd2486f774072c757944", "5e2af02c86f7746d420957d4", "5c13cef886f774072e618e82", "5d4041f086f7743cac3f22a7", "59e3596386f774176c10a2a2", "59e35abd86f7741778269d82", "59e358a886f7741776641ac3", "59faf98186f774067b6be103", "59e3556c86f7741776641ac2", "57347c93245977448d35f6e3", "577e1c9d2459773cd707c525"]
+     },
+     "household": {
+      "Name": "household",
+      "SpawnList": ["60b0f561c4449e4cb624c1d7", "5e2aef7986f7746d3f3c33f5", "5bc9b9ecd4351e3bac122519", "5d40412b86f7743cb332ac3a", "5e2af00086f7746d3f3c33f7", "5c13cd2486f774072c757944", "5e2af02c86f7746d420957d4", "5c13cef886f774072e618e82", "5d4041f086f7743cac3f22a7", "59e3596386f774176c10a2a2", "59e35abd86f7741778269d82", "59e358a886f7741776641ac3", "59faf98186f774067b6be103", "59e3556c86f7741776641ac2", "57347c93245977448d35f6e3", "577e1c9d2459773cd707c525"]
+     },
+     "housestuff": {
+      "Name": "housestuff",
+      "SpawnList": ["60b0f561c4449e4cb624c1d7", "5e2aef7986f7746d3f3c33f5", "5bc9b9ecd4351e3bac122519", "5d40412b86f7743cb332ac3a", "5e2af00086f7746d3f3c33f7", "5c13cd2486f774072c757944", "5e2af02c86f7746d420957d4", "5c13cef886f774072e618e82", "5d4041f086f7743cac3f22a7", "59e3596386f774176c10a2a2", "59e35abd86f7741778269d82", "59e358a886f7741776641ac3", "59faf98186f774067b6be103", "59e3556c86f7741776641ac2", "57347c93245977448d35f6e3", "577e1c9d2459773cd707c525"]
+     },
+     "hyundai_bogdan_a202": {
+      "Name": "Hyundai Bogdan A202",
+      "SpawnList": ["57347c5b245977448d35f6e1", "57347d7224597744596b4e72", "573476d324597737da2adc13", "5449016a4bdc2d6f028b456f", "5e2af4d286f7746d4159f07a", "5672cb304bdc2dc2088b456a", "5448fee04bdc2dbc018b4567", "5d1b313086f77425227d1678"]
+     },
+     "jev": {
+      "Name": "jev",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "jeverly&food": {
+      "Name": "Jeverly & food",
+      "SpawnList": ["5734773724597737fd047c14", "57347d5f245977448b40fa81", "590c5d4b86f774784e1b9c45", "57513f9324597720a7128161", "5e8f3423fd7471236e6e3b64", "57513f07245977207e26a311", "573478bc24597738002c6175", "573474f924597738002c6174"]
+     },
+     "jeverly_common": {
+      "Name": "jeverly_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "jewel_small": {
+      "Name": "Jewel_small",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "jigul_garbage": {
+      "Name": "jigul garbage",
+      "SpawnList": ["544fb6cc4bdc2d34748b456e", "5448ff904bdc2d6f028b456e", "5751a25924597722c463c472", "5e831507ea0a7c419c2f9bd9", "57513f07245977207e26a311", "57347d9c245977448b40fa85", "57347d692459774491567cf1", "5739d41224597779c3645501", "56d59d3ad2720bdb418b4577"]
+     },
+     "jora_tool": {
+      "Name": "jora_tool",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key203": {
+      "Name": "key203",
+      "SpawnList": ["5938504186f7740991483f30"]
+     },
+     "key220_bomj": {
+      "Name": "key220_bomj",
+      "SpawnList": ["5780cfa52459777dfb276eb1"]
+     },
+     "key_104l": {
+      "Name": "key_104L",
+      "SpawnList": ["5a0dc45586f7742f6b0b73e3"]
+     },
+     "key_107r": {
+      "Name": "key_107R",
+      "SpawnList": ["5a0ea64786f7741707720468"]
+     },
+     "key_112l": {
+      "Name": "key_112L",
+      "SpawnList": ["5a0dc95c86f77452440fc675"]
+     },
+     "key_203l": {
+      "Name": "key_203L",
+      "SpawnList": ["5a144dfd86f77445cb5a0982"]
+     },
+     "key_205l": {
+      "Name": "key_205L",
+      "SpawnList": ["5a0ec6d286f7742c0b518fb5"]
+     },
+     "key_205r": {
+      "Name": "key_205R",
+      "SpawnList": ["5a144bdb86f7741d374bbde0"]
+     },
+     "key_206r": {
+      "Name": "key_206r",
+      "SpawnList": ["5a0ee4b586f7743698200d22"]
+     },
+     "key_216l": {
+      "Name": "key_216L",
+      "SpawnList": ["5a0ee30786f774023b6ee08f"]
+     },
+     "key_218l": {
+      "Name": "key_218L",
+      "SpawnList": ["5a13eebd86f7746fd639aa93"]
+     },
+     "key_220l": {
+      "Name": "key_220L",
+      "SpawnList": ["5a0ee34586f774023b6ee092"]
+     },
+     "key_221l": {
+      "Name": "key_221L",
+      "SpawnList": ["5a0ee37f86f774023657a86f"]
+     },
+     "key_222r": {
+      "Name": "key_222R",
+      "SpawnList": ["5a13f24186f77410e57c5626"]
+     },
+     "key_226r": {
+      "Name": "key_226R",
+      "SpawnList": ["5a13f35286f77413ef1436b0"]
+     },
+     "key_301l": {
+      "Name": "key_301L",
+      "SpawnList": ["5a13ef7e86f7741290491063"]
+     },
+     "key_303l": {
+      "Name": "key_303L",
+      "SpawnList": ["5a0eeb1a86f774688b70aa5c"]
+     },
+     "key_306": {
+      "Name": "key_306",
+      "SpawnList": ["5780cda02459777b272ede61"]
+     },
+     "key_306r": {
+      "Name": "key_306r",
+      "SpawnList": ["5a145d4786f7744cbb6f4a12"]
+     },
+     "key_308": {
+      "Name": "key_308",
+      "SpawnList": ["5780cf722459777a5108b9a1"]
+     },
+     "key_310r": {
+      "Name": "key_310r",
+      "SpawnList": ["5a0eec9686f77402ac5c39f2"]
+     },
+     "key_313r": {
+      "Name": "key_313r",
+      "SpawnList": ["5a0eecf686f7740350630097"]
+     },
+     "key_314r": {
+      "Name": "key_314r",
+      "SpawnList": ["5a0eed4386f77405112912aa"]
+     },
+     "key_316r": {
+      "Name": "key_316r",
+      "SpawnList": ["5a145ebb86f77458f1796f05"]
+     },
+     "key_328r": {
+      "Name": "key_328R",
+      "SpawnList": ["5a0eee1486f77402aa773226"]
+     },
+     "key_car_house_a": {
+      "Name": "key_car_house_a",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_closet": {
+      "Name": "key_closet",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_craft": {
+      "Name": "key_craft",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_house_b": {
+      "Name": "key_house_b",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_lab_arsenal": {
+      "Name": "key_lab_arsenal",
+      "SpawnList": ["5c1f79a086f7746ed066fb8f"]
+     },
+     "key_mchs": {
+      "Name": "key_mchs",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_nec": {
+      "Name": "key_226R",
+      "SpawnList": ["5a13f35286f77413ef1436b0"]
+     },
+     "key_ofic": {
+      "Name": "key_ofic",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_safe_321l": {
+      "Name": "key_safe_321L",
+      "SpawnList": ["5a0eff2986f7741fd654e684"]
+     },
+     "key_safe_house_b": {
+      "Name": "key_safe_house_b",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_shop_store": {
+      "Name": "key_shop_store",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "key_storeroom": {
+      "Name": "key_storeroom",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "kirasa_armor": {
+      "Name": "kirasa_armor",
+      "SpawnList": ["5b44d22286f774172b0c9de8"]
+     },
+     "krug_sectantov_i zona_botov": {
+      "Name": "krug_sectantov_i zona_botov",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "light_military": {
+      "Name": "light_military",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot ": {
+      "Name": "loot default point",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot food": {
+      "Name": "food",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_ammo": {
+      "Name": "loot ammo",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_common ": {
+      "Name": "loot_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_common_mod": {
+      "Name": "loot_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_drink": {
+      "Name": "loot_drink",
+      "SpawnList": ["575062b524597720a31c09a1", "5d403f9186f7743cac3f229b", "57513fcc24597720a31c09a6", "5d40407c86f774318526545a", "5d1b376e86f774252519444e", "5d1b33a686f7742523398398", "5448fee04bdc2dbc018b4567", "60b0f93284c20f0feb453da7", "5751496424597720a27126da", "544fb62a4bdc2dfb738b4568", "57514643245977207f2c2d09", "57513f9324597720a7128161", "5e8f3423fd7471236e6e3b64", "57513f07245977207e26a311", "5c0fa877d174af02a012e1cf", "60098b1705871270cd5352a1", "5751435d24597720a27126d1", "575146b724597720a27126d5"]
+     },
+     "loot_food": {
+      "Name": "food",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_house": {
+      "Name": "loot_house",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_intel": {
+      "Name": "loot_intel",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_med": {
+      "Name": "loot_med",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_mod": {
+      "Name": "loot_mod",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loot_tool": {
+      "Name": "LootTool",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "lootfood": {
+      "Name": "food",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "lootgarbage": {
+      "Name": "garbage",
+      "SpawnList": ["544fb6cc4bdc2d34748b456e", "5448ff904bdc2d6f028b456e", "5751a25924597722c463c472", "5e831507ea0a7c419c2f9bd9", "57513f07245977207e26a311", "57347d9c245977448b40fa85", "57347d692459774491567cf1", "5739d41224597779c3645501", "56d59d3ad2720bdb418b4577"]
+     },
+     "lootmod": {
+      "Name": "LootMod",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "lootpoint": {
+      "Name": "lootpoint",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "loottool": {
+      "Name": "LootTool",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "lubrik": {
+      "Name": "lubrik",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mbss": {
+      "Name": "MBSS",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mech": {
+      "Name": "mech",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "med_lab": {
+      "Name": "med_lab",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "med_stuff ": {
+      "Name": "MED_stuff ",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "med_stuff_rare": {
+      "Name": "MED_stuff_rare",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "medical": {
+      "Name": "medical",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "medical_all": {
+      "Name": "meds",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "meds": {
+      "Name": "meds",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mil_reader": {
+      "Name": "mil_reader",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mil_reciv": {
+      "Name": "mil_reciv",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "militar_electr": {
+      "Name": "elektronics",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "military_intel": {
+      "Name": "military_intel",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "military_veh": {
+      "Name": "military_veh",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mix_stuff": {
+      "Name": "mix_stuff",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mod_common": {
+      "Name": "mods common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mods": {
+      "Name": "mods common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mods nato": {
+      "Name": "mods nato",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "mods_all": {
+      "Name": "mods all",
+      "SpawnList": ["5c0faf68d174af02a96260b8", "5bb20dbcd4351e44f824c04e", "55d44fd14bdc2d962f8b456e", "5648ac824bdc2ded0b8b457d", "5cc6ea85e4a949000e1ea3c3", "5ea16d4d5aad6446a939753d", "6033749e88382f4fab3fd2c5", "5c5db6b32e221600102611a0", "58949edd86f77409483e16a9", "5b2240bf5acfc40dc528af69", "5d44334ba4b9362b346d1948", "5f633ff5c444ce7e3c30a006", "606587bd6d0bd7580617bacc", "5894a05586f774094708ef75", "5888988e24597752fe43a6fa", "59fafc5086f7740dbe19f6c3", "57838f9f2459774a150289a0", "55d484b44bdc2d1d4e8b456d", "5ba26586d4351e44f824b340", "5ba264f6d4351e0034777d52", "5ba2657ed4351e0035628ff2", "5448c12b4bdc2d02308b456f", "5926c3b286f774640d189b6b", "55d485804bdc2d8c2f8b456b", "55d485be4bdc2d962f8b456f", "57616a9e2459773c7a400234", "5bfea7ad0db834001c38f1ee", "5bae13ded4351e44f824bf38", "5a17fb03fcdbcbcae668728f", "57d1519e24597714373db79d", "5a718b548dc32e000d46d262", "544a378f4bdc2d30388b4567", "56d59948d2720bb7418b4582", "5bfeaa0f0db834001b734927", "5ae0973a5acfc4001562206c", "599860ac86f77436b225ed1a", "5ac66bea5acfc43b321d4aec", "5a966f51a2750c00156aacf6", "5a718f958dc32e00094b97e7", "5b7bef5d5acfc43bca7067a3", "5aaa5dfee5b5b000140293d3", "5a351711c4a282000b1521a4", "5ac66c5d5acfc4001718d314", "571a29dc2459771fb2755a6a", "5b7c2d1d5acfc43d1028532a", "5aaa5e60e5b5b000140293d6", "5a38ee51c4a282000c5a955c", "5b1fd4e35acfc40018633c39", "5b099ac65acfc400186331e1", "57838f0b2459774a256959b2", "55d480c04bdc2d1d4e8b456a", "59c1383d86f774290a37e0ca", "5a38ed75c4a28232996e40c6", "57d14e1724597714010c3f4b", "5b7bef9c5acfc43d102852ec", "59e5d83b86f7745aed03d262", "564ca99c4bdc2d16268b4589", "55d4887d4bdc2d962f8b4570", "55d481904bdc2d8c2f8b456a", "5addcce35acfc4001a5fc635", "576a5ed62459771e9c2096cb", "5c5db6742e2216000f1b2852", "5a0060fc86f7745793204432", "5df8f541c41b2312ea3335e3", "5ce69cbad7f00c00b61c5098", "5de8e8dafd6b4e6e2276dc32", "5ea034eb5aad6446a939737b", "564ca9df4bdc2d35148b4569", "559ba5b34bdc2d1f1a8b4582", "544a37c44bdc2d25388b4567", "5d25a4a98abbc30b917421a4", "5aaf8a0be5b5b00015693243", "5d25a6a48abbc306c62e6310", "5b7d37845acfc400170e2f87", "5a7882dcc5856700177af662", "587df583245977373c4f1129", "5de8eaadbbaf010b10528a6d", "59fafc9386f774067d462453", "5bed61680db834001d2c45ab", "5cf12a15d7f00c05464b293f", "5ea034f65aad6446a939737e", "6076c87f232e5a31c233d50e", "55d482194bdc2d1d4e8b456b", "5c6d42cb2e2216000e69d7d1", "5d25a6538abbc306c62e630d", "5d25af8f8abbc3055079fec5", "5cbdc23eae9215001136a407", "5de8ea8ffd6b4e6e2276dc35", "5a9e81fba2750c00164f6b11", "5fc3e466187fea44d52eda90", "5a01c29586f77474660c694c", "5bed625c0db834001c062946", "5f647d9f8499b57dc40ddb93", "5d2f213448f0355009199284", "5c503ac82e221602b21d6e9a", "5cc70093e4a949033c734312", "5c5db6652e221600113fba51", "5c920e902e221644f31c3c99", "5cbdaf89ae9215000e5b9c94", "5cadc2e0ae9215051e1c21e7", "5c5db6552e2216001026119d", "59f99a7d86f7745b134aa97b", "5de8eac42a78646d96665d91", "5df8f535bb49d91fb446d6b0", "5d1340bdd7ad1a0e8d245aab", "5c6175362e221600133e3b94", "5aaa4194e5b5b055d06310a5", "59d625f086f774661516605d", "5de653abf76fdc1ce94a5a2a", "5cfe8010d7ad1a59283b14c6", "5c6161fb2e221600113fbde5", "5c05413a0db834001c390617", "5d25a7b88abbc3054f3e60bc", "5e81c4ca763d9f754677befa", "5a718da68dc32e000d46d264", "5cf8f3b0d7f00c00217872ef", "59e5f5a486f7746c530b3ce2", "5448c1d04bdc2dff2f8b4569", "5fb651b52b1b027b1f50bcff", "602286df23506e50807090c6", "5c5970672e221602b21d7855", "59d6272486f77466146386ff", "5d1340b3d7ad1a0b52682ed7", "5c503ad32e2216398b5aada2", "5a7ad2e851dfba0016153692", "5ef3448ab37dfd6af863525c", "5f3e77b26cda304dcc634057", "5c88f24b2e22160bc12c69a6", "5b1fb3e15acfc4001637f068", "5c471c442e221602b542a6f8", "5c6d450c2e221600114c997d", "5c6d46132e221601da357d56", "5a78832ec5856700155a6ca3", "55d4837c4bdc2d1d4e8b456c", "5b7bef1e5acfc43d82528402", "5caf1109ae9215753c44119f", "5fc23426900b1d5091531e15", "5c0548ae0db834001966a3c2", "5a3501acc4a282000d72293a", "5fb651dc85f90547f674b6f4", "5c6592372e221600133e47d7", "5d3eb5eca4b9363b1f22f8e4", "55802d5f4bdc2dac148b458e", "5c0672ed0db834001b7353f3", "5addccf45acfc400185c2989", "5c0673fb0db8340023300271", "5d1340cad7ad1a0b0b249869", "5e21a3c67e40bd02257a008a", "5998529a86f774647f44f421", "58a56f8d86f774651579314c", "59eb7ebe86f7740b373438ce", "5a7893c1c585673f2b5c374d", "5a1ead28fcdbcb001912fa9f", "5eeb2ff5ea4f8b73c827350b", "5c11046cd174af02a012e42b", "5926dad986f7741f82604363", "5a33b2c9c4a282000c5a9511", "5b800ed086f7747baf6e2f9e", "59db7eed86f77461f8380365", "57a3459f245977764a01f703", "5dfe14f30b92095fd441edaf", "5c86592b2e2216000e69e77c", "576a7c512459771e796e0e17", "5e569a132642e66b0b68015c", "57ffaea724597779f52b3a4d", "57ffb0062459777a045af529", "58a5c12e86f7745d585a2b9e", "5a33b652c4a28232996e407c", "57c69dd424597774c03b7bbc", "593d1fa786f7746da62d61ac", "59c63b4486f7747afb151c1c", "587e08ee245977446b4410cf", "5b800ebc86f774394e230a90", "5addc00b5acfc4001669f144", "57d17e212459775a1179a0f5", "5b3f7bf05acfc433000ecf6b", "57ee59b42459771c7b045da5", "609a4b4fe2ff132951242d04", "5a33bab6c4a28200741e22f8", "5c61a40d2e2216001403158d", "5a7ad4af51dfba0013379717", "5b84038986f774774913b0c1", "58d39d3d86f77445bb794ae7", "5a9fc7e6a2750c0032157184", "5a16b93dfcdbcbcae6687261", "55d48ebc4bdc2d8c2f8b456c", "5c7d55f52e221644f31bff6a", "5bbdb811d4351e45020113c7", "5beecbb80db834001d2c465e", "5c90c3622e221601da359851", "5a27b281c4a28200741e1e52", "5d0a29ead7ad1a0026013f27", "5bc5a372d4351e44f824d17f", "5a27bad7c4a282000b15184b", "5b8403a086f7747ff856f4e2", "591ee00d86f774592f7b841e", "5a32aa0cc4a28232996e405f", "5d0a29fed7ad1a002769ad08", "5a16b8a9fcdbcb00165aa6ca", "5cc7012ae4a949001252b43e", "5de8fbf2b74cd90030650c79", "5b3f7c005acfc4704b4a1de8", "5addbffe5acfc4001714dfac", "5dff77c759400025ea5150cf", "5bfe7fb30db8340018089fed", "5e569a2e56edd02abe09f280", "5addbfd15acfc40015621bde", "5f2aa493cd375f14e15eea72", "5de8fc0b205ddc616a6bc51b", "5a37ca54c4a282000d72296a", "5c7d560b2e22160bc12c6139", "5a78948ec5856700177b1124", "5fce0f9b55375d18a253eff2", "5d133067d7ad1a33013f95b4", "5df35e970b92095fd441e4d2", "5c471c2d2e22164bef5d077f", "5ab24ef9e5b5b00fe93c9209", "5cc7015ae4a949001152b4c6", "58d39b0386f77443380bf13c", "5a398b75c4a282000a51a266", "5c6162682e22160010261a2b", "5a7b4900e899ef197b331a2a", "5b31163c5acfc400153b71cb", "5cdeaca5d7f00c00b61c4b70", "5f2aa49f9b44de6b1b4e68d4", "5a27b3d0c4a282000d721ec1", "5fbb976df9986c4cff3fe5f2", "5dff8db859400025ea5150d4", "5fc53954f8b6a877a729eaeb", "5b3a08b25acfc4001754880c", "5b3b6dc75acfc47a8773fb1e", "5d024f5cd7ad1a04a067e91a", "5fbb978207e8a97d1f0902d3", "5df35eb2b11454561e3923e2", "58d2664f86f7747fec5834f6", "5df35ea9c41b2312ea3334d8", "5c0102aa0db834001b734ba1", "5a789261c5856700186c65d3", "57acb6222459771ec34b5cb0", "5b2389515acfc4771e1be0c0", "5c0695860db834001b735461", "577d128124597739d65d0e56", "5de6558e9f98ac2bc65950fc", "5d7b6bafa4b93652786f4c76", "5a966ec8a2750c00171b3f36", "5cc70146e4a949000d73bf6b", "60785ce5132d4d12c81fd918", "5fc5396e900b1d5091531e72", "5a9d6d21a2750c00137fa649", "5addbfbb5acfc400194dbcf7", "5a398ab9c4a282000c5a9842", "5b7be4895acfc400170e2dd5", "5b7be47f5acfc400170e2dd2", "5b4736b986f77405cb415c10", "6086b5392535c57a13424d70", "5cde7b43d7f00c000d36b93e", "5c1cdd302e221602b3137250", "5a7ad55551dfba0015068f42", "607ea812232e5a31c233d53c", "5c61627a2e22160012542c55", "5aa66c72e5b5b00016327c93", "5addbfe15acfc4001a5fc58b", "5b7be4575acfc400161d0832", "59e0bdb186f774156f04ce82", "5addbfef5acfc400185c2857", "5b7be4645acfc400170e2dcc", "5b7be46e5acfc400170e2dcf", "5b30bc285acfc47a8608615d", "5b30bc165acfc40016387293", "5b3b99265acfc4704b4a1afb", "5c064c400db834001d23f468", "59e0be5d86f7742d48765bd2", "5b4736a986f774040571e998", "5e569a0156edd02abe09f27d", "5bfebc530db834001d23eb65", "5aa66a9be5b5b0214e506e89", "5c0102b20db834001d23eebc", "5bfebc5e0db834001a6694e5", "5a9d6d00a2750c5c985b5305", "5a9d6d13a2750c00164f6b03", "59e0bed186f774156f04ce84", "574dad8024597745964bf05c", "58ac1bf086f77420ed183f9f", "5ab372a310e891001717f0d8", "5a0c59791526d8dba737bba7", "591af10186f774139d495f0e", "5c471b5d2e221602b21d4e14", "5ab626e4d8ce87272e4c6e43", "59ff3b6a86f77477562ff5ed", "591aef7986f774139d495f03", "5a78813bc5856700186c4abe", "5d135e83d7ad1a21b83f42d8", "5b39f8db5acfc40016387a1b", "5cf518cfd7f00c065b422214", "5c0e2ff6d174af02a1659d4a", "5fc3e4ee7283c4046c5814af", "59ecc3dd86f7746dc827481c", "5ac78eaf5acfc4001926317a", "5b7d63b75acfc400170e2f8a", "5fc2369685fd526b824a5713", "5adf23995acfc400185c2aeb", "59e89d0986f77427600d226e", "5ae30c9a5acfc408fb139a03", "5b222d405acfc400153af4fe", "5947c73886f7747701588af5", "59e6227d86f77440d64f5dc2", "5addc7005acfc4001669f275", "5a33e75ac4a2826c6e06d759", "5bb20e70d4351e0035629f8f", "5ac50c185acfc400163398d4", "5eea217fc64c5d0dfc05712a", "5c87a07c2e2216001219d4a2", "5c5db6f82e2216003a0fe914", "587e0531245977466077a0f7", "5926d40686f7740f152b6b7e", "56083cba4bdc2de22e8b456f", "5cf50fc5d7f00c056c53f83c", "5649be884bdc2d79388b4577", "56083be64bdc2d20478b456f", "5bbdb870d4351e00367fb67d", "5d0236dad7ad1a0940739d29", "602e620f9b513876d4338d9a", "5a33cae9c4a28232980eb086", "5c503af12e221602b177ca02", "5bfe86df0db834001b734685", "5d25d0ac8abbc3054f3e61f7", "57ade1442459771557167e15", "5b7d64555acfc4001876c8e2", "5947eab886f77475961d96c5", "55d4ae6c4bdc2d8b2f8b456e", "5b0800175acfc400153aebd4", "5addbf175acfc408fb13965b", "5a33ca0fc4a282000d72292f", "5addc7ac5acfc400194dbd90", "606587d11246154cad35d635", "5ae35b315acfc4001714e8b0", "5947e98b86f774778f1448bc", "5d44069ca4b9361ebd26fc37", "5b04473a5acfc40018632f70", "5fbbaa86f9986c4cff3fe5f6", "602e3f1254072b51b239f713", "5b0e794b5acfc47a877359b2", "5d4406a8a4b9361e4f6eb8b7", "59d6514b86f774171a068a08", "5d135ecbd7ad1a21c176542e", "57c450252459772d28133253", "578395e82459774a0e553c7b", "59ecc28286f7746d7a68aa8c", "5e848dc4e4dbc5266a4ec63d", "56083a334bdc2dc8488b4571", "5ae096d95acfc400185c2c81", "5d1c702ad7ad1a632267f429", "5e848db4681bea2ada00daa9", "5649b2314bdc2d79388b4576", "58d2947e86f77447aa070d53", "5beec8c20db834001d2c465c", "5e217ba4c1434648c13568cd", "5c0faeddd174af02a962601f", "5cc700cae4a949035e43ba72", "5fbcc429900b1d5091531dd7", "5b222d335acfc4771e1be099", "5a9eb32da2750c00171b3f9c", "606587e18900dc2d9a55b65f", "5a38ef1fc4a282000b1521f6", "607d5a891246154cad35d6aa", "58d2946386f774496974c37e", "5ef1b9f0c64c5d0dfc0571a1", "5fb6558ad6f0b2136f2d7eb7", "606eef756d0bd7580617baf8", "5b7d645e5acfc400170e2f90", "5bfd384c0db834001a6691d3", "5fce16961f152d4312622bc9", "5f63405df5750b524b45f114", "5cbdb1b0ae9215000d50e105", "5649b1c04bdc2d16268b457c", "5aaf8e43e5b5b00015693246", "5c99f3592e221644fc633070", "58d2946c86f7744e271174b5", "5fb655b748c711690e3a8d5a", "5c793fc42e221600114ca25d", "6087e2a5232e5a31c233d552", "5b7d63cf5acfc4001876c8df", "5de655be4a9f347bc92edb88", "5fbcc437d724d907e2077d5c", "5c793fde2e221601da358614", "57616ca52459773c69055192", "5fb655a72b1b027b1f50bd06", "5bfd36290db834001966869a", "5649b0fc4bdc2d17108b4588", "5bae13bad4351e00320204af", "5cde739cd7f00c0010373bd3", "5cdeac22d7f00c000f26168f", "5bfd37c80db834001d23e842", "58d2912286f7744e27117493", "5d120a10d7ad1a4e1026ba85", "5cf13123d7f00c1085616a50", "5bfd35380db83400232fe5cc", "58d2947686f774485c6a1ee5", "5beec8b20db834001961942a", "5a788169c5856700142fdd9e", "5b7d63de5acfc400170e2f8d", "5bb20e58d4351e00320205d7", "5ef1ba28c64c5d0dfc0571a5", "5c793fb92e221644f31bfb64", "606f263a8900dc2d9a55b68d", "606f262c6d0bd7580617bafa", "606ef0812535c57a13424d20", "5a9548c9159bd400133e97b3", "5d1b198cd7ad1a604869ad72", "55f84c3c4bdc2d5f408b4576", "55d45f484bdc2d972f8b456d", "5648b4534bdc2d3d1c8b4580", "57cffd8224597763b03fc609", "5b80242286f77429445e0b47", "5a788068c5856700137e4c8f", "5b800e9286f7747a8b04f3ff", "5bb20de5d4351e0035629e59", "5926f34786f77469195bfe92", "5d010d1cd7ad1a59283b1ce7", "57cffe20245977632f391a9d", "57ffa9f4245977728561e844", "5c617a5f2e2216000f1e81b3", "5d4aaa73a4b9365392071175", "5c78f2492e221600114c9f04", "57cffe0024597763b03fc60b", "55d459824bdc2d892f8b4573", "59fb375986f7741b681b81a6", "5efaf417aeb21837e749c7f2", "5c17664f2e2216398b5a7e3c", "5f6331e097199b7db2128dc2", "57cff947245977638e6f2a19", "5926c36d86f77467a92a8629", "5c78f26f2e221601da3581d1", "5d122e7bd7ad1a07102d6d7f", "5c0e2f5cd174af02a012cfc9", "5c5db5fc2e2216000f1b2842", "5ae30db85acfc408fb139a05", "55d45d3f4bdc2d972f8b456c", "5c59529a2e221602b177d160", "5b7bee755acfc400196d5383", "5a329052c4a28200741e22d3", "56deed6ed2720b4c698b4583", "5e5699df2161e06ac158df6f", "5a957c3fa2750c00137fa5f7", "5cdaa99dd7f00c002412d0b2", "5c78f2612e221600114c9f0d", "5c6d10e82e221601da357b07", "5c9a25172e2216000f20314e", "5c9a1c3a2e2216000e69fb6a", "57cffddc24597763133760c6", "5a9d56c8a2750c0032157146", "5cbda9f4ae9215000e5b9bfc", "5648b0744bdc2d363b8b4578", "5a788031c585673f2b5c1c79", "5d4aaa54a4b9365392071170", "5c6d10fa2e221600106f3f23", "5a9d6d34a2750c00141e07da", "5d00e0cbd7ad1a6c6566a42d", "5c9a07572e221644f31c4b32", "5dfcd0e547101c39625f66f9", "5e848d51e4dbc5266a4ec63b", "5648ae314bdc2d3d1c8b457f", "5d123102d7ad1a004e475fe5", "59d64f2f86f77417193ef8b3", "5c5db5f22e2216000e5e47e8", "5c9a1c422e221600106f69f0", "5eea21647547d6330471b3c9", "59e6284f86f77440d569536f", "595cfa8b86f77427437e845b", "5b7bedd75acfc43d825283f9", "588b56d02459771481110ae2", "595cf16b86f77427440c32e2", "5beec3e30db8340019619424", "5d2f259b48f0355a844acd74", "5cf4e3f3d7f00c06595bc7f0", "6034e3e20ddce744014cb878", "5df916dfbb49d91fb446d6b9", "5d15ce51d7ad1a1eff619092", "5c9a26332e2216001219ea70", "5b2cfa535acfc432ff4db7a0", "5b7be2345acfc400196d524a", "6034e3cb0ddce744014cb870", "5cde7afdd7f00c000d36b89d", "58272b392459774b4c7b3ccd", "5bb20df1d4351e00347787d5", "5b7d671b5acfc43d82528ddd", "5894a42086f77426d2590762", "59e898ee86f77427614bd225", "5e56991336989c75ab4f03f6", "5d19cd96d7ad1a4a992c9f52", "5ea16ada09aa976f2e7a51be", "5c6c2c9c2e2216000f2002e4", "5c5db6302e2216000e5e47f0", "5b7bed205acfc400161d08cc", "6034e3d953a60014f970617b", "6086b5731246154cad35d6c7", "5648b1504bdc2d9d488b4584", "5fbc227aa56d053a3543f79e", "5cbda392ae92155f3c17c39f", "576169e62459773c69055191", "5fbc226eca32ed67276c155d", "6065881d1246154cad35d637", "5a788089c5856700142fdd9c", "5c6d5d8b2e221644fc630b39", "5c5db63a2e2216000f1b284a", "5c6d11072e2216000e69d2e4", "5bb20dfcd4351e00334c9e24", "5c78f2792e221600106f4683", "6065880c132d4d12c81fd8da", "5888976c24597754281f93f5", "5d2c829448f0353a5c7d6674", "5d00f63bd7ad1a59283b1c1e", "5d00ede1d7ad1a0940739a76", "5d00ef6dd7ad1a0940739b16", "5b099a9d5acfc47a8607efe7", "5f63418ef5750b524b45f116", "5ea16acdfadf1d18c87b0784", "57dc32dc245977596d4ef3d3", "5d4405f0a4b9361e6a4e6bd9", "5c6d11152e2216000f2003e7", "5f6336bbda967c74a42e9932", "5b7be1ca5acfc400170e2d2f", "6087e0336d0bd7580617bb7a", "607d5aa50494a626335e12ed", "606ee5c81246154cad35d65e", "5827272a24597748c74bdeea"]
+     },
+     "mods_nato": {
+      "Name": "mods nato",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "money": {
+      "Name": "money",
+      "SpawnList": ["5449016a4bdc2d6f028b456f", "5696686a4bdc2da3298b456a", "569668774bdc2da2298b4568"]
+     },
+     "morhine": {
+      "Name": "morhine",
+      "SpawnList": ["544fb3f34bdc2d03748b456a"]
+     },
+     "nato_food": {
+      "Name": "food_nato",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ny2022_ball_red_common": {
+      "Name": "NY2022_ball_red_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ny2022_ball_silver_rare": {
+      "Name": "NY2022_ball_silver_rare",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ny2022_ball_violet_sup": {
+      "Name": "NY2022_ball_violet_sup",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ny2022_choko": {
+      "Name": "NY2022_choko",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "ny2022_common": {
+      "Name": "NY2022_common",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "office": {
+      "Name": "office",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "op_room": {
+      "Name": "op_room",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "paracord": {
+      "Name": "paracord",
+      "SpawnList": ["5c12688486f77426843c7d32"]
+     },
+     "priora_police": {
+      "Name": "priora_police",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "pumpkey": {
+      "Name": "pumpkey",
+      "SpawnList": ["593858c486f774253a24cb52"]
+     },
+     "rez_base_key_ptor1_craft": {
+      "Name": "rez_base_key_ptor1_craft",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "rez_base_key_ptor_craft": {
+      "Name": "rez_base_key_ptor_craft",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "rez_base_key_rigtht_weap": {
+      "Name": "rez_base_key_rigtht_weap",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "rez_base_key_weap": {
+      "Name": "rez_base_key_weap",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "room 118 key": {
+      "Name": "Room 118 Key",
+      "SpawnList": ["5672c92d4bdc2d180f8b4567"]
+     },
+     "rubles": {
+      "Name": "rubles",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "shelter_military": {
+      "Name": "shelter_military",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "small_back": {
+      "Name": "small_back",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "small_budka": {
+      "Name": "small_budka",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "spawn": {
+      "Name": "spawn",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "sport_bag": {
+      "Name": "sport_bag",
+      "SpawnList": ["56e33634d2720bd8058b456b"]
+     },
+     "sportbag": {
+      "Name": "SportBag",
+      "SpawnList": ["56e33634d2720bd8058b456b"]
+     },
+     "stash_armor": {
+      "Name": "stash_armor",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "stim_sanitar": {
+      "Name": "stim_sanitar",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "stim_trans": {
+      "Name": "stim_trans",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "stims": {
+      "Name": "stims",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "stimulators": {
+      "Name": "stimulators",
+      "SpawnList": ["5fca138c2a7b221b2852a5c6", "5c0e533786f7747fa23f4d47", "5c10c8fd86f7743d7d706df3", "5fca13ca637ee0341a484f46", "5c0e531d86f7747fa23f4d42", "5c0e534186f7747fa1419867", "5c0e530286f7747fa1419862", "5c0e531286f7747fa54205c2", "5ed515ece452db0eb56fc028", "5ed5160a87bb8443d10680b5", "5ed51652f6c34d2cc26336a1", "5ed515e03a40a50460332579", "5ed5166ad380ab312177c100", "5ed515c8d380ab312177c0fa", "5ed515f6915ec335206e4152"]
+     },
+     "storage": {
+      "Name": "storage",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "strange_noone here": {
+      "Name": "strange_noone here",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "table_loot": {
+      "Name": "table_loot",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "tank_battery": {
+      "Name": "Tank battery",
+      "SpawnList": ["5d03794386f77420415576f5"]
+     },
+     "technika": {
+      "Name": "technika",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "test_weap_work_zone": {
+      "Name": "test_weap_work_zone",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "toiletpaper": {
+      "Name": "toiletpaper",
+      "SpawnList": ["5c13cef886f774072e618e82"]
+     },
+     "tools": {
+      "Name": "tools",
+      "SpawnList": ["5d40419286f774318526545f", "590c2b4386f77425357b6123", "5d1b317c86f7742523398392", "590c311186f77424d1667482", "60391afc25aff57af81f7085", "590c2e1186f77425357b6124", "5d1b31ce86f7742523398394", "590c2c9c86f774245b1f03f2", "5d63d33b86f7746ea9275524", "5af04b6486f774195a3ebb49", "5d40425986f7743185265461", "590c2d8786f774245b1f03f3", "5d4042a986f7743185265463", "5bc9c377d4351e3bac12251b"]
+     },
+     "toospaste": {
+      "Name": "toothspaste",
+      "SpawnList": ["57347c93245977448d35f6e3"]
+     },
+     "transluminator": {
+      "Name": "transluminator",
+      "SpawnList": ["5c0530ee86f774697952d952"]
+     },
+     "trash_mix": {
+      "Name": "trash_mix",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "un_armor": {
+      "Name": "UN_armor",
+      "SpawnList": ["5ab8e4ed86f7742d8e50c7fa"]
+     },
+     "un_helmet": {
+      "Name": "UN_helmet",
+      "SpawnList": ["5aa7d03ae5b5b00016327db5"]
+     },
+     "under the pipe": {
+      "Name": "under the pipe",
+      "SpawnList": ["59e35de086f7741778269d84"]
+     },
+     "under the table": {
+      "Name": "Under the table",
+      "SpawnList": ["5909e99886f7740c983b9984", "59faff1d86f7746c51718c9c"]
+     },
+     "unever_sup": {
+      "Name": "unever_sup",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "univ_loot_sup": {
+      "Name": "univ_loot_sup",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "univer_point": {
+      "Name": "universal point",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "universal_sup": {
+      "Name": "universal_sup",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "usec_armor": {
+      "Name": "usec_armor",
+      "SpawnList": ["5c0e655586f774045612eeb2"]
+     },
+     "vaselin": {
+      "Name": "vaselin",
+      "SpawnList": ["5755383e24597772cb798966"]
+     },
+     "vaz_2106": {
+      "Name": "VAZ_2106",
+      "SpawnList": ["5448fee04bdc2dbc018b4567", "590c5f0d86f77413997acfab", "575146b724597720a27126d5", "57513f9324597720a7128161", "57347d8724597744596b4e76", "5734773724597737fd047c14"]
+     },
+     "vodka": {
+      "Name": "vodka",
+      "SpawnList": ["5d40407c86f774318526545a"]
+     },
+     "water": {
+      "Name": "Loot_206_water_06",
+      "SpawnList": ["5448fee04bdc2dbc018b4567"]
+     },
+     "wc_stuff": {
+      "Name": "wc_stuff",
+      "SpawnList": ["5c13cef886f774072e618e82"]
+     },
+     "weap_church": {
+      "Name": "weap_church",
+      "SpawnList": ["5d1c819a86f774771b0acd6c"]
+     },
+     "weapon_parts": {
+      "Name": "weapon_parts",
+      "SpawnList": ["5d1c819a86f774771b0acd6c"]
+     },
+     "weaponmod": {
+      "Name": "WeaponMod",
+      "SpawnList": ["5d40419286f774318526545f"]
+     },
+     "wire_mil_transm": {
+      "Name": "wire_mil_transm",
+      "SpawnList": ["5c052f6886f7746b1e3db148"]
+     },
+     "workshop": {
+      "Name": "workshop",
+      "SpawnList": ["5d63d33b86f7746ea9275524", "590c2d8786f774245b1f03f3", "5d4042a986f7743185265463", "57347c77245977448d35f6e2", "57347c5b245977448d35f6e1", "59e35ef086f7741777737012", "5d1b317c86f7742523398392", "59e35de086f7741778269d84", "6087e570b998180e9f76dc24"]
+     }
+    }
+   }
+   
