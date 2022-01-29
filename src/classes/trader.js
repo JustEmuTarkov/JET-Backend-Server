@@ -337,8 +337,12 @@ class TraderServer {
         if (!global._database.items[childItem._tpl]) {
           continue;
         } // Ignore child item if it does not have an entry in the db. -- kiobu
-        
-        let tempPrice = typeof global._database.itemPriceTable[childItem._tpl] != "undefined" ? global._database.itemPriceTable[childItem._tpl] : 1;
+        let tempPrice = 1;
+        if(typeof global._database.itemPriceTable[childItem._tpl] != "undefined"){
+          tempPrice = global._database.itemPriceTable[childItem._tpl];
+        } else {
+          logger.logWarning(`Unable to find item with _tpl: ${childItem._tpl} in _database.itemPriceTable`);
+        }
         let count = "upd" in childItem && "StackObjectsCount" in childItem.upd ? childItem.upd.StackObjectsCount : 1;
         price = price + tempPrice * count;
       }
