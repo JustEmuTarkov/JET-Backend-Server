@@ -59,7 +59,7 @@ function _load_ItemsData() {
 
   let itemHandbook = fileIO.readParsed("./" + db.templates.items)
   _database.itemPriceTable = {};
-  for(let item in itemHandbook)
+  for(let item of itemHandbook)
   {
     _database.itemPriceTable[item.Id] = item.Price;
   }
