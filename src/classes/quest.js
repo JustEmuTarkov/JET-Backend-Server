@@ -19,7 +19,7 @@ function getQuestsCache() {
 //Fix for new quests where previous quest already required to found in raid items as same ID
 function getQuestsForPlayer(url, info, sessionID) {
   let _profile = profile_f.handler.getPmcProfile(sessionID);
-  let quests = utility.wipeDepend(global._database.quests);
+  let quests = utility.DeepCopy(global._database.quests);
 
   for (let quest of quests) {
     if (getQuestStatus(_profile, quest._id) == "Success") {
@@ -256,7 +256,7 @@ function completeQuest(pmcData, body, sessionID) {
   };
   let output = item_f.handler.getOutput(sessionID);
   if (typeof output.profileChanges[pmcData._id].quests == "undefined") output.profileChanges[pmcData._id].quests = [];
-  let questForPlayerToUpdate = utility.wipeDepend(questDb);
+  let questForPlayerToUpdate = utility.DeepCopy(questDb);
   questForPlayerToUpdate.conditions.AvailableForStart = [];
   questForPlayerToUpdate.conditions.AvailableForFinish = [];
   questForPlayerToUpdate.conditions.Fail = [];

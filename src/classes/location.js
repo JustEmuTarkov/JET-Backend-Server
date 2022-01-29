@@ -127,6 +127,7 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
       }
     }
   } else {
+    mapName = "all";
     for (const key of Object.keys(global._database.locationConfigs.DynamicLootTable[mapName])) {
       const match = lootData.Id.toLowerCase();
 
@@ -184,9 +185,6 @@ function FindIfItemIsAPreset(ID_TO_SEARCH) {
   let foundPresetsList = Object.values(_database.globals.ItemPresets).filter((preset) => preset._encyclopedia && preset._encyclopedia == ID_TO_SEARCH);
   if (foundPresetsList.length == 0) return null;
   return foundPresetsList[0];
-}
-function DeepCopy(obj) {
-  return JSON.parse(JSON.stringify(obj));
 }
 function GetRarityMultiplier(rarity) {
   switch (rarity) {
@@ -368,7 +366,7 @@ function _GenerateContainerLoot(_items) {
         preset._items[0].location = { x: result.x, y: result.y, r: rot };
 
         for (var p in preset._items) {
-          _items.push(DeepCopy(preset._items[p]));
+          _items.push(utility.DeepCopy(preset._items[p]));
 
           if (preset._items[p].slotId === "mod_magazine") {
             let mag = helper_f.getItem(preset._items[p]._tpl)[1];
@@ -447,27 +445,91 @@ class Generator {
   lootMounted(typeArray, output) {
     let count = 0;
     for (let i in typeArray) {
-      let data = DeepCopy(typeArray[i]);
+      // detect if its a stationary weapon
+      if(typeArray[i].Id.toLowerCase().indexOf("utes") != -1 || typeArray[i].Id.toLowerCase().indexOf("ags") != -1){
+        let data = utility.DeepCopy(typeArray[i]);
 
-      let changedIds = {};
-      for (var item of data.Items) {
-        let newId = utility.generateNewItemId();
-        changedIds[item._id] = newId;
-        if (item._id == data.Root) data.Root = newId;
-        item._id = newId;
-        if (!item.parentId) continue;
+        let changedIds = {};
+        for (var item of data.Items) {
+          let newId = utility.generateNewItemId();
+          changedIds[item._id] = newId;
+          if (item._id == data.Root) data.Root = newId;
+          item._id = newId;
+          if (!item.parentId) continue;
 
-        item.parentId = changedIds[item.parentId];
+          item.parentId = changedIds[item.parentId];
+        }
+        output.Loot.push(data);
+        count++;
+      } else {
+      // its not stationary then its default preset of weapon
+        let data = utility.DeepCopy(typeArray[i]);
+        let RolledTemplate = data.Items[utility.getRandomInt(0, data.Items.length - 1)]
+
+        // Preset weapon
+        const PresetData = FindIfItemIsAPreset(RolledTemplate);
+        if (PresetData != null) {
+          const generatedItemId = utility.generateNewItemId();
+          const createdItem = {
+            _id: generatedItemId,
+            _tpl: RolledTemplate,
+          };
+
+          // item creation
+          let createEndLootData = {
+            Id: data.id,
+            IsStatic: data.IsStatic,
+            useGravity: data.useGravity,
+            randomRotation: data.randomRotation,
+            Position: data.Position,
+            Rotation: data.Rotation,
+            IsGroupPosition: data.IsGroupPosition,
+            GroupPositions: data.GroupPositions,
+            Root: generatedItemId,
+            Items: [],
+          };
+          createEndLootData.Items.push(createdItem);
+          let preset = PresetData[utility.getRandomInt(0, PresetData.length)];
+          if (preset == null) continue;
+
+          let oldBaseItem = preset._items[0];
+          preset._items = preset._items.splice(0, 1);
+          let idSuffix = 0;
+          let OldIds = {};
+          for (var p in preset._items) {
+            let currentItem = utility.DeepCopy(preset._items[p]);
+            OldIds[currentItem.id] = utility.generateNewItemId();
+            if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
+            if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
+
+            currentItem.id = OldIds[currentItem.id];
+            createEndLootData.Items.push(currentItem);
+
+            if (preset._items[p].slotId === "mod_magazine") {
+              let mag = helper_f.getItem(preset._items[p]._tpl)[1];
+              let cartridges = {
+                _id: currentItem.id + "_" + idSuffix,
+                _tpl: item._props.defAmmo,
+                parentId: preset._items[p]._id,
+                slotId: "cartridges",
+                upd: { StackObjectsCount: mag._props.Cartridges[0]._max_count },
+              };
+
+              createEndLootData.Items.push(cartridges);
+              idSuffix++;
+            }
+          }
+          output.Loot.push(data);
+          count++;
+        }
       }
-      output.Loot.push(data);
-      count++;
     }
     return count;
   }
   lootForced(typeArray, output) {
     let count = 0;
     for (let i in typeArray) {
-      let data = DeepCopy(typeArray[i]);
+      let data = utility.DeepCopy(typeArray[i]);
       let newItemsData = [];
       // forced loot should be only contain 1 item... (there shouldnt be any weapon in there...)
       const newId = utility.generateNewItemId();
@@ -503,7 +565,7 @@ class Generator {
       let data = typeArray[i];
       dateNow = Date.now();
       _GenerateContainerLoot(data.Items);
-      if (Date.now() - dateNow > 50) logger.logInfo(`Slow Container ${data.Id} [${Date.now() - dateNow}ms]`);
+      if (Date.now() - dateNow > 100) logger.logInfo(`Slow Container ${data.Id} [${Date.now() - dateNow}ms]`);
       dateNow = Date.now();
       data.Root = data.Items[0]._id;
       output.Loot.push(data);
@@ -572,7 +634,7 @@ class Generator {
           locationCount++;
         }
       }
-      // Preset weapon
+
       const PresetData = FindIfItemIsAPreset(createEndLootData.Items[0]._tpl);
       if (PresetData != null) {
         let preset = PresetData[utility.getRandomInt(0, PresetData.length)];
@@ -583,7 +645,7 @@ class Generator {
         let idSuffix = 0;
         let OldIds = {};
         for (var p in preset._items) {
-          let currentItem = DeepCopy(preset._items[p]);
+          let currentItem = utility.DeepCopy(preset._items[p]);
           OldIds[currentItem.id] = utility.generateNewItemId();
           if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
           if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
@@ -605,7 +667,10 @@ class Generator {
             idSuffix++;
           }
         }
+        output.Loot.push(data);
+        count++;
       }
+      
       // spawn change calculation
       const num = utility.getRandomInt(0, 10000);
       const itemSpawnChance = utility.valueBetween(helper_f.getItem(createdItem._tpl)[1]["_props"]["LootExperience"], 0, 250, 0, 100)
@@ -661,10 +726,10 @@ class LocationServer {
     }
 
     // Deep copy so the variable contents can be edited non-destructively
-    let forced = DeepCopy(_location.loot.forced);
-    let mounted = DeepCopy(_location.loot.mounted);
-    let statics = DeepCopy(_location.loot.static);
-    let dynamic = DeepCopy(_location.loot.dynamic);
+    let forced = utility.DeepCopy(_location.loot.forced);
+    let mounted = utility.DeepCopy(_location.loot.mounted);
+    let statics = utility.DeepCopy(_location.loot.static);
+    let dynamic = utility.DeepCopy(_location.loot.dynamic);
     logger.logInfo(`State Prepare, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
 
@@ -722,7 +787,7 @@ class LocationServer {
       let base = global._database.core.location_base;
       let newData = {};
       for (let location in global._database.locations) {
-        newData[global._database.locations[location].base._Id] = utility.wipeDepend(global._database.locations[location].base);
+        newData[global._database.locations[location].base._Id] = utility.DeepCopy(global._database.locations[location].base);
         newData[global._database.locations[location].base._Id].Loot = [];
       }
       base.locations = newData;
@@ -760,7 +825,7 @@ module.exports.handler = new LocationServer();
 // function _MountedLootPush(typeArray, output) {
 //   let count = 0;
 //   for (let i in typeArray) {
-//     let data = DeepCopy(typeArray[i]);
+//     let data = utility.DeepCopy(typeArray[i]);
 
 //     let changedIds = {};
 //     for (var item of data.Items) {
@@ -780,7 +845,7 @@ module.exports.handler = new LocationServer();
 // function _ForcedLootPush(typeArray, output) {
 //   let count = 0;
 //   for (let i in typeArray) {
-//     let data = DeepCopy(typeArray[i]);
+//     let data = utility.DeepCopy(typeArray[i]);
 //     let newItemsData = [];
 //     // forced loot should be only contain 1 item... (there shouldnt be any weapon in there...)
 //     const newId = utility.generateNewItemId();
@@ -899,7 +964,7 @@ module.exports.handler = new LocationServer();
 //       let idSuffix = 0;
 //       let OldIds = {};
 //       for (var p in preset._items) {
-//         let currentItem = DeepCopy(preset._items[p]);
+//         let currentItem = utility.DeepCopy(preset._items[p]);
 //         OldIds[currentItem.id] = utility.generateNewItemId();
 //         if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
 //         if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
