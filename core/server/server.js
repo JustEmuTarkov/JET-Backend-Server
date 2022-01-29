@@ -13,7 +13,11 @@ class TarkovSend {
     };
   }
   zlibJson(resp, output, sessionID) {
-    resp.writeHead(200, "OK", { "Content-Type": this.mime["json"]/*, "content-encoding": "deflate"*/, "Set-Cookie": "PHPSESSID=" + sessionID });
+    let Header = {"Content-Type": this.mime["json"], "Set-Cookie": "PHPSESSID=" + sessionID };
+    if(sessionID == null || sessionID == ""){
+      Header["content-encoding"] == "deflate";
+    }
+    resp.writeHead(200, "OK", Header);
     internal.zlib.deflate(output, function (err, buf) {
       resp.end(buf);
     });
