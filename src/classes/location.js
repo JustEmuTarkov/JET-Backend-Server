@@ -112,6 +112,20 @@ function LoadLootContainerNode() {
   if (_LootContainerNode.length == 0) _LootContainerNode = Object.values(global._database.items).filter((item) => item._parent === "566965d44bdc2d814c8b4571");
   return _LootContainerNode;
 }
+function GetRarityMultiplier(rarity) {
+  switch (rarity) {
+    case "Not_exist":
+      return global._database.gameplayConfig.locationloot.RarityMultipliers.Not_exist;
+    case "Rare":
+      return global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
+    case "Superrare":
+      return global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
+    case "Common":
+      return global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
+    default:
+      return 0;
+  }
+}
 function GenerateDynamicLootSpawnTable(lootData, mapName) {
   let containsSpawns = [];
   if (global._database.gameplayConfig.useDynamicLootFromItemsArray) {
@@ -123,7 +137,9 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
           containsSpawns.push(filteredData[itemTemplate]._id);
         }
       } else {
-        containsSpawns.push(global._database.items[spawnTemplate]);
+        const itemTemplate = global._database.items[spawnTemplate];
+        if(typeof itemTemplate != "undefined")
+          containsSpawns.push(global._database.items[spawnTemplate]);
       }
     }
   } else {
@@ -138,7 +154,11 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
             logger.logWarning(`In Map ${mapName}: there is dynamic loot ${lootList[loot]} as prohibited ParentId... skipping`);
             continue;
           }
-          containsSpawns.push(global._database.items[lootList[loot]]);
+          const itemTemplate = global._database.items[lootList[loot]];
+          if(typeof itemTemplate != "undefined")
+            containsSpawns.push(itemTemplate);
+          else 
+            logger.logWarning(`Loot with _tpl: "${lootList[loot]}" and key: "${key}" in map: "${mapName}" was unable to be found in items database...`);
         }
       }
     }
@@ -146,7 +166,7 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
   return containsSpawns;
 }
 function GenerateLootList(containerId) {
-  let LootList = {};
+  let LootList = [];
   // get static container loot pools
   let ItemList = global._database.locationConfigs.StaticLootTable[containerId];
 
@@ -158,17 +178,18 @@ function GenerateLootList(containerId) {
     const itemTemplate = global._database.items[item];
     if (typeof itemTemplate._props.LootExperience == "undefined") {
       logger.logWarning(`itemTemplate._props.LootExperience == "undefined" for ${itemTemplate._id}`);
+      continue;
     }
     const rollSpawnChance = utility.getRandomInt(0, 10000);
     const itemSpawnChance = utility.valueBetween(itemTemplate._props.LootExperience, 0, 250, 0, 100)
     if (itemSpawnChance < rollSpawnChance) {
       //logger.logInfo(`SpawnItemInContainer: ${itemTemplate._id} ==> ${rollSpawnChance} < ${itemTemplate._props.SpawnChance*100} * ${GetRarityMultiplier(itemTemplate._props.Rarity)}`)
-      LootList[item] = global._database.items[item];
-      if (typeof LootList[item] == "undefined") {
-        // remove added item if undefined
-        delete LootList[item];
-        continue;
-      } else LootList[item]["preset"] = FindIfItemIsAPreset(LootList[item]._id);
+      LootList.push(item);
+      //if (typeof LootList[item] == "undefined") {
+      //  // remove added item if undefined
+      //  delete LootList[item];
+      //  continue;
+      //} else //LootList[item]["preset"] = FindIfItemIsAPreset(LootList[item]._id);
     }
   }
   // Shuffle LootList for added randomization -300 ms for customs ~1000 things to calculate
@@ -186,20 +207,7 @@ function FindIfItemIsAPreset(ID_TO_SEARCH) {
   if (foundPresetsList.length == 0) return null;
   return foundPresetsList[0];
 }
-function GetRarityMultiplier(rarity) {
-  switch (rarity) {
-    case "Not_exist":
-      return global._database.gameplayConfig.locationloot.RarityMultipliers.Not_exist;
-    case "Rare":
-      return global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
-    case "Superrare":
-      return global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
-    case "Common":
-      return global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
-    default:
-      return 0;
-  }
-}
+
 function _RollMaxItemsToSpawn(container) {
   let minCount = 0;
   const maxItemsPossibleToSpawn = container._props.Grids[0]._props.cellsV * container._props.Grids[0]._props.cellsH;
@@ -281,25 +289,28 @@ function _GenerateContainerLoot(_items) {
       }
       return;
     }
-  }
+  } 
   const LootList = GenerateLootList(ContainerId);
 
   const parentId = _items[0]._id;
   const idPrefix = parentId.substring(0, parentId.length - 4);
   let idSuffix = parseInt(parentId.substring(parentId.length - 4), 16) + 1;
   const ContainerTemplate = global._database.items[ContainerId];
+
   let container2D = Array(ContainerTemplate._props.Grids[0]._props.cellsV)
     .fill()
     .map(() => Array(ContainerTemplate._props.Grids[0]._props.cellsH).fill(0));
   //let maxProbability = container.maxProbability;
+
   let addedPresets = [];
 
   // roll a maximum number of items  to spawn in the container between 0 and max slot count
   const minCount = _RollMaxItemsToSpawn(ContainerTemplate);
+
   //const rollSpawnChance = utility.getRandomInt(0, 10000); // roll between 0.00 and 100.00
-  let LootListItems = Object.keys(LootList);
+  //let LootListItems = Object.keys(LootList);
   //logger.logInfo(`SpawnItemInContainer: ${rollSpawnChance} | ${Object.keys(LootList).length}`)
-  if (LootListItems.length != 0) {
+  if (LootList.length != 0) {
     // we finished generating spawn for this container now its time to roll items to put in container
     let itemWidth = 0;
     let itemHeight = 0;
@@ -307,16 +318,19 @@ function _GenerateContainerLoot(_items) {
       //let item = {};
       let containerItem = {};
 
-      let RollIndex = utility.getRandomInt(0, LootListItems.length - 1);
+      let RollIndex = utility.getRandomInt(0, LootList.length - 1);
       let indexRolled = []; // if its here it will not check anything :) if its outside of for loop(above) it will nto roll the same item twice
       // make sure its not already rolled index
       while (indexRolled.includes(RollIndex)) {
-        RollIndex = utility.getRandomInt(0, LootListItems.length - 1);
+        RollIndex = utility.getRandomInt(0, LootList.length - 1);
       }
       // add current rolled index
       indexRolled.push(RollIndex);
       // getting rolled item
-      const rolledRandomItemToPlace = LootList[LootListItems[RollIndex]];
+      let rolledRandomItemToPlace = global._database.items[LootList[RollIndex]];
+      if(typeof rolledRandomItemToPlace == "undefined"){
+        rolledRandomItemToPlace["preset"] = FindIfItemIsAPreset(LootList[RollIndex])
+      }
 
       if (typeof rolledRandomItemToPlace == "undefined") {
         logger.logWarning(`Undefined in container: ${ContainerId}  ${LootListItems.length} ${RollIndex}`);
@@ -426,6 +440,7 @@ function _GenerateContainerLoot(_items) {
       if (cartridges) _items.push(cartridges);
       idSuffix++;
     }
+
   } else {
     logger.logInfo(`EmptyContainer: ${ContainerId}`);
   }
@@ -438,6 +453,7 @@ function _GenerateContainerLoot(_items) {
     if (!item.parentId) continue;
     item.parentId = changedIds[item.parentId];
   }
+
 }
 
 //========> LOOT CREATION START !!!!!
@@ -558,14 +574,14 @@ class Generator {
     return count;
   }
   lootStatics(typeArray, output) {
-    // TODO: this needs redo ~themaoci
     let count = 0;
     let dateNow = Date.now();
     for (let i in typeArray) {
       let data = typeArray[i];
       dateNow = Date.now();
       _GenerateContainerLoot(data.Items);
-      if (Date.now() - dateNow > 100) logger.logInfo(`Slow Container ${data.Id} [${Date.now() - dateNow}ms]`);
+      // slow containers will only display if time to generate is greater then 15 ms
+      if (Date.now() - dateNow > 15) logger.logInfo(`Slow Container ${data.Id} [${Date.now() - dateNow}ms]`);
       dateNow = Date.now();
       data.Root = data.Items[0]._id;
       output.Loot.push(data);
@@ -589,10 +605,18 @@ class Generator {
       const generatedItemId = utility.generateNewItemId();
       let randomChoosedItem = DynamicLootSpawnTable[utility.getRandomInt(0, DynamicLootSpawnTable.length - 1)];
 
-      const createdItem = {
+      if(typeof randomChoosedItem._id == "undefined")
+        console.log(randomChoosedItem);
+        let createdItem = {}
+    try{
+      createdItem = {
         _id: generatedItemId,
         _tpl: randomChoosedItem._id,
       };
+    } catch {
+      console.log(randomChoosedItem);
+      throw("1");
+    }
 
       // item creation
       let createEndLootData = {
