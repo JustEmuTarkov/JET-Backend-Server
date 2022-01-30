@@ -280,9 +280,11 @@ function handoverQuest(pmcData, body, sessionID) {
   // Set the counter to the backend counter if it exists.
   for (let k in pmcData.BackendCounters) {
     if (pmcData.BackendCounters[k].qid === body.qid) {
-      try {
-        counter = pmcData.BackendCounters[k].value > 0 ? pmcData.BackendCounters[k].value : 0;
-      } catch (_) {}
+      if (pmcData.BackendCounters[k].id === body.conditionId){
+        try {
+          counter = pmcData.BackendCounters[k].value > 0 ? pmcData.BackendCounters[k].value : 0;
+        } catch (_) {}
+      }
     }
   }
 
@@ -329,7 +331,7 @@ function handoverQuest(pmcData, body, sessionID) {
   }
 
   if (body.conditionId in pmcData.BackendCounters) {
-    pmcData.BackendCounters[body.conditionId].value += counter;
+    pmcData.BackendCounters[body.conditionId].value = counter;
   } else {
     pmcData.BackendCounters[body.conditionId] = { id: body.conditionId, qid: body.qid, value: counter };
   }
