@@ -633,7 +633,7 @@ class Generator {
       };
       createEndLootData.Items.push(createdItem);
       // now add other things like cartriges etc.
-
+      
       // AMMO BOXES !!!
       if (global._database.items[createEndLootData.Items[0]._tpl]._parent == "543be5cb4bdc2deb348b4568") {
         const ammoTemplate = global._database.items[createEndLootData.Items[0]._tpl]._props.StackSlots[0]._props.filters[0].Filter[0];
@@ -659,6 +659,7 @@ class Generator {
         }
       }
 
+      // PRESETS TO ADD !!! -> if somehow item is a weapon here...
       const PresetData = FindIfItemIsAPreset(createEndLootData.Items[0]._tpl);
       if (PresetData != null) {
         let preset = PresetData[utility.getRandomInt(0, PresetData.length)];
@@ -691,8 +692,8 @@ class Generator {
             idSuffix++;
           }
         }
-        output.Loot.push(data);
-        count++;
+        //output.Loot.push(createEndLootData);
+        //count++;
       }
       
       // spawn change calculation
