@@ -54,6 +54,7 @@
   },
 	"lootDebug": true,
 	"hideInfoLogs": false,
+  "showDebugLogs": true,
 	"debugTimer": true,
 	"translations": {
 		"alreadyInUse": "The nickname is already in use",
