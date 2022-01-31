@@ -199,6 +199,8 @@ class Server {
       logger.logError(`[UNHANDLED][${req.url}]`);
       logger.logData(body);
       output = `{"err": 404, "errmsg": "UNHANDLED RESPONSE: ${req.url}", "data": null}`;
+    } else {
+      logger.logDebug(body, true);
     }
     // execute data received callback
     for (let type in this.receiveCallback) {
