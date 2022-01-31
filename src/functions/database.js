@@ -140,7 +140,6 @@ function _load_LocationData() {
   }
   _database.core.location_base = fileIO.readParsed("./" + db.base.locations);
   _database.locationConfigs = {};
-  //_database.locationConfigs["dynamicLootAutoSpawnDetector"] = fileIO.readParsed("./" + db.locations.dynamicLootAutoSpawnDetector);
   _database.locationConfigs["StaticLootTable"] = fileIO.readParsed("./" + db.locations.StaticLootTable);
   _database.locationConfigs["DynamicLootTable"] = fileIO.readParsed("./" + db.locations.DynamicLootTable);
 }
@@ -174,29 +173,29 @@ function _load_WeatherData() {
   }
 }
 exports.load = () => {
-  logger.logInfo("Load: 'Core1'");
+  logger.logDebug("Load: 'Core'");
   _load_CoreData();
-  logger.logInfo("Load: 'Globals'");
+  logger.logDebug("Load: 'Globals'");
   _load_Globals();
-  logger.logInfo("Load: 'Gameplay'");
+  logger.logDebug("Load: 'Gameplay'");
   _load_GameplayConfig();
-  logger.logInfo("Load: 'Bots'");
+  logger.logDebug("Load: 'Bots'");
   _load_BotsData();
-  logger.logInfo("Load: 'Hideout'");
+  logger.logDebug("Load: 'Hideout'");
   _load_HideoutData();
-  logger.logInfo("Load: 'Quests'");
+  logger.logDebug("Load: 'Quests'");
   _load_QuestsData();
-  logger.logInfo("Load: 'Items'");
+  logger.logDebug("Load: 'Items'");
   _load_ItemsData();
-  logger.logInfo("Load: 'Customizations'");
+  logger.logDebug("Load: 'Customizations'");
   _load_CustomizationData();
-  logger.logInfo("Load: 'Locales'");
+  logger.logDebug("Load: 'Locales'");
   _load_LocaleData();
-  logger.logInfo("Load: 'Locations'");
+  logger.logDebug("Load: 'Locations'");
   _load_LocationData();
-  logger.logInfo("Load: 'Traders'");
+  logger.logDebug("Load: 'Traders'");
   _load_TradersData();
-  logger.logInfo("Load: 'Weather'");
+  logger.logDebug("Load: 'Weather'");
   _load_WeatherData();
-  logger.logInfo("Database loaded");
+  logger.logDebug("Database loaded");
 };

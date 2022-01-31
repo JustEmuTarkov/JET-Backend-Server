@@ -100,7 +100,9 @@ class Logger {
   logInfo(text) {
     if (!serverConfig.hideInfoLogs) this.log("[INFO]", text, "white", "blue");
   }
-
+  logDebug(text) {
+    if (serverConfig.showDebugLogs) this.log("[DEBUG]", text, "white");
+  }
   logRequest(text, data = "") {
     if (data == "") this.log("", text, "cyan", "black");
     else this.log(data, text, "cyan", "black");

@@ -125,8 +125,10 @@ function loadMod(loadType)
 			}
 		} else {
 			for(const srcToExecute in mod.src)
-				if(mod.src[srcToExecute] == loadType)
+				if(mod.src[srcToExecute] == loadType){
+					logger.logDebug(`Executing Mod: ${modFolder}/${srcToExecute}`);
 					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
+				}
 		}
     }
 }
@@ -411,15 +413,15 @@ exports.load = () => {
     if (!fileIO.exist("user/mods/")) {
         fileIO.mkDir("user/mods/");
     }
-	if(!fileIO.exist("./user/cache") || fileIO.readDir("./user/cache").length < 31)
-	{ // health number of cache file count is 31 as for now ;)
-		logger.logWarning("Missing files! Rebuilding cache required!");
+	if(!fileIO.exist("./user/cache") || fileIO.readDir("./user/cache").length < 28)
+	{ // health number of cache file count is 28 as for now ;)
+		logger.logWarning("Missing files! [<28] Rebuilding cache required!");
 		serverConfig.rebuildCache = true;
 	}
 	let modLoader = new ModLoader();
 	// Loading mods data and set them in order
 	modLoader.loadModsData();
-
+	logger.logDebug("isRebuildRequired = " + isRebuildRequired());
     // check if db need rebuid
     if (isRebuildRequired() && !serverConfig.rebuildCache) {
         logger.logWarning("Missing db.json or res.json file.");
