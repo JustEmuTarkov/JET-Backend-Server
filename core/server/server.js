@@ -60,7 +60,7 @@ class Server {
     return this.second_backendUrl != null ? this.second_backendUrl : this.backendUrl;
   }
   getVersion() {
-    return globals.core.constants.ServerVersion;
+    return global.core.constants.ServerVersion;
   }
 
   sendResponse(sessionID, req, resp, body) {
