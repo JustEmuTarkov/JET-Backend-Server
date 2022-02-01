@@ -34,6 +34,7 @@
     "SpawnRandomizationMod": true,
     "TinnitusFix": false,
     "LoadOfflineRaidScreen": false,
+    "DisableScavMode": true,
     "ScavExfilFix": false,
     "ScavPrefabLoad": false,
     "ScavProfileLoad": false,
