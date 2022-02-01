@@ -1,78 +1,23 @@
 "use strict";
 
-class TarkovSend {
-  constructor() {
-    this.mime = {
-      html: "text/html",
-      txt: "text/plain",
-      jpg: "image/jpeg",
-      png: "image/png",
-      css: "text/css",
-      otf: "font/opentype",
-      json: "application/json",
-    };
-  }
-  zlibJson(resp, output, sessionID) {
-    let Header = {"Content-Type": this.mime["json"], "Set-Cookie": "PHPSESSID=" + sessionID };
-    if(typeof sessionID == "undefined"){
-      Header["content-encoding"] == "deflate";
-    }
-    resp.writeHead(200, "OK", Header);
-    internal.zlib.deflate(output, function (err, buf) {
-      resp.end(buf);
-    });
-  }
 
-  txtJson(resp, output) {
-    resp.writeHead(200, "OK", { "Content-Type": this.mime["json"] });
-    resp.end(output);
-  }
 
-  html(resp, output) {
-    resp.writeHead(200, "OK", { "Content-Type": this.mime["html"] });
-    resp.end(output);
-  }
 
-  file(resp, file) {
-    const _split = file.split(".");
-    let type = this.mime[_split[_split.length - 1]] || this.mime["txt"];
-    let fileStream = fileIO.createReadStream(file);
-
-    fileStream.on("open", function () {
-      resp.setHeader("Content-Type", type);
-      fileStream.pipe(resp);
-    });
-  }
-}
 
 class Server {
   constructor() {
-    this.tarkovSend = new TarkovSend();
-    this.buffers = {};
+    this.tarkovSend = require("./tarkovSend.js").struct;
     this.name = serverConfig.name;
     this.ip = serverConfig.ip;
     this.port = serverConfig.port;
     this.backendUrl = "https://" + this.ip + ":" + this.port;
     this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
 
-    this.version = "1.2.0 v12.12-dev";
-
-    this.createCache();
-    this.createCallback();
+    this.initializeCallbacks();
   }
 
-  createCache() {
-    this.cacheCallback = {};
-    let path = "./src/cache";
-    let files = fileIO.readDir(path);
-    for (let file of files) {
-      let scriptName = "cache" + file.replace(".js", "");
-      this.cacheCallback[scriptName] = require("../../src/cache/" + file).cache;
-    }
-    logger.logSuccess("Create: Cache Callback");
-  }
 
-  createCallback() {
+  initializeCallbacks() {
     const callbacks = require(executedDir + "/src/functions/callbacks.js").callbacks;
 
     this.receiveCallback = callbacks.getReceiveCallbacks();
@@ -115,48 +60,7 @@ class Server {
     return this.second_backendUrl != null ? this.second_backendUrl : this.backendUrl;
   }
   getVersion() {
-    return this.version;
-  }
-
-  generateCertificate() {
-    const certDir = internal.resolve(__dirname, "../../user/certs");
-
-    const certFile = internal.resolve(certDir, "cert.pem");
-    const keyFile = internal.resolve(certDir, "key.pem");
-
-    let cert, key;
-
-    if (fileIO.exist(certFile) && fileIO.exist(keyFile)) {
-      cert = fileIO.readParsed(certFile);
-      key = fileIO.readParsed(keyFile);
-    } else {
-      if (!fileIO.exist(certDir)) {
-        fileIO.mkDir(certDir);
-      }
-
-      let fingerprint;
-
-      ({
-        cert,
-        private: key,
-        fingerprint,
-      } = internal.selfsigned.generate(null, {
-        keySize: 2048, // the size for the private key in bits (default: 1024)
-        days: 365, // how long till expiry of the signed certificate (default: 365)
-        algorithm: "sha256", // sign the certificate with specified algorithm (default: 'sha1')
-        extensions: [{ name: "commonName", cA: true, value: this.ip + "/" }], // certificate extensions array
-        pkcs7: true, // include PKCS#7 as part of the output (default: false)
-        clientCertificate: true, // generate client cert signed by the original key (default: false)
-        clientCertificateCN: "jdoe", // client certificate's common name (default: 'John Doe jdoe123')
-      }));
-
-      logger.logInfo(`Generated self-signed sha256/2048 certificate ${fingerprint}, valid 365 days`);
-
-      fileIO.write(certFile, cert, true);
-      fileIO.write(keyFile, key, true);
-    }
-
-    return { cert, key };
+    return globals.core.constants.ServerVersion;
   }
 
   sendResponse(sessionID, req, resp, body) {
@@ -215,7 +119,7 @@ class Server {
     }
   }
 
-  handleRequest(req, resp) {
+  async handleRequest(req, resp) {
     let IP = req.connection.remoteAddress.replace("::ffff:", "");
     IP = IP == "127.0.0.1" ? "LOCAL" : IP;
 
@@ -293,8 +197,10 @@ class Server {
   _serverStart() {
     let backend = this.backendUrl;
     /* create server */
+    const certificate = require("./certGenerator.js").certificate;
+
     let httpsServer = internal.https
-      .createServer(this.generateCertificate(), (req, res) => {
+      .createServer(certificate.generate(), (req, res) => {
         this.handleRequest(req, res);
       })
       .listen(this.port, this.ip, function () {

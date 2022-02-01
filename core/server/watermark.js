@@ -1,7 +1,7 @@
 "use strict";
 
 const textTable = [
-	"JustEmuTarkov " + server.version,
+	"JustEmuTarkov " + server.getVersion(),
 	"« discord.gg/T66tGKa »"
 ];
 
