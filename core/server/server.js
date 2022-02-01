@@ -251,15 +251,6 @@ class Server {
   }
 
   start() {
-    // execute cache callback
-    if (serverConfig.rebuildCache) {
-      logger.logInfo("[Warmup]: Cache callbacks...");
-      for (let type in this.cacheCallback) {
-        this.cacheCallback[type]();
-      }
-      global.mods_f.CacheModLoad(); // CacheModLoad
-    }
-    global.mods_f.ResModLoad(); // load Res Mods
 
     logger.logInfo("[Warmup]: Loading Database");
     const databasePath = "/src/functions/database.js";

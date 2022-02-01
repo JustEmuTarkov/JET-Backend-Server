@@ -19,6 +19,7 @@ class Initializer {
     global.db = {}; // used only for caching
     global.res = {}; // used for deliver files
     global._database = {};
+    global.cache = {};
 
     global.core.constants = require("./constants.js").struct;
 
@@ -59,6 +60,7 @@ class Initializer {
   }
 
   initializeCacheCallbacks() {
+    
     this.cacheCallback = {};
     let path = "./src/cache";
     let files = fileIO.readDir(path);
@@ -67,6 +69,16 @@ class Initializer {
       this.cacheCallback[scriptName] = require("../src/cache/" + file).cache;
     }
     logger.logSuccess("Create: Cache Callback");
+    // execute cache callback
+    if (serverConfig.rebuildCache) {
+      logger.logInfo("[Warmup]: Cache callbacks...");
+      for (let type in this.cacheCallback) {
+        this.cacheCallback[type]();
+      }
+      global.mods_f.CacheModLoad(); // CacheModLoad
+    }
+    global.mods_f.ResModLoad(); // load Res Mods
+    
   }
   // initializeFunctionsFolder() {
   //   const loadOrder = ["callbacks.js", "database.js", "response.js"];
