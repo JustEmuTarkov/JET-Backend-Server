@@ -43,5 +43,35 @@ class TarkovSend {
         fileStream.pipe(resp);
         });
     }
+
+    sendStaticFile(req, resp){
+        if (req.url == "/favicon.ico") {
+            this.file(resp, "res/icon.ico");
+            return true;
+        }
+        if (req.url.includes(".css")) {
+            this.file(resp, "res/style.css");
+            return true;
+        }
+        if (req.url.includes("bender.light.otf")) {
+            this.file(resp, "res/bender.light.otf");
+            return true;
+        }
+    
+        if (req.url.includes("/server/config")) {
+            //make a different response for static html pages
+            // load html page represented by home_f
+            //output = router.getResponse(req, body, sessionID);
+            //this.tarkovSend.html(resp, output, "");
+            return true;
+        }
+        if (req.url == "/") {
+            //home_f.processSaveData(body);
+            // its hard to create a file `.js` in folder in windows cause it looks cancerous so we gonna write this code here
+            this.html(resp, home_f.RenderHomePage(), "");
+            return true;
+        }
+        return false;
+    }
 }
 module.exports.struct = new TarkovSend();

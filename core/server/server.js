@@ -1,8 +1,6 @@
 "use strict";
 
-
-
-
+const { logger } = require("../util/logger.js");
 
 class Server {
   constructor() {
@@ -12,7 +10,7 @@ class Server {
     this.port = serverConfig.port;
     this.backendUrl = "https://" + this.ip + ":" + this.port;
     this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
-
+    this.buffers = {};
     this.initializeCallbacks();
   }
 
@@ -65,31 +63,10 @@ class Server {
 
   sendResponse(sessionID, req, resp, body) {
     let output = "";
-    if (req.url == "/favicon.ico") {
-      this.tarkovSend.file(resp, "res/icon.ico");
-      return;
-    }
-    if (req.url.includes(".css")) {
-      this.tarkovSend.file(resp, "res/style.css");
-      return;
-    }
-    if (req.url.includes("bender.light.otf")) {
-      this.tarkovSend.file(resp, "res/bender.light.otf");
-      return;
-    }
 
-    if (req.url.includes("/server/config")) {
-      // load html page represented by home_f
-      output = router.getResponse(req, body, sessionID);
-      this.tarkovSend.html(resp, output, "");
-    }
-    if (req.url == "/") {
-      //home_f.processSaveData(body);
-      // its hard to create a file `.js` in folder in windows cause it looks cancerous so we gonna write this code here
-      output = home_f.RenderHomePage();
-      this.tarkovSend.html(resp, output, "");
+    //check if page is static html page or requests like 
+    if(this.tarkovSend.sendStaticFile(req, resp))
       return;
-    }
 
     // get response
     if (req.method === "POST" || req.method === "PUT") {
@@ -119,15 +96,17 @@ class Server {
     }
   }
 
-  async handleRequest(req, resp) {
+  handleAsyncRequest(req, resp){
+    return new Promise(resolve => {
+      resolve(this.handleRequest(req, resp));
+    });
+  }
+
+  // Logs the requests made by users. Also stripped from bullshit requests not important ones.
+  requestLog(req, sessionID) {
     let IP = req.connection.remoteAddress.replace("::ffff:", "");
     IP = IP == "127.0.0.1" ? "LOCAL" : IP;
 
-    let sessionID_test = utility.getCookies(req)["PHPSESSID"];
-    if (consoleResponse.getDebugEnabled()) {
-      sessionID_test = consoleResponse.getSession();
-    }
-    const sessionID = sessionID_test;
 
     let displaySessID = typeof sessionID != "undefined" ? `[${sessionID}]` : "";
 
@@ -142,37 +121,43 @@ class Server {
       !req.url.includes("singleplayer/settings/bot/difficulty")
     )
       logger.logRequest(req.url, `${displaySessID}[${IP}] `);
+  }
 
-    // request without data
-    if (req.method === "GET") {
-      server.sendResponse(sessionID, req, resp, "");
-    }
+  handleRequest(req, resp) {
+    const sessionID = (consoleResponse.getDebugEnabled()) ? consoleResponse.getSession() : utility.getCookies(req)["PHPSESSID"];
 
-    // request with data
-    if (req.method === "POST") {
-      req.on("data", function (data) {
-        if (req.url == "/" || req.url.includes("/server/config")) {
-          let _Data = data.toString();
-          _Data = _Data.split("&");
-          let _newData = {};
-          for (let item in _Data) {
-            let datas = _Data[item].split("=");
-            _newData[datas[0]] = datas[1];
+    this.requestLog(req, sessionID);
+
+    switch(req.method) {
+      case "GET": 
+      {
+        server.sendResponse(sessionID, req, resp, "");
+        return true;
+      }
+      case "POST": 
+      {
+        req.on("data", function (data) {
+          if (req.url == "/" || req.url.includes("/server/config")) {
+            let _Data = data.toString();
+            _Data = _Data.split("&");
+            let _newData = {};
+            for (let item in _Data) {
+              let datas = _Data[item].split("=");
+              _newData[datas[0]] = datas[1];
+            }
+            server.sendResponse(sessionID, req, resp, _newData);
+            return;
           }
-          server.sendResponse(sessionID, req, resp, _newData);
-          return;
-        }
-        internal.zlib.inflate(data, function (err, body) {
-          let jsonData = body !== typeof "undefined" && body !== null && body !== "" ? body.toString() : "{}";
-          server.sendResponse(sessionID, req, resp, jsonData);
+          internal.zlib.inflate(data, function (err, body) {
+            let jsonData = body !== typeof "undefined" && body !== null && body !== "" ? body.toString() : "{}";
+            server.sendResponse(sessionID, req, resp, jsonData);
+          });
         });
-      });
-    }
-
-    // emulib responses
-    if (req.method === "PUT") {
-      req
-        .on("data", function (data) {
+        return true;
+      }
+      case "PUT": 
+      {
+        req.on("data", function (data) {
           // receive data
           if ("expect" in req.headers) {
             const requestLength = parseInt(req.headers["content-length"]);
@@ -191,21 +176,24 @@ class Server {
             server.sendResponse(sessionID, req, resp, jsonData);
           });
         });
+        return true;
+      }
+      default: 
+      {
+        return true;
+      }
     }
   }
 
-  _serverStart() {
+  CreateServer() {
     let backend = this.backendUrl;
     /* create server */
     const certificate = require("./certGenerator.js").certificate;
 
-    let httpsServer = internal.https
-      .createServer(certificate.generate(), (req, res) => {
-        this.handleRequest(req, res);
-      })
-      .listen(this.port, this.ip, function () {
-        logger.logSuccess(`Server is working at: ${backend}`);
-      });
+    let httpsServer = internal.https.createServer(certificate.generate());
+    httpsServer.on('request', async (req, res) => {
+      this.handleAsyncRequest(req, res);
+    });
 
     /* server is already running or program using privileged port without root */
     httpsServer.on("error", function (e) {
@@ -231,6 +219,10 @@ class Server {
         throw e;
       }
     });
+
+    httpsServer.listen(this.port, this.ip, function () {
+      logger.logSuccess(`Server is working at: ${backend}`);
+    });
   }
 
   softRestart() {
@@ -251,21 +243,26 @@ class Server {
   }
 
   start() {
-
-    logger.logInfo("[Warmup]: Loading Database");
+    logger.logDebug("Loading Database...");
     const databasePath = "/src/functions/database.js";
     require(executedDir + databasePath).load();
 
     // will not be required if all data is loaded into memory
+    logger.logDebug("Initialize account...")
     account_f.handler.initialize();
+    logger.logDebug("Initialize save handler...")
     savehandler_f.initialize();
+    logger.logDebug("Initialize locale...")
     locale_f.handler.initialize();
+    logger.logDebug("Initialize preset...")
     preset_f.handler.initialize();
 
+    logger.logDebug("Load Tamper Mods...")
     global.mods_f.TamperModLoad(); // TamperModLoad
+    logger.logDebug("Initialize bundles...")
     bundles_f.handler.initialize();
     logger.logInfo("Starting server...");
-    this._serverStart();
+    this.CreateServer();
   }
 }
 
