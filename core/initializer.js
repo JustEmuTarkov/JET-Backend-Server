@@ -1,10 +1,10 @@
 class Initializer {
   constructor() {
     this.initializeCore();
-    this.initializeCacheCallbacks();
     this.initializeExceptions();
     this.initializeClasses();
     this.initializeItemRoute();
+    this.initializeCacheCallbacks();
 
     // start watermark and server
     require("./server/watermark.js").run();
