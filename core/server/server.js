@@ -1,7 +1,5 @@
 "use strict";
 
-const { logger } = require("../util/logger.js");
-
 class Server {
   constructor() {
     this.tarkovSend = require("./tarkovSend.js").struct;
@@ -10,7 +8,7 @@ class Server {
     this.port = serverConfig.port;
     this.backendUrl = "https://" + this.ip + ":" + this.port;
     this.second_backendUrl = "https://" + serverConfig.ip_backend + ":" + this.port;
-    this.buffers = {};
+    this.buffers = {}; // THIS SEEMS TO FIX THAT FIRST ERROR (Server.putInBuffer)
     this.initializeCallbacks();
   }
 
