@@ -1,15 +1,15 @@
 {
-	"equipment": "5fe49a0e2694b0755a50476c",
+	"equipment": "61b7367440281631fc83f199",
 	"fastPanel": {},
 	"items": [
 		{
-			"_id": "5fe49a0e2694b0755a50476c",
+			"_id": "61b7367440281631fc83f199",
 			"_tpl": "55d7217a4bdc2d86028b456d"
 		},
 		{
 			"_id": "5fe49a0e2694b0755a504755",
 			"_tpl": "5447a9cd4bdc2dbd208b4567",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "FirstPrimaryWeapon",
 			"upd":
 			{
@@ -112,7 +112,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a504756",
 			"_tpl": "54491bb74bdc2d09088b4567",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "Scabbard",
 			"upd":
 			{
@@ -126,7 +126,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a504757",
 			"_tpl": "572b7fa524597762b747ce82",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "FaceCover",
 			"upd":
 			{
@@ -140,7 +140,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a504758",
 			"_tpl": "5aa2a7e8e5b5b00016327c16",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "Headwear",
 			"upd":
 			{
@@ -154,7 +154,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a504760",
 			"_tpl": "5c0e9f2c86f77432297fe0a3",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "TacticalVest"
 		},
 		{
@@ -249,13 +249,13 @@
 		{
 			"_id": "5fe49a0e2694b0755a504761",
 			"_tpl": "5857a8bc2459772bad15db29",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "SecuredContainer"
 		},
 		{
 			"_id": "5fe49a0e2694b0755a504765",
 			"_tpl": "5e9dcf5986f7746c417435b3",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "Backpack"
 		},
 		{
@@ -318,7 +318,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a504766",
 			"_tpl": "5648a7494bdc2d9d488b4583",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "ArmorVest",
 			"upd":
 			{
@@ -332,7 +332,7 @@
 		{
 			"_id": "5fe49a0e2694b0755a50476a",
 			"_tpl": "557ffd194bdc2d28148b457f",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "Pockets"
 		},
 		{
@@ -391,11 +391,11 @@
 		{
 			"_id": "5fe49a0e2694b0755a50476b",
 			"_tpl": "5645bcc04bdc2d363b8b4572",
-			"parentId": "5fe49a0e2694b0755a50476c",
+			"parentId": "61b7367440281631fc83f199",
 			"slotId": "Earpiece"
 		},
 		{
-			"_id": "5fe49a0e2694b0755a504876",
+			"_id": "61b7367440281631fc83f197",
 			"_tpl": "5811ce772459770e9e5f9532"
 		},
 		{
@@ -408,7 +408,7 @@
 				"x": 2,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -428,7 +428,7 @@
 				"x": 0,
 				"y": 9
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -441,7 +441,7 @@
 				"x": 5,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -454,7 +454,7 @@
 				"x": 5,
 				"y": 4
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -477,7 +477,7 @@
 				"x": 7,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -500,7 +500,7 @@
 				"x": 8,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -517,7 +517,7 @@
 				"x": 9,
 				"y": 31
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -537,7 +537,7 @@
 				"x": 8,
 				"y": 31
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -557,7 +557,7 @@
 				"x": 7,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -570,7 +570,7 @@
 				"x": 6,
 				"y": 15
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -593,7 +593,7 @@
 				"x": 0,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -610,7 +610,7 @@
 				"x": 1,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -630,7 +630,7 @@
 				"x": 8,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -653,7 +653,7 @@
 				"x": 4,
 				"y": 13
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -666,7 +666,7 @@
 				"x": 9,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -683,7 +683,7 @@
 				"x": 7,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -703,7 +703,7 @@
 				"x": 8,
 				"y": 25
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -724,7 +724,7 @@
 				"x": 6,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -737,7 +737,7 @@
 				"x": 5,
 				"y": 13
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -750,7 +750,7 @@
 				"x": 6,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -773,7 +773,7 @@
 				"x": 4,
 				"y": 11
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -786,7 +786,7 @@
 				"x": 5,
 				"y": 0
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -807,7 +807,7 @@
 				"x": 6,
 				"y": 3
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -820,7 +820,7 @@
 				"x": 0,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -840,7 +840,7 @@
 				"x": 3,
 				"y": 0
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -861,7 +861,7 @@
 				"x": 0,
 				"y": 3
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -882,7 +882,7 @@
 				"x": 4,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -895,7 +895,7 @@
 				"x": 6,
 				"y": 31
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -915,7 +915,7 @@
 				"x": 4,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -938,7 +938,7 @@
 				"x": 4,
 				"y": 9
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -951,7 +951,7 @@
 				"x": 4,
 				"y": 0
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -971,7 +971,7 @@
 				"x": 6,
 				"y": 0
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -984,7 +984,7 @@
 				"x": 0,
 				"y": 0
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1005,7 +1005,7 @@
 				"x": 5,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1018,7 +1018,7 @@
 				"x": 2,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1031,7 +1031,7 @@
 				"x": 8,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1044,7 +1044,7 @@
 				"x": 6,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1057,7 +1057,7 @@
 				"x": 3,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1070,7 +1070,7 @@
 				"x": 5,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1090,7 +1090,7 @@
 				"x": 5,
 				"y": 5
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1113,7 +1113,7 @@
 				"x": 2,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1130,7 +1130,7 @@
 				"x": 6,
 				"y": 9
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1143,7 +1143,7 @@
 				"x": 6,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1156,7 +1156,7 @@
 				"x": 3,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1176,7 +1176,7 @@
 				"x": 5,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1189,7 +1189,7 @@
 				"x": 4,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1209,7 +1209,7 @@
 				"x": 2,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1232,7 +1232,7 @@
 				"x": 3,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1255,7 +1255,7 @@
 				"x": 9,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1278,7 +1278,7 @@
 				"x": 0,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1301,7 +1301,7 @@
 				"x": 1,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1324,7 +1324,7 @@
 				"x": 9,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1344,7 +1344,7 @@
 				"x": 3,
 				"y": 25
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1367,7 +1367,7 @@
 				"x": 1,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1384,7 +1384,7 @@
 				"x": 9,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1401,7 +1401,7 @@
 				"x": 7,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1418,7 +1418,7 @@
 				"x": 6,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1435,7 +1435,7 @@
 				"x": 3,
 				"y": 2
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1452,7 +1452,7 @@
 				"x": 5,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1469,7 +1469,7 @@
 				"x": 5,
 				"y": 3
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1492,7 +1492,7 @@
 				"x": 3,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1515,7 +1515,7 @@
 				"x": 3,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1532,7 +1532,7 @@
 				"x": 8,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1549,7 +1549,7 @@
 				"x": 4,
 				"y": 8
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1566,7 +1566,7 @@
 				"x": 5,
 				"y": 31
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1586,7 +1586,7 @@
 				"x": 6,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1599,7 +1599,7 @@
 				"x": 3,
 				"y": 1
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1616,7 +1616,7 @@
 				"x": 5,
 				"y": 1
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1633,7 +1633,7 @@
 				"x": 9,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1656,7 +1656,7 @@
 				"x": 7,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1676,7 +1676,7 @@
 				"x": 4,
 				"y": 2
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1693,7 +1693,7 @@
 				"x": 5,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1716,7 +1716,7 @@
 				"x": 8,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1739,7 +1739,7 @@
 				"x": 5,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1762,7 +1762,7 @@
 				"x": 4,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1785,7 +1785,7 @@
 				"x": 5,
 				"y": 16
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1798,7 +1798,7 @@
 				"x": 5,
 				"y": 15
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1811,7 +1811,7 @@
 				"x": 9,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1831,7 +1831,7 @@
 				"x": 9,
 				"y": 28
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1851,7 +1851,7 @@
 				"x": 8,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1871,7 +1871,7 @@
 				"x": 9,
 				"y": 27
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1891,7 +1891,7 @@
 				"x": 5,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1908,7 +1908,7 @@
 				"x": 6,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1925,7 +1925,7 @@
 				"x": 7,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1942,7 +1942,7 @@
 				"x": 1,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -1955,7 +1955,7 @@
 				"x": 7,
 				"y": 31
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1975,7 +1975,7 @@
 				"x": 1,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -1995,7 +1995,7 @@
 				"x": 3,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2015,7 +2015,7 @@
 				"x": 0,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2036,7 +2036,7 @@
 				"x": 8,
 				"y": 21
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2049,7 +2049,7 @@
 				"x": 9,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2069,7 +2069,7 @@
 				"x": 8,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2089,7 +2089,7 @@
 				"x": 7,
 				"y": 33
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2109,7 +2109,7 @@
 				"x": 2,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2129,7 +2129,7 @@
 				"x": 9,
 				"y": 25
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2150,7 +2150,7 @@
 				"x": 6,
 				"y": 22
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2163,7 +2163,7 @@
 				"x": 5,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2176,7 +2176,7 @@
 				"x": 8,
 				"y": 16
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2198,7 +2198,7 @@
 				"x": 0,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2219,7 +2219,7 @@
 				"x": 2,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2240,7 +2240,7 @@
 				"x": 7,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2260,7 +2260,7 @@
 				"x": 6,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2280,7 +2280,7 @@
 				"x": 3,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2293,7 +2293,7 @@
 				"x": 4,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2306,7 +2306,7 @@
 				"x": 5,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2319,7 +2319,7 @@
 				"x": 7,
 				"y": 24
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2342,7 +2342,7 @@
 				"x": 7,
 				"y": 37
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2362,7 +2362,7 @@
 				"x": 5,
 				"y": 37
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2382,7 +2382,7 @@
 				"x": 0,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2402,7 +2402,7 @@
 				"x": 6,
 				"y": 23
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2415,7 +2415,7 @@
 				"x": 5,
 				"y": 29
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2435,7 +2435,7 @@
 				"x": 5,
 				"y": 32
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2455,7 +2455,7 @@
 				"x": 0,
 				"y": 27
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2468,7 +2468,7 @@
 				"x": 0,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2489,7 +2489,7 @@
 				"x": 0,
 				"y": 22
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2510,7 +2510,7 @@
 				"x": 3,
 				"y": 22
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2523,7 +2523,7 @@
 				"x": 3,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2543,7 +2543,7 @@
 				"x": 7,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2565,7 +2565,7 @@
 				"x": 4,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2578,7 +2578,7 @@
 				"x": 5,
 				"y": 21
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2591,7 +2591,7 @@
 				"x": 0,
 				"y": 37
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2611,7 +2611,7 @@
 				"x": 3,
 				"y": 17
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2632,7 +2632,7 @@
 				"x": 3,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2655,7 +2655,7 @@
 				"x": 3,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2675,7 +2675,7 @@
 				"x": 4,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2695,7 +2695,7 @@
 				"x": 5,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2715,7 +2715,7 @@
 				"x": 6,
 				"y": 24
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2738,7 +2738,7 @@
 				"x": 7,
 				"y": 29
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2758,7 +2758,7 @@
 				"x": 8,
 				"y": 36
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2778,7 +2778,7 @@
 				"x": 6,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2795,7 +2795,7 @@
 				"x": 5,
 				"y": 26
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2812,7 +2812,7 @@
 				"x": 9,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2825,7 +2825,7 @@
 				"x": 8,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2838,7 +2838,7 @@
 				"x": 5,
 				"y": 25
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2855,7 +2855,7 @@
 				"x": 5,
 				"y": 2
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2872,7 +2872,7 @@
 				"x": 8,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2895,7 +2895,7 @@
 				"x": 9,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2918,7 +2918,7 @@
 				"x": 7,
 				"y": 20
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2941,7 +2941,7 @@
 				"x": 7,
 				"y": 19
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2958,7 +2958,7 @@
 				"x": 6,
 				"y": 29
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -2978,7 +2978,7 @@
 				"x": 0,
 				"y": 34
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -2991,7 +2991,7 @@
 				"x": 7,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3014,7 +3014,7 @@
 				"x": 6,
 				"y": 7
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3037,7 +3037,7 @@
 				"x": 6,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3060,7 +3060,7 @@
 				"x": 8,
 				"y": 30
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3073,7 +3073,7 @@
 				"x": 9,
 				"y": 30
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3086,7 +3086,7 @@
 				"x": 3,
 				"y": 38
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3106,7 +3106,7 @@
 				"x": 3,
 				"y": 37
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3126,7 +3126,7 @@
 				"x": 3,
 				"y": 39
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3146,7 +3146,7 @@
 				"x": 7,
 				"y": 16
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3163,7 +3163,7 @@
 				"x": 4,
 				"y": 21
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3176,7 +3176,7 @@
 				"x": 8,
 				"y": 23
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3189,7 +3189,7 @@
 				"x": 8,
 				"y": 29
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3209,7 +3209,7 @@
 				"x": 9,
 				"y": 29
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3229,7 +3229,7 @@
 				"x": 9,
 				"y": 35
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout"
 		},
 		{
@@ -3242,7 +3242,7 @@
 				"x": 3,
 				"y": 5
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3337,7 +3337,7 @@
 				"x": 3,
 				"y": 4
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3432,7 +3432,7 @@
 				"x": 0,
 				"y": 14
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3542,7 +3542,7 @@
 				"x": 7,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3628,7 +3628,7 @@
 				"x": 0,
 				"y": 6
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3714,7 +3714,7 @@
 				"x": 3,
 				"y": 3
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3809,7 +3809,7 @@
 				"x": 0,
 				"y": 16
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3904,7 +3904,7 @@
 				"x": 5,
 				"y": 18
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -3957,7 +3957,7 @@
 				"x": 5,
 				"y": 27
 			},
-			"parentId": "5fe49a0e2694b0755a504876",
+			"parentId": "61b7367440281631fc83f197",
 			"slotId": "hideout",
 			"upd":
 			{
@@ -4043,20 +4043,20 @@
 			}
 		},
 		{
-			"_id": "5fe49a0e2694b0755a504878",
+			"_id": "61b7367440281631fc83f19b",
 			"_tpl": "5963866b86f7747bfa1c4462"
 		},
 		{
-			"_id": "5fe49a0e2694b0755a504877",
+			"_id": "61b7367440281631fc83f19a",
 			"_tpl": "5963866286f7747bf429b572"
 		},
 		{
-			"_id": "60dca3da42ad9b706b369aca",
+			"_id": "61b7367440281631fc83f17f",
 			"_tpl": "602543c13fee350cd564d032"
 		}
 	],
-	"questRaidItems": "5fe49a0e2694b0755a504877",
-	"questStashItems": "5fe49a0e2694b0755a504878",
-	"sortingTable": "60dca3da42ad9b706b369aca",
-	"stash": "5fe49a0e2694b0755a504876"
+	"questRaidItems": "61b7367440281631fc83f19a",
+	"questStashItems": "61b7367440281631fc83f19b",
+	"sortingTable": "61b7367440281631fc83f17f",
+	"stash": "61b7367440281631fc83f197"
 }
