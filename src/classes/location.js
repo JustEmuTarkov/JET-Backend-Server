@@ -591,8 +591,11 @@ class Generator {
   }
   lootDynamic(typeArray, output, locationLootChanceModifier, MapName) {
     let count = 0;
+    let spawnedLootAt = [];
     for (let itemLoot in typeArray) {
       const lootData = typeArray[itemLoot];
+      const markOfPosition = lootData.Position.x + "," + lootData.Position.y + "," + lootData.Position.z;
+      if(spawnedLootAt.indexOf(markOfPosition) != -1) continue;
       //loot overlap removed its useless...
       let DynamicLootSpawnTable = GenerateDynamicLootSpawnTable(lootData, MapName); // add this function
       // should return Array() of strings where they are item ID's
@@ -704,6 +707,7 @@ class Generator {
       if (num >= itemChance) {
         //lootPositions.push(position);
         count++;
+        spawnedLootAt.push(markOfPosition);
         output.Loot.push(createEndLootData);
       }
     }
