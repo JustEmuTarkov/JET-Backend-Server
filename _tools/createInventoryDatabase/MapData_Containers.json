@@ -1,0 +1,4799 @@
+{
+ "item_equipment_backpack_pillbox": {
+  "_id": "60a2828e8689911a226117f9",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "56e335e4d2720b6c058b456d",
+    "5e9dcf5986f7746c417435b3",
+    "60a2828e8689911a226117f9",
+    "5f5e45cc5021ce62144be7aa",
+    "5ca20d5986f774331e7c9602",
+    "544a5cde4bdc2d39388b456b",
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_daypack14": {
+  "_id": "5e9dcf5986f7746c417435b3",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_vkboarmy": {
+  "_id": "5ab8ee7786f7742d8f33f0b9",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_sanitar_medbag": {
+  "_id": "5e997f0b86f7741ac73993e2",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_mech": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5d5d940f86f7742797262046",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_redfox": {
+  "_id": "5f5e45cc5021ce62144be7aa",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_pilgrim": {
+  "_id": "59e763f286f7742ee57895da",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_blackjack": {
+  "_id": "5c0e774286f77468413cc5b2",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_drawbridge": {
+  "_id": "60a272cc93ef783291411d8e",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "60a272cc93ef783291411d8e",
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "forward_backpack": {
+  "_id": "56e33634d2720bd8058b456b",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_sso_attack2": {
+  "_id": "5ab8ebf186f7742d8b372e80",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_Takedown_sling_multicam": {
+  "_id": "6038d614d10cbf667352dd44",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "6038d614d10cbf667352dd44",
+    "6034d103ca006d2dca39b3f0",
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_takedown_sling": {
+  "_id": "6034d103ca006d2dca39b3f0",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "6038d614d10cbf667352dd44",
+    "6034d103ca006d2dca39b3f0",
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "bigBackpack": {
+  "_id": "545cdae64bdc2d39198b4568",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_wild": {
+  "_id": "56e335e4d2720b6c058b456d",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_medpack": {
+  "_id": "5e4abc6786f77406812bd572",
+  "main": {
+   "Filter": [
+    "57864c8c245977548867e7f1",
+    "543be5664bdc2dd4348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "backpack_Raid_6SH118": {
+  "_id": "5df8a4d786f77412672a1e3b",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_paratus": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  },
+  "_id": "5c0e805e86f774683f3dd637",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_gr99t20": {
+  "_id": "618bb76513f5097c8d5aa2d5",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "standartBackpack": {
+  "_id": "544a5cde4bdc2d39388b456b",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_molle": {
+  "_id": "5ab8f04f86f774585f4237d8",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_lbt1476a": {
+  "_id": "618cfae774bb2d036a049e7c",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "618bb76513f5097c8d5aa2d5",
+    "618cfae774bb2d036a049e7c",
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_wartech": {
+  "_id": "5ca20d5986f774331e7c9602",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_f5switchblade": {
+  "_id": "5f5e467b0bc58666c37e7821",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_f4terminator": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  },
+  "_id": "5f5e46b96bdad616ad46d613",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_betav2": {
+  "_id": "5b44c6ae86f7742d1627baea",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "backpack_pilgrim_red": {
+  "_id": "61b9e1aaef9a1b5d6a79899a",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_gr99t20_multicam": {
+  "_id": "619cf0335771dd3c390269ae",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "tactical_backpack": {
+  "_id": "56e33680d2720be2748b4576",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "item_equipment_backpack_g2_gunslinger": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  },
+  "_id": "6034d2d697633951dc245ea6",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "5c0a840b86f7742ffa4f2482",
+    "5b7c710788a4506dec015957",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "59fb042886f7746c5005a7b2",
+    "59fb023c86f7746d0d4b423c",
+    "5b6d9ce188a4501afc1b2b25"
+   ]
+  }
+ },
+ "Чемодан": {
+  "_id": "567143bf4bdc2d1a0f8b4567",
+  "main": {
+   "Filter": [
+    "5448bc234bdc2d3c308b4569",
+    "5447b5cf4bdc2d65278b4567",
+    "5485a8684bdc2da71d8b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_quest_container_carbon_case": {
+  "_id": "5910922b86f7747d96753483",
+  "main": {
+   "Filter": [
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_quest_container_case_bank": {
+  "_id": "590dde5786f77405e71908b2",
+  "main": {
+   "Filter": [
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "jacket_key204": {
+  "_id": "5914944186f774189e5e76c2",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "jacket_yellow_quest": {
+  "_id": "5937ef2b86f77408a47244b3",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "scavDead": {
+  "_id": "5909e4b686f7747f5b744fa4",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "wood_cache": {
+  "_id": "5d6d2b5486f774785c2ba8ea",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "WeaponCrate": {
+  "_id": "578f87ad245977356274f2cc",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "PCblock": {
+  "_id": "59139c2186f77411564f8e42",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "tools&other": {
+  "_id": "5d6fd45b86f774317075ed43",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "suitcase_plastic_lootable": {
+  "_id": "5c052cea86f7746b2101e8d8",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "terraWBoxLongBig": {
+  "_id": "5909d76c86f77471e53d2adf",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Food&Stuff": {
+  "_id": "5d6fd13186f77424ad2a8c69",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "jacket_key114_feld": {
+  "_id": "59387ac686f77401442ddd61",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "terraWBoxSquareBig": {
+  "_id": "5909d89086f77472591234a0",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "SportBag": {
+  "_id": "578f87a3245977356274f2cb",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "SportBag_adv": {
+  "_id": "61aa1e9a32a4743c3453d2cf",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "terraWBoxSquare": {
+  "_id": "5909d7cf86f77470ee57d75a",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "GrenadeBox": {
+  "_id": "5909d36d86f774660f0bb900",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "MedBag_adv": {
+  "_id": "61aa1ead84ea0800645777fd",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "CashRegisterBig": {
+  "_id": "5ad74cf586f774391278f6f0",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "terraWBoxLong": {
+  "_id": "5909d5ef86f77467974efbd8",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "AmmoBox": {
+  "_id": "5909d45286f77465a8136dc6",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "meds&other": {
+  "_id": "5d6fe50986f77449d97f7463",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Safe": {
+  "_id": "578f8782245977354405a1e3",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "CashRegister": {
+  "_id": "578f879c24597735401e6bc6",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "barrel_cache": {
+  "_id": "5d6d2bb386f774785b07a77a",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "box_preset1": {
+  "_id": "61a89e5445a2672acf66c877",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Jacket": {
+  "_id": "578f8778245977358849a9b5",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Drawer": {
+  "_id": "578f87b7245977356274f2cd",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "boss_container": {
+  "_id": "5d07b91b86f7745a077a9432",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "MedBox": {
+  "_id": "5909d4c186f7746ad34e805a",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "ToolBox": {
+  "_id": "5909d50c86f774659e6aaebe",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "MedBag": {
+  "_id": "5909d24f86f77466f56e6855",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Gamma container": {
+  "_id": "5857a8bc2459772bad15db29",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5448fe124bdc2da5018b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": [
+    "5448e54d4bdc2dcc718b4568",
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5448bc234bdc2d3c308b4569",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a",
+    "543be6564bdc2df4348b4568"
+   ]
+  }
+ },
+ "Boss container": {
+  "_id": "5c0a794586f77461c458f892",
+  "main": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "Epsilon container": {
+  "_id": "59db794186f77448bc595262",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5448fe124bdc2da5018b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": [
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5448bc234bdc2d3c308b4569",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a",
+    "543be6564bdc2df4348b4568"
+   ]
+  }
+ },
+ "Beta container": {
+  "_id": "5857a8b324597729ab0a0e7d",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5448fe124bdc2da5018b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": [
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5448bc234bdc2d3c308b4569",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a",
+    "543be6564bdc2df4348b4568"
+   ]
+  }
+ },
+ "item_container_secured_kappa": {
+  "_id": "5c093ca986f7740a1867ab12",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "5448fe124bdc2da5018b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b"
+   ],
+   "ExcludedFilter": [
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5448bc234bdc2d3c308b4569",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a",
+    "543be6564bdc2df4348b4568"
+   ]
+  }
+ },
+ "Сумочка": {
+  "_id": "5732ee6a24597719ae0c0281",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5448fe124bdc2da5018b4567",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": [
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "Контейнер Альфа": {
+  "_id": "544a11ac4bdc2d470e8b456a",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5448fe124bdc2da5018b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "619cbf9e0a7c3a1a2731940a",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c093e3486f77430cb02e593",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": [
+    "5a341c4086f77401f2541505",
+    "55818aeb4bdc2ddc698b456a",
+    "5448bc234bdc2d3c308b4569",
+    "5b3b6dc75acfc47a8773fb1e",
+    "5a1ead28fcdbcb001912fa9f",
+    "587e08ee245977446b4410cf",
+    "5c0695860db834001b735461",
+    "5a16b93dfcdbcbcae6687261",
+    "5a16b8a9fcdbcb00165aa6ca",
+    "5c11046cd174af02a012e42b",
+    "5448bf274bdc2dfc2f8b456a",
+    "543be6564bdc2df4348b4568"
+   ]
+  }
+ },
+ "карманы 1 на 3": {
+  "_id": "60c7272c204bc17802313365",
+  "pocket1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "карманы 2 на 2": {
+  "_id": "557ffd194bdc2d28148b457f",
+  "pocket1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "карманы Большие": {
+  "_id": "5af99e9186f7747c447120b8",
+  "pocket1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "pocket5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  }
+ },
+ "item_container_cardholder": {
+  "_id": "619cbf9e0a7c3a1a2731940a",
+  "main": {
+   "Filter": [
+    "5c164d2286f774194c5e69fa"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_info_docbag": {
+  "_id": "590c60fc86f77412b13fddcf",
+  "main": {
+   "Filter": [
+    "59faff1d86f7746c51718c9c",
+    "5d235b4d86f7742e017bc88a",
+    "5f745ee30acaeb0d490d8c5b",
+    "619cbf9e0a7c3a1a2731940a",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "567849dd4bdc2d150f8b456e",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "wallet": {
+  "_id": "5783c43d2459774bbe137486",
+  "main": {
+   "Filter": [
+    "5c164d2286f774194c5e69fa",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_weaponcase": {
+  "_id": "59fb023c86f7746d0d4b423c",
+  "main": {
+   "Filter": [
+    "5448fe124bdc2da5018b4567",
+    "5422acb9af1c889c16000029",
+    "5485a8684bdc2da71d8b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_keybar": {
+  "_id": "59fafd4b86f7745ca07e1232",
+  "main": {
+   "Filter": [
+    "5c99f98d86f7745c314214b3"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_junkbox": {
+  "_id": "5b7c710788a4506dec015957",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "5448ecbe4bdc2d60728b4568",
+    "5447e0e74bdc2d3c308b4567"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_grenadebox": {
+  "_id": "5e2af55f86f7746d4159f07c",
+  "main": {
+   "Filter": [
+    "5e2af51086f7746d3f3c3402",
+    "5656eb674bdc2d35148b457c",
+    "5ede474b0c226a66f5402622",
+    "5ede475b549eed7c6d5c18fb",
+    "5ede4739e0350d05467f73e8",
+    "5f0c892565703e5c461894e9",
+    "5ede47405b097655935d7d16",
+    "5ede475339ee016e8c534742",
+    "5ede47641cf3836a88318df1",
+    "543be6564bdc2df4348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_lopouch": {
+  "_id": "5d235bb686f77443f4331278",
+  "main": {
+   "Filter": [
+    "59faff1d86f7746c51718c9c",
+    "5d235b4d86f7742e017bc88a",
+    "5f745ee30acaeb0d490d8c5b",
+    "5c1267ee86f77416ec610f72",
+    "5d235a5986f77443f6329bc6",
+    "59f32bb586f774757e1e8442",
+    "59f32c3b86f77472a31742f0",
+    "590c621186f774138d11ea29",
+    "543be5e94bdc2df1348b4568",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_magbox": {
+  "_id": "5c127c4486f7745625356c13",
+  "main": {
+   "Filter": [
+    "5448bc234bdc2d3c308b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_injectorcase": {
+  "_id": "619cbf7d23893217ec30b689",
+  "main": {
+   "Filter": [
+    "544fb3f34bdc2d03748b456a",
+    "5448f3a64bdc2d60728b456a"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_items_thicc": {
+  "_id": "5c0a840b86f7742ffa4f2482",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5645bcb74bdc2ded0b8b4578",
+    "567143bf4bdc2d1a0f8b4567",
+    "5448fe124bdc2da5018b4567",
+    "5448e53e4bdc2d60728b4567",
+    "5448e5284bdc2dcb718b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "5aafbde786f774389d0cbc0f",
+    "619cbf9e0a7c3a1a2731940a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "5c093e3486f77430cb02e593",
+    "59fb023c86f7746d0d4b423c",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "5422acb9af1c889c16000029",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be6564bdc2df4348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_trackcase": {
+  "_id": "59fb042886f7746c5005a7b2",
+  "main": {
+   "Filter": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5f84bdc2dd4348b456a",
+    "5645bcb74bdc2ded0b8b4578",
+    "5448fe124bdc2da5018b4567",
+    "5448e53e4bdc2d60728b4567",
+    "5448e5284bdc2dcb718b4567",
+    "60b0f6c058e0b0481a09ad11",
+    "5aafbde786f774389d0cbc0f",
+    "619cbf9e0a7c3a1a2731940a",
+    "5c093db286f7740a1b2617e3",
+    "5e2af55f86f7746d4159f07c",
+    "619cbf7d23893217ec30b689",
+    "59fafd4b86f7745ca07e1232",
+    "5d235bb686f77443f4331278",
+    "5c127c4486f7745625356c13",
+    "5aafbcd986f7745e590fff23",
+    "59fb016586f7746d0d4b423a",
+    "5c093e3486f77430cb02e593",
+    "59fb023c86f7746d0d4b423c",
+    "590c60fc86f77412b13fddcf",
+    "5783c43d2459774bbe137486",
+    "5422acb9af1c889c16000029",
+    "543be6674bdc2df1348b4569",
+    "5448ecbe4bdc2d60728b4568",
+    "543be5e94bdc2df1348b4568",
+    "5447e1d04bdc2dff2f8b4567",
+    "567849dd4bdc2d150f8b456e",
+    "543be5664bdc2dd4348b4569",
+    "5447e0e74bdc2d3c308b4567",
+    "5661632d4bdc2d903d8b456b",
+    "543be6564bdc2df4348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_weaponcase_THICC": {
+  "_id": "5b6d9ce188a4501afc1b2b25",
+  "main": {
+   "Filter": [
+    "5448fe124bdc2da5018b4567",
+    "5422acb9af1c889c16000029",
+    "5485a8684bdc2da71d8b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_ammo": {
+  "_id": "5aafbde786f774389d0cbc0f",
+  "main": {
+   "Filter": [
+    "5485a8684bdc2da71d8b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_food": {
+  "_id": "5c093db286f7740a1b2617e3",
+  "main": {
+   "Filter": [
+    "5af0484c86f7740f02001f7f",
+    "5e54f6af86f7742199090bf3",
+    "5bc9be8fd4351e00334cae6e",
+    "543be6674bdc2df1348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_money": {
+  "_id": "59fb016586f7746d0d4b423a",
+  "main": {
+   "Filter": [
+    "59faff1d86f7746c51718c9c",
+    "5d235b4d86f7742e017bc88a",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_barter_walletwz": {
+  "_id": "60b0f6c058e0b0481a09ad11",
+  "main": {
+   "Filter": [
+    "5c164d2286f774194c5e69fa",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_meds": {
+  "_id": "5aafbcd986f7745e590fff23",
+  "main": {
+   "Filter": [
+    "57864c8c245977548867e7f1",
+    "543be5664bdc2dd4348b4569"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "item_container_smallitems": {
+  "_id": "5c093e3486f77430cb02e593",
+  "main": {
+   "Filter": [
+    "59f32bb586f774757e1e8442",
+    "59f32c3b86f77472a31742f0"
+   ],
+   "ExcludedFilter": []
+  }
+ },
+ "Sorting table": {
+  "_id": "602543c13fee350cd564d032",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "Edge of darkness stash 10x68": {
+  "_id": "5811ce772459770e9e5f9532",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "stash 8x40": {
+  "_id": "5963866b86f7747bfa1c4462",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "Prepare for escape stash 10x48": {
+  "_id": "5811ce662459770f6f490f32",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "Left Behind stash 10x38": {
+  "_id": "5811ce572459770cba1a34ea",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "Standard stash 10x28": {
+  "_id": "566abbc34bdc2d92178b4576",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "stash 8x6": {
+  "_id": "5963866286f7747bf429b572",
+  "hideout": {
+   "Filter": [],
+   "ExcludedFilter": []
+  }
+ },
+ "item_equipment_rig_triton": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5ca20abf86f77418567a43f2"
+ },
+ "item_equipment_rig_commando_black": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e9f2c86f77432297fe0a3"
+ },
+ "wartech_vest": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "59e7643b86f7742cbf2c109a"
+ },
+ "item_equipment_rig_sprofi_mk2_ak": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "_id": "60a621c49c197e4e8c4455e6"
+ },
+ "item_equipment_rig_thunderbolt": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "6": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "7": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "8": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "9": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "_id": "5f5f41f56760b4138443b352"
+ },
+ "item_equipment_rig_bearing": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5e9db13186f7742f845ee9d3"
+ },
+ "item_equipment_rig_ctactical": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5fd4c5477a8d854fa0105061"
+ },
+ "item_equipment_rig_carrierTactec": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5b44cad286f77402a54ae7e5"
+ },
+ "item_equipment_rig_umka_m33": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "6034cf5fffd42c541047f72e"
+ },
+ "item_equipment_rig_6b5_khaki": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e3eb886f7742015526062"
+ },
+ "item_equipment_rig_tagilla": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "609e860ebd219504d8507525"
+ },
+ "item_equipment_armor_arscpc": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5e4ac41886f77406a511c9a8"
+ },
+ "item_equipment_rig_beltab": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "13": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "14": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "15": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "16": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "17": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "18": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "19": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e6a1586f77404597b4965"
+ },
+ "bearRig": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5648a69d4bdc2ded0b8b457b"
+ },
+ "item_equipment_rig_m1": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e722886f7740458316a57"
+ },
+ "item_equipment_rig_commando": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5b44c8ea86f7742d1627baf1"
+ },
+ "ana_tactical": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "592c2d1a86f7746dbe2af32a"
+ },
+ "item_equipment_rig_strandhogg": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "61bcc89aef0f505f0c6cd0fc"
+ },
+ "bear_rig_6h112": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5929a2a086f7744f4b234d43"
+ },
+ "item_equipment_armor_6b3": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5d5d646386f7742797261fd9"
+ },
+ "item_equipment_rig_idea": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5fd4c4fa16cac650092f6771"
+ },
+ "item_equipment_rig_azimut_black": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "603648ff5a45383c122086ac"
+ },
+ "item_equipment_rig_multipurpose": {
+  "1": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "2": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "3": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "4": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "5": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "6": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "7": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "8": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "9": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "10": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "11": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "12": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "13": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "14": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "_id": "5df8a42886f77412640e2e75"
+ },
+ "item_equipment_rig_tarzan": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "10": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "_id": "5e4abfed86f77406a2713cf7"
+ },
+ "wild_vest": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "572b7adb24597762ae139821"
+ },
+ "item_equipment_rig_micro": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5d5d8ca986f7742798716522"
+ },
+ "item_equipment_rig_mmac": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "61bc85697113f767765c7fe7"
+ },
+ "item_equipment_rig_d3crx": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5d5d85c586f774279a21cbdb"
+ },
+ "item_equipment_armor_a18": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "13": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "14": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "15": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5d5d87f786f77427997cfaef"
+ },
+ "item_equipment_rig_custom_osprey_assault": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "13": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "14": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "60a3c70cde5f453f634816a3"
+ },
+ "item_equipment_rig_tv110": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e746986f7741453628fe5"
+ },
+ "item_equipment_rig_bankrobber": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5e4abc1f86f774069619fbaa"
+ },
+ "ana_tactical_m2": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5ab8dced86f774646209ec87"
+ },
+ "item_equipment_rig_6b5_flora": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5c0e446786f7742013381639"
+ },
+ "item_equipment_rig_cs_assault": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "6034d0230ca681766b6a0fb5"
+ },
+ "wartech_mk3": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5ab8dab586f77441cd04f2a2"
+ },
+ "item_equipment_rig_bssmk1": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "5fd4c60f875c30179f5d04c2"
+ },
+ "standartRig": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "544a5caa4bdc2d1a388b4568"
+ },
+ "item_equipment_rig_azimut_surpat": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "6040dd4ddcf9592f401632d2"
+ },
+ "item_equipment_rig_sprofi_mk2_smg": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "12": {
+   "Filter": [],
+   "ExcludedFilter": []
+  },
+  "_id": "60a6220e953894617404b00a"
+ },
+ "item_equipment_rig_custom_osprey_defence": {
+  "1": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "2": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "3": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "4": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "5": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "6": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "7": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "8": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "9": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "10": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "11": {
+   "Filter": [
+    "54009119af1c881c07000029"
+   ],
+   "ExcludedFilter": [
+    "5448bf274bdc2dfc2f8b456a"
+   ]
+  },
+  "_id": "60a3c68c37ea821725773ef5"
+ }
+}
