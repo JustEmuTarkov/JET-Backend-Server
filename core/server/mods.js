@@ -227,7 +227,7 @@ class ModLoader
 		
 		const modsFolder = fileIO.readDir("user/mods").filter(dir => fileIO.lstatSync("user/mods/" + dir).isDirectory());
 		
-		if(this.modsConfig.length != modsFolder.length){
+		if(Object.keys(this.modsConfig).length != modsFolder.length) {
 			logger.logInfo("Detected new mod folders. Trying to add them to the list...");
 			
 			for(const folderName of modsFolder)
