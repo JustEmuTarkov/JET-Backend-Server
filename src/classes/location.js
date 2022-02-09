@@ -495,7 +495,7 @@ class Generator {
 
           // item creation
           let createEndLootData = {
-            Id: data.id,
+            Id: data.Id,
             IsStatic: data.IsStatic,
             useGravity: data.useGravity,
             randomRotation: data.randomRotation,
@@ -509,24 +509,40 @@ class Generator {
           createEndLootData.Items.push(createdItem);
 
           let oldBaseItem = PresetData._items[0];
-          PresetData._items = PresetData._items.splice(0, 1);
+
+          const weapon = helper_f.tryGetItem(oldBaseItem._tpl);
+          if (weapon.error) {
+            logger.logWarning(weapon.errorMessage);
+            continue;
+          }
+
+          // Don't mutate PresetData
+          // Clone items and remove first item from array
+          let presetChildItems = [...PresetData._items];
+          presetChildItems.shift();
+
           let idSuffix = 0;
           let OldIds = {};
-          for (var p in PresetData._items) {
-            let currentItem = utility.DeepCopy(PresetData._items[p]);
-            OldIds[currentItem.id] = utility.generateNewItemId();
+          for (var p in presetChildItems) {
+            let currentItem = utility.DeepCopy(presetChildItems[p]);
+            OldIds[currentItem._id] = utility.generateNewItemId();
             if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
             if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
 
-            currentItem.id = OldIds[currentItem.id];
+            currentItem._id = OldIds[currentItem._id];
             createEndLootData.Items.push(currentItem);
 
-            if (PresetData._items[p].slotId === "mod_magazine") {
-              let mag = helper_f.getItem(PresetData._items[p]._tpl)[1];
+            if (presetChildItems[p].slotId === "mod_magazine") {
+              const mag = helper_f.tryGetItem(presetChildItems[p]._tpl);
+              if (mag.error) {
+                logger.logWarning(mag.errorMessage);
+                continue;
+              }
+
               let cartridges = {
-                _id: currentItem.id + "_" + idSuffix,
-                _tpl: item._props.defAmmo,
-                parentId: PresetData._items[p]._id,
+                _id: currentItem._id + "_" + idSuffix,
+                _tpl: weapon._props.defAmmo,
+                parentId: presetChildItems[p]._id,
                 slotId: "cartridges",
                 upd: { StackObjectsCount: mag._props.Cartridges[0]._max_count },
               };
@@ -535,7 +551,7 @@ class Generator {
               idSuffix++;
             }
           }
-          output.Loot.push(data);
+          output.Loot.push(createEndLootData);
           count++;
         }
       }
