@@ -180,27 +180,42 @@ function deleteInventory(pmcData, sessionID) {
 }
 
 function MapNameConversion(sessionID) {
-  // change names to thenames of location file names that are loaded like that into the memory
-  let playerRaidData = offraid_f.handler.getPlayer(sessionID);
-  switch (playerRaidData.Location) {
-    case "Customs":
-      return "bigmap";
-    case "Factory":
-      if (playerRaidData.Time == "CURR") return "factory4_day";
-      else return "factory4_night";
-    case "Interchange":
-      return "interchange";
-    case "Laboratory":
-      return "laboratory";
-    case "ReserveBase":
-      return "rezervbase";
-    case "Shoreline":
-      return "shoreline";
-    case "Woods":
-      return "woods";
-    default:
-      return playerRaidData.Location;
-  }
+	// change names to thenames of location file names that are loaded like that into the memory
+  // added all locations to potentially future proof this - King
+	let playerRaidData = offraid_f.handler.getPlayer(sessionID);
+	switch (playerRaidData.Location) {
+		case "Arena":
+			return "develop";
+		case "Customs":
+			return "bigmap";
+		case "Factory":
+			if (playerRaidData.Time == "CURR") return "factory4_day";
+			else return "factory4_night";
+		case "Interchange":
+			return "interchange";
+		case "Laboratory":
+			return "laboratory";
+		case "ReserveBase":
+			return "rezervbase";
+		case "Shoreline":
+			return "shoreline";
+		case "Woods":
+			return "woods";
+		case "Lighthouse":
+			return "lighthouse";
+		case "Private Sector":
+			return "privatearea";
+		case "Suburbs":
+			return "suburbs";
+		case "Terminal":
+			return "terminal";
+		case "Town":
+			return "town";
+		case "Streets of Tarkov":
+			return "tarkovstreets";
+		default:
+			return playerRaidData.Location;
+	}
 }
 
 function getPlayerGear(items) {
