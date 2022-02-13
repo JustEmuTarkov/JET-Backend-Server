@@ -183,6 +183,8 @@ function MapNameConversion(sessionID) {
   // change names to thenames of location file names that are loaded like that into the memory
   let playerRaidData = offraid_f.handler.getPlayer(sessionID);
   switch (playerRaidData.Location) {
+    case "Arena":
+      return "develop";
     case "Customs":
       return "bigmap";
     case "Factory":
@@ -198,6 +200,18 @@ function MapNameConversion(sessionID) {
       return "shoreline";
     case "Woods":
       return "woods";
+    case "Lighthouse":
+      return "lighthouse";
+    case "Private Sector":
+      return "privatearea";
+    case "Suburbs":
+      return "suburbs";
+    case "Terminal":
+      return "terminal";
+    case "Town":
+      return "town";
+    case "Streets of Tarkov":
+      return "tarkovstreets";
     default:
       return playerRaidData.Location;
   }
