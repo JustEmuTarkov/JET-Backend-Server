@@ -52,7 +52,7 @@ for(let trader of traderIDs){
 	}
 	for(let itemId in dataStruct["loyal_level_items"]){
 		outputStruct[itemId] = {
-			"loyality": dataStruct["loyal_level_items"][itemId],
+			"loyalty": dataStruct["loyal_level_items"][itemId],
 			"barter_scheme": dataStruct["barter_scheme"][itemId],
 			"items": []
 		}
