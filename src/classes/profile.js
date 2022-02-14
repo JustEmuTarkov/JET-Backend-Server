@@ -242,6 +242,55 @@ function calculateLevel(pmcData) {
   return pmcData.Info.Level;
 }
 
+/**
+ * Get player loyalty LEVEL for current trader...
+ * when used to get the index of a trader loyaltyLevels, must use -1
+ * @param {Object} pmcData -> player infos,
+ * @param {string} traderID -> current trader ID,
+ * @returns {number} calculatedLoyalty -> loyalty level
+ */
+ function getLoyalty(pmcData, traderID) {
+  //if trader is not unlocked, return first loyalty.
+  if (!pmcData.TradersInfo[traderID].unlocked)
+    return 1;
+
+  let playerSaleSum;
+  let playerStanding;
+  let playerLevel;
+
+  if (pmcData.TradersInfo[traderID]) {
+    // we fetch player's trader related data
+    playerSaleSum = pmcData.TradersInfo[traderID].salesSum;
+    playerStanding = pmcData.TradersInfo[traderID].standing;
+    playerLevel = pmcData.Info.Level;
+  } else {
+    // default traders value
+    playerSaleSum = 0;
+    playerStanding = 0;
+    playerLevel = pmcData.Info.Level;
+  }
+  // we fetch the trader data
+  const traderInfo = global._database.traders[traderID].base;
+
+  let calculatedLoyalty = 0;
+  if (traderID !== "ragfair") {
+    // we check if player meet loyalty requirements
+    for (let loyaltyLevel of traderInfo.loyaltyLevels) {
+      if (playerSaleSum >= loyaltyLevel.minSalesSum &&
+        playerStanding >= loyaltyLevel.minStanding &&
+        playerLevel >= loyaltyLevel.minLevel) {
+        calculatedLoyalty++;
+      }
+      else {
+        if (calculatedLoyalty == 0) { calculatedLoyalty = 1; }
+        break;
+      }
+    }
+  } else { return "ragfair" }
+
+  return calculatedLoyalty;
+}
+
 module.exports.handler = new ProfileServer();
 module.exports.getStashType = getStashType;
 module.exports.calculateLevel = calculateLevel;

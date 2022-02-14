@@ -327,41 +327,52 @@ class TraderServer {
         item._id === pmcData.Inventory.questRaidItems ||
         item._id === pmcData.Inventory.questStashItems ||
         helper_f.isNotSellable(item._tpl) ||
-        (trader.sell_category.length > 0 && traderFilter(trader.sell_category, item._tpl) === false)
+        (trader.sell_category.length > 0 &&
+          traderFilter(trader.sell_category, item._tpl) === false)
       ) {
         continue;
       }
 
       // find all child of the item (including itself) and sum the price
-      for (let childItem of helper_f.findAndReturnChildrenAsItems(pmcData.Inventory.items, item._id)) {
+      for (let childItem of helper_f.findAndReturnChildrenAsItems(
+        pmcData.Inventory.items,
+        item._id
+      )) {
         if (!global._database.items[childItem._tpl]) {
           continue;
         } // Ignore child item if it does not have an entry in the db. -- kiobu
-        let tempPrice = 1;
-        if(typeof global._database.itemPriceTable[childItem._tpl] != "undefined"){
-          tempPrice = global._database.itemPriceTable[childItem._tpl];
-        } else {
-          logger.logWarning(`Unable to find item with _tpl: ${childItem._tpl} in _database.itemPriceTable`);
-        }
-        let count = "upd" in childItem && "StackObjectsCount" in childItem.upd ? childItem.upd.StackObjectsCount : 1;
-        price = price + tempPrice * count;
+        let getPrice = helper_f.getTemplatePrice(childItem._tpl);
+        let priceCoef = (trader.loyaltyLevels[profile_f.getLoyalty(pmcData, traderID) - 1].buy_price_coef) / 100;
+        let tempPrice = getPrice >= 1 ? getPrice : 1;
+        let count =
+          "upd" in childItem && "StackObjectsCount" in childItem.upd
+            ? childItem.upd.StackObjectsCount
+            : 1;
+        //logger.logError("tempPrice: "+tempPrice+ " getPrice: "+getPrice+" priceCoef: "+priceCoef+" count: "+count);
+        price = price + ((tempPrice - (tempPrice * priceCoef)) * count); // I know parentheses aren't needed but I find it more readable -cq
       }
 
       // dogtag calculation
-      if ("upd" in item && "Dogtag" in item.upd && helper_f.isDogtag(item._tpl)) {
+      if (
+        "upd" in item &&
+        "Dogtag" in item.upd &&
+        helper_f.isDogtag(item._tpl)
+      ) {
         price *= item.upd.Dogtag.Level;
       }
 
       // meds calculation
-      let hpresource = "upd" in item && "MedKit" in item.upd ? item.upd.MedKit.HpResource : 0;
+      let hpresource =
+        "upd" in item && "MedKit" in item.upd ? item.upd.MedKit.HpResource : 0;
 
       if (hpresource > 0) {
-        let maxHp = helper_f.getItem(item._tpl)[1]._props.MaxHpResource;
+        let maxHp = helper_f.tryGetItem(item._tpl)._props.MaxHpResource;
         price *= hpresource / maxHp;
       }
 
       // weapons and armor calculation
-      let repairable = "upd" in item && "Repairable" in item.upd ? item.upd.Repairable : 1;
+      let repairable =
+        "upd" in item && "Repairable" in item.upd ? item.upd.Repairable : 1;
 
       if (repairable !== 1) {
         price *= repairable.Durability / repairable.MaxDurability;
@@ -373,7 +384,6 @@ class TraderServer {
       }
       price = helper_f.fromRUB(price, currency);
       price = price > 0 && price !== "NaN" ? price : 1;
-
       output[item._id] = [[{ _tpl: currency, count: price.toFixed(0) }]];
     }
 
