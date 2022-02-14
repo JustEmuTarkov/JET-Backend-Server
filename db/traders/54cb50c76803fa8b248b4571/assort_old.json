@@ -1,6 +1,6 @@
 {
 	"BNTIKorund": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -23,7 +23,7 @@
 		]
 	},
 	"7n31Boolet": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -46,7 +46,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310286": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -122,7 +122,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310290": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -145,7 +145,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310292": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -168,7 +168,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310294": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -191,7 +191,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310296": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -226,7 +226,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31029a": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -249,7 +249,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31029c": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -272,7 +272,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31029e": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -295,7 +295,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102a0": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -318,7 +318,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102a2": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -341,7 +341,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102a4": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -376,7 +376,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102a8": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -399,7 +399,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102aa": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -452,7 +452,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102b1": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -479,7 +479,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102b3": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -502,7 +502,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102b5": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -525,7 +525,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102b7": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -566,7 +566,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102bc": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -589,7 +589,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102be": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -612,7 +612,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102c0": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -635,7 +635,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102c2": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -658,7 +658,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102c4": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -729,7 +729,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102ce": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -758,7 +758,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102d1": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -781,7 +781,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102d3": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -804,7 +804,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102d5": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -827,7 +827,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102d7": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -850,7 +850,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102d9": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -873,7 +873,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102db": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -930,7 +930,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102e2": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -969,7 +969,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102e6": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -992,7 +992,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102e8": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1015,7 +1015,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102ea": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1038,7 +1038,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102ec": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1061,7 +1061,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102ee": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -1084,7 +1084,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102f0": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1107,7 +1107,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102f2": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1183,7 +1183,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102fc": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1206,7 +1206,7 @@
 		]
 	},
 	"5eeca645bfed7142cb3102fe": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1229,7 +1229,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310300": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1276,7 +1276,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310306": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1299,7 +1299,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310308": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1322,7 +1322,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31030a": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1345,7 +1345,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31030c": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1368,7 +1368,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31030e": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1391,7 +1391,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310310": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1442,7 +1442,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310316": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1471,7 +1471,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310319": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1494,7 +1494,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31031b": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1517,7 +1517,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31031d": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1540,7 +1540,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31031f": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1563,7 +1563,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310321": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1586,7 +1586,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310325": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1609,7 +1609,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310327": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1691,7 +1691,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310332": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1714,7 +1714,7 @@
 		]
 	},
 	"5eeca645bfed7142cb310334": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1767,7 +1767,7 @@
 		]
 	},
 	"5eeca645bfed7142cb31033b": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1790,7 +1790,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31033d": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1813,7 +1813,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31033f": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -1836,7 +1836,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310341": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1859,7 +1859,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310343": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1882,7 +1882,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310345": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1953,7 +1953,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31034f": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -1976,7 +1976,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310351": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -1999,7 +1999,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310353": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2022,7 +2022,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310355": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2093,7 +2093,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31035f": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2116,7 +2116,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310361": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2139,7 +2139,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310363": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2162,7 +2162,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310365": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2185,7 +2185,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310367": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2238,7 +2238,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31036e": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2261,7 +2261,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310370": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2284,7 +2284,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310372": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2307,7 +2307,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310374": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2330,7 +2330,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310376": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2377,7 +2377,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31037c": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2452,7 +2452,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310386": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2475,7 +2475,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310388": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2498,7 +2498,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31038a": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2521,7 +2521,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31038c": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2544,7 +2544,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31038e": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2567,7 +2567,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310390": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2590,7 +2590,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310392": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2613,7 +2613,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310394": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -2636,7 +2636,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310396": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2659,7 +2659,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310398": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2682,7 +2682,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31039a": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2715,7 +2715,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31039d": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -2786,7 +2786,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103a7": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2809,7 +2809,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103a9": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2832,7 +2832,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103ab": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2855,7 +2855,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103ad": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2878,7 +2878,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103af": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2901,7 +2901,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103b1": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2924,7 +2924,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103b3": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2947,7 +2947,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103b5": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -2970,7 +2970,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103b7": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3005,7 +3005,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103bb": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3028,7 +3028,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103bd": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3051,7 +3051,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103bf": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3122,7 +3122,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103c9": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3145,7 +3145,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103cb": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3216,7 +3216,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103d5": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3273,7 +3273,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103dc": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3296,7 +3296,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103de": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3323,7 +3323,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103e0": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3346,7 +3346,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103e4": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3369,7 +3369,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103e6": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3392,7 +3392,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103e8": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -3415,7 +3415,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103ea": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3438,7 +3438,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103ec": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3461,7 +3461,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103ee": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3532,7 +3532,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3103f8": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3608,7 +3608,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310402": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3631,7 +3631,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310404": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3654,7 +3654,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310406": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -3677,7 +3677,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310408": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3700,7 +3700,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31040a": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -3741,7 +3741,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31040f": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3764,7 +3764,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310411": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -3823,7 +3823,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310419": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3846,7 +3846,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31041b": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -3922,7 +3922,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310425": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -3945,7 +3945,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310427": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3968,7 +3968,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310429": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -3991,7 +3991,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31042b": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4014,7 +4014,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31042d": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4085,7 +4085,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310437": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4108,7 +4108,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310439": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4131,7 +4131,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31043b": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4166,7 +4166,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31043f": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4189,7 +4189,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310441": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4212,7 +4212,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310443": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4235,7 +4235,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310445": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4258,7 +4258,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310447": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4281,7 +4281,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310449": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4304,7 +4304,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31044b": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4327,7 +4327,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31044d": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -4350,7 +4350,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31044f": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4421,7 +4421,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310459": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4444,7 +4444,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31045b": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4467,7 +4467,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31045d": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4490,7 +4490,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31045f": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4513,7 +4513,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310461": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4536,7 +4536,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310463": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4559,7 +4559,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310465": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4630,7 +4630,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31046f": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4653,7 +4653,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310471": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4682,7 +4682,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310474": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4753,7 +4753,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31047e": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4776,7 +4776,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310480": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4799,7 +4799,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310482": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4822,11 +4822,11 @@
 		]
 	},
 	"5eeca646bfed7142cb310484": {
-		"loyality": 4,
+		"loyalty": 4,
 		"items": []
 	},
 	"5eeca646bfed7142cb310486": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -4902,7 +4902,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310490": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -4925,7 +4925,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310492": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4948,7 +4948,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310494": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -4971,7 +4971,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310496": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -4994,7 +4994,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310498": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5017,7 +5017,7 @@
 		]
 	},
 	"5eeca646bfed7142cb31049a": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5099,7 +5099,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104a5": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5122,7 +5122,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104a7": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5181,7 +5181,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104af": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5204,7 +5204,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104b1": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5227,7 +5227,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104b3": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5250,7 +5250,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104b5": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5273,7 +5273,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104b7": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5296,7 +5296,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104b9": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -5319,7 +5319,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104bb": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5342,7 +5342,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104bd": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5365,7 +5365,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104bf": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5388,7 +5388,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104c1": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -5411,7 +5411,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104c3": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5434,7 +5434,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104c5": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5487,7 +5487,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104cc": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5510,7 +5510,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104ce": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -5533,7 +5533,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104d0": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -5556,7 +5556,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104d2": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5579,7 +5579,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104d4": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5602,7 +5602,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104d6": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5625,7 +5625,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104d8": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5648,7 +5648,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104da": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5747,7 +5747,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104e8": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5770,7 +5770,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104ea": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5793,7 +5793,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104ec": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5816,7 +5816,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104ee": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5839,7 +5839,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104f0": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -5862,7 +5862,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104f2": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5885,7 +5885,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104f4": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5908,7 +5908,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104f6": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5931,7 +5931,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104f8": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5954,7 +5954,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104fa": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -5977,7 +5977,7 @@
 		]
 	},
 	"5eeca646bfed7142cb3104fc": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6066,7 +6066,7 @@
 		]
 	},
 	"5eeca646bfed7142cb310509": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6089,7 +6089,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31050b": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6112,7 +6112,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31050d": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6135,7 +6135,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31050f": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6158,7 +6158,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310511": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6181,7 +6181,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310513": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6204,7 +6204,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310515": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6245,7 +6245,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31051a": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6316,7 +6316,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310524": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6405,7 +6405,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310531": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6428,7 +6428,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310533": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6451,7 +6451,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310535": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6474,7 +6474,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310537": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6497,7 +6497,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310539": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6520,7 +6520,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31053b": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6543,7 +6543,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31053d": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6566,7 +6566,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31053f": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6589,11 +6589,11 @@
 		]
 	},
 	"5eeca647bfed7142cb310541": {
-		"loyality": 4,
+		"loyalty": 4,
 		"items": []
 	},
 	"5eeca647bfed7142cb310549": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6616,7 +6616,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31054b": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6669,7 +6669,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310552": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6692,7 +6692,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310554": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6715,7 +6715,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310556": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6738,7 +6738,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310558": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6761,7 +6761,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31055a": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6784,7 +6784,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31055c": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -6807,7 +6807,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31055e": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6830,7 +6830,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310560": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6853,7 +6853,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310562": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6876,7 +6876,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310564": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -6899,7 +6899,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310566": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6922,7 +6922,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310568": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6945,7 +6945,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31056a": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -6968,7 +6968,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31056c": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -6991,7 +6991,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31056e": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -7062,7 +7062,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310578": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7085,7 +7085,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31057a": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7108,7 +7108,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31057c": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7183,7 +7183,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310586": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7206,7 +7206,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310588": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7229,7 +7229,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31058a": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -7252,7 +7252,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31058c": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7275,7 +7275,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31058e": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -7298,7 +7298,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310590": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7321,7 +7321,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310592": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7344,7 +7344,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310594": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7367,7 +7367,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310596": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7390,7 +7390,7 @@
 		]
 	},
 	"5eeca647bfed7142cb310598": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7413,7 +7413,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31059a": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7436,7 +7436,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31059c": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7459,7 +7459,7 @@
 		]
 	},
 	"5eeca647bfed7142cb31059e": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7482,7 +7482,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105a0": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7505,7 +7505,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105a2": {
-		"loyality": 1,
+		"loyalty": 1,
 		"barter_scheme": [
 			[
 				{
@@ -7528,7 +7528,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105a4": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7553,7 +7553,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105a6": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7576,7 +7576,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105a8": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7599,7 +7599,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105aa": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7646,7 +7646,7 @@
 		]
 	},
 	"5eeca647bfed7142cb3105b0": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7669,7 +7669,7 @@
 		]
 	},
 	"5eff99fe2e3bbe575000ed57": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7692,7 +7692,7 @@
 		]
 	},
 	"5f6771214ef1ca4f4e1b8a07": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7739,7 +7739,7 @@
 		]
 	},
 	"BarricadeAmmo": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7762,7 +7762,7 @@
 		]
 	},
 	"StarAmmo": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7785,7 +7785,7 @@
 		]
 	},
 	"Shrapnel10": {
-		"loyality": 2,
+		"loyalty": 2,
 		"barter_scheme": [
 			[
 				{
@@ -7808,7 +7808,7 @@
 		]
 	},
 	"Shrapnel25": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7831,7 +7831,7 @@
 		]
 	},
 	"5f6770f839a13e712a1dff55": {
-		"loyality": 3,
+		"loyalty": 3,
 		"barter_scheme": [
 			[
 				{
@@ -7892,7 +7892,7 @@
 		]
 	},
 	"545x39_bs": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7915,7 +7915,7 @@
 		]
 	},
 	"7n12_bp_pack": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
@@ -7938,7 +7938,7 @@
 		]
 	},
 	"5e0ac74b9d594972a112aa0a": {
-		"loyality": 4,
+		"loyalty": 4,
 		"barter_scheme": [
 			[
 				{
