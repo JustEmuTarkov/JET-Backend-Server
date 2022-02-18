@@ -337,9 +337,13 @@ class TraderServer {
         if (!global._database.items[childItem._tpl]) {
           continue;
         } // Ignore child item if it does not have an entry in the db. -- kiobu
+        //get trader loyality buy_price_coef for selling 
+        const pmcLoyalityLevel = profile_f.calculateLoyality(pmcData, trader);
+        const PriceCoeficient = trader.loyalityLevels[pmcLoyalityLevel] ? trader.loyalityLevels[pmcLoyalityLevel].buy_price_coef / 100 : 0.5;
         let tempPrice = 1;
         if(typeof global._database.itemPriceTable[childItem._tpl] != "undefined"){
           tempPrice = global._database.itemPriceTable[childItem._tpl];
+          tempPrice *= PriceCoeficient;
         } else {
           logger.logWarning(`Unable to find item with _tpl: ${childItem._tpl} in _database.itemPriceTable`);
         }
