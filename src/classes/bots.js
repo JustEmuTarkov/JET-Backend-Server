@@ -548,6 +548,17 @@ class Generator {
       properties.Foldable = { Folded: false };
     }
 
+    //if item can be a stack higher than 1 | CQ: this fixes money spawning in stacks of 1, and whatever else.
+    if(itemTemplate._props.StackMaxSize > 1){
+      //if item has random stacks properties
+      if(itemTemplate._props.StackMaxRandom && itemTemplate._props.StackMinRandom){
+        properties.StackObjectsCount = utility.getRandomInt(itemTemplate._props.StackMinRandom, itemTemplate._props.StackMaxRandom);
+      }else{
+        //if it doesn't, randomize it between 1 and the stack max size
+        properties.StackObjectsCount = utility.getRandomInt(1, itemTemplate._props.StackMaxSize);
+      }      
+    }
+
     if (itemTemplate._props.weapFireType && itemTemplate._props.weapFireType.length) {
       properties.FireMode = { FireMode: itemTemplate._props.weapFireType[0] };
     }
