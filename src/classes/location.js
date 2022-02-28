@@ -492,7 +492,7 @@ function _GenerateContainerLoot(_items) {
 }
 
 //========> LOOT CREATION START !!!!!
-class Generator {
+class LocationLootGenerator {
   lootMounted(typeArray, output) {
     let count = 0;
     for (let i in typeArray) {
@@ -717,9 +717,14 @@ class Generator {
 
 /* LocationServer class maintains list of locations in memory. */
 class LocationServer {
+
+  constructor() {
+    this.lootGenerator = new LocationLootGenerator();
+  }
+
   /* generates a random location preset to use for local session */
   generate(name, sessionID) {
-    const lootGenerator = new Generator();
+    // const lootGenerator = new Generator();
     let dateNow = Date.now();
     let stage = 0;
     // dont read next time ??
@@ -777,7 +782,7 @@ class LocationServer {
     let count = 0;
     let counters = [];
 
-    count = lootGenerator.lootMounted(mounted, output);
+    count = this.lootGenerator.lootMounted(mounted, output);
     logger.logInfo(`State Mounted, TimeElapsed: ${Date.now() - dateNow}ms`);
    
     dateNow = Date.now();
@@ -785,7 +790,7 @@ class LocationServer {
     counters.push(count);
     
     count = 0;
-    count = lootGenerator.lootForced(forced, output);
+    count = this.lootGenerator.lootForced(forced, output);
   
     logger.logInfo(`State Forced, TimeElapsed: ${Date.now() - dateNow}ms`);
 
@@ -793,7 +798,7 @@ class LocationServer {
 
     counters.push(count);
     count = 0;
-    count = lootGenerator.lootStatics(statics, output);
+    count = this.lootGenerator.lootStatics(statics, output);
    
     logger.logInfo(`State Containers, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
@@ -802,7 +807,7 @@ class LocationServer {
 
     // dyanmic loot
     count = 0;
-    count = lootGenerator.lootDynamic(dynamic, output, _location.base.GlobalLootChanceModifier, name);
+    count = this.lootGenerator.lootDynamic(dynamic, output, _location.base.GlobalLootChanceModifier, name);
    
     logger.logInfo(`State Dynamic, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
@@ -810,8 +815,6 @@ class LocationServer {
     counters.push(count);
 
     // Loot position list for filtering the lootItem in the same position.
-
-
     if (global.serverConfig.lootDebug) {
       logger.logSuccess(
         `Generated location ${name} with [mounted: ${counters[0]}/${mounted.length} | forcedLoot: ${counters[1]}/${forced.length} | statics: ${counters[2]}/${statics.length} | dynamic: ${counters[3]}/${dynamic.length}]`
