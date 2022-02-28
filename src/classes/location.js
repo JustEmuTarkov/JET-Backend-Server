@@ -720,6 +720,7 @@ class LocationServer {
 
   constructor() {
     this.lootGenerator = new LocationLootGenerator();
+    
   }
 
   /* generates a random location preset to use for local session */
