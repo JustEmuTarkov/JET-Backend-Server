@@ -302,6 +302,29 @@ function _GenerateContainerLoot(_items) {
   let LootListItems = Object.keys(LootList);
   //logger.logInfo(`SpawnItemInContainer: ${rollSpawnChance} | ${Object.keys(LootList).length}`)
   if (LootListItems.length != 0) {
+
+    // ------ PAULO MODIFIERS -----
+    // get modifiers --------------
+    let modifierSuperRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
+    if(modifierSuperRare == undefined){
+      modifierSuperRare = 0.5;
+      logger.logWarning("Loot Modifier: Superrare: Couldn't find the config. Reset to 0.5.")
+    }
+    let modifierRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
+    if(modifierRare == undefined){
+      modifierRare = 0.9;
+      logger.logWarning("Loot Modifier: Rare: Couldn't find the config. Reset to 0.9.")
+    }
+    let modifierCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
+    if(modifierCommon == undefined){
+      modifierCommon = 0.95;
+      logger.logWarning("Loot Modifier: Common: Couldn't find the config. Reset to 0.95.")
+    }
+
+    let numberOfSuperrareRemoved = 0;
+    let numberOfRareRemoved = 0;
+    let numberOfCommonRemoved = 0;
+
     // we finished generating spawn for this container now its time to roll items to put in container
     let itemWidth = 0;
     let itemHeight = 0;
@@ -319,8 +342,33 @@ function _GenerateContainerLoot(_items) {
       indexRolled.push(RollIndex);
       // getting rolled item
       const rolledRandomItemToPlace = LootList[LootListItems[RollIndex]];
+      if(rolledRandomItemToPlace._props.LootExperience !== undefined) {
+        // console.log(rolledRandomItemToPlace);
+        // superrare
+        
+        // Paulo - Notes
+        // TODO: This only uses LootExperience,
+        // 1) it needs to check for quest items or necessary keys (like Unknown Key on Customs)
+        // 2) it would also be a bit better if it used the value of items
+        if(rolledRandomItemToPlace._props.LootExperience >= 16 && Math.random() > modifierSuperRare) {
+          numberOfSuperrareRemoved++;
+          continue;
+        }
+        else if(rolledRandomItemToPlace._props.LootExperience >= 10 && Math.random() > modifierRare) {
+          numberOfRareRemoved++;
+          continue;
+        } 
+        else if(Math.random() > modifierCommon) {
+          numberOfCommonRemoved++;
+          continue;
+        } 
+      }
 
-      if (typeof rolledRandomItemToPlace == "undefined") {
+      // console.log("Number of Items Removed :: Superrare :: " + numberOfSuperrareRemoved);
+      // console.log("Number of Items Removed :: Rare :: " + numberOfRareRemoved);
+      // console.log("Number of Items Removed :: Common :: " + numberOfCommonRemoved);
+
+      if (rolledRandomItemToPlace === undefined) {
         logger.logWarning(`Undefined in container: ${ContainerId}  ${LootListItems.length} ${RollIndex}`);
         continue;
       }
@@ -368,6 +416,7 @@ function _GenerateContainerLoot(_items) {
         preset._items[0].location = { x: result.x, y: result.y, r: rot };
 
         for (var p in preset._items) {
+
           _items.push(DeepCopy(preset._items[p]));
 
           if (preset._items[p].slotId === "mod_magazine") {
@@ -513,6 +562,8 @@ class Generator {
   }
   lootDynamic(typeArray, output, locationLootChanceModifier, MapName) {
     let count = 0;
+
+    let currentUsedPositions = [];
     for (let itemLoot in typeArray) {
       const lootData = typeArray[itemLoot];
       //loot overlap removed its useless...
@@ -545,11 +596,13 @@ class Generator {
         Root: generatedItemId,
         Items: [],
       };
+      
       createEndLootData.Items.push(createdItem);
       // now add other things like cartriges etc.
 
       // AMMO BOXES !!!
-      if (global._database.items[createEndLootData.Items[0]._tpl]._parent == "543be5cb4bdc2deb348b4568") {
+      let isAmmoBox = global._database.items[createEndLootData.Items[0]._tpl]._parent == "543be5cb4bdc2deb348b4568";
+      if (isAmmoBox) {
         const ammoTemplate = global._database.items[createEndLootData.Items[0]._tpl]._props.StackSlots[0]._props.filters[0].Filter[0];
         const ammoMaxStack = global._database.items[ammoTemplate]._props.StackMaxSize;
         const randomizedBulletsCount = utility.getRandomInt(
@@ -606,15 +659,55 @@ class Generator {
           }
         }
       }
+
+      // Remove overlapping items by doing this simple check
+      if(!isAmmoBox && PresetData == null 
+        && currentUsedPositions.find(x=> Math.ceil(x.x) == Math.ceil(lootData.Position.x)) !== undefined
+        ) {
+        continue;
+      }
+
       // spawn change calculation
-      const num = utility.getRandomInt(0, 10000);
-      const itemSpawnChance = utility.valueBetween(helper_f.getItem(createdItem._tpl)[1]["_props"]["LootExperience"], 0, 250, 0, 100)
+      const randomNumber = utility.getRandomInt(1, 100);
+      let actualItem = helper_f.getItem(createdItem._tpl);
+      let actualItemLootExperience = actualItem[1]["_props"]["LootExperience"];
+      const itemSpawnChance = utility.getRandomInt(actualItemLootExperience, actualItemLootExperience * 2);
+
+      // get modifiers
+      let modifierSuperRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
+				if(modifierSuperRare == undefined){
+					modifierSuperRare = 0.5;
+					logger.logWarning("Loot Modifier: Superrare: Couldn't find the config. Reset to 0.5.")
+				}
+				
+        let modifierRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
+				if(modifierRare == undefined){
+					modifierRare = 0.9;
+					logger.logWarning("Loot Modifier: Rare: Couldn't find the config. Reset to 0.9.")
+				}
+        let modifierCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
+				if(modifierCommon == undefined){
+					modifierCommon = 0.95;
+					logger.logWarning("Loot Modifier: Common: Couldn't find the config. Reset to 0.95.")
+				}
+
+      // change chance of spawn dependant on loot experience
+      let spawn = true;
+      if(actualItemLootExperience >= 10 && Math.random() > modifierSuperRare) {
+        spawn = false;
+      }
+      else if(actualItemLootExperience >= 6 && Math.random() > modifierRare) {
+        spawn = false;
+      }
+      else if(Math.random() > modifierCommon) {
+        spawn = false;
+      }
 
       const itemChance = itemSpawnChance * locationLootChanceModifier;
-      if (num >= itemChance) {
-        //lootPositions.push(position);
+      if (randomNumber >= itemChance && spawn) {
         count++;
         output.Loot.push(createEndLootData);
+        currentUsedPositions.push(createEndLootData.Position);
       }
     }
     return count;
@@ -662,9 +755,21 @@ class LocationServer {
 
     // Deep copy so the variable contents can be edited non-destructively
     let forced = DeepCopy(_location.loot.forced);
+    for(let i = 0; i < forced.length; i++) {
+      forced[i].IsForced = true;
+    }
     let mounted = DeepCopy(_location.loot.mounted);
+    for(let i = 0; i < mounted.length; i++) {
+      mounted[i].IsMounted = true;
+    }
     let statics = DeepCopy(_location.loot.static);
+    for(let i = 0; i < statics.length; i++) {
+      statics[i].IsStatic = true;
+    }
     let dynamic = DeepCopy(_location.loot.dynamic);
+    for(let i = 0; i < dynamic.length; i++) {
+      dynamic[i].IsDynamic = true;
+    }
     logger.logInfo(`State Prepare, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
 
@@ -674,17 +779,22 @@ class LocationServer {
 
     count = lootGenerator.lootMounted(mounted, output);
     logger.logInfo(`State Mounted, TimeElapsed: ${Date.now() - dateNow}ms`);
+   
     dateNow = Date.now();
 
     counters.push(count);
+    
     count = 0;
     count = lootGenerator.lootForced(forced, output);
+  
     logger.logInfo(`State Forced, TimeElapsed: ${Date.now() - dateNow}ms`);
+
     dateNow = Date.now();
 
     counters.push(count);
     count = 0;
     count = lootGenerator.lootStatics(statics, output);
+   
     logger.logInfo(`State Containers, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
 
@@ -693,12 +803,15 @@ class LocationServer {
     // dyanmic loot
     count = 0;
     count = lootGenerator.lootDynamic(dynamic, output, _location.base.GlobalLootChanceModifier, name);
+   
     logger.logInfo(`State Dynamic, TimeElapsed: ${Date.now() - dateNow}ms`);
     dateNow = Date.now();
 
     counters.push(count);
 
     // Loot position list for filtering the lootItem in the same position.
+
+
     if (global.serverConfig.lootDebug) {
       logger.logSuccess(
         `Generated location ${name} with [mounted: ${counters[0]}/${mounted.length} | forcedLoot: ${counters[1]}/${forced.length} | statics: ${counters[2]}/${statics.length} | dynamic: ${counters[3]}/${dynamic.length}]`
