@@ -111,37 +111,46 @@ function RemoveFoundItems(profile) {
   return profile;
 }
 
-function setInventory(pmcData, profile) {
-  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
-  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
-  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
+function setInventory(pmcData, profile) {	
+	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
+	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
+	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
+	
+	//fix for duplicate ids in items by creating new ids for item ids created in-raid
+	profile.Inventory = repairInventoryIDs(profile.Inventory, pmcData.aid);
 
-  // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
-  let duplicates = [];
+	// Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
+	// no more duplicates should exist but I'll leave this here untouched bc it's working (CQ)
+	let duplicates = [];
+	
+	x: for (let item of profile.Inventory.items) {
+		for (let key in pmcData.Inventory.items) {
+			let currid = pmcData.Inventory.items[key]._id;
+			if (currid == item._id) {
+				duplicates.push(item._id);
+				continue x;
+			}
+		}
+		pmcData.Inventory.items.push(item);
+	}
+	
+	pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
-  x: for (let item of profile.Inventory.items) {
-    for (let key in pmcData.Inventory.items) {
-      let currid = pmcData.Inventory.items[key]._id;
-      if (currid == item._id) {
-        duplicates.push(item._id);
-        continue x;
-      }
-    }
-    pmcData.Inventory.items.push(item);
-  }
-  pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+	// Don't count important IDs as errors.
+	const ignoreIDs = [
+		"60de0d80c6b34f52845b4646",		//?
+		"61b7367440281631fc83f17f" 		//sorting table
+	];
 
-  // Don't count important stash IDs as errors.
-  const stashIDs = ["60de0d80c6b34f52845b4646"];
-  duplicates = duplicates.filter((x) => !stashIDs.includes(x));
+	duplicates = duplicates.filter((x) => !ignoreIDs.includes(x));
 
-  if (duplicates.length > 0) {
-    logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`);
-    logger.logWarning(`Duplicates: `);
-    console.log(duplicates);
-  }
+	if (duplicates.length > 0) {
+		logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`);
+		logger.logWarning(`Duplicates: \n`+JSON.stringify(duplicates, null, 2));
+		//console.log(duplicates); //this won't be saved in log file, don't use this crap
+	}
 
-  return pmcData;
+	return pmcData;
 }
 
 function deleteInventory(pmcData, sessionID) {
@@ -392,6 +401,58 @@ function saveProgress(offraidData, sessionID) {
 
   offraid_f.handler.removeMapAccessKey(offraidData, sessionID);
   offraid_f.handler.removePlayer(sessionID);
+}
+
+/**
+ * Function that checks for duplicates inside the required parameters and
+ * repairs them by creating new IDs. Repairs recursively child items whose parents
+ * had their IDs changed.
+ * Returns repaired version of the inventory object.
+ * @param {offraidData.profile.Inventory} pInv The inventory object which needs repairing.
+ * @param {pmcData.aid} AID The account ID for which the items are being repaired. Used for logging and debugging.
+ * @author CQInmanis
+ */
+ function repairInventoryIDs(pInv, AID){
+
+	// Don't count important IDs as errors.
+	const ignoreIDs = [
+		"60de0d80c6b34f52845b4646",		//?
+		"61b7367440281631fc83f17f" 		//sorting table
+	];
+
+	// from : "", to : ""
+	let repairedIDs = [];
+	
+	// repair in-raid created IDs (looking like pmcAID) by creating
+	// new ids and pointing children to the new id
+	for(let item of pInv.items){
+		//if item does not need fixing or is in ignore list, skip.
+		if(!item._id.includes("pmcAID") || ignoreIDs.includes(item._id)){
+			continue;
+		}
+		//store original id before repairing
+		let ogID = item._id;
+		//repair ID
+		item._id = utility.generateNewItemId();
+
+		//add to repaired list for debugging purposes.
+		repairedIDs.push({
+			from 	: ogID,
+			to		: item._id
+		});
+
+		// check for children whose parentId was the item's original ID
+		// and replace it with the new id
+		for(let iitem of pInv.items){
+			if(iitem.parentId == ogID){
+				iitem.parentId = item._id;
+			}
+		}
+	}
+	if(repairedIDs.length > 0){
+		logger.logWarning("Repaired IDs for "+AID+":\n"+JSON.stringify(repairedIDs, null, 2));
+	}
+	return pInv;
 }
 
 module.exports.handler = new InraidServer();
