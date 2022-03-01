@@ -29,7 +29,7 @@ exports.cache = () => {
         base.data.items.push(inputNodes[item].items[assort_item]);
       }
       base.data.barter_scheme[item] = inputNodes[item].barter_scheme;
-      base.data.loyal_level_items[item] = inputNodes[item].loyality;
+      base.data.loyal_level_items[item] = inputNodes[item].loyalty;
     }
 
     fileIO.write(`./user/cache/assort_${trader}.json`, base, true, false);

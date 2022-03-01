@@ -160,7 +160,7 @@ class TraderServer {
         base.data.items.push(inputNodes[item].items[assort_item]);
       }
       base.data.barter_scheme[item] = inputNodes[item].barter_scheme;
-      base.data.loyal_level_items[item] = inputNodes[item].loyality;
+      base.data.loyal_level_items[item] = inputNodes[item].loyalty;
     }
 
     fileIO.write(`./user/cache/assort_${traderId}.json`, base, true, false);
@@ -236,8 +236,8 @@ class TraderServer {
       const ProfileStanding = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].standing : 0;
       const ProfileLevel = pmcData.Info.Level;
       let calcLevel = 0;
-      for (const loyalityObject of global._database.traders[traderID].base.loyaltyLevels) {
-        if (ProfileLevel >= loyalityObject.minLevel && ProfileStanding >= loyalityObject.minStanding && ProfileSaleSum >= loyalityObject.minSalesSum) {
+      for (const loyaltyObject of global._database.traders[traderID].base.loyaltyLevels) {
+        if (ProfileLevel >= loyaltyObject.minLevel && ProfileStanding >= loyaltyObject.minStanding && ProfileSaleSum >= loyaltyObject.minSalesSum) {
           calcLevel++;
         }
       }
@@ -337,35 +337,39 @@ class TraderServer {
         if (!global._database.items[childItem._tpl]) {
           continue;
         } // Ignore child item if it does not have an entry in the db. -- kiobu
-        //get trader loyality buy_price_coef for selling 
-        const pmcLoyalityLevel = profile_f.calculateLoyality(pmcData, trader);
-        const PriceCoeficient = trader.loyalityLevels[pmcLoyalityLevel] ? trader.loyalityLevels[pmcLoyalityLevel].buy_price_coef / 100 : 0.5;
-        let tempPrice = 1;
-        if(typeof global._database.itemPriceTable[childItem._tpl] != "undefined"){
-          tempPrice = global._database.itemPriceTable[childItem._tpl];
-          tempPrice *= PriceCoeficient;
-        } else {
-          logger.logWarning(`Unable to find item with _tpl: ${childItem._tpl} in _database.itemPriceTable`);
-        }
-        let count = "upd" in childItem && "StackObjectsCount" in childItem.upd ? childItem.upd.StackObjectsCount : 1;
-        price = price + tempPrice * count;
+        //get trader loyalty buy_price_coef for selling 
+        let getPrice = helper_f.getTemplatePrice(childItem._tpl);
+        let priceCoef = (trader.loyaltyLevels[profile_f.calculateLoyalty(pmcData, traderID)].buy_price_coef) / 100;
+        let tempPrice = getPrice >= 1 ? getPrice : 1;
+        let count =
+          "upd" in childItem && "StackObjectsCount" in childItem.upd
+            ? childItem.upd.StackObjectsCount
+            : 1;
+        //logger.logError("tempPrice: "+tempPrice+ " getPrice: "+getPrice+" priceCoef: "+priceCoef+" count: "+count);
+        price = price + ((tempPrice - (tempPrice * priceCoef)) * count); // I know parentheses aren't needed but I find it more readable -cq
       }
 
       // dogtag calculation
-      if ("upd" in item && "Dogtag" in item.upd && helper_f.isDogtag(item._tpl)) {
+      if (
+        "upd" in item &&
+        "Dogtag" in item.upd &&
+        helper_f.isDogtag(item._tpl)
+      ) {
         price *= item.upd.Dogtag.Level;
       }
 
       // meds calculation
-      let hpresource = "upd" in item && "MedKit" in item.upd ? item.upd.MedKit.HpResource : 0;
+      let hpresource =
+        "upd" in item && "MedKit" in item.upd ? item.upd.MedKit.HpResource : 0;
 
       if (hpresource > 0) {
-        let maxHp = helper_f.getItem(item._tpl)[1]._props.MaxHpResource;
+        let maxHp = helper_f.tryGetItem(item._tpl)._props.MaxHpResource;
         price *= hpresource / maxHp;
       }
 
       // weapons and armor calculation
-      let repairable = "upd" in item && "Repairable" in item.upd ? item.upd.Repairable : 1;
+      let repairable =
+        "upd" in item && "Repairable" in item.upd ? item.upd.Repairable : 1;
 
       if (repairable !== 1) {
         price *= repairable.Durability / repairable.MaxDurability;
@@ -377,7 +381,6 @@ class TraderServer {
       }
       price = helper_f.fromRUB(price, currency);
       price = price > 0 && price !== "NaN" ? price : 1;
-
       output[item._id] = [[{ _tpl: currency, count: price.toFixed(0) }]];
     }
 

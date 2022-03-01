@@ -3,7 +3,7 @@
 	"ip_backend": "127.0.0.1",
 	"port": 443,
 	"eventPollIntervalSec": 60,
-	"rebuildCache": false,
+	"rebuildCache": true,
 	"name": "JustEmuTarkov",
   "Patches": {
     "RemoveAddOfferButton_Awake": true,
