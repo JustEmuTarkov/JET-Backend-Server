@@ -474,7 +474,10 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
           isPreset: baseItem.isPreset,
         };
         let MaxStacks = 1;
-
+        if(tmpItem == {}){
+          logger.logError(`Item doesn't exist: ${item._tpl}`);
+          return;
+        }
         // split stacks if the size is higher than allowed by StackMaxSize
         if (baseItem.count > tmpItem._props.StackMaxSize) {
           let count = baseItem.count;

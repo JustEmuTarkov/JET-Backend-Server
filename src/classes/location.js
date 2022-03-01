@@ -608,9 +608,20 @@ class Generator {
   lootDynamic(typeArray, output, locationLootChanceModifier, MapName) {
     let count = 0;
     let spawnedLootAt = [];
+    const possitionAccuracy = 4; // bigger number more accurate it will be
+
     for (let itemLoot in typeArray) {
       const lootData = typeArray[itemLoot];
-      const markOfPosition = lootData.Position.x + "," + lootData.Position.y + "," + lootData.Position.z;
+      const posX = Number(lootData.Position.x).toFixed(possitionAccuracy);
+      const posY = Number(lootData.Position.y).toFixed(possitionAccuracy);
+      const posZ = Number(lootData.Position.z).toFixed(possitionAccuracy);
+      
+      const markOfPosition = posX + "," + posY + "," + posZ;
+      if(markOfPosition == "0,0,0") {
+        logger.logDebug(`Loot position is 0 in all 3 dimensions and id of spawn is ${lootData.Id}`)
+        continue;
+      }
+      
       if(spawnedLootAt.indexOf(markOfPosition) != -1) continue;
       //loot overlap removed its useless...
       let DynamicLootSpawnTable = GenerateDynamicLootSpawnTable(lootData, MapName); // add this function
