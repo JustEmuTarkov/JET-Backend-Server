@@ -8,7 +8,7 @@
 		"max": 100
 	},
 	"Temperature": {
-		"min": 36.6,
+		"min": 36,
 		"max": 40
 	},
 	"BodyParts": {
@@ -17,12 +17,12 @@
 			"max": 50
 		},
 		"Chest": {
-			"min": 110,
-			"max": 110
+			"min": 140,
+			"max": 140
 		},
 		"Stomach": {
-			"min": 100,
-			"max": 100
+			"min": 110,
+			"max": 110
 		},
 		"LeftArm": {
 			"min": 80,

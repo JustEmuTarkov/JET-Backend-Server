@@ -1,10 +1,10 @@
 {
   "Common": {
-    "Strength": {
+    "Endurance": {
       "min": 5100,
       "max": 5100
     },
-    "Endurance": {
+    "Strength": {
       "min": 5100,
       "max": 5100
     },
@@ -16,11 +16,15 @@
       "min": 5100,
       "max": 5100
     },
-    "BotReload": {
+    "Immunity": {
       "min": 5100,
       "max": 5100
     },
-    "StressResistance": {
+    "RecoilControl": {
+      "min": 5100,
+      "max": 5100
+    },
+    "BotReload": {
       "min": 5100,
       "max": 5100
     }
