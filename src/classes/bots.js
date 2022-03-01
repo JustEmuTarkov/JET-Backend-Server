@@ -39,11 +39,36 @@ class Controller {
   }
 
   generateBot(bot, role, pmcData) {
-    // generate bot
-    const node = global._database.bots[role.toLowerCase()];
+
+    let node = [];
+    //default
+    node = global._database.bots[bot.Info.Settings.Role.toLowerCase()];
+
+    //pmc generation from Scavs
+    if (role.toLowerCase() == "assault") {
+      //50% chance of being a pmc
+      if (utility.getRandomBoolByPercent(50)) {
+        //if pmc
+        //50% chance of being usec or bear
+        if (utility.getRandomBoolByPercent(50)) {
+          bot.Info.Side = "Usec";
+          node = global._database.bots["usec"];
+        } else {
+          bot.Info.Side = "Bear";
+          node = global._database.bots["bear"];
+        }
+      } else {
+        //if scav
+        bot.Info.Side = "Savage";
+        node = global._database.bots["assault"];
+      }
+    }
 
     bot.Info.Nickname = utility.getArrayValue(node.names);
-    bot.Info.Settings.Experience = utility.getRandomInt(node.experience.reward.min, node.experience.reward.max);
+    bot.Info.Settings.Experience = utility.getRandomInt(
+      node.experience.reward.min,
+      node.experience.reward.max
+    );
     bot.Info.Voice = utility.getArrayValue(node.appearance.voice);
     bot.Health = bots_f.botHandler.generateHealth(node.health);
     bot.Customization.Head = utility.getArrayValue(node.appearance.head);
@@ -59,6 +84,7 @@ class Controller {
 
       if (pmcData.Info.Level >= levelFrom && pmcData.Info.Level < levelTo) {
         inventoryData = node.inventory[inventoryNode];
+        break;  // once we got our datas, no need to keep looping
       }
     }
     if (inventoryData == "") {
@@ -66,16 +92,22 @@ class Controller {
       inventoryData = node.inventory[Object.keys(node.inventory)[0]];
     }
 
-    bot.Inventory = bots_f.generator.generateInventory(inventoryData, node.chances, node.generation);
+    bot.Inventory = bots_f.generator.generateInventory(
+      inventoryData,
+      node.chances,
+      node.generation
+    );
 
-    const levelResult = bots_f.botHandler.generateRandomLevel(node.experience.level.min, node.experience.level.max);
-    bot.Info.experience = levelResult.exp;
+    const levelResult = bots_f.botHandler.generateRandomLevel(
+      node.experience.level.min,
+      node.experience.level.max,
+      pmcData.Info.Level
+    );
+    bot.Info.Experience = levelResult.exp;
     bot.Info.Level = levelResult.level;
 
-    // add dogtag to PMC's
-    if (role === "usec" || role === "bear") {
+    if (bot.Info.Side.toLowerCase() == "usec" || bot.Info.Side.toLowerCase() == "bear") {
       bot = bots_f.botHandler.generateDogtag(bot);
-      bot.Info.Settings.Role = "pmcBot";
     }
 
     // generate new bot ID
@@ -88,30 +120,37 @@ class Controller {
   }
 
   generate(info, sessionID) {
+    let dateNow = Date.now();
+    let count = 0;
     let output = [];
     const pmcData = profile_f.handler.getPmcProfile(sessionID);
+
     for (const condition of info.conditions) {
       for (let i = 0; i < condition.Limit; i++) {
         let role = condition.Role.toLowerCase();
-        const isPmc = role in global._database.gameplayConfig.bots.pmc.types && utility.getRandomInt(0, 99) < global._database.gameplayConfig.bots.pmc.types[role];
         let bot = utility.DeepCopy(global._database.core.botBase);
         bot.Info.Side = "Savage";
         bot.Info.Settings.Role = condition.Role;
         bot.Info.Settings.BotDifficulty = condition.Difficulty;
 
-        if (isPmc) {
-          const pmcSide = utility.getRandomInt(0, 99) < global._database.gameplayConfig.bots.pmc.usecChance ? "Usec" : "Bear";
-          bot.Info.Side = pmcSide;
-          role = pmcSide.toLowerCase();
-        }
-
+        //regular generation
+        //moved pmc generation to generateBot
         bot = bots_f.botHandler.generateBot(bot, role, pmcData);
 
-        logger.logInfo(`Generated: Nickname:${bot.Info.Nickname}, Side:${bot.Info.Side}, Role:${bot.Info.Settings.Role}, Difficulty:${bot.Info.Settings.BotDifficulty}`);
+        //any looped log = bad for performance
+        //logger.logInfo(`Generated: Nickname:${bot.Info.Nickname}, Side:${bot.Info.Side}, Role:${bot.Info.Settings.Role}, Difficulty:${bot.Info.Settings.BotDifficulty}`);
+
         output.unshift(bot);
+        count++;
       }
     }
-
+    //debugging purposes
+    //if we generated bots and are in raid
+    if (count > 0 && offraid_f.handler.getPlayer(sessionID)) {
+      logger.logSuccess(
+        "\u001b[32;1mGenerated: " + count + " bots for " + offraid_f.handler.getPlayer(sessionID).Location + " map. ("+(Date.now() - dateNow)+"ms)"
+      );
+    }
     return output;
   }
 

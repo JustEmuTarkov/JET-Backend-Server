@@ -137,6 +137,12 @@ exports.clearString = (s) => {
             .replace(/[\t]/g, '')
             .replace(/[\\]/g, '');
 }
+
+// Nevermind
+exports.getRandomBoolByPercent = (percentage) => {
+    return ((Math.random() * 100) < percentage);
+}
+
 // getRandomInt
 exports.getRandomInt = (min = 0, max = 100) => {
     min = Math.ceil(min);
