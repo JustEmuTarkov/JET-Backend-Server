@@ -119,9 +119,12 @@ function getQuestRewards(quest, state, pmcData, sessionID) {
       case "Location":
         /* not used in game (can lock or unlock location suposedly...) */ break;
       case "Skill":
-        let skills = pmcData.Skills.Common.filter((skill) => skill.Id == reward.target);
-        for (const Id in skills) {
-          pmcData.Skills.Common[Id].Progress += parseInt(reward.value);
+        //this is actually shorter, faster and easier than filtering. Plus it works (CQ)
+        for(let skill in pmcData.Skills.Common){
+          if(pmcData.Skills.Common[skill].Id == reward.target){
+            pmcData.Skills.Common[skill].Progress += parseInt(reward.value);
+            break;
+          }
         }
         /*	if we gonna use masterings increaser then yea ;)
         let masterings = pmcData.Skills.Mastering.filter(skill => skill.Id == reward.target);
