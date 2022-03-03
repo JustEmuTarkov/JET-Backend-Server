@@ -1,6 +1,14 @@
 "use strict";
 
 class Controller {
+  constructor() {
+    // ------------------------------------------------------------------
+    // Paulo: Note the amount of PMCs so we don't have a full map of them
+    this.numberOfPMCs = 0;
+    this.numberOfPMCsMax = 8; // TODO: This should coordinate with location maximum
+
+  }
+
   generatePlayerScav(sessionID) {
     let scavData = bots_f.botHandler.generate({ conditions: [{ Role: "playerScav", Limit: 1, Difficulty: "normal" }] }, sessionID);
     let scavItems = scavData[0].Inventory.items;
@@ -40,27 +48,58 @@ class Controller {
 
   generateBot(bot, role, pmcData) {
 
+    
     let node = [];
     //default
     node = global._database.bots[bot.Info.Settings.Role.toLowerCase()];
+    // console.log("generateBot::role");
+    // console.log(role);
+    if (role.toLowerCase() == "playerscav") {
+      bot.Info.Side = "Savage";
+      node = global._database.bots["assault"];
+    }
+    // -----------------------------------------------------------------------------
+    // Paulo: This allows the location json files to include "PmcBot" as a spawnable
+    else if (role.toLowerCase() == "pmcbot" && this.numberOfPMCs < this.numberOfPMCsMax) {
+      bot.Info.Side = pmcData.Info.Side;
+      node = global._database.bots[bot.Info.Side.toLowerCase()];
+      this.numberOfPMCs++;
+    }
+    else {
 
-    //pmc generation from Scavs
-    if (role.toLowerCase() == "assault") {
-      //50% chance of being a pmc
-      if (utility.getRandomBoolByPercent(50)) {
-        //if pmc
-        //50% chance of being usec or bear
-        if (utility.getRandomBoolByPercent(50)) {
-          bot.Info.Side = "Usec";
-          node = global._database.bots["usec"];
-        } else {
-          bot.Info.Side = "Bear";
-          node = global._database.bots["bear"];
+      bot.Info.Side = "Savage";
+      node = global._database.bots["assault"];
+    
+      // ------------------------------------------------------------------
+      // Paulo: Switch from Scav to PMC if enabled via Gameplay Config
+      // I would turn this OFF and use location spawning instead
+      var scavToPmcEnabled = global._database.gameplayConfig.bots.pmc.enabled;
+      if(scavToPmcEnabled && this.numberOfPMCs < this.numberOfPMCsMax) {
+
+        // Get Scav To Pmc Chance
+        var scavToPmcChance = 35;
+        if(global._database.gameplayConfig.bots.pmc.types.assault !== undefined) {
+          scavToPmcChance = global._database.gameplayConfig.bots.pmc.types.assault;
         }
-      } else {
-        //if scav
-        bot.Info.Side = "Savage";
-        node = global._database.bots["assault"];
+
+        // Determine whether to do it
+        if (utility.getRandomBoolByPercent(scavToPmcChance)) {
+          this.numberOfPMCs++;
+          var scavToPmcUsecChance = 50; 
+          if(global._database.gameplayConfig.bots.pmc.usecChance !== undefined) {
+            scavToPmcUsecChance = global._database.gameplayConfig.bots.pmc.usecChance;
+          }
+          // Ensure values are between 0-100
+          scavToPmcUsecChance = Math.min(100, scavToPmcUsecChance);
+          scavToPmcUsecChance = Math.max(0, scavToPmcUsecChance);
+          if (utility.getRandomBoolByPercent(scavToPmcUsecChance)) {
+            bot.Info.Side = "Usec";
+            node = global._database.bots["usec"];
+          } else {
+            bot.Info.Side = "Bear";
+            node = global._database.bots["bear"];
+          }
+        }
       }
     }
 
