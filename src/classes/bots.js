@@ -2,11 +2,6 @@
 
 class Controller {
   constructor() {
-    // ------------------------------------------------------------------
-    // Paulo: Note the amount of PMCs so we don't have a full map of them
-    this.numberOfPMCs = 0;
-    this.numberOfPMCsMax = 8; // TODO: This should coordinate with location maximum
-
   }
 
   generatePlayerScav(sessionID) {
@@ -60,10 +55,9 @@ class Controller {
     }
     // -----------------------------------------------------------------------------
     // Paulo: This allows the location json files to include "PmcBot" as a spawnable
-    else if (role.toLowerCase() == "pmcbot" && this.numberOfPMCs < this.numberOfPMCsMax) {
+    else if (role.toLowerCase() == "pmcbot") {
       bot.Info.Side = pmcData.Info.Side;
-      node = global._database.bots[bot.Info.Side.toLowerCase()];
-      this.numberOfPMCs++;
+      node = global._database.bots["pmcbot"];
     }
     else {
 
@@ -74,7 +68,7 @@ class Controller {
       // Paulo: Switch from Scav to PMC if enabled via Gameplay Config
       // I would turn this OFF and use location spawning instead
       var scavToPmcEnabled = global._database.gameplayConfig.bots.pmc.enabled;
-      if(scavToPmcEnabled && this.numberOfPMCs < this.numberOfPMCsMax) {
+      if(scavToPmcEnabled) {
 
         // Get Scav To Pmc Chance
         var scavToPmcChance = 35;
@@ -84,7 +78,6 @@ class Controller {
 
         // Determine whether to do it
         if (utility.getRandomBoolByPercent(scavToPmcChance)) {
-          this.numberOfPMCs++;
           var scavToPmcUsecChance = 50; 
           if(global._database.gameplayConfig.bots.pmc.usecChance !== undefined) {
             scavToPmcUsecChance = global._database.gameplayConfig.bots.pmc.usecChance;
@@ -168,8 +161,8 @@ class Controller {
       for (let i = 0; i < condition.Limit; i++) {
         let role = condition.Role.toLowerCase();
         let bot = utility.DeepCopy(global._database.core.botBase);
-        bot.Info.Side = "Savage";
-        bot.Info.Settings.Role = condition.Role;
+        // bot.Info.Side = "Savage";
+        // bot.Info.Settings.Role = condition.Role;
         bot.Info.Settings.BotDifficulty = condition.Difficulty;
 
         //regular generation
