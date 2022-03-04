@@ -1,6 +1,8 @@
 # building for kio since node v15 doesn't work :)
 node_runtime/
 build_with_runtime.bat
+main.exe
+JustEmuTarkov-*
 
 ## JustEmuTarkov - Server
 package-lock.json

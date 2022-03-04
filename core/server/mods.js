@@ -127,7 +127,8 @@ function loadMod(loadType)
 			for(const srcToExecute in mod.src)
 				if(mod.src[srcToExecute] == loadType){
 					logger.logDebug(`Executing Mod: ${modFolder}/${srcToExecute}`);
-					require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
+					// require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
+					require(process.cwd() + `/user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 		}
     }

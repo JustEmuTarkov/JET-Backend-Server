@@ -1,6 +1,6 @@
 class CertGenerator {
     constructor(){
-      this.certDir = internal.resolve(__dirname, "../../user/certs");
+      this.certDir = internal.resolve(process.cwd(), "./user/certs");
       this.certFile = internal.resolve(this.certDir, "cert.pem");
       this.keyFile = internal.resolve(this.certDir, "key.pem");
     }

@@ -227,7 +227,7 @@ class Server {
     logger.logInfo("[SoftRestart]: Reloading Database");
     global.mods_f.ResModLoad();
     const databasePath = "/src/functions/database.js";
-    require(executedDir + databasePath).load();
+    require(process.cwd() + databasePath).load();
     // will not be required if all data is loaded into memory
     logger.logInfo("[SoftRestart]: Re-initializing");
     account_f.handler.initialize();
@@ -243,7 +243,9 @@ class Server {
   start() {
     logger.logDebug("Loading Database...");
     const databasePath = "/src/functions/database.js";
-    require(executedDir + databasePath).load();
+    const executedDir = internal.process.cwd();
+    logger.logDebug(executedDir);
+    require(process.cwd() + databasePath).load();
 
     // will not be required if all data is loaded into memory
     logger.logDebug("Initialize account...")

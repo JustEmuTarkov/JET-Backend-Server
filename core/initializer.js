@@ -62,11 +62,11 @@ class Initializer {
   initializeCacheCallbacks() {
     
     this.cacheCallback = {};
-    let path = "./src/cache";
+    let path = global.executedDir + "./src/cache";
     let files = fileIO.readDir(path);
     for (let file of files) {
       let scriptName = "cache" + file.replace(".js", "");
-      this.cacheCallback[scriptName] = require("../src/cache/" + file).cache;
+      this.cacheCallback[scriptName] = require(path + file).cache;
     }
     logger.logSuccess("Create: Cache Callback");
     // execute cache callback
@@ -80,15 +80,7 @@ class Initializer {
     global.mods_f.ResModLoad(); // load Res Mods
     
   }
-  // initializeFunctionsFolder() {
-  //   const loadOrder = ["callbacks.js", "database.js", "response.js"];
-  //   for (let file of loadOrder) {
-  //     loadedModules += file.replace(".js", ", ");
-  //     let name = file.replace(".js", "").toLowerCase() + "_func"; // fixes the weaponbuilds.js file bug ... lol
-  //     global[name] = require(executedDir + "/src/classes/" + file);
-  //   }
-  // }
-
+ 
   /* load exception handler */
   initializeExceptions() {
     internal.process.on("uncaughtException", (error, promise) => {
@@ -115,7 +107,7 @@ class Initializer {
   /* load classes */
   initializeClasses() {
     logger.logSuccess("Create: Classes as global variables");
-    let path = executedDir + "/src/classes";
+    let path = global.executedDir + "/src/classes";
     //let files = fileIO.readDir(path);
     let loadedModules = "";
     const loadOrder = [
@@ -155,7 +147,7 @@ class Initializer {
     for (let file of loadOrder) {
       loadedModules += file.replace(".js", ", ");
       let name = file.replace(".js", "").toLowerCase() + "_f"; // fixes the weaponbuilds.js file bug ... lol
-      global[name] = require(executedDir + "/src/classes/" + file);
+      global[name] = require(global.executedDir + "/src/classes/" + file);
     }
     logger.logInfo("[Modules] " + loadedModules.slice(0, -2));
   }

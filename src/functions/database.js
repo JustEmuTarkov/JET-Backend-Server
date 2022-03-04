@@ -1,6 +1,7 @@
 "use strict";
 
 const { logger } = require("../../core/util/logger");
+const { cache } = require("../cache/routes");
 
 function _load_Globals() {
   _database.globals = fileIO.readParsed("./" + db.base.globals);
@@ -8,7 +9,7 @@ function _load_Globals() {
   if (typeof _database.globals.data != "undefined") _database.globals = _database.globals.data;
 }
 function _load_GameplayConfig() {
-  _database.gameplayConfig = fileIO.readParsed("./" + db.user.configs.gameplay);
+  _database.gameplayConfig = fileIO.readParsed("./user/configs/gameplay.json");
   _database.gameplay = _database.gameplayConfig;
 }
 function _load_BotsData() {
@@ -173,6 +174,9 @@ function _load_WeatherData() {
   }
 }
 exports.load = () => {
+
+  cache();
+
   logger.logDebug("Load: 'Core'");
   _load_CoreData();
   logger.logDebug("Load: 'Globals'");
