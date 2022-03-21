@@ -20,8 +20,8 @@
     "upx": "1.0.6"
   },
   "bin": "core/main.js",
-   "pkg": {
-    "scripts": [ "core/**/*.js" ],
-	"assets": [ "src/**/*.js" ] 
+  "pkg": {
+    "scripts": [ "core/**/*.js", "core/util/*.js" ],
+	  "assets": [ "core/**/*.js", "core/util/*.js" ] 
   }
 }

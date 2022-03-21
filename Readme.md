@@ -17,13 +17,14 @@ Run _build.bat which should do it all for you! If it doesn't its because I suck 
 
 ## Distribution
 Zip the following folders & files
+- core (this is likely unwanted but pkg is not handling this correctly yet)
 - db
 - docs
 - node_modules
 - res
 - src
 - user 
-JustEmuTarkov-win.exe
+- JustEmuTarkov-win.exe
 
 ## Changelog
 - alot of changes follow: [https://trello.com/b/U1vJDcHR/129-update](https://trello.com/b/U1vJDcHR/129-update)
