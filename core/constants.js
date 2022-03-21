@@ -1,6 +1,6 @@
 class Constants {
     constructor() {
-      this.ServerVersion = "1.2.0 v12.12-dev";
+      this.ServerVersion = "1.2.0";
     }
 }
 module.exports.struct = new Constants();
