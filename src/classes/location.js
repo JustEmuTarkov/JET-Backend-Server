@@ -549,8 +549,27 @@ class LocationLootGenerator {
       let data = DeepCopy(typeArray[i]);
 
       let changedIds = {};
+
+      if(typeof data.Items[0] == "string")
+      {
+        let randomPreset = data.Items[utility.getRandomInt(0, data.Items.length)];
+        if(!preset_f.handler.hasPreset(randomPreset))
+        {
+          return count;
+        }
+        let itemToSpawn = preset_f.handler.getPresets(randomPreset);
+          if(itemToSpawn != null)
+          {
+            let randomNum = utility.getRandomInt(0, itemToSpawn.length-1);
+            itemToSpawn = itemToSpawn[randomNum];
+            itemToSpawn = itemToSpawn._items;
+            data.Items = itemToSpawn;
+          }
+      }
+
       for (var item of data.Items) {
         let newId = utility.generateNewItemId();
+
         changedIds[item._id] = newId;
         if (item._id == data.Root) data.Root = newId;
         item._id = newId;
