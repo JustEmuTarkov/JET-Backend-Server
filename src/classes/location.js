@@ -103,6 +103,8 @@ const ItemParentsList = [
   "5448e5724bdc2ddf718b4568",
   "5422acb9af1c889c16000029",
 ];
+let LootModifiers = null;
+
 let _LootContainerNode = [];
 /*
 5cdeb229d7f00c000e7ce174 heavy machine gun
@@ -145,49 +147,51 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
   return containsSpawns;
 }
 
-function GetLootModifiers() {
-
+function GetLootModifiers() 
+{
   let modifierSuperRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
-    if(modifierSuperRare == undefined){
-      modifierSuperRare = 0.5;
-      logger.logWarning("Loot Modifier: Superrare: Couldn't find the config. Reset to 0.5.")
-    }
-    let modifierRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
-    if(modifierRare == undefined){
-      modifierRare = 0.6;
-      logger.logWarning("Loot Modifier: Rare: Couldn't find the config. Reset to 0.9.")
-    }
-    let modifierUnCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Uncommon;
-    if(modifierUnCommon == undefined){
-      modifierUnCommon = 0.85;
-      logger.logWarning("Loot Modifier: Uncommon: Couldn't find the config. Reset to 0.95.")
-    }
-    let modifierCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
-    if(modifierCommon == undefined){
-      modifierCommon = 0.95;
-      logger.logWarning("Loot Modifier: Common: Couldn't find the config. Reset to 0.95.")
-    }
-
+  if(modifierSuperRare == undefined){
+    modifierSuperRare = 0.5;
+    logger.logWarning("Loot Modifier: Superrare: Couldn't find the config. Reset to 0.5.")
+  }
+  let modifierRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
+  if(modifierRare == undefined){
+    modifierRare = 0.6;
+    logger.logWarning("Loot Modifier: Rare: Couldn't find the config. Reset to 0.9.")
+  }
+  let modifierUnCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Uncommon;
+  if(modifierUnCommon == undefined){
+    modifierUnCommon = 0.85;
+    logger.logWarning("Loot Modifier: Uncommon: Couldn't find the config. Reset to 0.95.")
+  }
+  let modifierCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
+  if(modifierCommon == undefined){
+    modifierCommon = 0.95;
+    logger.logWarning("Loot Modifier: Common: Couldn't find the config. Reset to 0.95.")
+  }
   return { modifierSuperRare : modifierSuperRare
     , modifierRare: modifierRare
     , modifierUnCommon: modifierUnCommon
     , modifierCommon: modifierCommon
    }
-
 }
 
 function FilterItemByLootExperience(
-    itemTemplate
-    , numberOfSuperrareRemoved
-    , numberOfRareRemoved
-    , numberOfUncommonRemoved
-    , numberOfCommonRemoved
-    ) 
+  itemTemplate, 
+  numberOfSuperrareRemoved, 
+  numberOfRareRemoved, 
+  numberOfUncommonRemoved, 
+  numberOfCommonRemoved
+  ) {
+    if(LootModifiers == null)
     {
-      const modifierSuperRare = GetLootModifiers().modifierSuperRare;
-      const modifierRare = GetLootModifiers().modifierRare;
-      const modifierUnCommon = GetLootModifiers().modifierUnCommon;
-      const modifierCommon = GetLootModifiers().modifierCommon;
+      // so its called only once!!!
+      LootModifiers = GetLootModifiers();
+    }
+    const modifierSuperRare = LootModifiers.modifierSuperRare;
+    const modifierRare = LootModifiers.modifierRare;
+    const modifierUnCommon = LootModifiers.modifierUnCommon;
+    const modifierCommon = LootModifiers.modifierCommon;
 
     if(itemTemplate._props.QuestItem == true)
       return true;
@@ -204,35 +208,31 @@ function FilterItemByLootExperience(
       // Electric Wires are 40. CPU 40.
       if(itemExperience >= 40 && Math.random() > modifierSuperRare - (numberOfSuperrareRemoved * 0.06)) {
         numberOfSuperrareRemoved++;
-    // console.log("superrare removed");
-
+        // console.log("superrare removed");
         return false;
       }
       // Hard Drives are 30. PSU 25. DVD 20. Keys around 20
       else if(itemExperience >= 20 && Math.random() > modifierRare - (numberOfRareRemoved * 0.04)) {
         numberOfRareRemoved++;
-    // console.log("rare removed");
-    return false;
+        // console.log("rare removed");
+        return false;
       } 
       else if(itemExperience >= 5 && Math.random() > modifierUnCommon - (numberOfUncommonRemoved * 0.04)) {
         numberOfUncommonRemoved++;
-    // console.log("uncommon removed");
-
+        // console.log("uncommon removed");
         return false;
       }
       else if(Math.random() > modifierCommon - (numberOfCommonRemoved * 0.01)) {
         numberOfCommonRemoved++;
-    // console.log("common removed");
-    return false;
+        // console.log("common removed");
+        return false;
       } 
     }
-
     return true;
-
 }
 
 function GenerateLootList(containerId) {
-  let LootList = {};
+  let LootList = [];
   // get static container loot pools
   let ItemList = global._database.locationConfigs.StaticLootTable[containerId];
 
@@ -270,11 +270,11 @@ function GenerateLootList(containerId) {
       // if(alreadyUsedItems.find(x=>x.Id == itemTemplate.Id) == undefined)
       // {
       //   alreadyUsedItems.push(itemTemplate);
-      LootList[item] = global._database.items[item];
+      // this is way faster :) mao
+      LootList.push(item);//[item] = global._database.items[item];
       // }
   }
-
-  logger.logSuccess("Loot Multiplier :: Number of Items Removed :: " + numberOfItemsRemoved);
+  logger.logDebug(`Loot Multiplier :: Number of Items Removed :: Total:${numberOfItemsRemoved} Common:${numberOfCommonRemoved} Uncommon:${numberOfUncommonRemoved} Rare:${numberOfRareRemoved} Superrare:${numberOfSuperrareRemoved}`);
   return LootList;
 }
 function FindIfItemIsAPreset(ID_TO_SEARCH) {
@@ -367,7 +367,7 @@ function _GenerateContainerLoot(_items) {
       return;
     }
   }
-  const LootList = GenerateLootList(ContainerId);
+  const LootListItems = GenerateLootList(ContainerId);
 
   const parentId = _items[0]._id;
   const idPrefix = parentId.substring(0, parentId.length - 4);
@@ -382,7 +382,7 @@ function _GenerateContainerLoot(_items) {
   // roll a maximum number of items  to spawn in the container between 0 and max slot count
   const minCount = _RollMaxItemsToSpawn(ContainerTemplate);
   //const rollSpawnChance = utility.getRandomInt(0, 10000); // roll between 0.00 and 100.00
-  let LootListItems = Object.keys(LootList);
+  //let LootListItems = Object.keys(LootList);
   //logger.logInfo(`SpawnItemInContainer: ${rollSpawnChance} | ${Object.keys(LootList).length}`)
   if (LootListItems.length != 0) {
 
@@ -404,7 +404,8 @@ function _GenerateContainerLoot(_items) {
       // add current rolled index
       indexRolled.push(RollIndex);
       // getting rolled item
-      const rolledRandomItemToPlace = LootList[LootListItems[RollIndex]];
+      //const rolledRandomItemToPlace = LootList[LootListItems[RollIndex]];
+      const rolledRandomItemToPlace = global._database.items[LootListItems[RollIndex]];
       // const itemExperience = rolledRandomItemToPlace._props.LootExperience + rolledRandomItemToPlace._props.ExamineExperience;
       
       if (rolledRandomItemToPlace === undefined) {
@@ -774,13 +775,13 @@ class LocationLootGenerator {
           continue;
 
         if(isQuestItem) {
-          console.log("~~Is Quest Item~~");
-          console.log(actualItem);
+          logger.logDebug("~~Is Quest Item~~");
+          logger.logDebug(actualItem);
         }
 
         if(isUnbuyable) {
-          console.log("~~Is Unbuyable~~");
-          console.log(actualItem);
+          logger.logDebug("~~Is Unbuyable~~");
+          logger.logDebug(actualItem);
         }
         
         const itemChance = itemSpawnChance * locationLootChanceModifier;
