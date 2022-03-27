@@ -832,16 +832,21 @@ class LocationLootGenerator {
 
       // Remove overlapping items by doing this simple check
       // if(!isAmmoBox && PresetData == null 
-      // if(PresetData == null 
-      //   && currentUsedPositions.find(x => 
-      //       round(x.x, 2) == round(lootData.Position.x, 2)
-      //       || round(x.y, 2) == round(lootData.Position.y, 2)
-      //       || round(x.z, 2) == round(lootData.Position.z, 2)
-      //     ) !== undefined
-      //   ) {
-      
-      // continue;
-      // }
+
+      let similarUsedPosition = currentUsedPositions.find(p => 
+        round(p.x, 3) == round(lootData.Position.x, 3)
+        && round(p.y, 3) == round(lootData.Position.y, 3)
+        && round(p.z, 3) == round(lootData.Position.z, 3)
+      );
+      if(PresetData == null 
+        && similarUsedPosition !== undefined
+        ) {
+
+      // console.log("filtering dynamic item due to location");
+      // console.log(lootData.Position);
+      // console.log(similarUsedPosition);
+      continue;
+      }
 
       let modifierDynamicChanceMin = 20;
       let modifierDynamicChanceMax = 99;
