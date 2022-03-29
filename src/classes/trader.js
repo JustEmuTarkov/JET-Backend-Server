@@ -76,9 +76,7 @@ function generateFenceAssort() {
   base.barter_scheme = barter_scheme;
   global._database.traders[fenceId].assort = base;
 }
-
-//used utility.DeepCopy instead
-/* // Deep clone (except for the actual items) from base assorts.
+// Deep clone (except for the actual items) from base assorts.
 function copyFromBaseAssorts(baseAssorts) {
   let newAssorts = {};
   newAssorts.items = [];
@@ -94,8 +92,7 @@ function copyFromBaseAssorts(baseAssorts) {
     newAssorts.loyal_level_items[loyalLevelItem] = baseAssorts.loyal_level_items[loyalLevelItem];
   }
   return newAssorts;
-} */
-
+}
 // delete assort keys
 function removeItemFromAssort(assort, itemID) {
   let ids_toremove = helper_f.findAndReturnChildrenByItems(assort.items, itemID);
@@ -146,46 +143,31 @@ class TraderServer {
     return global._database.traders[traderID].base;
   }
   saveTrader(traderId) {
-    let inputNodes = global._database.traders[traderId].assort
-    if (global._database.traders[traderId].assort.data != "undefined") {
-      inputNodes = global._database.traders[traderId].assort.data;
-    }
+    let inputNodes = fileIO.readParsed(db.traders[traderId].assort);
     let base = {
       err: 0,
       errmsg: null,
-      data: { nextResupply: 0, items: [], barter_scheme: {}, loyal_level_items: {} },
+      data: { items: [], barter_scheme: {}, loyal_level_items: {} },
     };
-
     for (let item in inputNodes) {
-
-      if (inputNodes[item].nextResupply != "undefined") {
-        base.data.nextResupply = inputNodes[item].nextResupply;
-      }
-
-      if (typeof inputNodes[item].items != "undefined") {
+      if (typeof inputNodes[item].items[0] != "undefined") {
         let ItemsList = inputNodes[item].items;
         ItemsList[0]["upd"] = {};
-        if (inputNodes[item].default.unlimited)
-          ItemsList[0].upd["UnlimitedCount"] = true;
+        if (inputNodes[item].default.unlimited) ItemsList[0].upd["UnlimitedCount"] = true;
         ItemsList[0].upd["StackObjectsCount"] = inputNodes[item].default.stack;
       }
       for (let assort_item in inputNodes[item].items) {
         base.data.items.push(inputNodes[item].items[assort_item]);
       }
-
       base.data.barter_scheme[item] = inputNodes[item].barter_scheme;
-
       base.data.loyal_level_items[item] = inputNodes[item].loyalty;
     }
 
-    global._database.traders[traderId].assort = base;
+    fileIO.write(`./user/cache/assort_${traderId}.json`, base, true, false);
   }
   setTraderBase(base) {
-    if (typeof global._database.traders[base._id] != "undefined") {
-      global._database.traders[base._id].base = base;
-    }
-    /*     if (typeof db.traders[base._id] != "undefined")
-          fileIO.write(db.traders[base._id].base, base, true, false); */
+    global._database.traders[base._id].base = base;
+    if (typeof db.traders[base._id] != "undefined") fileIO.write(db.traders[base._id].base, base, true, false);
   }
   getAllTraders(sessionID, keepalive = false) {
     //if (!keepalive) keepalive_f.updateTraders(sessionID);
@@ -220,20 +202,18 @@ class TraderServer {
     if (traderID === "579dc571d53a0658a154fbec" && !isBuyingFromFence) {
       // Fence
       // Lifetime in seconds
-      let fence_assort_lifetime =
-        global._database.gameplayConfig.trading.traderSupply[traderID];
+      let fence_assort_lifetime = global._database.gameplayConfig.trading.traderSupply[traderID];
 
       // Current time in seconds
-      let current_time = utility.getTimestamp();
-      let trader = this.getTrader(traderID);
+      let current_time = Math.floor(new Date().getTime() / 1000);
 
       // Initial Fence generation pass.
-      if (this.fence_generated_at === 0 || !this.fence_generated_at || trader.refreshAssort) {
+      if (this.fence_generated_at === 0 || !this.fence_generated_at) {
         this.fence_generated_at = current_time;
         generateFenceAssort();
       }
 
-      if (this.fence_generated_at + fence_assort_lifetime < current_time || trader.refreshAssort) {
+      if (this.fence_generated_at + fence_assort_lifetime < current_time) {
         this.fence_generated_at = current_time;
         logger.logInfo("We are regenerating Fence's assort.");
         generateFenceAssort();
@@ -245,61 +225,59 @@ class TraderServer {
     // global._database.traders[traderid].assort = tmp.data;
     // }
 
-    let trader = global._database.traders[traderID]
-    let baseAssorts = trader.assort;
-    if (trader.base.refreshAssort) trader.base.refreshAssort = false;
+    let baseAssorts = global._database.traders[traderID].assort;
 
     // Build what we're going to return.
-    let assorts = utility.DeepCopy(baseAssorts);
+    let assorts = copyFromBaseAssorts(baseAssorts);
 
-    // Fetch the current trader loyalty level
-    let pmcData = profile_f.handler.getPmcProfile(sessionID);
-    const TraderLevel = profile_f.getLoyalty(pmcData, traderID);
+    if (traderID !== "ragfair") {
+      let pmcData = profile_f.handler.getPmcProfile(sessionID);
+      const ProfileSaleSum = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].salesSum : 0;
+      const ProfileStanding = typeof pmcData.TradersInfo[traderID] != "undefined" ? pmcData.TradersInfo[traderID].standing : 0;
+      const ProfileLevel = pmcData.Info.Level;
+      let calcLevel = 0;
+      for (const loyaltyObject of global._database.traders[traderID].base.loyaltyLevels) {
+        if (ProfileLevel >= loyaltyObject.minLevel && ProfileStanding >= loyaltyObject.minStanding && ProfileSaleSum >= loyaltyObject.minSalesSum) {
+          calcLevel++;
+        }
+      }
+      if (calcLevel == 0) calcLevel = 1;
+      const TraderLevel = calcLevel;
 
-    if (TraderLevel !== "ragfair") {
       // 1 is min level, 4 is max level
       let questassort = { started: {}, success: {}, fail: {} };
-      if (typeof _database.traders[traderID] != "undefined") {
-        if (typeof _database.traders[traderID].questassort == "undefined") {
+      if (typeof db.traders[traderID] != "undefined") {
+        if (typeof db.traders[traderID].questassort == "undefined") {
           questassort = { started: {}, success: {}, fail: {} };
+        } else if (fileIO.exist(db.traders[traderID].questassort)) {
+          questassort = fileIO.readParsed(db.traders[traderID].questassort);
         }
-        questassort = _database.traders[traderID].questassort;
+      }
+
+      for (let key in baseAssorts.loyal_level_items) {
+        let requiredLevel = baseAssorts.loyal_level_items[key];
+        if (requiredLevel > TraderLevel) {
+          assorts = removeItemFromAssort(assorts, key);
+          continue;
+        }
+
+        if (key in questassort.started && quest_f.getQuestStatus(pmcData, questassort.started[key]) !== "Started") {
+          assorts = removeItemFromAssort(assorts, key);
+          continue;
+        }
+
+        if (key in questassort.success && quest_f.getQuestStatus(pmcData, questassort.success[key]) !== "Success") {
+          assorts = removeItemFromAssort(assorts, key);
+          continue;
+        }
+
+        if (key in questassort.fail && quest_f.getQuestStatus(pmcData, questassort.fail[key]) !== "Fail") {
+          assorts = removeItemFromAssort(assorts, key);
+        }
+      }
+    } else {
     }
-
-    for (let key in baseAssorts.loyal_level_items) {
-      let requiredLevel = baseAssorts.loyal_level_items[key];
-      if (requiredLevel > TraderLevel) {
-        assorts = removeItemFromAssort(assorts, key);
-        continue;
-      }
-
-      if (
-        key in questassort.started &&
-        quest_f.getQuestStatus(pmcData, questassort.started[key]) !==
-        "Started"
-      ) {
-        assorts = removeItemFromAssort(assorts, key);
-        continue;
-      }
-
-      if (
-        key in questassort.success &&
-        quest_f.getQuestStatus(pmcData, questassort.success[key]) !==
-        "Success"
-      ) {
-        assorts = removeItemFromAssort(assorts, key);
-        continue;
-      }
-
-      if (
-        key in questassort.fail &&
-        quest_f.getQuestStatus(pmcData, questassort.fail[key]) !== "Fail"
-      ) {
-        assorts = removeItemFromAssort(assorts, key);
-      }
-    }
-  }
-return assorts;
+    return assorts;
   }
   getCustomization(traderID, sessionID) {
     let pmcData = profile_f.handler.getPmcProfile(sessionID);
