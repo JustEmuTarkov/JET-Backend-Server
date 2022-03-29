@@ -2,6 +2,8 @@
 
 class Controller {
   constructor() {
+    this.usedBots = [];
+    this.usedNames = [];
   }
 
   generatePlayerScav(sessionID) {
@@ -45,30 +47,33 @@ class Controller {
 
     
     let node = [];
+
+    const loweredRole = role.toLowerCase();
     //default
     node = global._database.bots[bot.Info.Settings.Role.toLowerCase()];
     // console.log("generateBot::role");
-    // console.log(role);
-    if (role.toLowerCase() == "playerscav") {
+    console.log(role);
+    if (loweredRole == "playerscav") {
       bot.Info.Side = "Savage";
       node = global._database.bots["assault"];
     }
     // -----------------------------------------------------------------------------
     // Paulo: This allows the location json files to include "PmcBot" as a spawnable
-    else if (role.toLowerCase() == "pmcbot") {
+    else if (loweredRole == "pmcbot") {
       bot.Info.Side = pmcData.Info.Side;
       node = global._database.bots["pmcbot"];
     }
     else {
 
-      bot.Info.Side = "Savage";
-      node = global._database.bots["assault"];
+      // bot.Info.Side = "Savage";
+      // node = global._database.bots["assault"];
+      node = global._database.bots[loweredRole];
     
       // ------------------------------------------------------------------
       // Paulo: Switch from Scav to PMC if enabled via Gameplay Config
       // I would turn this OFF and use location spawning instead
       var scavToPmcEnabled = global._database.gameplayConfig.bots.pmc.enabled;
-      if(scavToPmcEnabled) {
+      if(loweredRole == "assault" && scavToPmcEnabled) {
 
         // Get Scav To Pmc Chance
         var scavToPmcChance = 35;
