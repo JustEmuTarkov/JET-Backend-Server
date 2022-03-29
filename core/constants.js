@@ -47,11 +47,12 @@ class Constants {
             "assault": 30,
             "marksman": 30,
             "pmcBot": 30,
-            "bossBully": 30,
-            "bossGluhar": 30,
-            "bossKilla": 30,
-            "bossKojaniy": 30,
-            "bossSanitar": 30,
+            "bossBully": 1,
+            "bossTagilla": 1,
+            "bossGluhar": 1,
+            "bossKilla": 1,
+            "bossKojaniy": 1,
+            "bossSanitar": 1,
             "followerBully": 30,
             "followerGluharAssault": 30,
             "followerGluharScout": 30,
@@ -61,7 +62,7 @@ class Constants {
             "followerSanitar": 30,
             "test": 30,
             "followerTest": 30,
-            "bossTest": 30
+            "bossTest": 1
           }
         },
         "trading": {
