@@ -103,6 +103,7 @@ class Responses {
       "/singleplayer/settings/raid/endstate": this.singleplayerSettingsRaidEndstate,
       "/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu,
       "/singleplayer/settings/bot/difficulty": this.singleplayerSettingsBotDifficulty,
+      "/singleplayer/settings/bot/maxCap": this.singleplayerSettingsBotMaxCap,
     };
     this.dynamicResponses = {
       "/client/locale": this.dynClientLocale,
@@ -732,6 +733,16 @@ class Responses {
     }
     return response_f.noBody(data);
     //bots_f.getBotDifficulty(type, difficulty)
+  }
+  singleplayerSettingsBotMaxCap(url, info, sessionID)
+  {
+    if(global._database.gameplayConfig.location.botMaxCap == undefined){
+      logger.logWarning(`A key in gameplay.json file called location.botMaxCap was not found. Setting max count to default 20.`)
+      return 20;
+    } else {
+      logger.logDebug(`Setting max bot count to ${global._database.gameplayConfig.location.botMaxCap}`);
+      return global._database.gameplayConfig.location.botMaxCap;
+    }
   }
 }
 module.exports.responses = new Responses();
