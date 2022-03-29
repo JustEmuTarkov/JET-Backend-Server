@@ -42,6 +42,8 @@ class Initializer {
     global.utility = require("./util/utility.js");
     global.logger = require("./util/logger.js").logger;
 
+    this.initializeConfigFileCheck();
+
     global.serverConfig = fileIO.readParsed("user/configs/server.json");
 
     global.mods = { toLoad: {}, config: {} };
@@ -57,6 +59,19 @@ class Initializer {
     global.events = require("./server/events.js");
     global.server = require("./server/server.js").server;
     
+  }
+
+  initializeConfigFileCheck()
+  {
+    if(!fileIO.exist("user/configs/server.json")){
+      fileIO.write("user/configs/server.json", global.core.constants.DefaultServerJson, false, false);
+    }
+    if(!fileIO.exist("user/configs/mods.json")){
+      fileIO.write("user/configs/mods.json", global.core.constants.DefaultModsJson, false, false);
+    }
+    if(!fileIO.exist("user/configs/gameplay.json")){
+      fileIO.write("user/configs/gameplay.json", global.core.constants.DefaultGameplayJson, false, false);
+    }
   }
 
   initializeCacheCallbacks() {
