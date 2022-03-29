@@ -22,9 +22,10 @@ class Controller {
     scavData[0].Info.Settings = {};
     return scavData[0];
   }
+  // this gets the amount of bots to be send per one request
   getBotLimit(type) {
-    if (typeof global._database.gameplayConfig.bots.limits[type === "cursedAssault" || type === "assaultGroup" ? "assault" : type] == "undefined") return 30;
-    return global._database.gameplayConfig.bots.limits[type === "cursedAssault" || type === "assaultGroup" ? "assault" : type];
+    if (typeof global._database.gameplayConfig.bots.amountSend[type === "cursedAssault" || type === "assaultGroup" ? "assault" : type] == "undefined") return 30;
+    return global._database.gameplayConfig.bots.amountSend[type === "cursedAssault" || type === "assaultGroup" ? "assault" : type];
   }
   getBotDifficulty(type, difficulty) {
     switch (type) {

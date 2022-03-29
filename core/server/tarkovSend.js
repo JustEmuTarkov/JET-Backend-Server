@@ -65,6 +65,13 @@ class TarkovSend {
             //this.tarkovSend.html(resp, output, "");
             return true;
         }
+        if (req.url.includes("/html/")) {
+            //make a different response for static html pages
+            // load html page represented by home_f
+            let output = router.getResponse(req, "", "");
+            this.html(resp, output, "");
+            return true;
+        }
         if (req.url == "/") {
             //home_f.processSaveData(body);
             // its hard to create a file `.js` in folder in windows cause it looks cancerous so we gonna write this code here
