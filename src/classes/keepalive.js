@@ -8,40 +8,31 @@ function main(sessionID) {
 }
 
 function updateTraders(sessionID) {
-  let update_per = 3600;
-  let timeNow = Math.floor(Date.now() / 1000);
-  dialogue_f.handler.removeExpiredItems(sessionID);
+  console.log(sessionID, "sessionID")
+  let hour = 3600;
+  //let test = 30
+  let timeNow = utility.getTimestamp();
+  let traders = global._database.traders;
 
-  // update each hour
-  let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID, true);
-  for (let i = 0; i < tradersToUpdateList.length; i++) {
-    if (tradersToUpdateList[i]._id == "ragfair") continue;
+  for (let trader in traders) {
+    if (traders[trader].base._id === "ragfair") continue;
+    let base = traders[trader].base;
+    let assort = traders[trader].assort;
+    console.log(base.nickname)
 
-    update_per = global._database.gameplayConfig.trading.traderSupply[tradersToUpdateList[i]._id];
-    if (tradersToUpdateList[i].nextResupply > timeNow) {
+    if (base.nextResupply > timeNow) {
       continue;
     }
-    tradersToUpdateList[i].nextResupply = timeNow + update_per;
-    logger.logInfo(`Updating trader[${tradersToUpdateList[i]._id}] supply time data to ${tradersToUpdateList[i].nextResupply}`);
-    trader_f.handler.setTraderBase(tradersToUpdateList[i]);
-    if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") continue;
+    base.refreshAssort = true;
+    base.nextResupply = timeNow + hour;
+    assort.nextResupply = base.nextResupply;
 
-    if (typeof db.traders[tradersToUpdateList[i]._id] == "undefined") return;
-    let assort = fileIO.readParsed(db.traders[tradersToUpdateList[i]._id].assort);
-
-    for (let assortItem in assort) {
-      if (typeof assort[assortItem].default == "undefined") {
-        logger.logWarning(`Unable to find item assort default for scheme: ${assortItem} and trader: ${tradersToUpdateList[i]._id}`);
-        continue;
-      }
-
-      assort[assortItem].currentStack = assort[assortItem].default.stack;
-    }
-
-    fileIO.write(db.traders[tradersToUpdateList[i]._id].assort, assort, true, false);
-
-    trader_f.handler.saveTrader(tradersToUpdateList[i]._id);
+    global._database.traders[trader].base = base
   }
+
+  dialogue_f.handler.removeExpiredItems(sessionID);
+
+  return true;
 }
 
 function updatePlayerHideout(sessionID) {

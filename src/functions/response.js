@@ -159,6 +159,7 @@ class Responses {
   dynClientTradingApiGetTraderAssort(url, info, sessionID) {
     let TraderID = url.split("/");
     TraderID = TraderID[TraderID.length - 1];
+    keepalive_f.updateTraders(sessionID);
     return response_f.getBody(trader_f.handler.getAssort(sessionID, TraderID));
   }
   dynClientTradingApiGetUserAssortPriceTrader(url, info, sessionID) {
