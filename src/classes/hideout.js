@@ -186,7 +186,7 @@ module.exports.upgrade = (pmcData, body, sessionID) => {
       return;
     }
     // check if item has StackObjectsCount property
-    if (itemFromInventory.upd.hasOwnProperty("StackObjectsCount")) {
+    if (itemFromInventory.hasOwnProperty("upd") && itemFromInventory.upd.hasOwnProperty("StackObjectsCount")) {
       // now check if we should substract the amount or just delete the item...
       if (itemFromInventory.upd.StackObjectsCount > itemToPay.count) {
         itemFromInventory.upd.StackObjectsCount -= itemToPay.count;

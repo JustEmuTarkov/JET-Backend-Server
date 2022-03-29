@@ -2,22 +2,6 @@
  "forced": [],
  "mounted": [
   {
-   "id": "SW_00000",
-   "Position": 0,
-   "Rotation": 0,
-   "Items": ["5cdeb229d7f00c000e7ce174"],
-   "IsStatic": true,
-   "useGravity": true
-  },
-  {
-   "id": "SW_00001",
-   "Position": 0,
-   "Rotation": 0,
-   "Items": ["5cdeb229d7f00c000e7ce174"],
-   "IsStatic": true,
-   "useGravity": true
-  },
-  {
    "id": "ID_AGS2",
    "Position": 0,
    "Rotation": 0,
