@@ -57,7 +57,7 @@ function _load_ItemsData() {
   _database.templates = fileIO.readParsed("./" + db.user.cache.templates);
   if (typeof _database.templates.data != "undefined") _database.templates = _database.templates.data;
 
-  let itemHandbook = fileIO.readParsed("./" + db.templates.items)
+  let itemHandbook = _database.templates.Items;
   _database.itemPriceTable = {};
   for(let item of itemHandbook)
   {
