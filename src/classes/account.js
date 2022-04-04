@@ -1,7 +1,5 @@
 "use strict";
 
-const { logger } = require("../../core/util/logger");
-
 /**
  * AccountServer class maintains list of accounts in memory. All account information should be
  * loaded during server init.
