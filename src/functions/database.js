@@ -1,6 +1,5 @@
 "use strict";
 
-const { logger } = require("../../core/util/logger");
 const { cache } = require("../cache/routes");
 
 function _load_Globals() {
@@ -67,27 +66,23 @@ function _load_ItemsData() {
 
 }
 function _load_HideoutData() {
-  if (!_database.hideout) _database.hideout = {};
+
+  _database.hideout = { settings: {}, areas: [], production: [], scavcase: []};
 
   _database.hideout.settings = fileIO.readParsed("./" + db.hideout.settings);
   if (typeof _database.hideout.settings.data != "undefined") {
     _database.hideout.settings = _database.hideout.settings.data;
   }
-
-  _database.hideout.areas = fileIO.readParsed("./" + db.user.cache.hideout_areas);
-  if (typeof _database.hideout.areas.data != "undefined") {
-    _database.hideout.areas = _database.hideout.areas.data;
+  for(let area in db.hideout.areas){
+    _database.hideout.areas.push(fileIO.readParsed("./" + db.hideout.areas[area]));
+  }
+  for(let production in db.hideout.production){
+    _database.hideout.production.push(fileIO.readParsed("./" + db.hideout.production[production]));
+  }
+  for(let scavcase in db.hideout.scavcase){
+    _database.hideout.scavcase.push(fileIO.readParsed("./" + db.hideout.scavcase[scavcase]));
   }
 
-  _database.hideout.production = fileIO.readParsed("./" + db.user.cache.hideout_production);
-  if (typeof _database.hideout.production.data != "undefined") {
-    _database.hideout.production = _database.hideout.production.data;
-  }
-
-  _database.hideout.scavcase = fileIO.readParsed("./" + db.user.cache.hideout_scavcase);
-  if (typeof _database.hideout.scavcase.data != "undefined") {
-    _database.hideout.scavcase = _database.hideout.scavcase.data;
-  }
   // apply production time divider
   for (let id in _database.hideout.areas) {
     for (let id_stage in _database.hideout.areas[id].stages) {
@@ -109,36 +104,133 @@ function _load_HideoutData() {
   }
 }
 function _load_QuestsData() {
-  _database.quests = fileIO.readParsed("./" + db.user.cache.quests);
-  if (typeof _database.quests.data != "undefined") _database.quests = _database.quests.data;
+  // this should load quests depending on file content if its single quest it will be pushed to the list
+  // if its quests array containing more then 1 quest it will be loaded as for loop push 
+  // unless database quests array is empty then it will just everride the empty array
+  _database.quests = [];
+  for(let quest in db.quests){
+    let questData = fileIO.readParsed("./" + db.quests[quest]);
+    if(typeof questData.length != "undefined"){
+      if(_database.quests.length == 0)
+      {
+        _database.quests = questData;
+      } else {
+        for(let q in questData)
+        {
+          _database.quests.push(questData[q]);
+        }
+      }
+		} else {
+			_database.quests.push(questData);
+		}
+  }
 }
 function _load_CustomizationData() {
-  _database.customization = fileIO.readParsed("./" + db.user.cache.customization);
-  if (typeof _database.customization.data != "undefined") _database.customization = _database.customization.data;
+  _database.customization = {};
+  for (let file in db.customization) {
+    let data = fileIO.readParsed(db.customization[file]);
+    // make sure it has _id so we gonna use that
+		if(Object.keys(data)[0].length == 24)
+    {
+			for(let q in data)
+			{
+				_database.customization[q] = data[q];
+			}
+		} else {
+      // if sile doesnt contain _id use file name
+			_database.customization[file] = data;
+		}
+  }
 }
 function _load_LocaleData() {
-  _database.languages = fileIO.readParsed("./" + db.user.cache.languages);
+/*
+  folder structure must be always like this
+
+  db.locales: {
+    en: [
+      en.json,
+      locale.json,
+      menu.json
+    ]
+  }
+  tag of folder need to match the tag in first file
+*/
+  _database.languages = [];
   _database.locales = { menu: {}, global: {} };
-  for (let lang in db.locales) {
-    let menuFile = fileIO.exist(db.user.cache["locale_menu_" + lang.toLowerCase()]) ? db.user.cache["locale_menu_" + lang.toLowerCase()] : db.locales[lang].menu;
 
-    _database.locales.menu[lang] = fileIO.readParsed("./" + menuFile);
-    if (typeof _database.locales.menu[lang].data != "undefined") {
-      _database.locales.menu[lang] = _database.locales.menu[lang].data;
-    }
-
-    _database.locales.global[lang] = fileIO.readParsed("./" + db.user.cache["locale_" + lang.toLowerCase()]);
-    if (typeof _database.locales.global[lang].data != "undefined") {
-      _database.locales.global[lang] = _database.locales.global[lang].data;
-    }
+  for(let langTag of db.locales){
+    langTag = langTag.toLowerCase(); // make sure its always lower case
+    _database.languages.push(fileIO.readParsed("./" + db.locales[langTag][langTag]));
+    _database.locales.menu[langTag] = fileIO.readParsed("./" + db.locales[langTag].menu);
+    _database.locales.global[langTag] = fileIO.readParsed("./" + db.locales[langTag].locale);
   }
 }
-function _load_LocationData() {
-  var _locations = fileIO.readParsed("./" + db.user.cache.locations);
-  _database.locations = {};
-  for (let _location in _locations) {
-    _database.locations[_location] = _locations[_location];
+
+function Create_LootGameUsableStruct(item_data, Type){
+	let isStatic = false;
+	let useGravity = false;
+	let randomRotation = false;
+	let position = {x:0,y:0,z:0};
+	let rotation = {x:0,y:0,z:0};
+	let IsGroupPosition = false;
+	let GroupPositions = [];
+	
+	if(typeof item_data.IsStatic != "undefined")
+		isStatic = item_data.IsStatic;
+	if(typeof item_data.useGravity != "undefined")
+		useGravity = item_data.useGravity;
+	if(typeof item_data.randomRotation != "undefined")
+		randomRotation = item_data.randomRotation;
+
+	if(item_data.Position != 0 && item_data.Position != "0")
+	{
+		position.x = item_data.Position.x;
+		position.y = item_data.Position.y;
+		position.z = item_data.Position.z;
+	}
+	if(item_data.Rotation != 0 && item_data.Rotation != "0")
+	{
+		rotation.x = item_data.Rotation.x;
+		rotation.y = item_data.Rotation.y;
+		rotation.z = item_data.Rotation.z;
+	}
+	if(typeof item_data.IsGroupPosition != "undefined"){
+		IsGroupPosition = item_data.IsGroupPosition;
+		GroupPositions = item_data.GroupPositions;
+	}
+  let structure = {
+		"Id": item_data.id,
+		"IsStatic": isStatic,
+		"useGravity": useGravity,
+		"randomRotation": randomRotation,
+		"Position": position,
+		"Rotation": rotation,
+		"IsGroupPosition": IsGroupPosition,
+		"GroupPositions": GroupPositions,
+		"Items": item_data.Items
+	};
+  if(Type == "static" || Type == "mounted"){
+    const Root = typeof item_data.Items[0] == "string" ? item_data.id : item_data.Items[0]._id;
+    structure["Root"] = Root;
   }
+	return structure;
+}
+function _load_LocationData() {
+
+  for (let name in db.locations.base) {
+		let _location = { "base": {}, "loot": {}};
+		_location.base = fileIO.readParsed(db.locations.base[name]);
+		_location.loot = {forced: [], mounted: [], static: [], dynamic: []};
+		if(typeof db.locations.loot[name] != "undefined"){
+			let loot_data = fileIO.readParsed(db.locations.loot[name]);
+			for(let type in loot_data){
+				for(item of loot_data[type]){
+					_location.loot[type].push(Create_LootGameUsableStruct(item))
+				}
+			}
+		}
+		_database.locations[name] = _location;
+	}
   _database.core.location_base = fileIO.readParsed("./" + db.base.locations);
   _database.locationConfigs = {};
   _database.locationConfigs["StaticLootTable"] = fileIO.readParsed("./" + db.locations.StaticLootTable);
@@ -151,7 +243,9 @@ function _load_TradersData() {
     _database.traders[traderID].base = fileIO.readParsed("./" + db.traders[traderID].base);
     _database.traders[traderID].categories = fileIO.readParsed("./" + db.traders[traderID].categories);
     _database.traders[traderID].base.sell_category = _database.traders[traderID].categories; // override trader categories
+
     _database.traders[traderID].assort = fileIO.readParsed("./" + db.user.cache["assort_" + traderID]);
+
     if (typeof _database.traders[traderID].assort.data != "undefined") _database.traders[traderID].assort = _database.traders[traderID].assort.data;
     if (_database.traders[traderID].base.repair.price_rate === 0) {
       _database.traders[traderID].base.repair.price_rate = 100;
