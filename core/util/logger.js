@@ -62,7 +62,13 @@ class Logger {
         setColors += colorData[i][colors[i]];
       }
     }
-    let deltaTime = serverConfig.debugTimer ? "[" + ((new Date().getTime() - global.startTimestamp) / 1000).toFixed(2) + "s] " : " ";
+
+    let date = new Date().toISOString().
+      replace(/T/, ' ').
+      replace(/\..+/, '');
+
+    let deltaTime = serverConfig.debugTimer ? "[" + date + "] " : " ";
+
     // print data
     if (colors[0] !== "" || colors[1] !== "") {
       if (type != "" && type != "LogData") console.log(setColors + type + "\x1b[0m" + deltaTime + data);

@@ -243,7 +243,7 @@ class HealthServer {
     for (let key of BodyPartKeys) {
       let bodyPart = info.difference.BodyParts[key];
       healthInfo.Health[key] = {};
-      healthInfo.Health[key].Current = Math.round(pmcData.Health.BodyParts[key].Health.Current + bodyPart.Health);
+      healthInfo.Health[key].Current = ~~(pmcData.Health.BodyParts[key].Health.Current + bodyPart.Health);
 
       if ("Effects" in bodyPart && bodyPart.Effects != undefined && bodyPart.Effects != null) {
         healthInfo.Health[key].Effects = bodyPart.Effects;
@@ -304,7 +304,7 @@ class HealthServer {
       if (item !== "Hydration" && item !== "Energy") {
         /* set body part health */
         pmcData.Health.BodyParts[item].Health.Current =
-          nodeHealth[item] <= 0 ? Math.round(pmcData.Health.BodyParts[item].Health.Maximum * global._database.gameplayConfig.inraid.saveHealthMultiplier) : nodeHealth[item];
+          nodeHealth[item] <= 0 ? ~~(pmcData.Health.BodyParts[item].Health.Maximum * global._database.gameplayConfig.inraid.saveHealthMultiplier) : nodeHealth[item];
       } else {
         /* set resources */
         pmcData.Health[item].Current = nodeHealth[item];
@@ -330,7 +330,7 @@ class HealthServer {
       });
     });
 
-    pmcData.Health.UpdateTime = Math.round(Date.now() / 1000);
+    pmcData.Health.UpdateTime = ~~(Date.now() / 1000);
 
     this.initializeHealth(sessionID);
   }

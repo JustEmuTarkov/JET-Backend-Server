@@ -26,7 +26,7 @@ function generate() {
     let date = utility.formatDate(newDateObj);
     let datetime = `${date} ${time}`;
 
-    output.weather.timestamp = Math.floor(newDateObj / 1000);
+    output.weather.timestamp = ~~(newDateObj / 1000);
     output.weather.date = date;
     output.weather.time = datetime;
     output.date = date;

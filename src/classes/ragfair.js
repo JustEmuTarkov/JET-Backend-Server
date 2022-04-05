@@ -162,6 +162,9 @@ function getOffers(sessionID, request) {
   }
 
   for (let item of itemsToAdd) {
+    if (global._database.blacklist.includes(item)) {
+        continue;
+    }
     // Mao: shouldnt it be offers.push() ??
     offers = offers.concat(createOffer(item, request.onlyFunctional, request.buildCount === 0));
   }

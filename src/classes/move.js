@@ -566,9 +566,9 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
         // split stacks if the size is higher than allowed by StackMaxSize
         if (baseItem.count > tmpItem._props.StackMaxSize) {
           let count = baseItem.count;
-          let calc = baseItem.count - Math.floor(baseItem.count / tmpItem._props.StackMaxSize) * tmpItem._props.StackMaxSize;
+          let calc = baseItem.count - ~~(baseItem.count / tmpItem._props.StackMaxSize) * tmpItem._props.StackMaxSize;
 
-          MaxStacks = calc > 0 ? MaxStacks + Math.floor(count / tmpItem._props.StackMaxSize) : Math.floor(count / tmpItem._props.StackMaxSize);
+          MaxStacks = calc > 0 ? MaxStacks + ~~(count / tmpItem._props.StackMaxSize) : ~~(count / tmpItem._props.StackMaxSize);
 
           for (let sv = 0; sv < MaxStacks; sv++) {
             if (count > 0) {

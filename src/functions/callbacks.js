@@ -27,7 +27,7 @@ class Callbacks {
 	}
 	receiveSave(sessionID, req, resp, body, output)
 	{
-		if (global._database.gameplayConfig.autosave.saveOnReceive) {
+		if (global._database.clusterConfig.saveOnReceive) {
 			savehandler_f.saveOpenSessions();
 		}
 	}

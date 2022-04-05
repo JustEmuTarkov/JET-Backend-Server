@@ -1,7 +1,7 @@
 "use strict";
 
 function initialize() {
-	if (global._database.gameplayConfig.autosave.saveOnExit) {
+	if (global._database.clusterConfig.autoSaveOnExit) {
 		internal.process.on('exit', (code) => {
 			savehandler_f.saveOpenSessions();
 		});
@@ -13,11 +13,11 @@ function initialize() {
 		});
 	}
 	
-	if (global._database.gameplayConfig.autosave.saveIntervalSec > 0) {
+	if (global._database.clusterConfig.autoSaveInterval > 0) {
         setInterval(function() {
             savehandler_f.saveOpenSessions();
-            logger.logInfo(`Player progress autosaved! [Interval: ${global._database.gameplayConfig.autosave.saveIntervalSec} seconds]`);
-        }, global._database.gameplayConfig.autosave.saveIntervalSec * 1000);
+            logger.logInfo(`Player progress autosaved! [Interval: ${global._database.clusterConfig.autoSaveInterval} seconds]`);
+        }, global._database.clusterConfig.autoSaveInterval * 1000);
     }
 }
 

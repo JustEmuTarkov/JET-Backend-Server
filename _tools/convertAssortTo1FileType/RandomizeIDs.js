@@ -45,15 +45,15 @@ function makeSign(Length) {
     let charactersLength = characters.length;
     
     for (let i = 0; i < Length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(~~(Math.random() * charactersLength));
     }
     
     return result;
 }
 function getRandomInt(min = 0, max = 100) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return (max > min) ? Math.floor(Math.random() * (max - min + 1) + min) : min;
+    min = ~~(min);
+    max = ~~(max);
+    return (max > min) ? ~~(Math.random() * (max - min + 1) + min) : min;
 }
 
 var folders = fs.readdirSync("./traders");

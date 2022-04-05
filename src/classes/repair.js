@@ -25,7 +25,7 @@ exports.main = (pmcData, body, sessionID) => {
         }
 
         // updated repair cost to match with Repair window, taking into account loyalty levels
-        // using Math.floor to match repair window
+        // using ~~ to match repair window
         const repairCost = ~~(global._database.items[itemToRepair._tpl]._props.RepairCost * repairItem.count * coef);
         logger.logInfo("repCost: " + repairCost);//just to make sure we spend what the repair window say.
 

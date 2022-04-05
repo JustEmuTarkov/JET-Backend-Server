@@ -244,7 +244,7 @@ exports.makeSign = (Length) => {
     let charactersLength = characters.length;
     
     for (let i = 0; i < Length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(~~(Math.random() * charactersLength));
     }
     
     return result;
@@ -283,9 +283,9 @@ exports.generateNewId = (prefix = "", useOld = false) => {
 }
 // secondsToTime
 exports.secondsToTime = (timestamp) =>{
-    timestamp = Math.round(timestamp);
-    let hours = Math.floor(timestamp / 60 / 60);
-    let minutes = Math.floor(timestamp / 60) - (hours * 60);
+    timestamp = ~~(timestamp);
+    let hours = ~~(timestamp / 60 / 60);
+    let minutes = ~~(timestamp / 60) - (hours * 60);
     let seconds = timestamp % 60;
 
     if( minutes < 10 ){ minutes = "0" + minutes}

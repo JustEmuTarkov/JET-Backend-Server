@@ -9,7 +9,7 @@ function main(sessionID) {
 
 function updateTraders(sessionID) {
   let update_per = 3600;
-  let timeNow = Math.floor(Date.now() / 1000);
+  let timeNow = ~~(Date.now() / 1000);
   dialogue_f.handler.removeExpiredItems(sessionID);
 
   // update each hour
@@ -94,7 +94,7 @@ function updatePlayerHideout(sessionID) {
       prod == "5dd129295a9ae32efe41a367" ||
       prod == "5e074e5e2108b14e1c62f2a7"
     ) {
-      let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
+      let time_elapsed = ~~(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
       pmcData.Hideout.Production[prod].Progress += time_elapsed;
     }
 
@@ -107,7 +107,7 @@ function updatePlayerHideout(sessionID) {
         if (pmcData.Hideout.Production[prod].RecipeId == "5d5c205bd582a50d042a3c0e") {
           pmcData.Hideout.Production[prod] = updateBitcoinFarm(pmcData.Hideout.Production[prod], recipe, btcFarmCGs, isGeneratorOn, pmcData);
         } else {
-          let time_elapsed = Math.floor(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
+          let time_elapsed = ~~(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
           if (needGenerator == true && isGeneratorOn == false) {
             time_elapsed = time_elapsed * 0.2;
           }
@@ -138,7 +138,7 @@ function updateWaterFilters(pmcData, area) {
       } else {
         resourceValue -= decreaseValue;
       }
-      resourceValue = Math.round(resourceValue * 10000) / 10000;
+      resourceValue = ~~(resourceValue * 10000) / 10000;
 
       if (resourceValue > 0) {
         waterFilterArea.slots[i].item[0].upd = {
@@ -181,7 +181,7 @@ function updateFuel(pmcData, solarPower, area) {
       } else {
         resourceValue -= decreaseFuel;
       }
-      resourceValue = Math.round(resourceValue * 10000) / 10000;
+      resourceValue = ~~(resourceValue * 10000) / 10000;
 
       if (resourceValue > 0) {
         generatorArea.slots[i].item[0].upd = {
@@ -229,7 +229,7 @@ function updateAirFilters(pmcData, area) {
       } else {
         resourceValue -= decreaseValue;
       }
-      resourceValue = Math.round(resourceValue * 10000) / 10000;
+      resourceValue = ~~(resourceValue * 10000) / 10000;
 
       if (resourceValue > 0) {
         airFilterArea.slots[i].item[0].upd = {
@@ -261,7 +261,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
   }
 
   const production = global._database.hideout.production.find((prodArea) => prodArea.areaType == 20);
-  const time_elapsed = Math.floor(Date.now() / 1000) - btcProd.StartTimestamp;
+  const time_elapsed = ~~(Date.now() / 1000) - btcProd.StartTimestamp;
 
   if (isGeneratorOn == true) {
     btcProd.Progress += time_elapsed;

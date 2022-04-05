@@ -227,7 +227,7 @@ function cost(info, sessionID) {
 
         for (let key of info.items) {
             try {
-                traderItems[inventoryItemsHash[key]._tpl] = Math.round(getPremium(pmcData, inventoryItemsHash[key], trader));
+                traderItems[inventoryItemsHash[key]._tpl] = ~~(getPremium(pmcData, inventoryItemsHash[key], trader));
             } catch (e) {
                 logger.logError("Anomalies in the calculation of insurance prices");
                 logger.logError("InventoryItemId:" + key);

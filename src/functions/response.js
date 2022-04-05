@@ -3,6 +3,7 @@ class Responses {
     this.staticResponses = {
       // NEW REQUESTS
       "/client/repeatalbeQuests/activityPeriods": this.clientRepeatableQuestsActivityPeriods,
+      "/singleplayer/settings/bot/maxCap": this.singleplayerSettingsBotMaxCap,
       // CORE REQUESTS
       "/client/account/customization": this.clientAccountCustomization,
       "/client/chatServer/list": this.clientChatServerList,
@@ -128,6 +129,10 @@ class Responses {
     };
   }
   //dynamic
+  singleplayerSettingsBotMaxCap(url, info, sessionID) {
+    return "20"; //random response, needs to be handled
+  }
+  
   dynApiLocation(url, info, sessionID) {
     // if (url.includes("factory4_day")) { return response_f.noBody(fileIO.readParsed(db.locations_test.factory4_day1).Location); }
     return response_f.noBody(location_f.handler.get(url.replace("/api/location/", ""), sessionID));
@@ -159,6 +164,7 @@ class Responses {
   dynClientTradingApiGetTraderAssort(url, info, sessionID) {
     let TraderID = url.split("/");
     TraderID = TraderID[TraderID.length - 1];
+    keepalive_f.updateTraders(sessionID);
     return response_f.getBody(trader_f.handler.getAssort(sessionID, TraderID));
   }
   dynClientTradingApiGetUserAssortPriceTrader(url, info, sessionID) {
@@ -198,7 +204,7 @@ class Responses {
     const splittedUrl = url.split("/");
     const type = splittedUrl[splittedUrl.length - 2].toLowerCase();
     const difficulty = splittedUrl[splittedUrl.length - 1];
-    process.stdout.write(`${type}[${difficulty}] `);
+    //process.stdout.write(`${type}[${difficulty}] `);
     return response_f.noBody(bots_f.getBotDifficulty(type, difficulty));
   }
   dynSingleplayerSettingsBotLimit(url, info, sessionID) {
@@ -228,7 +234,7 @@ class Responses {
       {
         _id: "5ae20a0dcb1c13123084756f",
         RegistrationId: 20,
-        DateTime: Math.floor(new Date() / 1000),
+        DateTime: ~~(new Date() / 1000),
         IsDeveloper: true,
         Regions: ["EUR"],
         VersionId: "bgkidft87ddd",
@@ -334,7 +340,7 @@ class Responses {
 
     return response_f.getBody({
       status: 0,
-      nicknamechangedate: Math.floor(new Date() / 1000),
+      nicknamechangedate: ~~(new Date() / 1000),
     });
   }
   clientGameProfileNicknameReserved(url, info, sessionID) {
@@ -395,25 +401,21 @@ class Responses {
     return response_f.nullResponse();
   }
   clientGameStart(url, info, sessionID) {
-    let accounts = account_f.handler.getList();
-    for (let account in accounts) {
-      if (account == sessionID) {
-        if (!fileIO.exist("user/profiles/" + sessionID + "/character.json")) logger.logWarning("New account login!");
-        return response_f.getBody({utc_time: Date.now() / 1000}, 0, null);
-      }
+    if (account_f.handler.clientHasProfile(sessionID)) {
+      return response_f.getBody({ utc_time: Date.now() / 1000 }, 0, null);
+    } else {
+      return response_f.getBody({ utc_time: Date.now() / 1000 }, 999, "Profile Not Found!!");
     }
-    return response_f.getBody(null, 999, "Profile Not Found!!");
   }
   clientGameVersionValidate(url, info, sessionID) {
     logger.logInfo("User connected with client version " + info.version.major);
     return response_f.nullResponse();
   }
   clientGetMetricsConfig(url, info, sessionID) {
-    return response_f.getBody(fileIO.readParsed(db.base.matchMetrics));
+    return response_f.getBody(_database.core.matchMetrics);
   }
   clientGlobals(url, info, sessionID) {
-    global._database.globals.time = Date.now() / 1000;
-    return response_f.getBody(global._database.globals);
+    return response_f.getBody(globals_f.getGlobals(url, info, sessionID));
   }
   clientHandbookBuildsMyList(url, info, sessionID) {
     return response_f.getBody(weaponbuilds_f.getUserBuilds(sessionID));
@@ -567,6 +569,7 @@ class Responses {
     return response_f.getBody([
       {
         profileid: "scav" + sessionID,
+        profileToken: null,
         status: "Free",
         sid: "",
         ip: "",
@@ -574,6 +577,7 @@ class Responses {
       },
       {
         profileid: "pmc" + sessionID,
+        profileToken: null,
         status: "Free",
         sid: "",
         ip: "",
@@ -630,6 +634,7 @@ class Responses {
   launcherProfileGet(url, info, sessionID) {
     let accountId = account_f.handler.login(info);
     let output = account_f.handler.find(accountId);
+    output['server'] = server.name;
     return fileIO.stringify(output);
   }
   launcherProfileLogin(url, info, sessionID) {
@@ -685,7 +690,7 @@ class Responses {
   }
   serverConfigGameplay(url, body, sessionID) {
     //execute data save here with info cause info should be $_GET transfered to json type with info[variableName]
-    home_f.processSaveData(body, db.user.configs.gameplay);
+    home_f.processSaveData(body, global._database.gameplay);
     return home_f.RenderGameplayConfigPage("/server/config/gameplay");
   }
   serverConfigMods(url, body, sessionID) {
@@ -694,11 +699,6 @@ class Responses {
   }
   serverConfigProfiles(url, body, sessionID) {
     return home_f.renderPage();
-
-    //Load Profiles from profile folder and allow user for few changes for them
-
-    //home_f.processSaveData(body, db.user.configs.gameplay);
-    //return home_f.RenderGameplayConfigPage("/server/config/gameplay");
   }
   serverConfigServer(url, body, sessionID) {
     home_f.processSaveServerData(body, db.user.configs.server);
@@ -730,7 +730,6 @@ class Responses {
       }
     }
     return response_f.noBody(data);
-    //bots_f.getBotDifficulty(type, difficulty)
   }
 }
 module.exports.responses = new Responses();

@@ -2,6 +2,6 @@
     "autoSaveEnabled": true,
     "autoSaveOnExit": true,
     "autoSaveOnReceive": true,
-    "autoSaveInterval": 10,
+    "autoSaveInterval": 1000,
     "autoSaveAllowedSkips": 360
 }

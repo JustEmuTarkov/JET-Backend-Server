@@ -5,6 +5,14 @@ function _load_Globals() {
   //allow to use file with {data:{}} as well as {}
   if (typeof _database.globals.data != "undefined") _database.globals = _database.globals.data;
 }
+
+function _load_ClusterConfig() {
+  _database.clusterConfig = fileIO.readParsed("./" + db.user.configs.cluster);
+}
+
+function _load_BlacklistConfig() {
+  _database.blacklist = fileIO.readParsed("./" + db.user.configs.blacklist);
+}
 function _load_GameplayConfig() {
   global._database.gameplayConfig = fileIO.readParsed("./user/configs/gameplay.json");
   global._database.gameplay = global._database.gameplayConfig;
@@ -403,6 +411,10 @@ function GenerateRagfairOffersCache(){
 exports.load = () => {
   logger.logDebug("Load: 'Core'");
   _load_CoreData();
+  logger.logDebug("Load: 'Cluster'");
+  _load_ClusterConfig();
+  logger.logDebug("Load: 'Blacklist'");
+  _load_BlacklistConfig();
   logger.logDebug("Load: 'Globals'");
   _load_Globals();
   logger.logDebug("Load: 'Gameplay'");
