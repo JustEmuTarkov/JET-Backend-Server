@@ -16,7 +16,7 @@ class ProfileServer {
     dialogue_f.handler.initializeDialogue(sessionID);
     health_f.handler.initializeHealth(sessionID);
     insurance_f.handler.resetSession(sessionID);
-    this.loadProfileFromDisk(sessionID);
+    this.loadProfilesFromDisk(sessionID);
   }
 
  /**

@@ -135,7 +135,7 @@ class Responses {
   
   dynApiLocation(url, info, sessionID) {
     // if (url.includes("factory4_day")) { return response_f.noBody(fileIO.readParsed(db.locations_test.factory4_day1).Location); }
-    return response_f.noBody(location_f.handler.get(url.replace("/api/location/", ""), sessionID));
+    return response_f.getBody(location_f.handler.get(url.replace("/api/location/", ""), sessionID));
   }
   dynClientLocale(url, info, sessionID) {
     let lang = account_f.handler.getAccountLang(sessionID);
@@ -424,7 +424,6 @@ class Responses {
     return response_f.getBody(global._database.templates);
   }
   clientHideoutAreas(url, info, sessionID) {
-    // TODO: from _database
     return response_f.getBody(global._database.hideout.areas);
   }
   clientHideoutProductionRecipes(url, info, sessionID) {
@@ -446,7 +445,8 @@ class Responses {
     return response_f.nullResponse();
   }
   clientLanguages(url, info, sessionID) {
-    return response_f.noBody(locale_f.handler.getLanguages());
+    // TODO: check if its ok ? should be
+    return response_f.getBody(locale_f.handler.getLanguages());
   }
   clientLocations(url, info, sessionID) {
     return response_f.getBody(location_f.handler.generateAll());

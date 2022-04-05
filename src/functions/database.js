@@ -182,7 +182,9 @@ function _load_LocaleData() {
     langTag = langTag.toLowerCase(); // make sure its always lower case
     _database.languages.push(fileIO.readParsed("./" + db.locales[langTag][langTag]));
     _database.locales.menu[langTag] = fileIO.readParsed("./" + db.locales[langTag].menu);
+    if(_database.locales.menu[langTag].data) _database.locales.menu[langTag] = _database.locales.menu[langTag].data;
     _database.locales.global[langTag] = fileIO.readParsed("./" + db.locales[langTag].locale);
+    if(_database.locales.global[langTag].data) _database.locales.global[langTag] = _database.locales.global[langTag].data;
   }
 }
 

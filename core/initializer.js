@@ -112,6 +112,7 @@ class Initializer {
       "bundles.js",
       "customization.js",
       "dialogue.js",
+      "globals.js",
       "health.js",
       "hideout.js",
       "home.js",

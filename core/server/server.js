@@ -123,6 +123,7 @@ class Server {
               }
               server.sendResponse(sessionID, req, resp, _newData);
               resolve(true);
+              return;
             }
             internal.zlib.inflate(data, function (err, body) {
               let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
@@ -134,29 +135,28 @@ class Server {
         }
         case "PUT": 
         {
-          req.on("data", function (data) {
-            // receive data
-            if ("expect" in req.headers) {
-              console.log("expect OK " + req.headers.sessionid + " " + sessionID);
+          // req.on("data", function (data) {
+          //   // receive data
+          //   if ("expect" in req.headers) {
 
-              const requestLength = parseInt(req.headers["content-length"]);
+          //     const requestLength = parseInt(req.headers["content-length"]);
   
-              if (!server.putInBuffer(sessionID, data, requestLength)) {
-                console.log("write continue");
-                resp.writeContinue();
-              }
-            }
-          })
-          .on("end", function () {
-            let data = server.getFromBuffer(sessionID);
-            server.resetBuffer(sessionID);
+          //     if (!server.putInBuffer(sessionID, data, requestLength)) {
+          //       resp.writeContinue();
+          //     }
+          //   }
+          // })
+          // .on("end", function () {
+          //   let data = server.getFromBuffer(sessionID);
+          //   server.resetBuffer(sessionID);
   
-            internal.zlib.inflate(data, function (err, body) {
-              let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
-              server.sendResponse(sessionID, req, resp, jsonData);
-              resolve(true);
-            });
-          });
+          //   internal.zlib.inflate(data, function (err, body) {
+          //     let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
+          //     server.sendResponse(sessionID, req, resp, jsonData);
+          //     resolve(true);
+          //   });
+          // });
+          resolve(true);
         }
         default: 
         {
