@@ -23,7 +23,7 @@ class Server {
   }
 
   resetBuffer = (sessionID) => { this.buffers[sessionID] = undefined; }
-  getFromBuffer = (sessionID) => this.buffers[sessionID].buffer;
+  getFromBuffer = (sessionID) => (this.buffers[sessionID]) ? this.buffers[sessionID].buffer : "";
   getName = () => this.name;
   getIp = () => this.ip;
   getPort = () => this.port;
@@ -76,7 +76,6 @@ class Server {
     if (output in this.respondCallback) {
       this.respondCallback[output](sessionID, req, resp, body);
     } else {
-      console.log("send ZLIB");
       this.tarkovSend.zlibJson(resp, output, sessionID);
     }
   }
@@ -137,7 +136,6 @@ class Server {
         {
           req.on("data", function (data) {
             // receive data
-            console.log("receive data");
             if ("expect" in req.headers) {
               console.log("expect OK " + req.headers.sessionid + " " + sessionID);
 
@@ -150,12 +148,11 @@ class Server {
             }
           })
           .on("end", function () {
-            console.log("send data");
             let data = server.getFromBuffer(sessionID);
             server.resetBuffer(sessionID);
   
             internal.zlib.inflate(data, function (err, body) {
-              let jsonData = body !== typeof "undefined" && body !== null && body !== "" ? body.toString() : "{}";
+              let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
               server.sendResponse(sessionID, req, resp, jsonData);
               resolve(true);
             });
