@@ -145,13 +145,47 @@ exports.getRandomBoolByPercent = (percentage) => {
 
 // getRandomInt
 exports.getRandomInt = (min = 0, max = 100) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return (max > min) ? Math.floor(Math.random() * (max - min + 1) + min) : min;
+    min = ~~(min);
+    max = ~~(max);
+    return (max > min) ? ~~(Math.random() * (max - min + 1) + min) : min;
+}
+/**
+ * Used to get percentage between two numbers
+ *
+ * @param {number} num1 first number input
+ * @param {number} num2 second number input
+*/
+ exports.getPercentDiff = (num1, num2) => {
+    let raw = (num1 / num2) * 100;
+    let diff = raw;
+    return diff;
+}
+
+/**
+ * Used to get percentage difference between two numbers
+ *
+ * @param {number} num1 first number input (percentage)
+ * @param {number} num2 second number input (value to get percentage of)
+ */
+exports.getPercentOf = (num1, num2) => {
+    let percentAsDecimal = num1 / 100
+    let percent = percentAsDecimal * num2;
+    return percent;
+}
+
+// getPercentRandomBool
+// true if lucky, false if unlucky
+exports.getPercentRandomBool = (percentage) => {
+    return ~~((Math.random() * 100) < percentage);
 }
 // getRandomIntEx
 exports.getRandomIntEx = (max) => {
-    return (max > 1) ? Math.floor(Math.random() * (max - 2) + 1) : 1;
+    return (max > 1) ? ~~(Math.random() * (max - 2) + 1) : 1;
+}
+exports.getRandomIntInc = (min, max) => {
+    min = ~~(min);
+    max = ~~(max);
+    return ~~(Math.random() * (max - min + 1) + min);
 }
 // getDirList TODO: OBSOLETE
 exports.getDirList = (path) => {
@@ -175,12 +209,12 @@ exports.removeDir = (dir) => {
 }
 // getServerUptimeInSeconds
 exports.getServerUptimeInSeconds = () => {
-    return Math.floor(internal.process.uptime());
+    return ~~(internal.process.uptime());
 }
 // getTimestamp
 exports.getTimestamp = () => {
     let time = new Date();
-    return Math.floor(time.getTime() / 1000);
+    return ~~(time.getTime() / 1000);
 }
 // getTime
 exports.getTime = () => {
@@ -349,3 +383,5 @@ exports.splitStack = (item) =>
 
 	return stacks;
 }
+
+exports.clamp = (value, min, max) => Math.min(Math.max(value, min), max);

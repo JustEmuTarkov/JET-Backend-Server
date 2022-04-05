@@ -82,7 +82,8 @@ exports.confirmTrading = (pmcData, body, sessionID) => {
 
 // Ragfair trading
 exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
-  let ragfair_offers_traders = fileIO.readParsed(db.user.cache.ragfair_offers);
+  // TODO: move that to other file place and load it on server start if exists if not create
+  let ragfair_offers_traders = fileIO.readParsed("user/cache/ragfair_offers.json");
   let offers = body.offers;
   //let output = item_f.handler.getOutput(sessionID);
 

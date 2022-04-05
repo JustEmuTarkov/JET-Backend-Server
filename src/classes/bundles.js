@@ -60,7 +60,7 @@ class BundlesServer {
   }
 
   getBundles(local) {
-    let bundles = helper_f.clone(this.bundles);
+    let bundles = utility.DeepCopy(this.bundles);
     for (const bundle of bundles) {
       if (local) {
         bundle.path = bundle.filePath;
@@ -71,7 +71,7 @@ class BundlesServer {
   }
 
   getBundleByKey(key, local) {
-    let bundle = helper_f.clone(this.bundleBykey[key]);
+    let bundle = utility.DeepCopy(this.bundleBykey[key]);
     if (local) {
       bundle.path = bundle.filePath;
     }

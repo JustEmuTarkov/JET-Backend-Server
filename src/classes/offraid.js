@@ -136,9 +136,9 @@ function setInventory(pmcData, profile) {
 	
 	pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
 
-	// Don't count important IDs as errors.
+	// Don't count important IDs as errors. Id's used as sorting tables.
 	const ignoreIDs = [
-		"60de0d80c6b34f52845b4646",		//?
+		"60de0d80c6b34f52845b4646",		//sorting table
 		"61b7367440281631fc83f17f" 		//sorting table
 	];
 
@@ -354,11 +354,33 @@ function saveProgress(offraidData, sessionID) {
   }
 
   pmcData.Info.Level = offraidData.profile.Info.Level;
+
+  let multiplier = global._database.gameplayConfig.offraid.extractionMultiplier[offraidData.exit.toLowerCase()];
+  if(utility.isUndefined(multiplier)){
+    logger.logWarning(`Not found extractionMultiplier named: ${offraidData.exit.toLowerCase()}`);
+    multiplier = 1;
+  }
+  //multiply all our earned points by the multiplier on all skills
+  for (let skill in offraidData.profile.Skills.Common) {
+    let pointsEarned = offraidData.profile.Skills.Common[skill].PointsEarnedDuringSession * multiplier;
+    offraidData.profile.Skills.Common[skill].Progress += pointsEarned;
+    //in case we go above maximum
+    if (offraidData.profile.Skills.Common[skill].Progress > 5100) {
+      offraidData.profile.Skills.Common[skill].Progress = 5100;
+    }
+  }
+  for (let skill in offraidData.profile.Skills.Common) {
+		offraidData.profile.Skills.Common[skill].PointsEarnedDuringSession = 0;
+	}
   pmcData.Skills = offraidData.profile.Skills;
   pmcData.Stats = offraidData.profile.Stats;
   pmcData.Encyclopedia = offraidData.profile.Encyclopedia;
   pmcData.ConditionCounters = offraidData.profile.ConditionCounters;
   pmcData.Quests = offraidData.profile.Quests;
+
+  
+	//correctly update hideout production after raid.
+	keepalive_f.updatePlayerHideout(sessionID);
 
   // For some reason, offraidData seems to drop the latest insured items.
   // It makes more sense to use pmcData's insured items as the source of truth.
@@ -370,8 +392,6 @@ function saveProgress(offraidData, sessionID) {
 
   // Remove the Lab card
 
-  pmcData = setInventory(pmcData, offraidData.profile);
-  health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
 
   // remove inventory if player died and send insurance items
   //TODO: dump of prapor/therapist dialogues that are sent when you die in lab with insurance.
@@ -379,6 +399,7 @@ function saveProgress(offraidData, sessionID) {
   const insuranceEnabled = global._database.locations[systemMapName].base.Insurance;
   const preRaidGear = getPlayerGear(pmcData.Inventory.items);
 
+	//store for insurance, gear that was insured and was lost
   if (insuranceEnabled) {
     insurance_f.handler.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
   }
@@ -387,6 +408,12 @@ function saveProgress(offraidData, sessionID) {
     exfils[systemMapName] = exfils[systemMapName] + 1;
     profile_f.handler.setProfileExfilsById(sessionID, exfils);
   }
+	//changed position of this block, because it was fucking up insurance.
+	//setting inventory before sending lostgear (gear that was insured but dropped without dying)
+	//would cause preraid and offraid inventories to be the same.
+  pmcData = setInventory(pmcData, offraidData.profile);
+  health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
+
   if (offraidData.exit !== "survived" && offraidData.exit !== "runner") {
     if (insuranceEnabled) {
       insurance_f.handler.storeDeadGear(pmcData, offraidData, preRaidGear, sessionID);
@@ -464,7 +491,7 @@ function isConditionRelatedToQuestItem(conditionId, questId) {
 				}
 			}
 		}
-	}else{
+	} else {
 		logger.logWarning("isConditionRelatedToQuestItem: No matching quest was found.");
 	}
 	
@@ -484,7 +511,7 @@ function isConditionRelatedToQuestItem(conditionId, questId) {
 
 	// Don't count important IDs as errors.
 	const ignoreIDs = [
-		"60de0d80c6b34f52845b4646",		//?
+		"60de0d80c6b34f52845b4646",		//sorting table
 		"61b7367440281631fc83f17f" 		//sorting table
 	];
 
@@ -527,3 +554,4 @@ module.exports.handler = new InraidServer();
 module.exports.saveProgress = saveProgress;
 module.exports.getSecuredContainer = getSecuredContainer;
 module.exports.getPlayerGear = getPlayerGear;
+module.exports.MapNameConversion = MapNameConversion;

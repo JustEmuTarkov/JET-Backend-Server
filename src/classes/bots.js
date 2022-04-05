@@ -1,7 +1,38 @@
 "use strict";
 
+const { logger } = require("../../core/util/logger");
+
+//use bot names in lowercase as it matches folders
+const botSwaps = {
+  "Customs": {
+    //"bosssanitar": "sectantpriest"
+  },
+  "Factory": { //no way to distinguish between day and night using name so be careful
+    //"bosssanitar" : "sectantpriest"
+  },
+  "Interchange": {
+
+  },
+  "Laboratory": {
+
+  },
+  "Lighthouse": {
+
+  },
+  "ReserveBase": {
+
+  },
+  "Shoreline": {
+
+  },
+  "Woods": {
+    //"bosskilla": "sectantpriest"
+  }
+}
+
 class Controller {
   constructor() {
+
   }
 
   generatePlayerScav(sessionID) {
@@ -34,6 +65,36 @@ class Controller {
         return global._database.bots[type].difficulty[difficulty];
     }
   }
+
+
+  generateBotName(role) 
+  {
+    // TheMaoci: I shortened this code and make it look more reasionable :)
+    const name_database = global._database.bots.names;
+
+    if(role == "usec" || role == "exusec" || role == "pmcbot" || role == "bear")
+    {
+      return utility.getArrayValue(name_database.normal);
+    }
+    if(role == "followertagilla" || role == "bosstagilla")
+    {
+      return utility.getArrayValue(name_database.tagilla);
+    }
+    if(role == "followerkojany" || role == "followertest")
+    {
+      return utility.getArrayValue(name_database.followerkojany);
+    }
+    if(role == "followergluharsecurity" || role == "followergluharsnipe" || role == "followergluharscout" || role == "followergluharassault")
+    {
+      return utility.getArrayValue(name_database.followergluhar);
+    }
+    if(role == "marksman" || role == "playerscav" || role == "cursedassault" || role == "assaultgroup" || role == "assault")
+    {
+      return utility.getArrayValue(name_database.scav);
+    }
+    return utility.getArrayValue(name_database[role]);
+  }
+
   generateId(bot) {
     const botId = utility.generateNewAccountId();
     bot._id = botId;
@@ -41,62 +102,132 @@ class Controller {
     return bot;
   }
 
+  //START -----
   generateBot(bot, role, pmcData) {
-
-    
     let node = [];
+    const Role = role.toLowerCase()
     //default
-    node = global._database.bots[bot.Info.Settings.Role.toLowerCase()];
-    // console.log("generateBot::role");
-    // console.log(role);
-    if (role.toLowerCase() == "playerscav") {
-      bot.Info.Side = "Savage";
-      node = global._database.bots["assault"];
-    }
-    // -----------------------------------------------------------------------------
-    // Paulo: This allows the location json files to include "PmcBot" as a spawnable
-    else if (role.toLowerCase() == "pmcbot") {
-      bot.Info.Side = pmcData.Info.Side;
-      node = global._database.bots["pmcbot"];
-    }
-    else {
 
-      bot.Info.Side = "Savage";
-      node = global._database.bots["assault"];
-    
-      // ------------------------------------------------------------------
-      // Paulo: Switch from Scav to PMC if enabled via Gameplay Config
-      // I would turn this OFF and use location spawning instead
-      var scavToPmcEnabled = global._database.gameplayConfig.bots.pmc.enabled;
-      if(scavToPmcEnabled) {
+    node = global._database.bots[Role];
 
-        // Get Scav To Pmc Chance
-        var scavToPmcChance = 35;
-        if(global._database.gameplayConfig.bots.pmc.types.assault !== undefined) {
-          scavToPmcChance = global._database.gameplayConfig.bots.pmc.types.assault;
+    //pmc generation from Scavs
+    if (Role == "assault") {
+      //50% chance of being a pmc
+      if (utility.getPercentRandomBool(50)) {
+        //if pmc
+        //50% chance of being usec or bear
+        if (utility.getPercentRandomBool(50)) {
+          bot.Info.Side = "Usec";
+          node = global._database.bots["usec"];
+        } else {
+          bot.Info.Side = "Bear";
+          node = global._database.bots["bear"];
         }
-
-        // Determine whether to do it
-        if (utility.getRandomBoolByPercent(scavToPmcChance)) {
-          var scavToPmcUsecChance = 50; 
-          if(global._database.gameplayConfig.bots.pmc.usecChance !== undefined) {
-            scavToPmcUsecChance = global._database.gameplayConfig.bots.pmc.usecChance;
-          }
-          // Ensure values are between 0-100
-          scavToPmcUsecChance = Math.min(100, scavToPmcUsecChance);
-          scavToPmcUsecChance = Math.max(0, scavToPmcUsecChance);
-          if (utility.getRandomBoolByPercent(scavToPmcUsecChance)) {
-            bot.Info.Side = "Usec";
-            node = global._database.bots["usec"];
-          } else {
-            bot.Info.Side = "Bear";
-            node = global._database.bots["bear"];
-          }
-        }
+      } else {
+        //if scav
+        bot.Info.Side = "Savage";
+        node = global._database.bots["assault"];
       }
     }
 
-    bot.Info.Nickname = utility.getArrayValue(node.names);
+    //Examples for randomizing properties without the need for roles.
+    //this could be used an "event" or something
+    //just change false to true if wanting to test
+    if (false && Role == "assault") {
+      let scavRoleSelect = utility.getRandomInt(1, 6)
+      switch (scavRoleSelect) {
+        case 1:
+          node = global._database.bots["followersanitar"];
+          break;
+        case 2:
+          node = global._database.bots["followergluharscout"];
+          break;
+        case 3:
+          node = global._database.bots["followergluharassault"];
+          break;
+        case 4:
+          node = global._database.bots["followergluharsecurity"];
+          break;
+        case 5:
+          node = global._database.bots["followerbully"];
+          break;
+        case 6:
+          node = global._database.bots["sectantwarrior"];
+          break;
+      }
+    }
+
+
+
+    bot.Info.Nickname = this.generateBotName(Role);
+    bot.Info.Settings.Experience = utility.getRandomInt(node.experience.reward.min, node.experience.reward.max);
+    bot.Info.Voice = utility.getArrayValue(node.appearance.voice);
+    bot.Health = bots_f.botHandler.generateHealth(node.health);
+    bot.Customization.Head = utility.getArrayValue(node.appearance.head);
+    bot.Customization.Body = utility.getArrayValue(node.appearance.body);
+    bot.Customization.Feet = utility.getArrayValue(node.appearance.feet);
+    bot.Customization.Hands = utility.getArrayValue(node.appearance.hands);
+
+    let inventoryData = "";
+    for (const inventoryNode in node.inventory) {
+      const levelFromTo = inventoryNode.split("_");
+      const levelFrom = parseInt(levelFromTo[0]);
+      const levelTo = parseInt(levelFromTo[1]);
+
+      if (pmcData.Info.Level >= levelFrom && pmcData.Info.Level < levelTo) {
+        inventoryData = node.inventory[inventoryNode];
+        break;  // once we got our datas, no need to keep looping
+      }
+    }
+    if (inventoryData == "") {
+      // inventory is empty using fallback
+      inventoryData = node.inventory[Object.keys(node.inventory)[0]];
+    }
+
+    // The Punisher Role | CQ: this should be changed in the future.
+    /*
+    if (role === "followergluharsnipe") {
+      bot.Info.Settings.Role = "bossTagilla";
+    }    
+    */
+
+    bot.Inventory = bots_f.generator.generateInventory(inventoryData, node.chances, node.generation, Role);
+
+    const levelResult = bots_f.botHandler.generateRandomLevel(
+      node.experience.level.min,
+      node.experience.level.max,
+      pmcData.Info.Level
+    );
+    bot.Info.Experience = levelResult.exp;
+    bot.Info.Level = levelResult.level;
+
+    if (bot.Info.Side.toLowerCase() == "usec"
+      || bot.Info.Side.toLowerCase() == "bear") {
+      bot = bots_f.botHandler.generateDogtag(bot);
+    }
+
+    // generate new bot ID
+    bot = bots_f.botHandler.generateId(bot);
+
+    // generate new inventory ID
+    bot = utility.generateInventoryID(bot);
+
+    return bot;
+
+  }
+
+  //extended generateBot function for custom types of bot as defined in isCustomBot
+  generateCustomBot(bot, role, pmcData, map) {
+
+    let node = [];
+    let newRole = "";
+
+    newRole = botSwaps[map][role.toLowerCase()];
+
+    //default
+    node = global._database.bots[newRole];
+
+    bot.Info.Nickname = this.generateBotName(newRole);
     bot.Info.Settings.Experience = utility.getRandomInt(
       node.experience.reward.min,
       node.experience.reward.max
@@ -149,11 +280,25 @@ class Controller {
     bot = utility.generateInventoryID(bot);
 
     return bot;
+
   }
 
+  //bot is a complete bot object, map is a string with the location Name (not id)
+  isCustomBot(bot, map) {
+    if (bot.Info.Settings.Role.toLowerCase() in botSwaps[map]) {
+      //logger.logError("CUSTOM BOT: "+bot.Info.Settings.Role+" in "+map);
+      return true;
+    }
+    return false;
+  }
+
+  //if bots generated correctly, then this method should only be called once per raid.
+  //IF IT GETS CALLED MORE THAN ONCE PER RAID, IT MEANS SOMETHING IS WRONG EITHER IN
+  //THE MAP JSON OR IN THE BOT GENERATION. DO NOT HANDLE BOT CUSTOMIZATION/MODDING IN BOT GENERATION CODE!!!!
   generate(info, sessionID) {
     let dateNow = Date.now();
     let count = 0;
+    let swapped = 0;
     let output = [];
     const pmcData = profile_f.handler.getPmcProfile(sessionID);
 
@@ -161,13 +306,20 @@ class Controller {
       for (let i = 0; i < condition.Limit; i++) {
         let role = condition.Role.toLowerCase();
         let bot = utility.DeepCopy(global._database.core.botBase);
-        // bot.Info.Side = "Savage";
-        // bot.Info.Settings.Role = condition.Role;
+        bot.Info.Side = "Savage";
+        bot.Info.Settings.Role = condition.Role;
         bot.Info.Settings.BotDifficulty = condition.Difficulty;
 
-        //regular generation
-        //moved pmc generation to generateBot
-        bot = bots_f.botHandler.generateBot(bot, role, pmcData);
+        //custom bot part
+        //if we in raid
+        if (offraid_f.handler.getPlayer(sessionID) && bots_f.botHandler.isCustomBot(bot, offraid_f.handler.getPlayer(sessionID).Location)) {
+          //we in raid and bot is a bot that wants to be swapped
+          bot = bots_f.botHandler.generateCustomBot(bot, role, pmcData, offraid_f.handler.getPlayer(sessionID).Location);
+          swapped++;
+        } else {
+          //regular generation
+          bot = bots_f.botHandler.generateBot(bot, role, pmcData);
+        }
 
         //any looped log = bad for performance
         //logger.logInfo(`Generated: Nickname:${bot.Info.Nickname}, Side:${bot.Info.Side}, Role:${bot.Info.Settings.Role}, Difficulty:${bot.Info.Settings.BotDifficulty}`);
@@ -180,19 +332,33 @@ class Controller {
     //if we generated bots and are in raid
     if (count > 0 && offraid_f.handler.getPlayer(sessionID)) {
       logger.logSuccess(
-        "\u001b[32;1mGenerated: " + count + " bots for " + offraid_f.handler.getPlayer(sessionID).Location + " map. ("+(Date.now() - dateNow)+"ms)"
+        "\u001b[32;1mGenerated: " + count + " bots for " + offraid_f.handler.getPlayer(sessionID).Location + " map. (" + (Date.now() - dateNow) + "ms)"
       );
+      if (swapped > 0) {
+        logger.logSuccess("\u001b[32;1mSwapped " + swapped + " bot(s).");
+      }
     }
     return output;
   }
 
-  generateRandomLevel(min, max) {
+  generateRandomLevel(min, max, playerLevel) {
     const expTable = global._database.globals.config.exp.level.exp_table;
     const maxLevel = Math.min(max, expTable.length);
 
+    // limit the bots level to match the player level
+    let limitted_max_level = playerLevel + 10;
+    let limitted_min_level = playerLevel - 5;
+    if (limitted_max_level > maxLevel) {
+      limitted_max_level = maxLevel;
+    }
+    if (playerLevel <= 5) {
+      limitted_min_level = 1;
+    };
+
     // Get random level based on the exp table.
     let exp = 0;
-    let level = utility.getRandomInt(min, maxLevel);
+
+    let level = utility.getRandomInt(limitted_min_level, limitted_max_level);
 
     for (let i = 0; i < level; i++) {
       exp += expTable[i].exp;
@@ -318,7 +484,7 @@ class Generator {
     this.inventory = {};
   }
 
-  generateInventory(templateInventory, equipmentChances, generation) {
+  generateInventory(templateInventory, equipmentChances, generation, botRole) {
     // Generate base inventory with no items
     this.inventory = bots_f.generator.generateInventoryBase();
 
@@ -330,11 +496,11 @@ class Generator {
       if (excludedSlots.includes(equipmentSlot)) {
         continue;
       }
-      bots_f.generator.generateEquipment(equipmentSlot, templateInventory.equipment[equipmentSlot], templateInventory.mods, equipmentChances);
+      bots_f.generator.generateEquipment(equipmentSlot, templateInventory.equipment[equipmentSlot], templateInventory.mods, equipmentChances, botRole);
     }
 
     // ArmorVest is generated afterwards to ensure that TacticalVest is always first, in case it is incompatible
-    bots_f.generator.generateEquipment(EquipmentSlots.ArmorVest, templateInventory.equipment.ArmorVest, templateInventory.mods, equipmentChances);
+    bots_f.generator.generateEquipment(EquipmentSlots.ArmorVest, templateInventory.equipment.ArmorVest, templateInventory.mods, equipmentChances, botRole);
 
     // Roll weapon spawns and generate a weapon for each roll that passed
     const shouldSpawnPrimary = utility.getRandomIntEx(100) <= equipmentChances.equipment.FirstPrimaryWeapon;
@@ -362,7 +528,8 @@ class Generator {
           templateInventory.equipment[weaponSpawn.slot],
           templateInventory.mods,
           equipmentChances.mods,
-          generation.items.magazines
+          generation.items.magazines,
+          botRole
         );
       }
     }
@@ -385,6 +552,9 @@ class Generator {
     const questStashItemsId = utility.generateNewItemId();
     const questStashItemsTpl = "5963866b86f7747bfa1c4462";
 
+    const sortingTableId = utility.generateNewItemId();
+    const sortingTableTpl = "602543c13fee350cd564d032";
+
     return {
       items: [
         {
@@ -403,16 +573,21 @@ class Generator {
           _id: questStashItemsId,
           _tpl: questStashItemsTpl,
         },
+        {
+          _id: sortingTableId,
+          _tpl: sortingTableTpl
+        }
       ],
       equipment: equipmentId,
       stash: stashId,
       questRaidItems: questRaidItemsId,
       questStashItems: questStashItemsId,
+      sortingTable: sortingTableId,
       fastPanel: {},
     };
   }
 
-  generateEquipment(equipmentSlot, equipmentPool, modPool, spawnChances) {
+  generateEquipment(equipmentSlot, equipmentPool, modPool, spawnChances, botRole) {
     const spawnChance = [EquipmentSlots.Pockets, EquipmentSlots.SecuredContainer].includes(equipmentSlot) ? 100 : spawnChances.equipment[equipmentSlot];
     if (typeof spawnChance === "undefined") {
       logger.logWarning(`No spawn chance was defined for ${equipmentSlot}`);
@@ -423,7 +598,7 @@ class Generator {
     if (equipmentPool.length && shouldSpawn) {
       const id = utility.generateNewItemId();
       const tpl = utility.getArrayValue(equipmentPool);
-      const itemTemplate = global._database.items[tpl];
+      const itemTemplate = utility.DeepCopy(global._database.items[tpl]);
 
       if (!itemTemplate) {
         logger.logError(`Could not find item template with tpl ${tpl}`);
@@ -441,7 +616,7 @@ class Generator {
         _tpl: tpl,
         parentId: this.inventory.equipment,
         slotId: equipmentSlot,
-        ...bots_f.generator.generateExtraPropertiesForItem(itemTemplate),
+        ...bots_f.generator.generateExtraPropertiesForItem(itemTemplate, botRole),
       };
 
       if (Object.keys(modPool).includes(tpl)) {
@@ -453,10 +628,10 @@ class Generator {
     }
   }
 
-  generateWeapon(equipmentSlot, weaponPool, modPool, modChances, magCounts) {
+  generateWeapon(equipmentSlot, weaponPool, modPool, modChances, magCounts, botRole) {
     const id = utility.generateNewItemId();
     const tpl = utility.getArrayValue(weaponPool);
-    const itemTemplate = global._database.items[tpl];
+    const itemTemplate = utility.DeepCopy(global._database.items[tpl]);
 
     if (!itemTemplate) {
       logger.logError(`Could not find item template with tpl ${tpl}`);
@@ -470,7 +645,7 @@ class Generator {
         _tpl: tpl,
         parentId: this.inventory.equipment,
         slotId: equipmentSlot,
-        ...bots_f.generator.generateExtraPropertiesForItem(itemTemplate),
+        ...bots_f.generator.generateExtraPropertiesForItem(itemTemplate, botRole),
       },
     ];
 
@@ -580,7 +755,7 @@ class Generator {
         continue;
       }
 
-      const modTemplate = global._database.items[modTpl];
+      const modTemplate = utility.DeepCopy(global._database.items[modTpl]);
       if (!modTemplate) {
         logger.logWarning(`Could not find mod item template with tpl ${modTpl}`);
         logger.logInfo(`Item -> ${parentTemplate._id}; Slot -> ${modSlot}`);
@@ -604,42 +779,65 @@ class Generator {
     return items;
   }
 
-  generateExtraPropertiesForItem(itemTemplate) {
-    let properties = {};
+  generateExtraPropertiesForItem(itemTemplate, botRole = null) {
 
-    if (itemTemplate._props.MaxDurability) {
-      properties.Repairable = { Durability: itemTemplate._props.MaxDurability };
+    let properties = {};
+    const itemProperties = itemTemplate._props;
+    let durabilityType;
+    let maxDurability;
+    let currentDurability;
+
+    if (itemProperties.hasOwnProperty("weapClass")) {
+      durabilityType = helper_f.getDurabilityType(itemTemplate)
+
+      maxDurability = helper_f.getRandomisedMaxDurability(itemTemplate, botRole);
+      currentDurability = helper_f.getRandomisedMinDurability(maxDurability, botRole);
+
+      properties.Repairable = {
+        Durability: currentDurability,
+        MaxDurability: maxDurability
+      };
+    } else if (itemProperties.hasOwnProperty("armorClass")) {
+      durabilityType = helper_f.getDurabilityType(itemTemplate)
+
+      maxDurability = helper_f.getRandomisedMaxDurability(itemTemplate, botRole);
+      currentDurability = helper_f.getRandomisedMinDurability(maxDurability, botRole);
+
+      properties.Repairable = {
+        Durability: currentDurability,
+        MaxDurability: maxDurability
+      };
     }
 
-    if (itemTemplate._props.HasHinge) {
+    if (itemProperties.HasHinge) {
       properties.Togglable = { On: true };
     }
 
-    if (itemTemplate._props.Foldable) {
+    if (itemProperties.Foldable) {
       properties.Foldable = { Folded: false };
     }
 
     //if item can be a stack higher than 1 | CQ: this fixes money spawning in stacks of 1, and whatever else.
-    if(itemTemplate._props.StackMaxSize > 1){
+    if (itemProperties.StackMaxSize > 1) {
       //if item has random stacks properties
-      if(itemTemplate._props.StackMaxRandom && itemTemplate._props.StackMinRandom){
-        properties.StackObjectsCount = utility.getRandomInt(itemTemplate._props.StackMinRandom, itemTemplate._props.StackMaxRandom);
-      }else{
+      if (itemProperties.StackMaxRandom && itemProperties.StackMinRandom) {
+        properties.StackObjectsCount = utility.getRandomInt(itemProperties.StackMinRandom, itemProperties.StackMaxRandom);
+      } else {
         //if it doesn't, randomize it between 1 and the stack max size
-        properties.StackObjectsCount = utility.getRandomInt(1, itemTemplate._props.StackMaxSize);
-      }      
+        properties.StackObjectsCount = utility.getRandomInt(1, itemProperties.StackMaxSize);
+      }
     }
 
-    if (itemTemplate._props.weapFireType && itemTemplate._props.weapFireType.length) {
-      properties.FireMode = { FireMode: itemTemplate._props.weapFireType[0] };
+    if (itemProperties.weapFireType && itemProperties.weapFireType.length) {
+      properties.FireMode = { FireMode: itemProperties.weapFireType[0] };
     }
 
-    if (itemTemplate._props.MaxHpResource) {
-      properties.MedKit = { HpResource: itemTemplate._props.MaxHpResource };
+    if (itemProperties.MaxHpResource) {
+      properties.MedKit = { HpResource: itemProperties.MaxHpResource };
     }
 
-    if (itemTemplate._props.MaxResource && itemTemplate._props.foodUseTime) {
-      properties.FoodDrink = { HpPercent: itemTemplate._props.MaxResource };
+    if (itemProperties.MaxResource && itemProperties.foodUseTime) {
+      properties.FoodDrink = { HpPercent: itemProperties.MaxResource };
     }
 
     return Object.keys(properties).length ? { upd: properties } : {};
@@ -648,7 +846,7 @@ class Generator {
   isItemIncompatibleWithCurrentItems(items, tplToCheck, equipmentSlot) {
     // TODO: Can probably be optimized to cache itemTemplates as items are added to inventory
     const itemTemplates = items.map((i) => global._database.items[i._tpl]);
-    const templateToCheck = global._database.items[tplToCheck];
+    const templateToCheck = utility.DeepCopy(global._database.items[tplToCheck]);
 
     // Check if any of the current inventory templates have the incoming item defined as incompatible
     const currentInventoryCheck = itemTemplates.some((item) => item._props[`Blocks${equipmentSlot}`] || item._props.ConflictingItems.includes(tplToCheck));
@@ -664,6 +862,7 @@ class Generator {
   isWeaponValid(itemList) {
     for (const item of itemList) {
       const template = global._database.items[item._tpl];
+      if (template._type != "Item") continue;
       if (!template._props.Slots || !template._props.Slots.length) {
         continue;
       }
@@ -696,14 +895,14 @@ class Generator {
       magazineTpl = magazine._tpl;
     }
 
-    let magTemplate = global._database.items[magazineTpl];
+    let magTemplate = utility.DeepCopy(global._database.items[magazineTpl]);
     if (!magTemplate) {
       logger.logError(`Could not find magazine template with tpl ${magazineTpl}`);
       return;
     }
 
     const range = magCounts.max - magCounts.min;
-    const count = bots_f.generator.getBiasedRandomNumber(magCounts.min, magCounts.max, Math.round(range * 0.75), 4);
+    const count = bots_f.generator.getBiasedRandomNumber(magCounts.min, magCounts.max, ~~(range * 0.75), 4);
 
     if (magTemplate._props.ReloadMagType === "InternalMagazine") {
       /* Get the amount of bullets that would fit in the internal magazine
@@ -760,7 +959,7 @@ class Generator {
       }
     }
 
-    const ammoTemplate = global._database.items[ammoTpl];
+    const ammoTemplate = utility.DeepCopy(global._database.items[ammoTpl]);
     if (!ammoTemplate) {
       logger.logError(`Could not find ammo template with tpl ${ammoTpl}`);
       return;
@@ -820,7 +1019,7 @@ class Generator {
 
   /** Fill existing magazines to full, while replacing their contents with specified ammo */
   fillExistingMagazines(weaponMods, magazine, ammoTpl) {
-    const modTemplate = global._database.items[magazine._tpl];
+    const modTemplate = utility.DeepCopy(global._database.items[magazine._tpl]);
     if (!modTemplate) {
       logger.logError(`Could not find magazine template with tpl ${magazine._tpl}`);
       return;
@@ -879,6 +1078,33 @@ class Generator {
 
     range = itemCounts.grenades.max - itemCounts.grenades.min;
     const grenadeCount = bots_f.generator.getBiasedRandomNumber(itemCounts.grenades.min, itemCounts.grenades.max, range, 4);
+
+    // handle specialItems uniquely because of bandaid and bc JET didn't bother implementing...
+    let specialLoot = [];
+    if (lootPool.SpecialLoot && lootPool.SpecialLoot.length > 0) {
+      // if bot has SpecialLoot
+      if (itemCounts.specialItems && itemCounts.specialItems.max > 0) {
+        //if specialItems exists
+        let randomAmount = utility.getRandomInt(itemCounts.specialItems.min, itemCounts.specialItems.max);
+        for (let i = 0; i < randomAmount; i++) {
+          //pull a random item from the array
+          let randomIndex = utility.getRandomInt(0, lootPool.SpecialLoot.length); //this can generate duplicates but w/e
+          let itemID = lootPool.SpecialLoot[randomIndex];
+          let item = utility.DeepCopy(global._database.items[itemID]);
+
+          //in case the ID doesn't exist, which would cause the item to be null
+          if (item) {
+            specialLoot.push(item);
+            //logger.logError(`Pushed. RAm: ${randomAmount}, RIn: ${randomIndex}, iID: ${itemID}`);
+          }
+        }
+      }
+      //logger.logError(JSON.stringify(specialLoot, null, 2));
+      if (specialLoot.length > 0) {
+        //only add loot if any was generated.
+        bots_f.generator.addLootFromPool(specialLoot, [EquipmentSlots.Pockets], specialLoot.length); //we handled amount earlier, so no need to count
+      }
+    }
 
     bots_f.generator.addLootFromPool(healingItems, [EquipmentSlots.TacticalVest, EquipmentSlots.Pockets], healingItemCount);
     bots_f.generator.addLootFromPool(lootItems, [EquipmentSlots.Backpack, EquipmentSlots.Pockets, EquipmentSlots.TacticalVest], lootItemCount);
@@ -1014,7 +1240,7 @@ class Generator {
     };
 
     const boundedGaussian = (start, end, n) => {
-      return Math.round(start + gaussianRandom(n) * (end - start + 1));
+      return ~~(start + gaussianRandom(n) * (end - start + 1));
     };
 
     const biasedMin = shift >= 0 ? min - shift : min;
@@ -1042,7 +1268,7 @@ class Generator {
     }
     const spawnChanceA = utility.valueBetween(a._props.LootExperience, 0, 250, 0, 100)
     const spawnChanceB = utility.valueBetween(b._props.LootExperience, 0, 250, 0, 100)
-    
+
     const worthA = priceA / spawnChanceA;
     const worthB = priceB / spawnChanceB;
 
@@ -1089,6 +1315,4 @@ module.exports.generate = controller.generate;
 module.exports.getBotLimit = controller.getBotLimit;
 module.exports.getBotDifficulty = controller.getBotDifficulty;
 module.exports.generatePlayerScav = controller.generatePlayerScav;
-
 module.exports.generator = new Generator();
-//module.exports.Controller = Controller;

@@ -61,24 +61,19 @@ class Initializer {
 
   initializeCacheCallbacks() {
     
-    this.cacheCallback = {};
-    let path = global.executedDir + "./src/cache";
-    let files = fileIO.readDir(path);
-    for (let file of files) {
-      let scriptName = "cache" + file.replace(".js", "");
-      this.cacheCallback[scriptName] = require(path + file).cache;
-    }
-    logger.logSuccess("Create: Cache Callback");
+    // this.cacheCallback = {};
+    // let path = global.executedDir + "./src/cache";
+    // let files = fileIO.readDir(path);
+    // for (let file of files) {
+    //   let scriptName = "cache" + file.replace(".js", "");
+    //   this.cacheCallback[scriptName] = require(path + file).cache;
+    // }
+    //logger.logSuccess("Create: Cache Callback");
     // execute cache callback
     if (serverConfig.rebuildCache) {
-      logger.logInfo("[Warmup]: Cache callbacks...");
-      for (let type in this.cacheCallback) {
-        this.cacheCallback[type]();
-      }
       global.mods_f.CacheModLoad(); // CacheModLoad
     }
     global.mods_f.ResModLoad(); // load Res Mods
-    
   }
  
   /* load exception handler */

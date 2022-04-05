@@ -4,12 +4,10 @@ exports.main = (pmcData, body, sessionID) => {
     let output = item_f.handler.getOutput(sessionID);
     let trader = trader_f.handler.getTrader(body.tid, sessionID);
 
-    const TraderLevel = profile_f.calculateLoyalty(pmcData, body.tid);
-
-    const LoyaltyIndex = TraderLevel;
+    const LoyaltyIndex = profile_f.calculateLoyalty(pmcData, body.tid);
 
     //calculation of price coeficient. Result is always 1 + coeficient shown in repair window.
-    let coef = 1 + ((trader.loyaltyLevels[LoyaltyIndex].repair_price_coef) / 100);
+    const coef = 1 + ((trader.loyaltyLevels[LoyaltyIndex].repair_price_coef) / 100);
 
     // find the item to repair
     for (let repairItem of body.repairItems) {
@@ -28,7 +26,7 @@ exports.main = (pmcData, body, sessionID) => {
 
         // updated repair cost to match with Repair window, taking into account loyalty levels
         // using Math.floor to match repair window
-        let repairCost = Math.floor(global._database.items[itemToRepair._tpl]._props.RepairCost * repairItem.count * coef);
+        const repairCost = ~~(global._database.items[itemToRepair._tpl]._props.RepairCost * repairItem.count * coef);
         logger.logInfo("repCost: " + repairCost);//just to make sure we spend what the repair window say.
 
         if (!helper_f.payMoney(pmcData, { "scheme_items": [{ "id": repairItem._id, "count": repairCost }], "tid": body.tid }, sessionID)) {
@@ -37,11 +35,7 @@ exports.main = (pmcData, body, sessionID) => {
         }
 
         // change item durability
-        let calculateDurability = itemToRepair.upd.Repairable.Durability + repairItem.count;
-
-        if (itemToRepair.upd.Repairable.MaxDurability <= calculateDurability) {
-            calculateDurability = itemToRepair.upd.Repairable.MaxDurability;
-        }
+        const calculateDurability = utility.clamp(itemToRepair.upd.Repairable.Durability + repairItem.count, 0, itemToRepair.upd.Repairable.MaxDurability);
 
         itemToRepair.upd.Repairable.Durability = calculateDurability;
         itemToRepair.upd.Repairable.MaxDurability = calculateDurability;

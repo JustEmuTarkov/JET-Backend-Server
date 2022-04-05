@@ -1,15 +1,13 @@
 "use strict";
 
-const { cache } = require("../cache/routes");
-
 function _load_Globals() {
   _database.globals = fileIO.readParsed("./" + db.base.globals);
   //allow to use file with {data:{}} as well as {}
   if (typeof _database.globals.data != "undefined") _database.globals = _database.globals.data;
 }
 function _load_GameplayConfig() {
-  _database.gameplayConfig = fileIO.readParsed("./user/configs/gameplay.json");
-  _database.gameplay = _database.gameplayConfig;
+  global._database.gameplayConfig = fileIO.readParsed("./user/configs/gameplay.json");
+  global._database.gameplay = global._database.gameplayConfig;
 }
 function _load_BotsData() {
   _database.bots = {};
@@ -52,17 +50,31 @@ function _load_CoreData() {
   _database.core.matchMetrics = fileIO.readParsed("./" + db.base.matchMetrics);
 }
 function _load_ItemsData() {
-  _database.items = fileIO.readParsed("./" + db.user.cache.items);
-  if (typeof _database.items.data != "undefined") _database.items = _database.items.data;
-  _database.templates = fileIO.readParsed("./" + db.user.cache.templates);
-  if (typeof _database.templates.data != "undefined") _database.templates = _database.templates.data;
 
-  let itemHandbook = _database.templates.Items;
-  _database.itemPriceTable = {};
-  for(let item of itemHandbook)
-  {
-    _database.itemPriceTable[item.Id] = item.Price;
+  global._database.items = {};
+  let itemNodeFiles = db.items;
+  for (let file in itemNodeFiles) {
+    for (let items of fileIO.readParsed(itemNodeFiles[file]))
+    {
+      if(items._id == undefined) {
+        logger.logWarning(`[Loading ItemsDB] file: ${file} looks to contain corrupted data`)
+        continue;
+      }
+      global._database.items[items._id] = items;
+    }
   }
+
+  global._database.templates = {};
+  global._database.templates.Categories = fileIO.readParsed(db.templates.categories)
+  global._database.templates.Items = fileIO.readParsed(db.templates.items);
+
+  //console.log(global._database.items);
+  // not used now maybe later ? a global look up table ?
+  // _database.itemPriceTable = {};
+  // for(let item of _database.templates.Items)
+  // {
+  //   global._database.itemPriceTable[item.Id] = item.Price;
+  // }
 
 }
 function _load_HideoutData() {
@@ -158,7 +170,7 @@ function _load_LocaleData() {
   _database.languages = [];
   _database.locales = { menu: {}, global: {} };
 
-  for(let langTag of db.locales){
+  for(let langTag in db.locales){
     langTag = langTag.toLowerCase(); // make sure its always lower case
     _database.languages.push(fileIO.readParsed("./" + db.locales[langTag][langTag]));
     _database.locales.menu[langTag] = fileIO.readParsed("./" + db.locales[langTag].menu);
@@ -216,7 +228,7 @@ function Create_LootGameUsableStruct(item_data, Type){
 	return structure;
 }
 function _load_LocationData() {
-
+  _database.locations = {};
   for (let name in db.locations.base) {
 		let _location = { "base": {}, "loot": {}};
 		_location.base = fileIO.readParsed(db.locations.base[name]);
@@ -224,7 +236,7 @@ function _load_LocationData() {
 		if(typeof db.locations.loot[name] != "undefined"){
 			let loot_data = fileIO.readParsed(db.locations.loot[name]);
 			for(let type in loot_data){
-				for(item of loot_data[type]){
+				for(let item of loot_data[type]){
 					_location.loot[type].push(Create_LootGameUsableStruct(item))
 				}
 			}
@@ -236,41 +248,159 @@ function _load_LocationData() {
   _database.locationConfigs["StaticLootTable"] = fileIO.readParsed("./" + db.locations.StaticLootTable);
   _database.locationConfigs["DynamicLootTable"] = fileIO.readParsed("./" + db.locations.DynamicLootTable);
 }
-function _load_TradersData() {
-  _database.traders = {};
-  for (let traderID in db.traders) {
-    _database.traders[traderID] = { base: {}, assort: {}, categories: {} };
-    _database.traders[traderID].base = fileIO.readParsed("./" + db.traders[traderID].base);
-    _database.traders[traderID].categories = fileIO.readParsed("./" + db.traders[traderID].categories);
-    _database.traders[traderID].base.sell_category = _database.traders[traderID].categories; // override trader categories
-
-    _database.traders[traderID].assort = fileIO.readParsed("./" + db.user.cache["assort_" + traderID]);
-
-    if (typeof _database.traders[traderID].assort.data != "undefined") _database.traders[traderID].assort = _database.traders[traderID].assort.data;
-    if (_database.traders[traderID].base.repair.price_rate === 0) {
-      _database.traders[traderID].base.repair.price_rate = 100;
-      _database.traders[traderID].base.repair.price_rate *= _database.gameplayConfig.trading.repairMultiplier;
-      _database.traders[traderID].base.repair.price_rate -= 100;
-    } else {
-      _database.traders[traderID].base.repair.price_rate *= _database.gameplayConfig.trading.repairMultiplier;
-      if (_database.traders[traderID].base.repair.price_rate == 0) _database.traders[traderID].base.repair.price_rate = -1;
+const LoadTraderAssort = (traderId) => {
+    let assortTable = { items: [], barter_scheme: {}, loyal_level_items: {} };
+    let assortFileData = fileIO.readParsed(db.traders[traderId].assort);
+    for (let item in assortFileData) {
+      if (traderId != "ragfair") {
+        if (typeof assortFileData[item].items[0] != "undefined") {
+          assortFileData[item].items[0] = { upd: { StackObjectsCount: assortFileData[item].currentStack }};
+          if (assortFileData[item].default.unlimited) 
+            assortFileData[item].items[0].upd["UnlimitedCount"] = true;
+        }
+      } else {
+        if (typeof assortFileData[item].items[0] != "undefined") {
+          assortFileData[item].items[0] = { upd: { StackObjectsCount: 9999 }};
+        }
+      }
+      for (let assort_item in assortFileData[item].items) {
+        assortTable.items.push(assortFileData[item].items[assort_item]);
+      }
+      assortTable.barter_scheme[item] = assortFileData[item].barter_scheme;
+      assortTable.loyal_level_items[item] = assortFileData[item].loyalty;
     }
-    if (_database.traders[traderID].base.repair.price_rate < 0) {
-      _database.traders[traderID].base.repair.price_rate = -100;
+    return assortTable;
+}
+function _load_TradersData() {
+  global._database.traders = {};
+  for (let traderID in db.traders) {
+    global._database.traders[traderID] = { base: {}, assort: {}, categories: {} };
+    global._database.traders[traderID].base = fileIO.readParsed("./" + db.traders[traderID].base);
+    global._database.traders[traderID].categories = fileIO.readParsed("./" + db.traders[traderID].categories);
+    global._database.traders[traderID].base.sell_category = _database.traders[traderID].categories; // override trader categories
+
+    // Loading Assort depending if its Fence or not
+    if(traderID == "579dc571d53a0658a154fbec")
+    {
+      global._database.traders[traderID].base_assort = LoadTraderAssort(traderID);
+      global._database.traders[traderID].assort = { items: [], barter_scheme: {}, loyal_level_items: {} };
+    } else {
+      global._database.traders[traderID].assort = LoadTraderAssort(traderID);
+    }
+    // Loading Player Customizations For Buying
+    if ("suits" in db.traders[traderID]) {
+      if (typeof db.traders[traderID].suits == "string") {
+        global._database.traders[traderID].suits = fileIO.readParsed(db.traders[traderID].suits);
+      } else {
+        let suitsTable = [];
+        for (let file in db.traders[traderID].suits) {
+          suitsTable.push(fileIO.readParsed(db.traders[traderID].suits[file]));
+        }
+        global._database.traders[traderID].suits = suitsTable;
+      }
+    }
+
+    if (global._database.traders[traderID].base.repair.price_rate === 0) {
+      global._database.traders[traderID].base.repair.price_rate = 100;
+      global._database.traders[traderID].base.repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
+      global._database.traders[traderID].base.repair.price_rate -= 100;
+    } else {
+      global._database.traders[traderID].base.repair.price_rate *= global._database.gameplayConfig.trading.repairMultiplier;
+      if (global._database.traders[traderID].base.repair.price_rate == 0) global._database.traders[traderID].base.repair.price_rate = -1;
+    }
+    if (global._database.traders[traderID].base.repair.price_rate < 0) {
+      global._database.traders[traderID].base.repair.price_rate = -100;
     }
   }
 }
 function _load_WeatherData() {
-  _database.weather = fileIO.readParsed("./" + db.user.cache.weather);
+  _database.weather = [];
   let i = 0;
-  for (let weather in db.weather) {
-    logger.logInfo("Loaded Weather: ID: " + i++ + ", Name: " + weather);
+  for (let file in db.weather) {
+      let filePath = db.weather[file];
+      let fileData = fileIO.readParsed(filePath);
+
+      logger.logInfo("Loaded Weather: ID: " + i++ + ", Name: " + file.replace(".json", ""));
+      _database.weather.push(fileData);
   }
 }
+
+function GenerateRagfairOffersCache(){
+
+	const findChildren = (itemIdToFind, assort) => {
+		let Array = [];
+		for (let itemFromAssort of assort) {
+			if (itemFromAssort.parentId == itemIdToFind) {   
+				Array.push(itemFromAssort)
+				Array = Array.concat(findChildren(itemFromAssort._id, assort));
+			}
+		}
+		return Array;
+	}
+	const OfferBase = fileIO.readParsed(db.base.fleaOffer);
+	const loadCache = (OFFER_BASE, itemsToSell, barter_scheme, loyal_level, trader, counter = 911) => {
+		let offer = utility.DeepCopy(OFFER_BASE);
+		const traderObj = global._database.traders[trader].base;
+		offer._id = itemsToSell[0]._id;
+		offer.intId = counter;
+		offer.user = {
+			"id": traderObj._id,
+			"memberType": 4,
+			"nickname": traderObj.surname,
+			"rating": 1,
+			"isRatingGrowing": true,
+			"avatar": traderObj.avatar
+		};
+		offer.root = itemsToSell[0]._id;
+		offer.items = itemsToSell;
+		offer.requirements = barter_scheme;
+		offer.loyaltyLevel = loyal_level;
+		return offer;
+	}
+	let response = {"categories": {}, "offers": [], "offersCount": 100, "selectedCategory": "5b5f78dc86f77409407a7f8e"};
+    let counter = 0;
+
+    for (let trader in db.traders) {
+        if (trader === "ragfair" || trader === "579dc571d53a0658a154fbec") {
+            continue;
+        }
+        const allAssort = global._database.traders[trader].assort;////fileIO.readParsed("./user/cache/assort_" + trader + ".json");
+        //allAssort = allAssort.data;
+    
+        for (let itemAssort of allAssort.items) {
+            if (itemAssort.slotId === "hideout") {
+                let barter_scheme = null;
+                let loyal_level = 0;
+
+                let itemsToSell = [];
+                itemsToSell.push(itemAssort);
+                itemsToSell = [...itemsToSell, ...findChildren(itemAssort._id, allAssort.items)];
+
+                for (let barterFromAssort in allAssort.barter_scheme) {
+                    if (itemAssort._id == barterFromAssort) {
+                        barter_scheme = allAssort.barter_scheme[barterFromAssort][0];
+                        break;
+                    }
+                }
+
+                for (let loyal_levelFromAssort in allAssort.loyal_level_items) {
+                    if (itemAssort._id == loyal_levelFromAssort) {
+                        loyal_level = allAssort.loyal_level_items[loyal_levelFromAssort];
+                        break;
+                    }
+                }
+
+                response.offers.push(loadCache(OfferBase, itemsToSell, barter_scheme, loyal_level, trader, counter));
+                counter += 1;
+            }
+        } 
+    }
+	logger.logDebug(`[Ragfair Cache] Generated ${counter} offers inluding all traders assort`)
+    fileIO.write("user/cache/ragfair_offers.json", response, true, false);
+}
+
+
 exports.load = () => {
-
-  cache();
-
   logger.logDebug("Load: 'Core'");
   _load_CoreData();
   logger.logDebug("Load: 'Globals'");
@@ -295,5 +425,10 @@ exports.load = () => {
   _load_TradersData();
   logger.logDebug("Load: 'Weather'");
   _load_WeatherData();
-  logger.logDebug("Database loaded");
+  logger.logInfo("Database loaded");
+  if(!fileIO.exist("db/user/cache/ragfair_offers.json"))
+  {
+    logger.logDebug("Rebuilding: 'db/user/cache/ragfair_offers.json' Cause: 'file is missing'")
+    GenerateRagfairOffersCache();
+  }
 };

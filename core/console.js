@@ -29,15 +29,16 @@ class ConsoleResponse {
       help: this.displayInfo,
       h: this.displayInfo,
       addItem: this.addItem,
+      additem: this.addItem, // its for lazy fuckers
       devSession: this.setDebugSession,
     };
     this.commandsInfo = {
       // add command below !!
       restart: "restarting the server softly",
-      register: "( /register login editionNumber password ) - edition & password not required",
+      register: "'/register login editionNumber password' - edition & password not required [1=Prepare To Escape, 2=Left Behind, 3=Edge Of Darkness, 4=Developer, Default=Standard]",
       info: "",
-      addItem: "( /addItem MySession TemplateId Amount)",
-      devSession: "( /devSession true MySessionToChange ) ",
+      addItem: "'/addItem MySession TemplateId Amount' - command is not case sensitive anymore, TemplateId can be found in 'eft.justemutarkov.eu'",
+      devSession: "'/devSession true MySessionToChange'",
     };
     this.commandsInfo["help"] == this.commandsInfo["info"];
     this.commandsInfo["h"] == this.commandsInfo["info"];
@@ -50,11 +51,11 @@ class ConsoleResponse {
   }
   addCommand(commandName, commandDescription, _function) {
     this.commands[commandName] = _function;
-	this.commandsInfo[commandName] = commandDescription;
+	  this.commandsInfo[commandName] = commandDescription;
   }
   removeCommand(commandName) {
     delete this.commands[commandName];
-	delete this.commandsInfo[commandName];
+	  delete this.commandsInfo[commandName];
   }
   // commands below !!
   setDebugSession(commandStructure) {

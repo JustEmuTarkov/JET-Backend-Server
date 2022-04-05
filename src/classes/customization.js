@@ -1,9 +1,6 @@
 "use strict";
 
-function getPath(sessionID) {
-	let path = db.user.profiles.storage;
-	return path.replace("__REPLACEME__", sessionID);
-}
+const getPath = (sessionID) => `user/profiles/${sessionID}/storage.json`;
 module.exports.getPath = getPath;
 
 module.exports.getCustomization = () => {
@@ -39,7 +36,7 @@ module.exports.wearClothing = (pmcData, body, sessionID) => {
 
 	return item_f.handler.getOutput(sessionID);
 }
-module.exports.buyClothing = (pmcData, body, sessionID) => {
+module.exports.buyClothing = (pmcData, body, sessionID, traderID) => {
 	let output = item_f.handler.getOutput(sessionID);
 	let storage = fileIO.readParsed(getPath(sessionID));
 	let offers = trader_f.handler.getAllCustomization(sessionID);
@@ -51,36 +48,23 @@ module.exports.buyClothing = (pmcData, body, sessionID) => {
 		}
 	}
 
-	// pay items
-	for (let sellItem in body.items) {
-		for (let item in pmcData.Inventory.items) {
-			if (pmcData.Inventory.items[item]._id === sellItem.id) {
-				if (pmcData.Inventory.items[item].upd.StackObjectsCount > sellItem.count) {
-					pmcData.Inventory.items[item].upd.StackObjectsCount -= sellItem.count;
-
-					if(typeof output.profileChanges[pmcData._id].items.change == "undefined")
-						output.profileChanges[pmcData._id].items.change = [];
-					output.profileChanges[pmcData._id].items.change.push({
-                        "_id": pmcData.Inventory.items[item]._id,
-                        "_tpl": pmcData.Inventory.items[item]._tpl,
-                        "parentId": pmcData.Inventory.items[item].parentId,
-                        "slotId": pmcData.Inventory.items[item].slotId,
-                        "location": pmcData.Inventory.items[item].location,
-                        "upd": {"StackObjectsCount": pmcData.Inventory.items[item].upd.StackObjectsCount}
-					});
-					break;
-				} else if (pmcData.Inventory.items[item].upd.StackObjectsCount === sellItem.count && sellItem.del === true) {
-					if(typeof output.profileChanges[pmcData._id].items.del == "undefined")
-						output.profileChanges[pmcData._id].items.del = [];
-
-					output.profileChanges[pmcData._id].items.del.push({"_id": sellItem.id});
-                    pmcData.Inventory.items.splice(item, 1);					
-				}
-			}
-		}
+	//transform the body to fit a regular trade so we can use 
+	//helper_f.payMoney
+	let tBody = {
+		Action: 'TradingConfirm',
+		type: 'buy_from_trader',
+		tid: 'ragfair',
+		item_id: utility.generateNewId("T"),
+		count: 1,
+		scheme_id: 0,
+		scheme_items: body.items
 	}
 
-	// add outfit to storage
+	//actually discount our money from the profile
+	helper_f.payMoney(pmcData, tBody, sessionID);
+
+
+	// add outfit to storage (profile)
 	for (let offer of offers) {
 		if (body.offer === offer._id) {
 			storage.data.suites.push(offer.suiteId);

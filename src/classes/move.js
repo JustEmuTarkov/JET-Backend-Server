@@ -1,6 +1,9 @@
 "use strict";
 
-/* Based on the item action, determine whose inventories we should be looking at for from and to. */
+/** Based on the item action, determine whose inventories we should be looking at for from and to.
+ * @param body Request to determine
+ * @param sessionID SessionID
+*/
 function getOwnerInventoryItems(body, sessionID) {
   let isSameInventory = false;
   let pmcItems = profile_f.handler.getPmcProfile(sessionID).Inventory.items;
@@ -41,35 +44,30 @@ function getOwnerInventoryItems(body, sessionID) {
 }
 
 /* Move Item
+ * */
+/** Move Item
  * change location of item with parentId and slotId
  * transfers items from one profile to another if fromOwner/toOwner is set in the body.
  * otherwise, move is contained within the same profile_f.
- * */
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
+ */
 function moveItem(pmcData, body, sessionID) {
-  let output = item_f.handler.getOutput(sessionID);
-  let inventoryItems = getOwnerInventoryItems(body, sessionID);
-  /*  if (inventoryItems.isMail) {
-        let idsToMove = dialogue_f.findAndReturnChildren(inventoryItems.from, body.item);
-        for (let itemId of idsToMove) {
-            for (let messageItem of inventoryItems.from) {
-                if (messageItem._id === itemId) {
-                    inventoryItems.to.push(messageItem);
-                }
-            }
-        }
-        moveItemInternal(inventoryItems.to, body);
-    } else */
+  const inventoryItems = getOwnerInventoryItems(body, sessionID);
+
   if (inventoryItems.sameInventory) {
     moveItemInternal(inventoryItems.from, body);
   } else {
     moveItemToProfile(inventoryItems.from, inventoryItems.to, body);
   }
 
-  return output;
+  return item_f.handler.getOutput(sessionID);
 }
 
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
-  const output = item_f.handler.getOutput(sessionID);
+  //const output = item_f.handler.getOutput(sessionID);
 
   if (Symbol.iterator in Object(body.changedItems) && body.changedItems !== null) {
     for (const changed_item of body.changedItems) {
@@ -78,31 +76,18 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
           pmcData.Inventory.items[key].parentId = changed_item.parentId;
           pmcData.Inventory.items[key].slotId = changed_item.slotId;
           pmcData.Inventory.items[key].location = changed_item.location;
-          //if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
-          //output.profileChanges[pmcData._id].items.change.push(changed_item);
           break;
         }
       }
     }
   }
-  // if (Symbol.iterator in Object(body.deletedItems) && body.deletedItems !== null) {
-  //   for (const deleted_item of body.deletedItems) {
-  //     for (const [key, item] of Object.entries(pmcData.Inventory.items)) {
-  //       if (item._id === deleted_item._id) {
-  //         pmcData.Inventory.items.splice(key);
-  //         //if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
-  //         //output.profileChanges[pmcData._id].items.del.push(deleted_item);
-  //         break;
-  //       }
-  //     }
-  //   }
-  // }
 };
 
-/* Internal helper function to transfer an item from one profile to another.
- * fromProfileData: Profile of the source.
- * toProfileData: Profile of the destination.
- * body: Move request
+/** Internal helper function to transfer an item from one profile to another.
+ * 
+ * @param {*} fromItems Profile of the source.
+ * @param {*} toItems Profile of the destination.
+ * @param {*} body Move request
  */
 function moveItemToProfile(fromItems, toItems, body) {
   handleCartridges(fromItems, body);
@@ -132,15 +117,19 @@ function moveItemToProfile(fromItems, toItems, body) {
   }
 }
 
-/* Internal helper function to move item within the same profile_f.
- * items: Items
- * body: Move request
+/** Internal helper function to move item within the same profile_f.
+ * @param items Items
+ * @param body Move request
  */
 function moveItemInternal(items, body) {
   handleCartridges(items, body);
 
-  for (let item of items) {
+  for (const item of items) {
     if (item._id && item._id === body.item) {
+      // don't overwrite camera_ items (happens when loading shells ito mts-255 revolver shotgun)
+      if (item.slotId.includes("camora_")) {
+        return;
+      }
       item.parentId = body.to.id;
       item.slotId = body.to.container;
 
@@ -157,9 +146,9 @@ function moveItemInternal(items, body) {
   }
 }
 
-/* Internal helper function to handle cartridges in inventory if any of them exist.
- * items: Items
- * body: Move request
+/** Internal helper function to handle cartridges in inventory if any of them exist.
+ * @param items Items
+ * @param body Move request
  */
 function handleCartridges(items, body) {
   // -> Move item to diffrent place - counts with equiping filling magazine etc
@@ -176,8 +165,12 @@ function handleCartridges(items, body) {
   }
 }
 
-/* Remove item of itemId and all of its descendants from profile. */
-/* if `sessionID` is passed, this should set an output */
+/** Remove item of itemId and all of its descendants from profile.
+ *  if `sessionID` is passed, this should set an output
+ * @param {*} pmcData 
+ * @param {*} itemId 
+ * @param {*} sessionID Required if you want to update output in item_f
+ */
 function removeItemFromProfile(pmcData, itemId, sessionID) {
   // get items to remove
   let ids_toremove = helper_f.findAndReturnChildren(pmcData, itemId);
@@ -216,9 +209,12 @@ function removeItemFromProfile(pmcData, itemId, sessionID) {
   }
 }
 
-/*
- * Remove Item
- * Deep tree item deletion / Delets main item and all sub items with sub items ... and so on.
+/** Remove Item
+ * Deep tree item deletion / Delete main item and all sub items with sub items ... and so on.
+ * @param {*} profileData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
  */
 function removeItem(profileData, body, sessionID) {
   let toDo = [body];
@@ -232,14 +228,25 @@ function removeItem(profileData, body, sessionID) {
   return item_f.handler.getOutput(sessionID);
 }
 
+/** Discard item - with insurance remove
+ * 
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
+ */
 function discardItem(pmcData, body, sessionID) {
   insurance_f.handler.remove(pmcData, body.item, sessionID);
   return removeItem(pmcData, body.item, sessionID);
 }
 
-/* Split Item
+/** Split Item
  * spliting 1 item into 2 separate items ...
- * */
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
+ */
 function splitItem(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
   logger.logInfo(body, true);
@@ -303,68 +310,69 @@ function splitItem(pmcData, body, sessionID) {
   return output;
 }
 
-/* Merge Item
- * merges 2 items into one, deletes item from body.item and adding number of stacks into body.with
- * */
+/**
+ * Merge Item
+ * merges 2 items into one, deletes item from `body.item` and adding number of stacks into `body.with`
+ *
+ * @param {Object} pmcData      - PMC Part of profile
+ * @param {Object} body         - Request Body
+ * @param {string} sessionID    - Session ID
+ * @returns response
+ */
 function mergeItem(pmcData, body, sessionID) {
-  let output = item_f.handler.getOutput(sessionID);
-  let inventoryItems = getOwnerInventoryItems(body, sessionID);
-  for (let key in inventoryItems.to) {
-    if (inventoryItems.to[key]._id === body.with) {
-      for (let key2 in inventoryItems.from) {
-        if (inventoryItems.from[key2]._id && inventoryItems.from[key2]._id === body.item) {
+  const output = item_f.handler.getOutput(sessionID);
+  const items = getOwnerInventoryItems(body, sessionID);
+
+  for (const key in items.to) {
+    if (items.to[key]._id === body.with) {
+      for (const key2 in items.from) {
+        if (items.from[key2]._id && items.from[key2]._id === body.item) {
           let stackItem0 = 1;
           let stackItem1 = 1;
 
-          if (!(inventoryItems.to[key].upd && inventoryItems.to[key].upd.StackObjectsCount)) {
-            inventoryItems.to[key].upd = { StackObjectsCount: 1 };
-          } else if (!(inventoryItems.to[key2].upd && inventoryItems.to[key2].upd.StackObjectsCount)) {
-            inventoryItems.from[key2].upd = { StackObjectsCount: 1 };
+          if (!(items.to[key].upd && items.to[key].upd.StackObjectsCount)) {
+            items.to[key].upd = { StackObjectsCount: 1 };
+          } else if (
+            !(items.from[key2].upd && items.from[key2].upd.StackObjectsCount)
+          ) {
+            items.from[key2].upd = { StackObjectsCount: 1 };
           }
 
-          if ("upd" in inventoryItems.to[key]) {
-            stackItem0 = inventoryItems.to[key].upd.StackObjectsCount;
+          if (items.to[key].upd !== undefined) {
+            stackItem0 = items.to[key].upd.StackObjectsCount;
           }
 
-          if ("upd" in inventoryItems.from[key2]) {
-            stackItem1 = inventoryItems.from[key2].upd.StackObjectsCount;
+          if ("upd" in items.from[key2]) {
+            stackItem1 = items.from[key2].upd.StackObjectsCount;
           }
 
           if (stackItem0 === 1) {
-            Object.assign(inventoryItems.to[key], {
-              upd: { StackObjectsCount: 1 },
-            });
+            Object.assign(items.to[key], { upd: { StackObjectsCount: 1 } });
           }
 
-          inventoryItems.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
-
-          if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
-          output.profileChanges[pmcData._id].items.change.push(inventoryItems.to[key]);
-
-          if (typeof output.profileChanges[pmcData._id].items.del == "undefined") output.profileChanges[pmcData._id].items.del = [];
+          items.to[key].upd.StackObjectsCount = stackItem0 + stackItem1;
           output.profileChanges[pmcData._id].items.del.push({
-            _id: inventoryItems.from[key2]._id,
+            _id: items.from[key2]._id,
           });
-
-          inventoryItems.from.splice(key2, 1);
-          item_f.handler.setOutput(output);
+          items.from.splice(key2, 1);
           return output;
         }
       }
     }
   }
-
   return "";
 }
 
-/* Transfer item
- * Used to take items from scav inventory into stash or to insert ammo into mags (shotgun ones) and reloading weapon by clicking "Reload"
- * */
+/** Transfer item - Used to take items from scav inventory into stash or to insert ammo into mags (shotgun ones) and reloading weapon by clicking "Reload"
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
+ */
 function transferItem(pmcData, body, sessionID) {
-  let output = item_f.handler.getOutput(sessionID);
+  const output = item_f.handler.getOutput(sessionID);
 
-  let itemFrom = null,
-    itemTo = null;
+  let itemFrom = null, itemTo = null;
 
   for (let iterItem of pmcData.Inventory.items) {
     if (iterItem._id === body.item) {
@@ -406,9 +414,12 @@ function transferItem(pmcData, body, sessionID) {
   return output;
 }
 
-/* Swap Item
- * its used for "reload" if you have weapon in hands and magazine is somewhere else in rig or backpack in equipment
- * */
+/** Swap Item - its used for "reload" if you have weapon in hands and magazine is somewhere else in rig or backpack in equipment
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @returns 
+ */
 function swapItem(pmcData, body, sessionID) {
   let output = item_f.handler.getOutput(sessionID);
 
@@ -425,6 +436,9 @@ function swapItem(pmcData, body, sessionID) {
       iterItem.parentId = body.to2.id;
       iterItem.slotId = body.to2.container;
       delete iterItem.location;
+      if(!output.profileChanges[pmcData._id].change){
+        output.profileChanges[pmcData._id].change = [];
+      }
       output.profileChanges[pmcData._id].change.push(iterItem);
     }
   }
@@ -432,21 +446,92 @@ function swapItem(pmcData, body, sessionID) {
   return output;
 }
 
-/* Give Item
- * its used for "add" item like gifts etc.
- * */
+function fillAmmoBox(itemToAdd, pmcData, toDo, output) {
+  // If this is an ammobox, add cartridges to it.
+  // Damaged ammo box are not loaded.
+  const itemInfo = helper_f.tryGetItem(itemToAdd._tpl);
+  console.log(itemInfo._name)
+  let ammoBoxInfo = itemInfo._props.StackSlots;
+  if (ammoBoxInfo !== undefined && itemInfo._name.indexOf("_damaged") < 0) {
+    // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
+    let maxCount = ammoBoxInfo[0]._max_count;
+    let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
+    let ammoStackMaxSize = helper_f.tryGetItem(ammoTmplId)._props.StackMaxSize;
+    let ammos = [];
+    let location = 0;
+
+    while (maxCount > 0) {
+      let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
+      ammos.push({
+        _id: utility.generateNewItemId(),
+        _tpl: ammoTmplId,
+        parentId: toDo[0][1],
+        slotId: "cartridges",
+        location: location,
+        upd: { StackObjectsCount: ammoStackSize },
+      });
+
+      location++;
+      maxCount -= ammoStackMaxSize;
+    }
+
+    if (utility.isUndefined(output.profileChanges[pmcData._id].items.new)) {
+      output.profileChanges[pmcData._id].items.new = [];
+    }
+    [output.profileChanges[pmcData._id].items.new, pmcData.Inventory.items].forEach((x) => x.push.apply(x, ammos));
+  }
+}
+
+function findEmptySlot(itemsToAdd, sessionID, pmcData) {
+  // Find an empty slot in stash for each of the items being added
+  let StashFS_2D = helper_f.getPlayerStashSlotMap(sessionID, pmcData);
+  for (let itemToAdd of itemsToAdd) {
+    let itemSize = helper_f.getItemSize(itemToAdd._tpl, itemToAdd._id, itemsToAdd);
+    let findSlotResult = helper_f.findSlotForItem(StashFS_2D, itemSize[0], itemSize[1]);
+
+    if (findSlotResult.success) {
+      /* Fill in the StashFS_2D with an imaginary item, to simulate it already being added
+       * so the next item to search for a free slot won't find the same one */
+      let itemSizeX = findSlotResult.rotation ? itemSize[1] : itemSize[0];
+      let itemSizeY = findSlotResult.rotation ? itemSize[0] : itemSize[1];
+
+      try {
+        StashFS_2D = helper_f.fillContainerMapWithItem(StashFS_2D, findSlotResult.x, findSlotResult.y, itemSizeX, itemSizeY);
+      } catch (err) {
+        logger.logError("fillContainerMapWithItem returned with an error" + typeof err === "string" ? ` -> ${err}` : "");
+        return helper_f.appendErrorToOutput(output, "Not enough stash space");
+      }
+
+      itemToAdd.location = {
+        x: findSlotResult.x,
+        y: findSlotResult.y,
+        rotation: findSlotResult.rotation,
+      };
+    } else {
+      return helper_f.appendErrorToOutput(output, "Not enough stash space");
+    }
+  }
+}
+
+/** Give Item - its used for "add" item to player stash or inventory
+ * @param {*} pmcData 
+ * @param {*} body 
+ * @param {*} sessionID 
+ * @param {*} foundInRaid 
+ * @returns 
+ */
 function addItem(pmcData, body, sessionID, foundInRaid = false) {
   let output = item_f.handler.getOutput(sessionID);
   // const fenceID = "579dc571d53a0658a154fbec";
   let itemLib = [];
   let itemsToAdd = [];
-  if (typeof body.items == "undefined") {
+  if (utility.isUndefined(body.items)) {
     body.items = [{ item_id: body.item_id, count: body.count }];
   }
 
   for (let baseItem of body.items) {
     if (baseItem.item_id in global._database.globals.ItemPresets) {
-      const presetItems = helper_f.clone(global._database.globals.ItemPresets[baseItem.item_id]._items);
+      const presetItems = utility.DeepCopy(global._database.globals.ItemPresets[baseItem.item_id]._items);
       itemLib.push(...presetItems);
       baseItem.isPreset = true;
       baseItem.item_id = presetItems[0]._id;
@@ -487,7 +572,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
 
           for (let sv = 0; sv < MaxStacks; sv++) {
             if (count > 0) {
-              let newItemToAdd = helper_f.clone(itemToAdd);
+              let newItemToAdd = utility.DeepCopy(itemToAdd);
               if (count > tmpItem._props.StackMaxSize) {
                 count = count - tmpItem._props.StackMaxSize;
                 newItemToAdd.count = tmpItem._props.StackMaxSize;
@@ -566,7 +651,8 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
       upd["SpawnedInSession"] = true;
     }
 
-    if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
+    if (utility.isUndefined(output.profileChanges[pmcData._id].items.new)) output.profileChanges[pmcData._id].items.new = [];
+
     output.profileChanges[pmcData._id].items.new.push({
       _id: newItem,
       _tpl: itemToAdd.itemRef._tpl,
@@ -594,35 +680,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
     });
 
     // If this is an ammobox, add cartridges to it.
-    // Damaged ammo box are not loaded.
-    const itemInfo = helper_f.getItem(itemToAdd.itemRef._tpl)[1];
-    let ammoBoxInfo = itemInfo._props.StackSlots;
-    if (ammoBoxInfo !== undefined && itemInfo._name.indexOf("_damaged") < 0) {
-      // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
-      let maxCount = ammoBoxInfo[0]._max_count;
-      let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
-      let ammoStackMaxSize = helper_f.getItem(ammoTmplId)[1]._props.StackMaxSize;
-      let ammos = [];
-      let location = 0;
-
-      while (maxCount > 0) {
-        let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
-        ammos.push({
-          _id: utility.generateNewItemId(),
-          _tpl: ammoTmplId,
-          parentId: toDo[0][1],
-          slotId: "cartridges",
-          location: location,
-          upd: { StackObjectsCount: ammoStackSize },
-        });
-
-        location++;
-        maxCount -= ammoStackMaxSize;
-      }
-      if (typeof output.profileChanges[pmcData._id].items.new == "undefined") output.profileChanges[pmcData._id].items.new = [];
-
-      [output.profileChanges[pmcData._id].items.new, pmcData.Inventory.items].forEach((x) => x.push.apply(x, ammos));
-    }
+    this.fillAmmoBox(itemToAdd, pmcData, toDo, output);
 
     while (toDo.length > 0) {
       for (let tmpKey in itemLib) {

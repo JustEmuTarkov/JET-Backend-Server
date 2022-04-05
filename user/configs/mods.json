@@ -1,22 +1,42 @@
 {
+	"AdditionalLanguages-1.0.0_TheMaoci": {
+		"isEnabled": true,
+		"folder": "AdditionalLanguages_1.0.0",
+		"order": 1
+	},
 	"AllItemsExamined-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "AllItemsExamined_1.0.0",
-		"order": 1
+		"order": 2
 	},
 	"EquipRigsWithArmors-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "EquipRigsWithArmors_1.0.0",
-		"order": 2
+		"order": 3
 	},
 	"LessWeightItems-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "LessWeightItems_1.0.0",
-		"order": 3
+		"order": 4
+	},
+	"NoBackpackRestrictions-1.0.0_TheMaoci": {
+		"isEnabled": true,
+		"folder": "NoBackpackRestrictions_1.0.0",
+		"order": 5
 	},
 	"NoFallDamage-1.0.0_TheMaoci": {
 		"isEnabled": true,
 		"folder": "NoFallDamage_1.0.0",
-		"order": 4
+		"order": 6
+	},
+	"NoInraidRestriction-1.0.0_TheMaoci": {
+		"isEnabled": true,
+		"folder": "NoInraidRestriction_1.0.0",
+		"order": 7
+	},
+	"SearchWebpage-1.0.0_TheMaoci": {
+		"isEnabled": true,
+		"folder": "SearchWebpage_1.0.0",
+		"order": 8
 	}
 }

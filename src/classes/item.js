@@ -88,9 +88,16 @@ class ItemServer {
   }
 
   resetOutput(sessionID) {
-    if (sessionID == "" || typeof sessionID == "undefined") return;
-    const _profile = profile_f.handler.getPmcProfile(sessionID);
-    //let _profile = {"_id": ""};
+    if (sessionID == "" || typeof sessionID == "undefined") {
+      logger.logError(`[MISSING SESSION ID] resetOutput(sessionID) is blank or undefined; returning.`);
+      return;
+    }
+    let _profile = profile_f.handler.getPmcProfile(sessionID);
+    if (typeof _profile == "undefined") {
+      logger.logError(`[MISSING PROFILE] Profile with sessionID: ${sessionID} is missing?`);
+      return;
+    }
+    
     this.output = {
       warnings: [],
       profileChanges: {},

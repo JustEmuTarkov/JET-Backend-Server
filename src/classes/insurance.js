@@ -6,6 +6,10 @@ class InsuranceServer {
         events.scheduledEventHandler.addEvent("insuranceReturn", this.processReturn.bind(this));
     }
 
+    freeFromMemory(sessionID) {
+        delete this.insured[sessionID];
+    }
+
     checkExpiredInsurance() {
         let scheduledEvents = events.scheduledEventHandler.scheduledEvents;
         let now = Date.now();
@@ -116,12 +120,8 @@ class InsuranceServer {
     /* store insured items on pmc death */
     storeDeadGear(pmcData, offraidData, preRaidGear, sessionID) {
         let gears = [];
-        let parentItems = {};
 
         let securedContainerItems = offraid_f.getSecuredContainer(offraidData.profile.Inventory.items);
-        let offraidGearItems = offraid_f.getPlayerGear(offraidData.profile.Inventory.items);
-
-        let notInSecuredContainerHash = {};
 
         const preRaidGearHash = {};
         preRaidGear.forEach(i => preRaidGearHash[i._id] = i);
@@ -132,19 +132,8 @@ class InsuranceServer {
         const pmcItemsHash = {};
         pmcData.Inventory.items.forEach(i => pmcItemsHash[i._id] = i);
 
-        let parentIds = [];
         for (let insuredItem of pmcData.InsuredItems) {
             if (preRaidGearHash[insuredItem.itemId] && !(securedContainerItemHash[insuredItem.itemId]) && !(typeof pmcItemsHash[insuredItem.itemId] === "undefined") && !(pmcItemsHash[insuredItem.itemId].slotId === "SecuredContainer")) {
-                /*if (utility.getRandomInt(0, 99) >= global._database.gameplayConfig.trading.insureReturnChance) {
-                    parentIds.push(insuredItem.itemId);
-                    continue;
-                }*/
-
-                /*if(parentIds(insuredItem.itemId) > -1) {
-                    
-                }*/
-
-                let item = pmcItemsHash[insuredItem.itemId];
                 gears.push({ "pmcData": pmcData, "insuredItem": insuredItem, "item": pmcItemsHash[insuredItem.itemId], "sessionID": sessionID });
             }
         }
@@ -194,7 +183,7 @@ class InsuranceServer {
 
     processReturn(event) {
         // Inject a little bit of a surprise by failing the insurance from time to time ;)
-        if (utility.getRandomInt(0, 99) >= global._database.gameplayConfig.trading.insureReturnChance) {
+        if (!utility.getPercentRandomBool(global._database.gameplayConfig.trading.insureReturnChance)) {
             let insuranceFailedTemplates = fileIO.readParsed(db.dialogues[event.data.traderId]).insuranceFailed;
             event.data.messageContent.templateId = insuranceFailedTemplates[utility.getRandomInt(0, insuranceFailedTemplates.length - 1)];
             event.data.items = [];
@@ -204,23 +193,25 @@ class InsuranceServer {
     }
 }
 
-// TODO: Move to helper functions
-function getItemPrice(_tpl) {
-    let price = 0;
+function getPremium(pmcData, inventoryItem, traderId) {
+    let loyaltyLevelIndex = profile_f.getLoyalty(pmcData, traderId) - 1;
+    let trader = trader_f.handler.getTrader(traderId, pmcData.aid);
+    let insuranceMultiplier;
+    insuranceMultiplier = trader.loyaltyLevels[loyaltyLevelIndex].insurance_price_coef / 100
 
-    if(typeof _database.itemPriceTable[_tpl] != "undefined")
-    {
-      price = _database.itemPriceTable[_tpl];
+    if (!insuranceMultiplier) {
+        insuranceMultiplier = 0.3;
+        Logger.warning(`No multiplier found for trader ${traderId}, check it exists in InsuranceConfig.js, falling back to a default value of 0.3`);
     }
 
-    return price;
-}
+    let premium = helper_f.getTemplatePrice(inventoryItem._tpl) * insuranceMultiplier;
+    const coef = trader.loyaltyLevels[loyaltyLevelIndex].insurance_price_coef;
 
-function getPremium(pmcData, inventoryItem, traderId) {
-    let premium = getItemPrice(inventoryItem._tpl) * (global._database.gameplayConfig.trading.insureMultiplier * 3);
-	if(typeof pmcData.TradersInfo[traderId] != "undefined")
-		premium -= premium * (pmcData.TradersInfo[traderId].standing > 0.5 ? 0.5 : pmcData.TradersInfo[traderId].standing);
-    return Math.round(premium);
+    if (coef > 0) {
+        premium *= (1 - trader.loyaltyLevels[loyaltyLevelIndex].insurance_price_coef / 100);
+    }
+
+    return ~~ (premium);
 }
 
 /* calculates insurance cost */
@@ -263,7 +254,7 @@ function insure(pmcData, body, sessionID) {
     for (let key of body.items) {
         itemsToPay.push({
             "id": inventoryItemsHash[key]._id,
-            "count": Math.round(getPremium(pmcData, inventoryItemsHash[key], body.tid))
+            "count": ~~ (getPremium(pmcData, inventoryItemsHash[key], body.tid))
         });
     }
 

@@ -13,40 +13,34 @@ function updateTraders(sessionID) {
   dialogue_f.handler.removeExpiredItems(sessionID);
 
   // update each hour
-  let tradersToUpdateList = trader_f.handler.getAllTraders(sessionID, true);
-  for (let i = 0; i < tradersToUpdateList.length; i++) {
-    if (tradersToUpdateList[i]._id == "ragfair") continue;
+  for (let trader in global._database.traders) {
+    if (global._database.traders[trader].base._id == "ragfair") continue;
 
-    update_per = global._database.gameplayConfig.trading.traderSupply[tradersToUpdateList[i]._id];
-    if (tradersToUpdateList[i].nextResupply > timeNow) {
+    update_per = global._database.gameplayConfig.trading.traderSupply[global._database.traders[trader].base._id];
+    if (global._database.traders[trader].base.nextResupply > timeNow) {
       continue;
     }
-    tradersToUpdateList[i].nextResupply = timeNow + update_per;
-    logger.logInfo(`Updating trader[${tradersToUpdateList[i]._id}] supply time data to ${tradersToUpdateList[i].nextResupply}`);
-    trader_f.handler.setTraderBase(tradersToUpdateList[i]);
-    if (tradersToUpdateList[i]._id === "579dc571d53a0658a154fbec") continue;
 
-    if (typeof db.traders[tradersToUpdateList[i]._id] == "undefined") return;
-    let assort = fileIO.readParsed(db.traders[tradersToUpdateList[i]._id].assort);
+    global._database.traders[trader].base.nextResupply = timeNow + update_per;
 
-    for (let assortItem in assort) {
+    if (global._database.traders[trader]._id === "579dc571d53a0658a154fbec") continue;
+
+    for (let assortItem in global._database.traders[trader].assort) {
       if (typeof assort[assortItem].default == "undefined") {
-        logger.logWarning(`Unable to find item assort default for scheme: ${assortItem} and trader: ${tradersToUpdateList[i]._id}`);
+        logger.logWarning(`Unable to find item assort default for scheme: ${assortItem} and trader: ${global._database.traders[trader]._id}`);
         continue;
       }
 
-      assort[assortItem].currentStack = assort[assortItem].default.stack;
+      global._database.traders[trader].assort[assortItem].currentStack = assort[assortItem].default.stack;
     }
 
-    fileIO.write(db.traders[tradersToUpdateList[i]._id].assort, assort, true, false);
-
-    trader_f.handler.saveTrader(tradersToUpdateList[i]._id);
+    trader_f.handler.saveTrader(global._database.traders[trader]._id);
   }
 }
 
 function updatePlayerHideout(sessionID) {
   let pmcData = profile_f.handler.getPmcProfile(sessionID);
-  let recipes = fileIO.readParsed(db.user.cache.hideout_production);
+  let recipes = global._database.hideout.production;
   let solarPowerLevel = 0;
   let btcFarmCGs = 0;
   let isGeneratorOn;
@@ -266,15 +260,15 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
     }
   }
 
-  let production = fileIO.readParsed(db.user.cache.hideout_production).data.find((prodArea) => prodArea.areaType == 20);
-  let time_elapsed = Math.floor(Date.now() / 1000) - btcProd.StartTimestamp;
+  const production = global._database.hideout.production.find((prodArea) => prodArea.areaType == 20);
+  const time_elapsed = Math.floor(Date.now() / 1000) - btcProd.StartTimestamp;
 
   if (isGeneratorOn == true) {
     btcProd.Progress += time_elapsed;
   }
 
-  let t2 = Math.pow(0.05 + ((btcFarmCGs - 1) / 49) * 0.15, -1); //THE FUNCTION TO REDUCE TIME OF PRODUCTION DEPENDING OF CGS
-  let final_prodtime = Math.floor(t2 * (production.productionTime / 20));
+  const t2 = Math.pow(0.05 + ((btcFarmCGs - 1) / 49) * 0.15, -1); //THE FUNCTION TO REDUCE TIME OF PRODUCTION DEPENDING OF CGS
+  const final_prodtime = ~~(t2 * (production.productionTime / 20));
 
   while (btcProd.Progress > final_prodtime) {
     if (btcProd.Products.length < MAX_BTC) {
@@ -292,7 +286,7 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
     }
   }
 
-  btcProd.StartTimestamp = Math.floor(Date.now() / 1000);
+  btcProd.StartTimestamp = ~~(Date.now() / 1000);
   return btcProd;
 }
 

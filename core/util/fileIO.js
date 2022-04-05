@@ -76,6 +76,14 @@ function _getCaller() {
     return undefined;
 }
 
+/** saves file on disk
+ * 
+ * @param {string} file 
+ * @param {*} data 
+ * @param {bool} raw 
+ * @param {bool} atomic 
+ * @returns 
+ */
 exports.write = (file, data, raw = false, atomic = true) => {
 	if(file.indexOf('/') != -1)
 		createDir(file);

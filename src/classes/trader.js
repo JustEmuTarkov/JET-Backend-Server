@@ -38,7 +38,7 @@ function generateFenceAssort() {
   const fenceId = "579dc571d53a0658a154fbec";
   let base = { items: [], barter_scheme: {}, loyal_level_items: {} };
 
-  let fence_base_assort = fileIO.readParsed(db.user.cache.assort_579dc571d53a0658a154fbec).data.items;
+  let fence_base_assort = _database.traders[fenceId].base_assort.items;
 
   let fence_base_assort_root_items = fence_base_assort.filter((item) => item.parentId === "hideout");
 
@@ -219,11 +219,6 @@ class TraderServer {
         generateFenceAssort();
       }
     }
-    // if (!(traderid in this.assorts)) {
-    // // for modders generate endgame items for fence where you need to exchange it for that items
-    // let tmp = fileio.readparsed(db.user.cache["assort_" + traderid]);
-    // global._database.traders[traderid].assort = tmp.data;
-    // }
 
     let baseAssorts = global._database.traders[traderID].assort;
 

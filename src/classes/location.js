@@ -1067,17 +1067,14 @@ class LocationServer {
   /* get all locations without loot data */
   generateAll() {
     // lets try to read from cache
-    if (!utility.isUndefined(db.user.cache.locations)) {
-      let base = global._database.core.location_base;
-      let newData = {};
-      for (let location in global._database.locations) {
-        newData[global._database.locations[location].base._Id] = utility.DeepCopy(global._database.locations[location].base);
-        newData[global._database.locations[location].base._Id].Loot = [];
-      }
-      base.locations = newData;
-      return base;
+    let base = global._database.core.location_base;
+    let newData = {};
+    for (let location in global._database.locations) {
+      newData[global._database.locations[location].base._Id] = utility.DeepCopy(global._database.locations[location].base);
+      newData[global._database.locations[location].base._Id].Loot = [];
     }
-    throw "Missing file db/cacheBase/locations.json";
+    base.locations = newData;
+    return base;
   }
 }
 

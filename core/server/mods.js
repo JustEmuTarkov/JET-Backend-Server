@@ -63,12 +63,14 @@ function scanRecursiveRoute(filepath, deep = false)
 	return baseNode;
 }
 
+
+
 function routeDatabaseAndResources() 
 { // populate global.db and global.res with folders data
 	logger.logInfo("Rebuilding cache: route database");
-	db = scanRecursiveRoute("db/");
+	global.db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route resources");
-	res = scanRecursiveRoute("res/");
+	global.res = scanRecursiveRoute("res/");
 	
 	// populate res/bundles
 	res.bundles = {files: [], folders: []};
@@ -80,21 +82,23 @@ function routeDatabaseAndResources()
 
 	/* add important server paths */
 	db.user = {
-		"configs": {
-			"server": "user/configs/server.json"
+		configs: {
+			server: "user/configs/server.json",
+			gameplay: "user/configs/gameplay.json",
+			cluster: "user/configs/cluster.json",
+			blacklist: "user/configs/blacklist.json",
+			mods: "user/configs/mods.json"
 		},
-		"events": {
-			"schedule": "user/events/schedule.json"
+		events: {
+			schedule: "user/events/schedule.json"
 		}   
 	}
 	fileIO.write("user/cache/db.json", db);
 	fileIO.write("user/cache/res.json", res);
 }
 
-function SortedModKeys()
-{
-	return Object.keys(global.mods.toLoad).sort((a,b) => (global.mods.toLoad[a].order > global.mods.toLoad[b].order) ? 1 : -1);
-}
+const SortedModKeys = () => Object.keys(global.mods.toLoad)
+								                  .sort((a,b) => (global.mods.toLoad[a].order > global.mods.toLoad[b].order) ? 1 : -1);
 
 function loadMod(loadType)
 {
@@ -127,7 +131,7 @@ function loadMod(loadType)
 			for(const srcToExecute in mod.src)
 				if(mod.src[srcToExecute] == loadType){
 					logger.logDebug(`Executing Mod: ${modFolder}/${srcToExecute}`);
-					// require(`../../user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
+					// make sure to use correct pathing excludes usage of path and is shorter :)
 					require(process.cwd() + `/user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 		}
@@ -414,20 +418,15 @@ exports.load = () => {
     if (!fileIO.exist("user/mods/")) {
         fileIO.mkDir("user/mods/");
     }
-	if(!fileIO.exist("./user/cache") || fileIO.readDir("./user/cache").length < 28)
-	{ // health number of cache file count is 28 as for now ;)
-		logger.logWarning("Missing files! [<28] Rebuilding cache required!");
+	if(!fileIO.exist("./user/cache") || isRebuildRequired())
+	{
+		logger.logWarning("Missing one of essencial cache file! Cache rebuild required!");
 		serverConfig.rebuildCache = true;
 	}
 	let modLoader = new ModLoader();
 	// Loading mods data and set them in order
 	modLoader.loadModsData();
 	logger.logDebug("isRebuildRequired = " + isRebuildRequired());
-    // check if db need rebuid
-    if (isRebuildRequired() && !serverConfig.rebuildCache) {
-        logger.logWarning("Missing db.json or res.json file.");
-        serverConfig.rebuildCache = true;
-    }
 
     // rebuild db
     if (serverConfig.rebuildCache) {

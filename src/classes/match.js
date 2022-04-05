@@ -58,7 +58,7 @@ class MatchServer {
         } else {
             profileID = "pmc" + account.id;
         }
-//match.port
+        //match.port
         // get list of players joining into the match
         output.push({"profileid": profileID, "status": "busy", "sid": "", "ip": match.ip, "port": 5000, "version": "live", "location": info.location, "gamemode": "deathmatch", "shortid": match.id});
         // ---

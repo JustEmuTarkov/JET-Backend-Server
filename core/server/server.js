@@ -22,9 +22,14 @@ class Server {
     logger.logSuccess("Create: Receive Callback");
   }
 
-  resetBuffer(sessionID) {
-    this.buffers[sessionID] = undefined;
-  }
+  resetBuffer = (sessionID) => { this.buffers[sessionID] = undefined; }
+  getFromBuffer = (sessionID) => this.buffers[sessionID].buffer;
+  getName = () => this.name;
+  getIp = () => this.ip;
+  getPort = () => this.port;
+  getBackendUrl = () => this.second_backendUrl != null ? this.second_backendUrl : this.backendUrl;
+  getVersion = () => global.core.constants.ServerVersion;
+
   putInBuffer(sessionID, data, bufLength) {
     if (this.buffers[sessionID] === undefined || this.buffers[sessionID].allocated !== bufLength) {
       this.buffers[sessionID] = {
@@ -39,24 +44,6 @@ class Server {
     data.copy(buf.buffer, buf.written, 0);
     buf.written += data.length;
     return buf.written === buf.allocated;
-  }
-  getFromBuffer(sessionID) {
-    return this.buffers[sessionID].buffer;
-  }
-  getName() {
-    return this.name;
-  }
-  getIp() {
-    return this.ip;
-  }
-  getPort() {
-    return this.port;
-  }
-  getBackendUrl() {
-    return this.second_backendUrl != null ? this.second_backendUrl : this.backendUrl;
-  }
-  getVersion() {
-    return global.core.constants.ServerVersion;
   }
 
   sendResponse(sessionID, req, resp, body) {
@@ -94,11 +81,7 @@ class Server {
     }
   }
 
-  handleAsyncRequest(req, resp){
-    return new Promise(resolve => {
-      resolve(this.handleRequest(req, resp));
-    });
-  }
+  handleAsyncRequest = (req, resp) => new Promise(resolve => { resolve(this.handleRequest(req, resp)); });
 
   // Logs the requests made by users. Also stripped from bullshit requests not important ones.
   requestLog(req, sessionID) {
@@ -244,22 +227,22 @@ class Server {
     logger.logDebug("Loading Database...");
     const databasePath = "/src/functions/database.js";
     const executedDir = internal.process.cwd();
-    logger.logDebug(executedDir);
-    require(process.cwd() + databasePath).load();
+    logger.logDebug(`ExecutedDir: ${executedDir}`);
+    require(executedDir + databasePath).load();
 
     // will not be required if all data is loaded into memory
-    logger.logDebug("Initialize account...")
+    logger.logDebug("Initialize account class...")
     account_f.handler.initialize();
-    logger.logDebug("Initialize save handler...")
+    logger.logDebug("Initialize save handler class...")
     savehandler_f.initialize();
-    logger.logDebug("Initialize locale...")
+    logger.logDebug("Initialize locale class...")
     locale_f.handler.initialize();
-    logger.logDebug("Initialize preset...")
+    logger.logDebug("Initialize preset class...")
     preset_f.handler.initialize();
 
     logger.logDebug("Load Tamper Mods...")
     global.mods_f.TamperModLoad(); // TamperModLoad
-    logger.logDebug("Initialize bundles...")
+    logger.logDebug("Initialize bundles class...")
     bundles_f.handler.initialize();
     logger.logInfo("Starting server...");
     this.CreateServer();
