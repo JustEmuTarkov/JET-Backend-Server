@@ -806,7 +806,7 @@ class LocationLootGenerator {
         let idSuffix = 0;
         let OldIds = {};
         for (var p in preset._items) {
-          let currentItem = DeepCopy(preset._items[p]);
+          let currentItem = utility.DeepCopy(preset._items[p]);
           OldIds[currentItem.id] = utility.generateNewItemId();
           if (currentItem.parentId == oldBaseItem._id) currentItem.parentId = createEndLootData.Items[0]._id;
           if (typeof OldIds[currentItem.parentId] != "undefined") currentItem.parentId = OldIds[currentItem.parentId];
