@@ -293,7 +293,7 @@ class HealthServer {
 
   /* apply the health changes to the profile */
   applyHealth(pmcData, sessionID) {
-    if (!global._database.gameplayConfig.inraid.saveHealthEnabled) {
+    if (!global._database.gameplay.inraid.saveHealthEnabled) {
       return;
     }
 
@@ -304,7 +304,7 @@ class HealthServer {
       if (item !== "Hydration" && item !== "Energy") {
         /* set body part health */
         pmcData.Health.BodyParts[item].Health.Current =
-          nodeHealth[item] <= 0 ? ~~(pmcData.Health.BodyParts[item].Health.Maximum * global._database.gameplayConfig.inraid.saveHealthMultiplier) : nodeHealth[item];
+          nodeHealth[item] <= 0 ? ~~(pmcData.Health.BodyParts[item].Health.Maximum * global._database.gameplay.inraid.saveHealthMultiplier) : nodeHealth[item];
       } else {
         /* set resources */
         pmcData.Health[item].Current = nodeHealth[item];

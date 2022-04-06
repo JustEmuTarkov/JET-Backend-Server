@@ -121,7 +121,7 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
 
   // Paulo: I have no idea what below is doing? It never really finds the right list from what I could tell a lot of the dynamic spawns were empty or broken.
 
-  // if (global._database.gameplayConfig.useDynamicLootFromItemsArray) {
+  // if (global._database.gameplay.useDynamicLootFromItemsArray) {
   //   for (const spawnTemplate in lootData.Items) {
   //     const filteredData = Object.values(global._database.items).filter((itemTemplate) => itemTemplate._parent == spawnTemplate);
   //     // add them to the list
@@ -172,22 +172,22 @@ function GenerateDynamicLootSpawnTable(lootData, mapName) {
 
 function GetLootModifiers() 
 {
-  let modifierSuperRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Superrare;
+  let modifierSuperRare = global._database.gameplay.locationloot.RarityMultipliers.Superrare;
   if(modifierSuperRare == undefined){
     modifierSuperRare = 0.5;
     logger.logWarning("Loot Modifier: Superrare: Couldn't find the config. Reset to 0.5.")
   }
-  let modifierRare = global._database.gameplayConfig.locationloot.RarityMultipliers.Rare;
+  let modifierRare = global._database.gameplay.locationloot.RarityMultipliers.Rare;
   if(modifierRare == undefined){
     modifierRare = 0.6;
     logger.logWarning("Loot Modifier: Rare: Couldn't find the config. Reset to 0.9.")
   }
-  let modifierUnCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Uncommon;
+  let modifierUnCommon = global._database.gameplay.locationloot.RarityMultipliers.Uncommon;
   if(modifierUnCommon == undefined){
     modifierUnCommon = 0.85;
     logger.logWarning("Loot Modifier: Uncommon: Couldn't find the config. Reset to 0.95.")
   }
-  let modifierCommon = global._database.gameplayConfig.locationloot.RarityMultipliers.Common;
+  let modifierCommon = global._database.gameplay.locationloot.RarityMultipliers.Common;
   if(modifierCommon == undefined){
     modifierCommon = 0.95;
     logger.logWarning("Loot Modifier: Common: Couldn't find the config. Reset to 0.95.")
@@ -513,7 +513,7 @@ function _GenerateContainerLoot(_items, locationLootChanceModifier, MapName) {
       }
       let result = { success: false };
       // let maxAttempts =
-      //   global._database.gameplayConfig.locationloot.containers.AttemptsToPlaceLoot > 10 ? 1 : global._database.gameplayConfig.locationloot.containers.AttemptsToPlaceLoot;
+      //   global._database.gameplay.locationloot.containers.AttemptsToPlaceLoot > 10 ? 1 : global._database.gameplay.locationloot.containers.AttemptsToPlaceLoot;
 
       // attempt to add item x times
       // while (!result.success && maxAttempts) {
@@ -850,9 +850,9 @@ class LocationLootGenerator {
 
       let modifierDynamicChanceMin = 20;
       let modifierDynamicChanceMax = 99;
-      if (global._database.gameplayConfig.locationloot.DynamicChance != undefined) {
-          modifierDynamicChanceMin = global._database.gameplayConfig.locationloot.DynamicChance.Min;
-          modifierDynamicChanceMax = global._database.gameplayConfig.locationloot.DynamicChance.Max;
+      if (global._database.gameplay.locationloot.DynamicChance != undefined) {
+          modifierDynamicChanceMin = global._database.gameplay.locationloot.DynamicChance.Min;
+          modifierDynamicChanceMax = global._database.gameplay.locationloot.DynamicChance.Max;
 
           if (modifierDynamicChanceMin == undefined) {
               modifierDynamicChanceMin = 20;
@@ -923,7 +923,7 @@ class LocationServer {
     // TODO: Should pass through params rather than a global but I am lazy
     LocationLootChanceModifierFromFile = _location.base.GlobalLootChanceModifier;
 
-    if (global._database.gameplayConfig.locationloot.useDynamicLootMultiplier) {
+    if (global._database.gameplay.locationloot.useDynamicLootMultiplier) {
       if (sessionID != "" && typeof sessionID != "undefined") {
         let exfilData = profile_f.handler.getProfileExfilsById(sessionID);
 

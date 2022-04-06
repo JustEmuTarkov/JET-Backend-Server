@@ -181,8 +181,10 @@ function payMoney(pmcData, body, sessionID) {
   }
 
   // if no money in inventory or amount is not enough we return false
-  if (moneyItems.length <= 0 || amountMoney < barterPrice) {
-    return false;
+  if (amountMoney != 0) {
+    if (moneyItems.length <= 0 || amountMoney < barterPrice) {
+      return false;
+    }
   }
 
   let leftToPay = barterPrice;
@@ -265,6 +267,7 @@ function findItemById(items, id) {
 function tryGetItem(template) {
   const item = global._database.items[template];
   if (typeof item == "undefined") return { error: true, errorMessage: `Unable to find item '${template}' in database` }
+
   return item;
 }
 
@@ -465,8 +468,9 @@ note from Maoci: you can merge and split items from parent-childrens
 */
 module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash) => {
   let toDo = [itemID];
-  const tmpItem = getItem(itemtpl)[1];
+  const tmpItem = this.tryGetItem(itemtpl);
   const rootItem = inventoryItemHash.byItemId[itemID];
+  if (typeof tmpItem._props == "undefined") { return; }
   const FoldableWeapon = tmpItem._props.Foldable;
   const FoldedSlot = tmpItem._props.FoldedSlot;
 
@@ -504,8 +508,8 @@ module.exports.getSizeByInventoryItemHash = (itemtpl, itemID, inventoryItemHash)
           toDo.push(item._id);
 
           // If the barrel is folded the space in the barrel is not counted
-          let itm = getItem(item._tpl)[1];
-          let childFoldable = itm._props.Foldable;
+          let itm = this.tryGetItem(itemtpl);
+          const childFoldable = itm._props.Foldable;
           let childFolded = item.upd && item.upd.Foldable && item.upd.Foldable.Folded === true;
 
           if (FoldableWeapon && FoldedSlot === item.slotId && (rootFolded || childFolded)) {
@@ -704,13 +708,13 @@ function splitStack(item) {
     return [item];
   }
 
-  let maxStack = global._database.items[item._tpl]._props.StackMaxSize;
+  const maxStack = global._database.items[item._tpl]._props.StackMaxSize;
   let count = item.upd.StackObjectsCount;
   let stacks = [];
 
   while (count) {
-    let amount = Math.min(count, maxStack);
-    let newStack = clone(item);
+    const amount = Math.min(count, maxStack);
+    const newStack = utility.DeepCopy(item);
 
     newStack.upd.StackObjectsCount = amount;
     count -= amount;
@@ -1037,14 +1041,14 @@ module.exports.getSizeByInventoryItemHash_old = (itemtpl, itemID, inventoryItemH
 
   return durabilityType;
 }
+
 /** To get the `max randomized durability` for weapons/armor on AI
  * 
  * @param {*} itemTemplate - The item
  * @param {*} botRole - Role of Bot, in case we want to add this to the gameplay config for more customization
  * @returns 
  */
-function getRandomisedMaxDurability(itemTemplate, botRole) 
-{
+function getRandomisedMaxDurability(itemTemplate, botRole) {
   //store properties in variable
   const itemProperties = itemTemplate._props;
   const durabilityType = getDurabilityType(itemTemplate); //get type of durability in string
@@ -1053,23 +1057,26 @@ function getRandomisedMaxDurability(itemTemplate, botRole)
   const randomMaxDurability = utility.getPercentOf(percent, maxDurability);
   return utility.decimalAdjust("round", randomMaxDurability, -1);
 }
+
 /** To get the `min randomized durability` for weapons/armor on AI
  * 
  * @param {*} maxDurability - Max Durability from getRandomisedMaxDurability
  * @param {*} botRole - Role of Bot, in case we want to add this to the gameplay config for more customization
  * @returns 
  */
-function getRandomisedMinDurability(maxDurability, botRole) 
-{
+function getRandomisedMinDurability(maxDurability, botRole) {
   const currentDurability = maxDurability;
   const min = 0;
   const max = 10;
+
   const delta = utility.getRandomIntInc(min, max);
   const randomMinDurability = currentDurability - delta;
+
   //console.log(randomMinDurability, "getRandomisedMinDurability");
   return utility.decimalAdjust('round', randomMinDurability, -1);
 }
-/**
+
+/**`Adjust reliability` of item based on condition (durability)
  * 
  * @param {*} maxDurability 
  * @param {*} itemTemplate 
@@ -1078,7 +1085,6 @@ function getRandomisedMinDurability(maxDurability, botRole)
  */
 function getItemReliability(maxDurability, itemTemplate, durabilityType) {
   //increase malfunction chance on low durability items
-  //const durabilityType = getDurabilityType(itemTemplate); //get type of durability in string
   const itemProperties = itemTemplate._props;
   let itemMaxDurability;
   const minDurability = maxDurability;
@@ -1095,18 +1101,15 @@ function getItemReliability(maxDurability, itemTemplate, durabilityType) {
       */
 
       const malfunctionChance = itemProperties.MalfunctionChance; //default malfunction chance
-      //let currentMalfunctionChance;
 
       itemMaxDurability = itemProperties.Durability;
       console.log(itemMaxDurability, "itemMaxDurability")
       console.log(minDurability, "minDurability")
 
-      //let newDurability = itemMaxDurability * utility.getPercentOf(itemMaxDurability, minDurability);
       const percentDiff = utility.getPercentDiff(itemMaxDurability, minDurability);
       console.log(percentDiff)
 
       const currentMalfunctionChance = malfunctionChance * percentDiff;
-      //currentMalfunctionChance = currentMalfunctionChance; //we dont need giant decimals
 
       return currentMalfunctionChance;
     }

@@ -9,13 +9,20 @@ const sortOffersByPrice = (a, b) => a.requirements[0].count - b.requirements[0].
 const sortOffersByPriceSummaryCost = (a, b) => a.summaryCost - b.summaryCost;
 
 const sortOffersByExpiry = (a, b) => a.endTime - b.endTime;
+/* function sortOffersByID(a, b) {
+  return a.intId - b.intId;
+}
+
+function sortOffersByRating(a, b) {
+  return a.user.rating - b.user.rating;
+} */
 
 function sortOffersByName(a, b) {
   // @TODO: Get localized item names
   // Mao: global._database.locals["en"].global.templates[TemplateID]
   try {
-    let aa = helper_f.getItem(a._id)[1]._name;
-    let bb = helper_f.getItem(b._id)[1]._name;
+    let aa = helper_f.tryGetItem(a._id)._name;
+    let bb = helper_f.tryGetItem(b._id)._name;
 
     aa = aa.substring(aa.indexOf("_") + 1);
     bb = bb.substring(bb.indexOf("_") + 1);
@@ -25,6 +32,18 @@ function sortOffersByName(a, b) {
     return 0;
   }
 }
+
+/* function sortOffersByPrice(a, b) {
+  return a.requirements[0].count - b.requirements[0].count;
+}
+
+/* function sortOffersByPriceSummaryCost(a, b) {
+  return a.summaryCost - b.summaryCost;
+} 
+
+function sortOffersByExpiry(a, b) {
+  return a.endTime - b.endTime;
+}*/
 
 function sortOffers(request, offers) {
   // Sort results
@@ -42,12 +61,13 @@ function sortOffers(request, offers) {
       break;
 
     case 5: // Price
-      if (request.offerOwnerType == 1) {
-        offers.sort(sortOffersByPriceSummaryCost);
-      } else {
-        offers.sort(sortOffersByPrice);
-      }
+      /*       if (request.offerOwnerType == 1) {
+              offers.sort(sortOffersByPriceSummaryCost);
+            } else {
+              offers.sort(sortOffersByPrice);
+            } */
 
+      offers.sort(sortOffersByPrice);
       break;
 
     case 6: // Expires in
@@ -163,7 +183,7 @@ function getOffers(sessionID, request) {
 
   for (let item of itemsToAdd) {
     if (global._database.blacklist.includes(item)) {
-        continue;
+      continue;
     }
     // Mao: shouldnt it be offers.push() ??
     offers = offers.concat(createOffer(item, request.onlyFunctional, request.buildCount === 0));
@@ -183,72 +203,72 @@ function getOffers(sessionID, request) {
 
 function getOffersFromTraders(sessionID, request) {
   let jsonToReturn = utility.DeepCopy(_database.ragfair_offers);
-  let offersFilters = []; //this is an array of item tpl who filter only items to show
-
-  jsonToReturn.categories = {};
-  for (let offerC of jsonToReturn.offers) {
-    jsonToReturn.categories[offerC.items[0]._tpl] = 1;
-  }
-
-  if (request.buildCount) {
-    // Case: weapon builds
-    offersFilters = Object.keys(request.buildItems);
-    jsonToReturn = fillCatagories(jsonToReturn, offersFilters);
-  } else {
-    // Case: search
-    if (request.linkedSearchId) {
-      //offersFilters.concat( getLinkedSearchList(request.linkedSearchId) );
-      offersFilters = [...offersFilters, ...getLinkedSearchList(request.linkedSearchId)];
-      jsonToReturn = fillCatagories(jsonToReturn, offersFilters);
-    } else if (request.neededSearchId) {
-      offersFilters = [...offersFilters, ...getNeededSearchList(request.neededSearchId)];
-      jsonToReturn = fillCatagories(jsonToReturn, offersFilters);
+  /*   let offersFilters = []; //this is an array of item tpl who filter only items to show
+  
+    jsonToReturn.categories = {};
+    for (let offerC of jsonToReturn.offers) {
+      jsonToReturn.categories[offerC.items[0]._tpl] = 1;
     }
-
-    if (request.removeBartering == true) {
-      jsonToReturn = removeBarterOffers(jsonToReturn);
-      jsonToReturn = fillCatagories(jsonToReturn, offersFilters);
-    }
-
-    // Case: category
-    if (request.handbookId) {
-      let handbookList = getCategoryList(request.handbookId);
-
-      if (offersFilters.length) {
-        offersFilters = helper_f.arrayIntersect(offersFilters, handbookList);
-      } else {
-        offersFilters = handbookList;
+  
+    if (request.buildCount) {
+      // Case: weapon builds
+      offersFilters = Object.keys(request.buildItems);
+      jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+    } else {
+      // Case: search
+      if (request.linkedSearchId) {
+        //offersFilters.concat( getLinkedSearchList(request.linkedSearchId) );
+        offersFilters = [...offersFilters, ...getLinkedSearchList(request.linkedSearchId)];
+        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+      } else if (request.neededSearchId) {
+        offersFilters = [...offersFilters, ...getNeededSearchList(request.neededSearchId)];
+        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+      }
+  
+      if (request.removeBartering == true) {
+        jsonToReturn = removeBarterOffers(jsonToReturn);
+        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+      }
+  
+      // Case: category
+      if (request.handbookId) {
+        let handbookList = getCategoryList(request.handbookId);
+  
+        if (offersFilters.length) {
+          offersFilters = helper_f.arrayIntersect(offersFilters, handbookList);
+        } else {
+          offersFilters = handbookList;
+        }
       }
     }
-  }
-
-  let offersToKeep = [];
-  for (let offer in jsonToReturn.offers) {
-    for (let tplTokeep of offersFilters) {
-      if (jsonToReturn.offers[offer].items[0]._tpl == tplTokeep) {
-        jsonToReturn.offers[offer].summaryCost = calculateCost(jsonToReturn.offers[offer].requirements);
-        // check if offer is really available, removes any quest locked items not in current assort of a trader
-        let tmpOffer = jsonToReturn.offers[offer];
-        let traderId = tmpOffer.user.id;
-        let traderAssort = trader_f.handler.getAssort(sessionID, traderId).items;
-        let keepItem = false; // for testing
-        for (let item of traderAssort) {
-          if (item._id === tmpOffer.root) {
-            offersToKeep.push(jsonToReturn.offers[offer]);
-            keepItem = true;
-            break;
+  
+    let offersToKeep = [];
+    for (let offer in jsonToReturn.offers) {
+      for (let tplTokeep of offersFilters) {
+        if (jsonToReturn.offers[offer].items[0]._tpl == tplTokeep) {
+          jsonToReturn.offers[offer].summaryCost = calculateCost(jsonToReturn.offers[offer].requirements);
+          // check if offer is really available, removes any quest locked items not in current assort of a trader
+          let tmpOffer = jsonToReturn.offers[offer];
+          let traderId = tmpOffer.user.id;
+          let traderAssort = trader_f.handler.getAssort(sessionID, traderId).items;
+          let keepItem = false; // for testing
+          for (let item of traderAssort) {
+            if (item._id === tmpOffer.root) {
+              offersToKeep.push(jsonToReturn.offers[offer]);
+              keepItem = true;
+              break;
+            }
           }
         }
       }
     }
-  }
-  jsonToReturn.offers = offersToKeep;
-  jsonToReturn.offers = sortOffers(request, jsonToReturn.offers);
+    jsonToReturn.offers = offersToKeep;
+    jsonToReturn.offers = sortOffers(request, jsonToReturn.offers); */
 
   return jsonToReturn;
 }
 
-function fillCatagories(response, filters) {
+function fillCategories(response, filters) {
   response.categories = {};
   for (let filter of filters) {
     response.categories[filter] = 1;
@@ -275,7 +295,7 @@ function calculateCost(barter_scheme) {
   for (let barter of barter_scheme) {
     summaryCost += helper_f.getTemplatePrice(barter._tpl) * barter.count;
   }
-
+  //Math.round
   return ~~(summaryCost);
 }
 
@@ -356,21 +376,24 @@ function createOffer(template, onlyFunc, usePresets = true) {
       }
 
       mods[0].upd = mods[0].upd || {}; // append the stack count
-      mods[0].upd.StackObjectsCount = offerBase.items[0].upd.StackObjectsCount;
+      mods[0].upd.StackObjectsCount = offer.items[0].upd.StackObjectsCount;
 
       offer._id = p._id; // The offer's id is now the preset's id
       offer.root = mods[0]._id; // Sets the main part of the weapon
       offer.items = mods;
-      offer.requirements[0].count = ~~(rub * global._database.gameplayConfig.trading.ragfairMultiplier);
+      //Math.round
+      offer.requirements[0].count = ~~(rub * global._database.gameplay.trading.ragfairMultiplier);
       offers.push(offer);
     }
   }
 
   // Single item
   if (!preset_f.handler.hasPreset(template) || !onlyFunc) {
-    
+
     let offer = utility.DeepCopy(offerBase);
-    let rubPrice = ~~(helper_f.getTemplatePrice(template) * global._database.gameplayConfig.trading.ragfairMultiplier);
+
+    //Math.round
+    let rubPrice = ~~(helper_f.getTemplatePrice(template) * global._database.gameplay.trading.ragfairMultiplier);
     offer._id = template;
     offer.items[0]._tpl = template;
     offer.requirements[0].count = rubPrice;
@@ -383,6 +406,14 @@ function createOffer(template, onlyFunc, usePresets = true) {
   return offers;
 }
 
+function itemMarKetPrice(request) {
+  return null;
+}
+
+function ragFairAddOffer(request) {
+  return null;
+}
+
 module.exports.getOffers = getOffers;
-module.exports.ragFairAddOffer = (request) => null;
-module.exports.itemMarKetPrice = (request) => null;
+module.exports.ragFairAddOffer = ragFairAddOffer;
+module.exports.itemMarKetPrice = itemMarKetPrice;

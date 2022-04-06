@@ -82,10 +82,8 @@ exports.confirmTrading = (pmcData, body, sessionID) => {
 
 // Ragfair trading
 exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
-  // TODO: move that to other file place and load it on server start if exists if not create
-  let ragfair_offers_traders = fileIO.readParsed("user/cache/ragfair_offers.json");
-  let offers = body.offers;
-  //let output = item_f.handler.getOutput(sessionID);
+  const flea = utility.DeepCopy(global._database.traders["ragfair"]);
+  const offers = body.offers;
 
   for (let offer of offers) {
     pmcData = profile_f.handler.getPmcProfile(sessionID);
@@ -100,9 +98,9 @@ exports.confirmRagfairTrading = (pmcData, body, sessionID) => {
       scheme_items: offer.items,
     };
 
-    for (let offerFromTrader of ragfair_offers_traders.offers) {
-      if (offerFromTrader._id == offer.id) {
-        body.tid = offerFromTrader.user.id;
+    for (let traderOffer in flea.base) {
+      if (flea.assort._id == offer.id) {
+        body.tid = flea[traderOffer]._id;
         break;
       }
     }

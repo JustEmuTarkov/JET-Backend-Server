@@ -379,7 +379,7 @@ function calculateLevel(pmcData) {
  * @param {string} traderID -> current trader ID,
  * @returns {number} calculatedLoyalty -> loyalty level
  */
- function getLoyalty(pmcData, traderID) {
+ function calculateLoyalty(pmcData, traderID) {
   let playerSaleSum;
   let playerStanding;
   let playerLevel;
@@ -439,4 +439,4 @@ function calculateLoyalty(pmcData, traderData){
 module.exports.handler = new ProfileServer();
 module.exports.getStashType = getStashType;
 module.exports.calculateLevel = calculateLevel;
-module.exports.getLoyalty = calculateLoyalty;
+module.exports.calculateLoyalty = calculateLoyalty;

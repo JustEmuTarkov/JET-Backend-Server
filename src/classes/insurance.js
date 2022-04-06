@@ -183,7 +183,7 @@ class InsuranceServer {
 
     processReturn(event) {
         // Inject a little bit of a surprise by failing the insurance from time to time ;)
-        if (!utility.getPercentRandomBool(global._database.gameplayConfig.trading.insureReturnChance)) {
+        if (!utility.getPercentRandomBool(global._database.gameplay.trading.insureReturnChance)) {
             let insuranceFailedTemplates = fileIO.readParsed(db.dialogues[event.data.traderId]).insuranceFailed;
             event.data.messageContent.templateId = insuranceFailedTemplates[utility.getRandomInt(0, insuranceFailedTemplates.length - 1)];
             event.data.items = [];
@@ -194,7 +194,7 @@ class InsuranceServer {
 }
 
 function getPremium(pmcData, inventoryItem, traderId) {
-    let loyaltyLevelIndex = profile_f.getLoyalty(pmcData, traderId) - 1;
+    let loyaltyLevelIndex = profile_f.calculateLoyalty(pmcData, traderId) - 1;
     let trader = trader_f.handler.getTrader(traderId, pmcData.aid);
     let insuranceMultiplier;
     insuranceMultiplier = trader.loyaltyLevels[loyaltyLevelIndex].insurance_price_coef / 100

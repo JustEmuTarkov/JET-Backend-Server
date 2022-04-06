@@ -198,14 +198,14 @@ function acceptQuest(pmcData, body, sessionID) {
   let messageContent = {
     templateId: locale_f.handler.getGlobal().mail[questLocale.startedMessageText],
     type: dialogue_f.getMessageTypeValue("questStart"),
-    maxStorageTime: global._database.gameplayConfig.other.RedeemTime * 3600,
+    maxStorageTime: global._database.gameplay.other.RedeemTime * 3600,
   };
 
   if (typeof messageContent.templateId == "undefined" || questLocale.startedMessageText === "") {
     messageContent = {
       templateId: questLocale.description,
       type: dialogue_f.getMessageTypeValue("questStart"),
-      maxStorageTime: global._database.gameplayConfig.other.RedeemTime * 3600,
+      maxStorageTime: global._database.gameplay.other.RedeemTime * 3600,
     };
   }
 
@@ -266,7 +266,7 @@ function completeQuest(pmcData, body, sessionID) {
   let messageContent = {
     templateId: questLocale.successMessageText,
     type: dialogue_f.getMessageTypeValue("questSuccess"),
-    maxStorageTime: global._database.gameplayConfig.other.RedeemTime * 3600,
+    maxStorageTime: global._database.gameplay.other.RedeemTime * 3600,
   };
   let output = item_f.handler.getOutput(sessionID);
   if (typeof output.profileChanges[pmcData._id].quests == "undefined") output.profileChanges[pmcData._id].quests = [];

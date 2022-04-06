@@ -8,34 +8,28 @@ function main(sessionID) {
 }
 
 function updateTraders(sessionID) {
-  let update_per = 3600;
-  let timeNow = ~~(Date.now() / 1000);
-  dialogue_f.handler.removeExpiredItems(sessionID);
+  let hour = 3600;
+  let timeNow = utility.getTimestamp();
+  let traders = global._database.traders;
 
-  // update each hour
-  for (let trader in global._database.traders) {
-    if (global._database.traders[trader].base._id == "ragfair") continue;
+  for (let trader in traders) {
+    if (traders[trader].base._id === "ragfair") continue;
+    let base = traders[trader].base;
+    let assort = traders[trader].assort;
 
-    update_per = global._database.gameplayConfig.trading.traderSupply[global._database.traders[trader].base._id];
-    if (global._database.traders[trader].base.nextResupply > timeNow) {
+    if (base.nextResupply > timeNow) {
       continue;
     }
+    base.refreshAssort = true;
+    base.nextResupply = timeNow + hour;
+    assort.nextResupply = base.nextResupply;
 
-    global._database.traders[trader].base.nextResupply = timeNow + update_per;
-
-    if (global._database.traders[trader]._id === "579dc571d53a0658a154fbec") continue;
-
-    for (let assortItem in global._database.traders[trader].assort) {
-      if (typeof assort[assortItem].default == "undefined") {
-        logger.logWarning(`Unable to find item assort default for scheme: ${assortItem} and trader: ${global._database.traders[trader]._id}`);
-        continue;
-      }
-
-      global._database.traders[trader].assort[assortItem].currentStack = assort[assortItem].default.stack;
-    }
-
-    trader_f.handler.saveTrader(global._database.traders[trader]._id);
+    global._database.traders[trader].base = base
   }
+
+  dialogue_f.handler.removeExpiredItems(sessionID);
+
+  return true;
 }
 
 function updatePlayerHideout(sessionID) {
@@ -94,34 +88,41 @@ function updatePlayerHideout(sessionID) {
       prod == "5dd129295a9ae32efe41a367" ||
       prod == "5e074e5e2108b14e1c62f2a7"
     ) {
-      let time_elapsed = ~~(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTime - pmcData.Hideout.Production[prod].Progress;
-      pmcData.Hideout.Production[prod].Progress += time_elapsed;
+      pmcData.Hideout.Production[prod].Progress = ~~(utility.getTimestamp() - pmcData.Hideout.Production[prod].StartTimestamp);
     }
 
-    for (let recipe of recipes.data) {
-      if (recipe._id == pmcData.Hideout.Production[prod].RecipeId) {
-        if (recipe.continuous == true) {
+    for (let recipe in recipes) {
+      if (recipes[recipe]._id == pmcData.Hideout.Production[prod].RecipeId) {
+        if (recipes[recipe].continuous == true) {
           needGenerator = true;
         }
         // Bitcoin Farm
         if (pmcData.Hideout.Production[prod].RecipeId == "5d5c205bd582a50d042a3c0e") {
-          pmcData.Hideout.Production[prod] = updateBitcoinFarm(pmcData.Hideout.Production[prod], recipe, btcFarmCGs, isGeneratorOn, pmcData);
+          pmcData.Hideout.Production[prod] = updateBitcoinFarm(pmcData.Hideout.Production[prod], recipes[recipe], btcFarmCGs, isGeneratorOn, pmcData);
         } else {
-          let time_elapsed = ~~(Date.now() / 1000) - pmcData.Hideout.Production[prod].StartTimestamp - pmcData.Hideout.Production[prod].Progress;
-          if (needGenerator == true && isGeneratorOn == false) {
-            time_elapsed = time_elapsed * 0.2;
+          if (needGenerator == true) {
+            if (isGeneratorOn) {
+              pmcData.Hideout.Production[prod].inProgress = true;
+            } else {
+              pmcData.Hideout.Production[prod].inProgress = false;
+            }
           }
-          pmcData.Hideout.Production[prod].Progress += time_elapsed;
-          // scavcase
-          //if (prod == "14") {
-          //  logger.logSuccess("I can see 14. will change progress.");
-          //}
+          pmcData.Hideout.Production[prod].Progress = ~~(utility.getTimestamp() - pmcData.Hideout.Production[prod].StartTimestamp);
+
+          // if progress exceeds 100%, make it 100%
+          if (pmcData.Hideout.Production[prod].Progress > pmcData.Hideout.Production[prod].ProductionTime) {
+            pmcData.Hideout.Production[prod].Progress = pmcData.Hideout.Production[prod].ProductionTime;
+          }
+          /*TODO: TIMING IS BAD, we haven't handled turning on/off generator and the progress in between. 
+          Time elapsed didn't do shit and the calculations were wrong. CQ.*/
+
         }
         break;
       }
     }
   }
 }
+
 function updateWaterFilters(pmcData, area) {
   let waterFilterArea = pmcData.Hideout.Areas[area];
   // thanks to Alexter161
@@ -249,22 +250,23 @@ function updateAirFilters(pmcData, area) {
 }
 
 function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcData) {
-  let MAX_BTC = 3;
-
+  const production = global._database.hideout.production.find((prodArea) => prodArea.areaType == 20);
+  //let MAX_BTC = 3;
+  let MAX_BTC = production.productionLimitCount;
   // Elite level HideoutManagement lets you create 5 BTC max, not 3.
   for (let k in pmcData.Skills.Common) {
     if (pmcData.Skills.Common[k].Id === "HideoutManagement") {
       if (pmcData.Skills.Common[k].Progress == 5100) {
-        MAX_BTC = 5;
+        //MAX_BTC = 5;
+        MAX_BTC = MAX_BTC + 2;
       }
     }
   }
 
-  const production = global._database.hideout.production.find((prodArea) => prodArea.areaType == 20);
-  const time_elapsed = ~~(Date.now() / 1000) - btcProd.StartTimestamp;
+  const time_elapsed = utility.getTimestamp() - btcProd.StartTimestamp;
 
   if (isGeneratorOn == true) {
-    btcProd.Progress += time_elapsed;
+    btcProd.Progress = ~~(btcProd.Progress + time_elapsed);
   }
 
   const t2 = Math.pow(0.05 + ((btcFarmCGs - 1) / 49) * 0.15, -1); //THE FUNCTION TO REDUCE TIME OF PRODUCTION DEPENDING OF CGS
@@ -279,16 +281,18 @@ function updateBitcoinFarm(btcProd, farmrecipe, btcFarmCGs, isGeneratorOn, pmcDa
           StackObjectsCount: 1,
         },
       });
-      btcProd.Progress -= final_prodtime;
+      btcProd.Progress = ~~(btcProd.Progress - final_prodtime);
       logger.logSuccess("Bitcoin produced on server.");
     } else {
       btcProd.Progress = 0;
     }
   }
 
+  btcProd.ProductionTime = ~~(production.productionTime);
   btcProd.StartTimestamp = ~~(Date.now() / 1000);
   return btcProd;
 }
 
 module.exports.main = main;
 module.exports.updateTraders = updateTraders;
+module.exports.updatePlayerHideout = updatePlayerHideout;

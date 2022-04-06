@@ -317,7 +317,7 @@ function getSecuredContainer(items) {
 }
 
 function saveProgress(offraidData, sessionID) {
-  if (!global._database.gameplayConfig.inraid.saveLootEnabled) {
+  if (!global._database.gameplay.inraid.saveLootEnabled) {
     return;
   }
   const isPlayerScav = offraidData.isPlayerScav;
@@ -355,7 +355,7 @@ function saveProgress(offraidData, sessionID) {
 
   pmcData.Info.Level = offraidData.profile.Info.Level;
 
-  let multiplier = global._database.gameplayConfig.offraid.extractionMultiplier[offraidData.exit.toLowerCase()];
+  let multiplier = global._database.gameplay.offraid.extractionMultiplier[offraidData.exit.toLowerCase()];
   if(utility.isUndefined(multiplier)){
     logger.logWarning(`Not found extractionMultiplier named: ${offraidData.exit.toLowerCase()}`);
     multiplier = 1;

@@ -45,7 +45,7 @@ function generateFenceAssort() {
   const fence_assort = [];
   const barter_scheme = {};
 
-  const FENCE_ASSORT_SIZE = global._database.gameplayConfig.trading.fenceAssortSize;
+  const FENCE_ASSORT_SIZE = global._database.gameplay.trading.fenceAssortSize;
   for (let i = 0; i < FENCE_ASSORT_SIZE; i++) {
     let random_item_index = utility.getRandomInt(0, fence_base_assort_root_items.length - 1);
     let random_item = fence_base_assort_root_items[random_item_index];
@@ -202,7 +202,7 @@ class TraderServer {
     if (traderID === "579dc571d53a0658a154fbec" && !isBuyingFromFence) {
       // Fence
       // Lifetime in seconds
-      let fence_assort_lifetime = global._database.gameplayConfig.trading.traderSupply[traderID];
+      let fence_assort_lifetime = global._database.gameplay.trading.traderSupply[traderID];
 
       // Current time in seconds
       let current_time = ~~(new Date().getTime() / 1000);

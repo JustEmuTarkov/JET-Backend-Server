@@ -642,7 +642,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
     }
 
     // in case people want all items to be marked as found in raid
-    if (global._database.gameplayConfig.trading.buyItemsMarkedFound) {
+    if (global._database.gameplay.trading.buyItemsMarkedFound) {
       foundInRaid = true;
     }
 

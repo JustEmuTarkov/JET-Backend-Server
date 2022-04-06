@@ -213,10 +213,10 @@ class Responses {
     return response_f.noBody(bots_f.getBotLimit(type));
   }
   dynSingleplayerSettingsDefaultRaidSettings(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.defaultRaidSettings);
+    return response_f.noBody(global._database.gameplay.defaultRaidSettings);
   }
   dynSingleplayerSettingsWeaponDurability(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.inraid.saveWeaponDurability);
+    return response_f.noBody(global._database.gameplay.inraid.saveWeaponDurability);
   }
 
   //static
@@ -713,10 +713,10 @@ class Responses {
     return response_f.noBody(bundles_f.handler.getBundles(local));
   }
   singleplayerSettingsRaidEndstate(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.inraid.miaOnTimerEnd);
+    return response_f.noBody(global._database.gameplay.inraid.miaOnTimerEnd);
   }
   singleplayerSettingsRaidMenu(url, info, sessionID) {
-    return response_f.noBody(global._database.gameplayConfig.defaultRaidSettings);
+    return response_f.noBody(global._database.gameplay.defaultRaidSettings);
   }
   singleplayerSettingsBotDifficulty(url, info, sessionID) {
     let data = [];
