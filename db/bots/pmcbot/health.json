@@ -8,21 +8,21 @@
 		"max": 100
 	},
 	"Temperature": {
-		"min": 36.6,
+		"min": 36,
 		"max": 40
 	},
 	"BodyParts": {
 		"Head": {
-			"min": 35,
-			"max": 35
+			"min": 42,
+			"max": 42
 		},
 		"Chest": {
-			"min": 150,
-			"max": 150
+			"min": 160,
+			"max": 160
 		},
 		"Stomach": {
-			"min": 120,
-			"max": 120
+			"min": 130,
+			"max": 130
 		},
 		"LeftArm": {
 			"min": 100,

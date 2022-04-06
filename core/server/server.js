@@ -49,7 +49,7 @@ class Server {
   sendResponse(sessionID, req, resp, body) {
     let output = "";
     //check if page is static html page or requests like 
-    if(this.tarkovSend.sendStaticFile(req, resp))
+    if (this.tarkovSend.sendStaticFile(req, resp))
       return;
 
     // get response
@@ -101,67 +101,67 @@ class Server {
   }
 
   handleRequest(req, resp) {
-    new Promise(resolve => { 
+    new Promise(resolve => {
       const sessionID = (consoleResponse.getDebugEnabled()) ? consoleResponse.getSession() : utility.getCookies(req)["PHPSESSID"];
       this.requestLog(req, sessionID);
-      switch(req.method) {
-        case "GET": 
-        {
-          server.sendResponse(sessionID, req, resp, "");
-          resolve(true)
-        }
-        case "POST": 
-        {
-          req.on("data", function (data) {
-            if (req.url == "/" || req.url.includes("/server/config")) {
-              let _Data = data.toString();
-              _Data = _Data.split("&");
-              let _newData = {};
-              for (let item in _Data) {
-                let datas = _Data[item].split("=");
-                _newData[datas[0]] = datas[1];
+      switch (req.method) {
+        case "GET":
+          {
+            server.sendResponse(sessionID, req, resp, "");
+            resolve(true)
+          }
+        case "POST":
+          {
+            req.on("data", function (data) {
+              if (req.url == "/" || req.url.includes("/server/config")) {
+                let _Data = data.toString();
+                _Data = _Data.split("&");
+                let _newData = {};
+                for (let item in _Data) {
+                  let datas = _Data[item].split("=");
+                  _newData[datas[0]] = datas[1];
+                }
+                server.sendResponse(sessionID, req, resp, _newData);
+                resolve(true);
+                return;
               }
-              server.sendResponse(sessionID, req, resp, _newData);
-              resolve(true);
-              return;
-            }
-            internal.zlib.inflate(data, function (err, body) {
-              let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
-              server.sendResponse(sessionID, req, resp, jsonData);
-              resolve(true);
+              internal.zlib.inflate(data, function (err, body) {
+                let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
+                server.sendResponse(sessionID, req, resp, jsonData);
+                resolve(true);
+              });
             });
-          });
-          
-        }
-        case "PUT": 
-        {
-          // req.on("data", function (data) {
-          //   // receive data
-          //   if ("expect" in req.headers) {
 
-          //     const requestLength = parseInt(req.headers["content-length"]);
-  
-          //     if (!server.putInBuffer(sessionID, data, requestLength)) {
-          //       resp.writeContinue();
-          //     }
-          //   }
-          // })
-          // .on("end", function () {
-          //   let data = server.getFromBuffer(sessionID);
-          //   server.resetBuffer(sessionID);
-  
-          //   internal.zlib.inflate(data, function (err, body) {
-          //     let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
-          //     server.sendResponse(sessionID, req, resp, jsonData);
-          //     resolve(true);
-          //   });
-          // });
-          resolve(true);
-        }
-        default: 
-        {
-          resolve(true);
-        }
+          }
+        case "PUT":
+          {
+            // req.on("data", function (data) {
+            //   // receive data
+            //   if ("expect" in req.headers) {
+
+            //     const requestLength = parseInt(req.headers["content-length"]);
+
+            //     if (!server.putInBuffer(sessionID, data, requestLength)) {
+            //       resp.writeContinue();
+            //     }
+            //   }
+            // })
+            // .on("end", function () {
+            //   let data = server.getFromBuffer(sessionID);
+            //   server.resetBuffer(sessionID);
+
+            //   internal.zlib.inflate(data, function (err, body) {
+            //     let jsonData = body !== undefined && body !== null && body !== "" ? body.toString() : "{}";
+            //     server.sendResponse(sessionID, req, resp, jsonData);
+            //     resolve(true);
+            //   });
+            // });
+            resolve(true);
+          }
+        default:
+          {
+            resolve(true);
+          }
       }
     });
   }

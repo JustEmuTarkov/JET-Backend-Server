@@ -51,11 +51,11 @@ class ConsoleResponse {
   }
   addCommand(commandName, commandDescription, _function) {
     this.commands[commandName] = _function;
-	  this.commandsInfo[commandName] = commandDescription;
+    this.commandsInfo[commandName] = commandDescription;
   }
   removeCommand(commandName) {
     delete this.commands[commandName];
-	  delete this.commandsInfo[commandName];
+    delete this.commandsInfo[commandName];
   }
   // commands below !!
   setDebugSession(commandStructure) {
@@ -67,10 +67,10 @@ class ConsoleResponse {
   }
   addItem(commandStructure) {
     /*
-			1 - sessionID
-			2 - itemID
-			3 - amount
-		*/
+      1 - sessionID
+      2 - itemID
+      3 - amount
+    */
     let sessionID = commandStructure[1];
     let newItemList = { items: [{ item_id: commandStructure[2], count: commandStructure[3] }], tid: "" };
     let pmcData = profile_f.handler.getPmcProfile(sessionID);

@@ -1,39 +1,36 @@
 "use strict";
 
-function scanRecursiveMod(filepath, baseNode, modNode) 
-{
-    if (typeof modNode === "string") {
-        baseNode = filepath + modNode;
-    }
+function scanRecursiveMod(filepath, baseNode, modNode) {
+	if (typeof modNode === "string") {
+		baseNode = filepath + modNode;
+	}
 
-	if(Array.isArray(modNode))
+	if (Array.isArray(modNode))
 		return baseNode; // For skipping bundles sections
-    if (typeof modNode === "object") {
-        for (let node in modNode) {
-            if (!(node in baseNode)) {
-                baseNode[node] = {};
-            }
+	if (typeof modNode === "object") {
+		for (let node in modNode) {
+			if (!(node in baseNode)) {
+				baseNode[node] = {};
+			}
 
-            baseNode[node] = scanRecursiveMod(filepath, baseNode[node], modNode[node]);
-        }
-    }
+			baseNode[node] = scanRecursiveMod(filepath, baseNode[node], modNode[node]);
+		}
+	}
 
-    return baseNode;
+	return baseNode;
 }
 
-function isRebuildRequired() 
-{
-    if (!fileIO.exist("user/cache/db.json")
-    || !fileIO.exist("user/cache/res.json")) {
-        return true;
-    }
-    return false;
+function isRebuildRequired() {
+	if (!fileIO.exist("user/cache/db.json")
+		|| !fileIO.exist("user/cache/res.json")) {
+		return true;
+	}
+	return false;
 }
 
-function scanRecursiveRoute(filepath, deep = false) 
-{ // recursively scans given path
-	if(filepath == "db/")
-		if(!fileIO.exist("db/"))
+function scanRecursiveRoute(filepath, deep = false) { // recursively scans given path
+	if (filepath == "db/")
+		if (!fileIO.exist("db/"))
 			return;
 	let baseNode = {};
 	let directories = utility.getDirList(filepath);
@@ -57,7 +54,7 @@ function scanRecursiveRoute(filepath, deep = false)
 	// deep tree search
 	for (let node of directories) {
 		//if(node != "items" && node != "assort" && node != "customization" && node != "locales" && node != "locations" && node != "templates")
-			baseNode[node] = scanRecursiveRoute(filepath + node + "/");
+		baseNode[node] = scanRecursiveRoute(filepath + node + "/");
 	}
 
 	return baseNode;
@@ -65,15 +62,14 @@ function scanRecursiveRoute(filepath, deep = false)
 
 
 
-function routeDatabaseAndResources() 
-{ // populate global.db and global.res with folders data
+function routeDatabaseAndResources() { // populate global.db and global.res with folders data
 	logger.logInfo("Rebuilding cache: route database");
 	global.db = scanRecursiveRoute("db/");
 	logger.logInfo("Rebuilding cache: route resources");
 	global.res = scanRecursiveRoute("res/");
-	
+
 	// populate res/bundles
-	res.bundles = {files: [], folders: []};
+	res.bundles = { files: [], folders: [] };
 	var path = 'res/bundles';
 	var results = fileIO.readDir(path, true);
 	var bundles = results.filter(x => x.toLowerCase().endswith('.bundle'));
@@ -91,36 +87,34 @@ function routeDatabaseAndResources()
 		},
 		events: {
 			schedule: "user/events/schedule.json"
-		}   
+		}
 	}
 	fileIO.write("user/cache/db.json", db);
 	fileIO.write("user/cache/res.json", res);
 }
 
 const SortedModKeys = () => Object.keys(global.mods.toLoad)
-								                  .sort((a,b) => (global.mods.toLoad[a].order > global.mods.toLoad[b].order) ? 1 : -1);
+	.sort((a, b) => (global.mods.toLoad[a].order > global.mods.toLoad[b].order) ? 1 : -1);
 
-function loadMod(loadType)
-{
+function loadMod(loadType) {
 	const sortedList = SortedModKeys();
 	for (let element of sortedList) {
-        if (!global.mods.toLoad[element].isEnabled) {
-            continue;
-        }
-        const modFolder = global.mods.toLoad[element].folder;
-        const mod = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
-		if(loadType == "ResModLoad"){
-			if(typeof mod.res != "undefined"){
+		if (!global.mods.toLoad[element].isEnabled) {
+			continue;
+		}
+		const modFolder = global.mods.toLoad[element].folder;
+		const mod = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
+		if (loadType == "ResModLoad") {
+			if (typeof mod.res != "undefined") {
 				res = scanRecursiveMod(`user/mods/${modFolder}/`, res, mod.res);
 
 				// Add items to res.bundles
-				if(mod.res && mod.res.bundles && !mod.res.bundles.loaded){
-					if(mod.res.bundles.folders)
-					{
+				if (mod.res && mod.res.bundles && !mod.res.bundles.loaded) {
+					if (mod.res.bundles.folders) {
 						let fullPaths = mod.res.bundles.folders.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
 						res.bundles.folders = res.bundles.folders.concat(fullPaths);
 					}
-					if(mod.res.bundles.files){
+					if (mod.res.bundles.files) {
 						let fullPaths = mod.res.bundles.files.map(x => internal.path.resolve(`user/mods/${modFolder}`, x));
 						res.bundles.files = res.bundles.files.contcat(fullPaths);
 					}
@@ -128,61 +122,51 @@ function loadMod(loadType)
 				}
 			}
 		} else {
-			for(const srcToExecute in mod.src)
-				if(mod.src[srcToExecute] == loadType){
+			for (const srcToExecute in mod.src)
+				if (mod.src[srcToExecute] == loadType) {
 					logger.logDebug(`Executing Mod: ${modFolder}/${srcToExecute}`);
 					// make sure to use correct pathing excludes usage of path and is shorter :)
 					require(process.cwd() + `/user/mods/${modFolder}/${srcToExecute}`).mod(mod); // execute mod
 				}
 		}
-    }
+	}
 }
 
-exports.CacheModLoad = () => 
-{ // Loading mods flagged as load at creating cache
+exports.CacheModLoad = () => { // Loading mods flagged as load at creating cache
 	loadMod("CacheModLoad");
 }
 
-exports.ResModLoad = () => 
-{ // loading res files from mods if they exist
+exports.ResModLoad = () => { // loading res files from mods if they exist
 	loadMod("ResModLoad");
 }
 
-exports.TamperModLoad = () => 
-{ // Loading mods flagged as load after "server is ready to start"
+exports.TamperModLoad = () => { // Loading mods flagged as load after "server is ready to start"
 	loadMod("TamperModLoad");
 }
 
-class ModLoader 
-{ // handles loading mods
-	constructor()
-	{ 
+class ModLoader { // handles loading mods
+	constructor() {
 		this.modsConfig = {};
 		this.modsRequirements = {};
 		this.orderNumber = 1;
 		this.AlreadyQueriedMods = [];
 	}
-	
-	modsFileNotFound()
-	{ // Not Found File mods.json - loop through folders and load all mods that are correct
+
+	modsFileNotFound() { // Not Found File mods.json - loop through folders and load all mods that are correct
 		const modsFolder = fileIO.readDir("user/mods").filter(dir => fileIO.lstatSync("user/mods/" + dir).isDirectory());
-		for(const modFolder of modsFolder){
-			if(!fileIO.exist(`user/mods/${modFolder}/mod.config.json`)){
+		for (const modFolder of modsFolder) {
+			if (!fileIO.exist(`user/mods/${modFolder}/mod.config.json`)) {
 				logger.logWarning(`Missing file: mod.config.json. Skipping loading mod: ${modFolder}`);
 			}
-			if(fileIO.exist(`user/mods/${modFolder}/package.json`) && fileIO.exist(`user/mods/${modFolder}/package.js`)){
+			if (fileIO.exist(`user/mods/${modFolder}/package.json`) && fileIO.exist(`user/mods/${modFolder}/package.js`)) {
 				logger.logWarning(`Invalid mod: this mod structure is incorrect (its AKI mod). Skipping loading mod: ${modFolder}`);
 			}
 			const modConfig = fileIO.readParsed(`user/mods/${modFolder}/mod.config.json`);
-			if(typeof modConfig.name != "undefined" && typeof modConfig.name == "string")
-			{
-				if(typeof modConfig.author != "undefined" && typeof modConfig.author == "string")
-				{
-					if(typeof modConfig.version != "undefined" && typeof modConfig.version == "string")
-					{
-						if(typeof modConfig.required != "undefined" && typeof modConfig.required == "object")
-						{
-							if(typeof modConfig.src != "undefined" && typeof modConfig.src == "object"){
+			if (typeof modConfig.name != "undefined" && typeof modConfig.name == "string") {
+				if (typeof modConfig.author != "undefined" && typeof modConfig.author == "string") {
+					if (typeof modConfig.version != "undefined" && typeof modConfig.version == "string") {
+						if (typeof modConfig.required != "undefined" && typeof modConfig.required == "object") {
+							if (typeof modConfig.src != "undefined" && typeof modConfig.src == "object") {
 								const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
 								this.modsConfig[modUniqueID] = {
 									"isEnabled": true,
@@ -209,12 +193,11 @@ class ModLoader
 		fileIO.write("user/configs/mods.json", this.modsConfig);
 	}
 
-	modsFileFound()
-	{ // Found File mods.json so loading already saved config and checking for new files also check if mods got removed
+	modsFileFound() { // Found File mods.json so loading already saved config and checking for new files also check if mods got removed
 		this.modsConfig = fileIO.readParsed(`user/configs/mods.json`);
-		for(let modKey in this.modsConfig){
+		for (let modKey in this.modsConfig) {
 			const modInfo = this.modsConfig[modKey];
-			if(!modInfo.isEnabled){
+			if (!modInfo.isEnabled) {
 				continue;
 			}
 
@@ -229,14 +212,13 @@ class ModLoader
 			const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
 			this.modsRequirements[modUniqueID] = modConfig.required;
 		}
-		
+
 		const modsFolder = fileIO.readDir("user/mods").filter(dir => fileIO.lstatSync("user/mods/" + dir).isDirectory());
-		
-		if(Object.keys(this.modsConfig).length != modsFolder.length) {
+
+		if (Object.keys(this.modsConfig).length != modsFolder.length) {
 			logger.logInfo("Detected new mod folders. Trying to add them to the list...");
-			
-			for(const folderName of modsFolder)
-			{
+
+			for (const folderName of modsFolder) {
 				const configPath = `user/mods/${folderName}/mod.config.json`
 				if (!fileIO.exist(configPath)) {
 					logger.logError(`No mod config found for ${folderName}. Skipping...`)
@@ -250,7 +232,7 @@ class ModLoader
 					return;
 				}
 				const modUniqueID = `${modConfig.name}-${modConfig.version}_${modConfig.author}`;
-				if(typeof modConfig[modUniqueID] == "undefined"){
+				if (typeof modConfig[modUniqueID] == "undefined") {
 					this.modsConfig[modUniqueID] = {
 						"isEnabled": true,
 						"folder": folderName,
@@ -259,13 +241,12 @@ class ModLoader
 				}
 			}
 		}
-		
+
 		// TODO: still missing if someone deletes mod folder then delete it from list !!!
 	}
 
-	queryNoRequirementMods()
-	{ // Add to the list mods without requirements aka CORE mods
-		for(const key in this.modsRequirements){
+	queryNoRequirementMods() { // Add to the list mods without requirements aka CORE mods
+		for (const key in this.modsRequirements) {
 			let modRequired;
 
 			if (typeof this.modsRequirements[key] == "undefined") {
@@ -274,8 +255,7 @@ class ModLoader
 				modRequired = this.modsRequirements[key].length;
 			}
 
-			if (modRequired === 0)
-			{
+			if (modRequired === 0) {
 				const modConfigFile = fileIO.readParsed(`user/mods/${this.modsConfig[key].folder}/mod.config.json`);
 				this.modsConfig[key].order = this.orderNumber;
 				this.orderNumber++;
@@ -285,64 +265,54 @@ class ModLoader
 		}
 	}
 
-	queryRequirementMods()
-	{ // Add to the list mods with requirements
+	queryRequirementMods() { // Add to the list mods with requirements
 		let maxLength = 0;
-		for(const modData in this.modsRequirements)
-		{
-			if(maxLength < this.modsRequirements[modData].length)
+		for (const modData in this.modsRequirements) {
+			if (maxLength < this.modsRequirements[modData].length)
 				maxLength = this.modsRequirements[modData].length;
 		}
-		for(let i = 1; i <= maxLength; i++)
-		{
-			for(const key in this.modsRequirements)
-			{
-				if(this.modsRequirements[key].length === i)
-				{
+		for (let i = 1; i <= maxLength; i++) {
+			for (const key in this.modsRequirements) {
+				if (this.modsRequirements[key].length === i) {
 					const maxSize = this.modsRequirements[key].length;
-					for(let inc = 0; inc < maxSize; inc++)
-					{
+					for (let inc = 0; inc < maxSize; inc++) {
 						const foundMods = this.AlreadyQueriedMods.find(mod => {
 							if (mod.name === this.modsRequirements[key][inc].name) {
 								return mod;
 							}
 						});
-						if(typeof foundMods == "undefined")
-						{
+						if (typeof foundMods == "undefined") {
 							logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to a missing dependency.`);
 							delete this.modsRequirements[key];
 							delete this.modsConfig[key];
 							continue;
 						}
-						
+
 						let versionComparison = "equal";
 						let versionOfReqMod = this.modsRequirements[key][inc].ver;
-						
-						if(versionOfReqMod.charAt(0) == "^"){
+
+						if (versionOfReqMod.charAt(0) == "^") {
 							versionComparison = "newEqual";
 							versionOfReqMod = versionOfReqMod.substring(1);
 						}
-						switch(versionComparison){
-							case "equal": 
-								if(foundMods.ver != versionOfReqMod)
-								{
+						switch (versionComparison) {
+							case "equal":
+								if (foundMods.ver != versionOfReqMod) {
 									logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to an uncompatible dependency version.`);
 									logger.logWarning(`Mod version is ${foundMods.ver} which is not the required version of ${versionOfReqMod}.`);
 									delete this.modsRequirements[key];
 									delete this.modsConfig[key];
 									continue;
 								}
-							break;
-							case "newEqual": 
-								if(foundMods.ver != versionOfReqMod)
-								{
+								break;
+							case "newEqual":
+								if (foundMods.ver != versionOfReqMod) {
 									const requiredVersion = versionOfReqMod.split('.');
 									const foundVersion = foundMods.ver.split('.');
-									if(
-										requiredVersion[0] < foundVersion[0] || 
-										requiredVersion[1] < foundVersion[1] || 
-										requiredVersion[2] < foundVersion[2])
-									{
+									if (
+										requiredVersion[0] < foundVersion[0] ||
+										requiredVersion[1] < foundVersion[1] ||
+										requiredVersion[2] < foundVersion[2]) {
 										logger.logWarning(`Mod: ${this.modsConfig[key].folder} failed to load due to an uncompatible dependency version.`);
 										logger.logWarning(`Mod version is ${foundMods.ver} which is not the required version of ${versionOfReqMod} or newer.`);
 										delete this.modsRequirements[key];
@@ -350,7 +320,7 @@ class ModLoader
 										continue;
 									}
 								}
-							break;
+								break;
 						}
 					}
 					// all is good we can add the mod
@@ -363,33 +333,31 @@ class ModLoader
 			}
 		}
 	}
-	
-	sortModsByOrder()
-	{ // sorting mods by their assigned order key
+
+	sortModsByOrder() { // sorting mods by their assigned order key
 		const tempModsConfig = this.modsConfig;
-		const tempTable = Object.keys(this.modsConfig).sort((a,b) => (tempModsConfig[a].order > tempModsConfig[b].order) ? 1 : -1);
+		const tempTable = Object.keys(this.modsConfig).sort((a, b) => (tempModsConfig[a].order > tempModsConfig[b].order) ? 1 : -1);
 		// ASC: >	// DESC: <
-		
+
 		let newTable = [];
-		for(const key of tempTable){
+		for (const key of tempTable) {
 			newTable.push(this.modsConfig[key]);
 		}
 		this.modsConfig = newTable;
 		return newTable;
 	}
 
-	loadModsData()
-	{ // Loading Mods - Core function
+	loadModsData() { // Loading Mods - Core function
 		// Loading mods (without execute)
 		let emptyModsConfig = false;
-		if(!fileIO.exist("user/configs/mods.json") || serverConfig.rebuildCache){
+		if (!fileIO.exist("user/configs/mods.json") || serverConfig.rebuildCache) {
 			fileIO.write("user/configs/mods.json", {});
 			emptyModsConfig = true;
 		}
 		// -- need to be mored to functions later on !!!
 
 
-		if(emptyModsConfig){
+		if (emptyModsConfig) {
 			this.modsFileNotFound();
 		} else {
 			this.modsFileFound();
@@ -414,12 +382,11 @@ class ModLoader
 
 exports.load = () => {
 	// if somehow any of rebuildCache will be triggered do not check other things it will be recached anyway
-    // create mods folder if missing
-    if (!fileIO.exist("user/mods/")) {
-        fileIO.mkDir("user/mods/");
-    }
-	if(!fileIO.exist("./user/cache") || isRebuildRequired())
-	{
+	// create mods folder if missing
+	if (!fileIO.exist("user/mods/")) {
+		fileIO.mkDir("user/mods/");
+	}
+	if (!fileIO.exist("./user/cache") || isRebuildRequired()) {
 		logger.logWarning("Missing one of essencial cache file! Cache rebuild required!");
 		serverConfig.rebuildCache = true;
 	}
@@ -428,11 +395,11 @@ exports.load = () => {
 	modLoader.loadModsData();
 	logger.logDebug("isRebuildRequired = " + isRebuildRequired());
 
-    // rebuild db
-    if (serverConfig.rebuildCache) {
-        logger.logWarning("Rebuilding cache...");
-        routeDatabaseAndResources();
-    } else {
+	// rebuild db
+	if (serverConfig.rebuildCache) {
+		logger.logWarning("Rebuilding cache...");
+		routeDatabaseAndResources();
+	} else {
 		db = fileIO.readParsed("user/cache/db.json");
 		res = fileIO.readParsed("user/cache/res.json");
 	}

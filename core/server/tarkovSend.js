@@ -12,14 +12,14 @@ class TarkovSend {
     }
 
     zlibJson(resp, output, sessionID) {
-        let Header = {"Content-Type": this.mime["json"], "Set-Cookie": "PHPSESSID=" + sessionID };
+        let Header = { "Content-Type": this.mime["json"], "Set-Cookie": "PHPSESSID=" + sessionID };
         // this should enable content encoding if you ask server from web browser
-        if(typeof sessionID == "undefined"){
+        if (typeof sessionID == "undefined") {
             Header["content-encoding"] = "deflate";
         }
         resp.writeHead(200, "OK", Header);
         internal.zlib.deflate(output, function (err, buf) {
-        resp.end(buf);
+            resp.end(buf);
         });
     }
 
@@ -39,12 +39,12 @@ class TarkovSend {
         let fileStream = fileIO.createReadStream(file);
 
         fileStream.on("open", function () {
-        resp.setHeader("Content-Type", type);
-        fileStream.pipe(resp);
+            resp.setHeader("Content-Type", type);
+            fileStream.pipe(resp);
         });
     }
 
-    sendStaticFile(req, resp){
+    sendStaticFile(req, resp) {
         if (req.url == "/favicon.ico") {
             this.file(resp, "res/icon.ico");
             return true;
@@ -57,7 +57,7 @@ class TarkovSend {
             this.file(resp, "res/bender.light.otf");
             return true;
         }
-    
+
         if (req.url.includes("/server/config")) {
             //make a different response for static html pages
             // load html page represented by home_f

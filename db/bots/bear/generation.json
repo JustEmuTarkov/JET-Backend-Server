@@ -10,7 +10,7 @@
 		},
 		"looseLoot": {
 			"min": 0,
-			"max": 16
+			"max": 14
 		},
 		"magazines": {
 			"min": 1,
@@ -18,7 +18,7 @@
 		},
 		"grenades": {
 			"min": 0,
-			"max": 2
+			"max": 3
 		}
 	}
 }

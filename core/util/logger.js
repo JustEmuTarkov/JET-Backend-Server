@@ -100,9 +100,9 @@ class Logger {
   }
 
   logDebug(text, isStructData = false) {
-    if(isStructData){
+    if (isStructData) {
       this.log("[DEBUG]", "Data Output:", "black", "white");
-      this.log("LogData", data);
+      this.log("LogData", text);
       return;
     }
     this.log("[DEBUG]", text, "black", "white");
