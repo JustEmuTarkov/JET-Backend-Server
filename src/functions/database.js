@@ -368,7 +368,7 @@ function _load_LocationData() {
     if (typeof db.locations.loot[name] != "undefined") {
       let loot_data = fileIO.readParsed(db.locations.loot[name]);
       for (let type in loot_data) {
-        for (item of loot_data[type]) {
+        for (let item of loot_data[type]) {
           if (type == "static" || type == "mounted") {
             _location.loot[type].push(Create_StaticMountedStruct(item));
             continue;

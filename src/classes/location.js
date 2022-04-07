@@ -387,10 +387,10 @@ function _RollMaxItemsToSpawn(container) {
   let minCount = 0;
   const maxItemsPossibleToSpawn = container._props.Grids[0]._props.cellsV * container._props.Grids[0]._props.cellsH;
 
-  if (utility.getRandomInt(0, 100) > _database.gameplayConfig.locationloot.containers.ChanceForEmpty) {
+  if (utility.getRandomInt(0, 100) > global._database.gameplay.locationloot.containers.ChanceForEmpty) {
     minCount++;
     for (let i = 1; i < maxItemsPossibleToSpawn; i++) {
-      if (utility.getRandomInt(0, 100) < _database.gameplayConfig.locationloot.containers.ChanceToSpawnNextItem) {
+      if (utility.getRandomInt(0, 100) < global._database.gameplay.locationloot.containers.ChanceToSpawnNextItem) {
         minCount++;
       }
     }

@@ -32,7 +32,7 @@ class InraidServer {
       if (item._tpl === mapKey && item.slotId !== "Hideout") {
         let usages = -1;
 
-        if (!helper_f.getItem(mapKey)[1]._props.MaximumNumberOfUsage) {
+				if (!helper_f.tryGetItem(mapKey)._props.MaximumNumberOfUsage) {
           usages = 1;
         } else {
           usages = "upd" in item && "Key" in item.upd ? item.upd.Key.NumberOfUsages : -1;
@@ -44,8 +44,9 @@ class InraidServer {
           item.upd.Key.NumberOfUsages += 1;
         }
 
-        if (item.upd.Key.NumberOfUsages >= helper_f.getItem(mapKey)[1]._props.MaximumNumberOfUsage) {
-          move_f.removeItemFromProfile(offraidData.profile, item._id);
+				if (item.upd.Key.NumberOfUsages >= helper_f.tryGetItem(mapKey)._props.MaximumNumberOfUsage) {
+					//do not send offraidData here, because it will not remove the items
+					move_f.removeItemFromProfile(profile_f.handler.getPmcProfile(sessionID), item._id);
         }
 
         break;
@@ -111,46 +112,47 @@ function RemoveFoundItems(profile) {
   return profile;
 }
 
-function setInventory(pmcData, profile) {	
-	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
-	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
-	move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
-	
-	//fix for duplicate ids in items by creating new ids for item ids created in-raid
-	profile.Inventory = repairInventoryIDs(profile.Inventory, pmcData.aid);
+function setInventory(pmcData, profile) {
 
-	// Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
-	// no more duplicates should exist but I'll leave this here untouched bc it's working (CQ)
-	let duplicates = [];
-	
-	x: for (let item of profile.Inventory.items) {
-		for (let key in pmcData.Inventory.items) {
-			let currid = pmcData.Inventory.items[key]._id;
-			if (currid == item._id) {
-				duplicates.push(item._id);
-				continue x;
-			}
-		}
-		pmcData.Inventory.items.push(item);
-	}
-	
-	pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.equipment);
+  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questRaidItems);
+  move_f.removeItemFromProfile(pmcData, pmcData.Inventory.questStashItems);
 
-	// Don't count important IDs as errors. Id's used as sorting tables.
-	const ignoreIDs = [
-		"60de0d80c6b34f52845b4646",		//sorting table
-		"61b7367440281631fc83f17f" 		//sorting table
-	];
+  //fix for duplicate ids in items by creating new ids for item ids created in-raid
+  profile.Inventory = repairInventoryIDs(profile.Inventory, pmcData.aid);
 
-	duplicates = duplicates.filter((x) => !ignoreIDs.includes(x));
+  // Bandaid fix to duplicate IDs being saved to profile after raid. May cause inconsistent item data. (~Kiobu)
+  // no more duplicates should exist but I'll leave this here untouched bc it's working (CQ)
+  let duplicates = [];
 
-	if (duplicates.length > 0) {
-		logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`);
-		logger.logWarning(`Duplicates: \n`+JSON.stringify(duplicates, null, 2));
-		//console.log(duplicates); //this won't be saved in log file, don't use this crap
-	}
+  x: for (let item of profile.Inventory.items) {
+    for (let key in pmcData.Inventory.items) {
+      let currid = pmcData.Inventory.items[key]._id;
+      if (currid == item._id) {
+        duplicates.push(item._id);
+        continue x;
+      }
+    }
+    pmcData.Inventory.items.push(item);
+  }
 
-	return pmcData;
+  pmcData.Inventory.fastPanel = profile.Inventory.fastPanel;
+
+  // Don't count important IDs as errors. Id's used as sorting tables.
+  const ignoreIDs = [
+    "60de0d80c6b34f52845b4646",		//sorting table
+    "61b7367440281631fc83f17f" 		//sorting table
+  ];
+
+  duplicates = duplicates.filter((x) => !ignoreIDs.includes(x));
+
+  if (duplicates.length > 0) {
+    logger.logWarning(`Duplicate ID(s) encountered in profile after-raid. Found ${duplicates.length} duplicates. Ignoring...`);
+    logger.logWarning(`Duplicates: \n` + JSON.stringify(duplicates, null, 2));
+    //console.log(duplicates); //this won't be saved in log file, don't use this crap
+  }
+
+  return pmcData;
 }
 
 function deleteInventory(pmcData, sessionID) {
@@ -356,7 +358,7 @@ function saveProgress(offraidData, sessionID) {
   pmcData.Info.Level = offraidData.profile.Info.Level;
 
   let multiplier = global._database.gameplay.offraid.extractionMultiplier[offraidData.exit.toLowerCase()];
-  if(utility.isUndefined(multiplier)){
+  if (utility.isUndefined(multiplier)) {
     logger.logWarning(`Not found extractionMultiplier named: ${offraidData.exit.toLowerCase()}`);
     multiplier = 1;
   }
@@ -370,17 +372,17 @@ function saveProgress(offraidData, sessionID) {
     }
   }
   for (let skill in offraidData.profile.Skills.Common) {
-		offraidData.profile.Skills.Common[skill].PointsEarnedDuringSession = 0;
-	}
+    offraidData.profile.Skills.Common[skill].PointsEarnedDuringSession = 0;
+  }
   pmcData.Skills = offraidData.profile.Skills;
   pmcData.Stats = offraidData.profile.Stats;
   pmcData.Encyclopedia = offraidData.profile.Encyclopedia;
   pmcData.ConditionCounters = offraidData.profile.ConditionCounters;
   pmcData.Quests = offraidData.profile.Quests;
 
-  
-	//correctly update hideout production after raid.
-	keepalive_f.updatePlayerHideout(sessionID);
+
+  //correctly update hideout production after raid.
+  keepalive_f.updatePlayerHideout(sessionID);
 
   // For some reason, offraidData seems to drop the latest insured items.
   // It makes more sense to use pmcData's insured items as the source of truth.
@@ -390,16 +392,13 @@ function saveProgress(offraidData, sessionID) {
   pmcData.Info.Experience += pmcData.Stats.TotalSessionExperience;
   pmcData.Stats.TotalSessionExperience = 0;
 
-  // Remove the Lab card
-
-
   // remove inventory if player died and send insurance items
   //TODO: dump of prapor/therapist dialogues that are sent when you die in lab with insurance.
   const systemMapName = MapNameConversion(sessionID);
   const insuranceEnabled = global._database.locations[systemMapName].base.Insurance;
   const preRaidGear = getPlayerGear(pmcData.Inventory.items);
 
-	//store for insurance, gear that was insured and was lost
+  //store for insurance, gear that was insured and was lost
   if (insuranceEnabled) {
     insurance_f.handler.storeLostGear(pmcData, offraidData, preRaidGear, sessionID);
   }
@@ -408,9 +407,9 @@ function saveProgress(offraidData, sessionID) {
     exfils[systemMapName] = exfils[systemMapName] + 1;
     profile_f.handler.setProfileExfilsById(sessionID, exfils);
   }
-	//changed position of this block, because it was fucking up insurance.
-	//setting inventory before sending lostgear (gear that was insured but dropped without dying)
-	//would cause preraid and offraid inventories to be the same.
+  //changed position of this block, because it was fucking up insurance.
+  //setting inventory before sending lostgear (gear that was insured but dropped without dying)
+  //would cause preraid and offraid inventories to be the same.
   pmcData = setInventory(pmcData, offraidData.profile);
   health_f.handler.saveHealth(pmcData, offraidData.health, sessionID);
 
@@ -421,8 +420,8 @@ function saveProgress(offraidData, sessionID) {
     pmcData = deleteInventory(pmcData, sessionID);
 
     //remove completed conditions related to QuestItem to avoid causing the item not spawning
-		profile_f.handler.getPmcProfile(sessionID).Quests = removeLooseQuestItemsConditions(profile_f.handler.getPmcProfile(sessionID));
-    
+    profile_f.handler.getPmcProfile(sessionID).Quests = removeLooseQuestItemsConditions(profile_f.handler.getPmcProfile(sessionID));
+
     //Delete carried quests items
     offraidData.profile.Stats.CarriedQuestItems = [];
   }
@@ -439,63 +438,63 @@ function saveProgress(offraidData, sessionID) {
 //example: Extortionist's Folder.
 //returns cleaned quests section.
 function removeLooseQuestItemsConditions(profile) {
-	let dateNow = Date.now();
-	//let curQuests = profile_f.handler.getPmcProfile(sessionID).Quests;
-	let curQuests = utility.DeepCopy(profile.Quests);
-	for (let i = 0; i < curQuests.length; i++) {
-		//if active quest
-		if (curQuests[i].status === "Started") {
-			for (let k = 0; k < curQuests[i].completedConditions.length; k++) {
-				if (isConditionRelatedToQuestItem(curQuests[i].completedConditions[k], curQuests[i].qid)) {
-					//if true : remove completed condition
-					//curQuests[i].completedConditions[k] = "";
-					/*
-					logger.logWarning(
-						"Condition ("+curQuests[i].completedConditions[k]+") related to quest ("+curQuests[i].qid+") item found in profile."
-					);
-					*/
-					logger.logWarning(
-						`\nQuest (${curQuests[i].qid}) item related condition (${curQuests[i].completedConditions[k]}) \nFound in profile (${profile.aid}). Removing.`
-					);
-					curQuests[i].completedConditions.splice(k, 1);
-				}
-			}
-		}
-	}
+  let dateNow = Date.now();
+  //let curQuests = profile_f.handler.getPmcProfile(sessionID).Quests;
+  let curQuests = utility.DeepCopy(profile.Quests);
+  for (let i = 0; i < curQuests.length; i++) {
+    //if active quest
+    if (curQuests[i].status === "Started") {
+      for (let k = 0; k < curQuests[i].completedConditions.length; k++) {
+        if (isConditionRelatedToQuestItem(curQuests[i].completedConditions[k], curQuests[i].qid)) {
+          //if true : remove completed condition
+          //curQuests[i].completedConditions[k] = "";
+          /*
+          logger.logWarning(
+            "Condition ("+curQuests[i].completedConditions[k]+") related to quest ("+curQuests[i].qid+") item found in profile."
+          );
+          */
+          logger.logWarning(
+            `\nQuest (${curQuests[i].qid}) item related condition (${curQuests[i].completedConditions[k]}) \nFound in profile (${profile.aid}). Removing.`
+          );
+          curQuests[i].completedConditions.splice(k, 1);
+        }
+      }
+    }
+  }
 
-	logger.logSuccess(`Quest conditions cleaned (${Date.now() - dateNow}ms).`);
-	return curQuests;
+  logger.logSuccess(`Quest conditions cleaned (${Date.now() - dateNow}ms).`);
+  return curQuests;
 }
 
 //function that a quest condition id (found in pmc profile)
 //and a questId to check if the quest is related to an item that needs to be found in raid.
 //returns false if the condition is not related to item
 function isConditionRelatedToQuestItem(conditionId, questId) {
-	let cachedQuest = undefined;
-	//iterate quests to find the desired quest by questId and save it locally
-	for (let quest of global._database.quests) {
-		if (quest._id === questId) {
-			cachedQuest = utility.DeepCopy(quest);
-		}
-	}
-	if(cachedQuest){
-		//iterate quest conditions that are relevant
-		for (let condAFF of cachedQuest.conditions.AvailableForFinish) {
-			if (condAFF._props.id === conditionId) {
-				//if quest condition is of "FindItem" nature, then it's related to an item found in raid.
-				if (condAFF._parent === "FindItem") {
-					//if that item is an item with QuestItem = true
-					if (global._database.items[condAFF._props.target[0]]._props.QuestItem === true) {
-						return true;
-					}
-				}
-			}
-		}
-	} else {
-		logger.logWarning("isConditionRelatedToQuestItem: No matching quest was found.");
-	}
-	
-	return false;
+  let cachedQuest = undefined;
+  //iterate quests to find the desired quest by questId and save it locally
+  for (let quest of global._database.quests) {
+    if (quest._id === questId) {
+      cachedQuest = utility.DeepCopy(quest);
+    }
+  }
+  if (cachedQuest) {
+    //iterate quest conditions that are relevant
+    for (let condAFF of cachedQuest.conditions.AvailableForFinish) {
+      if (condAFF._props.id === conditionId) {
+        //if quest condition is of "FindItem" nature, then it's related to an item found in raid.
+        if (condAFF._parent === "FindItem") {
+          //if that item is an item with QuestItem = true
+          if (global._database.items[condAFF._props.target[0]]._props.QuestItem === true) {
+            return true;
+          }
+        }
+      }
+    }
+  } else {
+    logger.logWarning("isConditionRelatedToQuestItem: No matching quest was found.");
+  }
+
+  return false;
 }
 
 /**
@@ -507,47 +506,47 @@ function isConditionRelatedToQuestItem(conditionId, questId) {
  * @param {pmcData.aid} AID The account ID for which the items are being repaired. Used for logging and debugging.
  * @author CQInmanis
  */
- function repairInventoryIDs(pInv, AID){
+function repairInventoryIDs(pInv, AID) {
 
-	// Don't count important IDs as errors.
-	const ignoreIDs = [
-		"60de0d80c6b34f52845b4646",		//sorting table
-		"61b7367440281631fc83f17f" 		//sorting table
-	];
+  // Don't count important IDs as errors.
+  const ignoreIDs = [
+    "60de0d80c6b34f52845b4646",		//sorting table
+    "61b7367440281631fc83f17f" 		//sorting table
+  ];
 
-	// from : "", to : ""
-	let repairedIDs = [];
-	
-	// repair in-raid created IDs (looking like pmcAID) by creating
-	// new ids and pointing children to the new id
-	for(let item of pInv.items){
-		//if item does not need fixing or is in ignore list, skip.
-		if(!item._id.includes("pmcAID") || ignoreIDs.includes(item._id)){
-			continue;
-		}
-		//store original id before repairing
-		let ogID = item._id;
-		//repair ID
-		item._id = utility.generateNewItemId();
+  // from : "", to : ""
+  let repairedIDs = [];
 
-		//add to repaired list for debugging purposes.
-		repairedIDs.push({
-			from 	: ogID,
-			to		: item._id
-		});
+  // repair in-raid created IDs (looking like pmcAID) by creating
+  // new ids and pointing children to the new id
+  for (let item of pInv.items) {
+    //if item does not need fixing or is in ignore list, skip.
+    if (!item._id.includes("pmcAID") || ignoreIDs.includes(item._id)) {
+      continue;
+    }
+    //store original id before repairing
+    let ogID = item._id;
+    //repair ID
+    item._id = utility.generateNewItemId();
 
-		// check for children whose parentId was the item's original ID
-		// and replace it with the new id
-		for(let iitem of pInv.items){
-			if(iitem.parentId == ogID){
-				iitem.parentId = item._id;
-			}
-		}
-	}
-	if(repairedIDs.length > 0){
-		logger.logWarning("Repaired IDs for "+AID+":\n"+JSON.stringify(repairedIDs, null, 2));
-	}
-	return pInv;
+    //add to repaired list for debugging purposes.
+    repairedIDs.push({
+      from: ogID,
+      to: item._id
+    });
+
+    // check for children whose parentId was the item's original ID
+    // and replace it with the new id
+    for (let iitem of pInv.items) {
+      if (iitem.parentId == ogID) {
+        iitem.parentId = item._id;
+      }
+    }
+  }
+  if (repairedIDs.length > 0) {
+    logger.logWarning("Repaired IDs for " + AID + ":\n" + JSON.stringify(repairedIDs, null, 2));
+  }
+  return pInv;
 }
 
 module.exports.handler = new InraidServer();
