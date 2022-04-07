@@ -680,7 +680,8 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
     });
 
     // If this is an ammobox, add cartridges to it.
-    this.fillAmmoBox(itemToAdd, pmcData, toDo, output);
+    if(itemToAdd.itemRef._parent == "543be5cb4bdc2deb348b4568")
+      fillAmmoBox(itemToAdd, pmcData, toDo, output);
 
     while (toDo.length > 0) {
       for (let tmpKey in itemLib) {
