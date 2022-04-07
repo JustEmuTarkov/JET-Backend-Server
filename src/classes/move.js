@@ -43,8 +43,6 @@ function getOwnerInventoryItems(body, sessionID) {
   };
 }
 
-/* Move Item
- * */
 /** Move Item
  * change location of item with parentId and slotId
  * transfers items from one profile to another if fromOwner/toOwner is set in the body.
@@ -55,6 +53,7 @@ function getOwnerInventoryItems(body, sessionID) {
  * @returns 
  */
 function moveItem(pmcData, body, sessionID) {
+  const output = item_f.handler.getOutput(sessionID);
   const inventoryItems = getOwnerInventoryItems(body, sessionID);
 
   if (inventoryItems.sameInventory) {
@@ -63,7 +62,7 @@ function moveItem(pmcData, body, sessionID) {
     moveItemToProfile(inventoryItems.from, inventoryItems.to, body);
   }
 
-  return item_f.handler.getOutput(sessionID);
+  return output;
 }
 
 module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
@@ -92,10 +91,10 @@ module.exports.applyInventoryChanges = (pmcData, body, sessionID) => {
 function moveItemToProfile(fromItems, toItems, body) {
   handleCartridges(fromItems, body);
 
-  let idsToMove = helper_f.findAndReturnChildrenByItems(fromItems, body.item);
+  const idsToMove = helper_f.findAndReturnChildrenByItems(fromItems, body.item);
 
-  for (let itemId of idsToMove) {
-    for (let itemIndex in fromItems) {
+  for (const itemId of idsToMove) {
+    for (const itemIndex in fromItems) {
       if (fromItems[itemIndex]._id && fromItems[itemIndex]._id === itemId) {
         if (itemId === body.item) {
           fromItems[itemIndex].parentId = body.to.id;
@@ -155,7 +154,7 @@ function handleCartridges(items, body) {
   if (body.to.container === "cartridges") {
     let tmp_counter = 0;
 
-    for (let item_ammo in items) {
+    for (const item_ammo in items) {
       if (body.to.id === items[item_ammo].parentId) {
         tmp_counter++;
       }
@@ -279,7 +278,7 @@ function splitItem(pmcData, body, sessionID) {
       let newItem = utility.generateNewItemId();
 
       if (typeof output.profileChanges[pmcData._id].items.change == "undefined") output.profileChanges[pmcData._id].items.change = [];
-      if(body.container.container != "cartridges")
+      if (body.container.container != "cartridges")
         output.profileChanges[pmcData._id].items.change.push(item);
 
       //output.profileChanges[pmcData._id].items.change.push(item);
@@ -374,7 +373,7 @@ function transferItem(pmcData, body, sessionID) {
 
   let itemFrom = null, itemTo = null;
 
-  for (let iterItem of pmcData.Inventory.items) {
+  for (const iterItem of pmcData.Inventory.items) {
     if (iterItem._id === body.item) {
       itemFrom = iterItem;
     } else if (iterItem._id === body.with) {
@@ -436,11 +435,10 @@ function swapItem(pmcData, body, sessionID) {
       iterItem.parentId = body.to2.id;
       iterItem.slotId = body.to2.container;
       delete iterItem.location;
-      if(!output.profileChanges[pmcData._id].change){
-        output.profileChanges[pmcData._id].change = [];
+      // added this condition to avoid crashing due to array change being empty
+      if (!output.profileChanges[pmcData._id].change) output.profileChanges[pmcData._id].change = [];
+        output.profileChanges[pmcData._id].change.push(iterItem);
       }
-      output.profileChanges[pmcData._id].change.push(iterItem);
-    }
   }
   item_f.handler.setOutput(output);
   return output;
@@ -559,7 +557,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
           isPreset: baseItem.isPreset,
         };
         let MaxStacks = 1;
-        if(tmpItem == {}){
+        if (tmpItem == {}) {
           logger.logError(`Item doesn't exist: ${item._tpl}`);
           return;
         }
@@ -680,7 +678,7 @@ function addItem(pmcData, body, sessionID, foundInRaid = false) {
     });
 
     // If this is an ammobox, add cartridges to it.
-    if(itemToAdd.itemRef._parent == "543be5cb4bdc2deb348b4568")
+    if (itemToAdd.itemRef._parent == "543be5cb4bdc2deb348b4568")
       fillAmmoBox(itemToAdd, pmcData, toDo, output);
 
     while (toDo.length > 0) {
