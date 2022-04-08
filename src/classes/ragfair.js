@@ -203,67 +203,70 @@ function getOffers(sessionID, request) {
 
 function getOffersFromTraders(sessionID, request) {
   let jsonToReturn = utility.DeepCopy(_database.ragfair_offers);
-  /*   let offersFilters = []; //this is an array of item tpl who filter only items to show
-  
-    jsonToReturn.categories = {};
-    for (let offerC of jsonToReturn.offers) {
-      jsonToReturn.categories[offerC.items[0]._tpl] = 1;
-    }
-  
-    if (request.buildCount) {
-      // Case: weapon builds
-      offersFilters = Object.keys(request.buildItems);
+  let offersFilters = [];
+
+  jsonToReturn.categories = {};
+  for (const category of jsonToReturn.offers) {
+    jsonToReturn.categories[category.items[0]._tpl] = 1;
+  }
+
+  if (request.buildCount) {
+    // Case: weapon builds
+    offersFilters = Object.keys(request.buildItems);
+    jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+  } else {
+    // Case: search
+    if (request.linkedSearchId) {
+      offersFilters = [...offersFilters, ...getLinkedSearchList(request.linkedSearchId)];
       jsonToReturn = fillCategories(jsonToReturn, offersFilters);
-    } else {
-      // Case: search
-      if (request.linkedSearchId) {
-        //offersFilters.concat( getLinkedSearchList(request.linkedSearchId) );
-        offersFilters = [...offersFilters, ...getLinkedSearchList(request.linkedSearchId)];
-        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
-      } else if (request.neededSearchId) {
-        offersFilters = [...offersFilters, ...getNeededSearchList(request.neededSearchId)];
-        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
-      }
-  
-      if (request.removeBartering == true) {
-        jsonToReturn = removeBarterOffers(jsonToReturn);
-        jsonToReturn = fillCategories(jsonToReturn, offersFilters);
-      }
-  
-      // Case: category
-      if (request.handbookId) {
-        let handbookList = getCategoryList(request.handbookId);
-  
-        if (offersFilters.length) {
-          offersFilters = helper_f.arrayIntersect(offersFilters, handbookList);
-        } else {
-          offersFilters = handbookList;
-        }
+    } else if (request.neededSearchId) {
+      offersFilters = [...offersFilters, ...getNeededSearchList(request.neededSearchId)];
+      jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+    }
+
+    if (request.removeBartering == true) {
+      jsonToReturn = removeBarterOffers(jsonToReturn);
+      jsonToReturn = fillCategories(jsonToReturn, offersFilters);
+    }
+
+    // Case: category
+    if (request.handbookId) {
+      const handbookList = getCategoryList(request.handbookId);
+
+      if (offersFilters.length) {
+        offersFilters = helper_f.arrayIntersect(offersFilters, handbookList);
+      } else {
+        offersFilters = handbookList;
       }
     }
-  
-    let offersToKeep = [];
-    for (let offer in jsonToReturn.offers) {
-      for (let tplTokeep of offersFilters) {
-        if (jsonToReturn.offers[offer].items[0]._tpl == tplTokeep) {
-          jsonToReturn.offers[offer].summaryCost = calculateCost(jsonToReturn.offers[offer].requirements);
-          // check if offer is really available, removes any quest locked items not in current assort of a trader
-          let tmpOffer = jsonToReturn.offers[offer];
-          let traderId = tmpOffer.user.id;
-          let traderAssort = trader_f.handler.getAssort(sessionID, traderId).items;
-          let keepItem = false; // for testing
-          for (let item of traderAssort) {
-            if (item._id === tmpOffer.root) {
-              offersToKeep.push(jsonToReturn.offers[offer]);
-              keepItem = true;
-              break;
-            }
+  }
+
+  let offersToKeep = [];
+  for (const offer in jsonToReturn.offers) {
+    for (const tplTokeep of offersFilters) {
+      if (jsonToReturn.offers[offer].items[0]._tpl == tplTokeep) {
+        if (request.onlyFunctional) { // Remove non-functional items such as lowers from traderOffers
+          if (jsonToReturn.offers[offer].items.length == 1 && preset_f.handler.hasPreset(jsonToReturn.offers[offer].items[0]._tpl)) { // If this offer contains an item that has a preset (like a lower) but is only a single item
+            continue; // Skip this item
+          }
+        }
+
+        jsonToReturn.offers[offer].summaryCost = calculateCost(jsonToReturn.offers[offer].requirements);
+        // check if offer is really available, removes any quest locked items not in current assort of a trader
+        const tmpOffer = jsonToReturn.offers[offer];
+        const traderId = tmpOffer.user.id;
+        const traderAssort = trader_f.handler.getAssort(sessionID, traderId).items;
+        for (let item of traderAssort) {
+          if (item._id === tmpOffer.root) {
+            offersToKeep.push(jsonToReturn.offers[offer]);
+            break;
           }
         }
       }
     }
-    jsonToReturn.offers = offersToKeep;
-    jsonToReturn.offers = sortOffers(request, jsonToReturn.offers); */
+  }
+  jsonToReturn.offers = offersToKeep;
+  jsonToReturn.offers = sortOffers(request, jsonToReturn.offers);
 
   return jsonToReturn;
 }
