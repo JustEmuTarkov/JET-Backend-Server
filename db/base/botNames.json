@@ -1,9 +1,21 @@
 {
+	"bossgluhar": [
+		"Gluhkar"
+	],
+	"bosssanitar": [
+		"Sanitar"
+	],
 	"bosskilla": [
 		"Killa"
 	],
 	"bossbully": [
 		"Reshala"
+	],
+	"bosskojany": [
+		"Shturman"
+	],
+	"tagilla": [
+		"Tagilla"
 	],
 	"followerbully": [
 		"Кулинг Заводской",
@@ -191,9 +203,6 @@
 		"Матрос",
 		"Альфонс"
 	],
-	"bosskojany": [
-		"Shturman"
-	],
 	"followerkojany": [
 		"Робинзон Светлоозерский",
 		"Мальчик Светлоозерский",
@@ -211,9 +220,6 @@
 		"Крыса Светлоозерский",
 		"Мелс Светлоозерский",
 		"Саня Светлоозерский"
-	],
-	"sanitar": [
-		"Sanitar"
 	],
 	"followersanitar": [
 		"Akusher",
@@ -235,9 +241,6 @@
 		"Laborant",
 		"Lasha Ortoped",
 		"Lor"
-	],
-	"tagilla": [
-		"Tagilla"
 	],
 	"gifter": [
 		"Дед Мороз"
