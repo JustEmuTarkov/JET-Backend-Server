@@ -247,92 +247,82 @@ function GetItemRarityType(itemTemplate) {
           // console.log(itemTemplate);
       }
     }
-
     LootRarities[itemTemplate._props.Name] = itemRarityType;
-
   }
-
-
   return LootRarities[itemTemplate._props.Name];
 }
+function FilterItemByRarity(itemTemplate, out_itemsRemoved, in_additionalLootModifier) {
+  if(LootModifiers == null)
+  {
+    LootModifiers = GetLootModifiers();
+  }
+  const modifierSuperRare = LootModifiers.modifierSuperRare;
+  const modifierRare = LootModifiers.modifierRare;
+  const modifierUnCommon = LootModifiers.modifierUnCommon;
+  const modifierCommon = LootModifiers.modifierCommon;
 
-function FilterItemByRarity(
-  itemTemplate, 
-  out_itemsRemoved,
-  in_additionalLootModifier
-  ) {
-    if(LootModifiers == null)
-    {
-      LootModifiers = GetLootModifiers();
-    }
-    const modifierSuperRare = LootModifiers.modifierSuperRare;
-    const modifierRare = LootModifiers.modifierRare;
-    const modifierUnCommon = LootModifiers.modifierUnCommon;
-    const modifierCommon = LootModifiers.modifierCommon;
+  if(in_additionalLootModifier == undefined)
+    in_additionalLootModifier = 1.0;
+  
+  if(out_itemsRemoved == undefined)
+    out_itemsRemoved = {};
 
-    if(in_additionalLootModifier == undefined)
-      in_additionalLootModifier = 1.0;
-    
-    if(out_itemsRemoved == undefined)
-      out_itemsRemoved = {};
+  if(out_itemsRemoved.numberOfSuperrareRemoved === undefined) {
+    out_itemsRemoved.numberOfSuperrareRemoved = 0;
+  }
+  if(out_itemsRemoved.numberOfRareRemoved === undefined) {
+    out_itemsRemoved.numberOfRareRemoved = 0;
+  }
+  if(out_itemsRemoved.numberOfUncommonRemoved === undefined) {
+    out_itemsRemoved.numberOfUncommonRemoved = 0;
+  }
+  if(out_itemsRemoved.numberOfCommonRemoved === undefined) {
+    out_itemsRemoved.numberOfCommonRemoved = 0;
+  }
 
-    if(out_itemsRemoved.numberOfSuperrareRemoved === undefined) {
-      out_itemsRemoved.numberOfSuperrareRemoved = 0;
-    }
-    if(out_itemsRemoved.numberOfRareRemoved === undefined) {
-      out_itemsRemoved.numberOfRareRemoved = 0;
-    }
-    if(out_itemsRemoved.numberOfUncommonRemoved === undefined) {
-      out_itemsRemoved.numberOfUncommonRemoved = 0;
-    }
-    if(out_itemsRemoved.numberOfCommonRemoved === undefined) {
-      out_itemsRemoved.numberOfCommonRemoved = 0;
-    }
+  if(itemTemplate._props.QuestItem == true)
+    return true;
 
-    if(itemTemplate._props.QuestItem == true)
-      return true;
+  const itemRarityType = GetItemRarityType(itemTemplate);
 
-    const itemRarityType = GetItemRarityType(itemTemplate);
+  // logger.logInfo(itemRarityType + " - " + itemTemplate._props.Name);
 
-    // logger.logInfo(itemRarityType + " - " + itemTemplate._props.Name);
-
-      if (itemRarityType == "SUPERRARE") {
-        if (Math.random() > (modifierSuperRare * in_additionalLootModifier)) {
-          out_itemsRemoved.numberOfSuperrareRemoved++;
-            return false;
-        } else {
-            return true;
-        }
-      }
-      else if (itemRarityType == "RARE") {
-        if (Math.random() > (modifierRare * in_additionalLootModifier)) {
-          out_itemsRemoved.numberOfRareRemoved++;
-            return false;
-        } else {
-            return true;
-        }
-      }
-      else if (itemRarityType == "UNCOMMON") {
-        if (Math.random() > (modifierUnCommon * in_additionalLootModifier)) {
-          out_itemsRemoved.numberOfUncommonRemoved++;
-            return false;
-        } else {
-            return true;
-        }
-      }
-      else if (itemRarityType == "COMMON")  {
-        if (Math.random() > (modifierCommon * in_additionalLootModifier)) {
-          out_itemsRemoved.numberOfCommonRemoved++;
-            return false;
-        } else {
-            return true;
-        }
-      }
-      else {
+  if (itemRarityType == "SUPERRARE") {
+    if (Math.random() > (modifierSuperRare * in_additionalLootModifier)) {
+      out_itemsRemoved.numberOfSuperrareRemoved++;
         return false;
-      }
+    } else {
+        return true;
+    }
+  }
+  else if (itemRarityType == "RARE") {
+    if (Math.random() > (modifierRare * in_additionalLootModifier)) {
+      out_itemsRemoved.numberOfRareRemoved++;
+        return false;
+    } else {
+        return true;
+    }
+  }
+  else if (itemRarityType == "UNCOMMON") {
+    if (Math.random() > (modifierUnCommon * in_additionalLootModifier)) {
+      out_itemsRemoved.numberOfUncommonRemoved++;
+        return false;
+    } else {
+        return true;
+    }
+  }
+  else if (itemRarityType == "COMMON")  {
+    if (Math.random() > (modifierCommon * in_additionalLootModifier)) {
+      out_itemsRemoved.numberOfCommonRemoved++;
+        return false;
+    } else {
+        return true;
+    }
+  }
+  else {
+    return false;
+  }
 }
-
 function GenerateLootList(containerId) {
   let LootList = [];
   let UniqueLootList = [];
