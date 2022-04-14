@@ -9,21 +9,23 @@
 		},
 		{
 			"templateId": "5448fee04bdc2dbc018b4567",
-			"count": 4,
+			"count": 5,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
 			"templateId": "590c595c86f7747884343ad7",
-			"count": 4,
-			"isFunctional": false,
-			"type": "Item"
+			"type": "Tool"
+		},
+		{
+			"templateId": "5d1b385e86f774252167b98a",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 17500,
 	"boosters": null,
 	"endProduct": "5c0fa877d174af02a012e1cf",
 	"continuous": false,
-	"count": 4,
+	"count": 3,
 	"productionLimitCount": 0
 }

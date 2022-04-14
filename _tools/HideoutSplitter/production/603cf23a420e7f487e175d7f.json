@@ -21,15 +21,13 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "590c2b4386f77425357b6123",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
-		},
-		{
 			"areaType": 10,
 			"requiredLevel": 2,
 			"type": "Area"
+		},
+		{
+			"templateId": "590c2b4386f77425357b6123",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 7000,

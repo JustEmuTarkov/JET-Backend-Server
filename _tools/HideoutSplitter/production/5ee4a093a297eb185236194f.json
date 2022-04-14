@@ -14,10 +14,14 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "5ac78a9b86f7741cca0bbd8d",
-			"count": 2,
+			"templateId": "5c05300686f7746dce784e5d",
+			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
+		},
+		{
+			"templateId": "5ac78a9b86f7741cca0bbd8d",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 192000,

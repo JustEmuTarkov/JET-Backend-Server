@@ -14,16 +14,14 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "544fb5454bdc2df8738b456a",
+			"templateId": "59d64fc686f774171b243fe2",
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
-			"templateId": "59d64fc686f774171b243fe2",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
+			"templateId": "544fb5454bdc2df8738b456a",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 5100,

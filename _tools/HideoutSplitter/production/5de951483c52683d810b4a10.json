@@ -8,16 +8,14 @@
 			"type": "Area"
 		},
 		{
-			"templateId": "5d63d33b86f7746ea9275524",
+			"templateId": "5734781f24597737e04bf32a",
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
-			"templateId": "5734781f24597737e04bf32a",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
+			"templateId": "5d63d33b86f7746ea9275524",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 1980,

@@ -1,63 +1,63 @@
 {
-	"55f2d3fd4bdc2d5f408b4567": {
-		"Name": "Factory",
-		"Description": "La proprietà industriale e le strutture dell'impianto chimico n. 16 sono state affittate illegalmente alla corporazione TerraGroup. Con l'avvento delle Contract Wars, l'impianto è diventato lo scenario di numerosi scontri armati tra USEC e BEAR, che hanno determinato il controllo sul distretto industriale di Tarkov.\n\nPiù tardi, in seguito al caos, le strutture dell'impianto si trasformarono in un rifugio per i rimanenti civili, per gli sciacalli e per tutti i tipi di forze militari e per i rimanenti militari dispersi, tra cui alcuni USEC e BEAR."
-	},
-	"56db0b3bd2720bb0678b4567": {
-		"Name": "Arena",
-		"Description": "Un'arena improvvisata per combattimenti di gladiatori, ridisegnato nei rimanenti locali del centro commerciale Equator-2."
-	},
-	"56f40101d2720b2a4d8b45d6": {
-		"Name": "Customs",
-		"Description": "Una vasta area di parchi industriali adiacenti alla fabbrica. Questa zona ospita un terminal doganale, impianti di stoccaggio per il carburante, uffici e dormitori, così come varie altre infrastrutture."
-	},
-	"5704e3c2d2720bac5b8b4567": {
-		"Name": "Woods",
-		"Description": "La riserva naturale di Priozersk è stata recentemente inclusa nella lista delle riserve naturali del Distretto Federale Nord-occidentale tutelate dallo stato."
-	},
 	"5704e47ed2720bb35b8b4568": {
 		"Name": "Town",
 		"Description": "L'insediamento urbano di Verkhneye è una piccola cittadina in riva al mare, frequentata dai cittadini locali per gli eccezionali spazi verdi e aree ricreative."
-	},
-	"5704e4dad2720bb55b8b4567": {
-		"Name": "Lighthouse",
-		"Description": "Il faro di Cape Dalniy era un importante punto strategico per la città. Allo scoppio del conflitto, gli USEC l'hanno usato come una zona di atterraggio, attirando così l'attenzione delle truppe BEAR che miravano a ridurre a zero, la presenza di militari ostili."
-	},
-	"5704e554d2720bac5b8b456e": {
-		"Name": "Shoreline",
-		"Description": "La Zona Costiera è una parte importante della periferia di Tarkov adiacente alla zona del Porto.\nIl suo territorio ospita un villaggio parzialmente abbandonato, campi e moderni alloggi privati, un lungo litorale con un rimessa per barche, una stazione di servizio, una stazione meteo, una stazione satellitare e altre strutture commerciali.\nIl suo principale punto di interesse è il grande centro benessere \"Costa azzurra\", costituito da diversi edifici di lusso ed alimentato dalla propria centrale idroelettrica. Il resort è stato utilizzato come alloggio temporaneo per il personale della TerraGroup e le sue società collegate, in preparazione per l'estrazione attraverso il porto di Tarkov"
 	},
 	"5704e5a4d2720bb45b8b4567": {
 		"Name": "Terminal",
 		"Description": "Un'ampia sezione della zona portuale, si dice essere il backup del punto di estrazione Emercom. "
 	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Un'arena improvvisata per combattimenti di gladiatori, ridisegnato nei rimanenti locali del centro commerciale Equator-2."
+	},
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Factory",
+		"Description": "La proprietà industriale e le strutture dell'impianto chimico n. 16 sono state affittate illegalmente alla corporazione TerraGroup. Con l'avvento delle Contract Wars, l'impianto è diventato lo scenario di numerosi scontri armati tra USEC e BEAR, che hanno determinato il controllo sul distretto industriale di Tarkov.\n\nPiù tardi, in seguito al caos, le strutture dell'impianto si trasformarono in un rifugio per i rimanenti civili, per gli sciacalli e per tutti i tipi di forze militari e per i rimanenti militari dispersi, tra cui alcuni USEC e BEAR."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Lighthouse",
+		"Description": "Il faro di Cape Dalniy era un importante punto strategico per la città. Allo scoppio del conflitto, gli USEC l'hanno usato come una zona di atterraggio, attirando così l'attenzione delle truppe BEAR che miravano a ridurre a zero, la presenza di militari ostili."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Customs",
+		"Description": "Una vasta area di parchi industriali adiacenti alla fabbrica. Questa zona ospita un terminal doganale, impianti di stoccaggio per il carburante, uffici e dormitori, così come varie altre infrastrutture."
+	},
 	"5704e5fad2720bc05b8b4567": {
 		"Name": "Reserve",
 		"Description": "La base segreta della Federal State Reserve Agency che, secondo leggende metropolitane, possiede abbastanza rifornimenti da sopravvivere per anni: cibo, medicazioni e altre risorse, sufficienti per sopravvivere una guerra nucleare totale."
-	},
-	"5704e64ad2720bb55b8b456e": {
-		"Name": "Private Sector",
-		"Description": "Settore residenziale privato, costruito con cottage dell'alta società di Tarkov. Nelle prime settimane di caos emergente è servito come un campo profughi temporaneo, in seguito è diventato un noto rifugio per gli sciacalli."
 	},
 	"5714dbc024597771384a510d": {
 		"Name": "Interchange",
 		"Description": "Lo scambio autostradale sud è un luogo chiave per il trasporto cittadino. Quest'area strategica collega le infrastrutture portuali con la periferia industriale di Tarkov. Al centro dello scambio si trova un gigantesco supermercato ULTRA che è stato utilizzato come base principale per le operazioni d'evacuazione della EMERCOM."
 	},
-	"5714dc342459777137212e0b": {
-		"Name": "Suburbs",
-		"Description": "I sobborghi e le aree di passaggio di Tarkov contenente tutte le infrastrutture e i comfort per una vita lunga e felice."
-	},
-	"5714dc692459777137212e12": {
-		"Name": "Strade di Tarkov",
-		"Description": "Il centro di Tarkov possiede banche, centri commerciali, alberghi e tanti altri servizi di cui una fiorente metropoli potrebbe avere bisogno."
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Private Sector",
+		"Description": "Settore residenziale privato, costruito con cottage dell'alta società di Tarkov. Nelle prime settimane di caos emergente è servito come un campo profughi temporaneo, in seguito è diventato un noto rifugio per gli sciacalli."
 	},
 	"599319c986f7740dca3070a6": {
 		"Name": "Arena",
 		"Description": "Un'arena improvvisata per combattimenti di gladiatori, ridisegnata dalla gente del posto rimasta, partendo dal centro commerciale Equator-2."
 	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Shoreline",
+		"Description": "La Zona Costiera è una parte importante della periferia di Tarkov adiacente alla zona del Porto.\nIl suo territorio ospita un villaggio parzialmente abbandonato, campi e moderni alloggi privati, un lungo litorale con un rimessa per barche, una stazione di servizio, una stazione meteo, una stazione satellitare e altre strutture commerciali.\nIl suo principale punto di interesse è il grande centro benessere \"Costa azzurra\", costituito da diversi edifici di lusso ed alimentato dalla propria centrale idroelettrica. Il resort è stato utilizzato come alloggio temporaneo per il personale della TerraGroup e le sue società collegate, in preparazione per l'estrazione attraverso il porto di Tarkov"
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Suburbs",
+		"Description": "I sobborghi e le aree di passaggio di Tarkov contenente tutte le infrastrutture e i comfort per una vita lunga e felice."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Woods",
+		"Description": "La riserva naturale di Priozersk è stata recentemente inclusa nella lista delle riserve naturali del Distretto Federale Nord-occidentale tutelate dallo stato."
+	},
 	"59fc81d786f774390775787e": {
 		"Name": "Factory",
 		"Description": "La proprietà industriale e le strutture dell'impianto chimico N. 16 erano stati noleggiati illegalmente alla società TerraGroup. Durante le Contract Wars, i dintorni dell'impianto sono diventati teatro di numerosi scontri a fuoco tra USEC e BEAR che hanno determinato il controllo del distretto industriale di Tarkov.  Più tardi, sulla scia del caos, le strutture dell'impianto si sono trasformate in un rifugio per i civili rimasti, Scavs, tutti i militari dispersi e le altre forze armate, tra cui resti sparpagliati di USEC e BEAR"
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Strade di Tarkov",
+		"Description": "Il centro di Tarkov possiede banche, centri commerciali, alberghi e tanti altri servizi di cui una fiorente metropoli potrebbe avere bisogno."
 	},
 	"5b0fc42d86f7744a585f9105": {
 		"Name": "The Lab",

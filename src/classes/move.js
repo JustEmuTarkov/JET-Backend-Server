@@ -440,44 +440,9 @@ function swapItem(pmcData, body, sessionID) {
         output.profileChanges[pmcData._id].change.push(iterItem);
       }
   }
+
   item_f.handler.setOutput(output);
   return output;
-}
-
-function fillAmmoBox(itemToAdd, pmcData, toDo, output) {
-  // If this is an ammobox, add cartridges to it.
-  // Damaged ammo box are not loaded.
-  const itemInfo = helper_f.tryGetItem(itemToAdd._tpl);
-  console.log(itemInfo._name)
-  let ammoBoxInfo = itemInfo._props.StackSlots;
-  if (ammoBoxInfo !== undefined && itemInfo._name.indexOf("_damaged") < 0) {
-    // Cartridge info seems to be an array of size 1 for some reason... (See AmmoBox constructor in client code)
-    let maxCount = ammoBoxInfo[0]._max_count;
-    let ammoTmplId = ammoBoxInfo[0]._props.filters[0].Filter[0];
-    let ammoStackMaxSize = helper_f.tryGetItem(ammoTmplId)._props.StackMaxSize;
-    let ammos = [];
-    let location = 0;
-
-    while (maxCount > 0) {
-      let ammoStackSize = maxCount <= ammoStackMaxSize ? maxCount : ammoStackMaxSize;
-      ammos.push({
-        _id: utility.generateNewItemId(),
-        _tpl: ammoTmplId,
-        parentId: toDo[0][1],
-        slotId: "cartridges",
-        location: location,
-        upd: { StackObjectsCount: ammoStackSize },
-      });
-
-      location++;
-      maxCount -= ammoStackMaxSize;
-    }
-
-    if (utility.isUndefined(output.profileChanges[pmcData._id].items.new)) {
-      output.profileChanges[pmcData._id].items.new = [];
-    }
-    [output.profileChanges[pmcData._id].items.new, pmcData.Inventory.items].forEach((x) => x.push.apply(x, ammos));
-  }
 }
 
 function findEmptySlot(itemsToAdd, sessionID, pmcData) {

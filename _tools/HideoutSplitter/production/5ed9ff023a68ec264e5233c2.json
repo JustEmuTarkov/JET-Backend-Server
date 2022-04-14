@@ -24,6 +24,14 @@
 			"count": 5,
 			"isFunctional": false,
 			"type": "Item"
+		},
+		{
+			"templateId": "544fb5454bdc2df8738b456a",
+			"type": "Tool"
+		},
+		{
+			"templateId": "590c639286f774151567fa95",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 135399,

@@ -18,6 +18,10 @@
 			"areaType": 10,
 			"requiredLevel": 2,
 			"type": "Area"
+		},
+		{
+			"templateId": "60391afc25aff57af81f7085",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 6750,

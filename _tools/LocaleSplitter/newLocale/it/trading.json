@@ -1,4 +1,18 @@
 {
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "City",
+		"Description": "Caporeparto di Traumatologia dell'Ospedale Centrale di Tarkov."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Romanenko",
+		"Nickname": "Prapor",
+		"Location": "Town",
+		"Description": "Ufficiale responsabile dei rifornimenti ai magazzini, necessari al sostentamento di base per le truppe interne di rinforzo all'embargo della regione di Norvinsk. Durante le Contract Wars riforniva in segreto i PMC ed i BEAR con armi, munizioni e vari altri approvvigionamenti a sua disposizione."
+	},
 	"579dc571d53a0658a154fbec": {
 		"FullName": "<Nome reale sconosciuto>",
 		"FirstName": "<Nome reale sconosciuto>",
@@ -6,32 +20,18 @@
 		"Location": "Una rete di punti vendita in tutta Tarkov e nelle sue periferie",
 		"Description": "Sin dall'inizio del conflitto, Fence iniziò a creare punti vendita anonimi per comprare e vendere merci. Agendo nell'ombra, riuscì a mettere insieme una rete ben organizzata di contrabbandieri operanti in tutta la regione di Norvinsk."
 	},
-	"54cb50c76803fa8b248b4571": {
-		"FullName": "Pavel Yegorovich Romanenko",
-		"FirstName": "Pavel Romanenko",
-		"Nickname": "Prapor",
-		"Location": "Town",
-		"Description": "E' l'ufficiale responsabile dei rifornimenti ai magazzini necessari al mantenimento di base per le truppe interne di rinforzo della regione di Norvinsk. Durante le Contract Wars riforniva in segreto i PMC BEAR con armi, munizioni e altre approvvigionamenti a sua disposizione."
-	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
 		"Nickname": "Skier",
 		"Location": "Customs",
-		"Description": "Funzionario della dogana portuale. Si è occupato inizialmente delle merci del terminale, poi nel corso del conflitto ha messo insieme una banda per accaparrarsi tutto quello su cui riusciva a mettere le mani."
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Therapist",
-		"Location": "Città",
-		"Description": "Caporeparto di Traumatologia dell'Ospedale Centrale di Tarkov."
+		"Description": "Funzionario della dogana portuale. Occupatosi inizialmente delle merci del terminal, nel corso del conflitto ha messo insieme una banda per afferrare tutto quello su cui riusciva a mettere le mani nei pressi del terminal."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",
 		"FirstName": "Tadeusz",
 		"Nickname": "Peacekeeper",
-		"Location": "Distretto portuale",
+		"Location": "Port District",
 		"Description": "L'ufficiale logistico ONU delle forze di pace, stanziato in uno dei checkpoint centrali che conducono alla zona portuale di Tarkov. I caschi blu, fin dall'inizio, si sono avventurati in piccoli affari, comprando qualsiasi cosa di valore in cambio di armi occidentali, munizioni e alcuni tipi di attrezzature militari."
 	},
 	"59c0ea2130c28d455c92e892": {
@@ -46,7 +46,7 @@
 		"FirstName": "Sergey Arsenyevich",
 		"Nickname": "Mechanic",
 		"Location": "Impianto Chimico",
-		"Description": "Caposquadra in un impianto chimico prima dello scoppio del conflitto, sin dall'inizio si è specializzato nelle modifiche per armi e nella riparazione e manutenzione di equipaggiamento e tecnologie complesse. Preferisce vivere in clandestinità, agendo con discrezione, mettendo al primo posto incarichi complicati e impegnativi."
+		"Description": "Caporeparto dell'impianto chimico prima del conflitto, dal suo scoppio prese a lavorare a modifiche di armi e riparare ed effettuare la manutenzione dei complessi equipaggiamenti e tecnologie. Preferisce la vita clandestina in solitudine e opera discretamente, ponendo le mansioni complicate e impegnative davanti a tutto."
 	},
 	"5ac3b934156ae10c4430e83c": {
 		"FullName": "Abramyan Arshavir Sarkisivich",
@@ -56,10 +56,10 @@
 		"Description": "Ha lavorato come direttore in un grande mercato situato nei sobborghi di Tarkov. Vende tutto ciò che riguarda vestiti e attrezzature."
 	},
 	"5c0647fdd443bc2504c2d371": {
-		"FullName": "Kharitonov Ivan Egorovich",
+		"FullName": "Kharitonov Ivan Egorovich\n",
 		"FirstName": "Ivan Kharitonov",
 		"Nickname": "Jaeger",
-		"Location": "Riserva di Priozersky",
+		"Location": "Priozersky reserve",
 		"Description": "Ha lavorato come guardia nella riserva naturale di Priozersky, sotto il servizio di stato dei Cacciatori. È un cacciatore professionista e specializzato in sopravvivenza. Ha sorvegliato e sorveglia tutt'oggi, a qualunque costo, il territorio della riserva da chiunque lo metta in pericolo."
 	}
 }

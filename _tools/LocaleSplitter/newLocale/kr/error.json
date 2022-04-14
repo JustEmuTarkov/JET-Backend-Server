@@ -1,0 +1,19 @@
+{
+	"Offer not found": "죄송합니다. 해당 물품은 이미 판매되었습니다.",
+	"The trader is out of cash": "상인의 현금이 바닥났습니다",
+	"Attempted transaction with items missing from the stash": "거래할 아이템이 부족합니다.",
+	"Transaction error. The cost of goods has already changed.": "거래 오류. 상품의 가격이 변동되었습니다.",
+	"Bad user loyalty level": "상인과의 우호도가 낮습니다",
+	"Unknown error": "알 수 없는 오류",
+	"You have already bought the maximum amount of this item in the current restock": "당신에게 할당된 수량의 최대치만큼 이미 구입하셨습니다.",
+	"Not enough space in stash": "창고에 공간이 부족합니다",
+	"The trader is out of stock": "상인의 재고가 바닥났습니다",
+	"Trader does not deal in this type of items": "상인이 취급하지 않는 종류의 아이템입니다",
+	"The item is already sold": "이미 판매된 아이템입니다",
+	"230 - MAX LOGIN COUNT": "로그인 시도 최대 횟수에 도달했습니다. 나중에 다시 시도해 주세요.",
+	"1514 - Transaction error. The cost of goods has already changed.": "1514 - 거래 오류. 상품의 가격이 변동되었습니다.",
+	"201 - Client not authorized or not selected game profile": "클라이언트 인증에 실패했습니다. 게임을 다시 시작하거나 인터넷 연결을 확인해 주십시오.",
+	"BackendErrorMessage": "백엔드 쪽에서 문제가 발생했습니다.",
+	"BackendErrorHeader": "백엔드 오류",
+	"Backend error: Unknown Error": "백엔드 오류: 백엔드 연결에 실패하였습니다."
+}

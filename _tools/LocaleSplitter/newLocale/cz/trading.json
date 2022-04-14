@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Skutečné jméno neznámé>",
-		"FirstName": "<Skutečné jméno neznámé>",
-		"Nickname": "Fence",
-		"Location": "Síť prodejen v Tarkově a jeho okolí",
-		"Description": "Konflikt sotva započal, když začal Fence zakládat anonymní prodejny. Ač se držel inkognito, zvládl vytvořit dobře organizovanou síť pašeráků po celém Norvinsku."
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Terapeutka",
+		"Location": "City",
+		"Description": "Vedoucí traumatologického oddělení centrální městské nemocnice v Tarkově."
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,19 +13,19 @@
 		"Location": "Město",
 		"Description": "Důstojník spravující zásobovací sklady na podpůrné základně pro jednotky ruského Ministerstva vnitřních věcí, které udržují blokádu norvinského regionu. Během Válek kontraktorů tajně zásoboval operátory BEAR zbraněmi, municí a dalším proviantem, který měl k dispozici."
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Skutečné jméno neznámé>",
+		"FirstName": "<Skutečné jméno neznámé>",
+		"Nickname": "Fence",
+		"Location": "Síť prodejen v Tarkově a jeho okolí",
+		"Description": "Konflikt sotva započal, když začal Fence zakládat anonymní prodejny. Ač se držel inkognito, zvládl vytvořit dobře organizovanou síť pašeráků po celém Norvinsku."
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexandr",
 		"Nickname": "Skier",
 		"Location": "Customs",
 		"Description": "Zaměstnanec přístavního terminálu v Customs (celnice). Zpočátku kšeftoval jen se zbožím z překladiště, ale v průběhu konfliktu sestavil gang, díky kterému dosáhl i na zboží z blízkého okolí terminálu."
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Terapeutka",
-		"Location": "City",
-		"Description": "Vedoucí traumatologického oddělení centrální městské nemocnice v Tarkově."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",

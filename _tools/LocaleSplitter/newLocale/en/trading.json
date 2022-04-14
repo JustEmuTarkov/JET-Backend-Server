@@ -1,65 +1,65 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Real name unknown>",
-		"FirstName": "<Real name unknown>",
-		"Nickname": "Fence",
-		"Location": "A network of outlets all over Tarkov and its outskirts",
-		"Description": "The conflict has barely started when Fence has already started setting up anonymous outlets for buying and selling good. Keeping incognito, he nevertheless managed to put together a well-organised smuggler network operating all over Norvinsk region."
-	},
-	"54cb50c76803fa8b248b4571": {
-		"FullName": "Pavel Yegorovich Romanenko",
-		"FirstName": "Pavel Romanenko",
-		"Nickname": "Prapor",
-		"Location": "Town",
-		"Description": "Warrant officer in charge of supply warehouses on the sustaining base for the Internal Troops enforcing the Norvinsk region blockade. During the Contract Wars secretly supplied the BEAR PMC operators with weapons, ammunition and various other provisions he had at his disposal."
-	},
-	"58330581ace78e27b8b10cee": {
-		"FullName": "Alexander Fyodorovich Kiselyov",
-		"FirstName": "Alexander",
-		"Nickname": "Skier",
-		"Location": "Customs",
-		"Description": "Port zone customs terminal employee. Initially dealing in the terminal’s goods, over the course of conflict put together a gang to grab everything he could put his hands on in the vicinity of the terminal."
-	},
 	"54cb57776803fa99248b456e": {
 		"FullName": "Elvira Khabibullina",
 		"FirstName": "Elvira",
 		"Nickname": "Therapist",
-		"Location": "City",
+		"Location": "Tarkov City",
 		"Description": "Head of the Trauma Care Department of the Tarkov Central City Hospital."
+	},
+	"54cb50c76803fa8b248b4571": {
+		"FullName": "Pavel Yegorovich Romanenko",
+		"FirstName": "Pavel Yegorovich",
+		"Nickname": "Prapor",
+		"Location": "Verkhneye urban settlement",
+		"Description": "The Warrant officer in charge of supply warehouses on the sustaining base enforcing the Norvinsk region blockade. Secretly supplied the BEAR PMC operators with weapons, ammunition, and various other provisions he had at his disposal during the Contract Wars."
+	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Real name unknown>",
+		"FirstName": "<Real name unknown>",
+		"Nickname": "Fence",
+		"Location": "A network of trading outlets all over the Norvinsk region",
+		"Description": "The conflict had barely started when Fence began setting up anonymous outlets for buying and selling goods. Keeping incognito, he nevertheless managed to put together a well-organised smuggler network, operating all over the Norvinsk region."
+	},
+	"58330581ace78e27b8b10cee": {
+		"FullName": "Alexander Fyodorovich Kiselyov",
+		"FirstName": "Alexander Fyodorovich",
+		"Nickname": "Skier",
+		"Location": "Tarkov Customs District",
+		"Description": "Previously a port zone customs terminal employee, who initially oversaw dealings of the terminal's goods. Over the course of the conflict, he put together a gang of thugs in order to grab everything of value that he could lay his hands on in the vicinity of the terminal."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",
 		"FirstName": "Tadeusz",
 		"Nickname": "Peacekeeper",
-		"Location": "Port District",
-		"Description": "UN peacekeeping force supplies officer, based in one of the central checkpoints leading to the Tarkov port zone. The blue helmets have been venturing into small deals from the very beginning, buying everything of value in exchange for western weapons, ammo and some kinds of military equipment."
+		"Location": "Tarkov Port District",
+		"Description": "UN peacekeeping Force supply officer, based in one of the central checkpoints leading to the Tarkov port zone. The blue helmets have been seen poking their heads into small deals from the very beginning of the conflict, buying everything of value in exchange for western weapons, ammo, and all kinds of military equipment."
 	},
 	"59c0ea2130c28d455c92e892": {
-		"FullName": "Name",
-		"FirstName": "Name",
-		"Nickname": "Name",
-		"Location": "Name",
-		"Description": "Name"
+		"FullName": "Trader full name",
+		"FirstName": "Trader first name",
+		"Nickname": "Trader nickname",
+		"Location": "Trader location",
+		"Description": "Trader description"
 	},
 	"5a7c2eca46aef81a7ca2145d": {
 		"FullName": "Sergey Arsenyevich Samoylov",
 		"FirstName": "Sergey Arsenyevich",
 		"Nickname": "Mechanic",
-		"Location": "Chemical Plant",
-		"Description": "Chemical plant foreman before conflict, from its very beginning he took to weapon modification works and repairs and maintenance of complex equipment and tech. He prefers clandestine solo living and operates discreetly, placing complicated and challenging tasks above everything."
+		"Location": "Chemical Plant Factory within the Customs District",
+		"Description": "A former chemical plant foreman, who from the very beginning of the conflict took to weapon modification, repairs, and maintenance of complex equipment and technology. He prefers clandestine solo living and operates discreetly, while placing complicated and challenging tasks above all else."
 	},
 	"5ac3b934156ae10c4430e83c": {
-		"FullName": "Abramyan Arshavir Sarkisivich",
-		"FirstName": "Arshavir Sarkisivich",
+		"FullName": "Arshavir Sarkisovich Abramyan",
+		"FirstName": "Arshavir Sarkisovich",
 		"Nickname": "Ragman",
 		"Location": "Tarkov's central market",
-		"Description": "He worked as a director in big market located in Tarkov's suburb. Sells everything about clothing and gear."
+		"Description": "Previously, he worked as a director in a shopping center located in the suburbs of Tarkov. Now dealing in mostly clothing- and gear-related items, anywhere from sunglasses to body armor."
 	},
 	"5c0647fdd443bc2504c2d371": {
-		"FullName": "Kharitonov Ivan Egorovich",
-		"FirstName": "Ivan Kharitonov",
+		"FullName": "Ivan Yegorovich Kharitonov",
+		"FirstName": "Ivan Yegorovich",
 		"Nickname": "Jaeger",
-		"Location": "Priozersky reserve",
-		"Description": "He worked in the forest hunting property of the Priozersky reserve under the State Jaegers Service. Professional hunter and survival specialist. He guarded and guards, no matter what, his jaeger’s ground from various aggressive individuals."
+		"Location": "Priozersk Natural Reserve",
+		"Description": "Before the conflict he worked as a hunter in the Priozersk Natural Reserve under the State Hunting Service. A professional hunter and survival specialist. Even now, he still guards the reserve's hunting grounds from various aggressive individuals."
 	}
 }

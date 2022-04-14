@@ -66,37 +66,11 @@
 		}
 	},
 	{
-		"_id": "566162e44bdc2d3f298b4573",
-		"_name": "CompoundItem",
+		"_id": "5448ecbe4bdc2d60728b4568",
+		"_name": "Info",
 		"_parent": "54009119af1c881c07000029",
 		"_type": "Node",
-		"_props": {
-			"Grids": [],
-			"Slots": [],
-			"CanPutIntoDuringTheRaid": true,
-			"CantRemoveFromSlotsDuringRaid": []
-		}
-	},
-	{
-		"_id": "543be5e94bdc2df1348b4568",
-		"_name": "Key",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"MaximumNumberOfUsage": 0
-		}
-	},
-	{
-		"_id": "543be6674bdc2df1348b4569",
-		"_name": "FoodDrink",
-		"_parent": "54009119af1c881c07000029",
-		"_type": "Node",
-		"_props": {
-			"foodUseTime": 0,
-			"foodEffectType": "duringUse",
-			"MaxResource": 0,
-			"StimulatorBuffs": ""
-		}
+		"_props": {}
 	},
 	{
 		"_id": "5447e1d04bdc2dff2f8b4567",
@@ -196,6 +170,27 @@
 		}
 	},
 	{
+		"_id": "543be5e94bdc2df1348b4568",
+		"_name": "Key",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"MaximumNumberOfUsage": 0
+		}
+	},
+	{
+		"_id": "543be6674bdc2df1348b4569",
+		"_name": "FoodDrink",
+		"_parent": "54009119af1c881c07000029",
+		"_type": "Node",
+		"_props": {
+			"foodUseTime": 0,
+			"foodEffectType": "duringUse",
+			"MaxResource": 0,
+			"StimulatorBuffs": ""
+		}
+	},
+	{
 		"_id": "567849dd4bdc2d150f8b456e",
 		"_name": "Map",
 		"_parent": "54009119af1c881c07000029",
@@ -218,13 +213,15 @@
 		}
 	},
 	{
-		"_id": "5661632d4bdc2d903d8b456b",
-		"_name": "StackableItem",
+		"_id": "566162e44bdc2d3f298b4573",
+		"_name": "CompoundItem",
 		"_parent": "54009119af1c881c07000029",
 		"_type": "Node",
 		"_props": {
-			"StackMinRandom": 0,
-			"StackMaxRandom": 0
+			"Grids": [],
+			"Slots": [],
+			"CanPutIntoDuringTheRaid": true,
+			"CantRemoveFromSlotsDuringRaid": []
 		}
 	},
 	{
@@ -265,11 +262,14 @@
 		}
 	},
 	{
-		"_id": "5448ecbe4bdc2d60728b4568",
-		"_name": "Info",
+		"_id": "5661632d4bdc2d903d8b456b",
+		"_name": "StackableItem",
 		"_parent": "54009119af1c881c07000029",
 		"_type": "Node",
-		"_props": {}
+		"_props": {
+			"StackMinRandom": 0,
+			"StackMaxRandom": 0
+		}
 	},
 	{
 		"_id": "543be5664bdc2dd4348b4569",

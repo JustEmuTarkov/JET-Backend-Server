@@ -8,12 +8,6 @@
 			"type": "Area"
 		},
 		{
-			"templateId": "590c639286f774151567fa95",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
-		},
-		{
 			"templateId": "5d1c819a86f774771b0acd6c",
 			"count": 1,
 			"isFunctional": false,
@@ -24,6 +18,14 @@
 			"count": 1,
 			"isFunctional": false,
 			"type": "Item"
+		},
+		{
+			"templateId": "590c639286f774151567fa95",
+			"type": "Tool"
+		},
+		{
+			"templateId": "544fb5454bdc2df8738b456a",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 14000,

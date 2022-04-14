@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<姓名不详>",
-		"FirstName": "<姓名不详>",
-		"Nickname": "Fence",
-		"Location": "一个遍布塔科夫及其周边地区的销售网络",
-		"Description": "在冲突尚未开始之前，Fence的地下商业网络早已在这营业了。他一直隐姓埋名，但还是成功建立起了这个遍布诺文斯克地区、组织严密的走私网络。"
+	"54cb57776803fa99248b456e": {
+		"FullName": "埃尔维拉·卡比布尔丽娜",
+		"FirstName": "埃尔维拉",
+		"Nickname": "Therapist",
+		"Location": "城市",
+		"Description": "塔科夫市中心医院创伤护理部主任。"
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "帕维尔·叶格罗维奇·罗曼年科",
@@ -13,19 +13,19 @@
 		"Location": "城镇",
 		"Description": "负责看管补给仓库的准尉，该仓库隶属于封锁诺文斯克地区的内卫部队。在“契约战争”期间秘密地为BEAR雇佣兵提供武器、弹药以及他拥有的其它资源。诺文斯克"
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<姓名不详>",
+		"FirstName": "<姓名不详>",
+		"Nickname": "Fence",
+		"Location": "一个遍布塔科夫及其周边地区的销售网络",
+		"Description": "在冲突尚未开始之前，Fence的地下商业网络早已在这营业了。他一直隐姓埋名，但还是成功建立起了这个遍布诺文斯克地区、组织严密的走私网络。"
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "亚历山大·费奥多罗维奇·基谢廖夫",
 		"FirstName": "亚历山大",
 		"Nickname": "Skier",
 		"Location": "海关",
 		"Description": "曾是海关港口部门员工，最开始负责经手港口的货物。在塔科夫市的交火冲突中组织了一票人马，意图搜刮港口海关附近的一切物资。"
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "埃尔维拉·卡比布尔丽娜",
-		"FirstName": "埃尔维拉",
-		"Nickname": "Therapist",
-		"Location": "城市",
-		"Description": "塔科夫市中心医院创伤护理部主任。"
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "塔德乌什·毕苏斯基",

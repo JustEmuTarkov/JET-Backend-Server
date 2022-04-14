@@ -1,5 +1,91 @@
 [
 	{
+		"_id": "5795f317245977243854e041",
+		"_name": "SimpleContainer",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"TagColor": 0,
+			"TagName": ""
+		}
+	},
+	{
+		"_id": "566168634bdc2d144c8b456c",
+		"_name": "SearchableItem",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {
+			"Name": "Item",
+			"ShortName": "Item",
+			"Description": "Item",
+			"Weight": 1,
+			"BackgroundColor": "blue",
+			"Width": 1,
+			"Height": 1,
+			"StackMaxSize": 1,
+			"ItemSound": "generic",
+			"Prefab": {
+				"path": "",
+				"rcid": ""
+			},
+			"UsePrefab": {
+				"path": "",
+				"rcid": ""
+			},
+			"StackObjectsCount": 1,
+			"NotShownInSlot": false,
+			"ExaminedByDefault": false,
+			"ExamineTime": 1,
+			"IsUndiscardable": false,
+			"IsUnsaleable": false,
+			"IsUnbuyable": false,
+			"IsUngivable": false,
+			"IsLockedafterEquip": false,
+			"QuestItem": false,
+			"LootExperience": 20,
+			"ExamineExperience": 10,
+			"HideEntrails": false,
+			"RepairCost": 0,
+			"RepairSpeed": 0,
+			"ExtraSizeLeft": 0,
+			"ExtraSizeRight": 0,
+			"ExtraSizeUp": 0,
+			"ExtraSizeDown": 0,
+			"ExtraSizeForceAdd": false,
+			"MergesWithChildren": false,
+			"CanSellOnRagfair": true,
+			"CanRequireOnRagfair": true,
+			"ConflictingItems": [],
+			"Unlootable": false,
+			"UnlootableFromSlot": "FirstPrimaryWeapon",
+			"UnlootableFromSide": [],
+			"AnimationVariantsNumber": 0,
+			"DiscardingBlock": false,
+			"RagFairCommissionModifier": 1,
+			"IsAlwaysAvailableForInsurance": false,
+			"Grids": [],
+			"Slots": [],
+			"CanPutIntoDuringTheRaid": true,
+			"CantRemoveFromSlotsDuringRaid": [],
+			"SearchSound": "cashregister_looting",
+			"BlocksArmorVest": false
+		}
+	},
+	{
+		"_id": "566abbb64bdc2d144c8b457d",
+		"_name": "Stash",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
+	},
+	{
+		"_id": "567583764bdc2d98058b456e",
+		"_name": "StationaryContainer",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
+	},
+	{
 		"_id": "543be5f84bdc2dd4348b456a",
 		"_name": "Equipment",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -12,6 +98,13 @@
 		}
 	},
 	{
+		"_id": "55d720f24bdc2d88028b456d",
+		"_name": "Inventory",
+		"_parent": "566162e44bdc2d3f298b4573",
+		"_type": "Node",
+		"_props": {}
+	},
+	{
 		"_id": "5671435f4bdc2d96058b4569",
 		"_name": "LockableContainer",
 		"_parent": "566162e44bdc2d3f298b4573",
@@ -20,37 +113,6 @@
 			"KeyIds": [
 				"543be5e94bdc2df1348b4568"
 			],
-			"TagColor": 0,
-			"TagName": ""
-		}
-	},
-	{
-		"_id": "567583764bdc2d98058b456e",
-		"_name": "StationaryContainer",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
-		"_id": "55d720f24bdc2d88028b456d",
-		"_name": "Inventory",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
-		"_id": "566abbb64bdc2d144c8b457d",
-		"_name": "Stash",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {}
-	},
-	{
-		"_id": "5795f317245977243854e041",
-		"_name": "SimpleContainer",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
 			"TagColor": 0,
 			"TagName": ""
 		}
@@ -175,69 +237,9 @@
 			"HeatFactorByShot": 1,
 			"AllowOverheat": false,
 			"DoubleActionAccuracyPenalty": 1.5,
-			"RecoilPosZMult": 1
-		}
-	},
-	{
-		"_id": "566168634bdc2d144c8b456c",
-		"_name": "SearchableItem",
-		"_parent": "566162e44bdc2d3f298b4573",
-		"_type": "Node",
-		"_props": {
-			"Name": "Item",
-			"ShortName": "Item",
-			"Description": "Item",
-			"Weight": 1,
-			"BackgroundColor": "blue",
-			"Width": 1,
-			"Height": 1,
-			"StackMaxSize": 1,
-			"ItemSound": "generic",
-			"Prefab": {
-				"path": "",
-				"rcid": ""
-			},
-			"UsePrefab": {
-				"path": "",
-				"rcid": ""
-			},
-			"StackObjectsCount": 1,
-			"NotShownInSlot": false,
-			"ExaminedByDefault": false,
-			"ExamineTime": 1,
-			"IsUndiscardable": false,
-			"IsUnsaleable": false,
-			"IsUnbuyable": false,
-			"IsUngivable": false,
-			"IsLockedafterEquip": false,
-			"QuestItem": false,
-			"LootExperience": 20,
-			"ExamineExperience": 10,
-			"HideEntrails": false,
-			"RepairCost": 0,
-			"RepairSpeed": 0,
-			"ExtraSizeLeft": 0,
-			"ExtraSizeRight": 0,
-			"ExtraSizeUp": 0,
-			"ExtraSizeDown": 0,
-			"ExtraSizeForceAdd": false,
-			"MergesWithChildren": false,
-			"CanSellOnRagfair": true,
-			"CanRequireOnRagfair": true,
-			"ConflictingItems": [],
-			"Unlootable": false,
-			"UnlootableFromSlot": "FirstPrimaryWeapon",
-			"UnlootableFromSide": [],
-			"AnimationVariantsNumber": 0,
-			"DiscardingBlock": false,
-			"RagFairCommissionModifier": 1,
-			"IsAlwaysAvailableForInsurance": false,
-			"Grids": [],
-			"Slots": [],
-			"CanPutIntoDuringTheRaid": true,
-			"CantRemoveFromSlotsDuringRaid": [],
-			"SearchSound": "cashregister_looting",
-			"BlocksArmorVest": false
+			"RecoilPosZMult": 1,
+			"MinRepairKitDegradation": 0,
+			"MaxRepairKitDegradation": 0
 		}
 	}
 ]

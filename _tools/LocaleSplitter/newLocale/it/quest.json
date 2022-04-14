@@ -3,8 +3,8 @@
 		"name": "Esordio",
 		"note": "",
 		"conditions": {
-			"5967379186f77463860dadd6": "Uccidi 5 Scav a Customs",
-			"596737cb86f77463a8115efd": "Consegna due fucili a pompa MP133"
+			"5967379186f77463860dadd6": "Elimina Scav a Customs",
+			"596737cb86f77463a8115efd": "Ottieni e consegna dei fucili a pompa MP-133"
 		},
 		"description": "5abe61a786f7746ad512da45",
 		"failMessageText": "5c3f038986f7744975524029",
@@ -16,9 +16,9 @@
 		"name": "Controllo in corso",
 		"note": "",
 		"conditions": {
-			"5967920f86f77468d219d632": "Consegna l'orologio da taschino di bronzo a Prapor",
-			"5968ec9986f7741ddd6c1012": "Trova l'orologio da taschino di bronzo",
-			"5975de1f86f7744ca53b7c82": "Trova la chiave nel camion cisterna"
+			"5967920f86f77468d219d632": "Consegna orologio da taschino in bronzo",
+			"5968ec9986f7741ddd6c1012": "Ottieni orologio da taschino in bronzo a Customs",
+			"5975de1f86f7744ca53b7c82": "Ottieni la chiave del camion cisterna"
 		},
 		"description": "5abe61a786f7746ad512da46",
 		"failMessageText": "5c3f03f986f774100b631506",
@@ -30,7 +30,7 @@
 		"name": "Sparatoria al picnic",
 		"note": "",
 		"conditions": {
-			"5cb31b6188a450159d330a18": "Neutralizza 15 scav a Woods"
+			"5cb31b6188a450159d330a18": "Elimina Scav a Woods"
 		},
 		"description": "5abe61a786f7746ad512da47",
 		"failMessageText": "5c3f046586f7741b10261462",
@@ -39,12 +39,12 @@
 		"location": "5704e3c2d2720bac5b8b4567"
 	},
 	"59674eb386f774539f14813a": {
-		"name": "Consegna dal passato",
+		"name": "Consegna Dal Passato",
 		"note": "",
 		"conditions": {
-			"59674fe586f7744f4e358aa2": "Lascia la valigetta nella sala svago a Factory, al 2° piano del negozio 3",
-			"5968929e86f7740d121082d3": "Trova la valigetta di sicurezza nell'ufficio del direttore Tarcone al terminale di Custom",
-			"5977784486f774285402cf52": "Sopravvivi ed esci da Factory.",
+			"59674fe586f7744f4e358aa2": "Nascondi il contenitore nella stanza di riposo di Factory, situata al secondo piano, vicino al Gate 3",
+			"5968929e86f7740d121082d3": "Ottieni la custodia protetta nell'ufficio del direttore Tarcone alla stazione di Custom",
+			"5977784486f774285402cf52": "Sopravvivi ed estrai da Factory",
 			"5978b48b86f7746ef62ef859": ""
 		},
 		"description": "5abe61a786f7746ad512da48",
@@ -54,14 +54,14 @@
 		"location": "any"
 	},
 	"5967530a86f77462ba22226b": {
-		"name": "Prove di cattiva reputazione",
+		"name": "Prove in Cattiva Luce",
 		"note": "",
 		"conditions": {
-			"596762ec86f77426d3687a87": "Sopravvivi ed esci da Customs",
-			"5968941f86f7740d1570bbd2": "Trova la chiave nel dormitorio",
-			"5968943f86f7740d137ebfc2": "Trova la cartella sicura 0031 nel dormitorio a Customs",
-			"5968948986f7740d121082d4": "Consegna la cartella sicura 0031 a Prapor",
-			"5a3fbdb086f7745a554f0c31": "Ottieni l'accesso alla stanza chiusa negli uffici di Factory"
+			"596762ec86f77426d3687a87": "Sopravvivi ed estrai da Customs",
+			"5968941f86f7740d1570bbd2": "Ottieni la chiave del bunker",
+			"5968943f86f7740d137ebfc2": "Ottieni la Custodia Protetta 0031 in un bunker a Customs",
+			"5968948986f7740d121082d4": "Consegna la Custodia Protetta 0031",
+			"5a3fbdb086f7745a554f0c31": "Ottieni l'accesso alla stanza chiusa al terzo piano nel corridoio degli uffici di Factory"
 		},
 		"description": "5abe61a786f7746ad512da49",
 		"failMessageText": "5c3f08a786f7741b10261466",
@@ -70,13 +70,13 @@
 		"location": "any"
 	},
 	"59675d6c86f7740a842fc482": {
-		"name": "Coni gelato",
+		"name": "Coni Gelato",
 		"note": "",
 		"conditions": {
-			"59675e1d86f77414b07f137d": "Consegna 3 caricatori da 60 per AK a Prapor",
-			"5967938c86f77468cf5f9f54": "Trova la chiave nel bunker della stanza dipendenti della Terragroup",
-			"5968ed3186f77420d2328013": "Trova in raid 3 caricatori da 60 proiettili per AK",
-			"5a3fbe3a86f77414422e0d9b": "Individua il bunker esatto a Woods"
+			"59675e1d86f77414b07f137d": "Consegna i caricatori da 60 colpi 6L31 5.45x39",
+			"5967938c86f77468cf5f9f54": "Trova la chiave del bunker nel dormitorio dei dipendenti della Terragroup",
+			"5968ed3186f77420d2328013": "Trova i caricatori da 60 colpi 6L31 per AK-74 5.45x39 in raid",
+			"5a3fbe3a86f77414422e0d9b": "Individua il bunker giusto a Woods"
 		},
 		"description": "5abe61a786f7746ad512da4a",
 		"failMessageText": "5b16af9086f77476ff7468f2",
@@ -86,11 +86,11 @@
 	},
 	"59675ea386f77414b32bded2": {
 		"conditions": {
-			"596895f986f7740d14064722": "Trova la lettera sul corpo di un messaggero a Factory",
-			"5968962686f7740e7266d973": "Sopravvivi ed esci da Factory",
-			"596896c386f7740d1570bbd4": "Consegna la lettera alla Therapist"
+			"596895f986f7740d14064722": "Ottieni la lettera sul corpo del messaggero a Factory",
+			"5968962686f7740e7266d973": "Sopravvivi ed estrai da Factory",
+			"596896c386f7740d1570bbd4": "Consegna la lettera"
 		},
-		"name": "Il Postino Pat",
+		"name": "Il Postino Pat - Parte 1",
 		"note": "",
 		"description": "5abe61a786f7746ad512da4b",
 		"failMessageText": "5c3f0bc986f774140800b7c2",
@@ -99,10 +99,10 @@
 		"location": "55f2d3fd4bdc2d5f408b4567"
 	},
 	"596760e186f7741e11214d58": {
-		"name": "Il Postino Pat, p. 2°",
+		"name": "Il Postino Pat - Parte 2",
 		"note": "",
 		"conditions": {
-			"5968975586f7740e7266d974": "Consegna la lettera del messaggero alla Therapist."
+			"5968975586f7740e7266d974": "Consegna la lettera del messaggero alla Therapist"
 		},
 		"description": "5abe61a786f7746ad512da4c",
 		"failMessageText": "",
@@ -111,12 +111,13 @@
 		"location": "any"
 	},
 	"5967725e86f774601a446662": {
-		"name": "Minacciando il cassiere",
+		"name": "La Minaccia al Cassiere",
 		"note": "",
 		"conditions": {
-			"5968981986f7740d1648df42": "Trova qualcosa di prezioso nella stanza 203 dei dormitori",
-			"5968988286f7740d14064724": "Consegna l'oggetto a Prapor",
-			"5a3fc03286f77414d64f9941": "Accedi alla stanza 214"
+			"5968981986f7740d1648df42": "Ottieni il prezioso oggetto nella camera 203 del dormitorio a Customs",
+			"5968988286f7740d14064724": "Consegna l'oggetto di valore",
+			"5a3fc03286f77414d64f9941": "Ottieni l'accesso alla stanza 214 nel dormitorio",
+			"59a9287986f77478ad7028d8": ""
 		},
 		"description": "5abe61a786f7746ad512da4d",
 		"failMessageText": "5c3f263e86f7743bc65e1862",
@@ -128,8 +129,8 @@
 		"name": "Carenza",
 		"note": "",
 		"conditions": {
-			"59689eb886f7740d137ebfc3": "Consegna 3 Kit Salewa alla Therapist",
-			"5968edc086f77420d2328014": "Trova in raid o crea 3 Kit Salewa"
+			"59689eb886f7740d137ebfc3": "Consegna i kit di pronto soccorso Salewa",
+			"5968edc086f77420d2328014": "Trova i kit di pronto soccorso Salewa in raid"
 		},
 		"description": "5abe61a786f7746ad512da4e",
 		"failMessageText": "5c41b54786f7742b1a7c2c02",
@@ -138,13 +139,13 @@
 		"location": "any"
 	},
 	"59689ee586f7740d1570bbd5": {
-		"name": "Standard Sanitari, p.1°",
+		"name": "Standard Sanitari - Parte 1",
 		"note": "",
 		"conditions": {
-			"59689f7586f7740d14064726": "Consegna l'analizzatore di gas alla Therapist.",
-			"5a3fc0ff86f7744d9c2eff86": "Ottieni l'accesso alla stazione di pompaggio a Factory",
-			"5ca6026286f77446d87abec3": "Ottieni l'accesso alla stazione di pompaggio a Factory",
-			"5cb6f32986f7746ef55e17a0": "Trova l'analizzatore di gas in raid"
+			"59689f7586f7740d14064726": "Consegna l'analizzatore di Gas",
+			"5a3fc0ff86f7744d9c2eff86": "Accedi alla stazione di pompaggio bloccata a Factory",
+			"5ca6026286f77446d87abec3": "Accedi alla stazione di pompaggio bloccata a Factory",
+			"5cb6f32986f7746ef55e17a0": "Trova l'analizzatore di Gas in raid"
 		},
 		"description": "5abe61a786f7746ad512da4f",
 		"failMessageText": "5c76b9fa86f7746582258de2",
@@ -153,11 +154,11 @@
 		"location": "55f2d3fd4bdc2d5f408b4567"
 	},
 	"59689fbd86f7740d137ebfc4": {
-		"name": "Operazione Aquarius",
+		"name": "Operazione Acquarius - Parte 1",
 		"note": "",
 		"conditions": {
-			"5968a06486f7740d14064728": "Sopravvivi ed esci da Customs",
-			"5a3fb73b86f77458e0324376": "Trova l'acqua nascosta nel dormitorio"
+			"5968a06486f7740d14064728": "Sopravvivi ed estrai dalla zona",
+			"5a3fb73b86f77458e0324376": "Trova l'acqua nascosta all'interno dei dormitori a Customs"
 		},
 		"description": "5abe61a786f7746ad512da50",
 		"failMessageText": "5c76baa086f77457e5444c99",
@@ -166,10 +167,10 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"5968eb3186f7741dde183a4d": {
-		"name": "Operazione Aquarius, p. 2°",
+		"name": "Operazione Acquarius - Parte 2",
 		"note": "",
 		"conditions": {
-			"5968eb9b86f7741ddb481543": "Elimina 15 Scav a Customs"
+			"5968eb9b86f7741ddb481543": "Elimina Scav a Customs"
 		},
 		"description": "5abe61a786f7746ad512da51",
 		"failMessageText": "5c76bab586f7746582258de4",
@@ -181,8 +182,8 @@
 		"name": "Antidolorifico",
 		"note": "",
 		"conditions": {
-			"5969f98286f774576d4c9542": "Trova in raid 4 siringhe di Morfina",
-			"5969f99286f77456630ea442": "Consegna le siringhe alla Therapist",
+			"5969f98286f774576d4c9542": "Trova gli iniettori di morfina in raid",
+			"5969f99286f77456630ea442": "Consegna gli Iniettori",
 			"596a212e86f774576d4c95df": ""
 		},
 		"description": "5abe61a786f7746ad512da52",
@@ -195,10 +196,10 @@
 		"name": "Farmacista",
 		"note": "",
 		"conditions": {
-			"5969fa4886f7741ddb481544": "Trova una valigetta con il congegno",
+			"5969fa4886f7741ddb481544": "Ottieni la valigetta contenente il dispositivo a Customs",
 			"5969fa8986f7741ddc2d3154": "Consegna la cartella alla Therapist",
-			"5a3fb8f686f7742384533f10": "Trova l'auto del paramedico",
-			"5a3fb92286f77422b46cdb18": "Entra nella stanza 114 del dormitorio"
+			"5a3fb8f686f7742384533f10": "Trova l'auto del paramedico a Customs",
+			"5a3fb92286f77422b46cdb18": "Entra nella stanza 114 del dormitorio a due piani a Customs"
 		},
 		"description": "5abe61a786f7746ad512da53",
 		"failMessageText": "5ac663e086f77403e1161032",
@@ -207,13 +208,13 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"596a0e1686f7741ddf17dbee": {
-		"name": "Piani di rifornimento",
+		"name": "Piani di Rifornimento",
 		"note": "",
 		"conditions": {
-			"596a0e7086f7741ddf17dbef": "Trova la cartella sicura nella segheria",
-			"596a0e8086f7741ddd6c104c": "Consegna la cartella alla Therapist",
-			"596a0eaf86f774576d4c957f": "Sopravvivi ed esci da Woods",
-			"596a113d86f7741ddd6c104d": "Un tipo di sabotaggio - successo."
+			"596a0e7086f7741ddf17dbef": "Ottieni la Custodia Protetta 0052 nella baracca della segheria a Woods",
+			"596a0e8086f7741ddd6c104c": "Consegna il fascicolo",
+			"596a0eaf86f774576d4c957f": "Sopravvivi ed estrai da Woods",
+			"596a113d86f7741ddd6c104d": "Un tipo di Sabotaggio - Successo."
 		},
 		"description": "5abe61a786f7746ad512da54",
 		"failMessageText": "5ab0f32686f7745dd409f571",
@@ -222,11 +223,11 @@
 		"location": "5704e3c2d2720bac5b8b4567"
 	},
 	"596a101f86f7741ddb481582": {
-		"name": "Un tipo di sabotaggio",
+		"name": "Un tipo di Sabotaggio",
 		"note": "",
 		"conditions": {
-			"596a10d886f7741ddf17dbf0": "Consegna la cartella 0052 a Skier.",
-			"596a117386f7741ddf17dbf1": "Piani di approvvigionamento - successo."
+			"596a10d886f7741ddf17dbf0": "Consegna la Custodia Protetta 0052 a Skier",
+			"596a117386f7741ddf17dbf1": "Piani di Approvvigionamento - Successo."
 		},
 		"description": "5abe61a786f7746ad512da55",
 		"failMessageText": "5ab0f32686f7745dd409f573",
@@ -235,11 +236,11 @@
 		"location": "any"
 	},
 	"596a1e6c86f7741ddc2d3206": {
-		"name": "Merci standard",
+		"name": "Merci Generiche",
 		"note": "",
 		"conditions": {
-			"596a1f0486f77456630ea4d2": "Trova in raid 15 lattine di carne in scatola",
-			"596a1f1586f77420d2328077": "Consegna le lattine alla Therapist"
+			"596a1f0486f77456630ea4d2": "Trova stufati di carne in scatola piccola in raid",
+			"596a1f1586f77420d2328077": "Consegna stufati di carne in scatola piccola"
 		},
 		"description": "5abe61a786f7746ad512da56",
 		"failMessageText": "5c76c70c86f77465844ea282",
@@ -248,11 +249,11 @@
 		"location": "any"
 	},
 	"596a204686f774576d4c95de": {
-		"name": "Standard Sanitari, p. 2°",
+		"name": "Standard Sanitari - Parte 2",
 		"note": "",
 		"conditions": {
-			"596a20ac86f7741ddf17dbf4": "Consegna l'analizzatore di gas alla Therapist",
-			"5ec1398886f7561e047757a5": "Trova in raid 2 analizzatori di gas"
+			"596a20ac86f7741ddf17dbf4": "Consegna l'analizzatore di Gas",
+			"5ec1398886f7561e047757a5": "Trova l'analizzatore di Gas in raid"
 		},
 		"description": "5abe61a786f7746ad512da57",
 		"failMessageText": "5c76ba4686f77465844ea27e",
@@ -261,13 +262,13 @@
 		"location": "any"
 	},
 	"596a218586f77420d232807c": {
-		"name": "Il riparatore d'auto",
+		"name": "Riparazione Auto",
 		"note": "",
 		"conditions": {
-			"596b46d886f77457ca186189": "Trova in raid 4 batterie per automobile",
-			"596b46ec86f77457c7006f89": "Trova in raid 8 candele per automobile",
-			"596b470c86f77457ca18618a": "Consegna le batterie per automobili alla Therapist",
-			"596b472686f77457c7006f8a": "Consegna le Candele d'accensione alla Therapist",
+			"596b46d886f77457ca186189": "Trova le batteria per automobile in raid",
+			"596b46ec86f77457c7006f89": "Trova le Candele in raid",
+			"596b470c86f77457ca18618a": "Consegna le batterie per Auto",
+			"596b472686f77457c7006f8a": "Consegna le Candele da Automobile",
 			"5979e7a386f7743ec214c7a3": ""
 		},
 		"description": "5abe61a786f7746ad512da58",
@@ -280,8 +281,8 @@
 		"name": "Fornitore",
 		"note": "",
 		"conditions": {
-			"597867e986f7741b265c6bd3": "Consegna un'armatura trovata in raid a Skier",
-			"5ab8d44c86f7745b2325bd0c": "Consegna un fucile a pompa trovato in raid a Skier"
+			"597867e986f7741b265c6bd3": "Consegna l'armatura Module-3M trovata in raid",
+			"5ab8d44c86f7745b2325bd0c": "Consegna il fucile a pompa TOZ-106 trovato in raid"
 		},
 		"description": "5abe61a886f7746ad512da99",
 		"failMessageText": "5ab0f32686f7745dd409f577",
@@ -293,9 +294,9 @@
 		"name": "Il Ricattatore",
 		"note": "",
 		"conditions": {
-			"596b44b686f77457cb50ecca": " Trova la merce preziosa nascosta",
-			"596b450986f7745a7e510b54": "Consegnalo a Skier",
-			"5a3fbab086f77421593d9bf0": "Trova il luogo dove il messaggero ha nascosto l'oggetto",
+			"596b44b686f77457cb50ecca": "Ottieni il carico prezioso a Customs",
+			"596b450986f7745a7e510b54": "Consegna il cargo di valore",
+			"5a3fbab086f77421593d9bf0": "Trova il luogo dove il messaggero ha nascosto il carico",
 			"5a3fbabc86f774231d75afbe": "Trova il corpo del messaggero"
 		},
 		"description": "5abe61a786f7746ad512da59",
@@ -308,7 +309,7 @@
 		"name": "Staffa",
 		"note": "",
 		"conditions": {
-			"5c9b5e3f86f7744aab7329b5": "Elimina 3 operatori PMC. Devi ucciderli usando le pistole"
+			"5c9b5e3f86f7744aab7329b5": "Elimina i PMC mentre usi le pistole"
 		},
 		"description": "5abe61a786f7746ad512da5a",
 		"failMessageText": "5c76c84186f7746585525871",
@@ -317,11 +318,11 @@
 		"location": "any"
 	},
 	"5979ed3886f77431307dc512": {
-		"name": "Cosa c'è nella chiavetta USB?",
+		"name": "Cosa c'è nella Penna Usb?",
 		"note": "",
 		"conditions": {
-			"5979ee2986f7743ec214c7a4": " Trova in raid due chiavette USB contenente dati",
-			"5979ee4586f7743ec214c7a5": "Consegnali a Skier",
+			"5979ee2986f7743ec214c7a4": "Trova penne USB protette in raid",
+			"5979ee4586f7743ec214c7a5": "Consegna le Penne USB",
 			"59819f0986f7744e6d0b7520": ""
 		},
 		"description": "5abe61a786f7746ad512da5b",
@@ -331,11 +332,11 @@
 		"location": "any"
 	},
 	"5979eee086f774311955e614": {
-		"name": "Bottino prezioso",
+		"name": "Malloppo D'oro",
 		"note": "",
 		"conditions": {
-			"5979ef4586f77431307dc513": "Trova un accendino Zibbo dorato",
-			"5979ef7986f77431307dc514": "Lascia l'accendino nella baracca nel parcheggio dei rimorchi (Customs)"
+			"5979ef4586f77431307dc513": "Trova l'accendino dorato Zibbo",
+			"5979ef7986f77431307dc514": "Colloca l'accendino dorato Zibbo nel prefabbricato del parcheggio rimorchi a Customs"
 		},
 		"description": "5abe61a786f7746ad512da5c",
 		"failMessageText": "5c76c8b086f774658340b143",
@@ -347,8 +348,8 @@
 		"name": "Il Barbone Polikhim",
 		"note": "",
 		"conditions": {
-			"598f0c6386f7746c837802cc": "Uccidi 20 Scav a Customs",
-			"5b0e766b86f7746bfa618964": "Uccidi 25 Scav a Customs"
+			"598f0c6386f7746c837802cc": "Elimina Scav a Customs",
+			"5b0e766b86f7746bfa618964": "Elimina Scav a Customs"
 		},
 		"description": "5abe61a786f7746ad512da5d",
 		"failMessageText": "5ab0f32686f7745dd409f57e",
@@ -358,13 +359,13 @@
 	},
 	"5979f9ba86f7740f6c3fe9f2": {
 		"conditions": {
-			"5979fc2686f77426d702a0f2": "Trova informazioni sulla vita passata del Vice Capo",
-			"5979fc5386f77426d702a0f3": "Trova gli oggetti che possono aiutare nelle indagini",
-			"5979fc7e86f77426d702a0f4": "Consegnalo a Skier",
-			"5979fc9286f77426d702a0f5": "Consegnali a Skier",
-			"5a3fbbfd86f77459d52a16a8": "Trova il posto in cui dorme il Vice Capo della sicurezza"
+			"5979fc2686f77426d702a0f2": "Ottenere informazioni sulla vita passata del vice capo a Customs",
+			"5979fc5386f77426d702a0f3": "Ottieni elementi che possono aiutare con l'indagine",
+			"5979fc7e86f77426d702a0f4": "Consegna le informazioni",
+			"5979fc9286f77426d702a0f5": "Consegna gli oggetti",
+			"5a3fbbfd86f77459d52a16a8": "Trova il luogo dove dorme l'ex vice capo della sicurezza a Customs"
 		},
-		"name": "Sostanza chimica. Parte 1",
+		"name": "Sostanza Chimica - Parte 1",
 		"note": "",
 		"description": "5abe61a786f7746ad512da5e",
 		"failMessageText": "",
@@ -373,13 +374,13 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"597a0b2986f77426d66c0633": {
-		"name": "Sostanza chimica. Parte 2",
+		"name": "Sostanza Chimica - Parte 2",
 		"note": "",
 		"conditions": {
-			"597a0bb486f77426d66c0634": "Trova qualsiasi informazione che potrebbe aiutarti nell'indagine",
-			"597a0bdb86f7742717106d12": "Consegnalo a Skier",
-			"597a0be986f774273b74f673": " Cerca qualsiasi prova che potrebbe aiutarti nell'indagine",
-			"597a0bf886f7742717106d13": "Consegna le prove a Skier"
+			"597a0bb486f77426d66c0634": "Trova qualsiasi informazione a Customs che potrebbe aiutarti nelle indagini",
+			"597a0bdb86f7742717106d12": "Consegna le informazioni",
+			"597a0be986f774273b74f673": "Trova qualsiasi prova a Customs che potrebbe aiutarti nelle indagini",
+			"597a0bf886f7742717106d13": "Consegna le prove"
 		},
 		"description": "5abe61a786f7746ad512da5f",
 		"failMessageText": "",
@@ -388,11 +389,11 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"597a0e5786f77426d66c0636": {
-		"name": "Sostanza chimica. Parte 3",
+		"name": "Sostanza Chimica - Parte 3",
 		"note": "",
 		"conditions": {
-			"597a15b386f774799e5cd152": "Trova una siringa di sostanze chimiche a Factory",
-			"597a15c386f77405ba6887d2": "Consegna la siringa a Skier"
+			"597a15b386f774799e5cd152": "Ottieni la siringa riempita di sostanze chimiche nascosta a Factory",
+			"597a15c386f77405ba6887d2": "Consegna la siringa riempita di sostanze chimiche"
 		},
 		"description": "5abe61a786f7746ad512da60",
 		"failMessageText": "5c76c90286f77465815ed4dd",
@@ -401,12 +402,12 @@
 		"location": "55f2d3fd4bdc2d5f408b4567"
 	},
 	"597a0f5686f774273b74f676": {
-		"name": "Sostanza chimica. Parte 4",
+		"name": "Sostanza Chimica - Parte 4",
 		"note": "",
 		"conditions": {
-			"59b242ea86f7741e6e0e7a86": "Marca il camion ce trasporta sostanze chimiche con un marcatore",
-			"59b95de686f77418457056ef": "Sopravvivi ed esci da Customs",
-			"5a3fbc9586f77459d52a16c4": "Trova un camion che trasporta prodotti chimici"
+			"59b242ea86f7741e6e0e7a86": "Segnala il veicolo di trasporto chimico con un marcatore MS2000",
+			"59b95de686f77418457056ef": "Sopravvivi ed estrai da Customs",
+			"5a3fbc9586f77459d52a16c4": "Trova il mezzo con i prodotti chimici"
 		},
 		"description": "5abe61a786f7746ad512da61",
 		"failMessageText": "5ab0f32686f7745dd409f583",
@@ -416,11 +417,11 @@
 	},
 	"597a160786f77477531d39d2": {
 		"conditions": {
-			"597a166d86f774779c70e8a4": "Sopravvivi ed esci da Customs",
-			"5998366886f77455853b2d9f": "Marca il trasporto chimico con un segnalatore",
-			"5a3fc1f286f7744ccc15d643": "Trova un trasporto con i prodotti chimici"
+			"597a166d86f774779c70e8a4": "Sopravvivi ed estrai dalla zona",
+			"5998366886f77455853b2d9f": "Segnala il veicolo con un marcatore MS2000",
+			"5a3fc1f286f7744ccc15d643": "Trova il mezzo con i prodotti chimici a Customs"
 		},
-		"name": "Per pura curiosità",
+		"name": "Per Pura Curiosità",
 		"note": "",
 		"description": "5abe61a786f7746ad512da62",
 		"failMessageText": "5ab0f32686f7745dd409f585",
@@ -430,11 +431,11 @@
 	},
 	"597a171586f77405ba6887d3": {
 		"conditions": {
-			"597a178786f774799e5cd155": "Sopravvivi ed esci da Customs",
-			"5998360886f77456936817f3": "Marca il trasporto chimico con un marcatore",
-			"5a3fbec386f77413bd5fc20a": "Trova un camion che trasporta prodotti chimici"
+			"597a178786f774799e5cd155": "Sopravvivi ed estrai da Customs",
+			"5998360886f77456936817f3": "Segnala il veicolo di trasporto chimico con un marcatore MS2000",
+			"5a3fbec386f77413bd5fc20a": "Trova il mezzo con i prodotti chimici"
 		},
-		"name": "Cliente importante",
+		"name": "Cliente Importante",
 		"note": "",
 		"description": "5abe61a786f7746ad512da63",
 		"failMessageText": "5ab0f32686f7745dd409f587",
@@ -446,11 +447,12 @@
 		"name": "Deposito BP",
 		"note": "",
 		"conditions": {
-			"59c128b986f77415037680df": "Marca il serbatoio del camion cisterna №1 con un marcatore a Customs",
-			"59c128cc86f774189b3c84b5": "Marca il serbatoio del camion cisterna №2 con un marcatore a Customs",
-			"59c128d886f77414fe7f1a64": "Marca il serbatoio del camion cisterna №3 con un marcatore a Customs",
-			"59c128f386f774189b3c84bb": "Marca il serbatoio del camion cisterna №4 con un marcatore a Customs",
-			"5c92184386f7746afa2e7840": "Sopravvivi e lascia la zona"
+			"59c128b986f77415037680df": "Segnala il primo camion di carburante con un marcatore MS2000 a Customs",
+			"59c128cc86f774189b3c84b5": "Segnala il secondo camion di carburante con un marcatore MS2000 a Customs",
+			"59c128d886f77414fe7f1a64": "Segnala il terzo camion di carburante con un marcatore MS2000 a Customs",
+			"59c128f386f774189b3c84bb": "Segnala il quarto camion di carburante con un marcatore MS2000 a Customs",
+			"5c92184386f7746afa2e7840": "Sopravvivi ed estrai dalla zona",
+			"60a6486cc15b714d7b0a83d4": ""
 		},
 		"description": "5abe61a786f7746ad512da64",
 		"failMessageText": "5c3f04f886f774100b631508",
@@ -459,10 +461,10 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"59c50a9e86f7745fef66f4ff": {
-		"name": "Il Punitore",
+		"name": "The Punisher",
 		"note": "",
 		"conditions": {
-			"59674d5186f00443b872d5f7": "Uccidi 15 Scav a Shoreline usando un'arma della serie AKM"
+			"59674d5186f00443b872d5f7": "Elimina gli Scav a Shoreline utilizzando un'arma della serie AKM"
 		},
 		"description": "5abe61a886f7746ad512da65",
 		"failMessageText": "5c76b8c886f77457e5444c95",
@@ -471,13 +473,13 @@
 		"location": "5704e554d2720bac5b8b456e"
 	},
 	"59c50c8886f7745fed3193bf": {
-		"name": "Il Punitore. Parte 2.",
+		"name": "Il Punitore - Parte 2",
 		"note": "",
 		"conditions": {
-			"59c50f1686f77412ef2c01e7": "Consegna le maschere a Prapor",
-			"59624d5386f77446b872d5f7": "Uccidi 12 Scavs a Shoreline con un'arma silenziata",
-			"5ca5e54186f774456930b9a3": "Trova in raid 10 bandane",
-			"5cb5e2ff86f7746ef64c979b": "Trova in raid 7 bandane"
+			"59c50f1686f77412ef2c01e7": "Consegna le bandane",
+			"59624d5386f77446b872d5f7": "Elimina gli Scav a Shoreline utilizzando un'arma silenziata",
+			"5ca5e54186f774456930b9a3": "Trova le bandane in raid",
+			"5cb5e2ff86f7746ef64c979b": "Trova le bandane in raid"
 		},
 		"description": "5abe61a886f7746ad512da66",
 		"failMessageText": "5c76b8d786f7746582258dde",
@@ -486,10 +488,10 @@
 		"location": "5704e554d2720bac5b8b456e"
 	},
 	"59c512ad86f7741f0d09de9b": {
-		"name": "Il Punitore. Parte 3.",
+		"name": "Il Punitore - Parte 3",
 		"note": "",
 		"conditions": {
-			"59674d5186f77446b852d5f7": "Uccidi 25 Scav a Customs con l'AKS-74U"
+			"59674d5186f77446b852d5f7": "Elimina gli Scav a Customs usando un AKS-74U"
 		},
 		"description": "5abe61a886f7746ad512da67",
 		"failMessageText": "5ab0f32686f7745dd409f58c",
@@ -499,14 +501,14 @@
 	},
 	"59c9392986f7742f6923add2": {
 		"conditions": {
-			"59c93bdb86f7742a19140434": "Trova la chiave 303 del dormitorio",
-			"59c93c1986f7742a424eaa33": "Trova la chiave ZB-014",
-			"59c93cbb86f7742a19140435": "Trova la chiave del posto di blocco militare a Customs",
-			"59c93cea86f7742a08623162": "Trova la chiave dell'armadio del benzinaio",
-			"59c93d4e86f774496b698953": "Consegna la chiave 303",
+			"59c93bdb86f7742a19140434": "Ottieni la chiave 303 del Dormitorio",
+			"59c93c1986f7742a424eaa33": "Ottieni la chiave ZB-014",
+			"59c93cbb86f7742a19140435": "Ottieni la chiave del Checkpoint Militare",
+			"59c93cea86f7742a08623162": "Ottieni la chiave del magazzino della stazione di benzina",
+			"59c93d4e86f774496b698953": "Consegna la chiave 303 del dormitorio",
 			"59c93d8086f7742a19140436": "Consegna la chiave ZB-014",
-			"59c93d9c86f7742f6923add3": "Consegna la chiave del checkpoint",
-			"59c93dbf86f7742a424eaa34": "Consegna la chiave dell’armadietto"
+			"59c93d9c86f7742f6923add3": "Consegna la chiave del posto di blocco militare a Customs",
+			"59c93dbf86f7742a424eaa34": "Consegna la chiave dell'armadietto della stazione di benzina"
 		},
 		"name": "Riguadagna la fiducia",
 		"note": "",
@@ -517,10 +519,10 @@
 		"location": "any"
 	},
 	"59c93e8e86f7742a406989c4": {
-		"name": "La lealtà comprata",
+		"name": "Lealtà in Vendita",
 		"note": "",
 		"conditions": {
-			"596a10d886f7741ddf11dbf0": "Dai 1 milione di rubli a Skier "
+			"596a10d886f7741ddf11dbf0": "Consegna i RUBLI"
 		},
 		"description": "5abe61a886f7746ad512da69",
 		"failMessageText": "5c76c95286f7746585525873",
@@ -530,10 +532,10 @@
 	},
 	"59ca1a6286f774509a270942": {
 		"conditions": {
-			"59ca1b1b86f7741b067dba42": "Trova 10 granate M67",
-			"59ca1b4f86f774509a270943": "Consegna le granate a Prapor"
+			"59ca1b1b86f7741b067dba42": "Ottieni una bomba a mano M67",
+			"59ca1b4f86f774509a270943": "Consegna le granate"
 		},
-		"name": "Senza offesa",
+		"name": "Senza Offesa",
 		"note": "",
 		"description": "5abe61a886f7746ad512da6a",
 		"failMessageText": "5c76b8ad86f7746582258ddc",
@@ -542,13 +544,13 @@
 		"location": "any"
 	},
 	"59ca264786f77445a80ed044": {
-		"name": "Il Punitore. Parte 4.",
+		"name": "Il Punitore - Parte 4",
 		"note": "",
 		"conditions": {
-			"59ca27f786f77445aa0ddc14": "Uccidi 10 PMC su Shoreline. È necessario indossare un passamontagna e un gilet scav",
-			"59674d5986f77446b872d5f7": "Uccidi 10 Scavs a Woods utilizzando fucili calibro 12",
-			"59ca293c86f91445a80ed047": "Trova in raid 5 coltelli Bars A-2607",
-			"59ca29ab86f77445ab431c86": "Consegna i coltelli a Prapor"
+			"59ca27f786f77445aa0ddc14": "Elimina i PMC a Shoreline. Dovrai indossare un passamontagna (di qualsiasi tipo) e un gilet scav",
+			"59674d5986f77446b872d5f7": "Elimina gli Scav a Woods utilizzando fucili a pompa calibro 12",
+			"59ca293c86f91445a80ed047": "Trova 10 coltelli Bars A-2607 in raid",
+			"59ca29ab86f77445ab431c86": "Consegna i coltelli"
 		},
 		"description": "5abe61a886f7746ad512da6b",
 		"failMessageText": "5c76b93386f77457e5444c97",
@@ -557,16 +559,16 @@
 		"location": "any"
 	},
 	"59ca29fb86f77445ab465c87": {
-		"name": "Il Punitore. Parte 5",
+		"name": "Il Punitore - Parte 5",
 		"note": "",
 		"conditions": {
-			"59ca2c3086f77445aa0ddc15": "Consegna un fucile M4A1 a Prapor",
-			"59ca2cbe86f7740fe95c3e52": "Consegna le pistole a Prapor",
-			"59ca293c86f77445a80ed147": "Trova in raid 1 AK-74N",
-			"59ca29ab86f77445ab133c86": "Consegna un fucile AK-74N a Prapor ",
-			"59ca2bdc86f77445a80ed148": "Trova in raid un fucile d'assalto M4A1",
-			"59ca2c9e86f77428ea721232": "Trova in raid 2 pistole PM",
-			"5c922dde86f77438500a0fec": "Uccidi 10 PMC operativi. È necessario indossare un gilet PACA e un elmetto 6b47"
+			"59ca2c3086f77445aa0ddc15": "Consegna il fucile d'assalto M4A1",
+			"59ca2cbe86f7740fe95c3e52": "Consegna le pistole",
+			"59ca293c86f77445a80ed147": "Trova il fucile d'assalto AK-74N in raid",
+			"59ca29ab86f77445ab133c86": "Consegna il fucile d'assalto AK-74N",
+			"59ca2bdc86f77445a80ed148": "Trova il fucile d'assalto M4A1 in raid",
+			"59ca2c9e86f77428ea721232": "Trova le pistole PM 9x18OM in raid",
+			"5c922dde86f77438500a0fec": "Elimina PMC indossando armatura PACA e elmetto 6B47"
 		},
 		"description": "5abe61a886f7746ad512da6c",
 		"failMessageText": "5c76b94386f7746582258de0",
@@ -575,14 +577,14 @@
 		"location": "any"
 	},
 	"59ca2eb686f77445a80ed049": {
-		"name": "Il Punitore. Parte 6.",
+		"name": "Il Punitore - Parte 6",
 		"note": "",
 		"conditions": {
-			"59ca2fba86f77445e4732b25": "Uccidi 15 operatori PMC. È necessario utilizzare fucili SVD",
-			"5b05468f86f774030379eb74": "Trova in raid 7 piastrine PMC \"BEAR\"",
-			"5b0548e686f7740306753506": "Consegna 7 piastrine PMC \"BEAR\" ",
-			"5cb3393888a4505d02042061": "Trova in raid 7 piastrine PMC \"USEC\"",
-			"5cb3397c88a450159a723d79": "Consegna 7 piastrine PMC \"USEC\""
+			"59ca2fba86f77445e4732b25": "Elimina PMC utilizzando un fucile da cecchino SVD",
+			"5b05468f86f774030379eb74": "Trova piastrine BEAR PMC in raid",
+			"5b0548e686f7740306753506": "Consegna le piastrine PMC BEAR",
+			"5cb3393888a4505d02042061": "Trova piastrine USEC PMC in raid",
+			"5cb3397c88a450159a723d79": "Consegna le piastrine PMC USEC"
 		},
 		"description": "5abe61a886f7746ad512da6d",
 		"failMessageText": "5ab0f32686f7745dd409f593",
@@ -593,15 +595,15 @@
 	"59f9da6786f774714230d751": {
 		"successMessageText": "5ab0f32686f7745dd409f595",
 		"description": "5abe61a886f7746ad512da6f",
+		"location": "5704e554d2720bac5b8b456e",
 		"conditions": {},
-		"name": "",
-		"location": "5704e554d2720bac5b8b456e"
+		"name": ""
 	},
 	"5a03153686f77442d90e2171": {
 		"conditions": {
-			"5c9a17c686f7747dbe2da3c1": "Uccidi 7 Scav a Shoreline con fucili calibro 12 colpendoli alla testa"
+			"5c9a17c686f7747dbe2da3c1": "Elimina gli scav a Shoreline colpendoli alla testa, usando fucili a pompa calibro 12"
 		},
-		"name": "Spa Tour. Parte 1",
+		"name": "Tour alla Spa - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da70",
 		"failMessageText": "5c6a780186f7742242420c05",
@@ -611,11 +613,11 @@
 	},
 	"5a03173786f77451cb427172": {
 		"conditions": {
-			"5a0317da86f77451cb427295": "Marca l'elicottero con un segnalatore",
-			"5a0325f286f7744384509230": "Marca una strada sicura con un segnalatore",
-			"5a37d80986f774245c063b69": "Sopravvivi e lascia la zona"
+			"5a0317da86f77451cb427295": "Segnala l'elicottero a Shoreline con un marcatore MS2000",
+			"5a0325f286f7744384509230": "Segnala la strada sicura a Shoreline con un marcatore MS2000",
+			"5a37d80986f774245c063b69": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": "Spa Tour. Parte 2",
+		"name": "Tour alla Spa - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da71",
 		"failMessageText": "5c6a786c86f77425a93eb549",
@@ -625,16 +627,16 @@
 	},
 	"5a0327ba86f77456b9154236": {
 		"conditions": {
-			"5a03282286f77456b91542ef": "Trova in raid un WD-40 100 ml",
-			"5a03289686f7745dbc6c5063": "Consegna un WD-40 da 100 ml",
-			"5a0328b086f77457a7099ea5": "Trova in raid 2 Detergenti per tergicristalli",
-			"5a0328cb86f77456b91543b8": "Consegna 2 detergenti per tergicristalli Clin",
-			"5a0328f586f774580168ced4": "Trova in raid 2 tubi corrugati",
-			"5a03290586f774584d1594c4": "Consegna 2 tubi corrugati",
-			"5a280b3c86f7741b16366337": "Trova in raid 2 flaconi di candeggina Ox",
-			"5a280b5486f7741f751bfeea": "Consegna 2 flaconi di candeggina Ox"
+			"5a03282286f77456b91542ef": "Trova WD-40 (100ml) in raid",
+			"5a03289686f7745dbc6c5063": "Consegna WD-40 (100ml)",
+			"5a0328b086f77457a7099ea5": "Trova detergenti per vetri Clin",
+			"5a0328cb86f77456b91543b8": "Consegna detergenti per vetri Clin",
+			"5a0328f586f774580168ced4": "Trova i tubi corrugati in raid",
+			"5a03290586f774584d1594c4": "Consegna i tubi corrugati",
+			"5a280b3c86f7741b16366337": "Trova la candeggina Ox in raid",
+			"5a280b5486f7741f751bfeea": "Consegna la varichina Ox"
 		},
-		"name": "Spa Tour. Parte 3",
+		"name": "Tour alla Spa - Parte 3",
 		"note": "",
 		"description": "5abe61a886f7746ad512da72",
 		"failMessageText": "5c6a78c186f77425b467b3fd",
@@ -644,11 +646,11 @@
 	},
 	"5a03296886f774569778596a": {
 		"conditions": {
-			"5a3ba62786f7742c9d4f5ee9": "Trova i generatori nell'ala destra",
-			"5a3ba65f86f7743af1475f11": "Trova i generatori nell'ala sinistra",
-			"5c94f65286f77455185027ee": "Sopravvivi e lascia la zona"
+			"5a3ba62786f7742c9d4f5ee9": "Trova i generatori nell'ala est del resort",
+			"5a3ba65f86f7743af1475f11": "Trova i generatori nell'ala ovest del resort",
+			"5c94f65286f77455185027ee": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": "Spa Tour. Parte 4",
+		"name": "Tour alla Spa - Parte 4",
 		"note": "",
 		"description": "5abe61a886f7746ad512da73",
 		"failMessageText": "5c6a78e086f77424b36ff635",
@@ -658,10 +660,10 @@
 	},
 	"5a0449d586f77474e66227b7": {
 		"conditions": {
-			"5a044a6c86f7747370402d91": "Trova la chiave nelle stanze chiuse del resort",
-			"5a280f8d86f774141b501756": "Consegna la chiave delle stanze chiuse del resort"
+			"5a044a6c86f7747370402d91": "Ottieni la chiavi dei locali chiusi del Sanatorio",
+			"5a280f8d86f774141b501756": "Consegna la chiave"
 		},
-		"name": "Spa Tour. Parte 5",
+		"name": "Tour alla Spa - Parte 5",
 		"note": "",
 		"description": "5abe61a886f7746ad512da74",
 		"failMessageText": "5c3dfa4886f77404901dec84",
@@ -671,12 +673,12 @@
 	},
 	"5a27b75b86f7742e97191958": {
 		"conditions": {
-			"5a27d81a86f774472a6e0456": "Lascia un fucile da cecchino nella zona",
-			"5a27d85286f77448d82084e7": "Lascia il multitool nella zona",
-			"5a3ba11786f7742c9d4f5d29": "Trova il luogo segreto",
+			"5a27d81a86f774472a6e0456": "Colloca un fucile da cecchino nella barca",
+			"5a27d85286f77448d82084e7": "Colloca gli attrezzi multiuso nella barca",
+			"5a3ba11786f7742c9d4f5d29": "Trova la barca nascosta vicino al frangiflutti a Shoreline",
 			"5bcf241486f7746a4959344a": "",
 			"5be40b2a88a45079e30e92b5": "",
-			"5c93794086f7740a13567867": "Sopravvivi e lascia la zona"
+			"5c93794086f7740a13567867": "Sopravvivi ed estrai dalla zona"
 		},
 		"name": "Equipaggiamento da Pesca",
 		"note": "",
@@ -688,10 +690,10 @@
 	},
 	"5a27b7a786f774579c3eb376": {
 		"conditions": {
-			"5a27e73f86f7740fb275c94b": "Marca il primo veicolo Tiger a Customs",
-			"5a27e75886f7740aef4a9157": "Marca il secondo veicolo Tiger a Customs",
-			"5a29653986f77406a3435b26": "Marca il terzo veicolo Tiger a Customs",
-			"5c9394a986f7741228714be3": "Sopravvivi e lascia la zona"
+			"5a27e73f86f7740fb275c94b": "Segnala il primo veicolo Tigr con un marcatore MS2000 a Customs",
+			"5a27e75886f7740aef4a9157": "Segnala il secondo veicolo Tigr con un marcatore MS2000 a Customs",
+			"5a29653986f77406a3435b26": "Segnala il terzo veicolo Tigr con un marcatore MS2000 a Customs",
+			"5c9394a986f7741228714be3": "Sopravvivi ed estrai dalla zona"
 		},
 		"name": "Tigr Safari",
 		"note": "",
@@ -703,12 +705,12 @@
 	},
 	"5a27b7d686f77460d847e6a6": {
 		"conditions": {
-			"5a27fc8186f7746371546243": "Marca il secondo carro armato T-90 a Shoreline",
-			"5a27fc9686f774675744bb60": "Marca il terzo carro armato T-90 a Shoreline",
-			"5a37e8ae86f77415076b401d": "Marca il primo carro armato T-90 a Shoreline",
-			"5c939d0e86f774185203c4c3": "Sopravvivi e lascia la zona"
+			"5a27fc8186f7746371546243": "Segnala il secondo carro armato T-90 con un marcatore MS2000 a Shoreline",
+			"5a27fc9686f774675744bb60": "Segnala il terzo carro armato T-90 con un marcatore MS2000 a Shoreline",
+			"5a37e8ae86f77415076b401d": "Segnala il primo carro armato T-90 con un marcatore MS2000 a Shoreline",
+			"5c939d0e86f774185203c4c3": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": " Rottami di Metallo",
+		"name": "Rottami di Metallo",
 		"note": "",
 		"description": "5abe61a886f7746ad512da77",
 		"failMessageText": "",
@@ -718,12 +720,12 @@
 	},
 	"5a27b80086f774429a5d7e20": {
 		"conditions": {
-			"5a27ffb186f774192932b3d5": "Trova il disco SAS dal primo drone schiantato",
-			"5a27ffc786f77415ca58ae47": "Consegna il disco SAS del primo drone schiantato",
-			"5a294f1686f774340c7b7e4a": "Trova il disco SAS dal secondo drone schiantato",
-			"5a294f3386f77433e923f9cd": "Consegna il disco SAS dal secondo drone schiantato",
-			"5a3ba34286f7744eb240406a": "Trova il primo sito di schianto dell'UAV",
-			"5a3ba3b086f7745ab1081101": "Trova il secondo sito di schianto dell'UAV"
+			"5a27ffb186f774192932b3d5": "Ottieni il disco SAS dal primo drone schiantato",
+			"5a27ffc786f77415ca58ae47": "Consegna il primo disco SAS",
+			"5a294f1686f774340c7b7e4a": "Ottieni il disco Sas dal secondo drone schiantato",
+			"5a294f3386f77433e923f9cd": "Consegna il secondo disco SAS",
+			"5a3ba34286f7744eb240406a": "Trova il primo sito di schianto dell'UAV a Shoreline",
+			"5a3ba3b086f7745ab1081101": "Trova il secondo sito di schianto dell'UAV a Shoreline"
 		},
 		"name": "Occhio di falco",
 		"note": "",
@@ -735,14 +737,14 @@
 	},
 	"5a27b87686f77460de0252a8": {
 		"conditions": {
-			"5a28017786f77452f6318b1b": "Marchia il primo camion che trasportava merce UN",
-			"5a2801f986f774531b679875": "Marchia il secondo camion che trasportava merce UN",
-			"5a28023f86f774528903dd1e": "Consegna 5 razioni MRE a Peacekeeper",
-			"5a3ba47986f7744df8667505": "Trova il primo camion che trasportava merce UN",
-			"5a3ba4ba86f7744df759b1e5": "Marchia il secondo camion che trasportava merce UN",
-			"5c939f2186f774122b6e7854": "Sopravvivi e lascia la zona",
-			"5c9a170386f77438c80164eb": "Uccidi 10 Scav nella mappa Shoreline. Devi indossare una uniforme UN (che comprende un Elmetto UN e una Armatura MF-HUNTAR)",
-			"5cb5fd3d86f7746ef64ca33c": "Trova 5 razioni di cibo MRE"
+			"5a28017786f77452f6318b1b": "Segnala il primo camion con un marcatore MS2000",
+			"5a2801f986f774531b679875": "Segnala il secondo camion con un marcatore MS2000",
+			"5a28023f86f774528903dd1e": "Consegna i pacchi di razioni MRE",
+			"5a3ba47986f7744df8667505": "Trova il primo camion che trasportava il carico ONU perduto a Shoreline",
+			"5a3ba4ba86f7744df759b1e5": "Trova il secondo camion che trasportava il carico ONU perduto a Shoreline",
+			"5c939f2186f774122b6e7854": "Sopravvivi ed estrai dalla zona",
+			"5c9a170386f77438c80164eb": "Elimina Scav a Shoreline mentre indossi un'uniforme ONU (Casco Onu, armatura MF-UNTAR)",
+			"5cb5fd3d86f7746ef64ca33c": "Ottieni dei pacchi di razioni MRE"
 		},
 		"name": "Rifornimenti Umanitari",
 		"note": "",
@@ -754,10 +756,10 @@
 	},
 	"5a27b9de86f77464e5044585": {
 		"conditions": {
-			"5a28051286f7740eb10bac04": "Sopravvivi e lascia la zona",
-			"5a3ba51d86f7743af1475c3a": "Trova l'informatore disperso"
+			"5a28051286f7740eb10bac04": "Sopravvivi ed estrai dalla zona",
+			"5a3ba51d86f7743af1475c3a": "Trova l'informatore disperso a Shoreline"
 		},
-		"name": "Il Culto. Parte 1",
+		"name": "Il Culto - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7a",
 		"failMessageText": "5c6a757786f77425a93eb46c",
@@ -767,12 +769,12 @@
 	},
 	"5a27ba1c86f77461ea5a3c56": {
 		"conditions": {
-			"5a2806b386f77420062f0fbd": "Metti il marcatore sul luogo del rituale a Customs",
-			"5a2806e086f774291b084041": "Metti il marcatore sul primo punto del rituale a Woods",
-			"5a2806f886f774513d3e69f5": "Metti il marcatore sul luogo del rituale a Shoreline",
-			"5fe0e9ed3f3a7d4169035e8e": "Metti il marcatore sul secondo punto del rituale a Woods"
+			"5a2806b386f77420062f0fbd": "Metti il marcatore MS2000 nel luogo rituale a Customs",
+			"5a2806e086f774291b084041": "Metti il marcatore MS2000 nel primo luogo rituale a Woods",
+			"5a2806f886f774513d3e69f5": "Metti il marcatore MS2000 nel luogo rituale a Shoreline",
+			"5fe0e9ed3f3a7d4169035e8e": "Metti il marcatore MS2000 nel secondo luogo rituale a Woods"
 		},
-		"name": "Il Culto. Parte 2",
+		"name": "Il Culto - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7b",
 		"failMessageText": "",
@@ -782,28 +784,28 @@
 	},
 	"5a27ba9586f7741b543d8e85": {
 		"conditions": {
-			"5a28127b86f7743808504ecc": "Consegna 8000$"
+			"5a28127b86f7743808504ecc": "Consegna i DOLLARI"
 		},
-		"name": "Spa Tour. Parte 6",
+		"name": "Tour alla Spa - Parte 6",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7c",
 		"failMessageText": "",
-		"startedMessageText": "",
+		"startedMessageText": "62036b40e303193ec31ee336",
 		"successMessageText": "5ab0f32686f7745dd409f5a5",
 		"location": "any"
 	},
 	"5a27bafb86f7741c73584017": {
 		"conditions": {
-			"5a28151986f77466837984c9": "Trova in raid 4 siringhe di Morfina",
-			"5a28152b86f7740ab40845fb": "Consegna 4 siringhe di Morfina",
-			"5a28157486f77405822f36c1": "Trova in raid 2 detergenti per superfici Alkali",
-			"5a28159686f77405710b1e65": "Consegna 2 detergenti per superfici Alkali",
-			"5a2815c186f77405822f36ce": "Trova in raid 2 tubi corrugati",
-			"5a2815d786f774725a5893a6": "Consegna 2 tubi corrugati",
-			"5a28163686f7740ab4084611": "Trova in raid, 2 bombole di propano da 5l",
-			"5a28164786f77405822f36d9": "Consegna 2 bombole di propano da 5L"
+			"5a28151986f77466837984c9": "Trova gli iniettori di morfina in raid",
+			"5a28152b86f7740ab40845fb": "Consegna gli iniettori di morfina",
+			"5a28157486f77405822f36c1": "Trova in raid dei detergenti Alkaline per scambiatori di calore",
+			"5a28159686f77405710b1e65": "Consegna i detergenti Alkaline per scambiatori di calore",
+			"5a2815c186f77405822f36ce": "Trova i tubi corrugati in raid",
+			"5a2815d786f774725a5893a6": "Consegna i tubi corrugati",
+			"5a28163686f7740ab4084611": "Trova delle bombole di propano da 5L in raid",
+			"5a28164786f77405822f36d9": "Consegna le bombole di propano da 5L"
 		},
-		"name": "Spa Tour. Parte 7",
+		"name": "Tour alla Spa - Parte 7",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7d",
 		"failMessageText": "5ca72a7a86f7747c754ef7b3",
@@ -813,10 +815,10 @@
 	},
 	"5a27bb1e86f7741f27621b7e": {
 		"conditions": {
-			"5a28183186f774398675d127": "Trova il registro della merce nella sala computer",
-			"5a28184c86f774376e43772a": "Consegna i dati recuperati a Peacekeeper"
+			"5a28183186f774398675d127": "Ottieni i dati dalla sala computer nell'ala est del resort",
+			"5a28184c86f774376e43772a": "Consegna i dati recuperati"
 		},
-		"name": "Cargo X. Parte 1",
+		"name": "Cargo X - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7e",
 		"failMessageText": "5c6a7bcc86f77448a07909dc",
@@ -826,11 +828,11 @@
 	},
 	"5a27bb3d86f77411ea361a21": {
 		"conditions": {
-			"5a2819c886f77460ba564f38": "Trova qualsiasi informazione sulla seconda parte della spedizione",
-			"5a2e966286f7742f6c4f27a6": "Dai le informazioni sulla seconda parte della merce a Peacekeeper",
-			"5a3ba76486f7744d39436da2": "Trova una stanza con i serbatoi"
+			"5a2819c886f77460ba564f38": "Ottieni informazioni sulla seconda parte del carico",
+			"5a2e966286f7742f6c4f27a6": "Consegna le informazioni recuperate",
+			"5a3ba76486f7744d39436da2": "Trova la stanza con serbatoi nel resort"
 		},
-		"name": "Cargo X. Parte 2",
+		"name": "Cargo X - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da7f",
 		"failMessageText": "5c3e16e186f77454501589a7",
@@ -840,10 +842,10 @@
 	},
 	"5a27bb5986f7741dfb660900": {
 		"conditions": {
-			"5a37de5486f7741535394d69": "Sopravvivi e lascia la zona",
-			"5a3ba7db86f7744f0e568c9c": "Trova il cargo nascosto della Terragroup"
+			"5a37de5486f7741535394d69": "Sopravvivi ed estrai dalla zona",
+			"5a3ba7db86f7744f0e568c9c": "Trova il carico Terragroup nascosto a Shoreline"
 		},
-		"name": "Cargo X. Parte 3",
+		"name": "Cargo X - Parte 3",
 		"note": "",
 		"description": "5abe61a886f7746ad512da80",
 		"failMessageText": "5c6a7be186f77443325fb6cf",
@@ -853,9 +855,9 @@
 	},
 	"5a27bb8386f7741c770d2d0a": {
 		"conditions": {
-			"5c9de99286f7741ced54c902": "Uccidi 10 Scav a Shoreline, utilizzando un'arma silenziata M4 o ADAR"
+			"5c9de99286f7741ced54c902": "Elimina Scav a Shoreline, utilizzando M4A1 o ADAR silenziati"
 		},
-		"name": "Lavoro sporco. Parte 1",
+		"name": "Lavoro Sporco - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da81",
 		"failMessageText": "5c3f019286f7744975524023",
@@ -865,11 +867,11 @@
 	},
 	"5a27bbf886f774333a418eeb": {
 		"conditions": {
-			"5a281efe86f7745bc42005cc": "Posiziona il trasmettitore",
-			"5a37dc0c86f77469da071ef2": "Sopravvivi e lascia la zona",
-			"5a3ba97386f77459df27d10e": "Trova l'abitazione dei pescatori"
+			"5a281efe86f7745bc42005cc": "Segnala il tavolo da pesca con un marcatore MS2000",
+			"5a37dc0c86f77469da071ef2": "Sopravvivi ed estrai dalla zona",
+			"5a3ba97386f77459df27d10e": "Trova l'abitazione dei pescatori a Shoreline"
 		},
-		"name": "Lavoro sporco. Parte 2",
+		"name": "Lavoro Sporco - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da82",
 		"failMessageText": "5c3f01e786f7744975524025",
@@ -879,10 +881,10 @@
 	},
 	"5a27bc1586f7741f6d40fa2f": {
 		"conditions": {
-			"5a37db0c86f7745b8f4be68a": "Sopravvivi e lascia la zona",
-			"5a3baa2586f7745b791b72fa": "Trova l'auto di Artyom"
+			"5a37db0c86f7745b8f4be68a": "Sopravvivi ed estrai dalla zona",
+			"5a3baa2586f7745b791b72fa": "Trova l'auto di Artyom a Shoreline"
 		},
-		"name": "Lavoro sporco. Parte 3",
+		"name": "Lavoro sporco - Parte 3",
 		"note": "",
 		"description": "5abe61a886f7746ad512da83",
 		"failMessageText": "5c6a7c7286f77448d91231f4",
@@ -892,10 +894,10 @@
 	},
 	"5a27bc3686f7741c73584026": {
 		"conditions": {
-			"5a28221e86f7741d5b719624": "Trova un elenco degli ospiti del resort",
-			"5a28223786f7741c7a0b5401": "Consegna la lista degli inquilini a Peacekeeper"
+			"5a28221e86f7741d5b719624": "Ottieni una lista degli inquilini del resort a Shoreline",
+			"5a28223786f7741c7a0b5401": "Consegna la lista degli inquilini"
 		},
-		"name": "Lavoro sporco. Parte 4",
+		"name": "Lavoro Sporco - Parte 4",
 		"note": "",
 		"description": "5abe61a886f7746ad512da84",
 		"failMessageText": "5c3f02bd86f774100b631504",
@@ -905,10 +907,10 @@
 	},
 	"5a27bc6986f7741c7358402b": {
 		"conditions": {
-			"5a2822de86f7740a245249ce": "Consegna le informazioni a Peacekeeper",
-			"5a2e958d86f77416be092111": "Trova informazioni sul lavoro che ha fatto Artyom"
+			"5a2822de86f7740a245249ce": "Consegna le informazioni",
+			"5a2e958d86f77416be092111": "Ottieni informazioni sul lavoro di Artyom a Shoreline"
 		},
-		"name": "Lavoro sporco. Parte 5",
+		"name": "Lavoro Sporco - Parte 5",
 		"note": "",
 		"description": "5abe61a886f7746ad512da85",
 		"failMessageText": "5c6a7cae86f77448a0790a1d",
@@ -918,9 +920,9 @@
 	},
 	"5a27bc8586f7741b543d8ea4": {
 		"conditions": {
-			"5a28235e86f7741da250b438": "Raggiungi il livello 7 nell'abilità fucile da Cecchino"
+			"5a28235e86f7741da250b438": "Raggiungi il livello richiesto nell'abilità Fucile da Cecchino"
 		},
-		"name": "Lavoro sporco. Parte 6",
+		"name": "Lavoro Sporco - Parte 6",
 		"note": "",
 		"description": "5abe61a886f7746ad512da86",
 		"failMessageText": "5c3f035486f7744975524027",
@@ -930,11 +932,11 @@
 	},
 	"5a27c99a86f7747d2c6bdd8e": {
 		"conditions": {
-			"5be0198686f774595412d9c4": "Uccidi 7 USEC",
-			"5ec137962d5b8510d548aef1": "Trova in raid 7 piastrine PMC \"USEC\"",
-			"5ec137dcc367fc6781104613": "Consegna 7 piastrine PMC \"USEC\""
+			"5be0198686f774595412d9c4": "Elimina USEC PMC",
+			"5ec137962d5b8510d548aef1": "Ottieni piastrine PMC USEC",
+			"5ec137dcc367fc6781104613": "Consegna le piastrine PMC USEC"
 		},
-		"name": "Amico dall'ovest. Parte 1",
+		"name": "Un amico dall'Ovest - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da87",
 		"failMessageText": "5c2741be86f77459d6729c6b",
@@ -944,9 +946,9 @@
 	},
 	"5a27d2af86f7744e1115b323": {
 		"conditions": {
-			"5a27d34586f7744e1115b327": "Consegna 6000$"
+			"5a27d34586f7744e1115b327": "Consegna i DOLLARI"
 		},
-		"name": "Amico dall'ovest. Parte 2",
+		"name": "Un amico dall'Ovest - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da88",
 		"failMessageText": "5c76c98d86f7746585525875",
@@ -958,7 +960,7 @@
 		"name": "Giuramento di Ippocrate",
 		"note": "",
 		"conditions": {
-			"5a56489d86f7740cfe70eba2": "Consegna 500 dollari.",
+			"5a56489d86f7740cfe70eba2": "Consegna i DOLLARI",
 			"5db9e0bf60635026b067afa6": "",
 			"5db9e0d3b1325a429a5d7d55": "",
 			"5db9e0e0c5624a3ce7239a88": ""
@@ -971,12 +973,12 @@
 	},
 	"5a68661a86f774500f48afb0": {
 		"conditions": {
-			"5a6873bc86f7741f8d4589a3": "Marca la 1° ambulanza",
-			"5a6873d786f7743ad1151d6e": "Marca la 2° ambulanza",
-			"5a6873ec86f7743cc55d8622": "Marca la 3° ambulanza",
-			"5a6874a186f77474f43809fd": "Sopravvivi ed esci dalla zona"
+			"5a6873bc86f7741f8d4589a3": "Trova e segnala la prima ambulanza con un marcatore MS2000 a Shoreline",
+			"5a6873d786f7743ad1151d6e": "Trova e segnala la seconda ambulanza con un marcatore MS2000 a Shoreline",
+			"5a6873ec86f7743cc55d8622": "Trova e segnala la terza ambulanza con un marcatore MS2000 a Shoreline",
+			"5a6874a186f77474f43809fd": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": "Assistenza Sanitaria Segreta. Parte 1",
+		"name": "Privacy dell'Assistenza Sanitaria - Parte 1",
 		"note": "",
 		"description": "5abe61a886f7746ad512da91",
 		"failMessageText": "5c6a7e1d86f77448d912326c",
@@ -986,11 +988,11 @@
 	},
 	"5a68663e86f774501078f78a": {
 		"conditions": {
-			"5a68760f86f7743cc55d8709": "Raccogli informazioni sul destino della Terragroup Research",
-			"5a68763786f77474c33a40a1": "Raccogli informazioni sul destino della Terragroup research",
-			"5a68764c86f77474c4269f3c": "Sopravvivi ed esci dalla zona"
+			"5a68760f86f7743cc55d8709": "Cerca nella stanza del resort tutti i documenti relativi alla ricerca della Terragroup",
+			"5a68763786f77474c33a40a1": "Consegna le informazioni recuperate",
+			"5a68764c86f77474c4269f3c": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": "Assistenza Sanitaria Segreta. Parte 2",
+		"name": "Privacy dell'Assistenza Sanitaria - Parte 2",
 		"note": "",
 		"description": "5abe61a886f7746ad512da92",
 		"failMessageText": "5c76c79586f7746582258de6",
@@ -1000,12 +1002,12 @@
 	},
 	"5a68665c86f774255929b4c7": {
 		"conditions": {
-			"5a68770f86f774747d4b0d8b": "Trova l'auto che apparteneva al capo del Servizio Sanitario",
-			"5a68776786f774759f1f55f6": "Raccogli il campione di sangue",
+			"5a68770f86f774747d4b0d8b": "Trova il furgone che apparteneva al capo del servizio medico del resort",
+			"5a68776786f774759f1f55f6": "Preleva un campione di sangue",
 			"5a68777586f774747d4b0d9e": "Consegna il campione di sangue",
-			"5a68778c86f77423391f38f0": "Sopravvivi ed esci dalla zona"
+			"5a68778c86f77423391f38f0": "Sopravvivi ed estrai dalla zona"
 		},
-		"name": "La Privacy sull'Assistenza Sanitaria. Parte 3°",
+		"name": "Privacy dell'Assistenza Sanitaria - Parte 3",
 		"note": "",
 		"description": "5abe61a886f7746ad512da93",
 		"failMessageText": "",
@@ -1015,9 +1017,9 @@
 	},
 	"5a68667486f7742607157d28": {
 		"conditions": {
-			"5a6878e886f7745e65687985": "Aumenta il livello dell'abilità Salute a 4"
+			"5a6878e886f7745e65687985": "Raggiungi il livello richiesto nell'abilità Salute"
 		},
-		"name": "Assistenza Sanitaria Segreta. Parte 4",
+		"name": "Privacy dell'Assistenza Sanitaria - Parte 4",
 		"note": "",
 		"description": "5abe61a886f7746ad512da94",
 		"failMessageText": "5c6a7e7986f774421c20ac1a",
@@ -1027,10 +1029,10 @@
 	},
 	"5a68669a86f774255929b4d4": {
 		"conditions": {
-			"5a6879be86f774284429b1bb": "Individua il punto di scarico di notte a Factory",
-			"5a687a1c86f7745f2152168c": "Ottieni 3 pacchi di polvere da sparo e lasciali nel punto indicato"
+			"5a6879be86f774284429b1bb": "Individua il punto di consegna a Factory di notte",
+			"5a687a1c86f7745f2152168c": "Ottieni 3 confezioni di polvere da sparo \"Kite\" e nascondili nel punto designato"
 		},
-		"name": "Assistenza Sanitaria Segreta. Parte 5",
+		"name": "Privacy dell'Assistenza Sanitaria - Parte 5",
 		"note": "",
 		"description": "5abe61a886f7746ad512da95",
 		"failMessageText": "5c6a808c86f77422192c0903",
@@ -1039,10 +1041,10 @@
 		"location": "59fc81d786f774390775787e"
 	},
 	"5ac23c6186f7741247042bad": {
-		"name": "Armaiolo. Parte 1",
+		"name": "Armaiolo - Parte 1",
 		"note": "",
 		"conditions": {
-			"5accd5e386f77463027e9397": "Modifica l'MP-133 affinché rispetti le specifiche richieste",
+			"5accd5e386f77463027e9397": "Modifica un MP-133 affinché rispetti le specifiche richieste",
 			"5acf375f86f7741bb8377ff7": ""
 		},
 		"successMessageText": "5ac242f286f774138762ee00",
@@ -1052,10 +1054,10 @@
 		"location": "any"
 	},
 	"5ac2426c86f774138762edfe": {
-		"name": "Armaiolo. Parte 2",
+		"name": "Armaiolo - Parte 2",
 		"note": "",
 		"conditions": {
-			"5accd9b686f774112d7173d1": "Modifica l'AKS-74U affinché rispetti le specifiche richieste",
+			"5accd9b686f774112d7173d1": "Modifica un AKS-74U affinché rispetti le specifiche richieste",
 			"5acf37a186f7741843346d0c": "",
 			"5acf37ad86f77418420befe6": ""
 		},
@@ -1066,10 +1068,10 @@
 		"location": "any"
 	},
 	"5ac2428686f77412450b42bf": {
-		"name": "Armaiolo. Parte 3",
+		"name": "Armaiolo - Parte 3",
 		"note": "",
 		"conditions": {
-			"5accde3686f7740cea1b7ec2": "Modifica l'MP5 affinché rispetti le specifiche richieste",
+			"5accde3686f7740cea1b7ec2": "Modifica un MP5 affinché rispetti le specifiche richieste",
 			"5acf37d486f7741841752ffc": "",
 			"5acf37df86f7741bb8377ffc": ""
 		},
@@ -1080,10 +1082,10 @@
 		"location": "any"
 	},
 	"5ac242ab86f77412464f68b4": {
-		"name": "Armaiolo. Parte 5",
+		"name": "Armaiolo - Parte 5",
 		"note": "",
 		"conditions": {
-			"5acce08b86f7745f8521fa64": "Modifica il DVL-10 affinché rispetti le specifiche richieste",
+			"5acce08b86f7745f8521fa64": "Modifica un DVL-10 affinché rispetti le specifiche richieste",
 			"5acf381a86f7741ce21f9aee": "",
 			"5acf382686f7741cdb2f7ef6": ""
 		},
@@ -1094,10 +1096,10 @@
 		"location": "any"
 	},
 	"5ac244c486f77413e12cf945": {
-		"name": "Armaiolo. Parte 6",
+		"name": "Armaiolo - Parte 6",
 		"note": "",
 		"conditions": {
-			"5acce11786f77411ed6fa6eb": "Modifica l'R11 RSASS affinché rispetti le specifiche richieste",
+			"5acce11786f77411ed6fa6eb": "Modifica un R11 RSASS affinché rispetti le specifiche richieste",
 			"5acf383686f7741bb8377fff": "",
 			"5acf383d86f7741bb8378000": ""
 		},
@@ -1108,10 +1110,10 @@
 		"location": "any"
 	},
 	"5ac244eb86f7741356335af1": {
-		"name": "Armaiolo. Parte 4",
+		"name": "Armaiolo - Parte 4",
 		"note": "",
 		"conditions": {
-			"5accdfdb86f77412265cbfc9": "Modifica l'M4A1 affinché rispetti le specifiche richieste",
+			"5accdfdb86f77412265cbfc9": "Modifica un M4A1 affinché rispetti le specifiche richieste",
 			"5acf37fa86f7741844039008": "",
 			"5acf380186f7741844039009": ""
 		},
@@ -1122,12 +1124,12 @@
 		"location": "any"
 	},
 	"5ac345dc86f774288030817f": {
-		"name": "Farming. 1° Parte",
+		"name": "Farming - Parte 1",
 		"note": "",
 		"conditions": {
-			"5ac7a4ba86f77409f3423628": "Ripara la prima scheda di controllo",
-			"5ac7a51a86f774738a4ffc96": "Ripara la seconda scheda di controllo",
-			"5ac7a5d586f774383111ee63": "Sopravvivi e lascia la zona",
+			"5ac7a4ba86f77409f3423628": "Ripara la prima scheda di controllo con un set di attrezzi a Factory",
+			"5ac7a51a86f774738a4ffc96": "Ripara la seconda scheda di controllo con un set di attrezzi a Factory",
+			"5ac7a5d586f774383111ee63": "Sopravvivi ed estrai dalla zona",
 			"5acf388786f7741cdb2f7ef9": "",
 			"5acf390d86f774184403900f": ""
 		},
@@ -1138,15 +1140,15 @@
 		"location": "55f2d3fd4bdc2d5f408b4567"
 	},
 	"5ac3460c86f7742880308185": {
-		"name": "Farming. 2° Parte",
+		"name": "Farming - Parte 2",
 		"note": "",
 		"conditions": {
-			"5ac502a786f7740bde1b000c": "Trova in raid 2 cavi di alimentazione",
-			"5ac5055a86f7745cae22b582": "Consegna 2 cavi di alimentazione",
-			"5ac505c386f7740be0424d19": "Trova in raid 4 Prese a T",
-			"5ac505e186f7740bdf2ceabe": "Consegna 4 Prese a T",
-			"5ac5061386f77417e429ce7a": "Trova in raid 2 circuiti Stampati",
-			"5ac5062586f774587c327395": "Consegna 2 Circuiti Stampati",
+			"5ac502a786f7740bde1b000c": "Trova i Cavi di Alimentazione in raid",
+			"5ac5055a86f7745cae22b582": "Consegna i Cavi di alimentazione",
+			"5ac505c386f7740be0424d19": "Trova le spine triple in raid ",
+			"5ac505e186f7740bdf2ceabe": "Consegna le spine triple",
+			"5ac5061386f77417e429ce7a": "Trova i circuiti stampati in raid",
+			"5ac5062586f774587c327395": "Consegna i circuiti stampati",
 			"5acf3b0986f7741bb8378499": "",
 			"5acf3b1286f77418420bf36b": ""
 		},
@@ -1157,12 +1159,12 @@
 		"location": "any"
 	},
 	"5ac3462b86f7741d6118b983": {
-		"name": "Farming. Parte 3°",
+		"name": "Farming - Parte 3",
 		"note": "",
 		"conditions": {
-			"5ac6240786f77417204ca2b9": "Trova un magazzino con oggetti sequestrati",
-			"5ac6248586f77416781dd3a3": "Ottieni il pacchetto con le schede grafiche",
-			"5ac624b286f77416781dd3ac": "Consegna il pacchetto con le schede grafiche",
+			"5ac6240786f77417204ca2b9": "Trova il magazzino delle merci sequestrate a Customs",
+			"5ac6248586f77416781dd3a3": "Ottieni il pacchetto di schede grafiche",
+			"5ac624b286f77416781dd3ac": "Consegna il pacchetto di schede grafiche",
 			"5acf3b2586f7741cdb2f7f8b": "",
 			"5acf3b2a86f7741cdb2f7f8c": ""
 		},
@@ -1173,13 +1175,13 @@
 		"location": "56f40101d2720b2a4d8b45d6"
 	},
 	"5ac3464c86f7741d651d6877": {
-		"name": "Farming. Parte 4°",
+		"name": "Farming - Parte 4",
 		"note": "",
 		"conditions": {
-			"5ac5081086f7740bde1b002f": "Trova in raid le schede grafiche, 3pz",
-			"5ac5082586f77418804f7d4c": "Consegna le schede grafiche, 3pz",
-			"5ac5083d86f7740be2744eed": "Trova in raid 8 ventole per CPU",
-			"5ac5084d86f7740bde1b0031": "Consegna 8 Ventole per CPU",
+			"5ac5081086f7740bde1b002f": "Trova una Scheda Video in raid",
+			"5ac5082586f77418804f7d4c": "Consegna le Schede Grafiche",
+			"5ac5083d86f7740be2744eed": "Trova delle ventole per CPU in raid",
+			"5ac5084d86f7740bde1b0031": "Consegna le Ventole delle CPU",
 			"5acf3b3486f7741ce21f9b06": "",
 			"5acf3b3b86f7741ce21f9b08": ""
 		},
@@ -1190,12 +1192,12 @@
 		"location": "any"
 	},
 	"5ac3467986f7741d6224abc2": {
-		"name": "Segnale. Parte 1",
+		"name": "Il Segnale - Parte 1",
 		"note": "",
 		"conditions": {
 			"5ac5e0fa86f77431c305d243": "Trova la prima sorgente del segnale",
 			"5ac5e13586f7746074388f93": "Trova la seconda sorgente del segnale",
-			"5ac5e18c86f7743ebd6c9575": "Sopravvivi e lascia la zona",
+			"5ac5e18c86f7743ebd6c9575": "Sopravvivi ed estrai dalla zona",
 			"5acf3b6186f7741cdb2f7f8e": "",
 			"5acf3b6986f77418440390b4": ""
 		},
@@ -1206,19 +1208,19 @@
 		"location": "5704e554d2720bac5b8b456e"
 	},
 	"5ac346a886f7744e1b083d67": {
-		"name": "Segnale. Parte 2",
+		"name": "Il Segnale - Parte 2",
 		"note": "",
 		"conditions": {
-			"5ac5e79986f7747398341847": "Consegna 3 CPU per PC",
-			"5ac5e88e86f7741c5804f9db": "Consegna 3 batterie Ricaricabili",
-			"5ac5e98886f77479bc6ca201": "Consegna 3 Circuiti Stampati",
-			"5ac5ea0586f774609f36280c": "Consegna 3 GPhone rotti",
+			"5ac5e79986f7747398341847": "Consegna la CPU dei PC",
+			"5ac5e88e86f7741c5804f9db": "Consegna le batterie ricaricabili",
+			"5ac5e98886f77479bc6ca201": "Consegna i circuiti stampati",
+			"5ac5ea0586f774609f36280c": "Consegna il GPhone rotto",
 			"5acf3b7186f774184175301d": "",
 			"5acf3b7886f77418420bf36f": "",
-			"5cb6f81d86f7740e9d452683": "Trova in raid 3 CPU per PC",
-			"5cb6f88d86f7747d215f09c1": "Trovare in raid 3 batterie Ricaricabili",
-			"5cb6f8de86f7740e9d452685": "Trova in raid 3 schede elettroniche Stampate",
-			"5cb6f9c586f7740ace254c44": "Trova in raid 3 GPhone rotti"
+			"5cb6f81d86f7740e9d452683": "Trova delle CPU per PC in raid",
+			"5cb6f88d86f7747d215f09c1": "Trova le batterie ricaricabili in raid",
+			"5cb6f8de86f7740e9d452685": "Trova i circuiti stampati in raid",
+			"5cb6f9c586f7740ace254c44": "Trova dei Gphones Rotti in raid"
 		},
 		"successMessageText": "5ac346ba86f7741d6118b996",
 		"failMessageText": "5ac346ba86f7741d6118b997",
@@ -1227,13 +1229,13 @@
 		"location": "any"
 	},
 	"5ac346cf86f7741d63233a02": {
-		"name": "Segnale. Parte 3",
+		"name": "Il Segnale - Parte 3",
 		"note": "",
 		"conditions": {
-			"5ac7a7bf86f774132252a524": "Posiziona il primo disturbatore di segnale",
-			"5ac7a83b86f774665012340b": "Posiziona il secondo distubatore di segnale",
-			"5ac7a8d386f7741321499e3c": "Posiziona il terzo disturbatore di segnale",
-			"5ac7a93286f774664f4cbd8c": "Sopravvivi e lascia la zona"
+			"5ac7a7bf86f774132252a524": "Posiziona il primo disturbatore di Segnale sul luogo specificato a Shoreline",
+			"5ac7a83b86f774665012340b": "Posiziona il secondo disturbatore di Segnale sul luogo specificato a Shoreline",
+			"5ac7a8d386f7741321499e3c": "Posiziona il terzo disturbatore di Segnale sul luogo specificato a Shoreline",
+			"5ac7a93286f774664f4cbd8c": "Sopravvivi ed estrai dalla zona"
 		},
 		"successMessageText": "5ac346d786f7741d645149ef",
 		"failMessageText": "5ac346d786f7741d645149f0",
@@ -1242,10 +1244,10 @@
 		"location": "5704e554d2720bac5b8b456e"
 	},
 	"5ac346e886f7741d6118b99b": {
-		"name": "Segnale. Parte 4",
+		"name": "Il Segnale - Parte 4",
 		"note": "",
 		"conditions": {
-			"5ac5eb3286f7746e7a509a09": "Aumenta l'abilità memoria a 4",
+			"5ac5eb3286f7746e7a509a09": "Raggiungi il livello richiesto nell'abilità Memoria",
 			"5acf3b9986f77418403493b5": "",
 			"5acf3ba186f7741ce21f9b0c": ""
 		},
@@ -1256,15 +1258,15 @@
 		"location": "any"
 	},
 	"5ac3475486f7741d6224abd3": {
-		"name": "Cattive abitudini",
+		"name": "Cattive Abitudini",
 		"note": "",
 		"conditions": {
-			"5ac5ee9986f7746e7a509a26": "Trova in raid 5 pacchetti di sigarette Malboro",
-			"5ac5eee986f77401fd341c9e": "Consegna 5 pacchetti di sigarette Malboro",
-			"5ac5ef2a86f7741c5804f9f5": "Trova in raid 5 pacchetti di sigarette Strike",
-			"5ac5ef5686f77416ca60f644": "Consegna 5 sigarette Strike",
-			"5ac5ef9886f7746e7a509a2d": "Trova in raid 5 pacchetti di sigarette Wilston",
-			"5ac5eff886f7740f43322559": "Consegna 5 pacchetti di sigarette Wilston",
+			"5ac5ee9986f7746e7a509a26": "Trova in raid le sigarette Malboro",
+			"5ac5eee986f77401fd341c9e": "Consegna le sigarette Malboro",
+			"5ac5ef2a86f7741c5804f9f5": "Trova in raid le sigarette Strike",
+			"5ac5ef5686f77416ca60f644": "Consegna le sigarette Strike",
+			"5ac5ef9886f7746e7a509a2d": "Trova in raid le sigarette Wilston",
+			"5ac5eff886f7740f43322559": "Consegna le sigarette Wilston",
 			"5acf3c3086f77418d851688f": "",
 			"5acf3c3d86f7741ce21f9b1a": ""
 		},
@@ -1278,10 +1280,10 @@
 		"name": "Scout",
 		"note": "",
 		"conditions": {
-			"5ac61a8a86f7743a8d663c77": "Trova un modo per uscire da Factory 1",
-			"5ac61ab986f7746e352cec8c": "Trova un modo per uscire da Factory 2",
-			"5ac61adf86f774741c1bf096": "Trova un modo per uscire da Factory 3",
-			"5ac61b1486f7743a8f30fc84": "Sopravvivi ed esci dalla zona",
+			"5ac61a8a86f7743a8d663c77": "Trova la prima estrazione a Factory",
+			"5ac61ab986f7746e352cec8c": "Trova la seconda estrazione a Factory",
+			"5ac61adf86f774741c1bf096": "Trova la terza estrazione a Factory",
+			"5ac61b1486f7743a8f30fc84": "Sopravvivi ed estrai dalla zona",
 			"5acf3bcb86f77418403493b7": "",
 			"5acf3bd286f7741bb83784a3": ""
 		},
@@ -1308,11 +1310,11 @@
 	},
 	"5ae3267986f7742a413592fe": {
 		"conditions": {
-			"5ae34b8b86f7741e5b1e5d48": "Modifica il Remington modello 870 affinché rispetti le specifiche richieste",
+			"5ae34b8b86f7741e5b1e5d48": "Modifica un Remington Model 870 affinché rispetti le specifiche richieste",
 			"5af4132686f774174a49af96": "",
 			"5af4134a86f7742574673cc5": ""
 		},
-		"name": "Armaiolo. Parte 7",
+		"name": "Armaiolo - Parte 7",
 		"note": "",
 		"successMessageText": "5ae326bc86f7742a41359302",
 		"failMessageText": "5ae326bc86f7742a41359303",
@@ -1322,11 +1324,11 @@
 	},
 	"5ae3270f86f77445ba41d4dd": {
 		"conditions": {
-			"5ae3550b86f7741cf44fc799": "Modifica l'AKM affinché rispetti le specifiche richieste",
+			"5ae3550b86f7741cf44fc799": "Modifica un AKM affinché rispetti le specifiche richieste",
 			"5af4136586f774551341dc75": "",
 			"5af4139286f774522e34389b": ""
 		},
-		"name": "Armaiolo. Parte 8",
+		"name": "Armaiolo - Parte 8",
 		"note": "",
 		"successMessageText": "5ae3272086f77444fd36f5e3",
 		"failMessageText": "5ae3272086f77444fd36f5e4",
@@ -1336,11 +1338,11 @@
 	},
 	"5ae3277186f7745973054106": {
 		"conditions": {
-			"5ae3570b86f7746efa6b4494": "Modifica l'AKS-74N affinché rispetti le specifiche richieste",
+			"5ae3570b86f7746efa6b4494": "Modifica un АKS-74N affinché rispetti le specifiche richieste",
 			"5af413ae86f774522e3438a5": "",
 			"5af413b686f774522c7a6791": ""
 		},
-		"name": "Armaiolo. Parte 9",
+		"name": "Armaiolo - Parte 9",
 		"note": "",
 		"successMessageText": "5ae3277d86f7745b4246b38e",
 		"failMessageText": "5ae3277d86f7745b4246b38f",
@@ -1350,11 +1352,11 @@
 	},
 	"5ae327c886f7745c7b3f2f3f": {
 		"conditions": {
-			"5ae445f386f7744e87761331": "Modifica l'AK-105 affinché rispetti le specifiche richieste",
+			"5ae445f386f7744e87761331": "Modifica un АК-105 affinché rispetti le specifiche richieste",
 			"5af413ce86f774522e3438ae": "",
 			"5af413e486f774522e3438df": ""
 		},
-		"name": "Armaiolo. Parte 10",
+		"name": "Armaiolo - Parte 10",
 		"note": "",
 		"successMessageText": "5ae327d286f7745d3a7704bb",
 		"failMessageText": "5ae327d286f7745d3a7704bc",
@@ -1364,11 +1366,11 @@
 	},
 	"5ae3280386f7742a41359364": {
 		"conditions": {
-			"5ae4479686f7744f6c79b7b3": "Modifica l'AS VAL affinché rispetti le specifiche richieste",
+			"5ae4479686f7744f6c79b7b3": "Modifica un AS VAL affinché rispetti le specifiche richieste",
 			"5af413fa86f77407184494f3": "",
 			"5af4140186f774522d460775": ""
 		},
-		"name": "Armaiolo. Parte 11",
+		"name": "Armaiolo - Parte 11",
 		"note": "",
 		"successMessageText": "5ae3280a86f77444fc552706",
 		"failMessageText": "5ae3280a86f77444fc552707",
@@ -1381,7 +1383,7 @@
 			"5ae44c6886f7744f1a7eb2b8": "Ottieni il 2° livello di lealtà con Ragman",
 			"5af414f286f774522f59b0d7": ""
 		},
-		"name": "Solo business",
+		"name": "Solo Business",
 		"note": "",
 		"successMessageText": "5ae44bfe86f7744d733e560c",
 		"failMessageText": "5ae44bfe86f7744d733e560d",
@@ -1391,7 +1393,7 @@
 	},
 	"5ae448bf86f7744d733e55ee": {
 		"conditions": {
-			"5ae44ecd86f77414a13c970e": "Uccidi 25 Scav presso Interchange",
+			"5ae44ecd86f77414a13c970e": "Elimina Scav a Interchange",
 			"5af4154186f7745c2674236d": ""
 		},
 		"name": "Fa si che ULTRA ritorni in auge come un tempo",
@@ -1404,15 +1406,15 @@
 	},
 	"5ae448e586f7744dcf0c2a67": {
 		"conditions": {
-			"5ae4508386f7741250488337": "Controlla AVOKADO",
-			"5ae450db86f7741250488359": "Controlla KOSTIN",
-			"5ae450ee86f7740f9307859d": "Controlla tRend",
-			"5ae4510786f7740fa614399f": "Controlla DINO CLOTHES",
-			"5ae4511d86f7740ffc31ccb5": "Controlla TOP BRAND",
-			"5ae4514986f7740e915d218c": "Sopravvivi e lascia la zona",
+			"5ae4508386f7741250488337": "Controlla il negozio AVOKADO",
+			"5ae450db86f7741250488359": "Controlla il negozio KOSTIN",
+			"5ae450ee86f7740f9307859d": "Controlla il negoaizio tRend",
+			"5ae4510786f7740fa614399f": "Controlla il negozio DINO CLOTHES",
+			"5ae4511d86f7740ffc31ccb5": "Controlla il negozio TOP BRAND",
+			"5ae4514986f7740e915d218c": "Sopravvivi ed estrai dalla zona",
 			"5af4155d86f7745b5e2aba63": ""
 		},
-		"name": "Grande svendita",
+		"name": "Grandi Sconti",
 		"note": "",
 		"successMessageText": "5ae44ffe86f774149f15f4e9",
 		"failMessageText": "5ae44ffe86f774149f15f4ea",
@@ -1422,13 +1424,13 @@
 	},
 	"5ae448f286f77448d73c0131": {
 		"conditions": {
-			"5ae452c086f774336a397578": "Marca il primo camion cisterna",
-			"5ae452de86f77450595c4333": "Marca il secondo camion cisterna",
-			"5ae452fa86f774336a39758e": "Marca il terzo camion cisterna",
-			"5ae4531986f774177033c3e6": "Sopravvivi e lascia la zona",
+			"5ae452c086f774336a397578": "Marchia il primo carro armato",
+			"5ae452de86f77450595c4333": "Marchia il secondo carro armato",
+			"5ae452fa86f774336a39758e": "Marchia il terzo carro armato",
+			"5ae4531986f774177033c3e6": "Sopravvivi ed estrai dalla zona",
 			"5b50761b88a4507f45121125": ""
 		},
-		"name": "Il Sangue della Guerra",
+		"name": "Il Sangue della Guerra - Parte 1",
 		"note": "",
 		"successMessageText": "5ae4525986f7741b747a048b",
 		"failMessageText": "5ae4525986f7741b747a048c",
@@ -1438,13 +1440,13 @@
 	},
 	"5ae4490786f7744ca822adcc": {
 		"conditions": {
-			"5ae4543686f7742dc043c903": "Consegna due cappelli con para orecchie Ushanka trovati in raid",
-			"5ae454a086f7742be909a81a": "Consegna due cappelli da Cowboy trovati in raid",
+			"5ae4543686f7742dc043c903": "Consegna i cappelli Ushanka con para orecchie",
+			"5ae454a086f7742be909a81a": "Consegna i cappelli Kinda Cowboy",
 			"5af4157f86f7745f696ebd3d": "",
-			"5fd89729a8c881276c560433": "Trova in raid 2 cappelli Ushanka",
-			"5fd89799c54dc00f463272d3": "Trova in raid 2 cappelli da Cowboy"
+			"5fd89729a8c881276c560433": "Trova in raid cappelli Ushanka con para orecchie",
+			"5fd89799c54dc00f463272d3": "Trova i cappelli Kinda Cowboy in raid"
 		},
-		"name": "Vestito per uccidere",
+		"name": "Vestito per Uccidere",
 		"note": "",
 		"successMessageText": "5ae4536b86f7741b747a04e9",
 		"failMessageText": "5ae4536b86f7741b747a04ea",
@@ -1454,15 +1456,15 @@
 	},
 	"5ae4493486f7744efa289417": {
 		"conditions": {
-			"5ae9b32486f7745bbc72275a": "Ottieni le bolle della merce Ghoshan",
+			"5ae9b32486f7745bbc72275a": "Ottieni il manifesto di carico Goshan a Interchange",
 			"5ae9b34686f7743129512ccf": "Consegna i documenti della merce Goshan",
-			"5ae9b36c86f774307c29df04": "Ottieni le bolle della merce OLI",
-			"5ae9b38a86f77432c81e2ce3": "Consegna la bolla riguardante la merce OLI",
-			"5ae9b3b186f7745bbc722762": "Ottieni le bolle della merce IDEA",
-			"5ae9b3c986f77432c81e2ce6": "Consegna la bolla riguardante la merce IDEA",
+			"5ae9b36c86f774307c29df04": "Ottieni il manifesto di carico OLI a Interchange",
+			"5ae9b38a86f77432c81e2ce3": "Consegna il manifesto di carico OLI",
+			"5ae9b3b186f7745bbc722762": "Ottieni il manifesto di carico IDEA a Interchange",
+			"5ae9b3c986f77432c81e2ce6": "Consegna il manifesto di carico IDEA",
 			"5af415b286f77407184495dd": ""
 		},
-		"name": "Database. Parte 1",
+		"name": "Database - Parte 1",
 		"note": "",
 		"successMessageText": "5ae9b1c986f7743a5736fc04",
 		"failMessageText": "5ae9b1c986f7743a5736fc05",
@@ -1472,11 +1474,11 @@
 	},
 	"5ae4493d86f7744b8e15aa8f": {
 		"conditions": {
-			"5ae9b5bd86f774307c29df37": "Ottieni i documenti di trasporto della merce OLI",
-			"5ae9b63286f774229110402d": "Consegna i documenti di trasporto della merce OLI",
+			"5ae9b5bd86f774307c29df37": "Ottieni i documenti del percorso del carico OLI a Interchange",
+			"5ae9b63286f774229110402d": "Consegna i documenti",
 			"5af415c386f7745c267423a7": ""
 		},
-		"name": "Database. Parte 2",
+		"name": "Database - Parte 2",
 		"note": "",
 		"successMessageText": "5ae9b57d86f77432c81e2faa",
 		"failMessageText": "5ae9b57d86f77432c81e2fab",
@@ -1486,14 +1488,14 @@
 	},
 	"5ae4495086f77443c122bc40": {
 		"conditions": {
-			"5ae4559386f7742dc043c95e": "Trova in raid il cappello Ski con i fori per gli occhi",
-			"5ae455be86f7742dc043c969": "Consegna il cappello Ski con i fori per gli occhi",
-			"5ae455fb86f7744dd8242380": "Ottieni in raid uno zaino Pilgrim tourist",
-			"5ae4562086f774498b05e0dc": "Consegna uno zaino turistico Pilgrim",
+			"5ae4559386f7742dc043c95e": "Trova cappello sci con fori per gli occhi in raid",
+			"5ae455be86f7742dc043c969": "Consegna il cappello sci con fori per gli occhi",
+			"5ae455fb86f7744dd8242380": "Trova zaino turistico Pilgrim",
+			"5ae4562086f774498b05e0dc": "Consegna zaino turistico Pilgrim",
 			"5af415f486f7745bf73dad59": "",
 			"5af4201386f774267375038c": ""
 		},
-		"name": "Cucilo bene. Parte 1",
+		"name": "Ricucilo meglio - Parte 1",
 		"note": "",
 		"successMessageText": "5ae454ed86f774626b445ec0",
 		"failMessageText": "5ae454ed86f774626b445ec1",
@@ -1503,13 +1505,13 @@
 	},
 	"5ae4495c86f7744e87761355": {
 		"conditions": {
-			"5ae9b77f86f77432c81e3074": "Ottieni un Gzhel in condizioni 0-50%",
-			"5ae9b7c886f774307c29df56": "Consegna un Gzhel in condizioni 0-50%",
-			"5ae9b91386f77415a869b3f3": "Ottieni un Gzhel in condizioni 50-100%",
-			"5ae9b93b86f7746e0026221a": "Consegna un Gzhel in condizioni 50-100%",
+			"5ae9b77f86f77432c81e3074": "Ottieni l'armatura BNTI Gzhel-K con condizioni dello 0-50%",
+			"5ae9b7c886f774307c29df56": "Consegna l'armatura BNTI Gzhel-K con condizioni dello 0-50%",
+			"5ae9b91386f77415a869b3f3": "Ottieni l'armatura BNTI Gzhel-K con condizioni dello 50-100%",
+			"5ae9b93b86f7746e0026221a": "Consegna l'armatura BNTI Gzhel-K con condizioni dello 50-100%",
 			"5af4165d86f7745bf73dad72": ""
 		},
-		"name": "Cucilo bene. Parte 2",
+		"name": "Ricucilo meglio - Parte 2",
 		"note": "",
 		"successMessageText": "5ae4568186f7744a4c600479",
 		"failMessageText": "5ae4568186f7744a4c60047a",
@@ -1519,12 +1521,12 @@
 	},
 	"5ae4496986f774459e77beb6": {
 		"conditions": {
-			"5ae9bb6986f77415a869b40b": "Ottieni un 6B43 in condizioni 0-50%",
-			"5ae9bc6e86f7746e0026222c": "Consegna 6B43 in condizioni 0-50%",
-			"5ae9be7f86f7746c6337153d": "Consegna un 6B43 in condizioni 50-100%",
-			"5ae9bea886f77468ab400e64": "Consegna un 6B43 in condizioni 50-100%"
+			"5ae9bb6986f77415a869b40b": "Ottieni l'armatura 6B43 in condizioni 0-50%",
+			"5ae9bc6e86f7746e0026222c": "Consegna l'armatura 6B43 in condizioni 0-50%",
+			"5ae9be7f86f7746c6337153d": "Ottieni l'armatura 6B43 in condizioni 50-100%",
+			"5ae9bea886f77468ab400e64": "Consegna l'armatura 6B43 in condizioni 50-100%"
 		},
-		"name": "Cucilo bene. Parte 3",
+		"name": "Ricucilo meglio - Parte 3",
 		"note": "",
 		"successMessageText": "5ae9ba1086f77415a869b400",
 		"failMessageText": "5ae9ba1086f77415a869b401",
@@ -1534,13 +1536,13 @@
 	},
 	"5ae4497b86f7744cf402ed00": {
 		"conditions": {
-			"5ae45d7786f774178f237745": "Trova in raid, 2 giubbotti Wartech (TV-109, TV-106)",
-			"5ae45d9386f774178f23774a": "Consegna 2 giubbotti Wartech (TV-109, TV-106)",
-			"5af079e486f77434693ad7f8": "Trova in raid 2 Giubbotti Tattici BlackRock",
-			"5af07a0286f7747dba10d8ac": "Consegna 2 Giubbotti Tattici BlackRock",
+			"5ae45d7786f774178f237745": "Trova in raid dei giubbotti tattici WARTECH TV-109 + TV-106",
+			"5ae45d9386f774178f23774a": "Consegna dei giubbotti tattici WARTECH TV-109 + TV-106",
+			"5af079e486f77434693ad7f8": "Trova in raid dei giubbotti BlackRock",
+			"5af07a0286f7747dba10d8ac": "Consegna dei giubbotti tattici BlackRock",
 			"5af4168d86f7745c267423dc": ""
 		},
-		"name": "Cucilo bene. Parte 4",
+		"name": "Ricucilo meglio - Parte 4",
 		"note": "",
 		"successMessageText": "5ae9bf2886f774703201f136",
 		"failMessageText": "5ae9bf2886f774703201f137",
@@ -1550,14 +1552,14 @@
 	},
 	"5ae4498786f7744bde357695": {
 		"conditions": {
-			"5ae9c0a686f774703201f143": "Ottieni il manuale sulla progettazione del vestiario - Parte 1",
-			"5ae9c0c986f77468ab400f88": "Consegna il manuale sulla progettazione del vestiario - Parte 1",
-			"5ae9c0e186f7746419683c5e": "Ottieni il manuale sulla progettazione del vestiario - Parte 2",
-			"5ae9c10686f774703201f146": "Consegna il manuale sulla progettazione del vestiario - Parte 2",
+			"5ae9c0a686f774703201f143": "Ottieni il \"Manuale di design dei vestiti - Parte 1\" a Interchange",
+			"5ae9c0c986f77468ab400f88": "Consegna il \"Manuale di design dei vestiti - Parte 1\"",
+			"5ae9c0e186f7746419683c5e": "Ottieni il Manuale di design dei vestiti - Parte 2 su Interchange",
+			"5ae9c10686f774703201f146": "Consegna il \"Manuale di design dei vestiti - Parte 2\"",
 			"5af416f086f7745c524a375f": "",
 			"5af4192c86f774297e641027": ""
 		},
-		"name": "La chiave del successo",
+		"name": "La Chiave del Successo",
 		"note": "",
 		"successMessageText": "5ae9c05d86f77427153c7f99",
 		"failMessageText": "5ae9c05d86f77427153c7f9a",
@@ -1567,7 +1569,7 @@
 	},
 	"5ae4499a86f77449783815db": {
 		"conditions": {
-			"5ae9c29386f77427153c7fb0": "Aumenta il livello di carisma a 10",
+			"5ae9c29386f77427153c7fb0": "Raggiungi il livello richiesto nell'abilità Carisma",
 			"5af4170e86f7745c267423e9": "",
 			"5af4171686f7741c8f21cb9e": ""
 		},
@@ -1581,10 +1583,10 @@
 	},
 	"5ae449a586f7744bde357696": {
 		"conditions": {
-			"5ae9c38e86f7743515398707": "Aumenta il livello di fedeltà con la Therapist a 3",
+			"5ae9c38e86f7743515398707": "Raggiungi il livello 3 di lealtà con la Therapist",
 			"5af4172f86f774059056f692": ""
 		},
-		"name": "Non c'è bisogno di agitarsi",
+		"name": "Devi stare calmo",
 		"note": "",
 		"successMessageText": "5ae9c32886f774703201f167",
 		"failMessageText": "5ae9c32886f774703201f168",
@@ -1594,11 +1596,11 @@
 	},
 	"5ae449b386f77446d8741719": {
 		"conditions": {
-			"5ae9e0dd86f77443f2500fd4": "Trova il luogo segreto",
-			"5ae9e17c86f77440d37ce03c": "Lascia il passamontagna Ghost nel posto indicato",
-			"5ae9e1c786f77403fb3f9674": "Lascia lo Shemagh nel posto indicato",
-			"5ae9e2a286f7740de4152a0a": "Lascia gli occhiali da sole RayBench nel posto indicato",
-			"5ae9e2e386f7740de4152a0d": "Lascia gli occhiali da sole con la montatura Rotonda nel posto indicato",
+			"5ae9e0dd86f77443f2500fd4": "Trova il punto designato a Woods",
+			"5ae9e17c86f77440d37ce03c": "Colloca il passamontagna Ghost nel luogo prestabilito",
+			"5ae9e1c786f77403fb3f9674": "Colloca lo Shemagh nel luogo prestabilito",
+			"5ae9e2a286f7740de4152a0a": "Colloca gli occhiali da sole RayBench nel luogo prestabilito",
+			"5ae9e2e386f7740de4152a0d": "Colloca gli occhiali da sole a montatura rotonda nel luogo prestabilito",
 			"5af4177686f77406f92eee62": "",
 			"5af4178e86f77426757cb152": ""
 		},
@@ -1614,7 +1616,7 @@
 		"conditions": {
 			"5af417c086f7742a2712c3c2": "",
 			"5af4196886f7742a2627a4be": "",
-			"5bb60cbc88a45011a8235cc5": "Sopravvivi ad Interchange per 7 volte"
+			"5bb60cbc88a45011a8235cc5": "Sopravvivi ed estrai da Interchange"
 		},
 		"name": "Vendite notturne",
 		"note": "",
@@ -1626,7 +1628,7 @@
 	},
 	"5ae449d986f774453a54a7e1": {
 		"conditions": {
-			"5ae9e55886f77445315f662a": "Ottieni la chiave dai registratori di cassa Goshan",
+			"5ae9e55886f77445315f662a": "Ottieni la chiave dei registratori di cassa Goshan",
 			"5ae9e58886f77423572433f5": "Consegna la chiave dai registratori di cassa Goshan",
 			"5af417e386f77428ae313af3": "",
 			"5af4181286f77428bb55edd9": "",
@@ -1642,11 +1644,11 @@
 	},
 	"5b47749f86f7746c5d6a5fd4": {
 		"conditions": {
-			"5b47796686f774374f4a8bb1": "Modifica l'AK-102 affinché rispetti le specifiche richieste",
+			"5b47796686f774374f4a8bb1": "Modifica un АК-102 affinché rispetti le specifiche richieste",
 			"5b4f082f86f7747a284dd609": "",
 			"5b4f0cc186f7744def7f3389": ""
 		},
-		"name": "Armaiolo. Parte 12",
+		"name": "Armaiolo - Parte 12",
 		"note": "",
 		"successMessageText": "5b486c9386f7744a08514b18",
 		"failMessageText": "5b486c9386f7744a08514b19",
@@ -1656,11 +1658,11 @@
 	},
 	"5b47799d86f7746c5d6a5fd8": {
 		"conditions": {
-			"5b477b3b86f77401da02e6c4": "Modifica il SIG MPX affinché rispetti le specifiche richieste",
+			"5b477b3b86f77401da02e6c4": "Modifica un SIG MPX affinché rispetti le specifiche richieste",
 			"5b4f085586f7747a2910a9b2": "",
 			"5b4f0d6086f7742c1f5a3c4d": ""
 		},
-		"name": "Armaiolo. Parte 13",
+		"name": "Armaiolo - Parte 13",
 		"note": "",
 		"successMessageText": "5b486ce586f7744882493785",
 		"failMessageText": "5b486ce586f7744882493786",
@@ -1670,11 +1672,11 @@
 	},
 	"5b477b6f86f7747290681823": {
 		"conditions": {
-			"5b477f1486f7743009493232": "Modifica l'AKMN affinché rispetti le specifiche richieste",
+			"5b477f1486f7743009493232": "Modifica un AKMN affinché rispetti le specifiche richieste",
 			"5b4f087886f77479806f2c61": "",
 			"5b4f0cce86f774287331639a": ""
 		},
-		"name": "Armaiolo. Parte 14",
+		"name": "Armaiolo - Parte 14",
 		"note": "",
 		"successMessageText": "5b486d0e86f7744f4b12d78f",
 		"failMessageText": "5b486d0e86f7744f4b12d790",
@@ -1684,11 +1686,11 @@
 	},
 	"5b477f7686f7744d1b23c4d2": {
 		"conditions": {
-			"5b47824386f7744d190d8dd1": "Modifica l'M1A affinché rispetti le specifiche richieste",
+			"5b47824386f7744d190d8dd1": "Modifica un M1A affinché rispetti le specifiche richieste",
 			"5b4f094886f7747b127d9d7f": "",
 			"5b4f0d7186f77412bc326997": ""
 		},
-		"name": "Armaiolo. Parte 15",
+		"name": "Armaiolo - Parte 15",
 		"note": "",
 		"successMessageText": "5b486d3e86f7743780259fd1",
 		"failMessageText": "5b486d3e86f7743780259fd2",
@@ -1698,11 +1700,11 @@
 	},
 	"5b47825886f77468074618d3": {
 		"conditions": {
-			"5b4783ba86f7744d1c353185": "Modifica l'M4A1 affinché rispetti le specifiche richieste",
+			"5b4783ba86f7744d1c353185": "Modifica un M4A1 affinché rispetti le specifiche richieste",
 			"5b4f095b86f7747a2637c3f9": "",
 			"5b4f0ce686f77429c16dcb63": ""
 		},
-		"name": "Armaiolo. Parte 16",
+		"name": "Armaiolo - Parte 16",
 		"note": "",
 		"successMessageText": "5b486d8686f77450c05449c6",
 		"failMessageText": "5b486d8686f77450c05449c7",
@@ -1712,13 +1714,13 @@
 	},
 	"5b47876e86f7744d1c353205": {
 		"conditions": {
-			"5b47884886f7744d1c35327d": "Trova in raid 4 taniche di additivo per carburante",
-			"5b47886986f7744d1a393e65": "Consegna 4 taniche di additivo per carburante",
+			"5b47884886f7744d1c35327d": "Trova additivo per carburante in raid",
+			"5b47886986f7744d1a393e65": "Consegna additivo per carburante",
 			"5b4f09c786f77479806f2cf3": "",
 			"5b4f09f586f7744fba15b2dc": "",
 			"5b4f0c7b86f77479ee584ab0": ""
 		},
-		"name": "Il Sangue della Guerra. Parte 2",
+		"name": "Il Sangue della Guerra - Parte 2",
 		"note": "",
 		"successMessageText": "5b486ddf86f7744ba00f2234",
 		"failMessageText": "5b486ddf86f7744ba00f2235",
@@ -1728,19 +1730,19 @@
 	},
 	"5b47891f86f7744d1b23c571": {
 		"conditions": {
-			"5b47899386f77470315db7f3": "Trova in raid 2 leoni in Bronzo",
-			"5b4789b586f7744d190d8f43": "Consegna 2 leoni di Bronzo",
-			"5b4789df86f77468074619d7": "Trova in raid 2 statuette di Cavallo",
-			"5b478a0986f7744d190d8f46": "Consegna 2 statuette di Cavallo",
-			"5b478a2186f77468074619da": "Trova in raid una statuetta di Gatto",
-			"5b478a3786f77470315db7fa": "Consegna la statuetta di gatto",
-			"5b478a6c86f7744d190d8f4d": "Trova in raid un orologio subacqueo Roler con il cinturino d'oro",
-			"5b478a8486f7744d1c35328b": "Consegna un orologio subacqueo Roler con il cinturino d'oro",
+			"5b47899386f77470315db7f3": "Trova i leoni in Bronzo in raid",
+			"5b4789b586f7744d190d8f43": "Consegna i leoni di Bronzo",
+			"5b4789df86f77468074619d7": "Trova le statuette di cavallo in raid",
+			"5b478a0986f7744d190d8f46": "Consegna le statuette di cavallo",
+			"5b478a2186f77468074619da": "Trova le statuette di Gatto in raid",
+			"5b478a3786f77470315db7fa": "Consegna la statuetta di Gatto",
+			"5b478a6c86f7744d190d8f4d": "Trova un orologio d'oro Roler Submariner in raid",
+			"5b478a8486f7744d1c35328b": "Consegna un orologio d'oro Roler Submariner",
 			"5b4f0a4386f7744e1155e1ed": "",
 			"5b4f0a5086f7744e3a6b328a": "",
 			"5b4f0c8786f77479806f3028": ""
 		},
-		"name": "Vivere alla grande non è un crimine",
+		"name": "Vivere al top non è un crimine - Parte 1",
 		"note": "",
 		"successMessageText": "5b486e2a86f7744a08514b1c",
 		"failMessageText": "5b486e2a86f7744a08514b1d",
@@ -1750,13 +1752,13 @@
 	},
 	"5b478b1886f7744d1b23c57d": {
 		"conditions": {
-			"5b478c4c86f7744d1a393fac": "Riponi i Peltor ComTac 2 nel luogo specificato",
-			"5b478c7386f7744d1a393fb1": "Riponi l'Elmetto 6B47 nel luogo specificato",
-			"5b478cb586f7744d1a393fb5": "Riponi l'armatura BNTI Gzhel-K nel luogo specificato",
+			"5b478c4c86f7744d1a393fac": "Colloca il Perltor ComTac 2 nel luogo prestabilito",
+			"5b478c7386f7744d1a393fb1": "Colloca l'elmetto 6B47 nel luogo prestabilito",
+			"5b478cb586f7744d1a393fb5": "Colloca l'armatura BNTI Gzhel-K nel luogo prestabilito",
 			"5b4f0a8086f7744e3a6b3290": "",
 			"5b4f0c9086f77453572f5538": ""
 		},
-		"name": "Consegna scottante",
+		"name": "Consegna Scottante",
 		"note": "",
 		"successMessageText": "5b486e6186f7744a08514b24",
 		"failMessageText": "5b486e6186f7744a08514b25",
@@ -1766,10 +1768,10 @@
 	},
 	"5b478d0f86f7744d190d91b5": {
 		"conditions": {
-			"5b478d8986f774563c7a4809": "Marca il primo minibus",
-			"5b478daf86f7744d1c35339b": "Marca il secondo minibus",
-			"5b478dca86f7744d190d91c2": "Marca il terzo minibus",
-			"5b478de086f7744d1c3533a1": "Sopravvivi e lascia la zona",
+			"5b478d8986f774563c7a4809": "Trova e segnala il primo minibus con un marcatore MS2000 a Interchange",
+			"5b478daf86f7744d1c35339b": "Trova e segnala il secondo minibus con un marcatore MS2000 a Interchange",
+			"5b478dca86f7744d190d91c2": "Trova e segnala il terzo minibus con un marcatore MS2000 a Interchange",
+			"5b478de086f7744d1c3533a1": "Sopravvivi ed estrai dalla zona",
 			"5b4f0ac386f7747a2637c4c0": "",
 			"5b4f0c9d86f7744def7f3385": ""
 		},
@@ -1783,16 +1785,16 @@
 	},
 	"5b478eca86f7744642012254": {
 		"conditions": {
-			"5b478f6886f774464201225a": "Ottieni il primo contenitore Chimico",
-			"5b478f8886f7744d1b23c622": "Consegna il primo contenitore Chimico",
-			"5b4c826b86f7743cc87bcee4": "Ottieni il secondo contenitore Chimico",
-			"5b4c82cd86f774170c6e4169": "Ottieni il terzo contenitore Chimico",
-			"5b4c832686f77419603eb8f0": "Consegna il secondo contenitore Chimico",
-			"5b4c836486f77417063a09dc": "Consegna il terzo contenitore Chimico",
+			"5b478f6886f774464201225a": "Ottieni il primo contenitore chimico",
+			"5b478f8886f7744d1b23c622": "Consegna il primo contenitore chimico",
+			"5b4c826b86f7743cc87bcee4": "Ottieni il secondo contenitore chimico",
+			"5b4c82cd86f774170c6e4169": "Ottieni il terzo contenitore chimico",
+			"5b4c832686f77419603eb8f0": "Consegna il secondo contenitore chimico",
+			"5b4c836486f77417063a09dc": "Consegna il terzo contenitore chimico",
 			"5b4f0b8b86f7747a2910aaa4": "",
 			"5b4f0c1486f7747a2637c513": ""
 		},
-		"name": "\"Vitamine\", p. 1°",
+		"name": "Vitamine - Parte 1",
 		"note": "",
 		"successMessageText": "5b486fbf86f77450c0544c16",
 		"failMessageText": "5b486fbf86f77450c0544c17",
@@ -1802,13 +1804,13 @@
 	},
 	"5b478ff486f7744d184ecbbf": {
 		"conditions": {
-			"5b47905886f7746807461fe2": "Consegna 4 Respiratori",
-			"5b4790a886f774563c7a489f": "Consegna 3 Kit Medici per la trasfusione",
+			"5b47905886f7746807461fe2": "Consegna i Respiratori",
+			"5b4790a886f774563c7a489f": "Consegna i kit medici per trasfusioni",
 			"5b4f0b1f86f7746c9e27e9ea": "",
-			"5cb5ffd986f7746ef55de2c7": "Trova in raid 4 Respiratori",
-			"5ec1388d83b69d213d3c2ee0": "Trova in raid 3 Kit Medici per trasfusioni"
+			"5cb5ffd986f7746ef55de2c7": "Trova i Respiratori in raid",
+			"5ec1388d83b69d213d3c2ee0": "Trova i kit medici per trasfusioni in raid"
 		},
-		"name": "\"Vitamine\", p. 2°",
+		"name": "Vitamine - Parte 2",
 		"note": "",
 		"successMessageText": "5b48700686f7744f4b12d7ef",
 		"failMessageText": "5b48700686f7744f4b12d7f0",
@@ -1818,13 +1820,13 @@
 	},
 	"5b47926a86f7747ccc057c15": {
 		"conditions": {
-			"5b47932586f7747cc908b5dd": "Installa la telecamera Wireless per guardare il molo",
-			"5b47936686f77427fd044025": "Installa la telecamera Wireless per guardare la strada per il porto",
-			"5b47938086f7747ccc057c22": "Installa la telecamera Wireless per guardare il negozio Kiba Arms",
+			"5b47932586f7747cc908b5dd": "Installa la telecamera Wireless per sorvegliare la banchina della segheria a Woods",
+			"5b47936686f77427fd044025": "Installa la telecamera Wireless per sorvegliare la strada per il porto di Customs",
+			"5b47938086f7747ccc057c22": "Installa la telecamera Wireless per sorvegliare l'entrata del negozio Kiba Arms a Interchange",
 			"5b4f0b6686f77479ee584a74": "",
 			"5b4f0c0986f77453572f54e0": ""
 		},
-		"name": "Informato significa armato",
+		"name": "Informato Significa Armato",
 		"note": "",
 		"successMessageText": "5b48704286f7744a14343905",
 		"failMessageText": "5b48704286f7744a14343906",
@@ -1834,20 +1836,20 @@
 	},
 	"5b4794cb86f774598100d5d4": {
 		"conditions": {
-			"5b47952c86f774598100d5dc": "Ottieni il primo Controller del Motore",
-			"5b47958e86f774598100d5e2": "Ottieni il primo Giroscopio a Fibra Ottica Monoasse",
-			"5b4795a586f774587a39506d": "Consegna il primo Giroscopio a Fibra Ottica Monoasse",
-			"5b4c742886f7745cef1d02f5": "Ottieni il secondo Controller del Motore",
-			"5b4c75a786f7747332534b52": "Ottieni il terzo Controller del Motore",
-			"5b4c764786f7746f3b494ee0": "Consegna 1 controller",
-			"5b4c769686f7746e535a5c0e": "Consegna 2 controller",
+			"5b47952c86f774598100d5dc": "Ottieni il primo controller del motore a Woods",
+			"5b47958e86f774598100d5e2": "Ottieni il primo giroscopio a fibra ottica monoasse a Woods",
+			"5b4795a586f774587a39506d": "Consegna il primo giroscopio a fibra ottica monoasse",
+			"5b4c742886f7745cef1d02f5": "Ottieni il secondo controller del motore a Shoreline",
+			"5b4c75a786f7747332534b52": "Ottieni il terzo controller del motore a Shoreline",
+			"5b4c764786f7746f3b494ee0": "Consegna il primo controller",
+			"5b4c769686f7746e535a5c0e": "Consegna il secondo controller",
 			"5b4c76d886f77471d31735a3": "Consegna il terzo controller",
-			"5b4c7aec86f77459732b4b08": "Consegna il secondo Giroscopio a Fibra Ottica Monoasse",
-			"5b4c8e6586f77474396a5400": "Ottieni il secondo Giroscopio a Fibra Ottica Monoasse",
+			"5b4c7aec86f77459732b4b08": "Consegna il secondo giroscopio a fibra ottica monoasse",
+			"5b4c8e6586f77474396a5400": "Ottieni il secondo giroscopio a fibra ottica monoasse a Shoreline",
 			"5b4f0bca86f7744a6c2b8164": "",
 			"5b4f0bfa86f77453572f54dc": ""
 		},
-		"name": "Prestito. Parte 1",
+		"name": "Affitti e Prestiti",
 		"note": "",
 		"successMessageText": "5b4870a386f7744d06237e0a",
 		"failMessageText": "5b4870a386f7744d06237e0b",
@@ -1857,14 +1859,14 @@
 	},
 	"5b4795fb86f7745876267770": {
 		"conditions": {
-			"5b47968e86f7745877352c28": "Riponi 3 catene d'oro sotto il materasso accanto al BTR-80A",
-			"5b4796c086f7745877352c2c": "Riponi 3 catene d'oro nel forno a microonde al 3 ° piano dei dormitori",
-			"5b47971086f774587877ad34": "Riponi 3 catene d'oro nel mezzo degli alloggi della segheria",
+			"5b47968e86f7745877352c28": "Nascondi le collane d'oro sotto il materasso accanto al BTR-80A dentro il Generic Store a Interchange",
+			"5b4796c086f7745877352c2c": "Nascondi le collane d'oro nel forno a microonde al 3° piano dei dormitori a Customs",
+			"5b47971086f774587877ad34": "Nascondi le collane d'oro nella baracca di legno centrale della segheria a Woods",
 			"5b4f0ba486f7747a2637c4fb": "",
 			"5b4f0c5886f7747a2910aacd": "",
-			"5c923d3d86f774556e08d7a5": "Uccidi 5 operatori PMC su Interchange nel periodo di tempo tra le 22:00 e le 10:00"
+			"5c923d3d86f774556e08d7a5": "Elimina PMC a Interchange nel periodo di tempo 22:00-10:00"
 		},
-		"name": "Pasturazione",
+		"name": "Socializzazione",
 		"note": "",
 		"successMessageText": "5b4870d386f7743780259ff3",
 		"failMessageText": "5b4870d386f7743780259ff4",
@@ -1874,10 +1876,10 @@
 	},
 	"5bc4776586f774512d07cf05": {
 		"conditions": {
-			"5bc850d186f7747213700892": "Uccidi 5 Scav da un minimo di 40 metri di distanza, con un fucile a otturatore scorrevole senza mirino",
+			"5bc850d186f7747213700892": "Uccidi Scav usando un fucile a retro carica con un collimatore da almeno 40 metri",
 			"5bdac2f186f7743e152e8695": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 1",
+		"name": "Il Tiratore di Tarkov - Parte 1",
 		"note": "",
 		"successMessageText": "5bc477dc86f7744fd57fafe8",
 		"failMessageText": "5bc477dc86f7744fd57fafe9",
@@ -1887,12 +1889,12 @@
 	},
 	"5bc479e586f7747f376c7da3": {
 		"conditions": {
-			"5bd983d886f7747ba73fc246": "Spara 3 colpi alle gambe da un minimo di 40 metri di distanza con un fucile a otturatore scorrevole",
+			"5bd983d886f7747ba73fc246": "Colpisci le gambe usando un fucile a retro carica da almeno 40 metri di distanza",
 			"5bd9842e86f7747baa07aba7": "",
-			"5bd9944f86f774035c4877f3": "Spara 2 colpi in testa da un minimo di 40 metri con un fucile a otturatore scorrevole",
+			"5bd9944f86f774035c4877f3": "Colpisci la testa usando un fucile a retro carica da almeno 40 metri di distanza",
 			"5bdabf0586f7743e1809c555": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 2",
+		"name": "Il Tiratore di Tarkov - Parte 2",
 		"note": "",
 		"successMessageText": "5bc47a2386f7743920281689",
 		"failMessageText": "5bc47a2386f774392028168a",
@@ -1902,10 +1904,10 @@
 	},
 	"5bc47dbf86f7741ee74e93b9": {
 		"conditions": {
-			"5bc47e3e86f7741e6b2f3332": "Uccidi 3 PMC con un fucile a otturatore scorrevole a distanza ravvicinata, a meno di 25 metri di distanza",
+			"5bc47e3e86f7741e6b2f3332": "Elimina PMC con un fucile a retro carica a distanza ravvicinata (meno di 25 metri di distanza)",
 			"5bdabf1f86f7743e1809c556": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 3",
+		"name": "Il Tiratore di Tarkov - Parte 3",
 		"note": "",
 		"successMessageText": "5bc47df886f7741e6b2f3325",
 		"failMessageText": "5bc47df886f7741e6b2f3326",
@@ -1915,10 +1917,10 @@
 	},
 	"5bc480a686f7741af0342e29": {
 		"conditions": {
-			"5bc4813886f774226045cb9a": "Aumenta a 3 l'abilità del Fucile da Cecchino",
+			"5bc4813886f774226045cb9a": " Raggiungi il livello richiesto nell'abilità Fucile da Cecchino",
 			"5bdabf3386f7743e171249ae": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 4",
+		"name": "Il Tiratore di Tarkov - Parte 4",
 		"note": "",
 		"successMessageText": "5bc480f886f7741b09231869",
 		"failMessageText": "5bc480f886f7741b0923186a",
@@ -1928,10 +1930,10 @@
 	},
 	"5bc4826c86f774106d22d88b": {
 		"conditions": {
-			"5bc84f7a86f774294c2f6862": "Uccidi 8 Scav a Customs con un fucile a otturatore scorrevole tra le 21:00 e le 05:00",
+			"5bc84f7a86f774294c2f6862": "Elimina Scav a Customs con un fucile a retro carica tra le 21:00 e le 05:00 del mattino",
 			"5bdabf4486f7743e1665df6d": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 5",
+		"name": "Il Tiratore di Tarkov - Parte 5",
 		"note": "",
 		"successMessageText": "5bc4829786f774105516c76a",
 		"failMessageText": "5bc4829786f774105516c76b",
@@ -1941,10 +1943,10 @@
 	},
 	"5bc4836986f7740c0152911c": {
 		"conditions": {
-			"5bc483ba86f77415034ba8d0": "Uccidi 5 Scav con un fucile a otturatore scorrevole",
+			"5bc483ba86f77415034ba8d0": "Elimina Scav cecchini mentre utilizzi un fucile a retro carica",
 			"5bdabf5386f7743e152e867c": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 6",
+		"name": "Il Tiratore di Tarkov - Parte 6",
 		"note": "",
 		"successMessageText": "5bc4839f86f7746b5a283eb5",
 		"failMessageText": "5bc4839f86f7746b5a283eb6",
@@ -1954,10 +1956,10 @@
 	},
 	"5bc4856986f77454c317bea7": {
 		"conditions": {
-			"5bc485b586f774726473a858": "Uccidi 5 PMC con un fucile a otturatore scorrevole silenziato, da una distanza minima di 45 metri",
+			"5bc485b586f774726473a858": "Eliminare PMC usando un fucile a retro carica silenziato da almeno 45 metri di distanza",
 			"5bdabf6286f7743e171249af": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 7",
+		"name": "Il Tiratore di Tarkov - Parte 7",
 		"note": "",
 		"successMessageText": "5bc4859286f7746ea275856e",
 		"failMessageText": "5bc4859286f7746ea275856f",
@@ -1967,10 +1969,10 @@
 	},
 	"5bc4893c86f774626f5ebf3e": {
 		"conditions": {
-			"5bc48aed86f77452c947ce67": "Uccidi 3 PMC con un fucile a retro carica in un singolo raid a Woods",
+			"5bc48aed86f77452c947ce67": "Elimina 3 PMC in un singolo raid a Woods mentre utilizzi un fucile a retro carica",
 			"5bdabf7186f7743e152e867d": ""
 		},
-		"name": "\"Il cecchino di Tarkov\". Parte 8",
+		"name": "Il Tiratore di Tarkov - Parte 8",
 		"note": "",
 		"successMessageText": "5bc4898e86f7746b7978fe32",
 		"failMessageText": "5bc4898e86f7746b7978fe33",
@@ -1980,13 +1982,13 @@
 	},
 	"5c0bbaa886f7746941031d82": {
 		"conditions": {
-			"5c0bc32986f7743e4d1002d2": "Metti il fucile da cecchino CB-98 (Dormitori, 3° piano. Mucchio di spazzatura di fronte alle scale)",
-			"5c0bc43e86f7744794440ba5": "Metti degli orologi Roler (Dormitori, 3 ° piano. Mucchio di spazzatura di fronte alle scale)",
-			"5c12320586f77437e44bcb15": "Metti delle false Penne Usb (Dormitori, 3 ° piano. Mucchio di spazzatura di fronte alle scale)",
-			"5c1233ac86f77406fa13baea": "Non uccidere Scav a Customs fino a che la missione non è stata completata",
+			"5c0bc32986f7743e4d1002d2": "Piazza il fucile da cecchino SV-98 nel cestino di fronte alle scale che salgono al terzo piano del dormitorio",
+			"5c0bc43e86f7744794440ba5": "Colloca un orologio d'oro Roler Submariner nel cestino dell'immondizia opposto alle scale del terzo piano dei dormitori",
+			"5c12320586f77437e44bcb15": "Nascondi la penna USB finta nel cestino di fronte alle scale al terzo piano del dormitorio",
+			"5c1233ac86f77406fa13baea": "Non uccidere scav a Customs fino a che la missione non è stata completata",
 			"5c17b96486f774331c793f28": "",
 			"5c1fa91586f7740de474cb36": "",
-			"5c50481c86f77410650e0521": "Trova una penna USB finta"
+			"5c50481c86f77410650e0521": "Ottieni la penna USB finta a Customs"
 		},
 		"name": "Stronzate",
 		"note": "",
@@ -1998,12 +2000,12 @@
 	},
 	"5c0bc91486f7746ab41857a2": {
 		"conditions": {
-			"5c0bc95086f7746e784f39ec": "Uccidi 20 Scavs con un fucile da caccia calibro 12 silenziato",
-			"5c0bcc9c86f7746fe16dbba9": "Uccidi 10 PMC con un fucile da caccia calibro 12 silenziato",
+			"5c0bc95086f7746e784f39ec": "Uccidi Scav con un fucile a pompa calibro 12 silenziato",
+			"5c0bcc9c86f7746fe16dbba9": "Uccidi PMC con un fucile a pompa calibro 12 silenziato",
 			"5c1ea18b86f77461d75caa21": "",
 			"5c1fa99086f77407e903a5fa": ""
 		},
-		"name": "Calibro silenziato",
+		"name": "Calibro Silenziato",
 		"note": "",
 		"successMessageText": "5c0bc93186f77459d871478d",
 		"failMessageText": "5c0bc93186f77459d871478e",
@@ -2013,7 +2015,7 @@
 	},
 	"5c0bd01e86f7747cdd799e56": {
 		"conditions": {
-			"5c1242fa86f7742aa04fed52": "Uccidi 30 PMC durante la notte (dalle 22:00 alle 05:00)",
+			"5c1242fa86f7742aa04fed52": "Elimina PMC durante la notte (22:00-05:00)",
 			"5c17d05e86f77430a64c6c66": "",
 			"5c20cd8f86f774337d77b7ef": ""
 		},
@@ -2027,11 +2029,11 @@
 	},
 	"5c0bd94186f7747a727f09b2": {
 		"conditions": {
-			"5c1b765d86f77413193fa4f2": "Uccidi 5 PMC utilizzando un M1A con un Silenziatore ibrido 46 e un Mirino Termico Trijicon REAP-IR",
+			"5c1b765d86f77413193fa4f2": "Uccidi PMC utilizzando un M1A con un Silenziatore ibrido 46 e un Mirino Termico REAP-IR",
 			"5c1fabb986f77431f74f0de6": "",
 			"5c1fabd686f77410894b63f8": ""
 		},
-		"name": "Test di Guida. Parte 1",
+		"name": "Test di Guida - Parte 1",
 		"note": "",
 		"successMessageText": "5c0bd95686f77479cf22c2f2",
 		"failMessageText": "5c0bd95686f77479cf22c2f3",
@@ -2041,11 +2043,11 @@
 	},
 	"5c0bdb5286f774166e38eed4": {
 		"conditions": {
-			"5c0bdbb586f774166e38eed5": "Ottieni il livello di abilità 6 in resistenza allo Stress",
+			"5c0bdbb586f774166e38eed5": "Raggiungi il livello richiesto nell'abilità Stress da resistenza",
 			"5c1faac086f7740ebd348c76": "",
 			"5c1faac986f77410894b63f5": ""
 		},
-		"name": "Flint",
+		"name": "Veterano",
 		"note": "",
 		"successMessageText": "5c0bdb7c86f77422c8027f40",
 		"failMessageText": "5c0bdb7c86f77422c8027f41",
@@ -2055,10 +2057,10 @@
 	},
 	"5c0bde0986f77479cf22c2f8": {
 		"conditions": {
-			"5c0bdf2c86f7746f016734a8": "Uccidi 3 PMC con un colpo in testa su Woods da una distanza di 100 metri minimo. ",
-			"5c137b8886f7747ae3220ff4": "Uccidi 3 PMC su Reserve con un colpo alla testa da piú di 100m.",
-			"5c137ef386f7747ae10a821e": "Uccidi 3 PMC con un colpo in testa su Shoreline da una distanza di 100 metri minimo. ",
-			"5c137f5286f7747ae267d8a3": "Uccidi 3 PMC con un colpo in testa su Customs da una distanza di 100 metri minimo. ",
+			"5c0bdf2c86f7746f016734a8": "Colpisci alla testa i PMC a Woods da una distanza di oltre 100 metri",
+			"5c137b8886f7747ae3220ff4": "Colpisci alla testa i PMC a Reserve da una distanza di oltre 100 metri",
+			"5c137ef386f7747ae10a821e": "Colpisci alla testa i PMC a Shoreline da una distanza di oltre 100 metri",
+			"5c137f5286f7747ae267d8a3": "Colpisci alla testa i PMC a Customs da una distanza di oltre 100 metri",
 			"5c20007986f7743c7b263515": "",
 			"5c20009b86f7742b3c0a8fd9": ""
 		},
@@ -2072,7 +2074,7 @@
 	},
 	"5c0be13186f7746f016734aa": {
 		"conditions": {
-			"5c0be2b486f7747bcb347d58": "Migliora l'abilità Cecchino a livello 9",
+			"5c0be2b486f7747bcb347d58": "Raggiungi il livello richiesto nell'abilità Fucile da Cecchino",
 			"5c1fb5f086f7744a184fb3c5": "",
 			"5c1fb5f986f7744a1929a527": ""
 		},
@@ -2086,14 +2088,14 @@
 	},
 	"5c0be5fc86f774467a116593": {
 		"conditions": {
-			"5c0be66c86f7744523489ab2": "Consegna un oftalmoscopio trovato in raid",
-			"5c0be69086f7743c9c1ecf43": "Consegna un transilluminatore cutaneo LEDX trovato in raid",
+			"5c0be66c86f7744523489ab2": "Consegna l'Oftalmoscopio",
+			"5c0be69086f7743c9c1ecf43": "Consegna il transilluminatore cutaneo LEDX",
 			"5c1fd1ae86f7742b3b47f064": "",
 			"5c1fd1b586f7742b3a651f74": "",
-			"5fd892bc37b6e511a4734969": "Trova in raid un oftalmoscopio",
-			"5fd8935b7dd32f724e0fe7ee": "Trova in raid un LEDX"
+			"5fd892bc37b6e511a4734969": "Trova L'Oftalmoscopio in raid",
+			"5fd8935b7dd32f724e0fe7ee": "Trova il transilluminatore cutaneo LEDX in raid"
 		},
-		"name": "Clinica privata",
+		"name": "Clinica Privata",
 		"note": "",
 		"successMessageText": "5c0be61786f7744525260758",
 		"failMessageText": "5c0be61786f7744525260759",
@@ -2103,7 +2105,7 @@
 	},
 	"5c0d0d5086f774363760aef2": {
 		"conditions": {
-			"5c0d0dfd86f7747f482a89a5": "Guadagna 10 nell'abilità Salute",
+			"5c0d0dfd86f7747f482a89a5": "Raggiungi il livello richiesto nell'abilità Salute",
 			"5c1fd5e586f7743c7b261f79": "",
 			"5c1fd5f586f7742b391bf138": ""
 		},
@@ -2117,14 +2119,14 @@
 	},
 	"5c0d0f1886f77457b8210226": {
 		"conditions": {
-			"5c138c4486f7743b056e2943": "Consegna 2 processori programmabili Virtex",
-			"5c138d4286f774276a6504aa": "Consegna un Trasmettitore Militare di Segnale wireless COFDM",
+			"5c138c4486f7743b056e2943": "Consegna i processori programmabili Virtex",
+			"5c138d4286f774276a6504aa": "Consegna il trasmettitore militare di segnale wireless COFDM",
 			"5c1fd61486f7742b391bf139": "",
 			"5c1fd61e86f7742b38529146": "",
-			"5ec13d45a1032866196c939b": "Trova in raid 2 processori programmabili Virtex",
-			"5ec13da983b69d213d3c2ee4": "Trova in raid un Trasmettitore di Segnale wireless Militare COFDM"
+			"5ec13d45a1032866196c939b": "Trova i processori programmabili Virtex in raid",
+			"5ec13da983b69d213d3c2ee4": "Trova il trasmettitore militare di segnale wireless COFDM in raid"
 		},
-		"name": "Prestito. Parte 2",
+		"name": "Il Prestito - Parte 2",
 		"note": "",
 		"successMessageText": "5c0d0f4186f774363760aef3",
 		"failMessageText": "5c0d0f4186f774363760aef4",
@@ -2136,7 +2138,7 @@
 		"name": "Granatiere",
 		"note": "",
 		"conditions": {
-			"5c1b760686f77412780211a3": "Uccidi 12 PMC con le granate",
+			"5c1b760686f77412780211a3": "Elimina PMC con le granate",
 			"5c1fab3986f7740ebd348c7a": "",
 			"5c1fab4186f77431f74f0de5": ""
 		},
@@ -2150,7 +2152,7 @@
 		"name": "Servizio di decontaminazione",
 		"note": "",
 		"conditions": {
-			"5c1b778286f774294438b536": "Uccidi 40 Scav su Interchange, da una distanza inferiore a 60 metri. È necessario indossare un equipaggiamento spec",
+			"5c1b778286f774294438b536": "Elimina Scav a Interchange, da vicino (meno di 60 metri) mentre indossi un equipaggiamento specifico",
 			"5c1fd52e86f7742b391bf099": "",
 			"5c1fd53a86f7742b3c0a7b7a": ""
 		},
@@ -2162,14 +2164,14 @@
 	},
 	"5c0d4c12d09282029f539173": {
 		"conditions": {
-			"5c1b713486f77413bc250406": "Uccidi 12 Scav nella mappa Customs mentre indossi un'uniforme UN (che comprende un Elmetto UNTAR, una Armatura MF-HUNTAR, e un Fucile d'assalto Colt M4A1)",
-			"5c1b713986f77470d8650910": "Uccidi 12 Scav nella mappa Interchange mentre indossi un' uniforme UN (che comprende un Elmetto UNTAR, una Armatura MF-HUNTAR, e un Fucile d'assalto Colt M4A1)",
-			"5c1b713f86f774719c22e8a0": "Uccidi 12 Scav nella mappa Shoreline mentre indossi un' uniforme UN (che comprende un Elmetto UNTAR, una Armatura MF-HUNTAR, e un Fucile d'assalto Colt M4A1)",
-			"5c1fd66286f7743c7b261f7b": "Uccidi 12 Scav nella mappa Woods mentre indossi un' uniforme UN (che comprende un Elmetto UNTAR, una Armatura MF-HUNTAR, e un Fucile d'assalto Colt M4A1)",
+			"5c1b713486f77413bc250406": "Elimina Scav a Customs mentre indossi un'uniforme ONU (Casco Onu, armatura MF-UNTAR, Fucile M4A1)",
+			"5c1b713986f77470d8650910": "Elimina Scav a Interchange mentre indossi un'uniforme ONU (Casco Onu, armatura MF-UNTAR, Fucile M4A1)",
+			"5c1b713f86f774719c22e8a0": "Elimina Scav a Shoreline mentre indossi un'uniforme ONU (Casco Onu, armatura MF-UNTAR, Fucile M4A1)",
+			"5c1fd66286f7743c7b261f7b": "Elimina Scav a Woods mentre indossi un'uniforme ONU (Casco Onu, armatura MF-UNTAR, Fucile M4A1)",
 			"5c20ce1786f77453c56d6397": "",
 			"5c20ce2c86f774337f427599": ""
 		},
-		"name": "Missione di mantenimento della pace",
+		"name": "Missione di pace",
 		"note": "",
 		"successMessageText": "5c13946186f774210563ecc3",
 		"failMessageText": "5c13946186f774210563ecc4",
@@ -2179,18 +2181,18 @@
 	},
 	"5c0d4e61d09282029f53920e": {
 		"conditions": {
-			"5c13979886f774251443c1a6": "Sopravvivi ad Interchange (Stato: Sopravvissuto)",
-			"5c13982286f774365a69cc4d": "Sopravvivi a Shoreline (Stato: Sopravvissuto)",
-			"5c13989886f7747878361a50": "Sopravvivi a Factory (Stato: Sopravvissuto)",
-			"5c0d4f46d09282029f539216": "Dovresti evitare di morire oltre che a lasciare il raid quando il tuo compito è ancora attivo. (Stato: Ucciso, Lasciato, Perso) ",
-			"5c1931e686f7747ce71bcbea": "Sopravvivi a The Lab (Stato: Sopravvissuto)",
-			"5c0e6876d09282029e2fffe0": "Sopravvivi a Woods (Stato: Sopravvissuto)",
-			"5c0e687ad0928202b25db840": "Sopravvivi a Customs (Stato: Sopravvissuto)",
+			"5c13979886f774251443c1a6": "Sopravvivi ed estrai da Interchange con lo stato \"Sopravvissuto\"",
+			"5c13982286f774365a69cc4d": "Sopravvivi ed estrai da Shoreline con lo stato \"Sopravvissuto\"",
+			"5c13989886f7747878361a50": "Sopravvivi ed estrai da Factory con lo stato \"Sopravvissuto\"",
+			"5c0d4f46d09282029f539216": "Non devi morire o lasciare il raid quando la missione è ancora attiva. (Stato: KIA, AWOL, MIA, Ran Through)",
+			"5c1931e686f7747ce71bcbea": "Sopravvivi ed estrai da The Lab con lo stato \"Sopravvissuto\"",
+			"5c0e6876d09282029e2fffe0": "Sopravvivi ed estrai da Woods con lo stato \"Sopravvissuto\"",
+			"5c0e687ad0928202b25db840": "Sopravvivi ed estrai da Customs con lo stato \"Sopravvissuto\"",
 			"5d0a0e2286f7743a1a74d63b": "",
 			"5d0a111586f7743a1b0d87b1": "",
-			"5dc984ae4b68b15f4825cea5": "Sopravvivi a Reserve base (Stato: Sopravvissuto)"
+			"5dc984ae4b68b15f4825cea5": "Sopravvivi ed estrai da Reserve con lo stato \"Sopravvissuto\""
 		},
-		"name": "La guida",
+		"name": "La Guida",
 		"note": "",
 		"successMessageText": "5c13997e86f774210563ece0",
 		"failMessageText": "5c13997e86f774210563ece1",
@@ -2200,14 +2202,14 @@
 	},
 	"5c10f94386f774227172c572": {
 		"conditions": {
-			"5c10f94386f774227172c574": "Trova e marca la prima riserva di carburante",
-			"5c10f94386f774227172c575": "Trova e marca la seconda scorta di carburante",
-			"5c10f94386f774227172c576": " Trova e marca la terza riserva di carburante",
-			"5c10f94386f774227172c577": "Sopravvivi e lascia la zona",
+			"5c10f94386f774227172c574": "Trova e segnala la prima riserva di carburante con un marcatore MS2000 a Woods",
+			"5c10f94386f774227172c575": "Trova e segnala la seconda riserva di carburante con un marcatore MS2000 a Woods",
+			"5c10f94386f774227172c576": "Trova e segnala la terza riserva di carburante con un marcatore MS2000 a Woods",
+			"5c10f94386f774227172c577": "Sopravvivi ed estrai dalla zona",
 			"5c1fb27e86f7744a160dda8c": "",
 			"5c1fcf9486f7742b3b47e370": ""
 		},
-		"name": "Il Sangue della Guerra. Parte 3",
+		"name": "Il Sangue della Guerra - Parte 3",
 		"note": "",
 		"successMessageText": "5c11412586f7745f60313bf2",
 		"failMessageText": "5c11412586f7745f60313bf3",
@@ -2217,12 +2219,12 @@
 	},
 	"5c1128e386f7746565181106": {
 		"conditions": {
-			"5c1129ed86f7746569440e88": "Consegna 5 Cavi",
-			"5c112a1b86f774656777d1ae": "Consegna 5 Condensatori",
+			"5c1129ed86f7746569440e88": "Consegna i Cavi",
+			"5c112a1b86f774656777d1ae": "Consegna i Condensatori",
 			"5c1fb45b86f7744a1a275659": "",
 			"5c1fb46386f7744a184fb3c2": "",
-			"5ca719ef86f7740a78020783": "Trova in raid 5 fili",
-			"5ca71a1e86f7740f5a5b88a2": "Trovare in raid 5 condensatori"
+			"5ca719ef86f7740a78020783": "Trova dei Cavi in raid",
+			"5ca71a1e86f7740f5a5b88a2": "Trova dei Condensatori in raid"
 		},
 		"name": "Fertilizzanti",
 		"note": "",
@@ -2234,7 +2236,7 @@
 	},
 	"5c112d7e86f7740d6f647486": {
 		"conditions": {
-			"5c112dc486f77465686bff38": "Guadagna 9 nell'abilità Ricerca",
+			"5c112dc486f77465686bff38": "Raggiungi il livello richiesto nell'abilità Cerca",
 			"5c1fd15f86f7742b3c0a7b78": "",
 			"5c1fd17786f7742b3b47f063": ""
 		},
@@ -2248,12 +2250,12 @@
 	},
 	"5c1141f386f77430ff393792": {
 		"conditions": {
-			"5c11427386f77430ff393793": "Consegna 3 teiere antiche",
-			"5c122c5f86f77437e44bcb0e": "Consegna 2 vasi antichi",
+			"5c11427386f77430ff393793": "Consegna le teiere Antiche",
+			"5c122c5f86f77437e44bcb0e": "Consegna i vasi Antichi",
 			"5c1fd03686f7742b3c0a6a9f": "",
 			"5c1fd04886f7742b3b47e8a2": "",
-			"5ca7254e86f7740d424a2043": "Trova in raid 3 teiere antiche",
-			"5ca7258986f7740d424a2044": "Trova in raid 2 vasi antichi"
+			"5ca7254e86f7740d424a2043": "Trova le teiere Antiche in raid",
+			"5ca7258986f7740d424a2044": "Trova i vasi Antichi in raid"
 		},
 		"name": "Vivere alla grande non è un crimine. Parte 2",
 		"note": "",
@@ -2265,7 +2267,7 @@
 	},
 	"5c1234c286f77406fa13baeb": {
 		"conditions": {
-			"5c1fa9c986f7740de474cb3d": "Uccidi 15 PMC su Customs. È necessario indossare un equipaggiamento specifico",
+			"5c1fa9c986f7740de474cb3d": "Uccidi PMC a Customs, mentre indossi l'equipaggiamento richiesto",
 			"5c1faa0d86f77410894b63ef": "",
 			"5c1faa1986f7740ebd348c71": ""
 		},
@@ -2279,12 +2281,12 @@
 	},
 	"5c12452c86f7744b83469073": {
 		"conditions": {
-			"5c12470d86f77465ae27a8c0": "Raggiungi il 4° livello di reputazione con Ragman",
-			"5c1247f386f77452db1d2b03": "Raggiungi il 4° livello di reputazione con Skier",
-			"5c12484586f7744b83469074": "Raggiungi il 4° livello di reputazione con il Mechanic",
-			"5c12487386f7742a60324299": "Raggiungi il 4° livello di reputazione con Peacekeeper",
-			"5c12489886f77452db1d2b05": "Raggiungi il 4° livello di reputazione con Prapor",
-			"5c1248ef86f77428266184c2": "Raggiungi il 4° livello di reputazione con la Therapist",
+			"5c12470d86f77465ae27a8c0": "Raggiungi il 4° livello di lealtà con Ragman",
+			"5c1247f386f77452db1d2b03": "Raggiungi il 4° livello di lealtà con Skier",
+			"5c12484586f7744b83469074": "Raggiungi il 4° livello di lealtà con il Mechanic",
+			"5c12487386f7742a60324299": "Raggiungi il 4° livello di lealtà con Peacekeeper",
+			"5c12489886f77452db1d2b05": "Raggiungi il 4° livello di lealtà con Prapor",
+			"5c1248ef86f77428266184c2": "Raggiungi il 4° livello di lealtà con la Therapist",
 			"5c1fab8686f77410894b63f7": "",
 			"5c1fab9286f77407e903a60d": ""
 		},
@@ -2298,12 +2300,12 @@
 	},
 	"5c139eb686f7747878361a6f": {
 		"conditions": {
-			"5c139eb686f7747878361a72": "Consegna un Lettore Riparato UHF RFID",
-			"5c139eb686f7747878361a73": "Consegna i Moduli Flash di Archiviazione VPX",
+			"5c139eb686f7747878361a72": "Consegna RFID UHF",
+			"5c139eb686f7747878361a73": "Consegna il Modulo Flash di Archiviazione VPX",
 			"5c1fcf3786f7742b3b47e36f": "",
 			"5c1fcf4086f7742b38527bde": "",
-			"5ec14003e16f6c41ee73525f": "Trova in raid un Lettore Riparato UHF RFID",
-			"5ec14080c9ffe55cca300867": "Trova in raid un Modulo Flash di Archiviazione VPX"
+			"5ec14003e16f6c41ee73525f": "Trova lettore RFID UHF in raid",
+			"5ec14080c9ffe55cca300867": "Trova in raid il Modulo di Archiviazione Flash VPX"
 		},
 		"name": "Importa",
 		"note": "",
@@ -2318,20 +2320,19 @@
 			"5c51aea486f774423e5e36e3": "",
 			"5c51aebf86f774423b4767d2": "",
 			"5c51aee886f774423d3f9072": "",
-			"5c51af2286f774423e5e36e4": "",
 			"5c51af6586f774423b4767d3": "",
 			"5c51af7086f774423d3f9073": "",
 			"5c51afd786f774423e5e36e5": "",
 			"5c51affc86f774423b4767d4": "",
-			"5c51bed886f77478bb033461": "Consegna un Libro antico Rovinato",
-			"5c51bf8786f77416a11e5cb2": "Consegna una pisola lubrificante #FireKlean",
-			"5c51bf9a86f77478bf5632aa": "Consegna un gallo d'Oro",
-			"5c51bfb186f77478bd516d37": "Consegna il distintivo d'argento",
-			"5c51bfc286f77478bc7ae1d9": "Consegna l'Olio da barba di Deadlyslob ",
-			"5c51c03186f7740ada3f2c3d": "Consegna un Gphone Dorato",
-			"5c51c04286f77478be4009f5": "Consegna un vasetto di maionese DevilDog",
-			"5c51c23a86f77478bb033466": "Consegna una scatoletta di Spratti",
-			"5c51c24c86f77416a11e5cb7": "Consegna dei baffi finti",
+			"5c51bed886f77478bb033461": "Consegna il libro antico malridotto",
+			"5c51bf8786f77416a11e5cb2": "Consegna il lubrificante per pistole #Fireklean",
+			"5c51bf9a86f77478bf5632aa": "Consegna il gallo d'Oro",
+			"5c51bfb186f77478bd516d37": "Consegna il Distintivo d'Argento",
+			"5c51bfc286f77478bc7ae1d9": "Consegna l'olio per la barba Deadlyslob's",
+			"5c51c03186f7740ada3f2c3d": "Consegna il 1Gphone Dorato",
+			"5c51c04286f77478be4009f5": "Consegna il vasetto di maionese DevilDog",
+			"5c51c23a86f77478bb033466": "Consegna la Lattina di Spratti",
+			"5c51c24c86f77416a11e5cb7": "Consegna i baffi finti",
 			"5c51c25c86f77478bf5632af": "Consegna il berretto di Kotton",
 			"5c51db2a86f77478be4009ff": "",
 			"5c52b92e86f77478be400a00": "",
@@ -2385,34 +2386,58 @@
 			"5c52ce6786f7742fb77f6b12": "",
 			"5c52da1086f7742fbb42a814": "Consegna il Vecchio acciarino",
 			"5c52da5886f7747364267a14": "Consegna l'ascia Antica",
-			"5cb5ddd386f7746ef72a7e73": "Trovare in raid un vecchio acciarino",
-			"5cb5dde786f7746ef451bd74": "Trova l'antica ascia in raid",
-			"5cb5de0086f7746ef82c17e4": "Trova il libro antico, rovinato in raid",
-			"5cb5de1786f7747d215eca04": "Trova la pistola lubrificante #FireKlean",
-			"5cb5de9c86f7746ef55dbc86": "Trova il gallo d'oro in raid",
-			"5cb5deae86f7746ef451bd76": "Trova un distintivo d'argento in raid",
-			"5cb5debf86f7746ef72a7e78": "Trova l'Olio da barba di Deadlyslob",
+			"5cb5ddd386f7746ef72a7e73": "Trovare in raid il Vecchio acciarino",
+			"5cb5dde786f7746ef451bd74": "Trova l'ascia Antica in raid",
+			"5cb5de0086f7746ef82c17e4": "Trova il libro antico malridotto in raid",
+			"5cb5de1786f7747d215eca04": "Trova il lubrificante per pistole #Fireklean in raid",
+			"5cb5de9c86f7746ef55dbc86": "Trova il gallo d'Oro in raid",
+			"5cb5deae86f7746ef451bd76": "Trova il Distintivo d'Argento in raid",
+			"5cb5debf86f7746ef72a7e78": "Trova l'olio per la barba Deadlyslob's in raid",
 			"5cb5ded886f7746ef451bd77": "Trova il 1Gphone dorato in raid",
-			"5cb5dee986f7746ef82c17e7": "Trova un barattolo di maionese DevilDog in raid",
-			"5cb5df5586f7746ef82c17e8": "Trova una lattina di spratti in raid",
-			"5cb5df7186f7747d215eca08": "Trova i baffi finti in raid",
+			"5cb5dee986f7746ef82c17e7": "Trova barattolo di maionese DevilDog in raid",
+			"5cb5df5586f7746ef82c17e8": "Trova una Lattina di spratti in raid",
+			"5cb5df7186f7747d215eca08": "Trova i baffi Finti in raid",
 			"5cb5df8486f7746ef82c17ea": "Trova in raid il berretto di Kotton",
 			"5de798b233870205123c7f33": "",
 			"5ec798b8254c431289542b90": "Trova in Raid la statuetta del Corvo",
 			"5ec7998dc1683c0db84484e7": "Consegna la statuetta del Corvo",
-			"5ec79aaac1683c0db84484e8": "Trova la maschera della peste di Pestily in raid",
-			"5ec79b3ced84ad5ddb58e24c": "Consegna la maschera della peste di Pestily",
+			"5ec79aaac1683c0db84484e8": "Trova la maschera della peste Pestily in raid",
+			"5ec79b3ced84ad5ddb58e24c": "Consegna la maschera della peste Pestily",
 			"5ec79c2fed84ad5ddb58e24d": "Trova la bandana di Shroud in raid",
 			"5ec79c5ac1683c0db84484eb": "Consegna la bandana di Shroud",
-			"5ec79f2c82a25876330cb232": "Trova la lattina di chicchi di caffè del Dr. Lupo in raid",
-			"5ec79fb273279f683254baaa": "Consegna la lattina di chicchi di caffè del Dr. Lupo ",
+			"5ec79f2c82a25876330cb232": "Trova barattolo di chicchi di caffè Dr. Lupo's in raid",
+			"5ec79fb273279f683254baaa": "Consegna barattolo di chicchi di caffè Dr. Lupo's",
 			"5db9aaf46194ab4e69304de8": "",
-			"5f75d3ab0e3df95a7f52b367": "Trova in raid un tè inglese 42a Signature Blend",
-			"5f75d4558f70ca7a1d684dac": "Consegna un tè inglese 42a Signature Blend",
-			"5f75d4e79a479f5c16331352": "Trova in raid un plettro di Veritas",
-			"5f75d521edb90b73913272a3": "Consegna un plettro di Veritas"
+			"5f75d3ab0e3df95a7f52b367": "Trova tè inglese 42a Signature Blend in raid",
+			"5f75d4558f70ca7a1d684dac": "Consegna tè inglese 42a Signature Blend",
+			"5f75d4e79a479f5c16331352": "Trova il plettro Veritas in raid",
+			"5f75d521edb90b73913272a3": "Consegna il plettro Veritas",
+			"60cfa1031bdece56c249cbf4": "Trova la fascia da braccio Evasion in raid",
+			"60cfa136f81cc57f471718cb": "Consegna la Fascia da braccio Evasion",
+			"60d06de320a6283a506aeb67": "Trova in raid la lattina di RatCola",
+			"60d06e921bdece56c249cc0c": "Consegna la lattina di RatCola",
+			"60d06eef41fd1e14d71e2323": "Trova in raid il peluche Loot Lord",
+			"60d06f3420a6283a506aeb69": "Consegna il peluche Loot Lord",
+			"60d06f8cac6eb02bc726de99": "Trova in raid il Portafogli WZ",
+			"60d074211bdece56c249cc13": "Consegna il Portafogli WZ",
+			"60d0748820a6283a506aebb1": "Trova il veleno per ratti LVNDMARK",
+			"60d074ef401d874962160aee": "Consegna il veleno per ratti LVNDMARK",
+			"60d9a73d9f89812e5b6ac368": "",
+			"60d9a752ac6eb02bc726fcc6": "",
+			"60d9a77141fd1e14d71e2bfc": "",
+			"60d9a77c646f74055e27750a": "",
+			"60d9a7955f9e6175514def1b": "",
+			"60d9a79fac6eb02bc726fcc7": "",
+			"60d9a7abf81cc57f47174189": "",
+			"60d9a7c7826ca0323464cf23": "",
+			"60d9a7cf9f89812e5b6ac369": "",
+			"60d9a7dd401d87496216141f": "",
+			"60d9a80e807141159d0a4e5b": "",
+			"60d9d34e8a6f9a3731773f93": "Raggiungi il livello 62",
+			"60e827a20c492412897c688e": "Trova passamontagna Smoke",
+			"60e827faf09904268a4dbc40": "Consegna passamontagna Smoke"
 		},
-		"name": "Il Collezionista",
+		"name": "Collezionista",
 		"note": "",
 		"successMessageText": "5c5d950686f7747a777ade0c",
 		"failMessageText": "5c5d950686f7747a777ade0d",
@@ -2422,9 +2447,9 @@
 	},
 	"5d2495a886f77425cd51e403": {
 		"conditions": {
-			"5d2496fb86f77425ce7f1254": "Trova l'accampamento di Jaegers",
-			"5d249a6e86f774791546e952": "Trova il messaggio di Jaegers",
-			"5d249aa286f77475e8376399": "Consegna il messaggio al Mechanic",
+			"5d2496fb86f77425ce7f1254": "Trova l'accampamento di Jaeger a Woods",
+			"5d249a6e86f774791546e952": "Ottieni il messaggio cifrato di Jaeger",
+			"5d249aa286f77475e8376399": "Consegna il messaggio",
 			"5d7fc0f386f77440373c4d78": "",
 			"5d7fc0fb86f77440351becb3": ""
 		},
@@ -2438,9 +2463,9 @@
 	},
 	"5d24b81486f77439c92d6ba8": {
 		"conditions": {
-			"5d24ba7886f77439c92d6baa": "Ottieni in raid o realizza nel rifugio 3 sacchetti del pranzo Iskra",
-			"5d24bb4886f77439c92d6bad": "Ottieni in raid 2 confezioni di crostini di pane di segale Emelya",
-			"5d24bb7286f7741f7956be74": "Ottieni in raid 2 lattine con stufato di manzo prelibato",
+			"5d24ba7886f77439c92d6baa": "Trova in raid una confezione di razioni Iskra",
+			"5d24bb4886f77439c92d6bad": "Trova in raid i crostini di segale Emelya",
+			"5d24bb7286f7741f7956be74": "Trova stufati di carne in scatola grande in raid",
 			"5d76276186f774454c5360bc": "",
 			"5d77d51c86f7742fa65b6608": ""
 		},
@@ -2454,11 +2479,11 @@
 	},
 	"5d25aed386f77442734d25d2": {
 		"conditions": {
-			"5d25af3c86f77443ff46b9e7": "Uccidi 5 scav a Woods senza indossare l'armatura",
+			"5d25af3c86f77443ff46b9e7": "Elimina Scav a Woods senza indossare alcuna armatura",
 			"5d76302d86f774454d58840e": "",
 			"5d77d4a386f7745041358b56": ""
 		},
-		"name": "Il percorso della sopravvivenza. Indifeso ma pericoloso",
+		"name": "Il Sentiero Survivalista - Indifeso, ma Pericoloso",
 		"note": "",
 		"successMessageText": "5d25af0f86f77443e55d1454",
 		"failMessageText": "5d25af0f86f77443e55d1455",
@@ -2468,14 +2493,14 @@
 	},
 	"5d25b6be86f77444001e1b89": {
 		"conditions": {
-			"5d25beca86f77409dd5cdbb3": "Deposita l'MRE \"Iskra\" nel bunker ZB-016",
-			"5d25beeb86f77443fe45765f": "Deposita la bottiglia di acqua nel bunker ZB-016",
-			"5d2deedc86f77459121c3118": "Deposita l'MRE \"Iskra\" nel bunker ZB-014",
-			"5d2defc586f774591510e6b9": "Deposita la bottiglia di acqua nel bunker ZB-014",
+			"5d25beca86f77409dd5cdbb3": "Nascondi una confezione di razioni Iskra nel bunker ZB-016 a Woods",
+			"5d25beeb86f77443fe45765f": "Colloca una bottiglia di acqua nel bunker ZB-016 a Woods",
+			"5d2deedc86f77459121c3118": "Nascondi una confezione di razioni Iskra nel bunker ZB-014 a Woods",
+			"5d2defc586f774591510e6b9": "Colloca una bottiglia di acqua nel bunker ZB-014 a Woods",
 			"5d76307886f774454c5360c1": "",
 			"5d77d13e86f77461b27a237a": ""
 		},
-		"name": "Il percorso della sopravvivenza. Parsimonioso",
+		"name": "Il Sentiero Survivalista - Parsimonioso",
 		"note": "",
 		"successMessageText": "5d25b6ce86f77443ff46b9eb",
 		"failMessageText": "5d25b6ce86f77443ff46b9ec",
@@ -2485,12 +2510,12 @@
 	},
 	"5d25bfd086f77442734d3007": {
 		"conditions": {
-			"5d25c5a186f77443fe457661": "Trascorri almeno 5 minuti in uno stato di completa disidratazione",
-			"5d9f035086f7741cac4a9713": "Sopravvivi e fai l'estrazione",
+			"5d25c5a186f77443fe457661": "Sopravvivi per 5 minuti essendo completamente disidratato",
+			"5d9f035086f7741cac4a9713": "Sopravvivi ed estrai dalla zona",
 			"5dadc98786f7744b0c681e8e": "",
 			"5dadc99686f7744b0f1b1d2a": ""
 		},
-		"name": "Il percorso della sopravvivenza. Zhivchik",
+		"name": "Il Sentiero Survivalista - Zhivchik",
 		"note": "",
 		"successMessageText": "5d25c3e886f77444001e2840",
 		"failMessageText": "5d25c3e886f77444001e2841",
@@ -2500,11 +2525,11 @@
 	},
 	"5d25c81b86f77443e625dd71": {
 		"conditions": {
-			"5d25c8c986f77443e47ad47a": "Uccidi 3 Scav mentre sei dolorante",
+			"5d25c8c986f77443e47ad47a": "Elimina Scav mentre soffri l'effetto dolore",
 			"5d7630e286f774452173421a": "",
 			"5d77d0f286f7742fa65b6604": ""
 		},
-		"name": "Il percorso della sopravvivenza. La bestia ferita",
+		"name": "Il Sentiero Survivalista - Bestia Ferita",
 		"note": "",
 		"successMessageText": "5d25c85586f77408251c4225",
 		"failMessageText": "5d25c85586f77408251c4226",
@@ -2514,12 +2539,12 @@
 	},
 	"5d25cf2686f77443e75488d4": {
 		"conditions": {
-			"5d25d09286f77444001e284c": "Elimina 3 Scav su Woods in un singolo raid. Non dovrai curarti.",
-			"5d25d0d186f7740a22515975": "Non utilizzare alcun farmaco durante la missione",
+			"5d25d09286f77444001e284c": "Elimina Scav a Woods in un singolo raid senza utilizzare alcun farmaco",
+			"5d25d0d186f7740a22515975": "Non puoi utilizzare forniture mediche fino al termine della missione",
 			"5d9c940886f7742cd41c59c0": "",
 			"5d9c941f86f7743554286958": ""
 		},
-		"name": "Il percorso della sopravvivenza. Il duro",
+		"name": "Il Sentiero Survivalista - Spaccone",
 		"note": "",
 		"successMessageText": "5d25cf5d86f77408251c422a",
 		"failMessageText": "5d25cf5d86f77408251c422b",
@@ -2529,11 +2554,11 @@
 	},
 	"5d25d2c186f77443e35162e5": {
 		"conditions": {
-			"5d25d4e786f77442734d335d": "Elimina 2 PMC con un colpo in testa mentre hai i tremori (con un braccio rotto)",
+			"5d25d4e786f77442734d335d": "Elimina PMC con colpi alla testa mentre si soffre dell'effetto tremore",
 			"5d76322786f774454e50d062": "",
 			"5d84afb986f77414e20063ea": ""
 		},
-		"name": "Il percorso della sopravvivenza. A sangue freddo",
+		"name": "Il Sentiero Survivalista - Sangue Freddo",
 		"note": "",
 		"successMessageText": "5d25d4cb86f77443e55d2f73",
 		"failMessageText": "5d25d4cb86f77443e55d2f74",
@@ -2543,11 +2568,11 @@
 	},
 	"5d25dae186f77443e55d2f78": {
 		"conditions": {
-			"5d25dc2286f77443e7549028": "Uccidi 2 PMC operativi mentre sono accecati da una granata flashbang",
+			"5d25dc2286f77443e7549028": "Elimina PMC mentre sei accecato da una granata flashbang",
 			"5d76332c86f774454e50d063": "",
 			"5d77cdc286f7742fa65b6603": ""
 		},
-		"name": "Il percorso della sopravvivenza. Zatoichi",
+		"name": "Il Sentiero Survivalista - Zatoichi",
 		"note": "",
 		"successMessageText": "5d25dbd086f77443e625e380",
 		"failMessageText": "5d25dbd086f77443e625e381",
@@ -2557,11 +2582,11 @@
 	},
 	"5d25e29d86f7740a22516326": {
 		"conditions": {
-			"5d25fd8386f77443fe457cae": "Uccidi 6 scav tra le 21:00 e 04:00 del mattino, senza l'utilizzo di visori notturni o mirini termici",
+			"5d25fd8386f77443fe457cae": "Elimina Scav tra le 21:00 e 04:00, senza l'utilizzo di Visori Notturni o mirini Termici",
 			"5d77cd9d86f7742fa857dd73": "",
 			"5d77cda786f774319c488837": ""
 		},
-		"name": "Il percorso della sopravvivenza. Occhio di Falco",
+		"name": "Il Sentiero Survivalista - Occhio di Falco",
 		"note": "",
 		"successMessageText": "5d25fd4c86f77409de05bba6",
 		"failMessageText": "5d25fd4c86f77409de05bba7",
@@ -2571,11 +2596,11 @@
 	},
 	"5d25e2a986f77409dd5cdf2a": {
 		"conditions": {
-			"5d2605ef86f77469ef0f7622": "Raggiungi il livello 5 nell'abilità Vitalità",
+			"5d2605ef86f77469ef0f7622": "Raggiungi il livello richiesto nell'abilità Vitalità",
 			"5d76336486f7744527181847": "",
 			"5d77cd3d86f7742fa732bf15": ""
 		},
-		"name": "Il percorso della sopravvivenza. Il medico da campo",
+		"name": "Il Sentiero Survivalista - Medico Combattente",
 		"note": "",
 		"successMessageText": "5d26042386f77443ff46d19a",
 		"failMessageText": "5d26042386f77443ff46d19b",
@@ -2585,11 +2610,11 @@
 	},
 	"5d25e2b486f77409de05bba0": {
 		"conditions": {
-			"5d26143c86f77469ef0f894c": "Elimina 6 PMC su Factory, nella zona degli uffici",
+			"5d26143c86f77469ef0f894c": "Elimina PMC a Factory nella zona uffici (qualsiasi piano)",
 			"5d763d7c86f774452073df77": "",
 			"5d77cc4886f7742fa732bf14": ""
 		},
-		"name": "Sentiero del cacciatore. Perimetro sicuro",
+		"name": "Sentiero del cacciatore - Perimetro Sicuro",
 		"note": "",
 		"successMessageText": "5d260f8686f77469f04444b2",
 		"failMessageText": "5d260f8686f77469f04444b3",
@@ -2599,13 +2624,13 @@
 	},
 	"5d25e2c386f77443e7549029": {
 		"conditions": {
-			"5d26fd8886f77469f0445745": "Uccidi Reshala",
-			"5d2710e686f7742e9019a6b2": "Consegna la TT dorata a Jaeger",
-			"5d66741c86f7744a2e70f039": "Trova in raid la TT dorata",
+			"5d26fd8886f77469f0445745": "Elimina Reshala",
+			"5d2710e686f7742e9019a6b2": "Consegna la pistola dorata TT di Reshala",
+			"5d66741c86f7744a2e70f039": "Trova in raid la pistola dorata TT di Reshala",
 			"5d77689686f7742fa857dd34": "",
 			"5d77c96386f7742fa901bcc7": ""
 		},
-		"name": "Sentiero del cacciatore. Il Trofeo",
+		"name": "Sentiero del Cacciatore - Il Trofeo",
 		"note": "",
 		"successMessageText": "5d26f9f086f77469ee70ac2c",
 		"failMessageText": "5d26f9f086f77469ee70ac2d",
@@ -2615,11 +2640,11 @@
 	},
 	"5d25e2cc86f77443e47ae019": {
 		"conditions": {
-			"5d2701b586f77469f1599fe2": "Uccidi 30 Scav in tutto il territorio di Tarkov",
+			"5d2701b586f77469f1599fe2": "Elimina Scav in tutto il territorio di Tarkov",
 			"5d7768bf86f774319c488824": "",
 			"5d77c8df86f7742fa65b6602": ""
 		},
-		"name": "Sentiero del cacciatore. Pulizia dei Boschi",
+		"name": "Sentiero del Cacciatore - Pulizia dei Boschi",
 		"note": "",
 		"successMessageText": "5d27018e86f77469ef0f8950",
 		"failMessageText": "5d27018e86f77469ef0f8951",
@@ -2628,10 +2653,10 @@
 		"location": "any"
 	},
 	"5d25e2d886f77442734d335e": {
-		"name": "Sentiero del cacciatore. Controllore",
+		"name": "Sentiero del Cacciatore - Il Controllore",
 		"note": "",
 		"conditions": {
-			"5d307fc886f77447f15f5b23": "Uccidi 2 PMC accecati da una flashbang",
+			"5d307fc886f77447f15f5b23": "Elimina PMC mentre sono accecati da una granata flashbang",
 			"5d77695b86f7742fa901bc75": "",
 			"5d77c84d86f7742fa901bcc6": ""
 		},
@@ -2643,13 +2668,13 @@
 	},
 	"5d25e2e286f77444001e2e48": {
 		"conditions": {
-			"5d2719b186f7740701348573": "Uccidi Killa",
-			"5d271a3486f774483c7bdb12": "Consegna l'elmetto di Killa a Jaeger",
-			"5d667a8e86f774131e206b46": "Trova l'elmetto di Killa",
+			"5d2719b186f7740701348573": "Elimina Killa",
+			"5d271a3486f774483c7bdb12": "Consegna l'elmetto di Killa ",
+			"5d667a8e86f774131e206b46": "Trova l'elmetto di Killa in raid",
 			"5d776b1986f77461b27a2354": "",
 			"5d77c80b86f7742fa65b6601": ""
 		},
-		"name": "Sentiero del cacciatore. Tutto esaurito",
+		"name": "Sentiero del cacciatore - Tutto esaurito",
 		"note": "",
 		"successMessageText": "5d270bbc86f77469f1599fe3",
 		"failMessageText": "5d270bbc86f77469f1599fe4",
@@ -2659,13 +2684,13 @@
 	},
 	"5d25e2ee86f77443e35162ea": {
 		"conditions": {
-			"5d27276886f7740701348578": "Uccidi Shturman",
-			"5d272a0b86f7745ba2701532": "Consegna la chiave del magazzino di Sturman a Jaeger",
-			"5d2f464e498f71c8886f7656": "Trova in raid la chiave di Shturman",
+			"5d27276886f7740701348578": "Elimina Shturman",
+			"5d272a0b86f7745ba2701532": "Consegna la chiave della cassa di Shturman",
+			"5d2f464e498f71c8886f7656": "Trova la chiave della cassa di Shturman in raid",
 			"5d77c65786f7742fa901bcc5": "",
 			"5d77c66586f7742fa732bf13": ""
 		},
-		"name": "Sentiero del cacciatore. Guardia Boschi",
+		"name": "Sentiero del Cacciatore - Il Guardia Boschi",
 		"note": "",
 		"successMessageText": "5d27245186f774483c7bdb13",
 		"failMessageText": "5d27245186f774483c7bdb14",
@@ -2675,11 +2700,11 @@
 	},
 	"5d25e43786f7740a212217fa": {
 		"conditions": {
-			"5d272bd386f77446085fa4f9": "Uccidi 3 Scav vestiti con l'uniforme della polizia",
+			"5d272bd386f77446085fa4f9": "Elimina Scav vestiti in uniforme di polizia (guardie del corpo di Reshala)",
 			"5d776ef786f7742fa5005cb5": "",
 			"5d77a48286f77461b27a236b": ""
 		},
-		"name": "Sentiero del cacciatore. Giustizia",
+		"name": "Sentiero del cacciatore - Giustizia",
 		"note": "",
 		"successMessageText": "5d272b9086f774070261ec1d",
 		"failMessageText": "5d272b9086f774070261ec1e",
@@ -2689,11 +2714,11 @@
 	},
 	"5d25e44386f77409453bce7b": {
 		"conditions": {
-			"5d2733c586f7741dea4f3072": "Uccidi 5 PMC nell'area dei Dormitori a Customs",
+			"5d2733c586f7741dea4f3072": "Elimina PMC nei Dormitori nell'area di Customs",
 			"5d77710186f774319c488825": "",
 			"5d77a45386f774319c488836": ""
 		},
-		"name": "Sentiero del cacciatore. Guardiano malvagio",
+		"name": "Sentiero del Cacciatore - Il Guardiano malvagio",
 		"note": "",
 		"successMessageText": "5d27323c86f77445722f1f98",
 		"failMessageText": "5d27323c86f77445722f1f99",
@@ -2703,11 +2728,11 @@
 	},
 	"5d25e44f86f77443e625e385": {
 		"conditions": {
-			"5d27369586f774457411b264": "Trova ed elimina Glukhar",
+			"5d27369586f774457411b264": "Elimina Glukhar",
 			"5d777e3a86f7742fa857dd36": "",
 			"5d777eb086f7742fa732bf05": ""
 		},
-		"name": "Sentiero del cacciatore. Eliminatore parte 1",
+		"name": "Sentiero del Cacciatore - L' Eliminatore",
 		"note": "",
 		"successMessageText": "5d27366b86f77445710a8072",
 		"failMessageText": "5d27366b86f77445710a8073",
@@ -2717,12 +2742,12 @@
 	},
 	"5d25e45e86f77408251c4bfa": {
 		"conditions": {
-			"5d273a4d86f774457411b266": "Uccidi 6 raider",
+			"5d273a4d86f774457411b266": "Elimina Raider",
 			"5d777f5d86f7742fa901bc77": "",
 			"5d777ffd86f774319c488827": "",
 			"5d77a3b286f7745041358b44": ""
 		},
-		"name": "Sentiero del cacciatore. Eliminatore parte 2",
+		"name": "Il Sentiero del Cacciatore - Eliminatore - parte 2",
 		"note": "",
 		"successMessageText": "5d2739d386f77445710a8077",
 		"failMessageText": "5d2739d386f77445710a8078",
@@ -2732,13 +2757,13 @@
 	},
 	"5d25e46e86f77409453bce7c": {
 		"conditions": {
-			"5d27446f86f77475a86565a3": "Consegna un defibrillatore portatile",
-			"5d7782c686f7742fa732bf07": "Consegna 2 kit chirurgici CMS",
+			"5d27446f86f77475a86565a3": "Consegna il defibrillatore portatile",
+			"5d7782c686f7742fa732bf07": "Consegna kit chirurgici CMS",
 			"5d7782f886f7742fa65b65f5": "",
 			"5d77830086f7745041358b35": "",
 			"5d77a38e86f7745041358b43": "",
-			"5ec1504183b69d213d3c2ee8": "Trova in raid un defibrillatore portatile",
-			"5ec1538a92e95f77ac7a2529": "Trova in raid 2 kit chirurgici CMS"
+			"5ec1504183b69d213d3c2ee8": "Trova il defibrillatore portatile in raid",
+			"5ec1538a92e95f77ac7a2529": "Trova kit chirurgici CMS in raid"
 		},
 		"name": "Ambulanza",
 		"note": "",
@@ -2750,14 +2775,14 @@
 	},
 	"5d25e48186f77443e625e386": {
 		"conditions": {
-			"5d357b6c86f774588d4d7e25": "Trova la casa del presidente",
-			"5d357b9586f7745b422d653f": "Trova la casa del pescatore",
-			"5d357bb786f774588d4d7e27": "Trova la casa del prete",
+			"5d357b6c86f774588d4d7e25": "Trova la casa del presidente nel villaggio abbandonato a Shoreline",
+			"5d357b9586f7745b422d653f": "Trova la casa del pescatore nel villaggio abbandonato a Shoreline",
+			"5d357bb786f774588d4d7e27": "Trova la casa del prete nel villaggio abbandonato a Shoreline",
 			"5d7784cc86f7742fa5005cba": "",
 			"5d77854786f7745041358b36": "",
 			"5d77a36086f77461b27a236a": ""
 		},
-		"name": "Visita di cortesia",
+		"name": "Visita di Cortesia",
 		"note": "",
 		"successMessageText": "5d3076e386f7743c836efc88",
 		"failMessageText": "5d3076e386f7743c836efc89",
@@ -2767,12 +2792,12 @@
 	},
 	"5d25e48d86f77408251c4bfb": {
 		"conditions": {
-			"5d27491686f77475aa5cf5b9": "Consegna 3 penne USB",
-			"5d6949e786f774238a38d9e0": "Trovare 3 penne USB in raid",
+			"5d27491686f77475aa5cf5b9": "Consegna le Penne Usb",
+			"5d6949e786f774238a38d9e0": "Trova penne USB protette in raid",
 			"5d77a27d86f774319c488835": "",
 			"5d77a29b86f7742fa65b6600": ""
 		},
-		"name": "Loschi affari",
+		"name": "Affari Loschi",
 		"note": "",
 		"successMessageText": "5d2747db86f7741d0b1f40ac",
 		"failMessageText": "5d2747db86f7741d0b1f40ad",
@@ -2782,9 +2807,9 @@
 	},
 	"5d25e4ad86f77443e625e387": {
 		"conditions": {
-			"5d27522686f774304e316405": "Consegna l'album fotografico a Jaeger",
-			"5d357e0e86f7745b3f307c56": "Trova la stanza con vista sulla baia, dove Jaeger ha vissuto",
-			"5d357e8786f7745b5e66a51a": "Trova l'album fotografico di Jaegers",
+			"5d27522686f774304e316405": "Consegna l'Album Fotografico",
+			"5d357e0e86f7745b3f307c56": "Trova la camera di Jaeger con vista su una baia nel resort",
+			"5d357e8786f7745b5e66a51a": "Ottieni l'album fotografico di Jaeger",
 			"5d778e6c86f77461b27a235d": "",
 			"5d778e7c86f7742fa901bc7c": "",
 			"5d77a24986f7742fa65b65ff": ""
@@ -2799,17 +2824,17 @@
 	},
 	"5d25e4b786f77408251c4bfc": {
 		"conditions": {
-			"5d2f375186f7745916404955": "Trova 2 tessere magnetiche di accesso ai Terragroup Lab",
+			"5d2f375186f7745916404955": "Trova la tessera magnetica di accesso ai Terragroup Lab in raid",
 			"5d778ebb86f7742fa732bf09": "",
 			"5d778ec586f7745041358b37": "",
 			"5d778f7d86f7742fa65b65f9": "",
-			"5d8a09d386f77410b4225d13": "Consegna 2 tessere magnetiche di accesso ai Terragroup Lab"
+			"5d8a09d386f77410b4225d13": "Consegna la tessera magnetica di accesso"
 		},
-		"name": "Luogo di pesca",
+		"name": "Zona di Pesca",
 		"note": "",
-		"successMessageText": "5d2f35b5498f715f017f4abb",
+		"successMessageText": "5d2f378786f774169b7e0066",
 		"failMessageText": "5d2f378786f774169b7e0067",
-		"startedMessageText": "5d2f35b5498f715f017f4abd",
+		"startedMessageText": "5d2f378786f774169b7e0068",
 		"description": "5d2f378786f774169b7e0069",
 		"location": "any"
 	},
@@ -2817,9 +2842,9 @@
 		"conditions": {
 			"5d7793fa86f7742fa901bc80": "",
 			"5d77940986f7742fa732bf0a": "",
-			"5fd8aa3206fb3a6b8154a2c3": "Uccidi Shturman, armato di Remington M700 con ottica"
+			"5fd8aa3206fb3a6b8154a2c3": "Elimina Shturman mentre utilizzi un fucile da cecchino M700 con il mirino specificato"
 		},
-		"name": "Battuta di caccia",
+		"name": "Battuta di Caccia",
 		"note": "",
 		"successMessageText": "5d66912c86f774368f43a242",
 		"failMessageText": "5d66912c86f774368f43a243",
@@ -2828,12 +2853,12 @@
 		"location": "5704e3c2d2720bac5b8b4567"
 	},
 	"5d25e4d586f77443e625e388": {
-		"name": "Reserv",
+		"name": "Reserve",
 		"note": "",
 		"conditions": {
 			"5d77a16486f77461b27a2369": "",
 			"5d77a17386f7742fa901bcc2": "",
-			"5d8a05d086f77410b4225d10": "Trova il magazzino del cibo"
+			"5d8a05d086f77410b4225d10": "Trova il luogo di stoccaggio del cibo a Reserve"
 		},
 		"successMessageText": "5d66914986f7743690020691",
 		"failMessageText": "5d66914986f7743690020692",
@@ -2842,13 +2867,13 @@
 		"location": "5704e5fad2720bc05b8b4567"
 	},
 	"5d4bec3486f7743cac246665": {
-		"name": "Materiali regolamentati",
+		"name": "Materiali Regolamentati",
 		"note": "",
 		"conditions": {
-			"5d4bfe4b86f7744a9d4fe032": "Trovare in raid una batteria militare",
-			"5d4bfe7c86f7744a9c66b316": "Consegna la batteria militare",
-			"5d4c020a86f77449c463ced6": "Trova in raid 5 munizioni 30 mm per cannone BMP",
-			"5d4c028c86f774389001e027": "Consegna 5 munizioni 30 mm per cannone BMP",
+			"5d4bfe4b86f7744a9d4fe032": "Trova in raid la Batteria Militare 6-Sten-140-M",
+			"5d4bfe7c86f7744a9c66b316": "Consegna la Batteria Militare 6-Sten-140-M",
+			"5d4c020a86f77449c463ced6": "Trova bossoli OFZ 30x160mm in raid",
+			"5d4c028c86f774389001e027": "Consegna bossoli OFZ 30x160mm",
 			"5d761f6886f7744521734218": "",
 			"5d77db2186f7745041358b57": ""
 		},
@@ -2860,7 +2885,7 @@
 	},
 	"5d6fb2c086f77449da599c24": {
 		"conditions": {
-			"5d6fb8a886f77449db3db8b6": "Consegna 400.000 Rubli",
+			"5d6fb8a886f77449db3db8b6": "Consegna i RUBLI",
 			"5d77c61786f7742fa732bf12": ""
 		},
 		"name": "Una mela al giorno toglie il medico di torno",
@@ -2873,7 +2898,7 @@
 	},
 	"5d6fbc2886f77449d825f9d3": {
 		"conditions": {
-			"5d6fbf0f86f77449d97f738e": "Consegna 50.000 euro",
+			"5d6fbf0f86f77449d97f738e": "Consegna gli EURO",
 			"5d77c55886f7742fa901bcc4": ""
 		},
 		"name": "Mentore",
@@ -2886,11 +2911,11 @@
 	},
 	"5dc53acb86f77469c740c893": {
 		"conditions": {
-			"5dc53fd386f77469c87589a3": "Uccidi Killa 100 volte",
+			"5dc53fd386f77469c87589a3": "Elimina Killa",
 			"5dc541ad86f7741416111d02": "",
 			"5dc541c386f77469c87589a6": ""
 		},
-		"name": "Il più elegante",
+		"name": "Quello Elegante",
 		"note": "",
 		"successMessageText": "5dc5401c86f77469c5053043",
 		"failMessageText": "5dc5401c86f77469c5053044",
@@ -2900,18 +2925,18 @@
 	},
 	"5e381b0286f77420e3417a74": {
 		"conditions": {
-			"5e38261886f77429853af26c": "Ottieni in raid 5 pezzi di tessuto aramidico",
-			"5e382b6986f7741b72695045": "Ottieni in raid 10 pezzi di tessuto ripstop",
-			"5e382d6386f77429a01f82fb": "Ottieni in raid 3 pezzi di paracord",
-			"5e382fef86f7741e53790d40": "Consegna 5 pezzi in tessuto aramidico.",
-			"5e38356d86f7742993306cac": "Consegna 10 pezzi di tessuto ripstop.",
-			"5e3835e886f77429910d4465": "Consegna 3 pezzi di paracord.",
+			"5e38261886f77429853af26c": "Trova i tessuti di Aramide in raid",
+			"5e382b6986f7741b72695045": "Trova tessuti ripstop in raid",
+			"5e382d6386f77429a01f82fb": "Trova i Paracords in raid",
+			"5e382fef86f7741e53790d40": "Consegna i tessuti",
+			"5e38356d86f7742993306cac": "Consegna i tessuti",
+			"5e3835e886f77429910d4465": "Consegna la Paracord",
 			"5e58d9f286f7747c295d2892": "",
 			"5e58daaa86f7747c25656a53": "",
 			"5e58dabd86f7747c27218702": "",
 			"5e58dace86f7747c295d2893": ""
 		},
-		"name": "Tessuto. Parte 1",
+		"name": "Tessuto - Parte 1",
 		"note": "",
 		"successMessageText": "5e4c013a86f774264f7582f0",
 		"failMessageText": "5e4c013a86f774264f7582f1",
@@ -2921,18 +2946,18 @@
 	},
 	"5e383a6386f77465910ce1f3": {
 		"conditions": {
-			"5e383a6386f77465910ce1f4": "Ottieni in raid 5 pezzi di tessuto aramidico",
-			"5e383a6386f77465910ce1f5": "Consegna 5 pezzi in tessuto aramidico.",
-			"5e383a6386f77465910ce1f6": "Ottieni in raid 10 pezzi di tessuto ripstop",
-			"5e383a6386f77465910ce1f7": "Consegna 10 pezzi di tessuto ripstop.",
-			"5e383a6386f77465910ce1f8": "Ottieni in raid 3 pezzi di paracord",
-			"5e383a6386f77465910ce1f9": "Consegna 3 pezzi di paracord.",
+			"5e383a6386f77465910ce1f4": "Trova i tessuti di Aramide in raid",
+			"5e383a6386f77465910ce1f5": "Consegna i tessuti",
+			"5e383a6386f77465910ce1f6": "Trova tessuti ripstop in raid",
+			"5e383a6386f77465910ce1f7": "Consegna i tessuti",
+			"5e383a6386f77465910ce1f8": "Trova i Paracords in raid",
+			"5e383a6386f77465910ce1f9": "Consegna la Paracord",
 			"5e58dd0a86f7747c27218709": "",
 			"5e58dd1286f774170f538d62": "",
 			"5e58dd1f86f7747c25656a55": "",
 			"5e58dd2a86f7747c28220304": ""
 		},
-		"name": "Tessuto. Parte 1",
+		"name": "Tessuto - Parte 1",
 		"note": "",
 		"successMessageText": "5e4c01bb86f774264f7582fe",
 		"failMessageText": "5e4c01bb86f774264f7582ff",
@@ -2942,16 +2967,16 @@
 	},
 	"5e4d4ac186f774264f758336": {
 		"conditions": {
-			"5e4d4ac186f774264f758339": "Ottieni in raid 10 pezzi di tessuto cordura poliaramidico",
-			"5e4d4ac186f774264f75833a": "Consegna 10 pezzi di tessuto cordura poliaramidico.",
-			"5e4d4ac186f774264f75833c": "Consegna 5 nastri isolanti KEKtape.",
-			"5e4d4ac186f774264f75833b": "Ottieni in raid 5 nastri isolanti KEKtape.",
-			"5e4d4ac186f774264f758338": "Consegna 10 pezzi in pile.",
-			"5e4d4ac186f774264f758337": "Ottieni in raid 10 pezzi di tessuto in pail",
+			"5e4d4ac186f774264f758339": "Trova tessuto poliamide Cordura in raid",
+			"5e4d4ac186f774264f75833a": "Consegna i tessuti",
+			"5e4d4ac186f774264f75833c": "Consegna il nastro adesivo",
+			"5e4d4ac186f774264f75833b": "Consegna nastri isolanti KEKTAPE",
+			"5e4d4ac186f774264f758338": "Consegna i tessuti",
+			"5e4d4ac186f774264f758337": "Trova i tessuti di Pile in raid",
 			"5e58db0986f7740bef574f02": "",
 			"5e58db2386f7747c28220302": ""
 		},
-		"name": "Tessuto. Parte 2",
+		"name": "Tessuto - Parte 2",
 		"note": "",
 		"successMessageText": "5e4d4dd086f77438b1632d88",
 		"failMessageText": "5e4d4dd086f77438b1632d89",
@@ -2961,16 +2986,16 @@
 	},
 	"5e4d515e86f77438b2195244": {
 		"conditions": {
-			"5e4d515e86f77438b2195245": "Ottieni in raid 10 pezzi di tessuto in pail",
-			"5e4d515e86f77438b2195246": "Consegna 10 pezzi in pile.",
-			"5e4d515e86f77438b2195247": "Ottieni in raid 10 pezzi di tessuto cordura poliaramidico",
-			"5e4d515e86f77438b2195248": "Consegna 10 pezzi di tessuto cordura poliaramidico.",
-			"5e4d515e86f77438b2195249": "Ottieni in raid 5 nastri isolanti KEKtape.",
-			"5e4d515e86f77438b219524a": "Consegna 5 nastri isolanti KEKtape.",
+			"5e4d515e86f77438b2195245": "Trova i tessuti di Pile in raid",
+			"5e4d515e86f77438b2195246": "Consegna i tessuti",
+			"5e4d515e86f77438b2195247": "Trova tessuto poliamide Cordura in raid",
+			"5e4d515e86f77438b2195248": "Consegna i tessuti",
+			"5e4d515e86f77438b2195249": "Consegna nastri isolanti KEKTAPE",
+			"5e4d515e86f77438b219524a": "Consegna nastri isolanti KEKTAPE",
 			"5e58dbf386f7747c25656a54": "",
 			"5e58dd9086f7747c2639ee43": ""
 		},
-		"name": "Tessuto. Parte 2",
+		"name": "Tessuto - Parte 2",
 		"note": "",
 		"successMessageText": "5e4d533b86f774264f758340",
 		"failMessageText": "5e4d533b86f774264f758341",
@@ -2983,143 +3008,143 @@
 			"5e7a0773838c444eb02dd0c4": "",
 			"5e7b30e574986d20835c2185": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e748327dbe23170e05094f4": {
 		"conditions": {
 			"5e74833f0b1f9954c86ee49c": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e748d226725d419a47e2101": {
 		"conditions": {
 			"5e748d406725d419a47e2104": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e748d9fc73f9622610abb37": {
 		"conditions": {
 			"5e748dc9391f136a9201292e": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e748df9c73f9622610abb38": {
 		"conditions": {
 			"5e748e12c73f9622610abb3b": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e748e8fa848081e986a58a2": {
 		"conditions": {
 			"5e7b805f0bc7e118403c847d": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74921dc73f9622610abb3e": {
 		"conditions": {
 			"5e74922b35e14d4fb162de6d": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e7492c2cdcce040bf508424": {
 		"conditions": {
 			"5e749308a848081e986a58a6": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e7493d5c377f60fe17d6ec8": {
 		"conditions": {
 			"5e7493e9c377f60fe17d6ecb": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e749741dec1852497081e69": {
 		"conditions": {
 			"5e74a5f2647a0846684a1dc4": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e749800e80d6c7ea20e93de": {
 		"conditions": {
 			"5e789b80d7dc7108e2674cce": "",
 			"5e7a14d6e77ff7644b69fec4": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e7498198f3a2f53cc477e99": {
 		"conditions": {
 			"5e74983470d454700576d1fb": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e7498cc2eb35c76f5087a47": {
 		"conditions": {
 			"5e7498d9c377f60fe17d6ed4": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74990c647a0846684a1db4": {
 		"conditions": {
 			"5e749921dec1852497081e6d": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74a68870d454700576d1fe": {
 		"conditions": {
 			"5e74a6a4d9d3481b8e64369e": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74a765c377f60fe17d6edb": {
 		"conditions": {
 			"5e74a798763a4645365a6186": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74a8a9dfc5fc63e27a781a": {
 		"conditions": {
 			"5e74a8e914847d2f305bfb94": "",
 			"5e7b6333b4c9b140be78c134": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74a9be70d454700576d1ff": {
 		"conditions": {
 			"5e7a0c8ee77ff7644b69febe": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74aafac377f60fe17d6ede": {
 		"conditions": {
 			"5e7b2993f60dc341415906fb": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74ac3f70d454700576d200": {
 		"conditions": {
 			"5e74ac57763a4645365a618b": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74ad13647a0846684a1dc8": {
 		"conditions": {
@@ -3131,85 +3156,85 @@
 			"5e7a13facfd9c45fdf382af4": "",
 			"5e7a13ffb9cbe86fb360bb74": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74b1b201e03f5a8d48aff9": {
 		"conditions": {
 			"5e74b1c4c16d705f775de1db": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74be4c24c2c642fa612776": {
 		"conditions": {
 			"5e7a012228b2fd48f6591c8f": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e74be7b258b0422556b70d7": {
 		"conditions": {
 			"5e79ffc73db8ef255a7c6554": "",
 			"5e7a13c35b8bd347797f4fe5": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e85e1d15549dd01fe748b5a": {
 		"conditions": {
 			"5e85e22e5549dda42377fa77": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e85e2fa5549dd01fe748b5b": {
 		"conditions": {
 			"5e85e32a5549ddfb4a0cdb3a": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e85e40d5549dd10225137b9": {
 		"conditions": {
 			"5e872a5a5549ddc49d49a643": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e85e5025549dda42377fa7b": {
 		"conditions": {
 			"5e85e5405549ddb56f1cf0d9": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5e85e77e5549ddf8e2131c0b": {
 		"conditions": {
 			"5e85e7b45549dd422605cc1d": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5eaaaa7c93afa0558f3b5a1c": {
 		"conditions": {
-			"5eaaaa7c93afa0558f3b5a1f": "Uccidi 15 scav a Woods, sotto l'effetto degli stimolanti"
+			"5eaaaa7c93afa0558f3b5a1f": "Elimina Scav a Woods mentre sei sotto qualsiasi effetto stimolante"
 		},
-		"name": "Il percorso della sopravvivenza. Junkie",
+		"name": "Il Sentiero Survivalista - Fattone",
 		"note": "",
 		"successMessageText": "5eaab0193cf86b0e62795663",
 		"failMessageText": "5eaab0193cf86b0e62795664",
 		"startedMessageText": "5eaab0193cf86b0e62795665",
 		"description": "5eaab0193cf86b0e62795666",
-		"location": "any"
+		"location": "5704e3c2d2720bac5b8b4567"
 	},
 	"5eda19f0edce541157209cee": {
 		"conditions": {
 			"5eda1a67ef0ad2643e73af31": "",
-			"5eda1d6ec586607c09662d54": "Marca il primo posto di scambio a Shoreline",
-			"5eda1da9a58a4c49c74165ee": "Marca il secondo posto di scambio a Shoreline",
-			"5eda1dd3317f6066993c1744": "Marca il terzo posto di scambio a Shoreline",
-			"5f0389268580cc37797e0026": "Sopravvivi e lascia la zona",
+			"5eda1d6ec586607c09662d54": "Segnala il primo centro di scambio con un marcatore MS2000 a Shoreline",
+			"5eda1da9a58a4c49c74165ee": "Segnala il secondo centro di scambio con un marcatore MS2000 a Shoreline",
+			"5eda1dd3317f6066993c1744": "Segnala il terzo centro di scambio con un marcatore MS2000 a Shoreline",
+			"5f0389268580cc37797e0026": "Sopravvivi ed estrai dalla zona",
 			"5f1049d7aa82db0e8f75cb7b": "",
 			"5f1049fe6e4dc7329756c9e8": ""
 		},
@@ -3223,10 +3248,10 @@
 	},
 	"5edab4b1218d181e29451435": {
 		"conditions": {
-			"5edab5a6cecc0069284c0ec2": "Uccidi Sanitar",
+			"5edab5a6cecc0069284c0ec2": "Elimina Sanitar",
 			"5edac4fb16d985118871ba2d": ""
 		},
-		"name": "Sentiero del cacciatore. Sadico",
+		"name": "Sentiero del cacciatore - Il Sadico",
 		"note": "",
 		"successMessageText": "5edab4e4218d181e29451436",
 		"failMessageText": "5edab4e4218d181e29451437",
@@ -3236,15 +3261,15 @@
 	},
 	"5edab736cc183c769d778bc2": {
 		"conditions": {
-			"5edab7d3cc183c769d778bc5": "Individua il gruppo che è stato mandato al Resort",
+			"5edab7d3cc183c769d778bc5": "Individua il gruppo che è stato mandato al resort",
 			"5edab8890880da21347b3826": "Individua il gruppo che è stato mandato al pontile",
-			"5edab8e216d985118871ba18": "Individua il gruppo che è stato mandato al cottage",
+			"5edab8e216d985118871ba18": "Individua il gruppo che è stato mandato ai cottage",
 			"5edababacecc0069284c0ec7": "",
-			"5f03969a51823847c253afa0": "Sopravvivi e lascia la zona",
+			"5f03969a51823847c253afa0": "Sopravvivi ed estrai dalla zona",
 			"5f104ae158bd417a8a3e9d8f": "",
 			"5f104af087fa885f9d696bed": ""
 		},
-		"name": "Colleghi Pt. 1°",
+		"name": "Colleghi - Parte 1",
 		"note": "",
 		"successMessageText": "5edab779bcf60e4a143cb298",
 		"failMessageText": "5edab779bcf60e4a143cb299",
@@ -3255,12 +3280,12 @@
 	"5edaba7c0c502106f869bc02": {
 		"conditions": {
 			"5edabacabcf60e4a143cb29f": "",
-			"5edabb0b0c502106f869bc03": "Ottieni in raid il kit chirurgico di Sanitar, marcato con un simbolo blu",
-			"5edabb950c502106f869bc04": "Consegna alla Therapist il kit chirurgico di Sanitar",
-			"5edabbff0880da21347b382b": "Ottieni l'oftalmoscopio di Sanitar in raid",
-			"5edabc2ca0055865214cb5a6": "Consegna alla Therapist l'oftalmoscopio di Sanitar"
+			"5edabb0b0c502106f869bc03": "Ottieni il kit chirurgico di Sanitar marcato con un simbolo blu",
+			"5edabb950c502106f869bc04": "Consegna il kit chirurgico di Sanitar",
+			"5edabbff0880da21347b382b": "Ottieni l'oftalmoscopio di Sanitar",
+			"5edabc2ca0055865214cb5a6": "Consegna l'oftalmoscopio di Sanitar"
 		},
-		"name": "Colleghi Pr. 2°",
+		"name": "Colleghi - Parte 2",
 		"note": "",
 		"successMessageText": "5edaba9ed143ed1d6378d126",
 		"failMessageText": "5edaba9ed143ed1d6378d127",
@@ -3274,12 +3299,12 @@
 			"5edabe120880da21347b382d": "",
 			"5edabed50880da21347b382e": "",
 			"5edabf0fcc183c769d778bcc": "",
-			"5f039da057a46716b610b577": "Sopravvivi e lascia la zona",
-			"5f071b2a8ca6db7f3b41215f": "Metti un marcatore al contenitore Medico al pontile",
-			"5f071ae396d1ae55e476abc4": "Metti un marcatore al contenitore Medico nel cottage",
-			"5f071a9727cec53d5d24fe3b": "Metti un marcatore al contenitore Medico nel resort"
+			"5f039da057a46716b610b577": "Sopravvivi ed estrai dalla zona",
+			"5f071b2a8ca6db7f3b41215f": "Metti il marcatore MS2000 sul contenitore medico al molo a Shoreline",
+			"5f071ae396d1ae55e476abc4": "Metti il marcatore MS2000 sul contenitore medico dei cottage a Shoreline",
+			"5f071a9727cec53d5d24fe3b": "Metti il marcatore MS2000 sul contenitore medico al resort a Shoreline"
 		},
-		"name": "Partita truccata",
+		"name": "Partita Truccata",
 		"note": "",
 		"successMessageText": "5edabd33bcf60e4a143cb2a4",
 		"failMessageText": "5edabd33bcf60e4a143cb2a5",
@@ -3289,20 +3314,20 @@
 	},
 	"5edac020218d181e29451446": {
 		"conditions": {
-			"5edac0e02ddc9e4c802cd969": "Ottenere in raid lo stimolante M. U. L. E",
-			"5edac1040880da21347b3845": "Consegna lo stimolante M.U.L.E. a Peacekeeper",
-			"5edac13760bdcc7ff355811f": "Ottieni il cocktail \"Obdolbos\" in raid",
-			"5edac1530880da21347b3846": "Consegna il cocktail di \"Obdolbos\" a Peacekeeper",
-			"5edac190cecc0069284c0ed2": "Ottieni in raid il \"Meldonin\"",
-			"5edac1b2930f5454f51dcac4": "Consegna il \"Meldonin\" a Peacekeeper",
-			"5edac1e116d985118871ba24": "Ottieni in raid l'AHF1-M",
-			"5edac1fccc183c769d778bd3": "Consegna l'AHF1-M a Peacekeeper",
-			"5edac22860bdcc7ff3558124": "Ottieni in raid il P-22",
-			"5edac2582ddc9e4c802cd970": "Consegna il P-22 a Peacekeeper",
-			"5edac2897869412e9c669c32": "Ottieni in raid la \"Norepinefrina\"",
-			"5edac2a260bdcc7ff3558127": "Consegna la Norapinefrina a Peacekeeper",
-			"5edac2cc16d985118871ba29": "Ottieni in raid il 3-(b-TG)",
-			"5edac2e10bb72a50635c2bf9": "Consegna il 3-(b-TG) a Peacekeeper"
+			"5edac0e02ddc9e4c802cd969": "Trova iniettore di stimolante M.U.L.E. in raid",
+			"5edac1040880da21347b3845": "Consegna l'iniettore",
+			"5edac13760bdcc7ff355811f": "Trova iniettore cocktail \"Obdolbos\" in raid",
+			"5edac1530880da21347b3846": "Consegna iniettore cocktail \"Obdolbos\"",
+			"5edac190cecc0069284c0ed2": "Trova iniettore di stimolante Meldonin in raid",
+			"5edac1b2930f5454f51dcac4": "Consegna l'iniettore",
+			"5edac1e116d985118871ba24": "Trova iniettore di stimolante AHF1-M in raid",
+			"5edac1fccc183c769d778bd3": "Consegna l'iniettore",
+			"5edac22860bdcc7ff3558124": "Trova iniettore di stimolante P22 in raid",
+			"5edac2582ddc9e4c802cd970": "Consegna l'iniettore",
+			"5edac2897869412e9c669c32": "Trova iniettore di stimolante L1 (Norepinephrine) in raid",
+			"5edac2a260bdcc7ff3558127": "Consegna l'iniettore",
+			"5edac2cc16d985118871ba29": "Trova iniettore di stimolante 3-(b-TG) in raid",
+			"5edac2e10bb72a50635c2bf9": "Consegna l'iniettore"
 		},
 		"name": "Campioni",
 		"note": "",
@@ -3319,16 +3344,16 @@
 			"5edac3f60880da21347b384e": "",
 			"5edac465a0055865214cb5b6": "",
 			"5f046f9825b2ad51bd275800": "Non uccidere Sanitar",
-			"5f07025e27cec53d5d24fe25": "Ottieni la tessera magnetica Blu in raid",
-			"5f04935cde3b9e0ecf03d864": "Consegna la tessera magnetica blu alla Therapist",
-			"5f0702c3d9d49120185e6323": "Ottieni la tessera magnetica Verde in raid",
-			"5f04944b69ef785df740a8c9": "Consegna la tessera magnetica verde alla Therapist",
-			"5f070323d57aeb6e09253785": "Ottieni in raid l'AHF1-M",
-			"5f0495458654d20be3564f4c": "Consegna l'AHF1-M alla Therapist",
-			"5f070350f6b5847ad975ceac": "Ottieni in raid 3-(b-TG)",
-			"5f0495b8efefac7f7227de63": "Consegna 3(b-TG) alla Therapist"
+			"5f07025e27cec53d5d24fe25": "Ottieni la tessera magnetica di accesso ai Terragroup Lab (Blu)",
+			"5f04935cde3b9e0ecf03d864": "Consegna la tessera magnetica",
+			"5f0702c3d9d49120185e6323": "Ottieni la tessera magnetica di accesso ai Terragroup Lab (Verde)",
+			"5f04944b69ef785df740a8c9": "Consegna la tessera magnetica",
+			"5f070323d57aeb6e09253785": "Trova iniettore di stimolante AHF1-M in raid",
+			"5f0495458654d20be3564f4c": "Consegna l'iniettore",
+			"5f070350f6b5847ad975ceac": "Trova iniettore di stimolante 3-(b-TG) in raid",
+			"5f0495b8efefac7f7227de63": "Consegna l'iniettore"
 		},
-		"name": "Colleghi Pt. 3°",
+		"name": "Colleghi - Parte 3",
 		"note": "",
 		"successMessageText": "5edac362930f5454f51dcacc",
 		"failMessageText": "5edac362930f5454f51dcacd",
@@ -3342,9 +3367,9 @@
 			"5edac6db0bb72a50635c73b7": "",
 			"5edac79da0055865214cb5be": "",
 			"5edac7f4cc183c769d778bdf": "",
-			"5edac8483c809a44ef12b4d2": "Consegna la penna USB marcata con il nastro adesivo a Peacekeeper",
+			"5edac8483c809a44ef12b4d2": "Consegna la Penna Usb marchiata con lo scotch blu",
 			"5eec9d054110547f1f545c99": "Trova la postazione di lavoro di Sanitar in Lab",
-			"5eff5674befb6436ce3bbaf7": "Raccogli informazioni sul lavoro di Sanitar"
+			"5eff5674befb6436ce3bbaf7": "Ottieni informazioni sul lavoro di Sanitar"
 		},
 		"name": "Dipendente TerraGroup",
 		"note": "",
@@ -3357,12 +3382,12 @@
 	"5ede55112c95834b583f052a": {
 		"conditions": {
 			"5ede5528bc2ff1141a199367": "",
-			"5ee0e5a8c321a77fc55084d2": "Sopravvivi ed estrai",
+			"5ee0e5a8c321a77fc55084d2": "Sopravvivi ed estrai dalla zona",
 			"5ee8eea538ca5b3b4f3c4647": "Trova il bunker sotterraneo",
-			"5ee8eecc0b4ef7326256c660": "Individua la control room nel bunker sotterraneo",
+			"5ee8eecc0b4ef7326256c660": "Localizza la sala di controllo nel bunker sotterraneo",
 			"5ef094ac32e6cc3234361a30": ""
 		},
-		"name": "Il bunker. Pt. 1°",
+		"name": "Il Bunker - Parte 1",
 		"note": "",
 		"successMessageText": "5ede5521fa6dc072ce15d6dc",
 		"failMessageText": "5ede5521fa6dc072ce15d6dd",
@@ -3376,14 +3401,14 @@
 			"5edea1ed61c2534c4f043d80": "",
 			"5edea20f29445733cb4c29cd": "",
 			"5ee0d988c321a77fc55084cf": "",
-			"5ee0e722c321a77fc55084d5": "Sopravvivi e lascia la zona",
-			"5ee8ec5ed72d953f5d2aabd1": "Individuare la porta ermetica per l'ospedale (alfiere bianco)",
-			"5ee8ecd75eb3205dae135d17": "Individua una delle due porte ermetiche che conducono all'accademia (alfiere nero)",
+			"5ee0e722c321a77fc55084d5": "Sopravvivi ed estrai dalla zona",
+			"5ee8ec5ed72d953f5d2aabd1": "Individua la porta ermetica per l'ospedale (alfiere bianco)",
+			"5ee8ecd75eb3205dae135d17": "Individua una delle due porte ermetiche che conducono all'edificio dell'accademia (vescovo nero)",
 			"5ee8ed18d72d953f5d2aabd4": "Individua una delle due porte ermetiche che conducono alle caserme №1 (pedone nero)",
 			"5ee8eddde932d53763761b2c": "Individua una delle due porte ermetiche che conducono alle caserme №2 (pedone bianco)",
 			"5ee8edf1500391756d7498a7": "Individua la porta ermetica che conduce all'edificio del centro di controllo aereo. (re bianco)"
 		},
-		"name": "Il bunker. Pt. 2°",
+		"name": "Il Bunker - Parte 2",
 		"note": "",
 		"successMessageText": "5ede569dfe4acc383071864b",
 		"failMessageText": "5ede569dfe4acc383071864c",
@@ -3393,11 +3418,11 @@
 	},
 	"5f04886a3937dc337a6b8238": {
 		"conditions": {
-			"5f04983ffbed7a08077b4367": "Sopravvivi e lascia la zona",
+			"5f04983ffbed7a08077b4367": "Sopravvivi ed estrai dalla zona",
 			"5f0da368ee0d8b5aa14a625f": "",
 			"5f0488c590eea473df674002": "Trova l'ufficio di Sanitar nel resort"
 		},
-		"name": "Sgabuzzino di chimica",
+		"name": "Armadio per prodotti chimici",
 		"note": "",
 		"successMessageText": "5f08e8d3ec85fa71e9393f62",
 		"failMessageText": "5f08e8d3ec85fa71e9393f63",
@@ -3409,92 +3434,92 @@
 		"conditions": {
 			"5f970525cfe8173d12189403": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f70acb63a7ec37e73013427": {
 		"conditions": {
 			"5f75c801ce26be0d620b7ff4": "",
 			"5f995e4959c80875e62a667d": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f70b9cfe9f14826bf7c1c67": {
 		"conditions": {
 			"5f71d67f413b7a71bb3d4883": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f70e2a5dcfde927745eb1d0": {
 		"conditions": {
 			"5f8d63247b5bb8669b67ed4a": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f710f7ce9f14826bf7c1c72": {
 		"conditions": {
 			"5f968586f4b9f84879321a41": "",
 			"5f96875445904e5b11508ba4": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f75c5078fb5c37ce1766e95": {
 		"conditions": {
 			"5f9701bc261b2c7e0322947b": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f75c578dfacb47e146a0062": {
 		"conditions": {
 			"5f75c578dfacb47e146a0063": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f75fb988fb5c37ce1766e98": {
 		"conditions": {
 			"5f97010ace3c6452e951c536": "",
 			"5f75fb988fb5c37ce1766e99": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f75fd4450914c5fcc425279": {
 		"conditions": {
 			"5f75fd4450914c5fcc42527a": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f75fddbd24e8b7a9c508f3a": {
 		"conditions": {
 			"5f8f1423d613404c430b7895": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5f79c7621f644f1eb53bdaf2": {
 		"conditions": {
 			"5f9683f05d04e220425a7c5b": "",
 			"5f9684e4d8069972a173dd75": ""
 		},
-		"name": "",
-		"location": "any"
+		"location": "any",
+		"name": ""
 	},
 	"5fd9fad9c1ce6b1a3b486d00": {
 		"conditions": {
-			"5fd9fad9c1ce6b1a3b486d05": "Localizza il campo USEC temporaneo",
-			"5fd9fad9c1ce6b1a3b486d03": "Trova il convoglio perduto di Prapor",
-			"5fd9fad9c1ce6b1a3b486d0d": "Sopravvivi ed estrai",
+			"5fd9fad9c1ce6b1a3b486d05": "Localizza il campo temporaneo USEC",
+			"5fd9fad9c1ce6b1a3b486d03": "Trova il convoglio scomparso di Prapor a Woods",
+			"5fd9fad9c1ce6b1a3b486d0d": "Sopravvivi ed estrai dalla zona",
 			"5fd9fad9c1ce6b1a3b486d02": "",
 			"5fdc862eaf5a054cc9333005": ""
 		},
-		"name": "Missione di ricerca",
+		"name": "Missione di Ricerca",
 		"note": "",
 		"successMessageText": "5fdb3e50148b192e1a7463e2",
 		"failMessageText": "5fdb3e50148b192e1a7463e3",
@@ -3504,7 +3529,7 @@
 	},
 	"600302d73b897b11364cd161": {
 		"conditions": {
-			"600303250b79c6604058ce30": "Uccidi Shturman 25 volte",
+			"600303250b79c6604058ce30": "Elimina Shturman",
 			"600304b78dfec348e767018c": "",
 			"600304c38dfec348e767018e": ""
 		},
@@ -3515,5 +3540,798 @@
 		"startedMessageText": "600303b71448362c785bc3b4",
 		"description": "600303b71448362c785bc3b5",
 		"location": "5704e3c2d2720bac5b8b4567"
+	},
+	"6086c852c945025d41566124": {
+		"conditions": {
+			"6086c8ed1b0bb8063d5babb7": "Marca il primo BMP-2",
+			"6087d553d79a2b4e943482bf": "Trova e ispeziona il primo BMP-2 a Reserve",
+			"60882695949eb1096c454fcd": "Trova e ispeziona il secondo BMP-2 a Reserve",
+			"608826d0a3994358a0751cfc": "Marca il secondo BMP-2",
+			"608826f3949eb1096c454fd0": "Trova e ispeziona il terzo BMP-2 a Reserve",
+			"60882714c18cfa2a4e2afe59": "Marca il terzo BMP-2",
+			"6088274a82e40b3c727fd164": "Trova e ispeziona il quarto BMP-2 a Reserve",
+			"60882779d241f77b8a49785d": "Marca il quarto BMP-2",
+			"60892585b90d6f39cb74b114": "Trova e ispeziona il primo LAV III a Reserve",
+			"60892590fa70fc097863b8e5": "Trova e ispeziona il secondo LAV III a Reserve",
+			"608925d455f4ac386d7e7fc4": "Marchia il primo LAV III",
+			"608930aa1124f748c94b801e": "Trova e ispeziona il carro armato T-90 a Reserve",
+			"60bf751fdb5461623517069f": "",
+			"60bf75229903f107aa251f3b": ""
+		},
+		"name": "Revisione",
+		"note": "",
+		"successMessageText": "6086e212949eb1096c45400d",
+		"failMessageText": "6086e212949eb1096c45400e",
+		"startedMessageText": "6086e212949eb1096c45400f",
+		"description": "6086e212949eb1096c454010",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60896888e4a85c72ef3fa300": {
+		"conditions": {
+			"60929ad46342771d851b827a": "Ottieni il pacco contenente il Pannello di Controllo di Comando T-90M a Reserve",
+			"60929afc35915c62b44fd05c": "Consegna il pacco",
+			"60bf74f481c6e80e702ccc0f": "",
+			"60bf75058bb401472c1a37f7": ""
+		},
+		"name": "Tecnologia classificata",
+		"note": "",
+		"successMessageText": "609a2b52a370660c971129f1",
+		"failMessageText": "609a2b53a370660c971129f2",
+		"startedMessageText": "609a2b53a370660c971129f3",
+		"description": "609a2b53a370660c971129f4",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60896b7bfa70fc097863b8f5": {
+		"conditions": {
+			"60916aeac49cf53e4772cc3c": "Ottieni i documenti Militari N°1 a Reserve",
+			"60916b41b89a3c264d7296f9": "Consegna il primo documento",
+			"60ae0dfe2d6a8320983d19ba": "Ottieni i documenti Militari N°2 a Reserve",
+			"60ae0e2c79e83a2cf96f35ce": "Ottieni i documenti Militari N°3 a Reserve",
+			"60ae0f0586046842a754e21e": "Consegna il secondo documento",
+			"60ae0f17b809a4748759078c": "Consegna il terzo documento",
+			"60bf74bb2837926f405dd793": "",
+			"60bf74c1d4526a054d42e11f": ""
+		},
+		"name": "Documenti",
+		"note": "",
+		"successMessageText": "609a2c2c0ce4cd3a353dfc6b",
+		"failMessageText": "609a2c2c0ce4cd3a353dfc6c",
+		"startedMessageText": "609a2c2c0ce4cd3a353dfc6d",
+		"description": "609a2c2c0ce4cd3a353dfc6e",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60896bca6ee58f38c417d4f2": {
+		"conditions": {
+			"608bffeee0cc9c2d4d2ccb29": "Elimina i Raider nel bunker di comando a Reserve",
+			"60bf748cbf90bf6b431e8965": "",
+			"60bf7490db5461623517069e": "",
+			"60c1d5a4fdcc6e06456a963b": ""
+		},
+		"name": "Nessun posto per i rinnegati",
+		"note": "",
+		"successMessageText": "609a2c53eca522371e5725df",
+		"failMessageText": "609a2c53eca522371e5725e0",
+		"startedMessageText": "609a2c53eca522371e5725e1",
+		"description": "609a2c53eca522371e5725e2",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60896e28e4a85c72ef3fa301": {
+		"conditions": {
+			"6091698a30bb620b3239874c": "Ottieni cartella clinica #1 a Reserve",
+			"609169cfeca522371e5725c5": "Consegna la prima rivista",
+			"60ae12ffb809a474875907aa": "Ottieni cartella clinica #2 a Reserve",
+			"60ae134cabb9675f0062cf6e": "Consegna la seconda rivista",
+			"60bf738b4c8a3800da06e717": "",
+			"60bf738e81c6e80e702ccc0e": ""
+		},
+		"name": "Storico malattie",
+		"note": "",
+		"successMessageText": "609a2c73311628516a014cf2",
+		"failMessageText": "609a2c73311628516a014cf3",
+		"startedMessageText": "609a2c73311628516a014cf4",
+		"description": "609a2c73311628516a014cf5",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"6089732b59b92115597ad789": {
+		"conditions": {
+			"6092942fb0f07c6ea1246e3a": "Ottieni il sistema di navigazione integrato MBT a Reserve",
+			"6092947635915c62b44fd05b": "Consegna il sistema di navigazione integrato",
+			"60bf7364c53a5709996b40bf": "",
+			"60bf73682837926f405dd792": ""
+		},
+		"name": "Beni in surplus",
+		"note": "",
+		"successMessageText": "609a2c96b89a3c264d729702",
+		"failMessageText": "609a2c96b89a3c264d729703",
+		"startedMessageText": "609a2c96b89a3c264d729704",
+		"description": "609a2c96b89a3c264d729705",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"6089736efa70fc097863b8f6": {
+		"conditions": {
+			"608a94101a66564e74191fc3": "Trova l'uscita di sicurezza inattiva a Reserve",
+			"608a94ae1a66564e74191fc6": "Estrai da quell'uscita",
+			"60bf734bb73d016d6838ad86": "",
+			"60bf7353bf90bf6b431e8964": ""
+		},
+		"name": "Uscita d'emergenza",
+		"note": "",
+		"successMessageText": "609a2cf0a370660c971129f5",
+		"failMessageText": "609a2cf0a370660c971129f6",
+		"startedMessageText": "609a2cf0a370660c971129f7",
+		"description": "609a2cf0a370660c971129f8",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"6089743983426423753cd58a": {
+		"conditions": {
+			"608ab22755f4ac386d7e7fdc": "Elimina Scav presenti nel deposito sotterraneo a Reserve",
+			"60bf72dda2ae0728ec716f32": "",
+			"60bf72e04c8a3800da06e716": ""
+		},
+		"name": "Corridoio sicuro",
+		"note": "",
+		"successMessageText": "609a2d1734103b660e791a2c",
+		"failMessageText": "609a2d1734103b660e791a2d",
+		"startedMessageText": "609a2d1734103b660e791a2e",
+		"description": "609a2d1734103b660e791a2f",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"608974af4b05530f55550c21": {
+		"conditions": {
+			"608bd0a053b9dd01a116f474": "Controlla il primo arsenale nelle caserme ad ovest a Reserve",
+			"608bd0c20637f21f9934b6e4": "Controlla il secondo arsenale nelle caserme ad ovest a Reserve",
+			"608bd136c61c4b541b381da3": "Controlla il primo arsenale nelle caserme a nord a Reserve",
+			"608bd149f597ad0a33574d74": "Controlla il secondo arsenale nelle caserme a nord a Reserve",
+			"608bd2465e0ef91ab810f98a": "Controlla l'ufficio operativo nelle caserme ad ovest a Reserve",
+			"608c187853b9dd01a116f480": "Sopravvivi ed estrai dalla zona",
+			"60bf72b7960b6d5d274caaf1": "",
+			"60bf72bcc53a5709996b40be": ""
+		},
+		"name": "Check dell'inventario",
+		"note": "",
+		"successMessageText": "609a2d471a63a207ed0bfaa6",
+		"failMessageText": "609a2d471a63a207ed0bfaa7",
+		"startedMessageText": "609a2d471a63a207ed0bfaa8",
+		"description": "609a2d471a63a207ed0bfaa9",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"608974d01a66564e74191fc0": {
+		"conditions": {
+			"608bfe32c61c4b541b381da9": "Sopravvivi ed estrai dalla zona",
+			"60a4dc7e4e734e57d07fb335": "Segnala il primo gruppo di serbatoi di carburante con un marcatore MS2000 a Reserve",
+			"60b90232ec7c6f5eb510c195": "Segnala il secondo gruppo di serbatoi di carburante con un marcatore MS2000 a Reserve",
+			"60bf7284fd95cb3dfc36841f": "",
+			"60bf7293b73d016d6838ad85": ""
+		},
+		"name": "Questioni di carburante",
+		"note": "",
+		"successMessageText": "609a2d673c1a3d23997897b8",
+		"failMessageText": "609a2d673c1a3d23997897b9",
+		"startedMessageText": "609a2d673c1a3d23997897ba",
+		"description": "609a2d673c1a3d23997897bb",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"608a768d82e40b3c727fd17d": {
+		"conditions": {
+			"608a8356fa70fc097863b8f8": "Elimina Scav presenti nell'area delle caserme a Reserve",
+			"60bf72112837926f405dd791": "",
+			"60bf7557a2ae0728ec716f33": ""
+		},
+		"name": "Controllo parassiti",
+		"note": "",
+		"successMessageText": "609a2d86eca522371e5725e3",
+		"failMessageText": "609a2d86eca522371e5725e4",
+		"startedMessageText": "609a2d86eca522371e5725e5",
+		"description": "609a2d86eca522371e5725e6",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60c0c018f7afb4354815096a": {
+		"conditions": {
+			"60c0d187938d68438757cda2": "Elimina Tagilla",
+			"60cfa4cd646f74055e276545": "",
+			"60cfa4ee1bdece56c249cbf5": "",
+			"60cfa590f81cc57f471718cc": "Trova il berretto BOSS in raid",
+			"60cfa5a85f9e6175514de2e3": "Consegna il berretto del BOSS"
+		},
+		"name": "Il Sentiero del Cacciatore - Il Capo Fabbrica",
+		"note": "",
+		"successMessageText": "60c0c1fe4f865e03b906aa05",
+		"failMessageText": "60c0c1fe4f865e03b906aa06",
+		"startedMessageText": "60c0c1fe4f865e03b906aa07",
+		"description": "60c0c1fe4f865e03b906aa08",
+		"location": "55f2d3fd4bdc2d5f408b4567"
+	},
+	"60e71b62a0beca400d69efc4": {
+		"conditions": {
+			"60ec07bcd7b7cb55e94c1760": "Elimina PMC di giorno a Factory",
+			"60ec08fafd1bf4491c4e4550": "Elimina PMC a Customs",
+			"60ec09f05d67b234af3d392f": "Elimina PMC a Shoreline",
+			"60ec0a9571035f300c301acb": "Elimina PMC a Reserve",
+			"60ec0ad2ad25e3185465bbd0": "Elimina PMC a Woods",
+			"60ec0af8a664b027ab1441af": "Elimina PMC a Interchange",
+			"60ec0b1871035f300c301acd": "Elimina PMC a The Lab",
+			"60ec2b04bc9a8b34cd453b81": "Non devi morire o lasciare il raid quando la missione è ancora attiva. (Stato: KIA, AWOL, MIA, Ran Through)",
+			"610144955a0e3804617cd69d": "",
+			"6101449a50bb44526c34c81d": ""
+		},
+		"name": "Scorta",
+		"note": "",
+		"successMessageText": "60ed512ea664b027ab1441cf",
+		"failMessageText": "60ed512ea664b027ab1441d0",
+		"startedMessageText": "60ed512ea664b027ab1441d1",
+		"description": "60ed512ea664b027ab1441d2",
+		"location": "any"
+	},
+	"60e71b9bbd90872cb85440f3": {
+		"conditions": {
+			"60ec18b73b5f7d790a7ad034": "Elimina PMC nella base Scav a Customs",
+			"60ec1e72d7b7cb55e94c1764": "Elimina PMC nella base Scav a Woods",
+			"60ec2229fd1bf4491c4e4552": "Elimina PMC al molo a Shoreline",
+			"6101458b43d55d251d68e4fa": "",
+			"6101458f0631930ce97dea77": ""
+		},
+		"name": "Catturando gli Avamposti",
+		"note": "",
+		"successMessageText": "60ed50ff26b88043510e0af9",
+		"failMessageText": "60ed50ff26b88043510e0afa",
+		"startedMessageText": "60ed50ff26b88043510e0afb",
+		"description": "60ed50ff26b88043510e0afc",
+		"location": "any"
+	},
+	"60e71bb4e456d449cd47ca75": {
+		"conditions": {
+			"60e8650e5d67b234af3d3926": "Elimina Scav con i colpi in testa",
+			"610145de61801e6c2626a1b3": "",
+			"610145e14a065318776a1e75": ""
+		},
+		"name": "L'Intimidatore",
+		"note": "",
+		"successMessageText": "60ed50d671035f300c301b13",
+		"failMessageText": "60ed50d671035f300c301b14",
+		"startedMessageText": "60ed50d671035f300c301b15",
+		"description": "60ed50d671035f300c301b16",
+		"location": "any"
+	},
+	"60e71c11d54b755a3b53eb65": {
+		"conditions": {
+			"60e82c12fd1bf4491c4e4547": "Trova i coltelli strani in raid",
+			"60e82c5926b88043510e0ad7": "Consegna i coltelli",
+			"6101464accda1c5f7b1dd08f": "",
+			"6101464fe5b13723fc7609ae": ""
+		},
+		"name": "Perlustrazione notturna",
+		"note": "",
+		"successMessageText": "60ed50b1d7b7cb55e94c1793",
+		"failMessageText": "60ed50b1d7b7cb55e94c1794",
+		"startedMessageText": "60ed50b1d7b7cb55e94c1795",
+		"description": "60ed50b1d7b7cb55e94c1796",
+		"location": "any"
+	},
+	"60e71c48c1bfa3050473b8e5": {
+		"conditions": {
+			"60e8658571035f300c301ac6": "Trova i defibrillatori portatili in raid",
+			"60e865a60cef122b414a156a": "Trova gli Oftalmoscopi in raid",
+			"60e866175d67b234af3d392a": "Trova i transilluminatori cutanei LEDX in raid",
+			"60e866c50cef122b414a156c": "Consegna i defribillatori",
+			"60e866f926b88043510e0adf": "Consegna gli oftalmoscopi",
+			"60e867265d67b234af3d392c": "Consegna il LEDX",
+			"60f028ca86abc00cdc03ab89": "Trova un Mucchio di medicine in raid",
+			"60f028f85caf08029e0d6277": "Consegna la Pila di medicinali",
+			"610146bcccda1c5f7b1dd090": "",
+			"610146ea70fd3f687c1a747e": ""
+		},
+		"name": "Crisi",
+		"note": "",
+		"successMessageText": "60ed508696463e7027769393",
+		"failMessageText": "60ed508696463e7027769394",
+		"startedMessageText": "60ed508696463e7027769395",
+		"description": "60ed508696463e7027769396",
+		"location": "any"
+	},
+	"60e71c9ad54b755a3b53eb66": {
+		"conditions": {
+			"60e745d6479eef59b01b0bdc": "Elimina i Raider a Reserve",
+			"610147ac43d55d251d68e4fb": "",
+			"610147b0683d6b506f258f96": ""
+		},
+		"name": "Detergente",
+		"note": "",
+		"successMessageText": "60ed5052bc9a8b34cd453b93",
+		"failMessageText": "60ed5052bc9a8b34cd453b94",
+		"startedMessageText": "60ed5052bc9a8b34cd453b95",
+		"description": "60ed5052bc9a8b34cd453b96",
+		"location": "5704e5fad2720bc05b8b4567"
+	},
+	"60e71ccb5688f6424c7bfec4": {
+		"conditions": {
+			"60e8174d0367e10a450f7818": "Trova in raid e consegna le piastrine BEAR PMC di livello 50+",
+			"60e81795479eef59b01b0bdf": "Trova in raid e consegna le piastrine USEC PMC di livello 50+",
+			"610148054a065318776a1e76": "",
+			"6101480ee5b13723fc7609af": ""
+		},
+		"name": "Trofei",
+		"note": "",
+		"successMessageText": "60ed4fefa664b027ab1441cb",
+		"failMessageText": "60ed4fefa664b027ab1441cc",
+		"startedMessageText": "60ed4fefa664b027ab1441cd",
+		"description": "60ed4fefa664b027ab1441ce",
+		"location": "any"
+	},
+	"60e71ce009d7c801eb0c0ec6": {
+		"conditions": {
+			"60e74302d1a062318d3d225f": "Consegna i moduli di archiviazione flash",
+			"60e7432875131b4e61703b7a": "Consegna i lettori RFID",
+			"60e7434ed1a062318d3d2260": "Trova in raid i Moduli di Archiviazione Flash VPX",
+			"60e7436675131b4e61703b7b": "Trova lettori RFID UHF in raid",
+			"60e7439975131b4e61703b7c": "Trova i processori programmabili Virtex in raid",
+			"60e743cd0367e10a450f780e": "Trova i trasmettitori militari di segnale wireless COFDM in raid",
+			"60e7449875131b4e61703b7e": "Consegna i processori programmabili",
+			"60e744c9d1a062318d3d2262": "Consegna i trasmettitori di segnale",
+			"61014852683d6b506f258f97": "",
+			"6101485ce5b13723fc7609b0": ""
+		},
+		"name": "Equipaggiamento Speciale",
+		"note": "",
+		"successMessageText": "60ed4fc7d7b7cb55e94c178f",
+		"failMessageText": "60ed4fc7d7b7cb55e94c1790",
+		"startedMessageText": "60ed4fc7d7b7cb55e94c1791",
+		"description": "60ed4fc7d7b7cb55e94c1792",
+		"location": "any"
+	},
+	"60e71d23c1bfa3050473b8e6": {
+		"conditions": {
+			"60e740b8b567ff641b129573": "Elimina PMC da almeno 100 metri di distanza",
+			"610148dc4a065318776a1e77": "",
+			"610148e775d59d19bb7329f2": ""
+		},
+		"name": "Calibrazione",
+		"note": "",
+		"successMessageText": "60ed4ef3ad25e3185465bbe1",
+		"failMessageText": "60ed4ef3ad25e3185465bbe2",
+		"startedMessageText": "60ed4ef3ad25e3185465bbe3",
+		"description": "60ed4ef3ad25e3185465bbe4",
+		"location": "any"
+	},
+	"60e71d6d7fcf9c556f325055": {
+		"conditions": {
+			"60e84ba726b88043510e0ad8": "Nascondi un mirino Trijicon REAP-IR sotto la base della gru gialla nel cantiere di Customs",
+			"60e85b2a26b88043510e0ada": "Nascondi un cannocchiale Trijicon REAP-IR dietro i contenitori della spazzatura alla \"nuova\" stazione di servizio a Customs ",
+			"6101491e6c85b961071d75fd": "",
+			"6101492343d55d251d68e4fc": ""
+		},
+		"name": "Il Corriere",
+		"note": "",
+		"successMessageText": "60ed4eb726b88043510e0af5",
+		"failMessageText": "60ed4eb726b88043510e0af6",
+		"startedMessageText": "60ed4eb726b88043510e0af7",
+		"description": "60ed4eb726b88043510e0af8",
+		"location": "any"
+	},
+	"60e71dc0a94be721b065bbfc": {
+		"conditions": {
+			"60e73ee8b567ff641b129570": "Elimina PMC all'interno del centro commerciale ULTRA a Interchange",
+			"6101498dccda1c5f7b1dd091": "",
+			"61014992e5b13723fc7609b1": ""
+		},
+		"name": "Lunga Coda",
+		"note": "",
+		"successMessageText": "60ed4e5696463e702776938f",
+		"failMessageText": "60ed4e5696463e7027769390",
+		"startedMessageText": "60ed4e5696463e7027769391",
+		"description": "60ed4e5696463e7027769392",
+		"location": "5714dbc024597771384a510d"
+	},
+	"60e71dc67fcf9c556f325056": {
+		"conditions": {
+			"60e73333465ea8368012cc5b": "Trova le bottiglie di vodka Tarkovskaya in raid",
+			"60e733590367e10a450f7805": "Trova le bottiglie di whiskey Dan Jackiel in raid",
+			"60e73397479eef59b01b0bd5": "Consegna la vodka",
+			"60e733b80367e10a450f7807": "Consegna il whiskey",
+			"60f028268b669d08a35bfad8": "Trova l'acqua purificata in raid",
+			"60f0284e8b669d08a35bfada": "Consegna la superwater",
+			"610149ce61801e6c2626a1b4": "",
+			"610149d34a065318776a1e78": ""
+		},
+		"name": "Liquore",
+		"note": "",
+		"successMessageText": "60ed4e2ca664b027ab1441c7",
+		"failMessageText": "60ed4e2ca664b027ab1441c8",
+		"startedMessageText": "60ed4e2ca664b027ab1441c9",
+		"description": "60ed4e2ca664b027ab1441ca",
+		"location": "any"
+	},
+	"60e71e8ed54b755a3b53eb67": {
+		"conditions": {
+			"60e7249bd1a062318d3d2244": "Non devi morire e non devi estrarre mentre la missione é attiva. (Stato: Ucciso, Abbandonato, Disperso)",
+			"60e7259e465ea8368012cc45": "Elimina Tagilla",
+			"60e725d8b567ff641b129555": "Elimina Killa",
+			"60e72604a6e322250215f066": "Elimina Reshala",
+			"60e7261382576b5f4f21c495": "Elimina Shturman",
+			"60e7261eb567ff641b129557": "Elimina Glukhar",
+			"60e72629465ea8368012cc47": "Elimina Sanitar",
+			"61014a2d6c85b961071d75fe": "",
+			"61014a3143d55d251d68e4fd": ""
+		},
+		"name": "Il Sentiero del Cacciatore - L' Implacabile",
+		"note": "",
+		"successMessageText": "60ed4df7ad25e3185465bbdd",
+		"failMessageText": "60ed4df7ad25e3185465bbde",
+		"startedMessageText": "60ed4df7ad25e3185465bbdf",
+		"description": "60ed4df7ad25e3185465bbe0",
+		"location": "any"
+	},
+	"60e729cf5698ee7b05057439": {
+		"conditions": {
+			"60e729cf5698ee7b0505743c": "Elimina PMC senza utilizzare alcuna armatura e caschi",
+			"61014a600631930ce97dea78": "",
+			"61014a6570fd3f687c1a747f": ""
+		},
+		"name": "Quello Veloce",
+		"note": "",
+		"successMessageText": "60ed4dac63fe3506455d8f97",
+		"failMessageText": "60ed4dac63fe3506455d8f98",
+		"startedMessageText": "60ed4dac63fe3506455d8f99",
+		"description": "60ed4dac63fe3506455d8f9a",
+		"location": "5704e3c2d2720bac5b8b4567"
+	},
+	"60effd818b669d08a35bfad5": {
+		"conditions": {
+			"60effdac12fec20321367038": "Consegna contenitore di sicurezza Epsilon",
+			"61014aa1e10c48364e47a913": "",
+			"610152752b0c65522065ea3b": ""
+		},
+		"name": "La Scelta",
+		"note": "",
+		"successMessageText": "60f05df686abc00cdc03ab8b",
+		"failMessageText": "60f05df686abc00cdc03ab8c",
+		"startedMessageText": "60f05df686abc00cdc03ab8d",
+		"description": "60f05df686abc00cdc03ab8e",
+		"location": "any"
+	},
+	"613708a7f8333a5d15594368": {
+		"conditions": {
+			"613708c98cf26538cd20d59e": "Elimina PMC in un singolo raid",
+			"6137090327da62585838d495": "Non uccidere scav fino al completamento della missione"
+		},
+		"name": "Prova di manovra",
+		"note": "",
+		"successMessageText": "6137099c24c23f7c7c74f446",
+		"failMessageText": "6137099c24c23f7c7c74f447",
+		"startedMessageText": "6137099c24c23f7c7c74f448",
+		"description": "6137099c24c23f7c7c74f449",
+		"location": "any"
+	},
+	"6179ac7511973d018217d0b9": {
+		"conditions": {
+			"6179b71211973d018217d0d9": "Trova l'elicottero presso l'impianto di trattamento delle acque a Lighthouse",
+			"6179b804bca27a099552e057": "Segnala l'elicottero con un marcatore MS2000",
+			"61abcc6379c3a477d0122457": "Sopravvivi ed estrai dalla zona"
+		},
+		"name": "Lavoro Facile - Parte 1",
+		"note": "",
+		"description": "6183c6de7289b24d9b6aa89f",
+		"successMessageText": "6183c6de7289b24d9b6aa8a0",
+		"failMessageText": "6183c6de7289b24d9b6aa8a1",
+		"startedMessageText": "6183c6de7289b24d9b6aa8a2",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179acbdc760af5ad2053585": {
+		"conditions": {
+			"617bd94c5a52d2390a2630c7": "Proteggi l'area intorno all'elicottero presso l'impianto di trattamento delle acque a Lighthouse"
+		},
+		"name": "Lavoro Facile - Parte 2",
+		"note": "",
+		"description": "6183c91b70229a447f7bdafe",
+		"successMessageText": "6183c91b70229a447f7bdaff",
+		"failMessageText": "6183c91b70229a447f7bdb00",
+		"startedMessageText": "6183c91b70229a447f7bdb01",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179ad0a6e9dd54ac275e3f2": {
+		"name": "Sentiero del Cacciatore - Emarginati",
+		"note": "",
+		"conditions": {
+			"617bf1e1d93d977d2452051f": "Elimina agenti USEC Rogue"
+		},
+		"description": "6183cb102163e55e7e648b01",
+		"successMessageText": "6183cb102163e55e7e648b02",
+		"failMessageText": "6183cb102163e55e7e648b03",
+		"startedMessageText": "6183cb102163e55e7e648b04",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179ad56c760af5ad2053587": {
+		"name": "Vacanza al mare",
+		"note": "",
+		"conditions": {
+			"617bf2a6f8e6c97ec70878b7": "Trova la valigetta dell'informatore a Lighthouse",
+			"617bf29a52e86c73d372a917": "Consegna il pacchetto trovato"
+		},
+		"description": "6183ccc7762fbb323e48f51f",
+		"successMessageText": "6183ccc7762fbb323e48f520",
+		"failMessageText": "6183ccc7762fbb323e48f521",
+		"startedMessageText": "6183ccc7762fbb323e48f522",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179ad74bca27a099552e03a": {
+		"name": "Difficoltà di comunicazione",
+		"note": "",
+		"conditions": {
+			"617bf3499202af497d1ccf79": "Raggiungi il mercante a Lighthouse",
+			"619040aa7d0d857927447b7b": "Sopravvivi ed estrai dalla zona"
+		},
+		"description": "6183cdf37289b24d9b6aa95c",
+		"successMessageText": "6183cdf37289b24d9b6aa95d",
+		"failMessageText": "6183cdf37289b24d9b6aa95e",
+		"startedMessageText": "6183cdf37289b24d9b6aa95f",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179afd0bca27a099552e040": {
+		"name": "Perso il contatto",
+		"note": "",
+		"conditions": {
+			"617bf439ea3cfc329331243f": "Trova il gruppo smarrito nella zona del chalet a Lighthouse",
+			"6190464d74169a76c90aa230": "Sopravvivi ed estrai dalla zona"
+		},
+		"description": "6183cf382163e55e7e648b53",
+		"successMessageText": "6183cf382163e55e7e648b54",
+		"failMessageText": "6183cf382163e55e7e648b55",
+		"startedMessageText": "6183cf382163e55e7e648b56",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179aff8f57fb279792c60a1": {
+		"name": "Sovrappopolazione",
+		"note": "",
+		"conditions": {
+			"617bf4e152e86c73d372a95d": "Proteggi l'area del cottage dagli scav a Lighthouse"
+		},
+		"description": "6184065070229a447f7bdfed",
+		"successMessageText": "6184065070229a447f7bdfee",
+		"failMessageText": "6184065070229a447f7bdfef",
+		"startedMessageText": "6184065070229a447f7bdff0",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b3a12153c15e937d52bc": {
+		"name": "Crisi energetica",
+		"note": "",
+		"conditions": {
+			"617bf5860cf4a041de5b396b": "Trova e segnala il gruppo di serbatoi di carburante con un marcatore MS2000 a Lighthouse",
+			"61926522b0295324b5484459": "Trovare e segnala il primo camion cisterna con un marcatore MS2000 a Lighthouse",
+			"6192653d80c326298126aee1": "Trovare e segnala il secondo camion cisterna con un marcatore MS2000 a Lighthouse",
+			"61926544bb0c712ed42d583c": "Trovare e segnala il terzo camion cisterna con un marcatore MS2000 a Lighthouse"
+		},
+		"description": "6184095013d069487a1de8b8",
+		"successMessageText": "6184095013d069487a1de8b9",
+		"failMessageText": "6184095013d069487a1de8ba",
+		"startedMessageText": "6184095013d069487a1de8bb",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b3bdc7560e13d23eeb8d": {
+		"name": "Segreti aziendali",
+		"note": "",
+		"conditions": {
+			"617bf6c70cf4a041de5b3972": "Trova i dati sul funzionamento della pompa dell'acqua",
+			"617bf77a3de8a6689b533a2a": "Consegna i dati estratti",
+			"61951c3e2e2805073c2d29db": "Consegna i dati estratti",
+			"61951c30aa0f643f9a0ae1b7": "Trova i dati sul funzionamento della stazione di pompaggio"
+		},
+		"description": "618409ec7289b24d9b6aade1",
+		"successMessageText": "618409ec7289b24d9b6aade2",
+		"failMessageText": "618409ec7289b24d9b6aade3",
+		"startedMessageText": "618409ec7289b24d9b6aade4",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b4d1bca27a099552e04e": {
+		"name": "Revisione - Parte 2",
+		"note": "",
+		"conditions": {
+			"61952308aa0f643f9a0ae20f": "Localizza e segnala il primo BRDM con un marcatore MS2000",
+			"6195231dd07bdc6de57b40a5": "Localizza e segnala il secondo BRDM con un marcatore MS2000",
+			"61952325aa0f643f9a0ae212": "Localizza e segnala il primo Stryker con un marcatore MS2000",
+			"6195232a1e972a652931edb6": "Localizza e segnala il secondo Stryker con un marcatore MS2000"
+		},
+		"description": "61840aa77289b24d9b6aadf1",
+		"successMessageText": "61840aa77289b24d9b6aadf2",
+		"failMessageText": "61840aa77289b24d9b6aadf3",
+		"startedMessageText": "61840aa77289b24d9b6aadf4",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b4f16e9dd54ac275e407": {
+		"name": "Carico mancante",
+		"note": "",
+		"conditions": {
+			"6195289bea774d183b6c93aa": "Localizza l'elicottero precipitato a Lighthouse",
+			"61a00eff2d708d41a34f19b4": "Trova il fascicolo dell'intelligence dell'informatore",
+			"61a00f3f177fb945751bbe92": "Consegna il fascicolo"
+		},
+		"description": "61840b2d13d069487a1de8de",
+		"successMessageText": "61840b2d13d069487a1de8df",
+		"failMessageText": "61840b2d13d069487a1de8e0",
+		"startedMessageText": "61840b2d13d069487a1de8e1",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b5b06e9dd54ac275e409": {
+		"name": "Nostra terra",
+		"note": "",
+		"conditions": {
+			"6193dc1e6623e330c82e0be9": "Elimina USEC PMC in tutto il territorio di Lighthouse",
+			"6194fbf785a6d62c481a7aee": "Consegna le piastrine USEC PMC trovate in raid"
+		},
+		"description": "61840baa2bc2b368204f691f",
+		"successMessageText": "61840baa2bc2b368204f6920",
+		"failMessageText": "61840baa2bc2b368204f6921",
+		"startedMessageText": "61840baa2bc2b368204f6922",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6179b5eabca27a099552e052": {
+		"name": "Controazione",
+		"note": "",
+		"conditions": {
+			"617fc08b30ccff6c7c37fcd3": "Consegna le piastrine BEAR PMC trovate in raid",
+			"61a61c085d06a344766f3a29": "Elimina BEAR PMC in tutto il territorio di Lighthouse"
+		},
+		"description": "61840c13cd72db639232659b",
+		"successMessageText": "61840c13cd72db639232659c",
+		"failMessageText": "61840c13cd72db639232659d",
+		"startedMessageText": "61840c13cd72db639232659e",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"61904daa7d0d857927447b9c": {
+		"conditions": {
+			"61904e76f62c89219a56e04c": "Trova il messaggio per Jaeger",
+			"61904dda7845ea557e7bb808": "Trova il nascondiglio dell'amico di Jaeger a Lighthouse",
+			"61904ebb22e6d82ee97ccbbe": "Consegna il messaggio"
+		},
+		"name": "Eremita",
+		"note": "",
+		"description": "6196251075aa0345973f5bcc",
+		"successMessageText": "6196251075aa0345973f5bcd",
+		"startedMessageText": "6196251075aa0345973f5bcf",
+		"failMessageText": "6196251075aa0345973f5bce",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"6193850f60b34236ee0483de": {
+		"conditions": {
+			"6193dabd5f6468204470571f": "Elimina Scav lungo la strada principale a Lighthouse"
+		},
+		"name": "Strada lunga",
+		"note": "",
+		"successMessageText": "61977502f8e9da247b2bc34a",
+		"description": "61977502f8e9da247b2bc349",
+		"failMessageText": "61977502f8e9da247b2bc34b",
+		"startedMessageText": "61977502f8e9da247b2bc34c",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"61958c366726521dd96828ec": {
+		"conditions": {
+			"61958d69d14ece31007e2df4": "Sopravvivi ed estrai dalla zona",
+			"61958d54aa0f643f9a0aed73": "Localizza il carico Terragroup lungo la riva a Lighthouse"
+		},
+		"name": "Cargo X - Parte 4",
+		"note": "",
+		"description": "619629f254066129c125b5c3",
+		"successMessageText": "619629f254066129c125b5c4",
+		"startedMessageText": "619629f254066129c125b5c6",
+		"failMessageText": "619629f254066129c125b5c5",
+		"location": "5704e4dad2720bb55b8b4567"
+	},
+	"61bb468b8d7cac1532300ccc": {
+		"successMessageText": "61c1970b20ae5c2a4d44e26d",
+		"failMessageText": "61c1970b20ae5c2a4d44e26e",
+		"location": "any",
+		"conditions": {},
+		"name": "Party Preparations"
+	},
+	"61bb47481908c67d4249a205": {
+		"successMessageText": "61c197ebd6bef04a674cba57",
+		"failMessageText": "61c197ebd6bef04a674cba58",
+		"location": "any",
+		"conditions": {},
+		"name": "No Gifts for You"
+	},
+	"61bb474b1ab5304c3817a53a": {
+		"failMessageText": "61c198eef735360c9552574d",
+		"description": "61c198eef735360c9552574b",
+		"location": "any",
+		"conditions": {},
+		"name": "Disrupting the Party"
+	},
+	"61bb474dce7374453b45dfd2": {
+		"failMessageText": "61c19a442ecf5e52b12f944a",
+		"startedMessageText": "61c19a442ecf5e52b12f944b",
+		"location": "any",
+		"conditions": {},
+		"name": "Fairy Tale Showdown"
+	},
+	"61bb474f8b8d2a79d012cd6e": {
+		"description": "61c19abf7578f770c5341e9c",
+		"successMessageText": "61c19abf7578f770c5341e9d",
+		"failMessageText": "61c19abf7578f770c5341e9e",
+		"startedMessageText": "61c19abf7578f770c5341e9f",
+		"location": "any",
+		"conditions": {},
+		"name": "Fairy Tale Showdown"
+	},
+	"61bb47516b70332c062ca7b9": {
+		"startedMessageText": "61c19b397578f770c5341ea4",
+		"successMessageText": "61c19b397578f770c5341ea2",
+		"failMessageText": "61c19b397578f770c5341ea3",
+		"location": "any",
+		"conditions": {},
+		"name": "Stop the Fight!"
+	},
+	"61bb475467f83663e155e26a": {
+		"description": "61c19d0cb00456371a66814f",
+		"successMessageText": "61c19d0cb00456371a668150",
+		"startedMessageText": "61c19d0cb00456371a668152",
+		"location": "any",
+		"conditions": {},
+		"name": "A Kind Snow Maiden"
+	},
+	"61bb4756883b2c16a163870a": {
+		"description": "61c19c4af735360c95525750",
+		"failMessageText": "61c19c4af735360c95525752",
+		"startedMessageText": "61c19c4af735360c95525753",
+		"location": "any",
+		"conditions": {},
+		"name": "Home Comfort"
+	},
+	"61bb47578d7cac1532300ccd": {
+		"description": "61c19e4fdfd64163ea78fbef",
+		"successMessageText": "61c19e4fdfd64163ea78fbf0",
+		"location": "any",
+		"conditions": {},
+		"name": "Bad Santa"
+	},
+	"61bfa784f4378605ca5598e1": {
+		"description": "61c195e42720935cc2778f4d",
+		"startedMessageText": "61c195e42720935cc2778f50",
+		"location": "any",
+		"conditions": {},
+		"name": "To the Tree!"
+	},
+	"61e6e5e0f5b9633f6719ed95": {
+		"description": "61e7f17906bf9c6af36b2775",
+		"startedMessageText": "61e7f17906bf9c6af36b2778",
+		"successMessageText": "61e7f17906bf9c6af36b2776",
+		"failMessageText": "61e7f17906bf9c6af36b2777",
+		"location": "any",
+		"conditions": {},
+		"name": "Compensation for Damage - Trust"
+	},
+	"61e6e60223374d168a4576a6": {
+		"startedMessageText": "61e7f2d0103e097afe3f6cd8",
+		"description": "61e7f2d0103e097afe3f6cd5",
+		"successMessageText": "61e7f2d0103e097afe3f6cd6",
+		"failMessageText": "61e7f2d0103e097afe3f6cd7",
+		"location": "any",
+		"conditions": {},
+		"name": "Compensation for Damage - Wager"
+	},
+	"61e6e60c5ca3b3783662be27": {
+		"description": "61e7f4060316a769b2704e45",
+		"successMessageText": "61e7f4060316a769b2704e46",
+		"failMessageText": "61e7f4060316a769b2704e47",
+		"startedMessageText": "61e7f4060316a769b2704e48",
+		"location": "any",
+		"conditions": {},
+		"name": "Compensation for Damage - Wergild"
+	},
+	"61e6e615eea2935bc018a2c5": {
+		"description": "61e7f59320bc7012d528d3d5",
+		"failMessageText": "61e7f59320bc7012d528d3d7",
+		"successMessageText": "61e7f59320bc7012d528d3d6",
+		"startedMessageText": "61e7f59320bc7012d528d3d8",
+		"location": "any",
+		"conditions": {},
+		"name": "Compensation for Damage - Barkeep"
+	},
+	"61e6e621bfeab00251576265": {
+		"successMessageText": "61e7f937442d0e1cc1085b46",
+		"failMessageText": "61e7f937442d0e1cc1085b47",
+		"startedMessageText": "61e7f937442d0e1cc1085b48",
+		"description": "61e7f937442d0e1cc1085b45",
+		"location": "any",
+		"conditions": {},
+		"name": "Compensation for Damage - Collection"
 	}
 }

@@ -20,16 +20,18 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "590c2e1186f77425357b6124",
-			"count": 1,
+			"templateId": "61bf7b6302b3924be92fa8c3",
+			"count": 2,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
-			"templateId": "61bf7b6302b3924be92fa8c3",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
+			"templateId": "5d40425986f7743185265461",
+			"type": "Tool"
+		},
+		{
+			"templateId": "590c2e1186f77425357b6124",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 9400,

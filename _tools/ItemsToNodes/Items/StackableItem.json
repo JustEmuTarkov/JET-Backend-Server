@@ -1,17 +1,5 @@
 [
 	{
-		"_id": "543be5dd4bdc2deb348b4569",
-		"_name": "Money",
-		"_parent": "5661632d4bdc2d903d8b456b",
-		"_type": "Node",
-		"_props": {
-			"type": "RUB",
-			"eqMin": 0,
-			"eqMax": 0,
-			"rate": 1
-		}
-	},
-	{
 		"_id": "5485a8684bdc2da71d8b4567",
 		"_name": "Ammo",
 		"_parent": "5661632d4bdc2d903d8b456b",
@@ -87,6 +75,18 @@
 			"DurabilityBurnModificator": 1,
 			"HeatFactor": 1,
 			"MalfFeedChance": 0
+		}
+	},
+	{
+		"_id": "543be5dd4bdc2deb348b4569",
+		"_name": "Money",
+		"_parent": "5661632d4bdc2d903d8b456b",
+		"_type": "Node",
+		"_props": {
+			"type": "RUB",
+			"eqMin": 0,
+			"eqMax": 0,
+			"rate": 1
 		}
 	},
 	{

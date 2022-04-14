@@ -9,13 +9,13 @@
 		},
 		{
 			"templateId": "590a3b0486f7743954552bdb",
-			"count": 8,
+			"count": 10,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
 			"templateId": "573477e124597737dd42e191",
-			"count": 8,
+			"count": 10,
 			"isFunctional": false,
 			"type": "Item"
 		},
@@ -27,15 +27,17 @@
 		},
 		{
 			"templateId": "5c05300686f7746dce784e5d",
-			"count": 2,
+			"count": 3,
 			"isFunctional": false,
 			"type": "Item"
 		},
 		{
 			"templateId": "60391afc25aff57af81f7085",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
+			"type": "Tool"
+		},
+		{
+			"templateId": "590c639286f774151567fa95",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 349000,

@@ -40,7 +40,15 @@
 					"type": "Item"
 				}
 			],
-			"bonuses": [],
+			"bonuses": [
+				{
+					"value": 1,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "UnlockArmorRepair"
+				}
+			],
 			"slots": 0,
 			"constructionTime": 0,
 			"description": ""
@@ -93,7 +101,15 @@
 					"type": "Item"
 				}
 			],
-			"bonuses": [],
+			"bonuses": [
+				{
+					"value": 3,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "RepairArmorBonus"
+				}
+			],
 			"slots": 0,
 			"constructionTime": 10800,
 			"description": ""
@@ -140,7 +156,15 @@
 					"type": "Area"
 				}
 			],
-			"bonuses": [],
+			"bonuses": [
+				{
+					"value": 6,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "RepairArmorBonus"
+				}
+			],
 			"slots": 0,
 			"constructionTime": 25200,
 			"description": ""

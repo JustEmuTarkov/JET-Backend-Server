@@ -3,12 +3,6 @@
 	"areaType": 10,
 	"requirements": [
 		{
-			"templateId": "5d63d33b86f7746ea9275524",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
-		},
-		{
 			"templateId": "5af0561e86f7745f5f3ad6ac",
 			"count": 1,
 			"isFunctional": false,
@@ -18,6 +12,10 @@
 			"areaType": 10,
 			"requiredLevel": 2,
 			"type": "Area"
+		},
+		{
+			"templateId": "5d63d33b86f7746ea9275524",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 4400,

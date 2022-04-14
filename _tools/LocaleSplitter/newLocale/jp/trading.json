@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<本名不詳>",
-		"FirstName": "<本名不詳>",
-		"Nickname": "Fence",
-		"Location": "タルコフ市内外のブラックマーケット",
-		"Description": "Fenceは紛争が始まる以前から、既に匿名で盗品を売買するためのルートを確立し始めていた。その後も自らの匿名性は維持しつつも、今やノルヴィンスク地方全域で展開されている密輸業者ネットワークをまとめ上げている。"
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "City",
+		"Description": "タルコフ市中央病院の外科医長を務めている。"
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,19 +13,19 @@
 		"Location": "Town",
 		"Description": "ノルヴィンスク地域を封鎖した国内軍の後方補給基地倉庫を管理するロシア連邦軍の准士官。契約戦争ではBEARのオペレーター達に武器、弾薬及び、その他の様々な物資をひそかに提供していた。"
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<本名不詳>",
+		"FirstName": "<本名不詳>",
+		"Nickname": "Fence",
+		"Location": "タルコフ市内外のブラックマーケット",
+		"Description": "Fenceは紛争が始まる以前から、既に匿名で盗品を売買するためのルートを確立し始めていた。その後も自らの匿名性は維持しつつも、今やノルヴィンスク地方全域で展開されている密輸業者ネットワークをまとめ上げている。"
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
 		"Nickname": "Skier",
 		"Location": "Customs",
 		"Description": "港湾地区にある税関ターミナルの従業員。当初はターミナル内の品物で商売をしていただけだったが、紛争が激しくなる中で周囲のごろつきたちをまとめ上げ、ターミナル周辺を手中に収めた。"
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Therapist",
-		"Location": "City",
-		"Description": "タルコフ市中央病院の外科医長を務めている。"
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",

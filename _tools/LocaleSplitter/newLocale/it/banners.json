@@ -7,21 +7,21 @@
 		"name": "BEAR",
 		"description": "La compagnia militare privata \"BEAR\" fu istituita da un decreto segreto dal Governo Federale Russo come contromisura contro le attività illegali del gruppo \"Terra Group\" nel territorio russo."
 	},
-	"5803a58524597710ca36fcb2": {
-		"name": "TERRA GROUP",
-		"description": "TG è una compagnia transnazionale le cui filiali sono impegnate in una vasta gamma di attività. Comprende oltre 40 grosse imprese rappresentate da filiali sparse in più di 120 paesi nel mondo."
+	"5807be8924597742c603fa19": {
+		"name": "La città di Tarkov",
+		"description": "Tarkov è una città nel nord-ovest della Russia, un ente municipale all'interno della regione di Norvinsk e una della due principali città della Zona Economica Speciale di Norvinsk."
 	},
 	"5805f617245977100b2c1f41": {
 		"name": "Laboratori TerraGroup PLC",
 		"description": "Società a responsabilità limitata con sede nel Regno Unito, una filiale della compagnia Terra Group. Si occupa ufficialmente di ricerca scientifica che tratta la biotecnologia applicata all'industria agro-alimentare e agricola. "
 	},
-	"5807be8924597742c603fa19": {
-		"name": "La città di Tarkov",
-		"description": "Tarkov è una città nel nord-ovest della Russia, un ente municipale all'interno della regione di Norvinsk e una della due principali città della Zona Economica Speciale di Norvinsk."
-	},
 	"5807bfe124597742a92e0a4c": {
 		"name": "Zona Economica Speciale di Norvinsk",
 		"description": "Un territorio limitato all'interno della regione di Norvinsk, che include le città di Norvinsk e Tarkov e le infrastrutture confinanti, possiede uno statuto giuridico speciale rispetto al resto della Russia e condizioni economiche privilegiate per imprese nazionali e straniere.  "
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRA GROUP",
+		"description": "TG è una compagnia transnazionale le cui filiali sono impegnate in una vasta gamma di attività. Comprende oltre 40 grosse imprese rappresentate da filiali sparse in più di 120 paesi nel mondo."
 	},
 	"5807c3f124597746bf2db2ce": {
 		"name": "Scavs",

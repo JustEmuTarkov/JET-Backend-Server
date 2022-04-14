@@ -1,19 +1,19 @@
 {
 	"Offer not found": "既に購入されています",
-	"Unknown error": "予期せぬエラーが発生しました",
-	"Attempted transaction with items missing from the stash": "取引に必要なアイテムがスタッシュの中にありません",
 	"The trader is out of cash": "トレーダーの資金が不足しています",
-	"The item is already sold": "品物は売り切れです",
-	"Trader does not deal in this type of items": "トレーダーはその種類の品物を取り扱っていません",
+	"Attempted transaction with items missing from the stash": "取引に必要なアイテムがスタッシュの中にありません",
 	"Transaction error. The cost of goods has already changed.": "取引時にエラーが発生しました。品物の値段が変更されています。",
-	"Not enough space in stash": "アイテムをしまうのに十分なスペースがありません",
-	"You have already bought the maximum amount of this item in the current restock": "購入制限数に達しています。再入荷を待ってください。",
 	"Bad user loyalty level": "信用度が不足しています",
+	"Unknown error": "予期せぬエラーが発生しました",
+	"You have already bought the maximum amount of this item in the current restock": "購入制限数に達しています。再入荷を待ってください。",
+	"Not enough space in stash": "アイテムをしまうのに十分なスペースがありません",
 	"The trader is out of stock": "トレーダーの在庫が切れています",
+	"Trader does not deal in this type of items": "トレーダーはその種類の品物を取り扱っていません",
+	"The item is already sold": "品物は売り切れです",
 	"230 - MAX LOGIN COUNT": "最大試行回数に達しました。時間をおいてからもう一度お試しください。",
 	"1514 - Transaction error. The cost of goods has already changed.": "1514 - 取引時にエラーが発生しました。品物の値段が変更されています。",
 	"201 - Client not authorized or not selected game profile": "Client authorization failed, please restart the game or check the Internet connection",
-	"Backend error: Unknown Error": "バックエンドエラー：バックエンドへの接続エラー",
+	"BackendErrorMessage": "バックエンド側でエラーが発生しました",
 	"BackendErrorHeader": "バックエンドエラー",
-	"BackendErrorMessage": "バックエンド側でエラーが発生しました"
+	"Backend error: Unknown Error": "バックエンドエラー：バックエンドへの接続エラー"
 }

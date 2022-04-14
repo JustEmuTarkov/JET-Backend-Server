@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Nombre real desconocido>",
-		"FirstName": "<Nombre real desconocido>",
-		"Nickname": "Fence",
-		"Location": "Una red de puntos de comercio por todo Tarkov y sus alrededores",
-		"Description": "Apenas iniciaba el conflicto cuando Fence comenzó a establecer puestos de comercio anónimos para la compra y venta de mercancías. Manteniéndose en incógnito, logró formar una red de contrabando bien organizada que operaba en toda la región de Norvinsk."
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "Ciudad",
+		"Description": "Jefa del Departamento de Trauma del Hospital Central de la Ciudad de Tarkov."
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,6 +13,13 @@
 		"Location": "Pueblo",
 		"Description": "Suboficial a cargo de los almacenes de suministro en la base de apoyo para las Tropas Internas que imponen el bloqueo en la región de Norvinsk. Durante la Guerra de los Contratos suministró en secreto a operadores del BEAR con armas, municiones y otras provisiones a su disposición."
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Nombre real desconocido>",
+		"FirstName": "<Nombre real desconocido>",
+		"Nickname": "Fence",
+		"Location": "Una red de puntos de comercio por todo Tarkov y sus alrededores",
+		"Description": "Apenas iniciaba el conflicto cuando Fence comenzó a establecer puestos de comercio anónimos para la compra y venta de mercancías. Manteniéndose en incógnito, logró formar una red de contrabando bien organizada que operaba en toda la región de Norvinsk."
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
@@ -20,19 +27,12 @@
 		"Location": "Aduanas",
 		"Description": "Empleado de la terminal aduanera del puerto. Inicialmente comerciaba con bienes de la terminal, pero en el transcurso del conflicto, formó una pandilla para robar todo lo que pudieran encontrar en las cercanías de la terminal."
 	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Therapist",
-		"Location": "Ciudad",
-		"Description": "Jefa del Departamento de Trauma del Hospital Central de la Ciudad de Tarkov."
-	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",
 		"FirstName": "Tadeusz",
 		"Nickname": "Peacekeeper",
 		"Location": "Distrito Portuario",
-		"Description": "Oficial de suministros de la fuerza de paz de la ONU, con base en uno de los puntos de control que conducen a la zona portuaria de Tarkov. Los cascos azules se habían aventurado en pequeñas negociaciones desde el comienzo, comprando cualquier cosa de valor a cambio de armas occidentales, municiones y equipamiento militar."
+		"Description": "Oficial de suministros de la fuerza de paz de la ONU, con base en uno de los puntos de control que conducen a la zona portuaria de Tarkov. Los Cascos Azules se habían aventurado en pequeñas negociaciones desde el comienzo, comprando cualquier cosa de valor a cambio de armas occidentales, municiones y equipamiento militar."
 	},
 	"59c0ea2130c28d455c92e892": {
 		"FullName": "Nombre",
@@ -60,6 +60,6 @@
 		"FirstName": "Ivan Kharitonov",
 		"Nickname": "Jaeger",
 		"Location": "Reserva Priozersky",
-		"Description": "Trabajó en la propiedad de caza forestal de la reserva Priozersky bajo el Servicio Estatal de Jaegers. Cazador profesional y especialista en sobrevivencia. Pase lo que pase, él vigilará y cuidará su territorio ante los agresores."
+		"Description": "Trabajó en la propiedad de caza forestal de la reserva Priozersky bajo el Servicio Estatal de Jaegers. Cazador profesional y especialista en supervivencia. Pase lo que pase, él vigilará y cuidará su territorio ante los agresores."
 	}
 }

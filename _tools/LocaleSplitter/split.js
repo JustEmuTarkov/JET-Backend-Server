@@ -31,7 +31,7 @@ let languageType = require("./languages.json");
 
 for(let lang of languages){
 	let name = lang.replace(".json", "");
-	let loadLocale = require("./global/" + lang);
+	let loadLocale = require("./global/" + lang).data;
 	for(let subCat in loadLocale){
 		_write("./newLocale/" + name + "/" + subCat + ".json", loadLocale[subCat]);
 	}

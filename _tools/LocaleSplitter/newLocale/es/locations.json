@@ -1,63 +1,63 @@
 {
-	"55f2d3fd4bdc2d5f408b4567": {
-		"Name": "Factory",
-		"Description": "El área industrial y las instalaciones de la Planta Química Nº 16 fueron alquiladas ilegalmente por la compañía TerraGroup. Durante las Contract Wars, los recintos de la planta se convirtieron en el escenario de numerosos enfrentamientos entre las facciones USEC y BEAR, que determinaron el control sobre el distrito industrial de Tarkov. \n\nTras el caos del combate incial, la planta química se convirtió en refugio para los civiles supervivientes, los Scavs y para todo tipo de fuerzas militares, incluyendo los restos dispersos de USEC y BEAR."
-	},
-	"56db0b3bd2720bb0678b4567": {
-		"Name": "Arena",
-		"Description": "Una arena improvisada para la lucha de gladiadores, construida por los lugareños sobre los restos del centro comercial Equator-2."
-	},
-	"56f40101d2720b2a4d8b45d6": {
-		"Name": "Customs",
-		"Description": "Se trata de una amplia zona industrial adyacente a Factory. Alberga la terminal de aduanas, unas instalaciones de almacenamiento de combustible, oficinas, los dormitorios de los trabajadores y otro tipo de edificaciones e infraestructuras."
-	},
-	"5704e3c2d2720bac5b8b4567": {
-		"Name": "Woods",
-		"Description": "La Reserva Natural de Priozersky se ha incluido recientemente en la lista estatal de zonas de vida silvestre protegidas por el Estado. Se encuentra situada en el Distrito Federal del Noroeste."
-	},
 	"5704e47ed2720bb35b8b4568": {
 		"Name": "Town",
 		"Description": "El pueblo de Verkhneye es un pequeño asentamiento urbano junto al mar, es conocido por ser una zona de recreo y por su paisaje excepcional."
-	},
-	"5704e4dad2720bb55b8b4567": {
-		"Name": "Lighthouse",
-		"Description": "El faro del Cabo Dalniy solía ser un importante punto estratégico de la ciudad. Con el estallido del conflicto, USEC lo utilizó como embarcadero para sus operaciones, por lo que atrajo la atención de los BEAR, que hicieron todo lo posible por reducir la presencia PMC enemiga a cero."
-	},
-	"5704e554d2720bac5b8b456e": {
-		"Name": "Shoreline",
-		"Description": "La zona costera de Shoreline está constituida por un vasto terreno a las afueras de Tarkov y se sitúa junto al puerto.\n\nSu territorio alberga un pueblo parcialmente abandonado, alojamientos privados de lujo, campos de cultivo, amplias playas, un embarcadero, una gasolinera, una estación meteorológica, así como una antena de telefonía y otras instalaciones comerciales. Su principal punto de interés es el Balneario Costa Azul, que consta de varios edificios con toda clase de lujos. Se utilizó como alojamiento temporal para el personal de TerraGroup y otras de sus empresas asociadas, mientras se organizaba la evacuación a través del puerto de Tarkov. El complejo obtiene su energía únicamente gracias a una planta de energía hidroeléctrica cercana."
 	},
 	"5704e5a4d2720bb45b8b4567": {
 		"Name": "Terminal",
 		"Description": "Una sección amplia de la zona portuaria, se rumorea que era el punto de extracción de emergencia de EMERCOM. "
 	},
+	"56db0b3bd2720bb0678b4567": {
+		"Name": "Arena",
+		"Description": "Una arena improvisada para la lucha de gladiadores, construida por los lugareños sobre los restos del centro comercial Equator-2."
+	},
+	"55f2d3fd4bdc2d5f408b4567": {
+		"Name": "Factory",
+		"Description": "El área industrial y las instalaciones de la Planta Química Nº 16 fueron alquiladas ilegalmente por la compañía TerraGroup. Durante las Contract Wars, los recintos de la planta se convirtieron en el escenario de numerosos enfrentamientos entre las facciones USEC y BEAR, que determinaron el control sobre el distrito industrial de Tarkov. \n\nTras el caos del combate incial, la planta química se convirtió en refugio para los civiles supervivientes, los Scavs y para todo tipo de fuerzas militares, incluyendo los restos dispersos de USEC y BEAR."
+	},
+	"5704e4dad2720bb55b8b4567": {
+		"Name": "Lighthouse",
+		"Description": "El faro del Cabo Dalniy solía ser un importante punto estratégico de la ciudad. Con el estallido del conflicto, USEC lo utilizó como embarcadero para sus operaciones, por lo que atrajo la atención de los BEAR, que hicieron todo lo posible por reducir la presencia PMC enemiga a cero."
+	},
+	"56f40101d2720b2a4d8b45d6": {
+		"Name": "Customs",
+		"Description": "Se trata de una amplia zona industrial adyacente a Factory. Alberga la terminal de aduanas, unas instalaciones de almacenamiento de combustible, oficinas, los dormitorios de los trabajadores y otro tipo de edificaciones e infraestructuras."
+	},
 	"5704e5fad2720bc05b8b4567": {
 		"Name": "Reserve",
 		"Description": "La base secreta de la Agencia Federal para las Reservas del Estado que, según las leyendas urbanas, contiene suficientes provisiones para aguantar durante años: alimentos, medicamentos y otros recursos en suficiente cantidad como para sobrevivir a un apocalipsis nuclear."
-	},
-	"5704e64ad2720bb55b8b456e": {
-		"Name": "Private Sector",
-		"Description": "El sector residencial privado fue creado por los ciudadanos de clase alta de Tarkov, que construyeron ahí sus lujosas viviendas. En las primeras semanas de conflicto armado sirvió como refugio, pero después se convirtió en el lugar favorito de los saqueadores."
 	},
 	"5714dbc024597771384a510d": {
 		"Name": "Interchange",
 		"Description": "El Desvío Sur es un punto crítico en el sistema de transporte de la ciudad. Esta área estratégica conecta el puerto y los muelles con la zona industrial a las afueras de Tarkov. En el centro del desvío se sitúa un gran centro comercial ULTRA, que fue usado como base principal de operaciones de la evacuación llevada a cabo por EMERCOM."
 	},
-	"5714dc342459777137212e0b": {
-		"Name": "Suburbs",
-		"Description": "Las zonas residenciales de Tarkov tienen todas las infraestructuras y comodidades necesarias para proporcionar una vida larga y feliz."
-	},
-	"5714dc692459777137212e12": {
-		"Name": "Streets of Tarkov",
-		"Description": "El centro de Tarkov albergaba bancos, centros comerciales y hoteles. También contaba con todas las demás comodidades que una ciudad próspera podría haber necesitado."
+	"5704e64ad2720bb55b8b456e": {
+		"Name": "Private Sector",
+		"Description": "El sector residencial privado fue creado por los ciudadanos de clase alta de Tarkov, que construyeron ahí sus lujosas viviendas. En las primeras semanas de conflicto armado sirvió como refugio, pero después se convirtió en el lugar favorito de los saqueadores."
 	},
 	"599319c986f7740dca3070a6": {
 		"Name": "Arena",
 		"Description": "Una arena improvisada para la lucha de gladiadores, construida por los lugareños sobre los restos del centro comercial Equator-2."
 	},
+	"5704e554d2720bac5b8b456e": {
+		"Name": "Shoreline",
+		"Description": "La zona costera de Shoreline está constituida por un vasto terreno a las afueras de Tarkov y se sitúa junto al puerto.\n\nSu territorio alberga un pueblo parcialmente abandonado, alojamientos privados de lujo, campos de cultivo, amplias playas, un embarcadero, una gasolinera, una estación meteorológica, así como una antena de telefonía y otras instalaciones comerciales. Su principal punto de interés es el Balneario Costa Azul, que consta de varios edificios con toda clase de lujos. Se utilizó como alojamiento temporal para el personal de TerraGroup y otras de sus empresas asociadas, mientras se organizaba la evacuación a través del puerto de Tarkov. El complejo obtiene su energía únicamente gracias a una planta de energía hidroeléctrica cercana."
+	},
+	"5714dc342459777137212e0b": {
+		"Name": "Suburbs",
+		"Description": "Las zonas residenciales de Tarkov tienen todas las infraestructuras y comodidades necesarias para proporcionar una vida larga y feliz."
+	},
+	"5704e3c2d2720bac5b8b4567": {
+		"Name": "Woods",
+		"Description": "La Reserva Natural de Priozersky se ha incluido recientemente en la lista estatal de zonas de vida silvestre protegidas por el Estado. Se encuentra situada en el Distrito Federal del Noroeste."
+	},
 	"59fc81d786f774390775787e": {
 		"Name": "Factory",
 		"Description": "El área industrial y las instalaciones de la Planta Química Nº 16 fueron alquiladas ilegalmente por la compañía TerraGroup. Durante las Contract Wars, los recintos de la planta se convirtieron en el escenario de numerosos enfrentamientos entre las facciones USEC y BEAR, que determinaron el control sobre el distrito industrial de Tarkov. \n\nTras el caos del combate incial, la planta química se convirtió en refugio para los civiles supervivientes, los Scavs y para todo tipo de fuerzas militares, incluyendo los restos dispersos de USEC y BEAR."
+	},
+	"5714dc692459777137212e12": {
+		"Name": "Streets of Tarkov",
+		"Description": "El centro de Tarkov albergaba bancos, centros comerciales y hoteles. También contaba con todas las demás comodidades que una ciudad próspera podría haber necesitado."
 	},
 	"5b0fc42d86f7744a585f9105": {
 		"Name": "The Lab",

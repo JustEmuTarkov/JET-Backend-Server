@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Vrai nom inconnu>",
-		"FirstName": "<Vrai nom inconnu>",
-		"Nickname": "Fence",
-		"Location": "Un réseau de points de vente couvrant Tarkov et ses environs",
-		"Description": "Le conflit eut à peine commencé que Fence avait déjà commencé la mise en place de points de vente anonymes pour acheter et vendre des marchandises. Toujours incognito, il est néanmoins parvenu à constituer un réseau de contrebande bien organisé opérant dans toute la région de Norvinsk."
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "La Toubib",
+		"Location": "Ville",
+		"Description": "Chef du service de Traumatologie de l'Hôpital Central de Tarkov."
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,19 +13,19 @@
 		"Location": "Ville",
 		"Description": "Adjudant en charge des entrepôts d'approvisionnement sur la base de soutien de la Garde Nationale renforçant le blocus de la région de Norvinsk. Pendant les Contract Wars, il fournissait secrètement le BEAR en armes, munitions et diverses autres provisions dont il disposait."
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Vrai nom inconnu>",
+		"FirstName": "<Vrai nom inconnu>",
+		"Nickname": "Fence",
+		"Location": "Un réseau de points de vente couvrant Tarkov et ses environs",
+		"Description": "Le conflit eut à peine commencé que Fence avait déjà commencé la mise en place de points de vente anonymes pour acheter et vendre des marchandises. Toujours incognito, il est néanmoins parvenu à constituer un réseau de contrebande bien organisé opérant dans toute la région de Norvinsk."
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
 		"Nickname": "Skier",
 		"Location": "Douanes",
 		"Description": "Employé du terminal douanier de la zone portuaire. Ayant d'abord vendu les marchandises du terminal, il a formé un gang au cours du conflit afin de mettre la main sur tout ce qu'il pouvait dans les environs."
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "La Toubib",
-		"Location": "Ville",
-		"Description": "Chef du service de Traumatologie de l'Hôpital Central de Tarkov."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",

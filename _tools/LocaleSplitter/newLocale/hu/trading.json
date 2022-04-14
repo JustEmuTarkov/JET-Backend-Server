@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Valódi neve nem ismert>",
-		"FirstName": "<Valódi neve nem ismert>",
-		"Nickname": "Fence",
-		"Location": "Piacok hálózata Tarkovban és annak környékén",
-		"Description": "A konfliktus még alig kezdődött el, amikor Fence már megkezdte az adás-vételhez névtelen üzletek létesítését. Mindvégig inkognitóban maradva összeállított egy egész Norvinszk régiót lefedő, jól szervezett csempészhálózatot."
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "Város",
+		"Description": "A traumatológiai osztály vezetője a Tarkov városi Központi Kórházban."
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,19 +13,19 @@
 		"Location": "Város",
 		"Description": "A novirszki blokádot fenntartó MVD egységek központi bázisán található ellátó raktárak élén álló tiszthelyettes. A Contract Wars alatt titokban ellátta a BEAR szerződéses katonáit fegyverrel, lőszerrel és egyéb felszereléssel, amihez hozzáfért."
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Valódi neve nem ismert>",
+		"FirstName": "<Valódi neve nem ismert>",
+		"Nickname": "Fence",
+		"Location": "Piacok hálózata Tarkovban és annak környékén",
+		"Description": "A konfliktus még alig kezdődött el, amikor Fence már megkezdte az adás-vételhez névtelen üzletek létesítését. Mindvégig inkognitóban maradva összeállított egy egész Norvinszk régiót lefedő, jól szervezett csempészhálózatot."
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
 		"Nickname": "Skier",
 		"Location": "Customs",
 		"Description": "Kikötői vám terminál alkalmazott. Kezdetben a terminálban lévő árukkal kereskedtek, később a konfliktus bandává kovácsolta őket és ráteszik kezüket mindenre, ami mozdítható a terminál környékén."
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Therapist",
-		"Location": "Város",
-		"Description": "A traumatológiai osztály vezetője a Tarkov városi Központi Kórházban."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",

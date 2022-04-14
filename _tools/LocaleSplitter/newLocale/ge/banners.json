@@ -7,6 +7,10 @@
 		"name": "BEAR",
 		"description": "Das private Militärunternehmen BEAR wurde als Gegenmaßnahme zu den illegalen Aktivitäten der Terra Group auf russischem Staatsgebiet, durch einen Geheimerlass der russischen Regierung gegründet."
 	},
+	"5807be8924597742c603fa19": {
+		"name": "Die Stadt Tarkov",
+		"description": "Tarkov ist eine Stadt im Nordwesten Russlands, eine Kommune innerhalb der Region Norvinsk und eine der beiden Hauptstädte der Sonderwirtschaftszone Norvinsk."
+	},
 	"5803a58524597710ca36fcb2": {
 		"name": "TERRA GROUP",
 		"description": "TG ist eine transnationale Holding, dessen Tochtergesellschaften in eine Vielzahl von Aktivitäten verwickelt sind. Sie verbindet über 40 große Unternehmen, welche durch Niederlassungen in über 120 Ländern weltweit vertreten werden."
@@ -14,10 +18,6 @@
 	"5805f617245977100b2c1f41": {
 		"name": "TerraGroup Labs PLC",
 		"description": "In Großbritannien ansässige Tochtergesellschaft der Terra Group. Offiziell befasst sie sich mit wissenschaftlicher Forschung auf dem Gebiet der angewandten Biotechnologie in der Agrarindustrie und Landwirtschaft. "
-	},
-	"5807be8924597742c603fa19": {
-		"name": "Die Stadt Tarkov",
-		"description": "Tarkov ist eine Stadt im Nordwesten Russlands, eine Kommune innerhalb der Region Norvinsk und eine der beiden Hauptstädte der Sonderwirtschaftszone Norvinsk."
 	},
 	"5807bfe124597742a92e0a4c": {
 		"name": "Norvinsk Sonderwirtschaftszone",

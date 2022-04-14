@@ -7,21 +7,21 @@
 		"name": "BEAR",
 		"description": "La compañía militar privada BEAR se estableció por decreto secreto del Gobierno de la Federación Rusa, como respuesta para intentar destapar las actividades ilegales de TerraGroup en suelo ruso."
 	},
-	"5803a58524597710ca36fcb2": {
-		"name": "TERRAGROUP",
-		"description": "TerraGroup es una multinacional cuyas filiales se dedican a una amplia variedad de actividades. Está formada por más de 40 grandes empresas, representadas por sucursales en más de 120 países alrededor del mundo."
+	"5807be8924597742c603fa19": {
+		"name": "La ciudad de Tarkov",
+		"description": "Tarkov es una ciudad situada en el noroeste ruso, municipio de la región de Norvinsk, y una de las dos principales ciudades de la zona económica especial de Norvinsk."
 	},
 	"5805f617245977100b2c1f41": {
 		"name": "TerraGroup Labs PLC",
 		"description": "Sociedad limitada privada con base en Reino Unido, subsidiaria de la multinacional TerraGroup. Oficialmente se encarga de la investigación científica relacionada con la biotecnología aplicada a la industria agrícola. "
 	},
-	"5807be8924597742c603fa19": {
-		"name": "La ciudad de Tarkov",
-		"description": "Tarkov es una ciudad situada en el noroeste ruso, municipio de la región de Norvinsk, y una de las dos principales ciudades de la zona económica especial de Norvinsk."
-	},
 	"5807bfe124597742a92e0a4c": {
 		"name": "Zona económica especial de Norvinsk",
 		"description": "Un territorio delimitado dentro de la región de Norvinsk, incluyendo las ciudades de Norvinsk y Tarkov que comparten elementos de su infraestructura, esta zona posee una legislación única en relación con el resto de Rusia y unas condiciones económicas privilegiadas para las empresas nacionales y extranjeras.  "
+	},
+	"5803a58524597710ca36fcb2": {
+		"name": "TERRAGROUP",
+		"description": "TerraGroup es una multinacional cuyas filiales se dedican a una amplia variedad de actividades. Está formada por más de 40 grandes empresas, representadas por sucursales en más de 120 países alrededor del mundo."
 	},
 	"5807c3f124597746bf2db2ce": {
 		"name": "Scavs",

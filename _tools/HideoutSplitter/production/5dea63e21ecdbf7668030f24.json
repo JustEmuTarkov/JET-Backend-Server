@@ -14,10 +14,8 @@
 			"type": "Item"
 		},
 		{
-			"templateId": "544fb5454bdc2df8738b456a",
-			"count": 1,
-			"isFunctional": false,
-			"type": "Item"
+			"templateId": "619cbfccbedcde2f5b3f7bdd",
+			"type": "Tool"
 		}
 	],
 	"productionTime": 10000,

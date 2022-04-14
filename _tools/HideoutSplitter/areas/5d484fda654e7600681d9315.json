@@ -50,6 +50,13 @@
 					"id": "5d78c1461d79cb822a38b5f7",
 					"icon": "/files/Hideout/icon_hideout_unlocked.png",
 					"type": "TextBonus"
+				},
+				{
+					"value": 1,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "UnlockWeaponRepair"
 				}
 			],
 			"slots": 0,
@@ -98,7 +105,15 @@
 					"type": "Item"
 				}
 			],
-			"bonuses": [],
+			"bonuses": [
+				{
+					"value": 3,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "RepairWeaponBonus"
+				}
+			],
 			"slots": 0,
 			"constructionTime": 10800,
 			"description": ""
@@ -150,7 +165,15 @@
 					"type": "Item"
 				}
 			],
-			"bonuses": [],
+			"bonuses": [
+				{
+					"value": 6,
+					"passive": true,
+					"production": false,
+					"visible": true,
+					"type": "RepairWeaponBonus"
+				}
+			],
 			"slots": 0,
 			"constructionTime": 39600,
 			"description": ""

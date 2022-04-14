@@ -370,14 +370,16 @@
 			"AllowFeed": false,
 			"AllowMisfire": false,
 			"AllowSlide": false,
-			"DurabilityBurnRatio": 1,
+			"DurabilityBurnRatio": 1.15,
 			"HeatFactorGun": 1,
-			"CoolFactorGun": 0.72,
+			"CoolFactorGun": 0.576,
 			"CoolFactorGunMods": 1,
 			"HeatFactorByShot": 1,
 			"AllowOverheat": false,
 			"DoubleActionAccuracyPenalty": 1.5,
-			"RecoilPosZMult": 1
+			"RecoilPosZMult": 1,
+			"MinRepairKitDegradation": 0,
+			"MaxRepairKitDegradation": 0.035
 		},
 		"_proto": "5448bd6b4bdc2dfc2f8b4569"
 	}

@@ -1,10 +1,10 @@
 {
-	"579dc571d53a0658a154fbec": {
-		"FullName": "<Nombre real desconocido>",
-		"FirstName": "<Nombre real desconocido>",
-		"Nickname": "Fence",
-		"Location": "Red de puntos de venta ilegales por toda la ciudad de Tarkov y sus alrededores",
-		"Description": "El conflicto apenas había comenzado cuando Fence empezó a establecer puntos anónimos de compraventa. Sin embargo, manteniéndose en la sombra, ha conseguido crear una red de contrabandistas que opera por toda la región de Norvinsk."
+	"54cb57776803fa99248b456e": {
+		"FullName": "Elvira Khabibullina",
+		"FirstName": "Elvira",
+		"Nickname": "Therapist",
+		"Location": "City",
+		"Description": "Directora del Departamento de Traumatología del Hospital Central de la ciudad de Tarkov."
 	},
 	"54cb50c76803fa8b248b4571": {
 		"FullName": "Pavel Yegorovich Romanenko",
@@ -13,19 +13,19 @@
 		"Location": "Town",
 		"Description": "Suboficial a cargo de los almacenes de suministros de la base de reabastecimiento para las Tropas Internas, que imponen el bloqueo de la región de Norvinsk. Durante las Contract Wars suministró de forma secreta a los integrantes de la PMC BEAR de armas, munición y otras provisiones con las que contaba."
 	},
+	"579dc571d53a0658a154fbec": {
+		"FullName": "<Nombre real desconocido>",
+		"FirstName": "<Nombre real desconocido>",
+		"Nickname": "Fence",
+		"Location": "Red de puntos de venta ilegales por toda la ciudad de Tarkov y sus alrededores",
+		"Description": "El conflicto apenas había comenzado cuando Fence empezó a establecer puntos anónimos de compraventa. Sin embargo, manteniéndose en la sombra, ha conseguido crear una red de contrabandistas que opera por toda la región de Norvinsk."
+	},
 	"58330581ace78e27b8b10cee": {
 		"FullName": "Alexander Fyodorovich Kiselyov",
 		"FirstName": "Alexander",
 		"Nickname": "Skier",
 		"Location": "Customs",
 		"Description": "Empleado de la terminal aduanera portuaria. Al principio comerciaba con bienes de la terminal pero, durante el transcurso del conflicto, formó una banda para robar lo que pudiera encontrar por las cercanías de la terminal."
-	},
-	"54cb57776803fa99248b456e": {
-		"FullName": "Elvira Khabibullina",
-		"FirstName": "Elvira",
-		"Nickname": "Therapist",
-		"Location": "City",
-		"Description": "Directora del Departamento de Traumatología del Hospital Central de la ciudad de Tarkov."
 	},
 	"5935c25fb3acc3127c3d8cd9": {
 		"FullName": "Tadeusz Pilsudski",
