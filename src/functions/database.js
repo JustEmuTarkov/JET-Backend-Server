@@ -53,6 +53,7 @@ function _load_BotsData() {
 
 function _load_CoreData() {
   _database.core = {};
+  _database.core.airdrop = fileIO.readParsed("./" + db.base.airdrop);
   _database.core.botBase = fileIO.readParsed("./" + db.base.botBase);
   _database.core.botCore = fileIO.readParsed("./" + db.base.botCore);
   _database.core.fleaOffer = fileIO.readParsed("./" + db.base.fleaOffer);

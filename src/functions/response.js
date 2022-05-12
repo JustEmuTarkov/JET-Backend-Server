@@ -101,6 +101,7 @@ class Responses {
       "/server/config/server": this.serverConfigServer,
       "/server/softreset": this.serverSoftReset,
       "/singleplayer/bundles": this.singleplayerBundles,
+      "/singleplayer/airdrop/config": this.singleplayerAirdropConfig,
       "/singleplayer/settings/raid/endstate": this.singleplayerSettingsRaidEndstate,
       "/singleplayer/settings/raid/menu": this.singleplayerSettingsRaidMenu,
       "/singleplayer/settings/bot/difficulty": this.singleplayerSettingsBotDifficulty,
@@ -711,6 +712,9 @@ class Responses {
   singleplayerBundles(url, info, sessionID) {
     let local = serverConfig.ip === "127.0.0.1";
     return response_f.noBody(bundles_f.handler.getBundles(local));
+  }
+  singleplayerAirdropConfig(url, info, sessionID) {
+    return response_f.noBody(global._database.core.airdrop);
   }
   singleplayerSettingsRaidEndstate(url, info, sessionID) {
     return response_f.noBody(global._database.gameplay.inraid.miaOnTimerEnd);

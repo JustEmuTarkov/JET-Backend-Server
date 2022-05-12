@@ -1,0 +1,18 @@
+{
+  "airdropChancePercent": {
+    "bigmap": 25,
+    "interchange": 25,
+    "lighthouse": 25,
+    "reserve": 25,
+    "shoreline": 25,
+    "woods": 25
+  },
+  "airdropMaxOpenHeight": 400,
+  "airdropMaxStartTimeSeconds": 300,
+  "airdropMinOpenHeight": 350,
+  "airdropMinStartTimeSeconds": 60,
+  "planeMaxFlyHeight": 500,
+  "planeMinFlyHeight": 400,
+  "planeVolume": 0.6
+}
+   
